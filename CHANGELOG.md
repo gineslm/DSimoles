@@ -6,6 +6,10 @@ Cada entrada cita el commit que contiene los cambios; la propia entrada se añad
 
 Formato: versión · fecha (AAAA-MM-DD) · commit · IDs de sección afectados · resumen.
 
+## 0.8.0 · 2026-10-08 · 381212a
+Secciones: ninguna.
+Vista por defecto de las subsecciones (página en I o R, guía en el resto), fila compacta con URL e icono, y página sin márgenes del contenedor.
+
 ## 0.7.0 · 2026-10-08 · 2e0bb31
 Secciones: ninguna.
 Contenedor con barra lateral fija (tres bloques, modo comprimido, menú de secciones, doble progreso) y propuesta piloto-2 con las directrices de estilo, pendientes de aprobación.

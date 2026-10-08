@@ -2,6 +2,8 @@
 
 Una entrada por integración subida. Lo mantiene Claude Code. Es un registro, no un informe de sesión.
 
+Cada entrada cita el commit que contiene los cambios; la propia entrada se añade en un commit posterior.
+
 Formato: versión · fecha (AAAA-MM-DD) · commit · IDs de sección afectados · resumen.
 
 ## 0.4.0 · 2026-10-08 · 48459fb

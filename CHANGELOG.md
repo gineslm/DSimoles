@@ -6,6 +6,10 @@ Cada entrada cita el commit que contiene los cambios; la propia entrada se añad
 
 Formato: versión · fecha (AAAA-MM-DD) · commit · IDs de sección afectados · resumen.
 
+## 0.7.0 · 2026-10-08 · 2e0bb31
+Secciones: ninguna.
+Contenedor con barra lateral fija (tres bloques, modo comprimido, menú de secciones, doble progreso) y propuesta piloto-2 con las directrices de estilo, pendientes de aprobación.
+
 ## 0.6.0 · 2026-10-08 · 4d48582
 Secciones: ninguna.
 Protocolo de transferencia (D4), ignorar cualquier DS cargado (D7), documentación y tests de los scripts (D9), marca DSBook · DSimoles y registro de propuestas.

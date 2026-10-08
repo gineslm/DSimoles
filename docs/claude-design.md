@@ -12,6 +12,7 @@ Lee primero [CLAUDE.md](../CLAUDE.md). Tu función es desarrollar el contenido y
 - Crea la página en el `suggestedPath` de la guía, como `.dc.html`. Ejemplo: `visuales.color` → `sections/visuales/color.dc.html`. No dejes también un `.html` de la misma sección.
 - Antes de `./support.js`, carga React desde `../../assets/_runtime/` (ver [data-contract](data-contract.md)). No enlaces scripts externos y no edites `support.js`.
 - La meta `ds-section-id` debe quedar en el `<head>`.
+- No pongas `<sc-for>` ni `<sc-if>` directamente dentro de `table`, `thead`, `tbody`, `tr` ni `select`. El navegador los saca de ahí al leer el HTML y, dentro del iframe del contenedor, el runtime no puede corregirlo. Para listas repetidas en forma de tabla usa `div` con `role="table"`, `role="row"` y `role="cell"`. `check` lo vigila.
 - Conserva el ID en `<meta name="ds-section-id">`. Ajusta título, propósito, decisiones, ejemplos, accesibilidad, implementación y revisión. No presentes placeholders como contenido terminado.
 - Pon imágenes, estilos o scripts específicos en `assets/visuales/color/`; enlaza desde la página con `../../assets/visuales/color/...`.
 - Usa HTML semántico y recursos locales cuando sea razonable. Las secciones deben poder abrirse de forma independiente o dentro del contenedor.

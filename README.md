@@ -6,7 +6,7 @@ Guía de definición, contenedor de documentación y matriz de seguimiento del D
 Necesitas Python 3 para servir la web. Node.js 18 o superior permite ejecutar las comprobaciones; no hay paquetes que instalar.
 
 ```sh
-cd DSionic
+cd DSimoles
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
@@ -14,7 +14,7 @@ Abre http://localhost:8000. No abras `index.html` directamente: la carga de JSON
 
 1. Consulta la matriz. Cada categoría se despliega; cada subsección tiene su estado y su contenido.
 2. Activa **Mostrar guía** para consultar instrucciones. Desactívalo para ver el desarrollo asociado.
-3. Crea las páginas desde `templates/section.html` en las rutas indicadas por la guía.
+3. Crea las páginas en Claude Design, como `.dc.html`, en las rutas indicadas por la guía.
 4. Integra los cambios siguiendo [la guía general de handoff](docs/handoff.md).
 
 ## Estados y filtros

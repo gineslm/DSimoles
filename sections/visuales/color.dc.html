@@ -80,24 +80,22 @@ a:hover{color:#5a5a5a}
 
 <h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Roles semánticos</h3>
 <div style="overflow-x:auto">
-<table style="width:100%;border-collapse:collapse;font-size:14px">
-<thead>
-<tr>
-<th style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Rol</th>
-<th style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Uso</th>
-<th style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primitivo</th>
-</tr>
-</thead>
-<tbody>
+<div role="table" aria-label="Roles semánticos" style="min-width:480px;font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:1.2fr 1.6fr 1fr">
+<div role="columnheader" style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Rol</div>
+<div role="columnheader" style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Uso</div>
+<div role="columnheader" style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primitivo</div>
+</div>
+<div role="rowgroup">
 <sc-for list="{{ roles }}" as="r" hint-placeholder-count="6">
-<tr>
-<td style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">{{ r.rol }}</td>
-<td style="padding:8px;border-bottom:1px solid #d4d4d4">{{ r.uso }}</td>
-<td style="padding:8px;border-bottom:1px solid #d4d4d4;color:#5a5a5a">Pendiente</td>
-</tr>
+<div role="row" style="display:grid;grid-template-columns:1.2fr 1.6fr 1fr">
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">{{ r.rol }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">{{ r.uso }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;color:#5a5a5a">Pendiente</div>
+</div>
 </sc-for>
-</tbody>
-</table>
+</div>
+</div>
 </div>
 <p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a">Pendiente · lista definitiva de roles y formato de nombre. Los nombres de la tabla son orientativos.</p>
 </section>

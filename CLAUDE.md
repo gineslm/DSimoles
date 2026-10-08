@@ -30,7 +30,7 @@ Este repositorio contiene una plantilla reutilizable para definir, documentar y 
 - `data/guide.json`: 14 categorías y 132 subsecciones con instrucciones y destinos.
 - `data/project.json`: identidad del proyecto, estado, página, responsable, notas y revisión.
 - `sections/`: desarrollo del DS; empieza vacío de contenido de proyecto.
-- `templates/section.html`: base de una página; `templates/component.md`: ficha de componente.
+- `templates/component.md`: ficha de componente. Las páginas de sección se crean en Claude Design como `.dc.html`; no hay plantilla de página.
 - `assets/`: recursos de las páginas.
 - `docs/`: guías permanentes.
 - `scripts/`: comprobaciones del contrato y pruebas de lógica.

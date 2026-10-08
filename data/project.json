@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "guideVersion": "1.0.0",
-  "projectId": "nuevo-design-system",
-  "name": "Mi Design System",
+  "projectId": "dsimoles",
+  "name": "DSimoles",
   "sections": {
     "fundamentos.objetivos-y-guia-de-uso": {
       "status": "P",

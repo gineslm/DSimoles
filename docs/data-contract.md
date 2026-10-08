@@ -8,7 +8,7 @@
 ```json
 {
   "status": "I",
-  "page": "sections/visuales/color.html",
+  "page": "",
   "owner": "Equipo de diseño",
   "notes": "Pendiente comprobar las combinaciones del tema oscuro.",
   "review": {"by": "", "date": "", "evidence": ""},
@@ -26,11 +26,9 @@ Ejemplo completo:
 - Desde esa página: `../../assets/visuales/color/paleta.svg`.
 - Desde el contenedor: `sections/visuales/color.html`.
 
-`page` admite vacío, una ruta `sections/...html` con segmentos en minúsculas alfanuméricas/guion/guion bajo o una URL HTTPS sin credenciales. No acepta `javascript:`, `data:`, rutas de disco, `../` ni URLs HTTP. La ruta sugerida queda reservada sin crear un archivo vacío por cada subsección.
+`page` vacío significa «usar la ruta sugerida de la guía si el archivo existe». Solo se rellena para excepciones. Cuando se rellena admite una ruta `sections/...html` con segmentos en minúsculas alfanuméricas/guion/guion bajo o una URL HTTPS sin credenciales. No acepta `javascript:`, `data:`, rutas de disco, `../` ni URLs HTTP. La ruta sugerida queda reservada sin crear un archivo vacío por cada subsección. Una sección en I o R necesita página, en la ruta sugerida o en `page`.
 
 La página contiene `<meta name="ds-section-id" content="visuales.color">`. El contenedor no necesita leer sus datos internos. Se muestra en iframe aislado con `allow-scripts`; existe un enlace independiente como alternativa. No copies páginas externas ni presupongas permiso de embedding.
 
-## Estado de sesión
-El borrador se almacena en `sessionStorage` por ID del proyecto y ruta del contenedor. Incluye una copia del JSON base para detectar divergencias al recargar. Es temporal, no una base de datos ni sincronización entre dispositivos. La exportación produce un JSON completo; la integración en Git se hace por sección y campo.
-
+## Estado de consulta
 Búsqueda, filtros, desplegables y modo Guía/Desarrollo son estado de consulta en memoria; no se escriben al repositorio. El progreso se calcula y no se almacena. Los estados de categorías se resumen y no son editables.

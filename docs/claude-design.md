@@ -17,7 +17,7 @@ Lee primero [CLAUDE.md](../CLAUDE.md). Tu función es desarrollar el contenido y
 - Si desarrollas componentes, utiliza también la [ficha de componente](../templates/component.md).
 
 ## Estado y decisiones durante el trabajo
-Actualiza la entrada correspondiente en `project.json` o utiliza la matriz y exporta la configuración. P pasa a I cuando comienza el desarrollo. Si una sección R queda con cambios sin revisar, vuelve a I y registra los pendientes. Mantén R solo si la revisión sigue siendo válida y está actualizada.
+Actualiza solo las entradas afectadas de `project.json`; nunca regeneres el archivo completo. P pasa a I cuando comienza el desarrollo. Si una sección R queda con cambios sin revisar, vuelve a I y registra los pendientes. Mantén R solo si la revisión sigue siendo válida y está actualizada.
 
 Para proponer R, registra `review.by`, `review.date` y `review.evidence`: persona o rol que efectivamente revisó, fecha y resumen/enlaces de lo comprobado. No atribuyas una aprobación al usuario que no haya dado. Si no hay revisión, conserva I. N requiere una decisión explícita y `exclusionReason`.
 

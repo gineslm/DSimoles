@@ -17,7 +17,7 @@ Los propios archivos son el entregable. `notes`, `review` y `exclusionReason` re
 - Las rutas internas son relativas y portables. No se necesita un dominio fijo.
 - Crear o vincular una página no cambia automáticamente el estado.
 - La vista Guía/Desarrollo es una preferencia de consulta, independiente de R/I/P/N.
-- Los cambios de sesión no están sincronizados por el hecho de exportarlos o mostrarlos en el navegador.
+- El contenedor web es de solo lectura: lo que muestra es el estado del repo.
 
 ## Estados
 | Transición | Condición |

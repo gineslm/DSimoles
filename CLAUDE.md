@@ -13,7 +13,7 @@ Este repositorio contiene una plantilla reutilizable para definir, documentar y 
 
 ## Reglas comunes
 1. Lee `data/guide.json` y `data/project.json` antes de modificar una sección. Conserva sus IDs; el título visible puede cambiar.
-2. Trabaja en castellano por defecto. Esta plantilla es general y no contiene decisiones propias de iMoles.
+2. Trabaja en castellano por defecto.
 3. Mantén HTML, CSS y JavaScript sin framework ni dependencias de ejecución. No añadas backend, cuentas, sincronización remota ni gestores de proyectos sin una necesidad acordada.
 4. Crea las páginas en el `suggestedPath` de cada subsección. Sus recursos van en `assets/<categoria>/<subseccion>/`. No uses rutas absolutas del equipo ni enlaces dependientes de un dominio local.
 5. `data/guide.json` orienta; `data/project.json` registra decisiones; `sections/` contiene el desarrollo. No copies contenido del desarrollo dentro de la guía.

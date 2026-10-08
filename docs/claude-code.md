@@ -6,7 +6,7 @@ Lee [CLAUDE.md](../CLAUDE.md), el [contrato](data-contract.md) y la [guía gener
 1. Inspecciona rama, `git status` y diferencias existentes. No sobrescribas cambios no relacionados ni limpies el árbol automáticamente.
 2. Lee la guía y el proyecto vigentes. Compara los archivos recibidos con el repositorio por ID de sección, no solo por título.
 3. Para cada página, usa `suggestedPath` o una excepción explícitamente acordada. Comprueba su meta `ds-section-id`. Conserva recursos dentro del repo y corrige enlaces relativos.
-4. Integra `project.json` campo a campo en las secciones afectadas. Una exportación contiene el proyecto completo: no debe pisar estados, notas ni revisiones de secciones que otro equipo modificó. Si no hay base común suficiente para resolver una diferencia, señala el conflicto concreto antes de elegir.
+4. Integra `project.json` campo a campo en las secciones afectadas. Un `project.json` completo recibido no debe pisar estados, notas ni revisiones de secciones que otro equipo modificó. Si no hay base común suficiente para resolver una diferencia, señala el conflicto concreto antes de elegir.
 5. Revisa estado frente al contenido y evidencia. Usa I si quedan incidencias. No generes R por comprobar que un archivo existe, ni inventes revisión de diseño. No marques N sin decisión registrada.
 6. Ejecuta `npm run check` y `npm test`. Sirve la carpeta y realiza las comprobaciones manuales aplicables de `quality.md`. Registra las limitaciones de pruebas realmente encontradas.
 7. Revisa `git diff --check` y `git diff`. Evita archivos temporales, exportaciones duplicadas, secretos, cachés o dependencias vendorizadas accidentales.

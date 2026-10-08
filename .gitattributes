@@ -1,0 +1,3 @@
+# Archivos vendorizados o generados: sin conversión de saltos de línea (su hash se comprueba en npm run check)
+assets/_runtime/* -text
+sections/**/support.js -text

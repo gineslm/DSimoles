@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="visuales.color">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Color · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="visuales.color" style="max-width:72ch;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#5a5a5a">DSimoles · 1.1 · Fundamentos visuales</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Color</h1>
+<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+<span style="font-size:12px;font-weight:600;padding:2px 8px;border:1px solid #1f1f1f;border-radius:4px">I · In process</span>
+<span style="font-size:13px;color:#5a5a5a">Estructura de la página definida. Ningún valor de color está decidido.</span>
+</div>
+</header>
+
+<sc-if value="{{ mostrarGuia }}" hint-placeholder-val="{{ true }}">
+<aside style="border:1px solid #d4d4d4;padding:16px 20px;display:flex;flex-direction:column;gap:8px;background:#f6f6f6">
+<p style="margin:0;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#5a5a5a">Guía · data/guide.json</p>
+<p style="margin:0"><strong>Definir:</strong> paletas, escalas, neutros y criterios de construcción.</p>
+<p style="margin:0"><strong>Accesibilidad:</strong> combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.</p>
+<p style="margin:0"><strong>Aceptación:</strong> decisiones y motivos documentados; ejemplos de uso habitual y al menos un caso límite; revisión de diseño y comprobaciones registradas.</p>
+</aside>
+</sc-if>
+
+<section style="display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Propósito</h2>
+<p style="margin:0;text-wrap:pretty">Establecer los criterios compartidos para elegir, nombrar y combinar color en DSimoles, de modo que cualquier uso pueda comprobarse contra una regla.</p>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a">Pendiente · confirmar con el responsable a qué productos y superficies aplica este sistema de color.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Decisiones y reglas</h2>
+<p style="margin:0;text-wrap:pretty">Se documentan en tres capas. La división en capas es una propuesta de estructura, no una decisión aprobada.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+<div style="border:1px solid #d4d4d4;padding:16px;display:flex;flex-direction:column;gap:6px">
+<p style="margin:0;font-weight:600">Primitivos</p>
+<p style="margin:0;font-size:14px;color:#3d3d3d">Paletas y escalas con valor fijo. No se usan directamente en componentes.</p>
+</div>
+<div style="border:1px solid #d4d4d4;padding:16px;display:flex;flex-direction:column;gap:6px">
+<p style="margin:0;font-weight:600">Semánticos</p>
+<p style="margin:0;font-size:14px;color:#3d3d3d">Roles con significado (texto, fondo, borde, estado) que apuntan a primitivos.</p>
+</div>
+<div style="border:1px solid #d4d4d4;padding:16px;display:flex;flex-direction:column;gap:6px">
+<p style="margin:0;font-weight:600">Componente</p>
+<p style="margin:0;font-size:14px;color:#3d3d3d">Alias propios de cada componente. Se definen en su sección.</p>
+</div>
+</div>
+
+<h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Paletas y escalas</h3>
+<sc-for list="{{ paletas }}" as="p" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<span style="font-weight:600">{{ p.nombre }}</span>
+<span style="font-size:13px;color:#5a5a5a">{{ p.nota }}</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(48px,1fr));gap:4px">
+<sc-for list="{{ pasos }}" as="s" hint-placeholder-count="10">
+<div style="aspect-ratio:1;border:1px dashed #8a8a8a;display:flex;align-items:flex-end;padding:4px;font-size:11px;color:#5a5a5a">{{ s }}</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a">Pendiente · número de paletas, número de pasos por escala, nomenclatura de pasos y método de construcción (espacio de color, interpolación, criterio de luminosidad). Los recuadros anteriores solo muestran el hueco; no hay valores.</p>
+
+<h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Roles semánticos</h3>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead>
+<tr>
+<th style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Rol</th>
+<th style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Uso</th>
+<th style="text-align:left;padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primitivo</th>
+</tr>
+</thead>
+<tbody>
+<sc-for list="{{ roles }}" as="r" hint-placeholder-count="6">
+<tr>
+<td style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">{{ r.rol }}</td>
+<td style="padding:8px;border-bottom:1px solid #d4d4d4">{{ r.uso }}</td>
+<td style="padding:8px;border-bottom:1px solid #d4d4d4;color:#5a5a5a">Pendiente</td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a">Pendiente · lista definitiva de roles y formato de nombre. Los nombres de la tabla son orientativos.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Ejemplos</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+<sc-for list="{{ ejemplos }}" as="e" hint-placeholder-count="3">
+<div style="border:1px dashed #8a8a8a;padding:16px;min-height:120px;display:flex;flex-direction:column;gap:6px">
+<p style="margin:0;font-weight:600">{{ e.titulo }}</p>
+<p style="margin:0;font-size:14px;color:#3d3d3d">{{ e.texto }}</p>
+</div>
+</sc-for>
+</div>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a">Pendiente · se completan cuando existan primitivos y roles.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+<li>Contraste de texto e iconos contra su fondo para cada par de roles permitido. Umbrales: pendiente de fijar (referencia WCAG 2.2, 1.4.3 y 1.4.11).</li>
+<li>El color no es la única señal de estado, error o selección (WCAG 1.4.1).</li>
+<li>Comportamiento con ampliación, modos de alto contraste y tema oscuro, si aplica.</li>
+</ul>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a">Pendiente · matriz de contraste, método de comprobación y resultados. No hay comprobaciones realizadas.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Implementación</h2>
+<p style="margin:0;text-wrap:pretty">Formato de tokens, nombres en código y relación con las herramientas de diseño.</p>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a">Pendiente · formato de intercambio (por ejemplo DTCG) y destino de los archivos de tokens en el repo.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Revisión y pendientes</h2>
+<p style="margin:0">Sin revisión. El estado canónico está en <code>data/project.json</code>.</p>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarGuia&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      mostrarGuia: this.props.mostrarGuia ?? true,
+      paletas: [
+        { nombre: 'Neutros', nota: 'Pendiente' },
+        { nombre: 'Marca', nota: 'Pendiente' },
+        { nombre: 'Estados', nota: 'Pendiente' }
+      ],
+      pasos: ['—', '—', '—', '—', '—', '—', '—', '—', '—', '—'],
+      roles: [
+        { rol: 'texto.principal', uso: 'Texto de cuerpo y titulares' },
+        { rol: 'texto.secundario', uso: 'Metadatos y ayudas' },
+        { rol: 'fondo.base', uso: 'Fondo de página' },
+        { rol: 'borde.sutil', uso: 'Separadores' },
+        { rol: 'accion.principal', uso: 'Acción principal' },
+        { rol: 'estado.error', uso: 'Mensajes y campos con error' }
+      ],
+      ejemplos: [
+        { titulo: 'Uso habitual', texto: 'Pantalla tipo con roles de texto, fondo y acción.' },
+        { titulo: 'Caso límite', texto: 'Texto pequeño sobre fondo de estado.' },
+        { titulo: 'Uso incorrecto', texto: 'Primitivo usado directamente en un componente.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

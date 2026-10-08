@@ -125,10 +125,10 @@
       "exclusionReason": ""
     },
     "visuales.color": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página piloto en sections/visuales/color.dc.html (validación de D1). Estructura definida; pendiente: paletas, escalas, nomenclatura y método de construcción; lista de roles semánticos; ejemplos aplicados; matriz de contraste y comprobaciones; formato de tokens. Sin revisión.",
       "review": {
         "by": "",
         "date": "",

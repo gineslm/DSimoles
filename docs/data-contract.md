@@ -26,9 +26,14 @@ Ejemplo completo:
 - Desde esa página: `../../assets/visuales/color/paleta.svg`.
 - Desde el contenedor: `sections/visuales/color.html`.
 
-`page` vacío significa «usar la ruta sugerida de la guía si el archivo existe». Solo se rellena para excepciones. Cuando se rellena admite una ruta `sections/...html` con segmentos en minúsculas alfanuméricas/guion/guion bajo o una URL HTTPS sin credenciales. No acepta `javascript:`, `data:`, rutas de disco, `../` ni URLs HTTP. La ruta sugerida queda reservada sin crear un archivo vacío por cada subsección. Una sección en I o R necesita página, en la ruta sugerida o en `page`.
+`page` vacío significa «usar la ruta sugerida de la guía si el archivo existe». Solo se rellena para excepciones. Cuando se rellena admite una ruta `sections/...html` o `sections/...dc.html` con segmentos en minúsculas alfanuméricas/guion/guion bajo o una URL HTTPS sin credenciales. No acepta `javascript:`, `data:`, rutas de disco, `../` ni URLs HTTP. La ruta sugerida queda reservada sin crear un archivo vacío por cada subsección. Una sección en I o R necesita página, en la ruta sugerida o en `page`.
 
 La página contiene `<meta name="ds-section-id" content="visuales.color">`. El contenedor no necesita leer sus datos internos. Se muestra en iframe aislado con `allow-scripts`; existe un enlace independiente como alternativa. No copies páginas externas ni presupongas permiso de embedding.
+
+## Páginas `.dc.html`
+Las páginas de sección se crean como Design Components. La ruta sugerida de la guía admite dos variantes: `sections/visuales/color.html` y `sections/visuales/color.dc.html`. `guide.json` no cambia. Una sección tiene **una sola** página: si existen las dos variantes, `check` falla.
+
+Una página `.dc.html` carga, por este orden y con rutas relativas, `../../assets/_runtime/react.production.min.js`, `../../assets/_runtime/react-dom.production.min.js` y `./support.js`. `support.js` lo genera Claude Design en cada carpeta de `sections/`: no se edita y todas sus copias deben ser idénticas. No se admiten scripts externos. El `<meta name="ds-section-id">` va en el `<head>`.
 
 ## Estado de consulta
 Búsqueda, filtros, desplegables y modo Guía/Desarrollo son estado de consulta en memoria; no se escriben al repositorio. El progreso se calcula y no se almacena. Los estados de categorías se resumen y no son editables.

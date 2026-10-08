@@ -9,7 +9,9 @@ Lee primero [CLAUDE.md](../CLAUDE.md). Tu función es desarrollar el contenido y
 4. Consulta páginas ya desarrolladas para mantener coherencia del DS. La apariencia del contenedor es una herramienta de trabajo, no la identidad visual obligatoria de cada DS.
 
 ## Desarrollar una sección
-- Duplica `templates/section.html` en el `suggestedPath` exacto de la guía. Ejemplo: `visuales.color` → `sections/visuales/color.html`.
+- Crea la página en el `suggestedPath` de la guía, como `.dc.html`. Ejemplo: `visuales.color` → `sections/visuales/color.dc.html`. No dejes también un `.html` de la misma sección.
+- Antes de `./support.js`, carga React desde `../../assets/_runtime/` (ver [data-contract](data-contract.md)). No enlaces scripts externos y no edites `support.js`.
+- La meta `ds-section-id` debe quedar en el `<head>`.
 - Conserva el ID en `<meta name="ds-section-id">`. Ajusta título, propósito, decisiones, ejemplos, accesibilidad, implementación y revisión. No presentes placeholders como contenido terminado.
 - Pon imágenes, estilos o scripts específicos en `assets/visuales/color/`; enlaza desde la página con `../../assets/visuales/color/...`.
 - Usa HTML semántico y recursos locales cuando sea razonable. Las secciones deben poder abrirse de forma independiente o dentro del contenedor.

@@ -6,6 +6,10 @@ Cada entrada cita el commit que contiene los cambios; la propia entrada se añad
 
 Formato: versión · fecha (AAAA-MM-DD) · commit · IDs de sección afectados · resumen.
 
+## 0.9.0 · 2026-10-08 · 00d2d99
+Secciones: visuales.color.
+Directrices de estilo aprobadas, lang="es" obligatorio en las páginas .dc.html (check y test) y lang añadido a la página piloto.
+
 ## 0.8.0 · 2026-10-08 · 381212a
 Secciones: ninguna.
 Vista por defecto de las subsecciones (página en I o R, guía en el resto), fila compacta con URL e icono, y página sin márgenes del contenedor.

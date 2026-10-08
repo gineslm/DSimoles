@@ -6,7 +6,8 @@ Lee primero [CLAUDE.md](../CLAUDE.md). Tu función es desarrollar el contenido y
 1. Carga la versión vigente del repositorio o los archivos facilitados por el equipo. Si no tienes acceso al repo, solicita los archivos necesarios; no supongas que una conversación refleja el último estado.
 2. Identifica la subsección en `data/guide.json`. Lee objetivo, qué definir, accesibilidad, entregable y criterios.
 3. Revisa su entrada en `data/project.json`: decisiones existentes, página, responsable y revisión.
-4. Consulta páginas ya desarrolladas para mantener coherencia del DS. La apariencia del contenedor es una herramienta de trabajo, no la identidad visual obligatoria de cada DS.
+4. Lee [estilo-paginas.md](estilo-paginas.md): tono visual primero, poco texto, medidas y color neutro de la documentación.
+5. Consulta páginas ya desarrolladas para mantener coherencia del DS. La apariencia del contenedor es una herramienta de trabajo, no la identidad visual obligatoria de cada DS.
 
 ## Sincronización y alcance
 1. **Base registrada.** Anota en `github.md` (raíz de tu proyecto) el commit y la versión de `CHANGELOG.md` de los que partes, y el recuento de archivos esperados frente a los que ves. El listado del conector filtra archivos (por ejemplo `scripts/*.mjs`): cruza el listado con las rutas que nombran `package.json`, `CLAUDE.md` y `docs/data-contract.md`, y lee por ruta las que falten.

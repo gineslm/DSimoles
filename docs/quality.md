@@ -11,7 +11,7 @@
 `npm run check` y `npm test`. Qué comprueba cada una, cuándo ejecutarlas y cómo leer sus errores está en [scripts.md](scripts.md). En resumen: contrato guía/proyecto, una sola página por sección, I y R con página, meta de identidad, referencias locales, runtime vendorizado de las páginas `.dc.html` y lógica de `model.js`. No descargan contenido externo ni prueban el navegador.
 
 ## Revisión manual de la aplicación
-1. Cargar por HTTP, desplegar categorías y elementos y operar con teclado.
+1. Cargar por HTTP, desplegar categorías y elementos y operar con teclado. Con la barra lateral: recorrer el menú, saltar a una subsección y comprobar el foco, el estado actual (`aria-current`) y los enlaces directos (`#item-<id>`). Comprimir y expandir la barra con el botón DSB; comprimida, comprobar los paneles de búsqueda, estado (combinando varios) y secciones con hover, clic y Escape, y «Desplegar todo» y «Plegar todo». En ancho de móvil, abrir y cerrar el cajón (botón y Escape).
 2. Combinar R/I/P/N y búsqueda; comprobar resultados vacíos y recuentos.
 3. Probar el toggle con página interna, página externa y sin página (mensaje «Sin página»). Recorrer la página **entera** dentro del iframe del contenedor, no solo la cabecera, y compararla con la apertura por separado.
 4. Comprobar anchos de móvil/escritorio, ampliación, textos largos y orden del foco.

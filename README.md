@@ -25,7 +25,9 @@ Abre http://localhost:8000. No abras `index.html` directamente: la carga de JSON
 | P · Pending | Desarrollo pendiente; estado inicial. |
 | N · No aplica | Fuera de alcance con justificación explícita. |
 
-Combina estados en la cabecera y busca por título, categoría o contenido. Los recuentos de categoría representan todos sus elementos; los filtros muestran solo las coincidencias. El avance es R / (R + I + P); si todo es N se muestra «Sin secciones aplicables».
+Combina estados en la cabecera y busca por título, categoría o contenido. Los recuentos de categoría representan todos sus elementos; los filtros muestran solo las coincidencias. Hay dos barras de progreso. **Avance**: R / (R + I + P), es decir, las listas sobre las aplicables. **Complejidad**: las subsecciones que no están en N sobre el total de la guía. Si todo es N, el avance muestra «Sin secciones aplicables».
+
+La barra lateral tiene tres bloques separados: **DSB** (marca; comprime y expande la barra), **progreso** (cabecera «Avance / Complejidad» con el recuento de subsecciones mostradas, por ejemplo 132/132, y las dos líneas de progreso) y **contenido** (búsqueda, estado y secciones). Comprimida, el bloque de contenido pasa a tres iconos —lupa, filtro de estado y secciones— que abren un panel al pasar el ratón; un clic lo fija y Escape lo cierra. El panel de estado permite combinar R, I, P y N, y el de secciones incluye «Desplegar todo» y «Plegar todo».
 
 ## Contenedor de solo lectura
 La web muestra el estado del repositorio y no lo modifica: no guarda borradores ni importa o exporta configuración. Todo se edita en Claude Design; Claude Code integra los cambios en Git. Búsqueda, filtros, plegado y el conmutador Guía/Desarrollo son estado de consulta en memoria.

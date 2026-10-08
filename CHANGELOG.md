@@ -6,6 +6,10 @@ Cada entrada cita el commit que contiene los cambios; la propia entrada se añad
 
 Formato: versión · fecha (AAAA-MM-DD) · commit · IDs de sección afectados · resumen.
 
+## 0.5.0 · 2026-10-08 · 7676ddc
+Secciones: visuales.color.
+Etiqueta de estado sin saltos de línea (arreglo hecho en Claude Design) y guías alineadas con check.
+
 ## 0.4.0 · 2026-10-08 · 48459fb
 Secciones: visuales.color.
 Tabla de roles sin elementos de tabla (el iframe no recupera sc-for dentro de tbody), lint en check y plantilla de sección retirada.

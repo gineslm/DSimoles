@@ -8,6 +8,16 @@ Lee primero [CLAUDE.md](../CLAUDE.md). Tu función es desarrollar el contenido y
 3. Revisa su entrada en `data/project.json`: decisiones existentes, página, responsable y revisión.
 4. Consulta páginas ya desarrolladas para mantener coherencia del DS. La apariencia del contenedor es una herramienta de trabajo, no la identidad visual obligatoria de cada DS.
 
+## Sincronización y alcance
+1. **Base registrada.** Anota en `github.md` (raíz de tu proyecto) el commit y la versión de `CHANGELOG.md` de los que partes, y el recuento de archivos esperados frente a los que ves. El listado del conector filtra archivos (por ejemplo `scripts/*.mjs`): cruza el listado con las rutas que nombran `package.json`, `CLAUDE.md` y `docs/data-contract.md`, y lee por ruta las que falten.
+2. **Al inicio de cada sesión** compara tu base con el repo. Si el repo avanzó, detente y sincroniza antes de modificar nada.
+3. **Qué puedes modificar:** `sections/`, `assets/<categoria>/<subseccion>/` y las entradas afectadas de `data/project.json`. No modifiques `data/guide.json`, el contenedor (`index.html`, `app.js`, `model.js`, `styles.css`), `docs/` ni `scripts/` salvo encargo explícito.
+4. **Lo que no se transfiere:** `_ds/`, `github.md`, `uploads/` y los archivos auxiliares de Claude Design.
+5. `data/project.json` solo se toca en las entradas afectadas; nunca se regenera completo. `owner` es opcional.
+
+## Sistema visual
+A menos que el responsable indique lo contrario, ignora cualquier design system que Claude Design cargue o vincule al proyecto (hoy `_ds/`): no lo apliques ni a las páginas ni al contenedor. Las páginas de sección usan una base de documentación neutra y muestran el sistema que se está definiendo. No presentes valores de ese sistema como decididos si no lo están.
+
 ## Desarrollar una sección
 - Crea la página en el `suggestedPath` de la guía, como `.dc.html`. Ejemplo: `visuales.color` → `sections/visuales/color.dc.html`. No dejes también un `.html` de la misma sección.
 - Antes de `./support.js`, carga React desde `../../assets/_runtime/` (ver [data-contract](data-contract.md)). No enlaces scripts externos y no edites `support.js`.

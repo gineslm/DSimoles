@@ -16,7 +16,7 @@
 }
 ```
 
-Todos los campos anteriores son obligatorios, incluso si su valor es vacío. Estados permitidos: R/I/P/N. `review.date` usa AAAA-MM-DD o vacío. R necesita los tres campos de revisión no vacíos; N necesita motivo. El validador comprueba presencia, no veracidad ni suficiencia de la revisión.
+Todos los campos anteriores son obligatorios, incluso si su valor es vacío. `owner` es opcional en la práctica: puede quedar vacío y no condiciona ningún estado. Estados permitidos: R/I/P/N. `review.date` usa AAAA-MM-DD o vacío. R necesita los tres campos de revisión no vacíos; N necesita motivo. El validador comprueba presencia, no veracidad ni suficiencia de la revisión.
 
 ## Rutas
 Ejemplo completo:

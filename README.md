@@ -1,6 +1,6 @@
-# DSimoles
+# DSBook · DSimoles
 
-Guía de definición, contenedor de documentación y matriz de seguimiento del Design System de DSimoles. Se diseña en Claude Design y se integra mediante Claude Code y Git. Nació de una plantilla reutilizable; sus instrucciones están en [docs/plantilla.md](docs/plantilla.md).
+DSBook es el espacio de trabajo; DSimoles es el Design System que se define en él. Guía de definición, contenedor de documentación y matriz de seguimiento del Design System de DSimoles. Se diseña en Claude Design y se integra mediante Claude Code y Git. Nació de una plantilla reutilizable; sus instrucciones están en [docs/plantilla.md](docs/plantilla.md).
 
 ## Empezar
 Necesitas Python 3 para servir la web. Node.js 18 o superior permite ejecutar las comprobaciones; no hay paquetes que instalar.

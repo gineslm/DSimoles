@@ -8,6 +8,7 @@ Este es el contrato permanente entre Claude Design y Claude Code. No se rellena 
 | Página de sección | Ruta `suggestedPath` de su entrada en `data/guide.json`. |
 | Recursos propios | `assets/<categoria>/<subseccion>/`. |
 | Configuración actualizada | Entradas afectadas de `data/project.json`. |
+| Runtime de las páginas `.dc.html` | `assets/_runtime/` (React vendorizado) y `sections/<categoria>/support.js` (generado, idéntico en todas las carpetas). |
 | Cambios de la guía o del contenedor | Solo cuando sean parte explícita del trabajo. |
 
 Los propios archivos son el entregable. `notes`, `review` y `exclusionReason` recogen las decisiones que no pueden deducirse del código. Git registra las diferencias una vez integradas. Una carpeta, ZIP o acceso MCP son medios válidos si contienen los mismos archivos y conservan sus rutas.
@@ -18,6 +19,17 @@ Los propios archivos son el entregable. `notes`, `review` y `exclusionReason` re
 - Crear o vincular una página no cambia automáticamente el estado.
 - La vista Guía/Desarrollo es una preferencia de consulta, independiente de R/I/P/N.
 - El contenedor web es de solo lectura: lo que muestra es el estado del repo.
+
+## Flujo y garantías
+1. GitHub es la fuente de verdad.
+2. Claude Design lee el repo, registra su base en `github.md` (commit, versión de `CHANGELOG.md`, recuento de archivos) y compara con el repo al inicio de cada sesión. Si el repo avanzó, se detiene y sincroniza.
+3. Claude Design solo modifica `sections/`, `assets/<categoria>/<subseccion>/` y las entradas afectadas de `project.json`.
+4. Claude Code trae esas rutas y el runtime al repo local por MCP o por archivos. No copia `_ds/`, `github.md` ni `uploads/`.
+5. Si el repo avanzó, `project.json` se integra entrada a entrada y los conflictos se señalan, no se resuelven por antigüedad.
+6. Validación local: `npm run check`, `npm test` y revisión visual por una persona. Después, push según las instrucciones del equipo.
+7. Claude Code registra la integración en `CHANGELOG.md` y Claude Design sincroniza antes de la siguiente sesión.
+
+El detalle de cada lado está en [claude-design.md](claude-design.md) y [claude-code.md](claude-code.md).
 
 ## Estados
 | Transición | Condición |

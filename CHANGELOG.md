@@ -6,6 +6,10 @@ Cada entrada cita el commit que contiene los cambios; la propia entrada se añad
 
 Formato: versión · fecha (AAAA-MM-DD) · commit · IDs de sección afectados · resumen.
 
+## 0.6.0 · 2026-10-08 · (se completa tras el commit)
+Secciones: ninguna.
+Protocolo de transferencia (D4), ignorar cualquier DS cargado (D7), documentación y tests de los scripts (D9), marca DSBook · DSimoles y registro de propuestas.
+
 ## 0.5.0 · 2026-10-08 · 7676ddc
 Secciones: visuales.color.
 Etiqueta de estado sin saltos de línea (arreglo hecho en Claude Design) y guías alineadas con check.

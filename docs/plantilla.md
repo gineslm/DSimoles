@@ -1,6 +1,6 @@
 # Reutilizar la plantilla
 
-Este repositorio nació como una plantilla de DS Workspace y hoy es el proyecto DSimoles. Estas instrucciones sirven para crear otro proyecto a partir de su estructura.
+Este repositorio nació como una plantilla (DSBook) y hoy es el proyecto DSimoles. Estas instrucciones sirven para crear otro proyecto a partir de su estructura.
 
 Copia esta carpeta sin las páginas ni el contenido de DSimoles a un nuevo repositorio. Edita `projectId` (slug único) y `name` en `data/project.json`; conserva todos los estados P hasta tomar decisiones. Si partes de un proyecto usado, vacía páginas, responsables, notas, revisiones y exclusiones en `project.json`, retira su contenido específico de `sections/` y `assets/` y devuelve estados a P. Conserva la estructura de la guía.
 

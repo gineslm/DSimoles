@@ -1,0 +1,1592 @@
+{
+  "schemaVersion": 1,
+  "guideVersion": "1.0.0",
+  "projectId": "nuevo-design-system",
+  "name": "Mi Design System",
+  "sections": {
+    "fundamentos.objetivos-y-guia-de-uso": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.usuarios-del-sistema": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.productos-y-requerimientos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.ecosistema-existente": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.inventario-de-interfaces": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.principios-de-diseno": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.limites-del-sistema": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.glosario": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.registro-de-decisiones": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "fundamentos.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.color": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.tipografia": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.espaciado": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.dimensiones": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.bordes": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.forma": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.elevacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.opacidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.movimiento": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "visuales.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.capas-de-tokens": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.nomenclatura-y-alias": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.ciclo-de-vida-de-tokens": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.valores-simples-y-compuestos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.tema-claro": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.tema-oscuro": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.variantes-de-marca": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.densidad-y-plataformas": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.correspondencia-diseno-y-codigo": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.categorias-visuales-y-de-accion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.categorias-adicionales": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "tokens.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.librerias-y-licencias": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.construccion-de-iconos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.trazo-y-relleno": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.tipos-de-recursos-graficos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.iconos-y-etiquetas": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.fotografia-e-ilustracion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.recortes-y-proporciones": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.carga-formatos-y-exportacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "recursos.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.contenedores-y-reticula": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.alineacion-y-jerarquia": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.breakpoints": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.viewport-y-contenedor": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.grid-y-flexbox": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.reorganizacion-responsive": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.contenido-y-desbordamiento": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.desplazamiento-y-densidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "composicion.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.voz-tono-y-terminologia": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.titulos-etiquetas-y-acciones": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.ayudas-e-instrucciones": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.mensajes-de-interfaz": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.longitud-de-textos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.convenciones-y-formatos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.traduccion-y-pluralizacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.escrituras-de-derecha-a-izquierda": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "contenido.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.modalidades-de-entrada": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.estados-de-interaccion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.estados-de-proceso": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.gestion-del-foco": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.activacion-y-cierre": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.acciones-destructivas-y-deshacer": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.gestos-y-arrastre": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.actualizacion-y-animacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "interaccion.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.acciones": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.entrada-y-seleccion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.estructura-de-campos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.presentacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.navegacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.feedback": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.revelado-y-superposicion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.datos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "componentes.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.formularios-y-validacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.guardado-y-cancelacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.busqueda-filtros-y-resultados": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.acciones-por-lote": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.creacion-edicion-y-eliminacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.gestion-de-archivos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.estados-de-ausencia": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.errores-y-reintentos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.acceso-onboarding-y-permisos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "patrones.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.niveles-y-jerarquia": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.seleccion-del-patron": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.ubicacion-actual": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.relacion-entre-mecanismos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.navegacion-responsive": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.historial-y-enlaces-directos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.persistencia-del-contexto": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.rutas-titulos-y-foco": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "navegacion.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.estructura-general": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.listado-y-detalle": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.formularios-y-resultados": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.paneles-y-configuracion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.flujos-secuenciales": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.acceso-error-y-estados-vacios": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.titulos-y-acciones-principales": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.responsive-y-densidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "plantillas.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.tecnologias-y-dependencias": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.paquetes-y-estilos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.api-de-componentes": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.personalizacion-y-temas": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.correspondencia-diseno-y-codigo": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.documentacion-y-ejemplos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.compatibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.rendimiento": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.publicacion-y-migracion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "implementacion.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.aceptacion-y-consistencia": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.pruebas-y-regresion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.contenido-real-e-idiomas": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.temas-tamanos-y-dispositivos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.pruebas-de-usabilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.coherencia-de-entregables": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.problemas-conocidos": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "calidad.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.equipo-y-contribucion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.criterios-de-incorporacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.madurez": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.excepciones-y-priorizacion": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.versionado-y-retirada": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.comunicacion-y-soporte": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.herramientas": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.indicadores": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "gobierno.accesibilidad": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    }
+  }
+}

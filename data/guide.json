@@ -1,0 +1,2098 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "fundamentos",
+      "number": "0",
+      "title": "Fundamentos alcance y forma de uso",
+      "objective": "Define para qué existe el DS, a quién sirve y qué decisiones debe resolver.",
+      "items": [
+        {
+          "id": "fundamentos.objetivos-y-guia-de-uso",
+          "number": "0.1",
+          "title": "Objetivos y guía de uso",
+          "objective": "Definir objetivos y guía de uso para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Introducción, guía de lectura, objetivos y problemas que pretende resolver.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de objetivos y guía de uso con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/objetivos-y-guia-de-uso.html"
+        },
+        {
+          "id": "fundamentos.usuarios-del-sistema",
+          "number": "0.2",
+          "title": "Usuarios del sistema",
+          "objective": "Definir usuarios del sistema para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Usuarios del sistema: diseño, desarrollo, contenido, QA y producto.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de usuarios del sistema con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/usuarios-del-sistema.html"
+        },
+        {
+          "id": "fundamentos.productos-y-requerimientos",
+          "number": "0.3",
+          "title": "Productos y requerimientos",
+          "objective": "Definir productos y requerimientos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Productos, plataformas y canales incluidos; requerimientos técnicos, de marca, negocio y contexto.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de productos y requerimientos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/productos-y-requerimientos.html"
+        },
+        {
+          "id": "fundamentos.ecosistema-existente",
+          "number": "0.4",
+          "title": "Ecosistema existente",
+          "objective": "Definir ecosistema existente para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Ecosistema existente: productos, librerías, tecnologías y sistemas de referencia.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de ecosistema existente con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/ecosistema-existente.html"
+        },
+        {
+          "id": "fundamentos.inventario-de-interfaces",
+          "number": "0.5",
+          "title": "Inventario de interfaces",
+          "objective": "Definir inventario de interfaces para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Inventario inicial de interfaces y detección de inconsistencias.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de inventario de interfaces con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/inventario-de-interfaces.html"
+        },
+        {
+          "id": "fundamentos.principios-de-diseno",
+          "number": "0.6",
+          "title": "Principios de diseño",
+          "objective": "Definir principios de diseño para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Principios de diseño con ejemplos de su efecto en las decisiones.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de principios de diseño con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/principios-de-diseno.html"
+        },
+        {
+          "id": "fundamentos.limites-del-sistema",
+          "number": "0.7",
+          "title": "Límites del sistema",
+          "objective": "Definir límites del sistema para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Límites entre el DS compartido y las soluciones específicas de cada producto.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de límites del sistema con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/limites-del-sistema.html"
+        },
+        {
+          "id": "fundamentos.glosario",
+          "number": "0.8",
+          "title": "Glosario",
+          "objective": "Definir glosario para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Glosario: token, variante, estado, componente, patrón y plantilla.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de glosario con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/glosario.html"
+        },
+        {
+          "id": "fundamentos.registro-de-decisiones",
+          "number": "0.9",
+          "title": "Registro de decisiones",
+          "objective": "Definir registro de decisiones para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Registro de decisiones: justificación, alternativas, responsable y fecha.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de registro de decisiones con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/registro-de-decisiones.html"
+        },
+        {
+          "id": "fundamentos.accesibilidad",
+          "number": "0.10",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/fundamentos/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "visuales",
+      "number": "1",
+      "title": "Fundamentos visuales y tokens primitivos",
+      "objective": "Documenta las reglas visuales y los valores reutilizables que permiten aplicarlas.",
+      "items": [
+        {
+          "id": "visuales.color",
+          "number": "1.1",
+          "title": "Color",
+          "objective": "Definir color para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Color: paletas, escalas, neutros y criterios de construcción.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de color con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/color.html"
+        },
+        {
+          "id": "visuales.tipografia",
+          "number": "1.2",
+          "title": "Tipografía",
+          "objective": "Definir tipografía para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Tipografía: familias, alternativas, pesos, tamaños, interlineados y espaciado entre letras.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de tipografía con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/tipografia.html"
+        },
+        {
+          "id": "visuales.espaciado",
+          "number": "1.3",
+          "title": "Espaciado",
+          "objective": "Definir espaciado para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Espaciado: escala, unidad base y relaciones entre separaciones.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de espaciado con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/espaciado.html"
+        },
+        {
+          "id": "visuales.dimensiones",
+          "number": "1.4",
+          "title": "Dimensiones",
+          "objective": "Definir dimensiones para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Dimensiones: tamaños de controles, iconos y contenedores.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de dimensiones con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/dimensiones.html"
+        },
+        {
+          "id": "visuales.bordes",
+          "number": "1.5",
+          "title": "Bordes",
+          "objective": "Definir bordes para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Bordes: grosores y estilos.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de bordes con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/bordes.html"
+        },
+        {
+          "id": "visuales.forma",
+          "number": "1.6",
+          "title": "Forma",
+          "objective": "Definir forma para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Forma: radios, siluetas y geometrías especiales.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de forma con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/forma.html"
+        },
+        {
+          "id": "visuales.elevacion",
+          "number": "1.7",
+          "title": "Elevación",
+          "objective": "Definir elevación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Elevación: sombras, capas y tratamiento de superficies.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de elevación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/elevacion.html"
+        },
+        {
+          "id": "visuales.opacidad",
+          "number": "1.8",
+          "title": "Opacidad",
+          "objective": "Definir opacidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Opacidad: niveles y usos previstos.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de opacidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/opacidad.html"
+        },
+        {
+          "id": "visuales.movimiento",
+          "number": "1.9",
+          "title": "Movimiento",
+          "objective": "Definir movimiento para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Movimiento: duraciones y curvas de aceleración.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de movimiento con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/movimiento.html"
+        },
+        {
+          "id": "visuales.accesibilidad",
+          "number": "1.10",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "accessibility": "Combinaciones de contraste, legibilidad, ampliación, espaciado personalizable y alternativas a señales exclusivamente visuales.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/visuales/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "tokens",
+      "number": "2",
+      "title": "Arquitectura de tokens semántica y temas",
+      "objective": "Explica cómo los valores se convierten en decisiones con significado.",
+      "items": [
+        {
+          "id": "tokens.capas-de-tokens",
+          "number": "2.1",
+          "title": "Capas de tokens",
+          "objective": "Definir capas de tokens para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Capas: primitivos, semánticos y tokens de componente cuando aporten valor.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de capas de tokens con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/capas-de-tokens.html"
+        },
+        {
+          "id": "tokens.nomenclatura-y-alias",
+          "number": "2.2",
+          "title": "Nomenclatura y alias",
+          "objective": "Definir nomenclatura y alias para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Nomenclatura, unidades, tipos, descripciones, alias y dependencias permitidas.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de nomenclatura y alias con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/nomenclatura-y-alias.html"
+        },
+        {
+          "id": "tokens.ciclo-de-vida-de-tokens",
+          "number": "2.3",
+          "title": "Ciclo de vida de tokens",
+          "objective": "Definir ciclo de vida de tokens para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Criterios para crear, reutilizar, modificar o retirar tokens.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de ciclo de vida de tokens con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/ciclo-de-vida-de-tokens.html"
+        },
+        {
+          "id": "tokens.valores-simples-y-compuestos",
+          "number": "2.4",
+          "title": "Valores simples y compuestos",
+          "objective": "Definir valores simples y compuestos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Valores simples y compuestos, como estilos tipográficos o sombras.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de valores simples y compuestos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/valores-simples-y-compuestos.html"
+        },
+        {
+          "id": "tokens.tema-claro",
+          "number": "2.5",
+          "title": "Tema claro",
+          "objective": "Definir tema claro para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Tema claro: valores semánticos y combinaciones de referencia.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de tema claro con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/tema-claro.html"
+        },
+        {
+          "id": "tokens.tema-oscuro",
+          "number": "2.6",
+          "title": "Tema oscuro",
+          "objective": "Definir tema oscuro para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Tema oscuro: adaptación y validación de valores semánticos.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de tema oscuro con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/tema-oscuro.html"
+        },
+        {
+          "id": "tokens.variantes-de-marca",
+          "number": "2.7",
+          "title": "Variantes de marca",
+          "objective": "Definir variantes de marca para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Variantes de marca: valores compartidos y específicos.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de variantes de marca con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/variantes-de-marca.html"
+        },
+        {
+          "id": "tokens.densidad-y-plataformas",
+          "number": "2.8",
+          "title": "Densidad y plataformas",
+          "objective": "Definir densidad y plataformas para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Densidad y adaptación por plataforma según el alcance.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de densidad y plataformas con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/densidad-y-plataformas.html"
+        },
+        {
+          "id": "tokens.correspondencia-diseno-y-codigo",
+          "number": "2.9",
+          "title": "Correspondencia diseño y código",
+          "objective": "Definir correspondencia diseño y código para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Correspondencia entre variables de diseño y código; formato de intercambio y generación de archivos.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de correspondencia diseño y código con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/correspondencia-diseno-y-codigo.html"
+        },
+        {
+          "id": "tokens.categorias-visuales-y-de-accion",
+          "number": "2.10",
+          "title": "Categorías visuales y de acción",
+          "objective": "Definir categorías visuales y de acción para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Categorías: fondos, superficies, texto, iconos, bordes, separadores, acciones, enlaces, selección y foco.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de categorías visuales y de acción con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/categorias-visuales-y-de-accion.html"
+        },
+        {
+          "id": "tokens.categorias-adicionales",
+          "number": "2.11",
+          "title": "Categorías adicionales",
+          "objective": "Definir categorías adicionales para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Categorías adicionales: feedback, espaciado por función, roles tipográficos, elevación, movimiento y visualización de datos.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de categorías adicionales con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/categorias-adicionales.html"
+        },
+        {
+          "id": "tokens.accesibilidad",
+          "number": "2.12",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "accessibility": "Parejas de color válidas, estados distinguibles y comprobación en cada tema.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/tokens/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "recursos",
+      "number": "3",
+      "title": "Iconografía imágenes y recursos gráficos",
+      "objective": "Define un lenguaje gráfico coherente y las condiciones de uso de los recursos.",
+      "items": [
+        {
+          "id": "recursos.librerias-y-licencias",
+          "number": "3.1",
+          "title": "Librerías y licencias",
+          "objective": "Definir librerías y licencias para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Librerías de origen, licencias y criterios de selección.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de librerías y licencias con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/librerias-y-licencias.html"
+        },
+        {
+          "id": "recursos.construccion-de-iconos",
+          "number": "3.2",
+          "title": "Construcción de iconos",
+          "objective": "Definir construcción de iconos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Retícula, tamaños, grosor, remates y correcciones ópticas de iconos.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de construcción de iconos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/construccion-de-iconos.html"
+        },
+        {
+          "id": "recursos.trazo-y-relleno",
+          "number": "3.3",
+          "title": "Trazo y relleno",
+          "objective": "Definir trazo y relleno para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Variantes de trazo y relleno y significado de su uso.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de trazo y relleno con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/trazo-y-relleno.html"
+        },
+        {
+          "id": "recursos.tipos-de-recursos-graficos",
+          "number": "3.4",
+          "title": "Tipos de recursos gráficos",
+          "objective": "Definir tipos de recursos gráficos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Diferencias entre icono, símbolo, logotipo e ilustración.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de tipos de recursos gráficos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/tipos-de-recursos-graficos.html"
+        },
+        {
+          "id": "recursos.iconos-y-etiquetas",
+          "number": "3.5",
+          "title": "Iconos y etiquetas",
+          "objective": "Definir iconos y etiquetas para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Reglas para combinar iconos y etiquetas; creación y aprobación de nuevos iconos.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de iconos y etiquetas con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/iconos-y-etiquetas.html"
+        },
+        {
+          "id": "recursos.fotografia-e-ilustracion",
+          "number": "3.6",
+          "title": "Fotografía e ilustración",
+          "objective": "Definir fotografía e ilustración para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Dirección visual de fotografía e ilustración.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de fotografía e ilustración con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/fotografia-e-ilustracion.html"
+        },
+        {
+          "id": "recursos.recortes-y-proporciones",
+          "number": "3.7",
+          "title": "Recortes y proporciones",
+          "objective": "Definir recortes y proporciones para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Proporciones, recortes, encuadres y puntos focales.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de recortes y proporciones con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/recortes-y-proporciones.html"
+        },
+        {
+          "id": "recursos.carga-formatos-y-exportacion",
+          "number": "3.8",
+          "title": "Carga formatos y exportación",
+          "objective": "Definir carga formatos y exportación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Avatares, imágenes de sustitución, errores de carga, formatos, optimización y exportación.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de carga formatos y exportación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/carga-formatos-y-exportacion.html"
+        },
+        {
+          "id": "recursos.accesibilidad",
+          "number": "3.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/recursos/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "composicion",
+      "number": "4",
+      "title": "Composición retícula y comportamiento responsive",
+      "objective": "Define reglas de composición; las plantillas concretas se documentan en el capítulo 10.",
+      "items": [
+        {
+          "id": "composicion.contenedores-y-reticula",
+          "number": "4.1",
+          "title": "Contenedores y retícula",
+          "objective": "Definir contenedores y retícula para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Contenedores: anchos mínimos, máximos y fluidos; columnas, márgenes y separaciones.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de contenedores y retícula con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/contenedores-y-reticula.html"
+        },
+        {
+          "id": "composicion.alineacion-y-jerarquia",
+          "number": "4.2",
+          "title": "Alineación y jerarquía",
+          "objective": "Definir alineación y jerarquía para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Alineación, ritmo vertical, agrupación, proximidad y jerarquía.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de alineación y jerarquía con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/alineacion-y-jerarquia.html"
+        },
+        {
+          "id": "composicion.breakpoints",
+          "number": "4.3",
+          "title": "Breakpoints",
+          "objective": "Definir breakpoints para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Breakpoints según las necesidades del contenido.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de breakpoints con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/breakpoints.html"
+        },
+        {
+          "id": "composicion.viewport-y-contenedor",
+          "number": "4.4",
+          "title": "Viewport y contenedor",
+          "objective": "Definir viewport y contenedor para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Adaptación al viewport y, cuando proceda, al contenedor.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de viewport y contenedor con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/viewport-y-contenedor.html"
+        },
+        {
+          "id": "composicion.grid-y-flexbox",
+          "number": "4.5",
+          "title": "Grid y Flexbox",
+          "objective": "Definir grid y flexbox para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Criterios de uso complementario de CSS Grid y Flexbox.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de grid y flexbox con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/grid-y-flexbox.html"
+        },
+        {
+          "id": "composicion.reorganizacion-responsive",
+          "number": "4.6",
+          "title": "Reorganización responsive",
+          "objective": "Definir reorganización responsive para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Reorganización, apilado y cambios de distribución.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de reorganización responsive con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/reorganizacion-responsive.html"
+        },
+        {
+          "id": "composicion.contenido-y-desbordamiento",
+          "number": "4.7",
+          "title": "Contenido y desbordamiento",
+          "objective": "Definir contenido y desbordamiento para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Textos largos, traducciones, contenido variable, desbordamiento y truncamiento.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de contenido y desbordamiento con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/contenido-y-desbordamiento.html"
+        },
+        {
+          "id": "composicion.desplazamiento-y-densidad",
+          "number": "4.8",
+          "title": "Desplazamiento y densidad",
+          "objective": "Definir desplazamiento y densidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Desplazamiento, elementos fijos o adherentes y densidades cómoda o compacta.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de desplazamiento y densidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/desplazamiento-y-densidad.html"
+        },
+        {
+          "id": "composicion.accesibilidad",
+          "number": "4.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "accessibility": "Reflujo, zoom, orientación, orden de lectura y foco no oculto.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/composicion/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "contenido",
+      "number": "5",
+      "title": "Contenido lenguaje e internacionalización",
+      "objective": "Alinea el lenguaje de la interfaz con las necesidades de comprensión y de adaptación.",
+      "items": [
+        {
+          "id": "contenido.voz-tono-y-terminologia",
+          "number": "5.1",
+          "title": "Voz tono y terminología",
+          "objective": "Definir voz tono y terminología para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Voz, tono, terminología y glosario del producto.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de voz tono y terminología con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/voz-tono-y-terminologia.html"
+        },
+        {
+          "id": "contenido.titulos-etiquetas-y-acciones",
+          "number": "5.2",
+          "title": "Títulos etiquetas y acciones",
+          "objective": "Definir títulos etiquetas y acciones para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Convenciones para títulos, etiquetas, acciones y enlaces.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de títulos etiquetas y acciones con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/titulos-etiquetas-y-acciones.html"
+        },
+        {
+          "id": "contenido.ayudas-e-instrucciones",
+          "number": "5.3",
+          "title": "Ayudas e instrucciones",
+          "objective": "Definir ayudas e instrucciones para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Ayudas, instrucciones y ejemplos.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de ayudas e instrucciones con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/ayudas-e-instrucciones.html"
+        },
+        {
+          "id": "contenido.mensajes-de-interfaz",
+          "number": "5.4",
+          "title": "Mensajes de interfaz",
+          "objective": "Definir mensajes de interfaz para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Mensajes de error, confirmación, espera y ausencia de contenido.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de mensajes de interfaz con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/mensajes-de-interfaz.html"
+        },
+        {
+          "id": "contenido.longitud-de-textos",
+          "number": "5.5",
+          "title": "Longitud de textos",
+          "objective": "Definir longitud de textos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Longitudes orientativas y adaptación a espacios reducidos.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de longitud de textos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/longitud-de-textos.html"
+        },
+        {
+          "id": "contenido.convenciones-y-formatos",
+          "number": "5.6",
+          "title": "Convenciones y formatos",
+          "objective": "Definir convenciones y formatos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Mayúsculas, puntuación, abreviaturas, fechas, horas, números, unidades y monedas.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de convenciones y formatos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/convenciones-y-formatos.html"
+        },
+        {
+          "id": "contenido.traduccion-y-pluralizacion",
+          "number": "5.7",
+          "title": "Traducción y pluralización",
+          "objective": "Definir traducción y pluralización para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Traducción, pluralización y expansión del texto.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de traducción y pluralización con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/traduccion-y-pluralizacion.html"
+        },
+        {
+          "id": "contenido.escrituras-de-derecha-a-izquierda",
+          "number": "5.8",
+          "title": "Escrituras de derecha a izquierda",
+          "objective": "Definir escrituras de derecha a izquierda para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Escrituras de derecha a izquierda cuando entren en el alcance.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de escrituras de derecha a izquierda con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/escrituras-de-derecha-a-izquierda.html"
+        },
+        {
+          "id": "contenido.accesibilidad",
+          "number": "5.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "accessibility": "Lenguaje comprensible, instrucciones explícitas, enlaces descriptivos y coherencia entre etiquetas visibles y nombres accesibles.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/contenido/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "interaccion",
+      "number": "6",
+      "title": "Interacción estados y movimiento",
+      "objective": "Define el comportamiento compartido antes de especificarlo en cada componente.",
+      "items": [
+        {
+          "id": "interaccion.modalidades-de-entrada",
+          "number": "6.1",
+          "title": "Modalidades de entrada",
+          "objective": "Definir modalidades de entrada para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Entrada mediante ratón, teclado, táctil y tecnologías de apoyo.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de modalidades de entrada con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/modalidades-de-entrada.html"
+        },
+        {
+          "id": "interaccion.estados-de-interaccion",
+          "number": "6.2",
+          "title": "Estados de interacción",
+          "objective": "Definir estados de interacción para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Estados de reposo, hover, foco, pulsado, seleccionado, expandido, deshabilitado y solo lectura.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de estados de interacción con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/estados-de-interaccion.html"
+        },
+        {
+          "id": "interaccion.estados-de-proceso",
+          "number": "6.3",
+          "title": "Estados de proceso",
+          "objective": "Definir estados de proceso para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Estados de proceso: carga, éxito, error y progreso; transiciones y combinaciones válidas.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de estados de proceso con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/estados-de-proceso.html"
+        },
+        {
+          "id": "interaccion.gestion-del-foco",
+          "number": "6.4",
+          "title": "Gestión del foco",
+          "objective": "Definir gestión del foco para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Orden, visibilidad, desplazamiento y restitución del foco.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de gestión del foco con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/gestion-del-foco.html"
+        },
+        {
+          "id": "interaccion.activacion-y-cierre",
+          "number": "6.5",
+          "title": "Activación y cierre",
+          "objective": "Definir activación y cierre para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Activación, cancelación, cierre y confirmación.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de activación y cierre con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/activacion-y-cierre.html"
+        },
+        {
+          "id": "interaccion.acciones-destructivas-y-deshacer",
+          "number": "6.6",
+          "title": "Acciones destructivas y deshacer",
+          "objective": "Definir acciones destructivas y deshacer para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Acciones destructivas, reversibilidad, deshacer y prevención de acciones duplicadas.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de acciones destructivas y deshacer con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/acciones-destructivas-y-deshacer.html"
+        },
+        {
+          "id": "interaccion.gestos-y-arrastre",
+          "number": "6.7",
+          "title": "Gestos y arrastre",
+          "objective": "Definir gestos y arrastre para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Gestos y alternativas a arrastrar.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de gestos y arrastre con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/gestos-y-arrastre.html"
+        },
+        {
+          "id": "interaccion.actualizacion-y-animacion",
+          "number": "6.8",
+          "title": "Actualización y animación",
+          "objective": "Definir actualización y animación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Actualizaciones asíncronas, conservación del contexto, animaciones funcionales y duración.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de actualización y animación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/actualizacion-y-animacion.html"
+        },
+        {
+          "id": "interaccion.accesibilidad",
+          "number": "6.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "accessibility": "Operación por teclado, ausencia de trampas de foco, anuncios de cambios, límites temporales y movimiento reducido.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/interaccion/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "componentes",
+      "number": "7",
+      "title": "Catálogo de componentes",
+      "objective": "Organiza el catálogo por función y registra la composición básica o compuesta como atributo técnico.",
+      "items": [
+        {
+          "id": "componentes.acciones",
+          "number": "7.1",
+          "title": "Acciones",
+          "objective": "Definir acciones para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Acciones: botón, botón con icono, enlace, grupo de botones y botón con acción secundaria.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de acciones con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/acciones.html"
+        },
+        {
+          "id": "componentes.entrada-y-seleccion",
+          "number": "7.2",
+          "title": "Entrada y selección",
+          "objective": "Definir entrada y selección para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Entrada y selección: campo de texto, textarea, checkbox, radio, switch, select, combobox, slider y carga de archivos.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de entrada y selección con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/entrada-y-seleccion.html"
+        },
+        {
+          "id": "componentes.estructura-de-campos",
+          "number": "7.3",
+          "title": "Estructura de campos",
+          "objective": "Definir estructura de campos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Estructura de campos: etiqueta, ayuda, error, grupo de campos y fieldset.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de estructura de campos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/estructura-de-campos.html"
+        },
+        {
+          "id": "componentes.presentacion",
+          "number": "7.4",
+          "title": "Presentación",
+          "objective": "Definir presentación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Presentación: texto, icono, avatar, badge, etiqueta, tarjeta, separador y lista.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de presentación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/presentacion.html"
+        },
+        {
+          "id": "componentes.navegacion",
+          "number": "7.5",
+          "title": "Navegación",
+          "objective": "Definir navegación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Navegación: breadcrumbs, tabs, paginación, navegación lateral y barra de navegación.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de navegación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/navegacion.html"
+        },
+        {
+          "id": "componentes.feedback",
+          "number": "7.6",
+          "title": "Feedback",
+          "objective": "Definir feedback para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Feedback: alerta, mensaje de estado, toast, progreso, spinner y skeleton.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de feedback con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/feedback.html"
+        },
+        {
+          "id": "componentes.revelado-y-superposicion",
+          "number": "7.7",
+          "title": "Revelado y superposición",
+          "objective": "Definir revelado y superposición para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Revelado y superposición: accordion, disclosure, tooltip, popover, diálogo y panel lateral.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de revelado y superposición con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/revelado-y-superposicion.html"
+        },
+        {
+          "id": "componentes.datos",
+          "number": "7.8",
+          "title": "Datos",
+          "objective": "Definir datos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Datos: tabla, lista de descripción, árbol y visualizaciones según las necesidades.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de datos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/datos.html"
+        },
+        {
+          "id": "componentes.accesibilidad",
+          "number": "7.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "accessibility": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/componentes/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "patrones",
+      "number": "8",
+      "title": "Patrones de uso y flujos recurrentes",
+      "objective": "Un patrón resuelve una tarea combinando componentes y reglas.",
+      "items": [
+        {
+          "id": "patrones.formularios-y-validacion",
+          "number": "8.1",
+          "title": "Formularios y validación",
+          "objective": "Definir formularios y validación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Formularios simples y de varios pasos; validación, errores de campo y resumen de errores.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de formularios y validación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/formularios-y-validacion.html"
+        },
+        {
+          "id": "patrones.guardado-y-cancelacion",
+          "number": "8.2",
+          "title": "Guardado y cancelación",
+          "objective": "Definir guardado y cancelación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Guardado, autoguardado, cancelación y cambios sin guardar.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de guardado y cancelación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/guardado-y-cancelacion.html"
+        },
+        {
+          "id": "patrones.busqueda-filtros-y-resultados",
+          "number": "8.3",
+          "title": "Búsqueda filtros y resultados",
+          "objective": "Definir búsqueda filtros y resultados para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Búsqueda, filtros, ordenación y resultados.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de búsqueda filtros y resultados con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/busqueda-filtros-y-resultados.html"
+        },
+        {
+          "id": "patrones.acciones-por-lote",
+          "number": "8.4",
+          "title": "Acciones por lote",
+          "objective": "Definir acciones por lote para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Selección múltiple y acciones por lote.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de acciones por lote con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/acciones-por-lote.html"
+        },
+        {
+          "id": "patrones.creacion-edicion-y-eliminacion",
+          "number": "8.5",
+          "title": "Creación edición y eliminación",
+          "objective": "Definir creación edición y eliminación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Creación, edición, eliminación, recuperación, confirmaciones y acciones sensibles.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de creación edición y eliminación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/creacion-edicion-y-eliminacion.html"
+        },
+        {
+          "id": "patrones.gestion-de-archivos",
+          "number": "8.6",
+          "title": "Gestión de archivos",
+          "objective": "Definir gestión de archivos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Carga y gestión de archivos.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de gestión de archivos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/gestion-de-archivos.html"
+        },
+        {
+          "id": "patrones.estados-de-ausencia",
+          "number": "8.7",
+          "title": "Estados de ausencia",
+          "objective": "Definir estados de ausencia para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Estados vacíos, sin resultados, sin permisos y sin conexión.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de estados de ausencia con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/estados-de-ausencia.html"
+        },
+        {
+          "id": "patrones.errores-y-reintentos",
+          "number": "8.8",
+          "title": "Errores y reintentos",
+          "objective": "Definir errores y reintentos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Errores recuperables, reintentos y fallos parciales.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de errores y reintentos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/errores-y-reintentos.html"
+        },
+        {
+          "id": "patrones.acceso-onboarding-y-permisos",
+          "number": "8.9",
+          "title": "Acceso onboarding y permisos",
+          "objective": "Definir acceso onboarding y permisos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Autenticación, onboarding y permisos si entran en el alcance.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de acceso onboarding y permisos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/acceso-onboarding-y-permisos.html"
+        },
+        {
+          "id": "patrones.accesibilidad",
+          "number": "8.10",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patrones/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "navegacion",
+      "number": "9",
+      "title": "Navegación y orientación",
+      "objective": "El DS define reglas y alternativas; cada producto concreta su arquitectura de información.",
+      "items": [
+        {
+          "id": "navegacion.niveles-y-jerarquia",
+          "number": "9.1",
+          "title": "Niveles y jerarquía",
+          "objective": "Definir niveles y jerarquía para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Navegación global, local y contextual; jerarquías y profundidad.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de niveles y jerarquía con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/niveles-y-jerarquia.html"
+        },
+        {
+          "id": "navegacion.seleccion-del-patron",
+          "number": "9.2",
+          "title": "Selección del patrón",
+          "objective": "Definir selección del patrón para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Selección del patrón según cantidad de destinos y tareas.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de selección del patrón con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/seleccion-del-patron.html"
+        },
+        {
+          "id": "navegacion.ubicacion-actual",
+          "number": "9.3",
+          "title": "Ubicación actual",
+          "objective": "Definir ubicación actual para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Elemento activo y ubicación actual.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de ubicación actual con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/ubicacion-actual.html"
+        },
+        {
+          "id": "navegacion.relacion-entre-mecanismos",
+          "number": "9.4",
+          "title": "Relación entre mecanismos",
+          "objective": "Definir relación entre mecanismos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Relaciones entre menús, tabs, breadcrumbs y enlaces.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de relación entre mecanismos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/relacion-entre-mecanismos.html"
+        },
+        {
+          "id": "navegacion.navegacion-responsive",
+          "number": "9.5",
+          "title": "Navegación responsive",
+          "objective": "Definir navegación responsive para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Navegación responsive.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de navegación responsive con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/navegacion-responsive.html"
+        },
+        {
+          "id": "navegacion.historial-y-enlaces-directos",
+          "number": "9.6",
+          "title": "Historial y enlaces directos",
+          "objective": "Definir historial y enlaces directos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Volver, historial y enlaces directos.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de historial y enlaces directos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/historial-y-enlaces-directos.html"
+        },
+        {
+          "id": "navegacion.persistencia-del-contexto",
+          "number": "9.7",
+          "title": "Persistencia del contexto",
+          "objective": "Definir persistencia del contexto para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Persistencia de filtros, posición y contexto.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de persistencia del contexto con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/persistencia-del-contexto.html"
+        },
+        {
+          "id": "navegacion.rutas-titulos-y-foco",
+          "number": "9.8",
+          "title": "Rutas títulos y foco",
+          "objective": "Definir rutas títulos y foco para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Cambios de ruta, títulos de página y foco.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de rutas títulos y foco con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/rutas-titulos-y-foco.html"
+        },
+        {
+          "id": "navegacion.accesibilidad",
+          "number": "9.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "accessibility": "Regiones de navegación, salto al contenido, orden coherente y mecanismos de orientación.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/navegacion/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "plantillas",
+      "number": "10",
+      "title": "Plantillas de página y estructuras de aplicación",
+      "objective": "Ofrece composiciones de referencia que puedan adaptarse a distintas tareas.",
+      "items": [
+        {
+          "id": "plantillas.estructura-general",
+          "number": "10.1",
+          "title": "Estructura general",
+          "objective": "Definir estructura general para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Estructura general: cabecera, navegación, contenido y zonas auxiliares.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de estructura general con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/estructura-general.html"
+        },
+        {
+          "id": "plantillas.listado-y-detalle",
+          "number": "10.2",
+          "title": "Listado y detalle",
+          "objective": "Definir listado y detalle para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Listado, detalle y maestro-detalle.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de listado y detalle con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/listado-y-detalle.html"
+        },
+        {
+          "id": "plantillas.formularios-y-resultados",
+          "number": "10.3",
+          "title": "Formularios y resultados",
+          "objective": "Definir formularios y resultados para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Formulario y edición; búsqueda y resultados.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de formularios y resultados con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/formularios-y-resultados.html"
+        },
+        {
+          "id": "plantillas.paneles-y-configuracion",
+          "number": "10.4",
+          "title": "Paneles y configuración",
+          "objective": "Definir paneles y configuración para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Panel de información, configuración y preferencias.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de paneles y configuración con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/paneles-y-configuracion.html"
+        },
+        {
+          "id": "plantillas.flujos-secuenciales",
+          "number": "10.5",
+          "title": "Flujos secuenciales",
+          "objective": "Definir flujos secuenciales para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Flujos secuenciales.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de flujos secuenciales con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/flujos-secuenciales.html"
+        },
+        {
+          "id": "plantillas.acceso-error-y-estados-vacios",
+          "number": "10.6",
+          "title": "Acceso error y estados vacíos",
+          "objective": "Definir acceso error y estados vacíos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Páginas de acceso, error y ausencia de contenido.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de acceso error y estados vacíos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/acceso-error-y-estados-vacios.html"
+        },
+        {
+          "id": "plantillas.titulos-y-acciones-principales",
+          "number": "10.7",
+          "title": "Títulos y acciones principales",
+          "objective": "Definir títulos y acciones principales para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Reglas para títulos, acciones principales y contenido secundario.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de títulos y acciones principales con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/titulos-y-acciones-principales.html"
+        },
+        {
+          "id": "plantillas.responsive-y-densidad",
+          "number": "10.8",
+          "title": "Responsive y densidad",
+          "objective": "Definir responsive y densidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Variantes responsive y por densidad.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de responsive y densidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/responsive-y-densidad.html"
+        },
+        {
+          "id": "plantillas.accesibilidad",
+          "number": "10.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "accessibility": "Regiones, jerarquía de encabezados, orden de lectura y tareas completas.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/plantillas/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "implementacion",
+      "number": "11",
+      "title": "Implementación y distribución",
+      "objective": "Conecta las decisiones de diseño con los recursos que consumirán los equipos.",
+      "items": [
+        {
+          "id": "implementacion.tecnologias-y-dependencias",
+          "number": "11.1",
+          "title": "Tecnologías y dependencias",
+          "objective": "Definir tecnologías y dependencias para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Tecnologías compatibles, dependencias y criterios de adaptación de librerías.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de tecnologías y dependencias con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/tecnologias-y-dependencias.html"
+        },
+        {
+          "id": "implementacion.paquetes-y-estilos",
+          "number": "11.2",
+          "title": "Paquetes y estilos",
+          "objective": "Definir paquetes y estilos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Arquitectura de paquetes y estilos.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de paquetes y estilos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/paquetes-y-estilos.html"
+        },
+        {
+          "id": "implementacion.api-de-componentes",
+          "number": "11.3",
+          "title": "API de componentes",
+          "objective": "Definir api de componentes para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "API de componentes: propiedades, eventos y espacios de composición.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de api de componentes con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/api-de-componentes.html"
+        },
+        {
+          "id": "implementacion.personalizacion-y-temas",
+          "number": "11.4",
+          "title": "Personalización y temas",
+          "objective": "Definir personalización y temas para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Personalización permitida y límites; integración de tokens y temas.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de personalización y temas con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/personalizacion-y-temas.html"
+        },
+        {
+          "id": "implementacion.correspondencia-diseno-y-codigo",
+          "number": "11.5",
+          "title": "Correspondencia diseño y código",
+          "objective": "Definir correspondencia diseño y código para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Correspondencia entre componentes de diseño y código.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de correspondencia diseño y código con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/correspondencia-diseno-y-codigo.html"
+        },
+        {
+          "id": "implementacion.documentacion-y-ejemplos",
+          "number": "11.6",
+          "title": "Documentación y ejemplos",
+          "objective": "Definir documentación y ejemplos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Documentación y ejemplos ejecutables.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de documentación y ejemplos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/documentacion-y-ejemplos.html"
+        },
+        {
+          "id": "implementacion.compatibilidad",
+          "number": "11.7",
+          "title": "Compatibilidad",
+          "objective": "Definir compatibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Compatibilidad con navegadores y plataformas.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de compatibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/compatibilidad.html"
+        },
+        {
+          "id": "implementacion.rendimiento",
+          "number": "11.8",
+          "title": "Rendimiento",
+          "objective": "Definir rendimiento para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Rendimiento de fuentes, imágenes y componentes.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de rendimiento con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/rendimiento.html"
+        },
+        {
+          "id": "implementacion.publicacion-y-migracion",
+          "number": "11.9",
+          "title": "Publicación y migración",
+          "objective": "Definir publicación y migración para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Publicación, instalación, versiones y migración.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de publicación y migración con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/publicacion-y-migracion.html"
+        },
+        {
+          "id": "implementacion.accesibilidad",
+          "number": "11.10",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "accessibility": "Garantías de la implementación y responsabilidades de quien integra cada componente.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/implementacion/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "calidad",
+      "number": "12",
+      "title": "Validación y criterios de calidad",
+      "objective": "Establece qué evidencia se necesita antes de publicar o modificar el sistema.",
+      "items": [
+        {
+          "id": "calidad.aceptacion-y-consistencia",
+          "number": "12.1",
+          "title": "Aceptación y consistencia",
+          "objective": "Definir aceptación y consistencia para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Criterios de aceptación, revisión visual y consistencia.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de aceptación y consistencia con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/aceptacion-y-consistencia.html"
+        },
+        {
+          "id": "calidad.pruebas-y-regresion",
+          "number": "12.2",
+          "title": "Pruebas y regresión",
+          "objective": "Definir pruebas y regresión para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Pruebas de comportamiento e integración; regresión visual cuando resulte útil.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de pruebas y regresión con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/pruebas-y-regresion.html"
+        },
+        {
+          "id": "calidad.contenido-real-e-idiomas",
+          "number": "12.3",
+          "title": "Contenido real e idiomas",
+          "objective": "Definir contenido real e idiomas para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Pruebas con contenido real, extenso y traducido.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de contenido real e idiomas con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/contenido-real-e-idiomas.html"
+        },
+        {
+          "id": "calidad.temas-tamanos-y-dispositivos",
+          "number": "12.4",
+          "title": "Temas tamaños y dispositivos",
+          "objective": "Definir temas tamaños y dispositivos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Validación en temas, tamaños y dispositivos previstos.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de temas tamaños y dispositivos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/temas-tamanos-y-dispositivos.html"
+        },
+        {
+          "id": "calidad.pruebas-de-usabilidad",
+          "number": "12.5",
+          "title": "Pruebas de usabilidad",
+          "objective": "Definir pruebas de usabilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Usabilidad de componentes y patrones críticos.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de pruebas de usabilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/pruebas-de-usabilidad.html"
+        },
+        {
+          "id": "calidad.coherencia-de-entregables",
+          "number": "12.6",
+          "title": "Coherencia de entregables",
+          "objective": "Definir coherencia de entregables para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Correspondencia entre documentación, diseño y código.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de coherencia de entregables con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/coherencia-de-entregables.html"
+        },
+        {
+          "id": "calidad.problemas-conocidos",
+          "number": "12.7",
+          "title": "Problemas conocidos",
+          "objective": "Definir problemas conocidos para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Registro de problemas conocidos y limitaciones.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de problemas conocidos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/problemas-conocidos.html"
+        },
+        {
+          "id": "calidad.accesibilidad",
+          "number": "12.8",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "accessibility": "Evaluación automatizada y manual, teclado, lectores de pantalla, zoom y participación de personas con discapacidad.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/calidad/accesibilidad.html"
+        }
+      ]
+    },
+    {
+      "id": "gobierno",
+      "number": "13",
+      "title": "Gobierno adopción y evolución",
+      "objective": "Define quién mantiene el sistema y cómo incorpora las necesidades de los productos.",
+      "items": [
+        {
+          "id": "gobierno.equipo-y-contribucion",
+          "number": "13.1",
+          "title": "Equipo y contribución",
+          "objective": "Definir equipo y contribución para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Equipo responsable, responsabilidades y modelo de contribución y revisión.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de equipo y contribución con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/equipo-y-contribucion.html"
+        },
+        {
+          "id": "gobierno.criterios-de-incorporacion",
+          "number": "13.2",
+          "title": "Criterios de incorporación",
+          "objective": "Definir criterios de incorporación para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Criterios para incorporar una necesidad al sistema.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de criterios de incorporación con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/criterios-de-incorporacion.html"
+        },
+        {
+          "id": "gobierno.madurez",
+          "number": "13.3",
+          "title": "Madurez",
+          "objective": "Definir madurez para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Madurez: propuesto, experimental, estable y retirado.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de madurez con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/madurez.html"
+        },
+        {
+          "id": "gobierno.excepciones-y-priorizacion",
+          "number": "13.4",
+          "title": "Excepciones y priorización",
+          "objective": "Definir excepciones y priorización para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Gestión de excepciones, soluciones específicas y priorización del backlog.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de excepciones y priorización con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/excepciones-y-priorizacion.html"
+        },
+        {
+          "id": "gobierno.versionado-y-retirada",
+          "number": "13.5",
+          "title": "Versionado y retirada",
+          "objective": "Definir versionado y retirada para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Versionado, changelog, retirada progresiva y guías de migración.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de versionado y retirada con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/versionado-y-retirada.html"
+        },
+        {
+          "id": "gobierno.comunicacion-y-soporte",
+          "number": "13.6",
+          "title": "Comunicación y soporte",
+          "objective": "Definir comunicación y soporte para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Comunicación de cambios, formación y soporte.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de comunicación y soporte con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/comunicacion-y-soporte.html"
+        },
+        {
+          "id": "gobierno.herramientas",
+          "number": "13.7",
+          "title": "Herramientas",
+          "objective": "Definir herramientas para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Herramientas: librerías de diseño, repositorio, documentación y Storybook cuando proceda.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de herramientas con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/herramientas.html"
+        },
+        {
+          "id": "gobierno.indicadores",
+          "number": "13.8",
+          "title": "Indicadores",
+          "objective": "Definir indicadores para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Indicadores: adopción, cobertura, duplicaciones, incidencias y facilidad de uso.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de indicadores con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/indicadores.html"
+        },
+        {
+          "id": "gobierno.accesibilidad",
+          "number": "13.9",
+          "title": "Accesibilidad",
+          "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "accessibility": "Responsables de incidencias, seguimiento de deuda y revisión de regresiones.",
+          "deliverable": "Página de accesibilidad con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/gobierno/accesibilidad.html"
+        }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ DSBook es un espacio para definir, documentar y seguir un Design System. Este re
 - [Guía general de handoff](docs/handoff.md): contrato permanente de transferencia. No hay formulario por sesión.
 - [Contrato de datos y rutas](docs/data-contract.md): identidades, estados y esquema.
 - [Criterios de revisión](docs/quality.md): aceptación de contenido y aplicación.
-- [Estilo y tono de las páginas](docs/estilo-paginas.md): directrices visuales para Claude Design (propuesta pendiente de aprobación).
+- [Estilo y tono de las páginas](docs/estilo-paginas.md): directrices visuales para Claude Design (aprobadas).
 - [Scripts de comprobación](docs/scripts.md): qué comprueban `npm run check` y `npm test`, cuándo ejecutarlos y cómo leer sus errores.
 - [Propuestas y su registro](docs/propuestas/README.md): cambios acordados al sistema de trabajo y su estado (aplicada, descartada, pendiente).
 

@@ -39,6 +39,10 @@ test('Falta cargar el runtime antes de support.js', () => {
   expectFail(sandbox(d => edit(d, page, s => s.replace(/<script src="\.\.\/\.\.\/assets\/_runtime\/react-dom[^>]*><\/script>\s*/, ''))), 'debe cargar assets/_runtime/react-dom.production.min.js');
 });
 
+test('Una página .dc.html sin lang="es" falla', () => {
+  expectFail(sandbox(d => edit(d, page, s => s.replace('<html lang="es">', '<html>'))), 'lang="es"');
+});
+
 test('Scripts externos en una página .dc.html fallan', () => {
   expectFail(sandbox(d => edit(d, page, s => s.replace('<script src="./support.js">', '<script src="https://unpkg.com/x.js"></script>\n<script src="./support.js">'))), 'scripts externos');
 });

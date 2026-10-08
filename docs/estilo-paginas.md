@@ -1,6 +1,6 @@
 # Estilo y tono de las páginas de sección
 
-> **Estado: propuesta pendiente de aprobación del responsable.** Los valores salen de la página piloto (`visuales.color`) y se ajustan aquí. Hasta que se aprueben, Claude Design los usa como base y avisa de cualquier desviación.
+> **Estado: aprobada por el responsable (2026-10-08).** Los valores salen de la página piloto (`visuales.color`). Si algo choca con lo que ves en una página, avisa en lugar de decidir por tu cuenta.
 
 Estas directrices valen para las páginas `.dc.html` de `sections/`. No definen el Design System de DSimoles: son la base **neutra de documentación** (CLAUDE.md, regla 13). El sistema que se está definiendo se muestra dentro de ellas con sus propios valores, y estos se marcan como pendientes mientras no estén decididos.
 
@@ -11,28 +11,29 @@ Estas directrices valen para las páginas `.dc.html` de `sections/`. No definen 
   - Párrafos: máximo 3 líneas. Si hace falta más, es una lista o una tabla.
   - Reglas: listas de frases cortas (una idea por línea), no párrafos.
   - Etiquetas y pies de ejemplo en lugar de explicaciones largas.
-- **Lo pendiente se dice una vez y corto.** Una caja «Pendiente · …» por bloque, con lo que falta, sin justificar. No repitas la guía de `data/guide.json`: el contenedor ya la muestra.
+- **Lo pendiente se dice una vez y corto.** Una caja «Pendiente · …» por bloque (cada subtítulo h3 cuenta como bloque), con lo que falta, sin justificar.
+- **No repitas la guía.** Nada de caja «Guía» ni de ajustes como `mostrarGuia`: el contenedor ya muestra `data/guide.json`.
 - **Lenguaje directo.** Castellano, voz activa, sin relleno («es importante destacar…»).
 - Nada de contenido inventado: sin valores, resultados ni comprobaciones que no existan. Lo no decidido se muestra como hueco, no como dato.
 
 ## Estructura de cada página
-1. Cabecera: nombre de la sección, número, estado en una etiqueta.
-2. Contenido visual principal (lo que define la sección).
+1. Cabecera: nombre de la sección, número, estado en una etiqueta. Sin texto previo: lo visual va primero.
+2. Contenido visual principal (lo que define la sección), con el propósito en una frase si hace falta.
 3. Reglas breves.
 4. Ejemplos habituales y al menos un caso límite.
 5. Accesibilidad aplicable, en lista corta con los criterios que afectan.
-6. Pendientes. Sin sección de revisión redundante si el estado ya está en `project.json`.
+6. Pendientes: agrupa lo que falta, incluida la implementación (formato de tokens, destino de archivos) mientras no haya nada decidido. No hay sección de revisión: el estado está en `project.json`. «Implementación» pasa a ser sección propia solo cuando tenga contenido real.
 
 ## Márgenes y ritmo
 | Elemento | Valor |
 | --- | --- |
-| Ancho máximo del contenido | 1040 px (la página vive dentro de un iframe de ancho variable: debe ser fluida) |
+| Ancho máximo del contenedor de la página | 1040 px, para rejillas, muestras y tarjetas (la página vive dentro de un iframe de ancho variable y a ancho completo: debe ser fluida y gestionar sus propios márgenes) |
 | Relleno lateral | `clamp(20px, 4vw, 40px)` |
 | Relleno superior | `clamp(24px, 5vw, 64px)` |
 | Separación entre secciones | 48 px |
 | Separación dentro de una sección | 12–16 px |
 | Rejillas de muestras y tarjetas | huecos de 12 px (4 px entre pasos de una escala) |
-| Ancho de lectura de texto corrido | 72 caracteres (`max-width: 72ch`) en párrafos y listas |
+| Ancho de lectura de texto corrido | 72 caracteres (`max-width: 72ch`) **solo** en párrafos y listas, no en el contenedor entero |
 
 ## Tipografía
 - Familia: `system-ui, -apple-system, "Segoe UI", sans-serif`. Monoespaciada para nombres de tokens y rutas: `ui-monospace, Menlo, monospace`.
@@ -77,7 +78,7 @@ Contrastes calculados con la fórmula de WCAG 2.2 para texto normal; solo el tex
 - Contraste de texto de 4,5:1 como mínimo; verificar cualquier combinación nueva.
 - Todo lo interactivo, alcanzable por teclado con foco visible.
 - Sin animaciones; si las hubiera, respetar `prefers-reduced-motion`.
-- `lang="es"` en el documento y títulos de página descriptivos.
+- `lang="es"` en la etiqueta `<html>` del documento (lo exige `check`) y títulos de página descriptivos.
 
 ## Qué no se decide aquí
 Los valores del Design System de DSimoles (paletas, escalas, tipografía del producto, espaciado) se deciden en sus secciones (`visuales.color`, `visuales.tipografia`, `visuales.espaciado`…). Estas directrices solo fijan cómo se documentan.

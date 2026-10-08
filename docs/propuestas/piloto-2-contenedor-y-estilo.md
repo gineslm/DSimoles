@@ -24,6 +24,6 @@ Fecha: 2026-10-08 · Origen: petición del responsable tras el piloto 1. Estado 
 - Se eliminan la cabecera con título, el texto de ayuda y la tarjeta de avance. Se mantienen el modo de solo lectura (D2 del piloto 1) y la comprobación de existencia de página.
 
 ## E2 · Directrices de estilo y tono para las páginas
-**Estado: pendiente de aprobación del responsable.**
+**Estado: parcial. Directrices aprobadas (2026-10-08); pendiente rehacer `visuales.color` con ellas.**
 
-**Propuesta.** [docs/estilo-paginas.md](../estilo-paginas.md): tono visual primero, poco texto, estructura de página, márgenes, tipografía, base de color neutra con contrastes calculados y componentes recurrentes. Los valores salen de la página piloto y se ajustan; el responsable debe aprobarlos o cambiarlos.
+**Propuesta.** [docs/estilo-paginas.md](../estilo-paginas.md): tono visual primero, poco texto, estructura de página, márgenes, tipografía, base de color neutra con contrastes calculados y componentes recurrentes. Los valores salen de la página piloto. Decisiones del responsable tras el análisis de Claude Design: separar el ancho del contenedor (1040 px) del texto corrido (72ch); `lang="es"` obligatorio, vigilado por `check`; lo visual va antes que el texto; se elimina la caja «Guía» y el ajuste `mostrarGuia`; se elimina «Revisión y pendientes» y «Implementación» se funde en «Pendientes» hasta que tenga contenido; cada subtítulo h3 cuenta como bloque para la caja «Pendiente».

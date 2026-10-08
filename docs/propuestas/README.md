@@ -27,4 +27,4 @@ Una propuesta es un cambio acordado al **sistema de trabajo** (contenedor, contr
 | piloto-1 | D8 · Estado Ready | Descartada | 0.6.0 | El responsable decide no añadir la precisión; el contrato de Ready no cambia. |
 | piloto-1 | D9 · Scripts | Aplicada | 0.6.0 | Los scripts ya existían; se ampliaron y se documentaron en [scripts.md](../scripts.md). |
 | [piloto-2](piloto-2-contenedor-y-estilo.md) | E1 · Contenedor con barra lateral | Aplicada | 0.7.0 | Menú de 14 categorías y 132 subsecciones, enlaces directos y cajón en móvil. |
-| piloto-2 | E2 · Directrices de estilo y tono | Pendiente | — | Propuesta en [estilo-paginas.md](../estilo-paginas.md), a la espera de aprobación. |
+| piloto-2 | E2 · Directrices de estilo y tono | Parcial | 0.9.0 | Directrices aprobadas el 2026-10-08 ([estilo-paginas.md](../estilo-paginas.md)). Pendiente: que Claude Design rehaga `visuales.color` con ellas. |

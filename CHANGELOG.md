@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.14.0 · 2026-10-09 · (filled in after the commit)
+## 0.14.0 · 2026-10-09 · 0880de2
 Sections: none.
 Header group on the right (view tabs, separator, a magnifier that unfolds the search field, separator, previous/next) and the Guide view renamed to Info (`#/<id>/info`).
 

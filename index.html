@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Guide, documentation and tracking for a design system."><title>DSBook</title><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script></head>
-<body><a class="skip" href="#matrix">Skip to content</a>
+<body><a class="skip" href="#view">Skip to content</a>
 <div class="mobile-bar"><button id="menu-button" aria-expanded="false" aria-controls="sidebar">Menu</button><span id="mobile-title">DSBook</span></div>
 <div class="shell" id="shell">
 <aside class="sidebar" id="sidebar" aria-label="Navigation and filters">
@@ -25,13 +25,17 @@
 <label class="check"><input type="checkbox" data-filter="I"> I · In process <span class="n" data-count="I"></span></label>
 <label class="check"><input type="checkbox" data-filter="P"> P · Pending <span class="n" data-count="P"></span></label>
 <label class="check"><input type="checkbox" data-filter="N"> N · Not applicable <span class="n" data-count="N"></span></label></div>
-<div class="menu-wrap" id="menu-wrap"><div class="menu-head"><span class="panel-title">Sections</span><span class="menu-actions"><button class="text-button" id="expand" type="button" title="Expands all categories in the menu and the list">Expand all</button><button class="text-button" id="collapse" type="button" title="Collapses all categories in the menu and the list">Collapse all</button></span></div><nav class="menu" id="menu" aria-label="Sections"></nav></div>
+<div class="menu-wrap" id="menu-wrap"><div class="menu-head"><span class="panel-title">Sections</span><span class="menu-actions"><button class="text-button" id="expand" type="button" title="Expands all categories in the menu">Expand all</button><button class="text-button" id="collapse" type="button" title="Collapses all categories in the menu">Collapse all</button></span></div><nav class="menu" id="menu" aria-label="Sections"></nav></div>
 </div>
 <div class="side-foot"><p id="save-status" role="status">Reading the repository…</p><p><a href="README.md">Home</a> · <a href="CLAUDE.md">Agent guide ↗</a></p></div>
 </aside>
 <div class="scrim" id="scrim"></div>
-<main><h1 class="sr-only" id="page-title">DSBook</h1>
+<main id="main">
+<header class="page-head" id="page-head">
+<nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
+<nav class="views" id="views" aria-label="Section views" hidden></nav>
+<div class="head-actions"><span class="status-tag" id="head-status" hidden></span><a class="icon-link" id="open-link" target="_blank" rel="noopener noreferrer" aria-label="Open the page in a new tab" title="Open in a new tab" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="pager" id="pager" hidden></span></div>
+</header>
 <div id="error" class="notice error" role="alert" hidden></div>
-<section id="matrix" aria-label="Design system matrix" tabindex="-1"></section>
-<footer><span id="footer-name">DSBook</span><span>The guide orients. The project records. Git keeps the history.</span></footer>
-</main></div><noscript>This matrix needs JavaScript. The guide is also available in data/guide.json.</noscript></body></html>
+<div class="view" id="view" tabindex="-1" aria-labelledby="view-title"></div>
+</main></div><noscript>This site needs JavaScript. The guide is also available in data/guide.json.</noscript></body></html>

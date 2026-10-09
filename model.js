@@ -45,3 +45,31 @@ export function validateProject(p,g){
 }
 export function progressOf(p){const s=Object.values(p.sections),applicable=s.filter(i=>i.status!=='N').length,ready=s.filter(i=>i.status==='R').length;return{applicable,ready,total:s.length,percent:applicable?Math.round(ready/applicable*100):null,scope:s.length?Math.round(applicable/s.length*100):null};}
 export function pageCandidates(item,section){return section.page?[section.page]:[item.suggestedPath,item.suggestedPath.replace(/\.html$/,'.dc.html')];}
+// Routing: hash routes #/ (home), #/<category>, #/<subsection>[/content|guide|record]. Old #item-<id> and #cat-<id> links are translated.
+export const VIEWS=['content','guide','record'];
+export function parseRoute(hash,guide){
+  let h=String(hash||'').replace(/^#/,'');
+  const legacy=h.match(/^(?:item|cat)-(.+)$/);if(legacy)h=legacy[1];
+  try{h=decodeURIComponent(h);}catch{return{name:'notfound',hash:String(hash||'')};}
+  const parts=h.replace(/^\/+|\/+$/g,'').split('/');
+  if(!parts[0])return{name:'home'};
+  const [id,view,...rest]=parts;
+  if(rest.length)return{name:'notfound',hash:String(hash||'')};
+  if(guide.categories.some(c=>c.id===id))return view?{name:'notfound',hash:String(hash||'')}:{name:'category',id};
+  if(guide.categories.some(c=>c.items.some(i=>i.id===id))){if(view&&!VIEWS.includes(view))return{name:'notfound',hash:String(hash||'')};return{name:'section',id,view:view||null};}
+  return{name:'notfound',hash:String(hash||'')};
+}
+export function routeHash(route){return route.name==='home'?'#/':route.name==='category'?`#/${route.id}`:route.name==='section'?`#/${route.id}${route.view?`/${route.view}`:''}`:'#/';}
+export function breadcrumb(guide,route,projectName){
+  const home={label:projectName,hash:'#/'};
+  if(route.name==='home'||route.name==='notfound')return[{label:projectName}];
+  const c=route.name==='category'?guide.categories.find(x=>x.id===route.id):guide.categories.find(x=>x.items.some(i=>i.id===route.id));
+  const cat={label:`${String(c.number).padStart(2,'0')} ${c.title}`,hash:`#/${c.id}`};
+  if(route.name==='category')return[home,{label:cat.label}];
+  const i=c.items.find(x=>x.id===route.id);
+  return[home,cat,{label:`${i.number} ${i.title}`}];
+}
+export function neighbors(guide,id){const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id)),k=flat.indexOf(id);return{prev:k>0?flat[k-1]:null,next:k>=0&&k<flat.length-1?flat[k+1]:null};}
+// Default view of a section: its page if it has one and it is being worked on or ready; otherwise its guide.
+export function defaultView(entry,hasPage){return hasPage&&(entry.status==='I'||entry.status==='R')?'content':'guide';}
+export function openTasks(entry){return{pending:entry.tasks.filter(t=>t.when==='pending'),future:entry.tasks.filter(t=>t.when==='future')};}

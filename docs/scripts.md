@@ -32,13 +32,15 @@ It checks the real repository. It prints `OK: …` if everything is fine or `Err
 It does not download external content or open the browser.
 
 ## `npm test`
-Automated tests, in three files:
+Automated tests, in four files:
 - `scripts/model.test.mjs`: the logic of `model.js` (`validateGuide`, `validateProject`, `safePage`, `pageCandidates`, `progressOf`). It covers statuses, N excluded from progress, incomplete imports, dangerous paths, the catalog rules, adding a subsection, tasks (which never block R and are not counted) and the project identity.
 - `scripts/check.test.mjs`: it copies the repo to a temporary directory, breaks it in one specific way and verifies that `check` fails with the expected message (and that it passes when it should). It is the test of the `check` rules above. It does not modify your repo.
 
 Reading a failure: `not ok N - <name>` identifies the test; below it you will see the expected result against the obtained one. If a `check.test.mjs` test fails after a change of yours, either the rule no longer does what the table says or the change breaks it: decide which one it is and fix the right one.
 
 - `scripts/init.test.mjs`: runs `npm run init` in a temporary copy: it prints the usage without arguments, refuses to overwrite a project that has its own identity, `--force` starts a new valid project from the seed without touching `sections/`, and it works without `--force` while `data/` still has the seed's identity.
+
+- `scripts/container.test.mjs`: a browser smoke test. It starts a local static server and drives a headless Chrome through the DevTools protocol: the home page, a subsection with a page (iframe, tabs, status, no document scroll), the guide and record views, a subsection without a page, the status filter, old links and a wrong address, and it fails on any console error. It needs Chrome (set `DSBOOK_CHROME` to a path if it is not found) and Node 22 or later; otherwise it is **skipped**, not failed.
 
 ## `npm run init`
 Starts a project from the seed. See the [data contract](data-contract.md#seed-and-init).
@@ -48,4 +50,4 @@ npm run init -- --id my-ds --name "My Design System" [--language en] [--force]
 ```
 
 ## What they do not cover
-They do not test the browser, the container, accessibility or the content of the pages. The manual checks in [quality.md](quality.md) are for that.
+They do not test accessibility, visual design or the content of the pages. The browser smoke test only covers the container's main paths. The manual checks in [quality.md](quality.md) are for the rest.

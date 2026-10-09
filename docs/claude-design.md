@@ -24,6 +24,7 @@ Unless the responsible person says otherwise, ignore any design system that Clau
 - Before `./support.js`, load React from `../../assets/_runtime/` (see the [data contract](data-contract.md)). Do not link external scripts and do not edit `support.js`.
 - The `ds-section-id` meta must stay in the `<head>`, and `<html>` must declare `lang="en"`.
 - Do not put `<sc-for>` or `<sc-if>` directly inside `table`, `thead`, `tbody`, `tfoot`, `tr`, `colgroup`, `select` or `optgroup`. The browser moves them out when parsing the HTML and, inside the container's iframe, the runtime cannot recover them. For repeated table-like lists use `div` with `role="table"`, `role="row"` and `role="cell"`. `check` enforces this.
+- The container's header already shows the breadcrumb and the status of the section and has tabs for the guide and the record: do not put a context line, a status label, a guide box or a tasks list in the page (see [page-style.md](page-style.md)).
 - Keep the ID in `<meta name="ds-section-id">`. Adjust title, purpose, decisions, examples, accessibility, implementation and review. Do not present placeholders as finished content.
 - Put images, styles or scripts specific to the page in `assets/visuals/color/`; link them from the page with `../../assets/visuals/color/...`.
 - Use semantic HTML and local resources where reasonable. Sections must be openable independently or inside the container.

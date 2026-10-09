@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.12.0 · 2026-10-09 · (filled in after the commit)
+Sections: none.
+New container structure (pilot-3 F6–F8): one view per address with hash routes, a sticky header (breadcrumb, view tabs, read-only status, open-in-a-new-tab, previous/next), a home summary by category, category lists and three views per subsection (Content, Guide, Record with tasks). The accordions are gone. Pure routing functions in `model.js` with tests, and a browser smoke test (`scripts/container.test.mjs`, skipped without Chrome).
+
 ## 0.11.0 · 2026-10-09 · 51fc4c5
 Sections: none.
 Project-owned data contract (pilot-3 F1–F5, F9): `seed/` and `npm run init`; `schemaVersion` 2 with `language`, `seedVersion` and `tasks`; the guide validated on its own (`validateGuide`) with catalog rules for new categories and subsections; seed validated by `check`; tests for the guide, tasks and `init`. Documentation updated, including Claude Design's wider scope.

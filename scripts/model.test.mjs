@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {validateGuide,validateProject,safePage,progressOf,pageCandidates} from '../model.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {validateGuide,validateProject,safePage,progressOf,pageCandidates,parseRoute,routeHash,breadcrumb,neighbors,defaultView,openTasks} from '../model.js';
 const guide=JSON.parse(await readFile(new URL('../data/guide.json',import.meta.url))),base=JSON.parse(await readFile(new URL('../data/project.json',import.meta.url)));const copy=()=>structuredClone(base),id=guide.categories[0].items[0].id;
 test('Complete and pending template',()=>{assert.equal(validateProject(base,guide),true);assert.equal(progressOf(base).percent,0);});
 test('Not applicable is excluded from progress; all N does not divide by zero',()=>{const p=copy();for(const s of Object.values(p.sections)){s.status='N';s.exclusionReason='Out of scope';}assert.equal(progressOf(p).percent,null);assert.equal(progressOf(p).scope,0);const s=p.sections[id];s.status='R';s.review={by:'Reviewer',date:'2026-10-08',evidence:'Tests recorded'};assert.equal(progressOf(p).percent,100);validateProject(p,guide);});
@@ -40,3 +40,37 @@ test('Tasks never block Ready and are not counted in progress',()=>{
   assert.deepEqual(Object.keys(progressOf(p)).sort(),['applicable','percent','ready','scope','total']);
 });
 test('Project identity requires language and seed version',()=>{for(const k of ['language','seedVersion']){const p=copy();p[k]='';assert.throws(()=>validateProject(p,guide),/identity/);}const p=copy();p.language='English';assert.throws(()=>validateProject(p,guide),/identity/);});
+const route=h=>parseRoute(h,guide);
+test('Routes: home, category, section and views',()=>{
+  assert.deepEqual(route(''),{name:'home'});assert.deepEqual(route('#/'),{name:'home'});assert.deepEqual(route('#'),{name:'home'});
+  assert.deepEqual(route('#/visuals'),{name:'category',id:'visuals'});
+  assert.deepEqual(route('#/visuals.color'),{name:'section',id:'visuals.color',view:null});
+  assert.deepEqual(route('#/visuals.color/guide'),{name:'section',id:'visuals.color',view:'guide'});
+  assert.deepEqual(route('#/visuals.color/record'),{name:'section',id:'visuals.color',view:'record'});
+});
+test('Routes: unknown ids, views and extra segments are not found',()=>{
+  for(const h of ['#/nope','#/visuals.color/other','#/visuals.color/guide/x','#/visuals/guide','#/%E0%A4%A'])assert.equal(route(h).name,'notfound',h);
+});
+test('Routes: old #item-<id> and #cat-<id> links are translated',()=>{
+  assert.deepEqual(route('#item-visuals.color'),{name:'section',id:'visuals.color',view:null});
+  assert.deepEqual(route('#cat-visuals'),{name:'category',id:'visuals'});
+});
+test('routeHash is the inverse of parseRoute',()=>{for(const h of ['#/','#/visuals','#/visuals.color','#/visuals.color/guide','#/visuals.color/record'])assert.equal(routeHash(route(h)),h);});
+test('Breadcrumb follows category and subsection',()=>{
+  assert.deepEqual(breadcrumb(guide,route('#/'),'DSimoles'),[{label:'DSimoles'}]);
+  const c=breadcrumb(guide,route('#/visuals'),'DSimoles');assert.equal(c.length,2);assert.equal(c[0].hash,'#/');assert.match(c[1].label,/^01 /);
+  const s=breadcrumb(guide,route('#/visuals.color/guide'),'DSimoles');assert.deepEqual(s.map(x=>x.hash),['#/','#/visuals',undefined]);assert.equal(s[2].label,'1.1 Color');
+});
+test('Neighbors follow the guide order across categories',()=>{
+  const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id));
+  assert.deepEqual(neighbors(guide,flat[0]),{prev:null,next:flat[1]});
+  assert.deepEqual(neighbors(guide,flat.at(-1)),{prev:flat.at(-2),next:null});
+  const last0=guide.categories[0].items.at(-1).id;assert.equal(neighbors(guide,last0).next,guide.categories[1].items[0].id);
+});
+test('Default view: the page when it exists and the status is I or R, otherwise the guide',()=>{
+  for(const [status,hasPage,view] of [['I',true,'content'],['R',true,'content'],['P',true,'guide'],['N',true,'guide'],['I',false,'guide'],['R',false,'guide']])assert.equal(defaultView({status},hasPage),view,`${status} ${hasPage}`);
+});
+test('Open tasks are split into pending and future',()=>{
+  const e={tasks:[{text:'a',when:'future'},{text:'b',when:'pending'},{text:'c',when:'pending'}]};
+  const t=openTasks(e);assert.deepEqual(t.pending.map(x=>x.text),['b','c']);assert.deepEqual(t.future.map(x=>x.text),['a']);
+});

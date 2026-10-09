@@ -17,7 +17,7 @@ These guidelines apply to the `.dc.html` pages in `sections/`. They do not defin
 - No invented content: no values, results or checks that do not exist. What is not decided is shown as a gap, not as data.
 
 ## Structure of each page
-1. Header: section name, number, status in a label. No preceding text: the visual comes first.
+1. Header: the page's own title (`h1`) only. The container's header already shows the breadcrumb (system, category, number) and the status, read from the data, so the page must not repeat them: a hand-written status label would drift from `project.json`. No preceding text: the visual comes first.
 2. Main visual content (what defines the section), with the purpose in one sentence if needed.
 3. Short rules.
 4. Typical examples and at least one edge case.
@@ -48,7 +48,7 @@ These guidelines apply to the `.dc.html` pages in `sections/`. They do not defin
 | Secondary text | 14 px | 400 |
 | Labels, captions and notices | 12–13 px | 400–600 |
 | Tokens and paths | 13 px mono | 400 |
-- Uppercase with tracking only in short labels, such as the context line of the header (system · number · category).
+- Uppercase with tracking only in short labels (a few words), never in running text.
 
 ## Documentation color (neutral)
 Only neutral tones; the page's color comes from the swatches of the system being defined.
@@ -66,7 +66,6 @@ Only neutral tones; the page's color comes from the swatches of the system being
 Contrasts are calculated with the WCAG 2.2 formula for normal text; only text, not borders, needs 4.5:1. If a border conveys information (for example a focused field), it must reach 3:1 and carry another cue as well.
 
 ## Recurring components
-- **Status label** (R/I/P/N): 1 px border, 12 px, 600; no line break (`white-space: nowrap`).
 - **"Pending" box**: dashed `#8a8a8a` border, 13 px, 8×12 px padding.
 - **Card**: `#d4d4d4` border, 16 px padding, no shadow.
 - **Value swatch**: square with a 1:1 ratio and its name at 11–13 px below or inside; no tooltip as the only way to convey information.

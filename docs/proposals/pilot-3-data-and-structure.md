@@ -2,7 +2,7 @@
 
 Date: 2026-10-09 · Origin: request from the responsible person after pilot 2. Status of each decision in the [registry](README.md).
 
-This proposal records the confirmed decisions and makes explicit what remains open. F1–F5, F10 and the data part of F9 are applied; F6–F8 (the container's structure) and the display of tasks are not implemented yet.
+This proposal records the confirmed decisions and makes explicit what remains open. F1–F8 and F10 are applied, and so is F9 apart from Claude Design splitting Color's notes.
 
 ---
 
@@ -59,7 +59,7 @@ Claude Design can create **new categories (sections) and subsections**, and edit
 3. The `CHANGELOG` records the added IDs, and Claude Design synchronizes before the next session.
 
 ## F6 · Navigation: sticky header, hash routes and a summary home
-**Status: approved, not applied.**
+**Status: applied (0.12.0).**
 
 - The sticky header lives in the shell (`index.html`), not inside each page: `.dc.html` pages cannot read `project.json` from the sandbox and would show fixed data.
 - Header: breadcrumb (`DSimoles › 01 Visual foundations and primitive tokens › 1.1 Color`), R/I/P/N status and navigation among the three views.
@@ -70,7 +70,7 @@ Claude Design can create **new categories (sections) and subsections**, and edit
 - Nothing is stored in the browser.
 
 ## F7 · Three views per subsection
-**Status: approved, not applied.**
+**Status: applied (0.12.0).** The `.dc.html` pages still carry their hand-written context line and status label; Claude Design has to remove them (see below).
 
 - **Content:** the DS page (`.dc.html`). It is the default view if there is a page and the status is I or R; otherwise the Guide opens. With no page, it shows "No page" with the expected path.
 - **Guide:** the guide text of the subsection. It is initialized from the seed and belongs to the project (F1), so it is customized as the DS evolves.
@@ -79,12 +79,12 @@ Claude Design can create **new categories (sections) and subsections**, and edit
 - `.dc.html` pages stop carrying the hand-written context line and status label (they drift from `project.json`); the header shows them from the data. `page-style.md` is updated and Claude Design redoes its pages' headers.
 
 ## F8 · Status is changed in Claude Design; the container is read-only
-**Status: approved, not applied.**
+**Status: applied (0.12.0).**
 
 The R/I/P/N status keeps being changed where it is changed today: Claude Design edits the `data/project.json` entry, Claude Code integrates it and it goes to Git. The header and the Record view **show** it and do not modify it. The form that generates the order, the local editing server and the per-subsection record file are discarded for now. They remain possible later.
 
 ## F9 · Task queue per subsection (non-blocking)
-**Status: partial. Data contract, validator, tests and documentation applied (0.11.0); showing the queue in the Record view comes with F7, and Claude Design still has to split Color's notes into `notes` and `tasks`.**
+**Status: partial. Data contract, validator, tests and documentation applied (0.11.0); the queue is shown in the Record view (0.12.0). Claude Design still has to split Color's notes into `notes` and `tasks`.**
 
 **Reason.** Today `notes` mixes decisions and pending work (in Color, "pending: dark theme, device test, corrections for iMoles…"). The program does not know what a task is, cannot count or show them separately, and does not distinguish what prevents publishing from what will be done later.
 

@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.10.0 · 2026-10-09 · (filled in after the commit)
+## 0.10.0 · 2026-10-09 · 45ac86c
 Sections: visuals.color.
 The whole repository moves to English: guide, interface, docs and script messages. IDs, folders and paths renamed (`visuales.*` → `visuals.*`, and the other 13 categories); the correspondence is in `docs/proposals/pilot-3-id-map.md`. The Color rework is integrated structurally, with its capture boxes left empty; its prose, data and notes are still Spanish and pending translation in Claude Design. Proposal pilot-3 recorded.
 

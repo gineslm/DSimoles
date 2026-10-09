@@ -35,7 +35,7 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-3 | F4 · No update policy | Applied | 0.11.0 | Only `seedVersion` is recorded. |
 | pilot-3 | F5 · Claude Design creates sections and subsections | Applied | 0.11.0 | Extends its scope to `guide.json`, entry by entry, with rules validated by `check`. |
 | pilot-3 | F6 · Sticky header, hash routes and a summary home | Applied | 0.12.0 | Header in the shell; home as a summary by category. |
-| pilot-3 | F7 · Three views: Content, Guide, Record | Applied | 0.12.0 | Navigation among the three goes in the header. Pending: Claude Design removing the context line and status label from its pages. |
+| pilot-3 | F7 · Three views: Content, Info, Record | Applied | 0.12.0 | Navigation among the three goes in the header. Pending: Claude Design removing the context line and status label from its pages. |
 | pilot-3 | F8 · Status is changed in Claude Design | Applied | 0.12.0 | The container shows it and does not modify it. |
 | pilot-3 | F9 · Task queue per subsection | Partial | 0.12.0 | `tasks` field (`pending`/`future`) in the contract, validator and Record view; it does not block R and is not counted. Pending: Claude Design splitting Color's notes. |
 | pilot-3 | F10 · English-only repository | Applied | 0.10.0 | All content, interface, docs and script messages in English; IDs and paths renamed (see [pilot-3-id-map.md](pilot-3-id-map.md)). |
@@ -46,3 +46,4 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-4 | G4 · Sections menu with a cascading submenu | Applied | 0.13.0 | Hover a category to open all its subsections; chevrons on touch and narrow screens. |
 | pilot-4 | G5 · Header order | Applied | 0.13.0 | Breadcrumb, status, view tabs; the open-in-a-new-tab icon was removed. |
 | pilot-4 | G6 · Neutral palette and a full border for the active element | Applied | 0.13.0 | Grays only; status labels differ by fill and border, not color. |
+| pilot-4 | G7 · Right-aligned header group and the Info view | Applied | 0.14.0 | Tabs, separator, a magnifier that unfolds the search, separator, previous/next. The Guide tab is now Info (`/info`). |

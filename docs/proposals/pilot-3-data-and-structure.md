@@ -63,7 +63,7 @@ Claude Design can create **new categories (sections) and subsections**, and edit
 
 - The sticky header lives in the shell (`index.html`), not inside each page: `.dc.html` pages cannot read `project.json` from the sandbox and would show fixed data.
 - Header: breadcrumb (`DSimoles › 01 Visual foundations and primitive tokens › 1.1 Color`), R/I/P/N status and navigation among the three views.
-- Hash routes: `#/<id>` (content), `#/<id>/guide`, `#/<id>/record`. Old links `#item-<id>` and `#cat-<id>` are translated.
+- Hash routes: `#/<id>` (content), `#/<id>/info`, `#/<id>/record` (the second was first called `guide`; renamed to `info` in pilot 4, G7). Old links `#item-<id>` and `#cat-<id>` are translated.
 - Home: summary by category, without accordions, with R/I/P/N counts and bars. Each category has a light view with its subsections and statuses.
 - Previous and next buttons in the guide's order. The sidebar only affects the menu; "Expand all" and "Collapse all" act on the menu.
 - The iframe takes the window height minus the header and the page scrolls inside. On mobile, the top bar and the header become one.
@@ -72,7 +72,7 @@ Claude Design can create **new categories (sections) and subsections**, and edit
 ## F7 · Three views per subsection
 **Status: applied (0.12.0).** The `.dc.html` pages still carry their hand-written context line and status label; Claude Design has to remove them (see below).
 
-- **Content:** the DS page (`.dc.html`). It is the default view if there is a page and the status is I or R; otherwise the Guide opens. With no page, it shows "No page" with the expected path.
+- **Content:** the DS page (`.dc.html`). It is the default view if there is a page and the status is I or R; otherwise the Info view opens. With no page, it shows "No page" with the expected path.
 - **Guide:** the guide text of the subsection. It is initialized from the seed and belongs to the project (F1), so it is customized as the DS evolves.
 - **Record:** owner, notes, review and status. It is read-only (F8).
 - Navigation among the three is in the header. The current Guide/Page switch disappears.

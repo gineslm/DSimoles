@@ -46,7 +46,7 @@ export function validateProject(p,g){
 export function progressOf(p){const s=Object.values(p.sections),applicable=s.filter(i=>i.status!=='N').length,ready=s.filter(i=>i.status==='R').length;return{applicable,ready,total:s.length,percent:applicable?Math.round(ready/applicable*100):null,scope:s.length?Math.round(applicable/s.length*100):null};}
 export function pageCandidates(item,section){return section.page?[section.page]:[item.suggestedPath,item.suggestedPath.replace(/\.html$/,'.dc.html')];}
 // Routing: hash routes #/ (home), #/<category>, #/<subsection>[/content|guide|record]. Old #item-<id> and #cat-<id> links are translated.
-export const VIEWS=['content','guide','record'];
+export const VIEWS=['content','info','record'];
 export function parseRoute(hash,guide){
   let h=String(hash||'').replace(/^#/,'');
   const legacy=h.match(/^(?:item|cat)-(.+)$/);if(legacy)h=legacy[1];
@@ -71,5 +71,5 @@ export function breadcrumb(guide,route,projectName){
 }
 export function neighbors(guide,id){const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id)),k=flat.indexOf(id);return{prev:k>0?flat[k-1]:null,next:k>=0&&k<flat.length-1?flat[k+1]:null};}
 // Default view of a section: its page if it has one and it is being worked on or ready; otherwise its guide.
-export function defaultView(entry,hasPage){return hasPage&&(entry.status==='I'||entry.status==='R')?'content':'guide';}
+export function defaultView(entry,hasPage){return hasPage&&(entry.status==='I'||entry.status==='R')?'content':'info';}
 export function openTasks(entry){return{pending:entry.tasks.filter(t=>t.when==='pending'),future:entry.tasks.filter(t=>t.when==='future')};}

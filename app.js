@@ -39,9 +39,9 @@ function renderHead(item,entry,page,effective){
   const crumbs=$('#crumbs');crumbs.replaceChildren();
   breadcrumb(guide,route,project.name).forEach((c,k,all)=>{const li=el('li');if(c.hash&&k<all.length-1)li.append(link(c.hash,c.label));else{const s=el('span',{},c.label);s.setAttribute('aria-current','page');li.append(s);}crumbs.append(li);});
   const section=route.name==='section',views=$('#views'),status=$('#head-status'),pager=$('#pager');
-  views.hidden=status.hidden=pager.hidden=!section;
+  views.hidden=status.hidden=pager.hidden=$('#sep-views').hidden=$('#sep-pager').hidden=!section;
   if(!section)return;
-  views.replaceChildren(...[['content','Content'],['guide','Guide'],['record','Record']].map(([v,t])=>{const a=link(`#/${item.id}/${v}`,t);if(v===effective)a.setAttribute('aria-current','page');return a;}));
+  views.replaceChildren(...[['content','Content'],['info','Info'],['record','Record']].map(([v,t])=>{const a=link(`#/${item.id}/${v}`,t);if(v===effective)a.setAttribute('aria-current','page');return a;}));
   status.textContent=`${entry.status} · ${labels[entry.status]}`;status.dataset.value=entry.status;
   const n=neighbors(guide,item.id);pager.replaceChildren(...[['prev','‹','Previous'],['next','›','Next']].map(([k,glyph,word])=>{const id=n[k];if(!id){const s=el('span',{className:'pager-btn'},glyph);s.setAttribute('aria-disabled','true');s.setAttribute('aria-label',`${word} section (none)`);return s;}return link(`#/${id}`,glyph,{className:'pager-btn',title:`${word}: ${itemOf(id).title}`,ariaLabel:`${word} section: ${itemOf(id).title}`});}));
 }
@@ -68,7 +68,7 @@ function viewCategory(c){
   wrap.append(list);if(!items.length)wrap.append(el('p',{className:'no-results'},'No subsections match these filters. Try another status or search.'));
   wrap.append(el('p',{className:'muted small'},`${items.length} of ${c.items.length} subsections shown.`));return wrap;
 }
-function viewGuide(i){
+function viewInfo(i){
   const wrap=el('div',{className:'view-inner'});wrap.append(el('h1',{id:'view-title'},i.title));
   const grid=el('div',{className:'guide-grid'});
   for(const [title,value] of [['Objective',i.objective],['What to define',i.define],['Accessibility',i.accessibility],['Expected deliverable',i.deliverable]]){const box=el('div');box.append(el('h2',{},title),el('p',{},value));grid.append(box);}
@@ -93,7 +93,7 @@ function viewRecord(i,p,page){
 function viewContent(i,page){
   if(page){const f=el('iframe',{src:page,title:`Page for ${i.title}`,referrerPolicy:'no-referrer'});f.setAttribute('sandbox','allow-scripts');return f;}
   const wrap=el('div',{className:'view-inner'});wrap.append(el('h1',{id:'view-title'},i.title));
-  const empty=el('div',{className:'empty'});empty.append(el('h2',{},'No page yet'),el('p',{},'This section does not have a page at its expected path:'),el('code',{},i.suggestedPath),link(`#/${i.id}/guide`,'Read the guide'));wrap.append(empty);return wrap;
+  const empty=el('div',{className:'empty'});empty.append(el('h2',{},'No page yet'),el('p',{},'This section does not have a page at its expected path:'),el('code',{},i.suggestedPath),link(`#/${i.id}/info`,'Read the info'));wrap.append(empty);return wrap;
 }
 
 // ---- routing
@@ -103,7 +103,7 @@ async function renderRoute(t){
   if(route.name==='section'){
     item=itemOf(route.id);entry=project.sections[item.id];page=await resolvePage(item,entry);if(t!==routeToken)return;
     effective=route.view||defaultView(entry,!!page);
-    node=effective==='content'?viewContent(item,page):effective==='guide'?viewGuide(item):viewRecord(item,entry,page);
+    node=effective==='content'?viewContent(item,page):effective==='info'?viewInfo(item):viewRecord(item,entry,page);
     title=`${item.number} ${item.title}`;if(effective==='content'&&page)view.classList.add('frame');
   }else if(route.name==='category'){const c=catOf(route.id);node=viewCategory(c);title=c.title;}
   else if(route.name==='home')node=viewHome();
@@ -136,6 +136,10 @@ $('#menu').addEventListener('click',e=>{if(e.target.closest('a'))closeFlyout();}
 
 // ---- search (header) and status filters (rail)
 const setQuery=v=>{query=v.trim().toLocaleLowerCase('en');if($('#search').value!==v)$('#search').value=v;onFilterChange();};
+function searchOpen(open,focus){const box=$('#head-search'),input=$('#search');box.classList.toggle('open',open);input.hidden=!open;$('#search-toggle').setAttribute('aria-expanded',String(open));if(open&&focus)input.focus();}
+$('#search-toggle').onclick=()=>{const open=!$('#head-search').classList.contains('open');if(!open&&$('#search').value){setQuery('');}searchOpen(open,true);};
+$('#search').onkeydown=e=>{if(e.key==='Escape'){e.stopPropagation();setQuery('');searchOpen(false);$('#search-toggle').focus();}};
+$('#search').onblur=()=>{if(!$('#search').value)searchOpen(false);};
 $('#search').oninput=e=>setQuery(e.target.value);
 $('#panel-state').addEventListener('change',e=>{const s=e.target.dataset.filter;if(!s)return;if(s==='all')filters.clear();else filters.has(s)?filters.delete(s):filters.add(s);onFilterChange();});
 

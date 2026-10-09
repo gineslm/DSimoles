@@ -45,21 +45,21 @@ test('Routes: home, category, section and views',()=>{
   assert.deepEqual(route(''),{name:'home'});assert.deepEqual(route('#/'),{name:'home'});assert.deepEqual(route('#'),{name:'home'});
   assert.deepEqual(route('#/visuals'),{name:'category',id:'visuals'});
   assert.deepEqual(route('#/visuals.color'),{name:'section',id:'visuals.color',view:null});
-  assert.deepEqual(route('#/visuals.color/guide'),{name:'section',id:'visuals.color',view:'guide'});
+  assert.deepEqual(route('#/visuals.color/info'),{name:'section',id:'visuals.color',view:'info'});
   assert.deepEqual(route('#/visuals.color/record'),{name:'section',id:'visuals.color',view:'record'});
 });
 test('Routes: unknown ids, views and extra segments are not found',()=>{
-  for(const h of ['#/nope','#/visuals.color/other','#/visuals.color/guide/x','#/visuals/guide','#/%E0%A4%A'])assert.equal(route(h).name,'notfound',h);
+  for(const h of ['#/nope','#/visuals.color/other','#/visuals.color/info/x','#/visuals/info','#/visuals.color/guide','#/%E0%A4%A'])assert.equal(route(h).name,'notfound',h);
 });
 test('Routes: old #item-<id> and #cat-<id> links are translated',()=>{
   assert.deepEqual(route('#item-visuals.color'),{name:'section',id:'visuals.color',view:null});
   assert.deepEqual(route('#cat-visuals'),{name:'category',id:'visuals'});
 });
-test('routeHash is the inverse of parseRoute',()=>{for(const h of ['#/','#/visuals','#/visuals.color','#/visuals.color/guide','#/visuals.color/record'])assert.equal(routeHash(route(h)),h);});
+test('routeHash is the inverse of parseRoute',()=>{for(const h of ['#/','#/visuals','#/visuals.color','#/visuals.color/info','#/visuals.color/record'])assert.equal(routeHash(route(h)),h);});
 test('Breadcrumb follows category and subsection',()=>{
   assert.deepEqual(breadcrumb(guide,route('#/'),'DSimoles'),[{label:'DSimoles'}]);
   const c=breadcrumb(guide,route('#/visuals'),'DSimoles');assert.equal(c.length,2);assert.equal(c[0].hash,'#/');assert.match(c[1].label,/^01 /);
-  const s=breadcrumb(guide,route('#/visuals.color/guide'),'DSimoles');assert.deepEqual(s.map(x=>x.hash),['#/','#/visuals',undefined]);assert.equal(s[2].label,'1.1 Color');
+  const s=breadcrumb(guide,route('#/visuals.color/info'),'DSimoles');assert.deepEqual(s.map(x=>x.hash),['#/','#/visuals',undefined]);assert.equal(s[2].label,'1.1 Color');
 });
 test('Neighbors follow the guide order across categories',()=>{
   const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id));
@@ -67,8 +67,8 @@ test('Neighbors follow the guide order across categories',()=>{
   assert.deepEqual(neighbors(guide,flat.at(-1)),{prev:flat.at(-2),next:null});
   const last0=guide.categories[0].items.at(-1).id;assert.equal(neighbors(guide,last0).next,guide.categories[1].items[0].id);
 });
-test('Default view: the page when it exists and the status is I or R, otherwise the guide',()=>{
-  for(const [status,hasPage,view] of [['I',true,'content'],['R',true,'content'],['P',true,'guide'],['N',true,'guide'],['I',false,'guide'],['R',false,'guide']])assert.equal(defaultView({status},hasPage),view,`${status} ${hasPage}`);
+test('Default view: the page when it exists and the status is I or R, otherwise the info',()=>{
+  for(const [status,hasPage,view] of [['I',true,'content'],['R',true,'content'],['P',true,'info'],['N',true,'info'],['I',false,'info'],['R',false,'info']])assert.equal(defaultView({status},hasPage),view,`${status} ${hasPage}`);
 });
 test('Open tasks are split into pending and future',()=>{
   const e={tasks:[{text:'a',when:'future'},{text:'b',when:'pending'},{text:'c',when:'pending'}]};

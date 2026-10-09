@@ -73,7 +73,7 @@ test('Container: home, sections, views, filters and legacy links work without co
       assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Content');
       assert.equal(await b.eval(`document.getElementById('head-status').textContent`).then(t => t.startsWith(project.sections[withPage.id].status)), true);
       assert.equal(await b.eval(`document.documentElement.scrollHeight <= innerHeight`), true, 'the page does not add document scroll: the iframe fills the view');
-      await b.go(`#/${withPage.id}/guide`);
+      await b.go(`#/${withPage.id}/info`);
       assert.equal(await b.eval(`document.querySelectorAll('.guide-grid > div').length`), 5);
       await b.go(`#/${withPage.id}/record`);
       assert.match(await b.eval(`[...document.querySelectorAll('.record h2')].map(h => h.textContent).join()`), /Status.*Owner.*Tasks.*Review/);
@@ -82,7 +82,7 @@ test('Container: home, sections, views, filters and legacy links work without co
     }
     if (withoutPage) {
       await b.go(`#/${withoutPage.id}`);
-      assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Guide', 'a section without a page opens its guide');
+      assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Info', 'a section without a page opens its info view');
       await b.go(`#/${withoutPage.id}/content`);
       assert.equal(await b.eval(`document.querySelector('.empty h2').textContent`), 'No page yet');
     }

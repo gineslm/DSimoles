@@ -13,7 +13,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 Open http://localhost:8000. Do not open `index.html` directly: loading the JSON files requires HTTP. You can also serve the folder from any static host. No deployment or GitHub connection is included.
 
 1. Browse the home page (a summary by category) or pick a subsection in the Sections menu of the rail. Each subsection has its own address, for example `#/visuals.color`.
-2. A subsection has three views, chosen in the header: **Content** (its page), **Guide** (what to define and the acceptance criteria) and **Record** (status, owner, notes, tasks and review).
+2. A subsection has three views, chosen in the header: **Content** (its page), **Info** (the section's guide: what to define and the acceptance criteria) and **Record** (status, owner, notes, tasks and review).
 3. Create pages in Claude Design, as `.dc.html`, at the paths the guide indicates.
 4. Integrate changes following the [general handoff guide](docs/handoff.md).
 
@@ -32,7 +32,7 @@ The left side is a narrow rail with the **DSB** mark (a link to the home page) a
 ## Read-only container
 The site shows the state of the repository and does not modify it: it does not keep drafts or import or export configuration. Everything is edited in Claude Design; Claude Code integrates the changes into Git. Search, filters, the expanded state of the menu and the current address are in-memory viewing state.
 
-The main area shows one thing at a time, chosen by the address (hash routes): `#/` is the home page, `#/<category>` lists a category's subsections and `#/<subsection>[/content|guide|record]` shows a subsection. A sticky header carries the breadcrumb, the view tabs, the status (read-only), a link to open the page in a new tab and previous/next buttons. A subsection in I or R with a page opens on **Content**; any other opens on **Guide**. Old `#item-<id>` and `#cat-<id>` links are translated.
+The main area shows one thing at a time, chosen by the address (hash routes): `#/` is the home page, `#/<category>` lists a category's subsections and `#/<subsection>[/content|info|record]` shows a subsection. A sticky header carries the breadcrumb and the status (read-only) on the left, and on the right the view tabs, a magnifier that unfolds the search field, and previous/next buttons, with separators between the groups. A subsection in I or R with a page opens on **Content**; any other opens on **Info**. Old `#item-<id>` and `#cat-<id>` links are translated.
 
 The page of each subsection is deduced from the guide's suggested path. `page` in `data/project.json` is only filled in for exceptions (an external HTTPS URL or an agreed different path). The container checks whether the file exists when a subsection is opened; if it does not, the Content view says "No page yet" with the expected path.
 

@@ -20,10 +20,13 @@
 <header class="page-head" id="page-head">
 <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
 <span class="status-tag" id="head-status" hidden></span>
+<div class="head-right">
 <nav class="views" id="views" aria-label="Section views" hidden></nav>
-<span class="head-spacer"></span>
+<span class="sep" id="sep-views" aria-hidden="true" hidden></span>
+<div class="head-search" id="head-search"><button class="search-toggle" id="search-toggle" type="button" aria-expanded="false" aria-controls="search" aria-label="Search sections" title="Search sections"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input id="search" type="search" placeholder="Search sections…" aria-label="Search sections" autocomplete="off" hidden></div>
+<span class="sep" id="sep-pager" aria-hidden="true" hidden></span>
 <span class="pager" id="pager" hidden></span>
-<label class="head-search"><span class="sr-only">Search sections</span><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="search" type="search" placeholder="Search sections…" autocomplete="off"></label>
+</div>
 </header>
 <div id="error" class="notice error" role="alert" hidden></div>
 <div class="view" id="view" tabindex="-1" aria-labelledby="view-title"></div>

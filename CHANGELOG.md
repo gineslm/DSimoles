@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.14.0 · 2026-10-09 · (filled in after the commit)
+Sections: none.
+Header group on the right (view tabs, separator, a magnifier that unfolds the search field, separator, previous/next) and the Guide view renamed to Info (`#/<id>/info`).
+
 ## 0.13.0 · 2026-10-09 · cc219ae
 Sections: none.
 Container refinements (pilot-4 G1–G6): the sidebar is an icon rail with status and sections dropdowns (the Sections menu opens a submenu with all subsections on hover), search moves to the header, the progress bars move to the home page, the status follows the breadcrumb, the open-in-a-new-tab icon is gone, and the whole chrome is neutral gray with a full border marking the active element.

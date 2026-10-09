@@ -25,12 +25,17 @@ The Sections panel lists the categories only. Hovering a category (or focusing i
 ## G5 · Header order
 **Status: applied.**
 
-For a section: breadcrumb, then the status, then the view tabs (Content, Guide, Record), then previous/next and the search. The icon that opened the page in a new tab was removed.
+For a section: breadcrumb, then the status, then, on the right, the view tabs, the search and previous/next (see G7). The icon that opened the page in a new tab was removed.
 
 ## G6 · Neutral palette and a full border for the active element
 **Status: applied.**
 
 All the container chrome uses neutral grays (the same family as the page style guide) so that it does not compete with the colors the DS defines. The status labels are neutral too and differ by fill and border, not by color: Ready is solid dark, In process is mid-gray, Pending is outlined with a dashed border and Not applicable is light gray. The active element (current menu item, current category, active view tab, open rail panel) is marked with a **full 1.5 px border** and a light gray fill, instead of the wider side bar used before. Focus rings are dark. A small dot on the filter icon shows that a status filter or a search is active.
+
+## G7 · Right-aligned header group and the Info view
+**Status: applied.**
+
+On the right of the header, aligned to the edge: the view tabs, a separator, a magnifier button, a separator and the previous/next buttons. The magnifier unfolds the search field (200 px; 130 px on narrow screens). It collapses on Escape, which also clears the search and returns the focus to the button, and when it loses focus while empty; while it holds text it stays open. Pages without tabs or navigation (home, category) show only the magnifier, with no separators. The tab formerly called Guide is now **Info** and its route is `#/<id>/info` (the old `/guide` route is not found); the data file is still `guide.json`.
 
 ## Verification
 The new container was checked in a headless Chrome with real mouse events: rail geometry, hover and cascade, the panel closing after navigation, header order, mobile layout and the neutral palette (no green left in the stylesheet). The browser smoke test (`scripts/container.test.mjs`) covers the main paths.

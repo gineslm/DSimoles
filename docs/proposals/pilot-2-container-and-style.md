@@ -3,7 +3,7 @@
 Date: 2026-10-08 · Origin: request from the responsible person after pilot 1. Status of each decision in the [registry](README.md).
 
 ## E1 · The container moves to a sticky sidebar
-**Status: applied. The accordion list and the per-subsection panels described below were replaced by one view per address in pilot 3 (F6, F7); the sidebar stays.**
+**Status: applied. The accordion list and the per-subsection panels described below were replaced by one view per address in pilot 3 (F6, F7), and the expanded sidebar by an icon rail in pilot 4 (G1–G6).**
 
 **Reason.** The header accumulated data (title, help text, progress card, filters) and the useful content ended up far away. A sticky sidebar is reachable at any scroll level and lets you navigate without scrolling.
 

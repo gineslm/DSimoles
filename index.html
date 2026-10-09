@@ -1,40 +1,29 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Guide, documentation and tracking for a design system."><title>DSBook</title><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script></head>
 <body><a class="skip" href="#view">Skip to content</a>
-<div class="mobile-bar"><button id="menu-button" aria-expanded="false" aria-controls="sidebar">Menu</button><span id="mobile-title">DSBook</span></div>
 <div class="shell" id="shell">
-<aside class="sidebar" id="sidebar" aria-label="Navigation and filters">
-<div class="blk blk-brand"><button class="brand-btn" id="collapse-btn" type="button" aria-expanded="true" aria-controls="sidebar" aria-label="DSBook: collapse sidebar" title="Collapse sidebar"><span class="mark">DSB</span></button><p class="project-name" id="project-title">DSimoles</p></div>
-<div class="blk blk-progress">
-<div class="prog-head"><span class="field-title" title="Progress: Ready (R) over applicable subsections, that is, those not in N. Complexity: applicable subsections over the total in the guide.">Progress / Complexity</span><span class="count" id="result-count" role="status" title="Ready (R) over applicable subsections (R + I + P)">—</span></div>
-<progress id="progress" max="100" value="0" aria-label="Progress: ready sections over applicable ones" title="Progress: Ready (R) over applicable (not N)"></progress>
-<progress id="scope-progress" max="100" value="0" aria-label="Complexity: applicable subsections over the total" title="Complexity: applicable (not N) over the total in the guide"></progress>
-</div>
-<div class="blk blk-content">
-<label class="side-search">Search<input id="search" type="search" placeholder="Color, focus, components…"></label>
-<fieldset id="filters"><legend>Status</legend><button data-status="all" aria-pressed="true">All</button><button data-status="R" aria-pressed="false" aria-label="Ready" title="R · Ready">R <span></span></button><button data-status="I" aria-pressed="false" aria-label="In process" title="I · In process">I <span></span></button><button data-status="P" aria-pressed="false" aria-label="Pending" title="P · Pending">P <span></span></button><button data-status="N" aria-pressed="false" aria-label="Not applicable" title="N · Not applicable">N <span></span></button></fieldset>
+<aside class="rail" id="sidebar" aria-label="Navigation">
+<a class="brand-btn" id="home-link" href="#/" aria-label="DSBook: home" title="Home"><span class="mark">DSB</span></a>
 <div class="rail-actions">
-<button class="icon-btn" id="search-btn" type="button" aria-expanded="false" aria-controls="panel-search" aria-label="Search" title="Search"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-<button class="icon-btn" id="state-btn" type="button" aria-expanded="false" aria-controls="panel-state" aria-label="Filter by status" title="Status"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 6h16M7 12h10M10 18h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-<button class="icon-btn" id="sections-btn" type="button" aria-expanded="false" aria-controls="menu-wrap" aria-label="Sections" title="Sections: hover to preview, click to pin"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.4" fill="currentColor"/><circle cx="4.5" cy="12" r="1.4" fill="currentColor"/><circle cx="4.5" cy="18" r="1.4" fill="currentColor"/></svg></button>
+<button class="icon-btn" id="state-btn" type="button" aria-expanded="false" aria-controls="panel-state" aria-label="Filter by status" title="Status"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6h16M7 12h10M10 18h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<button class="icon-btn" id="sections-btn" type="button" aria-expanded="false" aria-controls="menu-wrap" aria-label="Sections" title="Sections: hover to preview, click to pin"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.4" fill="currentColor"/><circle cx="4.5" cy="12" r="1.4" fill="currentColor"/><circle cx="4.5" cy="18" r="1.4" fill="currentColor"/></svg></button>
 </div>
-<div class="panel" id="panel-search"><label class="menu-search">Search<input id="menu-search" type="search" placeholder="Color, focus, components…"></label></div>
 <div class="panel" id="panel-state" role="group" aria-label="Filter by status"><p class="panel-title">Status</p>
 <label class="check"><input type="checkbox" data-filter="all"> All</label>
 <label class="check"><input type="checkbox" data-filter="R"> R · Ready <span class="n" data-count="R"></span></label>
 <label class="check"><input type="checkbox" data-filter="I"> I · In process <span class="n" data-count="I"></span></label>
 <label class="check"><input type="checkbox" data-filter="P"> P · Pending <span class="n" data-count="P"></span></label>
 <label class="check"><input type="checkbox" data-filter="N"> N · Not applicable <span class="n" data-count="N"></span></label></div>
-<div class="menu-wrap" id="menu-wrap"><div class="menu-head"><span class="panel-title">Sections</span><span class="menu-actions"><button class="text-button" id="expand" type="button" title="Expands all categories in the menu">Expand all</button><button class="text-button" id="collapse" type="button" title="Collapses all categories in the menu">Collapse all</button></span></div><nav class="menu" id="menu" aria-label="Sections"></nav></div>
-</div>
-<div class="side-foot"><p id="save-status" role="status">Reading the repository…</p><p><a href="README.md">Home</a> · <a href="CLAUDE.md">Agent guide ↗</a></p></div>
+<div class="menu-wrap" id="menu-wrap"><p class="panel-title menu-head">Sections</p><nav class="menu" id="menu" aria-label="Sections"></nav></div>
 </aside>
-<div class="scrim" id="scrim"></div>
 <main id="main">
 <header class="page-head" id="page-head">
 <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
+<span class="status-tag" id="head-status" hidden></span>
 <nav class="views" id="views" aria-label="Section views" hidden></nav>
-<div class="head-actions"><span class="status-tag" id="head-status" hidden></span><a class="icon-link" id="open-link" target="_blank" rel="noopener noreferrer" aria-label="Open the page in a new tab" title="Open in a new tab" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="pager" id="pager" hidden></span></div>
+<span class="head-spacer"></span>
+<span class="pager" id="pager" hidden></span>
+<label class="head-search"><span class="sr-only">Search sections</span><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="search" type="search" placeholder="Search sections…" autocomplete="off"></label>
 </header>
 <div id="error" class="notice error" role="alert" hidden></div>
 <div class="view" id="view" tabindex="-1" aria-labelledby="view-title"></div>

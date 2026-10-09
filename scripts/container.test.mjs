@@ -65,6 +65,7 @@ test('Container: home, sections, views, filters and legacy links work without co
     await b.goto('');
     assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'home shows one card per category');
     assert.equal(await b.eval(`document.getElementById('views').hidden`), true, 'no view tabs on the home page');
+    assert.equal(await b.eval(`document.querySelectorAll('.meters progress').length`), 2, 'the home page shows progress and complexity');
 
     if (withPage) {
       await b.go(`#/${withPage.id}`);
@@ -88,10 +89,10 @@ test('Container: home, sections, views, filters and legacy links work without co
     await b.go('#/');
     const counts = {};
     for (const s of Object.values(project.sections)) counts[s.status] = (counts[s.status] || 0) + 1;
-    await b.eval(`document.querySelector('[data-status="I"]').click()`); await sleep(300);
+    await b.eval(`document.querySelector('[data-filter="I"]').click()`); await sleep(300);
     const withI = guide.categories.filter(c => c.items.some(i => project.sections[i.id].status === 'I')).length;
     assert.equal(await b.eval(`document.querySelectorAll('.card').length`), withI, 'the I filter trims the home page');
-    await b.eval(`document.querySelector('[data-status="all"]').click()`);
+    await b.eval(`document.querySelector('[data-filter="all"]').click()`);
     await b.go('#/nope');
     assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'Page not found');
     assert.deepEqual(b.errors, [], 'no console errors or exceptions');

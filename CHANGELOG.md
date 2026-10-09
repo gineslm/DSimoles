@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.13.0 · 2026-10-09 · (filled in after the commit)
+Sections: none.
+Container refinements (pilot-4 G1–G6): the sidebar is an icon rail with status and sections dropdowns (the Sections menu opens a submenu with all subsections on hover), search moves to the header, the progress bars move to the home page, the status follows the breadcrumb, the open-in-a-new-tab icon is gone, and the whole chrome is neutral gray with a full border marking the active element.
+
 ## 0.12.0 · 2026-10-09 · afd0455
 Sections: none.
 New container structure (pilot-3 F6–F8): one view per address with hash routes, a sticky header (breadcrumb, view tabs, read-only status, open-in-a-new-tab, previous/next), a home summary by category, category lists and three views per subsection (Content, Guide, Record with tasks). The accordions are gone. Pure routing functions in `model.js` with tests, and a browser smoke test (`scripts/container.test.mjs`, skipped without Chrome).

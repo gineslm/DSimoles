@@ -39,4 +39,10 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-3 | F8 · Status is changed in Claude Design | Applied | 0.12.0 | The container shows it and does not modify it. |
 | pilot-3 | F9 · Task queue per subsection | Partial | 0.12.0 | `tasks` field (`pending`/`future`) in the contract, validator and Record view; it does not block R and is not counted. Pending: Claude Design splitting Color's notes. |
 | pilot-3 | F10 · English-only repository | Applied | 0.10.0 | All content, interface, docs and script messages in English; IDs and paths renamed (see [pilot-3-id-map.md](pilot-3-id-map.md)). |
-| pilot-3 | Search | Pending | — | How it should work is undefined. |
+| pilot-3 | Search | Pending | — | How it should work is undefined. It now lives in the header and filters the menu, the home page and the category lists. |
+| [pilot-4](pilot-4-container-refinements.md) | G1 · The sidebar is an icon rail only | Applied | 0.13.0 | DSB is a link to the home page; the status and sections icons open dropdown panels. |
+| pilot-4 | G2 · Search lives in the header | Applied | 0.13.0 | |
+| pilot-4 | G3 · Progress bars leave the sidebar | Applied | 0.13.0 | Progress and Complexity are shown on the home page. |
+| pilot-4 | G4 · Sections menu with a cascading submenu | Applied | 0.13.0 | Hover a category to open all its subsections; chevrons on touch and narrow screens. |
+| pilot-4 | G5 · Header order | Applied | 0.13.0 | Breadcrumb, status, view tabs; the open-in-a-new-tab icon was removed. |
+| pilot-4 | G6 · Neutral palette and a full border for the active element | Applied | 0.13.0 | Grays only; status labels differ by fill and border, not color. |

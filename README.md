@@ -12,7 +12,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 Open http://localhost:8000. Do not open `index.html` directly: loading the JSON files requires HTTP. You can also serve the folder from any static host. No deployment or GitHub connection is included.
 
-1. Browse the home page (a summary by category) or pick a subsection in the sidebar menu. Each subsection has its own address, for example `#/visuals.color`.
+1. Browse the home page (a summary by category) or pick a subsection in the Sections menu of the rail. Each subsection has its own address, for example `#/visuals.color`.
 2. A subsection has three views, chosen in the header: **Content** (its page), **Guide** (what to define and the acceptance criteria) and **Record** (status, owner, notes, tasks and review).
 3. Create pages in Claude Design, as `.dc.html`, at the paths the guide indicates.
 4. Integrate changes following the [general handoff guide](docs/handoff.md).
@@ -25,9 +25,9 @@ Open http://localhost:8000. Do not open `index.html` directly: loading the JSON 
 | P · Pending | Development pending; initial status. |
 | N · Not applicable | Out of scope with an explicit justification. |
 
-Combine statuses in the sidebar and search by title, category or content. Category counts represent all their items; filters show only the matches. There are two progress bars. **Progress**: R / (R + I + P), that is, ready subsections over the applicable ones. **Complexity**: subsections that are not N over the total in the guide. If everything is N, progress shows "No applicable sections".
+Filter by status from the filter icon in the rail (statuses can be combined) and search by title, category or content from the box in the header. Category counts represent all their items; filters show only the matches. The home page shows two progress bars. **Progress**: R / (R + I + P), that is, ready subsections over the applicable ones. **Complexity**: subsections that are not N over the total in the guide. If everything is N, progress shows "No applicable sections".
 
-The sidebar has three separated blocks: **DSB** (brand; collapses and expands the sidebar), **progress** (a "Progress / Complexity" header with the ready-over-applicable count, for example 0/132, and the two progress lines) and **content** (search, status and sections). When collapsed, the content block becomes three icons (magnifier, status filter and sections) that open a panel on hover; a click pins it and Escape closes it. The status panel lets you combine R, I, P and N, and the sections panel includes "Expand all" and "Collapse all", which act on the menu.
+The left side is a narrow rail with the **DSB** mark (a link to the home page) and two icons: **status** and **sections**. Each opens a dropdown panel on hover; a click pins it and Escape closes it. In the Sections panel, hovering a category opens all its subsections in a submenu; on touch screens each category has a chevron that expands them inline. A dot on the filter icon shows that a filter or a search is active.
 
 ## Read-only container
 The site shows the state of the repository and does not modify it: it does not keep drafts or import or export configuration. Everything is edited in Claude Design; Claude Code integrates the changes into Git. Search, filters, the expanded state of the menu and the current address are in-memory viewing state.

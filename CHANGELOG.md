@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.11.0 · 2026-10-09 · (filled in after the commit)
+## 0.11.0 · 2026-10-09 · 51fc4c5
 Sections: none.
 Project-owned data contract (pilot-3 F1–F5, F9): `seed/` and `npm run init`; `schemaVersion` 2 with `language`, `seedVersion` and `tasks`; the guide validated on its own (`validateGuide`) with catalog rules for new categories and subsections; seed validated by `check`; tests for the guide, tasks and `init`. Documentation updated, including Claude Design's wider scope.
 

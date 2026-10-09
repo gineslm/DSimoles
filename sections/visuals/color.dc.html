@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="visuals.color">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Color · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="visuals.color" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#5a5a5a">DSimoles · 1.1 · Fundamentos visuales</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Color</h1>
+<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+<span style="font-size:12px;font-weight:600;padding:2px 8px;border:1px solid #1f1f1f;border-radius:4px;white-space:nowrap;flex-shrink:0">I · In process</span>
+<span style="font-size:12px;font-weight:600;padding:2px 8px;border:1px dashed #8a8a8a;border-radius:4px;white-space:nowrap;flex-shrink:0;color:#3d3d3d">Paleta fijada 2026-10-09 · pendiente de revisión</span>
+</div>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Una sola marca, cuatro colores de nivel con relleno sólido y texto blanco, y neutros con el tono de la marca.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Rellenos con texto blanco</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px">
+<sc-for list="{{ fichas }}" as="r" hint-placeholder-count="5">
+<div style="background:{{ r.base }};color:#ffffff;padding:14px;min-height:110px;display:flex;flex-direction:column;justify-content:space-between;gap:8px">
+<span style="font-size:15px;font-weight:700">{{ r.nombre }}</span>
+<span style="font-size:12px;line-height:1.4">{{ r.forma }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">{{ r.paso }} · {{ r.base }}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Primitivos</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#5a5a5a">Marca y neutros construidos en OKLCH (tono 225°). Las familias de nivel solo tienen los pasos que se usan. Columna derecha: equivalencia con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">--imoles-*</span>.</p>
+<sc-for list="{{ paletas }}" as="p" hint-placeholder-count="6">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline">
+<span style="font-size:14px;font-weight:600">{{ p.nombre }}</span>
+<span style="font-size:13px;color:#5a5a5a">{{ p.nota }}</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:4px">
+<sc-for list="{{ p.pasos }}" as="s" hint-placeholder-count="6">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+<div style="aspect-ratio:1;background:{{ s.hex }};border:1px solid #d4d4d4"></div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.3">{{ s.paso }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.3;color:#5a5a5a">{{ s.hex }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.3;color:#5a5a5a;overflow-wrap:anywhere">{{ s.token }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">De token a componente</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Cómo llega un color al estilo de un componente: el valor (primitivo) se asigna a una función (semántico) y la función se aplica a una propiedad del componente.</p>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px">
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Primitivo</span><div style="height:36px;background:#00698C"></div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">marca.600</span></div>
+<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Semántico</span><div style="height:36px;background:#00698C;display:flex;align-items:center;padding:0 10px;color:#ffffff;font-size:12px">acción principal</div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">accion.principal</span></div>
+<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Componente</span><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Hacer la foto</div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">boton.primario.fondo</span></div>
+</div>
+<p style="margin:0;font-size:14px">Los componentes usan roles semánticos. Nunca primitivos ni hex.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Roles semánticos</h2>
+<div style="overflow-x:auto">
+<div role="table" aria-label="Roles semánticos" style="min-width:600px;font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:32px 1.4fr 1fr 1.8fr">
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Muestra</span></div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Rol</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primitivo</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Uso</div>
+</div>
+<div role="rowgroup">
+<sc-for list="{{ roles }}" as="r" hint-placeholder-count="27">
+<div role="row" style="display:grid;grid-template-columns:32px 1.4fr 1fr 1.8fr">
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4"><div style="width:16px;height:16px;background:{{ r.hex }};border:1px solid #d4d4d4"></div></div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">{{ r.rol }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#3d3d3d">{{ r.prim }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">{{ r.uso }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Uso de la marca</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px"><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Hacer la foto</div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">marca.600</span> · botón, navegación, icono</span></div>
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#005471">Ver el análisis ›</span></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">marca.700</span> · texto y enlace</span></div>
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:0"><div style="width:36px;height:36px;background:#81D1F0"></div><div style="width:36px;height:36px;background:#42B3DB"></div><div style="width:36px;height:36px;background:#00698C"></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">marca.300 · 400</span> · solo logo e imagen corporativa</span></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px"><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No</span>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="display:flex;align-items:center;gap:6px;background:#00698C;color:#ffffff;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0.01 0Z"></path></svg><span>Riesgo bajo</span></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">La marca no indica nivel de riesgo.</span>
+</div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No</span>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><span style="font-size:14px;color:#00698C">Texto en marca.600</span></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">Texto de marca en 600: 4,47:1 sobre fondo.pagina.</span>
+</div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No</span>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="height:40px;padding:0 16px;border-radius:12px;background:#42B3DB;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Hacer la foto</div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">300 y 400 nunca en interfaz.</span>
+</div></div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Niveles de riesgo</h2>
+<p style="margin:0;font-size:14px">Mismo tratamiento en los cuatro niveles: relleno con texto blanco y tinte con texto oscuro de su familia.</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+<sc-for list="{{ riesgos }}" as="n" hint-placeholder-count="4">
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="background:{{ n.tinte }};padding:16px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:8px;align-self:flex-start;background:{{ n.fill }};color:#ffffff;padding:4px 10px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="{{ n.forma }}"></path></svg>
+<span>{{ n.etiqueta }}</span>
+</div>
+<p style="margin:0;font-size:14px;font-weight:600;color:{{ n.ink }}">Texto sobre tinte</p>
+<p style="margin:0;font-size:14px;color:{{ n.texto }}">Párrafo sobre tinte</p>
+</div>
+<div style="padding:12px 16px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#3d3d3d">{{ n.roles }}</div>
+</div>
+</sc-for>
+</div>
+
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Valores de interacción</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles no define estados de interacción; estos valores son una propuesta derivada de las escalas. Rellenos: hover un paso intermedio (650), pulsado el 700. Superficies (tarjeta, fila, opción): neutro.25 y neutro.100. En táctil, el pulsado es la respuesta principal; el hover solo aplica con puntero.</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<sc-for list="{{ interaccion }}" as="c" hint-placeholder-count="7">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:14px;font-weight:600">{{ c.nombre }}</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px">
+<sc-for list="{{ c.estados }}" as="s" hint-placeholder-count="5">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="min-height:{{ c.alto }};box-sizing:border-box;padding:{{ c.pad }};align-self:{{ c.alinear }};border-radius:{{ c.radio }};background:{{ s.bg }};color:{{ s.fg }};border:{{ s.borde }};outline:{{ s.outline }};outline-offset:2px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.03em">{{ c.texto }}</div>
+<span style="font-size:12px;font-weight:600">{{ s.estado }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a">{{ s.token }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>Foco visible: anillo de 2 px en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">foco.anillo</span>, separado 2 px del elemento. 5,75:1 sobre fondo.pagina (WCAG 1.4.11 y 2.4.7). Igual en todos los componentes, también sobre rellenos de color.</li>
+<li>Deshabilitado: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">deshabilitado.fondo</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">deshabilitado.texto</span> (3,97:1). Exento de contraste, pero se mantiene legible. Sin sombra.</li>
+<li>Carga: conserva el color del rol y añade indicador en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">texto.inverso</span>; no pasa a deshabilitado.</li>
+<li>Seleccionado: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">seleccion.*</span>; el borde de 2 px y el texto acompañan al color.</li>
+<li>Velo modal: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">neutro.950</span> al 48 % bajo menús y hojas.</li>
+<li>Enlace: el anillo de foco se ajusta al texto (6 px de margen lateral, radio 2 px) para no confundirse con un botón. El área táctil puede ampliarse hasta 44 px sin cambiar el anillo visible.</li>
+<li>Insignias y chips de nivel no son interactivos: no tienen estados.</li>
+</ul>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pendiente · aprobar valores. Validar en dispositivo la diferencia entre normal y pulsado.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Validación · contraste</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">WCAG 2.2: texto 4,5:1 (1.4.3); iconos, bordes de control y foco 3:1 (1.4.11). Ratios calculados con la luminancia relativa de WCAG a partir de los hex. <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">texto.deshabilitado</span> queda exento.</p>
+<div style="overflow-x:auto">
+<div role="table" aria-label="Contraste de pares de roles" style="min-width:620px;font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Par</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primer plano / fondo</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Mínimo</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Ratio</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Resultado</div>
+</div>
+<div role="rowgroup">
+<sc-for list="{{ contrastes }}" as="c" hint-placeholder-count="32">
+<div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
+<div role="cell" style="padding:6px 8px;border-bottom:1px solid #d4d4d4"><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:24px;background:{{ c.bg }};color:{{ c.fg }};border:1px solid #d4d4d4;font-weight:700;font-size:13px" aria-hidden="true">Aa</span></div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:12px;overflow-wrap:anywhere">{{ c.par }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;color:#3d3d3d">{{ c.min }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums">{{ c.ratio }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-weight:{{ c.peso }}">{{ c.res }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pendiente · prueba en dispositivo.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Validación · visión del color</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Diferencia perceptual ΔE en OKLab (×100) entre los cinco rellenos, en visión normal y con simulación de deuteranopía, protanopía y tritanopía (Machado 2009, severidad 1) y acromatopsia (solo luminancia). WCAG no fija un mínimo entre colores; exige que el color no sea la única señal (1.4.1). Objetivo práctico: 8 o más. Por debajo, la distinción la garantizan la forma y el texto de la insignia.</p>
+<div style="overflow-x:auto">
+<div role="table" aria-label="Diferencia perceptual entre rellenos por tipo de visión" style="min-width:640px;font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Par</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Normal</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Deuter.</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Protan.</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Tritan.</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Acromat.</div>
+</div>
+<div role="rowgroup">
+<sc-for list="{{ matriz }}" as="m" hint-placeholder-count="10">
+<div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">{{ m.par }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wn }}">{{ m.n }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wd }}">{{ m.de }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wp }}">{{ m.pr }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wt }}">{{ m.tr }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wa }}">{{ m.ac }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">En negrita, valores por debajo de 8. Con acromatopsia los cinco rellenos tienen luminosidad parecida porque todos llevan texto blanco a 4,5:1; solo forma y texto los distinguen.</p>
+<h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Ficha por color</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px">
+<sc-for list="{{ fichas }}" as="f" hint-placeholder-count="5">
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #d4d4d4">
+<div style="width:32px;height:32px;background:{{ f.base }};flex-shrink:0"></div>
+<div style="display:flex;flex-direction:column;min-width:0">
+<span style="font-size:15px;font-weight:600">{{ f.nombre }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5a5a5a">{{ f.paso }} · {{ f.base }}</span>
+</div>
+</div>
+<div style="padding:12px 16px;display:flex;flex-direction:column;gap:2px;font-size:13px">
+<span style="font-weight:600">Contraste</span>
+<span>Blanco sobre relleno · {{ f.blanco }}</span>
+<span>Texto 700 sobre tinte · {{ f.texto }}</span>
+<span>Relleno como icono sobre blanco · {{ f.icono }}</span>
+<span style="font-weight:600;margin-top:8px">Vecino más cercano por visión</span>
+<sc-for list="{{ f.vecinos }}" as="v" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:1fr 1.2fr 0.9fr;gap:8px">
+<span style="color:#3d3d3d">{{ v.vision }}</span>
+<span style="font-variant-numeric:tabular-nums">{{ v.texto }}</span>
+<span style="font-weight:{{ v.peso }}">{{ v.estado }}</span>
+</div>
+</sc-for>
+<span style="font-weight:600;margin-top:8px">Señal complementaria</span>
+<span>{{ f.forma }}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Resuelto por decisión del responsable (2026-10-09): los pares por debajo de 8 se cubren con forma y texto. Pendiente · prueba con usuarios o herramienta de simulación en dispositivo.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Estado actual en iMoles</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+<sc-for list="{{ ejemplos }}" as="e" hint-placeholder-count="4">
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+<div style="aspect-ratio:3/4;overflow:hidden;border:1px solid #d4d4d4;background:#f6f6f6">
+<img src="{{ e.src }}" alt="{{ e.alt }}" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top">
+</div>
+<figcaption style="display:flex;flex-direction:column;gap:2px">
+<span style="font-size:13px;font-weight:600">{{ e.titulo }}</span>
+<span style="font-size:13px;color:#5a5a5a">{{ e.texto }}</span>
+</figcaption>
+</figure>
+</sc-for>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a">Pantallas de iMoles v3 antes de aplicar esta paleta.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Correcciones para iMoles</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#5a5a5a">Cambios necesarios en el prototipo para aplicar esta paleta. Ninguno está aplicado.</p>
+<ol style="margin:0;padding-left:24px;max-width:72ch;display:flex;flex-direction:column;gap:10px">
+<sc-for list="{{ propuestas }}" as="q" hint-placeholder-count="9">
+<li style="display:flex;flex-direction:column;gap:2px">
+<span style="font-weight:600">{{ q.titulo }}</span>
+<span style="font-size:14px;color:#3d3d3d">{{ q.problema }}</span>
+<span style="font-size:14px">Propuesta · {{ q.propuesta }}</span>
+</li>
+</sc-for>
+</ol>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Formato de tokens</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Decisión para la implementación futura del design system, fuera de este repositorio: aquí no se genera ningún archivo de tokens. Formato del W3C Design Tokens Community Group (DTCG): JSON con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$value</span> y <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$type</span>; los semánticos referencian primitivos con llaves.</p>
+<pre style="margin:0;padding:16px;background:#f6f6f6;border:1px solid #d4d4d4;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5">{
+  "color": {
+    "marca": { "600": { "$type": "color", "$value": "#00698C" } },
+    "accion": {
+      "principal": { "$type": "color", "$value": "{color.marca.600}" }
+    }
+  }
+}</pre>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Pendientes</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px">
+<li>Tema oscuro y modo de alto contraste: fuera de alcance por ahora.</li>
+</ul>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+ "paletas": [
+  {
+   "nombre": "Marca",
+   "nota": "Tono 225° · color de marca = 600",
+   "pasos": [
+    {
+     "paso": "marca.900",
+     "hex": "#003142",
+     "token": ""
+    },
+    {
+     "paso": "marca.800",
+     "hex": "#00485F",
+     "token": ""
+    },
+    {
+     "paso": "marca.700",
+     "hex": "#005471",
+     "token": "sustituye --imoles-teal-dark"
+    },
+    {
+     "paso": "marca.650",
+     "hex": "#005D80",
+     "token": "nuevo · hover"
+    },
+    {
+     "paso": "marca.600",
+     "hex": "#00698C",
+     "token": "sustituye --imoles-teal"
+    },
+    {
+     "paso": "marca.500",
+     "hex": "#008EB4",
+     "token": ""
+    },
+    {
+     "paso": "marca.400",
+     "hex": "#42B3DB",
+     "token": "expresivo"
+    },
+    {
+     "paso": "marca.300",
+     "hex": "#81D1F0",
+     "token": "expresivo"
+    },
+    {
+     "paso": "marca.200",
+     "hex": "#B4E7FC",
+     "token": ""
+    },
+    {
+     "paso": "marca.100",
+     "hex": "#DAF3FE",
+     "token": "sustituye --imoles-teal-tint"
+    },
+    {
+     "paso": "marca.50",
+     "hex": "#EFF9FD",
+     "token": ""
+    }
+   ]
+  },
+  {
+   "nombre": "Neutro",
+   "nota": "Tono de marca · misma luminosidad que los neutros de iMoles",
+   "pasos": [
+    {
+     "paso": "neutro.950",
+     "hex": "#132E38",
+     "token": "--imoles-ink"
+    },
+    {
+     "paso": "neutro.800",
+     "hex": "#3F565F",
+     "token": "--imoles-body"
+    },
+    {
+     "paso": "neutro.600",
+     "hex": "#5D747E",
+     "token": "--imoles-muted"
+    },
+    {
+     "paso": "neutro.500",
+     "hex": "#6D8690",
+     "token": "--imoles-muted-icon"
+    },
+    {
+     "paso": "neutro.400",
+     "hex": "#7B9099",
+     "token": "nuevo"
+    },
+    {
+     "paso": "neutro.300",
+     "hex": "#A6B3B8",
+     "token": "--imoles-faint"
+    },
+    {
+     "paso": "neutro.200",
+     "hex": "#C0DDEA",
+     "token": "--imoles-line-strong"
+    },
+    {
+     "paso": "neutro.150",
+     "hex": "#DCE9EE",
+     "token": "--imoles-line"
+    },
+    {
+     "paso": "neutro.100",
+     "hex": "#EAF2F6",
+     "token": "--imoles-chip-neutral-bg"
+    },
+    {
+     "paso": "neutro.50",
+     "hex": "#F0F8FC",
+     "token": "--imoles-page-bg"
+    },
+    {
+     "paso": "neutro.25",
+     "hex": "#F4FAFD",
+     "token": "--imoles-tint"
+    },
+    {
+     "paso": "neutro.0",
+     "hex": "#FFFFFF",
+     "token": "--imoles-surface"
+    }
+   ]
+  },
+  {
+   "nombre": "Carmesí",
+   "nota": "Riesgo alto · error",
+   "pasos": [
+    {
+     "paso": "carmesi.900",
+     "hex": "#5C2A37",
+     "token": "--imoles-riesgo-alto-text"
+    },
+    {
+     "paso": "carmesi.700",
+     "hex": "#A8183B",
+     "token": "--imoles-riesgo-alto-ink"
+    },
+    {
+     "paso": "carmesi.650",
+     "hex": "#CC003E",
+     "token": "nuevo · hover"
+    },
+    {
+     "paso": "carmesi.600",
+     "hex": "#DB2149",
+     "token": "--imoles-riesgo-alto"
+    },
+    {
+     "paso": "carmesi.200",
+     "hex": "#F4C9D3",
+     "token": "--imoles-riesgo-alto-tint-border"
+    },
+    {
+     "paso": "carmesi.50",
+     "hex": "#FDF4F6",
+     "token": "--imoles-riesgo-alto-tint"
+    }
+   ]
+  },
+  {
+   "nombre": "Ámbar",
+   "nota": "Riesgo intermedio · aviso",
+   "pasos": [
+    {
+     "paso": "ambar.900",
+     "hex": "#57450C",
+     "token": "sustituye --imoles-riesgo-intermedio-text"
+    },
+    {
+     "paso": "ambar.700",
+     "hex": "#705700",
+     "token": "sustituye --imoles-riesgo-intermedio-ink"
+    },
+    {
+     "paso": "ambar.600",
+     "hex": "#8D6F00",
+     "token": "sustituye --imoles-riesgo-intermedio y --imoles-accion-intermedio"
+    },
+    {
+     "paso": "ambar.100",
+     "hex": "#FAF0D2",
+     "token": "sustituye --imoles-riesgo-intermedio-tint"
+    }
+   ]
+  },
+  {
+   "nombre": "Teal",
+   "nota": "Riesgo bajo",
+   "pasos": [
+    {
+     "paso": "teal.700",
+     "hex": "#0B6459",
+     "token": "sustituye --imoles-riesgo-bajo-ink"
+    },
+    {
+     "paso": "teal.600",
+     "hex": "#168072",
+     "token": "sustituye --imoles-riesgo-bajo"
+    },
+    {
+     "paso": "teal.100",
+     "hex": "#E1F3EE",
+     "token": "sustituye --imoles-riesgo-bajo-tint"
+    }
+   ]
+  },
+  {
+   "nombre": "Ciruela",
+   "nota": "No evaluable · fallo técnico",
+   "pasos": [
+    {
+     "paso": "ciruela.700",
+     "hex": "#5E1F5A",
+     "token": "sustituye --imoles-no-evaluable-ink y -text"
+    },
+    {
+     "paso": "ciruela.600",
+     "hex": "#6C2768",
+     "token": "sustituye --imoles-no-evaluable"
+    },
+    {
+     "paso": "ciruela.100",
+     "hex": "#FAEAF8",
+     "token": "sustituye --imoles-no-evaluable-tint"
+    }
+   ]
+  }
+ ],
+ "roles": [
+  {
+   "hex": "#132E38",
+   "rol": "texto.principal",
+   "prim": "neutro.950",
+   "uso": "Titulares y texto activo"
+  },
+  {
+   "hex": "#3F565F",
+   "rol": "texto.cuerpo",
+   "prim": "neutro.800",
+   "uso": "Párrafos; texto de chip neutro"
+  },
+  {
+   "hex": "#5D747E",
+   "rol": "texto.secundario",
+   "prim": "neutro.600",
+   "uso": "Metadatos y pies"
+  },
+  {
+   "hex": "#A6B3B8",
+   "rol": "texto.deshabilitado",
+   "prim": "neutro.300",
+   "uso": "Solo texto de controles deshabilitados · exento de contraste"
+  },
+  {
+   "hex": "#FFFFFF",
+   "rol": "texto.inverso",
+   "prim": "neutro.0",
+   "uso": "Texto sobre rellenos de marca y riesgo"
+  },
+  {
+   "hex": "#6D8690",
+   "rol": "icono.inactivo",
+   "prim": "neutro.500",
+   "uso": "Iconos inactivos · 3,85:1, no apto para texto"
+  },
+  {
+   "hex": "#F0F8FC",
+   "rol": "fondo.pagina",
+   "prim": "neutro.50",
+   "uso": "Fondo de pantalla"
+  },
+  {
+   "hex": "#FFFFFF",
+   "rol": "fondo.superficie",
+   "prim": "neutro.0",
+   "uso": "Tarjetas y hojas"
+  },
+  {
+   "hex": "#F4FAFD",
+   "rol": "fondo.tinte",
+   "prim": "neutro.25",
+   "uso": "Bloques de apoyo"
+  },
+  {
+   "hex": "#DCE9EE",
+   "rol": "borde.sutil",
+   "prim": "neutro.150",
+   "uso": "Separadores y contorno de tarjeta"
+  },
+  {
+   "hex": "#C0DDEA",
+   "rol": "borde.fuerte",
+   "prim": "neutro.200",
+   "uso": "Contorno con más peso, no informativo"
+  },
+  {
+   "hex": "#7B9099",
+   "rol": "borde.control",
+   "prim": "neutro.400",
+   "uso": "Contorno de campo y opción sin seleccionar"
+  },
+  {
+   "hex": "#00698C",
+   "rol": "borde.foco",
+   "prim": "marca.600",
+   "uso": "Campo enfocado"
+  },
+  {
+   "hex": "#EAF2F6",
+   "rol": "chip.neutro.fondo",
+   "prim": "neutro.100",
+   "uso": "Chip próxima / pendiente / en curso"
+  },
+  {
+   "hex": "#00698C",
+   "rol": "marca.principal",
+   "prim": "marca.600",
+   "uso": "Marca, navegación, iconos de marca"
+  },
+  {
+   "hex": "#005471",
+   "rol": "marca.texto",
+   "prim": "marca.700",
+   "uso": "Texto y enlaces de marca"
+  },
+  {
+   "hex": "#DAF3FE",
+   "rol": "marca.tinte",
+   "prim": "marca.100",
+   "uso": "Fondo de marca suave"
+  },
+  {
+   "hex": "#42B3DB",
+   "rol": "marca.expresiva",
+   "prim": "marca.300 / 400",
+   "uso": "Bitono de logo o imagen corporativa; nunca interfaz"
+  },
+  {
+   "hex": "#00698C",
+   "rol": "accion.principal",
+   "prim": "marca.600",
+   "uso": "Botón primario y acciones ejecutables"
+  },
+  {
+   "hex": "#DB2149",
+   "rol": "accion.alerta",
+   "prim": "carmesi.600",
+   "uso": "Solo pedir cita por riesgo alto"
+  },
+  {
+   "hex": "#DAF3FE",
+   "rol": "seleccion.fondo",
+   "prim": "marca.100",
+   "uso": "Opción seleccionada"
+  },
+  {
+   "hex": "#00698C",
+   "rol": "seleccion.borde",
+   "prim": "marca.600",
+   "uso": "Opción seleccionada"
+  },
+  {
+   "hex": "#005471",
+   "rol": "seleccion.texto",
+   "prim": "marca.700",
+   "uso": "Opción seleccionada"
+  },
+  {
+   "hex": "#EAF2F6",
+   "rol": "estado.info.fondo",
+   "prim": "neutro.100",
+   "uso": "Aviso informativo"
+  },
+  {
+   "hex": "#3F565F",
+   "rol": "estado.info.etiqueta",
+   "prim": "neutro.800",
+   "uso": "Etiqueta del aviso informativo"
+  },
+  {
+   "hex": "#FAF0D2",
+   "rol": "estado.aviso.*",
+   "prim": "ambar.100 / 700 / 900",
+   "uso": "Aviso de interfaz"
+  },
+  {
+   "hex": "#FDF4F6",
+   "rol": "estado.error.*",
+   "prim": "carmesi.50 / 700 / 900",
+   "uso": "Error de interfaz"
+  },
+  {
+   "hex": "#005D80",
+   "rol": "accion.principal.hover",
+   "prim": "marca.650",
+   "uso": "Botón primario · puntero encima"
+  },
+  {
+   "hex": "#005471",
+   "rol": "accion.principal.pulsado",
+   "prim": "marca.700",
+   "uso": "Botón primario · pulsado"
+  },
+  {
+   "hex": "#CC003E",
+   "rol": "accion.alerta.hover",
+   "prim": "carmesi.650",
+   "uso": "Pedir cita · puntero encima"
+  },
+  {
+   "hex": "#A8183B",
+   "rol": "accion.alerta.pulsado",
+   "prim": "carmesi.700",
+   "uso": "Pedir cita · pulsado"
+  },
+  {
+   "hex": "#EFF9FD",
+   "rol": "accion.secundaria.hover",
+   "prim": "marca.50",
+   "uso": "Botón secundario de marca · fondo"
+  },
+  {
+   "hex": "#DAF3FE",
+   "rol": "accion.secundaria.pulsado",
+   "prim": "marca.100",
+   "uso": "Botón secundario de marca · fondo"
+  },
+  {
+   "hex": "#F4FAFD",
+   "rol": "superficie.hover",
+   "prim": "neutro.25",
+   "uso": "Tarjeta, fila y botón neutro"
+  },
+  {
+   "hex": "#EAF2F6",
+   "rol": "superficie.pulsado",
+   "prim": "neutro.100",
+   "uso": "Tarjeta, fila, opción y botón neutro"
+  },
+  {
+   "hex": "#6D8690",
+   "rol": "borde.control.hover",
+   "prim": "neutro.500",
+   "uso": "Campo y opción · puntero encima"
+  },
+  {
+   "hex": "#00485F",
+   "rol": "enlace.hover",
+   "prim": "marca.800",
+   "uso": "Enlace · con subrayado"
+  },
+  {
+   "hex": "#003142",
+   "rol": "enlace.pulsado",
+   "prim": "marca.900",
+   "uso": "Enlace pulsado"
+  },
+  {
+   "hex": "#00698C",
+   "rol": "foco.anillo",
+   "prim": "marca.600",
+   "uso": "Anillo de 2 px separado 2 px del elemento"
+  },
+  {
+   "hex": "#DCE9EE",
+   "rol": "deshabilitado.fondo",
+   "prim": "neutro.150",
+   "uso": "Relleno de control deshabilitado"
+  },
+  {
+   "hex": "#5D747E",
+   "rol": "deshabilitado.texto",
+   "prim": "neutro.600",
+   "uso": "Texto de control deshabilitado"
+  },
+  {
+   "hex": "#132E38",
+   "rol": "velo.modal",
+   "prim": "neutro.950 · 48 %",
+   "uso": "Capa bajo menús y hojas modales"
+  }
+ ],
+ "riesgos": [
+  {
+   "etiqueta": "Riesgo alto",
+   "forma": "M12 3 L22 20 L2 20 Z",
+   "fill": "#DB2149",
+   "tinte": "#FDF4F6",
+   "ink": "#A8183B",
+   "texto": "#5C2A37",
+   "roles": "riesgo.alto.relleno · .texto · .tinte · .parrafo"
+  },
+  {
+   "etiqueta": "Riesgo intermedio",
+   "forma": "M12 2 L22 12 L12 22 L2 12 Z",
+   "fill": "#8D6F00",
+   "tinte": "#FAF0D2",
+   "ink": "#705700",
+   "texto": "#57450C",
+   "roles": "riesgo.intermedio.relleno · .texto · .tinte · .parrafo"
+  },
+  {
+   "etiqueta": "Riesgo bajo",
+   "forma": "M12 2a10 10 0 1 0 0.01 0Z",
+   "fill": "#168072",
+   "tinte": "#E1F3EE",
+   "ink": "#0B6459",
+   "texto": "#0B6459",
+   "roles": "riesgo.bajo.relleno · .texto · .tinte"
+  },
+  {
+   "etiqueta": "No evaluable",
+   "forma": "M12 2a10 10 0 1 0 0.01 0Z M12 6.5c-2 0-3.4 1.3-3.4 3.1h2c0-.8.6-1.3 1.4-1.3s1.4.5 1.4 1.2c0 1.4-2.4 1.5-2.4 4h2c0-1.7 2.4-2 2.4-4.1 0-1.7-1.4-2.9-3.4-2.9Z M11 15.5h2v2h-2Z",
+   "fill": "#6C2768",
+   "tinte": "#FAEAF8",
+   "ink": "#5E1F5A",
+   "texto": "#5E1F5A",
+   "roles": "no-evaluable.relleno · .texto · .tinte"
+  }
+ ],
+ "ejemplos": [
+  {
+   "src": "",
+   "alt": "",
+   "titulo": "5.1 · Riesgo alto",
+   "texto": "Carmesí: sin cambio de valor."
+  },
+  {
+   "src": "",
+   "alt": "",
+   "titulo": "5.2 · Riesgo intermedio",
+   "texto": "Hoy ámbar #B5790A con blanco a 3,68:1; pasa a ámbar.600."
+  },
+  {
+   "src": "",
+   "alt": "",
+   "titulo": "5.4 · No evaluable",
+   "texto": "Hoy violeta; pasa a ciruela."
+  },
+  {
+   "src": "",
+   "alt": "",
+   "titulo": "6.1 · Seguimiento",
+   "texto": "Hoy teal como marca; pasa a marca.600 y neutros a 225°."
+  }
+ ],
+ "contrastes": [
+  {
+   "par": "texto.principal / fondo.superficie",
+   "fg": "#132E38",
+   "bg": "#FFFFFF",
+   "ratio": "14,23",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.principal / fondo.pagina",
+   "fg": "#132E38",
+   "bg": "#F0F8FC",
+   "ratio": "13,24",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.cuerpo / fondo.superficie",
+   "fg": "#3F565F",
+   "bg": "#FFFFFF",
+   "ratio": "7,76",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.cuerpo / fondo.pagina",
+   "fg": "#3F565F",
+   "bg": "#F0F8FC",
+   "ratio": "7,22",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.cuerpo / chip.neutro.fondo",
+   "fg": "#3F565F",
+   "bg": "#EAF2F6",
+   "ratio": "6,84",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.secundario / fondo.superficie",
+   "fg": "#5D747E",
+   "bg": "#FFFFFF",
+   "ratio": "4,92",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.secundario / fondo.pagina",
+   "fg": "#5D747E",
+   "bg": "#F0F8FC",
+   "ratio": "4,58",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.secundario / fondo.tinte",
+   "fg": "#5D747E",
+   "bg": "#F4FAFD",
+   "ratio": "4,68",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "icono.inactivo / fondo.superficie",
+   "fg": "#6D8690",
+   "bg": "#FFFFFF",
+   "ratio": "3,84",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "borde.control / fondo.superficie",
+   "fg": "#7B9099",
+   "bg": "#FFFFFF",
+   "ratio": "3,34",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "borde.control / fondo.pagina",
+   "fg": "#7B9099",
+   "bg": "#F0F8FC",
+   "ratio": "3,11",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / accion.principal",
+   "fg": "#FFFFFF",
+   "bg": "#00698C",
+   "ratio": "6,18",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "marca.principal / fondo.superficie",
+   "fg": "#00698C",
+   "bg": "#FFFFFF",
+   "ratio": "6,18",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "borde.foco / fondo.pagina",
+   "fg": "#00698C",
+   "bg": "#F0F8FC",
+   "ratio": "5,75",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "marca.texto / fondo.superficie",
+   "fg": "#005471",
+   "bg": "#FFFFFF",
+   "ratio": "8,38",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "marca.texto / fondo.pagina",
+   "fg": "#005471",
+   "bg": "#F0F8FC",
+   "ratio": "7,79",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "seleccion.texto / seleccion.fondo",
+   "fg": "#005471",
+   "bg": "#DAF3FE",
+   "ratio": "7,27",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "estado.info.etiqueta / estado.info.fondo",
+   "fg": "#3F565F",
+   "bg": "#EAF2F6",
+   "ratio": "6,84",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / riesgo.alto.relleno",
+   "fg": "#FFFFFF",
+   "bg": "#DB2149",
+   "ratio": "4,85",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.alto.texto / riesgo.alto.tinte",
+   "fg": "#A8183B",
+   "bg": "#FDF4F6",
+   "ratio": "6,80",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.alto.parrafo / riesgo.alto.tinte",
+   "fg": "#5C2A37",
+   "bg": "#FDF4F6",
+   "ratio": "10,56",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.alto.relleno / fondo.superficie",
+   "fg": "#DB2149",
+   "bg": "#FFFFFF",
+   "ratio": "4,85",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / riesgo.intermedio.relleno",
+   "fg": "#FFFFFF",
+   "bg": "#8D6F00",
+   "ratio": "4,77",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.intermedio.texto / riesgo.intermedio.tinte",
+   "fg": "#705700",
+   "bg": "#FAF0D2",
+   "ratio": "6,05",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.intermedio.parrafo / riesgo.intermedio.tinte",
+   "fg": "#57450C",
+   "bg": "#FAF0D2",
+   "ratio": "8,16",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.intermedio.relleno / fondo.superficie",
+   "fg": "#8D6F00",
+   "bg": "#FFFFFF",
+   "ratio": "4,77",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / riesgo.bajo.relleno",
+   "fg": "#FFFFFF",
+   "bg": "#168072",
+   "ratio": "4,81",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.bajo.texto / riesgo.bajo.tinte",
+   "fg": "#0B6459",
+   "bg": "#E1F3EE",
+   "ratio": "6,12",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "riesgo.bajo.relleno / fondo.superficie",
+   "fg": "#168072",
+   "bg": "#FFFFFF",
+   "ratio": "4,81",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / no-evaluable.relleno",
+   "fg": "#FFFFFF",
+   "bg": "#6C2768",
+   "ratio": "9,87",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "no-evaluable.texto / no-evaluable.tinte",
+   "fg": "#5E1F5A",
+   "bg": "#FAEAF8",
+   "ratio": "10,00",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "no-evaluable.relleno / fondo.superficie",
+   "fg": "#6C2768",
+   "bg": "#FFFFFF",
+   "ratio": "9,87",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / accion.principal.hover",
+   "fg": "#FFFFFF",
+   "bg": "#005D80",
+   "ratio": "7,30",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / accion.principal.pulsado",
+   "fg": "#FFFFFF",
+   "bg": "#005471",
+   "ratio": "8,38",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / accion.alerta.hover",
+   "fg": "#FFFFFF",
+   "bg": "#CC003E",
+   "ratio": "5,77",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.inverso / accion.alerta.pulsado",
+   "fg": "#FFFFFF",
+   "bg": "#A8183B",
+   "ratio": "7,35",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "marca.texto / accion.secundaria.hover",
+   "fg": "#005471",
+   "bg": "#EFF9FD",
+   "ratio": "7,83",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "marca.texto / accion.secundaria.pulsado",
+   "fg": "#005471",
+   "bg": "#DAF3FE",
+   "ratio": "7,27",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "texto.cuerpo / superficie.pulsado",
+   "fg": "#3F565F",
+   "bg": "#EAF2F6",
+   "ratio": "6,84",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "borde.control.hover / fondo.superficie",
+   "fg": "#6D8690",
+   "bg": "#FFFFFF",
+   "ratio": "3,84",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "enlace.hover / fondo.superficie",
+   "fg": "#00485F",
+   "bg": "#FFFFFF",
+   "ratio": "10,04",
+   "min": "4,5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "foco.anillo / fondo.pagina",
+   "fg": "#00698C",
+   "bg": "#F0F8FC",
+   "ratio": "5,75",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "foco.anillo / fondo.superficie",
+   "fg": "#00698C",
+   "bg": "#FFFFFF",
+   "ratio": "6,18",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "deshabilitado.texto / deshabilitado.fondo",
+   "fg": "#5D747E",
+   "bg": "#DCE9EE",
+   "ratio": "3,97",
+   "min": "Exento (1.4.3)",
+   "res": "Exento",
+   "peso": 400
+  }
+ ],
+ "fichas": [
+  {
+   "nombre": "Marca",
+   "base": "#00698C",
+   "ink": "#005471",
+   "tint": "#DAF3FE",
+   "paso": "marca.600",
+   "blanco": "6,18:1",
+   "texto": "7,27:1",
+   "icono": "6,18:1",
+   "forma": "Botón con texto; no es una señal de nivel",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Teal · 9,5",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Ciruela · 8,4",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Teal · 9,2",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Teal · 4,9",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Carmesí · 5,7",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ]
+  },
+  {
+   "nombre": "Carmesí",
+   "base": "#DB2149",
+   "ink": "#A8183B",
+   "tint": "#FDF4F6",
+   "paso": "carmesi.600",
+   "blanco": "4,85:1",
+   "texto": "6,80:1",
+   "icono": "4,85:1",
+   "forma": "Triángulo + «Riesgo alto»",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Ámbar · 21,3",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Ámbar · 4,5",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Marca · 10,5",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Ámbar · 17,8",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Teal · 0,2",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ]
+  },
+  {
+   "nombre": "Ámbar",
+   "base": "#8D6F00",
+   "ink": "#705700",
+   "tint": "#FAF0D2",
+   "paso": "ambar.600",
+   "blanco": "4,77:1",
+   "texto": "6,05:1",
+   "icono": "4,77:1",
+   "forma": "Rombo + «Riesgo intermedio»",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Teal · 14,9",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Carmesí · 4,5",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Teal · 10,7",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Teal · 16,5",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Teal · 0,2",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ]
+  },
+  {
+   "nombre": "Teal",
+   "base": "#168072",
+   "ink": "#0B6459",
+   "tint": "#E1F3EE",
+   "paso": "teal.600",
+   "blanco": "4,81:1",
+   "texto": "6,12:1",
+   "icono": "4,81:1",
+   "forma": "Círculo + «Riesgo bajo»",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Marca · 9,5",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Marca · 9,4",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Marca · 9,2",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Marca · 4,9",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Carmesí · 0,2",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ]
+  },
+  {
+   "nombre": "Ciruela",
+   "base": "#6C2768",
+   "ink": "#5E1F5A",
+   "tint": "#FAEAF8",
+   "paso": "ciruela.600",
+   "blanco": "9,87:1",
+   "texto": "10,00:1",
+   "icono": "9,87:1",
+   "forma": "Interrogación + «No evaluable»",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Marca · 19,5",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Marca · 8,4",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Carmesí · 14,8",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Ámbar · 16,5",
+     "estado": "Separado",
+     "peso": 400
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Marca · 11",
+     "estado": "Separado",
+     "peso": 400
+    }
+   ]
+  }
+ ],
+ "matriz": [
+  {
+   "par": "Marca / Carmesí",
+   "n": "31,4",
+   "de": "19,8",
+   "pr": "10,5",
+   "tr": "34,4",
+   "ac": "5,7",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Marca / Ámbar",
+   "n": "20,9",
+   "de": "21,1",
+   "pr": "17,5",
+   "tr": "16,6",
+   "ac": "6,1",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Marca / Teal",
+   "n": "9,5",
+   "de": "9,4",
+   "pr": "9,2",
+   "tr": "4,9",
+   "ac": "5,9",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 700,
+   "wa": 700
+  },
+  {
+   "par": "Marca / Ciruela",
+   "n": "19,5",
+   "de": "8,4",
+   "pr": "15,6",
+   "tr": "20,7",
+   "ac": "11",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  },
+  {
+   "par": "Carmesí / Ámbar",
+   "n": "21,3",
+   "de": "4,5",
+   "pr": "11,3",
+   "tr": "17,8",
+   "ac": "0,4",
+   "wn": 400,
+   "wd": 700,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Carmesí / Teal",
+   "n": "30,7",
+   "de": "10,6",
+   "pr": "11",
+   "tr": "34,1",
+   "ac": "0,2",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Carmesí / Ciruela",
+   "n": "23,7",
+   "de": "23,8",
+   "pr": "14,8",
+   "tr": "25,8",
+   "ac": "16,6",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  },
+  {
+   "par": "Ámbar / Teal",
+   "n": "14,9",
+   "de": "12,5",
+   "pr": "10,7",
+   "tr": "16,5",
+   "ac": "0,2",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Ámbar / Ciruela",
+   "n": "26,1",
+   "de": "23,6",
+   "pr": "25,9",
+   "tr": "16,5",
+   "ac": "17,1",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  },
+  {
+   "par": "Teal / Ciruela",
+   "n": "25,5",
+   "de": "14,7",
+   "pr": "22,9",
+   "tr": "24,2",
+   "ac": "16,9",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  }
+ ],
+ "propuestas": [
+  {
+   "titulo": "Sustituir la paleta en imoles-tokens.css",
+   "problema": "Teal como marca, verde de riesgo bajo casi igual (1,03:1), coral sin uso, violeta cerca de la nueva marca.",
+   "propuesta": "Aplicar los primitivos de esta página: marca 225°, neutros 225°, teal claro para riesgo bajo, ámbar.600, ciruela; retirar coral, verde y violeta."
+  },
+  {
+   "titulo": "Acciones normales con color de riesgo",
+   "problema": "Acción pinta hacer foto, leer informe, primera foto y revisión con --imoles-accion-bajo; Botón primario usa teal.",
+   "propuesta": "accion.principal = marca.600 para todas; accion.alerta solo para pedir cita por riesgo alto."
+  },
+  {
+   "titulo": "Insignia de riesgo intermedio",
+   "problema": "Texto blanco sobre #B5790A: 3,68:1. Existe --imoles-accion-intermedio aparte.",
+   "propuesta": "Un solo relleno ámbar.600 (4,77:1) para insignia y acción."
+  },
+  {
+   "titulo": "Avisos con colores de riesgo",
+   "problema": "Aviso Inline usa riesgo intermedio para «aviso», riesgo alto para «error» y teal para «info».",
+   "propuesta": "estado.aviso, estado.error y estado.info (neutro)."
+  },
+  {
+   "titulo": "Contorno de campos insuficiente",
+   "problema": "Campo Texto y Campo Opción sin foco usan borde.sutil: 1,24:1 (mínimo 3:1, WCAG 1.4.11).",
+   "propuesta": "borde.control = neutro.400."
+  },
+  {
+   "titulo": "Chip Estado · riesgo alto fuera de tokens",
+   "problema": "Usa #FBE8E3 / #A8321F, un carmesí anterior.",
+   "propuesta": "riesgo.alto.tinte + riesgo.alto.texto."
+  },
+  {
+   "titulo": "Chip neutro",
+   "problema": "texto.secundario sobre chip.neutro.fondo no llega a 4,5:1.",
+   "propuesta": "texto.cuerpo en el chip."
+  },
+  {
+   "titulo": "Etiqueta secundaria de riesgo alto",
+   "problema": "--imoles-riesgo-alto-label da 4,41:1 sobre su tinte.",
+   "propuesta": "Retirarla; usar riesgo.alto.texto."
+  },
+  {
+   "titulo": "Valores duplicados y fijos",
+   "problema": "--imoles-caption alias de muted; --imoles-line-soft casi igual a --imoles-line; valor antiguo comentado; #FFFFFF y sombra del menú escritos a mano.",
+   "propuesta": "Fusionar en texto.secundario y borde.sutil; usar texto.inverso y fondo.superficie; sombra como token de elevación (1.5)."
+  }
+ ],
+ "interaccion": [
+  {
+   "nombre": "Botón primario",
+   "texto": "Hacer la foto",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Normal",
+     "bg": "#00698C",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "marca.600"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#005D80",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #005D80",
+     "outline": "none",
+     "token": "marca.650"
+    },
+    {
+     "estado": "Pulsado",
+     "bg": "#005471",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #005471",
+     "outline": "none",
+     "token": "marca.700"
+    },
+    {
+     "estado": "Foco",
+     "bg": "#00698C",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #00698C",
+     "outline": "2px solid #00698C",
+     "token": "+ anillo"
+    },
+    {
+     "estado": "Deshabilitado",
+     "bg": "#DCE9EE",
+     "fg": "#5D747E",
+     "borde": "1.5px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutro.150 / 600"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Botón de alerta",
+   "texto": "Pedir cita",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Normal",
+     "bg": "#DB2149",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #DB2149",
+     "outline": "none",
+     "token": "carmesi.600"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#CC003E",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #CC003E",
+     "outline": "none",
+     "token": "carmesi.650"
+    },
+    {
+     "estado": "Pulsado",
+     "bg": "#A8183B",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #A8183B",
+     "outline": "none",
+     "token": "carmesi.700"
+    },
+    {
+     "estado": "Foco",
+     "bg": "#DB2149",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #DB2149",
+     "outline": "2px solid #00698C",
+     "token": "+ anillo"
+    },
+    {
+     "estado": "Deshabilitado",
+     "bg": "#DCE9EE",
+     "fg": "#5D747E",
+     "borde": "1.5px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutro.150 / 600"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Secundario de marca",
+   "texto": "Ver la serie",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Normal",
+     "bg": "#FFFFFF",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "fondo blanco"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#EFF9FD",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "marca.50"
+    },
+    {
+     "estado": "Pulsado",
+     "bg": "#DAF3FE",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "marca.100"
+    },
+    {
+     "estado": "Foco",
+     "bg": "#FFFFFF",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "2px solid #00698C",
+     "token": "+ anillo"
+    },
+    {
+     "estado": "Deshabilitado",
+     "bg": "#FFFFFF",
+     "fg": "#5D747E",
+     "borde": "1.5px solid #DCE9EE",
+     "outline": "none",
+     "token": "borde neutro.150"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Tarjeta / fila",
+   "texto": "Gemelo derecho · 01",
+   "radio": "16px",
+   "estados": [
+    {
+     "estado": "Normal",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "superficie"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#F4FAFD",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutro.25"
+    },
+    {
+     "estado": "Pulsado",
+     "bg": "#EAF2F6",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutro.100"
+    },
+    {
+     "estado": "Foco",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "2px solid #00698C",
+     "token": "+ anillo"
+    },
+    {
+     "estado": "Archivada",
+     "bg": "#FFFFFF",
+     "fg": "#5D747E",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "sin sombra"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Opción",
+   "texto": "Brazo",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Normal",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #7B9099",
+     "outline": "none",
+     "token": "borde.control"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #6D8690",
+     "outline": "none",
+     "token": "neutro.500"
+    },
+    {
+     "estado": "Pulsado",
+     "bg": "#EAF2F6",
+     "fg": "#132E38",
+     "borde": "1px solid #6D8690",
+     "outline": "none",
+     "token": "neutro.100"
+    },
+    {
+     "estado": "Seleccionada",
+     "bg": "#DAF3FE",
+     "fg": "#005471",
+     "borde": "2px solid #00698C",
+     "outline": "none",
+     "token": "seleccion.*"
+    },
+    {
+     "estado": "Foco",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #7B9099",
+     "outline": "2px solid #00698C",
+     "token": "+ anillo"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Enlace",
+   "texto": "Ver el análisis ›",
+   "radio": "2px",
+   "estados": [
+    {
+     "estado": "Normal",
+     "bg": "transparent",
+     "fg": "#005471",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "marca.700"
+    },
+    {
+     "estado": "Hover",
+     "bg": "transparent",
+     "fg": "#00485F",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "marca.800 + subrayado"
+    },
+    {
+     "estado": "Pulsado",
+     "bg": "transparent",
+     "fg": "#003142",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "marca.900"
+    },
+    {
+     "estado": "Foco",
+     "bg": "transparent",
+     "fg": "#005471",
+     "borde": "1px solid transparent",
+     "outline": "2px solid #00698C",
+     "token": "+ anillo"
+    },
+    {
+     "estado": "Visitado",
+     "bg": "transparent",
+     "fg": "#005471",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "sin cambio"
+    }
+   ],
+   "alto": "0",
+   "pad": "0 6px",
+   "alinear": "flex-start"
+  }
+ ]
+};
+  }
+}
+</script>
+</body>
+</html>

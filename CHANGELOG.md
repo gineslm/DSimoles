@@ -1,43 +1,47 @@
-# Registro de versiones
+# Changelog
 
-Una entrada por integración subida. Lo mantiene Claude Code. Es un registro, no un informe de sesión.
+One entry per integration pushed. Maintained by Claude Code. It is a record, not a session report.
 
-Cada entrada cita el commit que contiene los cambios; la propia entrada se añade en un commit posterior.
+Each entry cites the commit that contains the changes; the entry itself is added in a later commit.
 
-Formato: versión · fecha (AAAA-MM-DD) · commit · IDs de sección afectados · resumen.
+Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
+
+## 0.10.0 · 2026-10-09 · (filled in after the commit)
+Sections: visuals.color.
+The whole repository moves to English: guide, interface, docs and script messages. IDs, folders and paths renamed (`visuales.*` → `visuals.*`, and the other 13 categories); the correspondence is in `docs/proposals/pilot-3-id-map.md`. The Color rework is integrated structurally, with its capture boxes left empty; its prose, data and notes are still Spanish and pending translation in Claude Design. Proposal pilot-3 recorded.
 
 ## 0.9.0 · 2026-10-08 · 00d2d99
-Secciones: visuales.color.
-Directrices de estilo aprobadas, lang="es" obligatorio en las páginas .dc.html (check y test) y lang añadido a la página piloto.
+Sections: visuals.color.
+Style guidelines approved, `lang` mandatory on `.dc.html` pages (check and test) and `lang` added to the pilot page.
 
 ## 0.8.0 · 2026-10-08 · 381212a
-Secciones: ninguna.
-Vista por defecto de las subsecciones (página en I o R, guía en el resto), fila compacta con URL e icono, y página sin márgenes del contenedor.
+Sections: none.
+Default view of subsections (page in I or R, guide otherwise), compact row with URL and icon, and a page without container margins.
 
 ## 0.7.0 · 2026-10-08 · 2e0bb31
-Secciones: ninguna.
-Contenedor con barra lateral fija (tres bloques, modo comprimido, menú de secciones, doble progreso) y propuesta piloto-2 con las directrices de estilo, pendientes de aprobación.
+Sections: none.
+Container with a sticky sidebar (three blocks, collapsed mode, sections menu, double progress) and proposal pilot-2 with the style guidelines, pending approval.
 
 ## 0.6.0 · 2026-10-08 · 4d48582
-Secciones: ninguna.
-Protocolo de transferencia (D4), ignorar cualquier DS cargado (D7), documentación y tests de los scripts (D9), marca DSBook · DSimoles y registro de propuestas.
+Sections: none.
+Transfer protocol (D4), ignoring any loaded DS (D7), documentation and tests of the scripts (D9), DSBook · DSimoles branding and the proposals registry.
 
 ## 0.5.0 · 2026-10-08 · 7676ddc
-Secciones: visuales.color.
-Etiqueta de estado sin saltos de línea (arreglo hecho en Claude Design) y guías alineadas con check.
+Sections: visuals.color.
+Status label without line breaks (fix made in Claude Design) and guides aligned with check.
 
 ## 0.4.0 · 2026-10-08 · 48459fb
-Secciones: visuales.color.
-Tabla de roles sin elementos de tabla (el iframe no recupera sc-for dentro de tbody), lint en check y plantilla de sección retirada.
+Sections: visuals.color.
+Roles table without table elements (the iframe does not recover sc-for inside tbody), a lint in check and the section template removed.
 
 ## 0.3.0 · 2026-10-08 · 6d87c86
-Secciones: visuales.color.
-Piloto de D1: página .dc.html con runtime vendorizado y comprobaciones nuevas en check.
+Sections: visuals.color.
+D1 pilot: `.dc.html` page with a vendored runtime and new checks in check.
 
 ## 0.2.0 · 2026-10-08 · 6d85d62
-Secciones: ninguna.
-Contenedor de solo lectura, identidad dsimoles y página deducida de la ruta sugerida.
+Sections: none.
+Read-only container, dsimoles identity and page deduced from the suggested path.
 
 ## 0.1.0 · 2026-10-08 · 2f6a669
-Secciones: ninguna.
-Publicación inicial de la plantilla en GitHub.
+Sections: none.
+Initial publication of the template on GitHub.

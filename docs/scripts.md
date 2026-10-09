@@ -1,40 +1,41 @@
-# Scripts de comprobación
+# Check scripts
 
-Dos comandos, sin dependencias que instalar (basta Node.js 18 o superior):
+Two commands, with nothing to install (Node.js 18 or later is enough):
 
 ```sh
 npm run check
 npm test
 ```
 
-Ejecútalos siempre antes de cerrar una integración y después de cualquier cambio en `data/`, `sections/`, `assets/_runtime/` o `scripts/`. Si fallan, no hagas push.
+Always run them before closing an integration and after any change to `data/`, `sections/`, `assets/_runtime/` or `scripts/`. If they fail, do not push.
 
 ## `npm run check`
-Comprueba el repositorio real. Imprime `OK: …` si todo está bien o `Error: …` con el motivo y se detiene en el primer fallo.
+It checks the real repository. It prints `OK: …` if everything is fine or `Error: …` with the reason, and stops at the first failure.
 
-| Qué comprueba | Cómo suena el error | Qué hacer |
+| What it checks | What the error looks like | What to do |
 | --- | --- | --- |
-| `project.json` cumple el contrato con `guide.json` (versión, IDs, estados, campos, rutas seguras, R y N con su registro). | `Estado no válido: <id>`, `Ready requiere revisión: <id>`, `Versión de configuración incompatible`. | Corrige esa entrada. Si cambió la guía, sube `guideVersion`. |
-| Los IDs y las rutas sugeridas de la guía son únicos y cada entrada está completa. | `ID o destino duplicado`, `Guía incompleta: <id>`. | Revisa `guide.json`; no reutilices IDs. |
-| Existen los archivos principales. | `ENOENT … <archivo>`. | Restaura el archivo que falta. |
-| Cada sección tiene como máximo una página: `<ruta>.html` o `<ruta>.dc.html`. | `<id> tiene dos páginas: … y …`. | Elimina la antigua (pregunta antes si no es tuya). |
-| Una sección en I o R tiene página (en la ruta sugerida o en `page`), y si `page` está rellena el archivo existe. | `<id> está en I y no tiene página en …`, `La página de <id> no existe: …`. | Crea o integra la página, o vuelve la sección a P si aún no hay desarrollo. |
-| La página lleva `<meta name="ds-section-id">` con su ID. | `Meta de identidad ausente: <archivo>`. | Colócala en el `<head>` con el ID exacto de la guía. |
-| Las referencias locales (`href` y `src`) de las páginas existen y no salen del repo. | `Referencia fuera del repo: …`, `ENOENT …`. | Corrige la ruta relativa. |
-| Páginas `.dc.html`: cargan `react.production.min.js` y `react-dom.production.min.js` de `assets/_runtime/` **antes** de `./support.js`; no hay scripts externos. | `… debe cargar assets/_runtime/… antes de support.js`, `… enlaza scripts externos`, `… no enlaza support.js`. | Añade o reordena las tres líneas `<script>`. |
-| Páginas `.dc.html`: el `<html>` declara `lang="es"`. | `… debe declarar lang="es" en <html>`. | Añádelo a mano si el documento generado no lo trae; Claude Design debe conservarlo. |
-| Páginas `.dc.html`: no hay `<sc-for>` ni `<sc-if>` como hijos directos de `table`, `thead`, `tbody`, `tfoot`, `tr`, `colgroup`, `select` ni `optgroup`. | `<sc-for> dentro de <tbody>…`. | Usa `div` con `role="table"`, `row` y `cell`. En el iframe del contenedor el runtime no puede recuperar esas etiquetas. |
-| El runtime vendorizado coincide (SHA-384) con el que declara `support.js`. | `assets/_runtime/<archivo> no coincide con la versión que espera …/support.js`. | Claude Design ha cambiado de versión de React: actualiza los archivos de `assets/_runtime/` y su README. |
-| Todas las copias de `support.js` son idénticas. | `Las copias de support.js no son idénticas: <carpetas>`. | Copia la versión más reciente generada por Claude Design a todas las carpetas. No la edites a mano. |
+| `project.json` meets the contract with `guide.json` (version, IDs, statuses, fields, safe paths, R and N with their record). | `Invalid status: <id>`, `Ready requires a review: <id>`, `Incompatible project configuration version`. | Fix that entry. If the guide changed, bump `guideVersion`. |
+| The guide's IDs and suggested paths are unique and each entry is complete. | `Duplicate ID or target path`, `Incomplete guide entry: <id>`. | Review `guide.json`; do not reuse IDs. |
+| The main files exist. | `ENOENT … <file>`. | Restore the missing file. |
+| Each section has at most one page: `<path>.html` or `<path>.dc.html`. | `<id> has two pages: … and …`. | Remove the old one (ask first if it is not yours). |
+| A section in I or R has a page (at the suggested path or in `page`), and if `page` is filled in the file exists. | `<id> is I and has no page at …`, `The page for <id> does not exist: …`. | Create or integrate the page, or return the section to P if there is no development yet. |
+| The page carries `<meta name="ds-section-id">` with its ID. | `Identity meta missing: <file>`. | Place it in the `<head>` with the exact ID from the guide. |
+| The pages' local references (`href` and `src`) exist and do not leave the repo. | `Reference outside the repo: …`, `ENOENT …`. | Fix the relative path. |
+| `.dc.html` pages: they load `react.production.min.js` and `react-dom.production.min.js` from `assets/_runtime/` **before** `./support.js`; there are no external scripts. | `… must load assets/_runtime/… before support.js`, `… links external scripts`, `… does not link support.js`. | Add or reorder the three `<script>` lines. |
+| `.dc.html` pages: `<html>` declares `lang="en"`. | `… must declare lang="en" on <html>`. | Add it by hand if the generated document lacks it; Claude Design must keep it. |
+| `.dc.html` pages: the images the page cites (in the HTML or in its data, with relative paths) exist and are inside the repo. `src` values with `{{ … }}` expressions are ignored. | `… cites an image that does not exist: <path>`. | Copy the image to `assets/<category>/<subsection>/` or fix the path. |
+| `.dc.html` pages: there is no `<sc-for>` or `<sc-if>` as a direct child of `table`, `thead`, `tbody`, `tfoot`, `tr`, `colgroup`, `select` or `optgroup`. | `<sc-for> inside <tbody>…`. | Use `div` with `role="table"`, `row` and `cell`. In the container's iframe the runtime cannot recover those tags. |
+| The vendored runtime matches (SHA-384) the one `support.js` declares. | `assets/_runtime/<file> does not match the version …/support.js expects`. | Claude Design changed React version: update the files in `assets/_runtime/` and their README. |
+| All copies of `support.js` are identical. | `The support.js copies are not identical: <folders>`. | Copy the most recent version generated by Claude Design to all folders. Do not edit it by hand. |
 
-No descarga contenido externo ni abre el navegador.
+It does not download external content or open the browser.
 
 ## `npm test`
-Pruebas automáticas, en dos archivos:
-- `scripts/model.test.mjs`: la lógica de `model.js` (`validateProject`, `safePage`, `pageCandidates`, `progressOf`). Cubre estados, N fuera del avance, importaciones incompletas, rutas peligrosas y versiones divergentes.
-- `scripts/check.test.mjs`: copia el repo a un directorio temporal, lo rompe de una manera concreta y comprueba que `check` falla con el mensaje esperado (y que pasa cuando debe). Es la prueba de las reglas de `check` anteriores. No modifica tu repo.
+Automated tests, in two files:
+- `scripts/model.test.mjs`: the logic of `model.js` (`validateProject`, `safePage`, `pageCandidates`, `progressOf`). It covers statuses, N excluded from progress, incomplete imports, dangerous paths and diverging versions.
+- `scripts/check.test.mjs`: it copies the repo to a temporary directory, breaks it in one specific way and verifies that `check` fails with the expected message (and that it passes when it should). It is the test of the `check` rules above. It does not modify your repo.
 
-Lectura de un fallo: `not ok N - <nombre>` indica la prueba; debajo aparece el resultado esperado frente al obtenido. Si falla una prueba de `check.test.mjs` tras un cambio tuyo, o la regla ya no hace lo que dice la tabla o el cambio la rompe: decide cuál de las dos cosas es y corrige la que corresponda.
+Reading a failure: `not ok N - <name>` identifies the test; below it you will see the expected result against the obtained one. If a `check.test.mjs` test fails after a change of yours, either the rule no longer does what the table says or the change breaks it: decide which one it is and fix the right one.
 
-## Lo que no cubren
-No prueban el navegador, ni el contenedor, ni la accesibilidad, ni el contenido de las páginas. Para eso están las comprobaciones manuales de [quality.md](quality.md).
+## What they do not cover
+They do not test the browser, the container, accessibility or the content of the pages. The manual checks in [quality.md](quality.md) are for that.

@@ -1,23 +1,23 @@
-# Criterios de revisión
+# Review criteria
 
-## Ready de una sección
-- Propósito, decisiones, reglas, ejemplos y relación con diseño/código son concretos.
-- La accesibilidad aplicable está comprobada en esa sección y se registra la evidencia.
-- Hay ejemplos habituales y casos límite; no hay pendientes bloqueantes escondidos.
-- Se identifica quién revisó, cuándo y qué criterios/resultados respaldan R.
-- Los enlaces y recursos necesarios funcionan. Si el desarrollo está fuera del repo, el equipo ha comprobado el acceso.
+## Ready for a section
+- Purpose, decisions, rules, examples and the relationship with design/code are concrete.
+- The applicable accessibility is checked in that section and the evidence is recorded.
+- There are typical examples and edge cases; there are no hidden blocking pending items.
+- It is identified who reviewed, when and which criteria/results support R.
+- The necessary links and resources work. If the development lives outside the repo, the team has verified access.
 
-## Comprobaciones técnicas disponibles
-`npm run check` y `npm test`. Qué comprueba cada una, cuándo ejecutarlas y cómo leer sus errores está en [scripts.md](scripts.md). En resumen: contrato guía/proyecto, una sola página por sección, I y R con página, meta de identidad, referencias locales, runtime vendorizado de las páginas `.dc.html` y lógica de `model.js`. No descargan contenido externo ni prueban el navegador.
+## Available technical checks
+`npm run check` and `npm test`. What each one verifies, when to run them and how to read their errors is in [scripts.md](scripts.md). In short: guide/project contract, a single page per section, I and R with a page, identity meta, local references, the vendored runtime of `.dc.html` pages and the logic of `model.js`. They do not download external content or test the browser.
 
-## Revisión manual de la aplicación
-1. Cargar por HTTP, desplegar categorías y elementos y operar con teclado. Con la barra lateral: recorrer el menú, saltar a una subsección y comprobar el foco, el estado actual (`aria-current`) y los enlaces directos (`#item-<id>`). Comprimir y expandir la barra con el botón DSB; comprimida, comprobar los paneles de búsqueda, estado (combinando varios) y secciones con hover, clic y Escape, y «Desplegar todo» y «Plegar todo». En ancho de móvil, abrir y cerrar el cajón (botón y Escape).
-2. Combinar R/I/P/N y búsqueda; comprobar resultados vacíos y recuentos.
-3. Probar el interruptor «Guía» con página interna, página externa y sin página (sin página, el interruptor queda activado y deshabilitado y la URL indica «Sin página»). Una subsección en I o R con página debe abrirse mostrando la página; el resto, la guía. Comprobar el icono de abrir en otra pestaña. Recorrer la página **entera** dentro del iframe del contenedor, no solo la cabecera, y compararla con la apertura por separado.
-4. Comprobar anchos de móvil/escritorio, ampliación, textos largos y orden del foco.
-5. Revisar etiquetas y anuncios con lector de pantalla, contraste y criterios de accesibilidad del proyecto.
+## Manual review of the application
+1. Load over HTTP, expand categories and items and operate with the keyboard. With the sidebar: walk through the menu, jump to a subsection and check the focus, the current status (`aria-current`) and the direct links (`#item-<id>`). Collapse and expand the sidebar with the DSB button; when collapsed, check the search, status (combining several) and sections panels with hover, click and Escape, and "Expand all" and "Collapse all". At mobile width, open and close the drawer (button and Escape).
+2. Combine R/I/P/N and search; check empty results and counts.
+3. Test the "Guide" switch with an internal page, an external page and no page (with no page, the switch stays on and disabled and the URL says "No page"). A subsection in I or R with a page must open showing the page; the rest, the guide. Check the open-in-a-new-tab icon. Walk through the **whole** page inside the container's iframe, not just the header, and compare it with opening it separately.
+4. Check mobile/desktop widths, zoom, long texts and focus order.
+5. Review labels and announcements with a screen reader, contrast and the project's accessibility criteria.
 
-La guía metodológica original propone como referencias [WCAG](https://www.w3.org/TR/WCAG22/), [APG](https://www.w3.org/WAI/ARIA/apg/) y [DTCG](https://www.designtokens.org/tr/2025.10/format/). Revisar su aplicabilidad al definir cada proyecto. La plantilla no declara conformidad certificada.
+The original methodological guide proposes [WCAG](https://www.w3.org/TR/WCAG22/), [APG](https://www.w3.org/WAI/ARIA/apg/) and [DTCG](https://www.designtokens.org/tr/2025.10/format/) as references. Review their applicability when defining each project. The template does not claim certified conformance.
 
-## Alcance de las comprobaciones
-Las comprobaciones automáticas validan estructura, contrato y lógica. La revisión visual y funcional en navegador, la accesibilidad y el contenido de cada página son manuales y corresponden a una persona; ninguna comprobación automática equivale a una revisión. Un paso a R requiere esa revisión registrada.
+## Scope of the checks
+The automated checks validate structure, contract and logic. Visual and functional review in the browser, accessibility and the content of each page are manual and belong to a person; no automated check equals a review. Moving to R requires that recorded review.

@@ -1,39 +1,39 @@
-# Contrato de datos y rutas · v1
+# Data and path contract · v1
 
-## Fuente compartida
-`data/guide.json` contiene `schemaVersion`, `version` y `categories`. Cada categoría posee ID, número visible, título, objetivo y `items`. Cada item tiene ID global único, número, título, objetivo, definición, accesibilidad, entregable, criterios de aceptación y ruta sugerida.
+## Shared source
+`data/guide.json` contains `schemaVersion`, `version` and `categories`. Each category has an ID, a visible number, a title, an objective and `items`. Each item has a globally unique ID, a number, a title, an objective, a definition, accessibility, a deliverable, acceptance criteria and a suggested path.
 
-`data/project.json` contiene `schemaVersion: 1`, `guideVersion`, `projectId` (slug), `name` y `sections` (mapa por ID). Debe haber exactamente una entrada por item de la guía.
+`data/project.json` contains `schemaVersion: 1`, `guideVersion`, `projectId` (slug), `name` and `sections` (a map by ID). There must be exactly one entry per guide item.
 
 ```json
 {
   "status": "I",
   "page": "",
-  "owner": "Equipo de diseño",
-  "notes": "Pendiente comprobar las combinaciones del tema oscuro.",
+  "owner": "Design team",
+  "notes": "Dark theme combinations still need checking.",
   "review": {"by": "", "date": "", "evidence": ""},
   "exclusionReason": ""
 }
 ```
 
-Todos los campos anteriores son obligatorios, incluso si su valor es vacío. `owner` es opcional en la práctica: puede quedar vacío y no condiciona ningún estado. Estados permitidos: R/I/P/N. `review.date` usa AAAA-MM-DD o vacío. R necesita los tres campos de revisión no vacíos; N necesita motivo. El validador comprueba presencia, no veracidad ni suficiencia de la revisión.
+All the fields above are required, even if their value is empty. `owner` is optional in practice: it may stay empty and it does not condition any status. Allowed statuses: R/I/P/N. `review.date` uses YYYY-MM-DD or is empty. R needs the three review fields to be non-empty; N needs a reason. The validator checks presence, not the truthfulness or sufficiency of the review.
 
-## Rutas
-Ejemplo completo:
-- ID: `visuales.color`.
-- HTML: `sections/visuales/color.html`.
-- Recursos: `assets/visuales/color/`.
-- Desde esa página: `../../assets/visuales/color/paleta.svg`.
-- Desde el contenedor: `sections/visuales/color.html`.
+## Paths
+Complete example:
+- ID: `visuals.color`.
+- HTML: `sections/visuals/color.html`.
+- Resources: `assets/visuals/color/`.
+- From that page: `../../assets/visuals/color/palette.svg`.
+- From the container: `sections/visuals/color.html`.
 
-`page` vacío significa «usar la ruta sugerida de la guía si el archivo existe». Solo se rellena para excepciones. Cuando se rellena admite una ruta `sections/...html` o `sections/...dc.html` con segmentos en minúsculas alfanuméricas/guion/guion bajo o una URL HTTPS sin credenciales. No acepta `javascript:`, `data:`, rutas de disco, `../` ni URLs HTTP. La ruta sugerida queda reservada sin crear un archivo vacío por cada subsección. Una sección en I o R necesita página, en la ruta sugerida o en `page`.
+An empty `page` means "use the guide's suggested path if the file exists". It is only filled in for exceptions. When filled in, it accepts a `sections/...html` or `sections/...dc.html` path with lowercase alphanumeric, hyphen or underscore segments, or an HTTPS URL without credentials. It does not accept `javascript:`, `data:`, disk paths, `../` or HTTP URLs. The suggested path stays reserved without creating an empty file for every subsection. A section in I or R needs a page, at the suggested path or in `page`.
 
-La página contiene `<meta name="ds-section-id" content="visuales.color">`. El contenedor no necesita leer sus datos internos. Se muestra en iframe aislado con `allow-scripts`; existe un enlace independiente como alternativa. No copies páginas externas ni presupongas permiso de embedding.
+The page contains `<meta name="ds-section-id" content="visuals.color">`. The container does not need to read its internal data. It is shown in an isolated iframe with `allow-scripts`; a separate link exists as an alternative. Do not copy external pages or assume permission to embed them.
 
-## Páginas `.dc.html`
-Las páginas de sección se crean como Design Components. La ruta sugerida de la guía admite dos variantes: `sections/visuales/color.html` y `sections/visuales/color.dc.html`. `guide.json` no cambia. Una sección tiene **una sola** página: si existen las dos variantes, `check` falla.
+## `.dc.html` pages
+Section pages are created as Design Components. The guide's suggested path admits two variants: `sections/visuals/color.html` and `sections/visuals/color.dc.html`. `guide.json` does not change. A section has **one** page: if both variants exist, `check` fails.
 
-Una página `.dc.html` carga, por este orden y con rutas relativas, `../../assets/_runtime/react.production.min.js`, `../../assets/_runtime/react-dom.production.min.js` y `./support.js`. `support.js` lo genera Claude Design en cada carpeta de `sections/`: no se edita y todas sus copias deben ser idénticas. No se admiten scripts externos. Las etiquetas `<sc-for>` y `<sc-if>` no pueden ser hijas directas de elementos de tabla ni de `select`: en el iframe del contenedor, que no permite `fetch` de la propia página, no se recuperan. El `<meta name="ds-section-id">` va en el `<head>` y el `<html>` lleva `lang="es"`.
+A `.dc.html` page loads, in this order and with relative paths, `../../assets/_runtime/react.production.min.js`, `../../assets/_runtime/react-dom.production.min.js` and `./support.js`. `support.js` is generated by Claude Design in each `sections/` folder: it is not edited and all its copies must be identical. External scripts are not allowed. `<sc-for>` and `<sc-if>` tags cannot be direct children of table elements or `select`: inside the container's iframe, which does not allow `fetch` of the page itself, they are not recovered. Images cited by the page, in its HTML or in its data, must exist. The `<meta name="ds-section-id">` goes in the `<head>` and `<html>` carries `lang="en"`.
 
-## Estado de consulta
-Búsqueda, filtros, desplegables y modo Guía/Desarrollo son estado de consulta en memoria; no se escriben al repositorio. El progreso se calcula y no se almacena. Los estados de categorías se resumen y no son editables.
+## Viewing state
+Search, filters, expandable panels and the Guide/Page mode are in-memory viewing state; they are not written to the repository. Progress is computed and not stored. Category statuses are summarized and not editable.

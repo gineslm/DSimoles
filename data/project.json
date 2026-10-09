@@ -4,7 +4,7 @@
   "projectId": "dsimoles",
   "name": "DSimoles",
   "sections": {
-    "fundamentos.objetivos-y-guia-de-uso": {
+    "foundations.goals-and-usage-guide": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -16,7 +16,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.usuarios-del-sistema": {
+    "foundations.system-users": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -28,7 +28,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.productos-y-requerimientos": {
+    "foundations.products-and-requirements": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -40,7 +40,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.ecosistema-existente": {
+    "foundations.existing-ecosystem": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -52,7 +52,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.inventario-de-interfaces": {
+    "foundations.interface-inventory": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -64,7 +64,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.principios-de-diseno": {
+    "foundations.design-principles": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -76,7 +76,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.limites-del-sistema": {
+    "foundations.system-boundaries": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -88,7 +88,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.glosario": {
+    "foundations.glossary": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -100,7 +100,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.registro-de-decisiones": {
+    "foundations.decision-log": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -112,7 +112,7 @@
       },
       "exclusionReason": ""
     },
-    "fundamentos.accesibilidad": {
+    "foundations.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -124,11 +124,11 @@
       },
       "exclusionReason": ""
     },
-    "visuales.color": {
+    "visuals.color": {
       "status": "I",
       "page": "",
-      "owner": "",
-      "notes": "Página piloto en sections/visuales/color.dc.html (validación de D1). Estructura definida; pendiente: paletas, escalas, nomenclatura y método de construcción; lista de roles semánticos; ejemplos aplicados; matriz de contraste y comprobaciones; formato de tokens. Sin revisión.",
+      "owner": "Gines Lopez",
+      "notes": "Paleta fijada por el responsable (2026-10-09) a partir de los prototipos HF de iMoles: marca 225° (marca.600 #00698C), neutros 225°, carmesí #DB2149 (alto), ámbar #8D6F00 (intermedio), teal claro #168072 (bajo), ciruela #6C2768 (no evaluable); coral, verde y violeta retirados. Todos los niveles con relleno sólido y texto blanco. Registradas validación de contraste WCAG 2.2 (todos los pares cumplen) y de visión del color (ΔE OKLab en normal, deuteranopía, protanopía, tritanopía y acromatopsia; pares por debajo de 8 cubiertos con forma y texto por decisión del responsable). Añadida propuesta de valores de interacción (hover 650, pulsado 700, superficies neutro.25/100, foco anillo marca.600 2 px, deshabilitado neutro.150/600, velo neutro.950 48 %) para 7 componentes; contrastes validados. 9 correcciones para iMoles sin aplicar. Formato de tokens para la implementación futura del DS (fuera de este repo): W3C DTCG. Pendiente: aprobar valores de interacción; prueba en dispositivo. Fuera de alcance: tema oscuro y alto contraste. Sin revisión.",
       "review": {
         "by": "",
         "date": "",
@@ -136,7 +136,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.tipografia": {
+    "visuals.typography": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -148,7 +148,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.espaciado": {
+    "visuals.spacing": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -160,7 +160,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.dimensiones": {
+    "visuals.dimensions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -172,7 +172,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.bordes": {
+    "visuals.borders": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -184,7 +184,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.forma": {
+    "visuals.shape": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -196,7 +196,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.elevacion": {
+    "visuals.elevation": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -208,7 +208,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.opacidad": {
+    "visuals.opacity": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -220,7 +220,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.movimiento": {
+    "visuals.motion": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -232,7 +232,7 @@
       },
       "exclusionReason": ""
     },
-    "visuales.accesibilidad": {
+    "visuals.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -244,7 +244,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.capas-de-tokens": {
+    "tokens.token-layers": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -256,7 +256,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.nomenclatura-y-alias": {
+    "tokens.naming-and-aliases": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -268,7 +268,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.ciclo-de-vida-de-tokens": {
+    "tokens.token-lifecycle": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -280,7 +280,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.valores-simples-y-compuestos": {
+    "tokens.simple-and-composite-values": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -292,7 +292,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.tema-claro": {
+    "tokens.light-theme": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -304,7 +304,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.tema-oscuro": {
+    "tokens.dark-theme": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -316,7 +316,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.variantes-de-marca": {
+    "tokens.brand-variants": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -328,7 +328,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.densidad-y-plataformas": {
+    "tokens.density-and-platforms": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -340,7 +340,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.correspondencia-diseno-y-codigo": {
+    "tokens.design-code-mapping": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -352,7 +352,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.categorias-visuales-y-de-accion": {
+    "tokens.visual-and-action-categories": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -364,7 +364,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.categorias-adicionales": {
+    "tokens.additional-categories": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -376,7 +376,7 @@
       },
       "exclusionReason": ""
     },
-    "tokens.accesibilidad": {
+    "tokens.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -388,7 +388,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.librerias-y-licencias": {
+    "resources.libraries-and-licenses": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -400,7 +400,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.construccion-de-iconos": {
+    "resources.icon-construction": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -412,7 +412,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.trazo-y-relleno": {
+    "resources.stroke-and-fill": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -424,7 +424,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.tipos-de-recursos-graficos": {
+    "resources.types-of-graphic-resources": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -436,7 +436,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.iconos-y-etiquetas": {
+    "resources.icons-and-labels": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -448,7 +448,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.fotografia-e-ilustracion": {
+    "resources.photography-and-illustration": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -460,7 +460,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.recortes-y-proporciones": {
+    "resources.crops-and-proportions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -472,7 +472,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.carga-formatos-y-exportacion": {
+    "resources.loading-formats-and-export": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -484,7 +484,7 @@
       },
       "exclusionReason": ""
     },
-    "recursos.accesibilidad": {
+    "resources.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -496,7 +496,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.contenedores-y-reticula": {
+    "layout.containers-and-grid": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -508,7 +508,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.alineacion-y-jerarquia": {
+    "layout.alignment-and-hierarchy": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -520,7 +520,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.breakpoints": {
+    "layout.breakpoints": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -532,7 +532,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.viewport-y-contenedor": {
+    "layout.viewport-and-container": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -544,7 +544,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.grid-y-flexbox": {
+    "layout.grid-and-flexbox": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -556,7 +556,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.reorganizacion-responsive": {
+    "layout.responsive-reflow": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -568,7 +568,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.contenido-y-desbordamiento": {
+    "layout.content-and-overflow": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -580,7 +580,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.desplazamiento-y-densidad": {
+    "layout.scrolling-and-density": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -592,7 +592,7 @@
       },
       "exclusionReason": ""
     },
-    "composicion.accesibilidad": {
+    "layout.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -604,7 +604,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.voz-tono-y-terminologia": {
+    "content.voice-tone-and-terminology": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -616,7 +616,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.titulos-etiquetas-y-acciones": {
+    "content.titles-labels-and-actions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -628,7 +628,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.ayudas-e-instrucciones": {
+    "content.help-and-instructions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -640,7 +640,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.mensajes-de-interfaz": {
+    "content.interface-messages": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -652,7 +652,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.longitud-de-textos": {
+    "content.text-length": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -664,7 +664,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.convenciones-y-formatos": {
+    "content.conventions-and-formats": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -676,7 +676,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.traduccion-y-pluralizacion": {
+    "content.translation-and-pluralization": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -688,7 +688,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.escrituras-de-derecha-a-izquierda": {
+    "content.right-to-left-scripts": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -700,7 +700,7 @@
       },
       "exclusionReason": ""
     },
-    "contenido.accesibilidad": {
+    "content.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -712,7 +712,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.modalidades-de-entrada": {
+    "interaction.input-modalities": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -724,7 +724,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.estados-de-interaccion": {
+    "interaction.interaction-states": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -736,7 +736,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.estados-de-proceso": {
+    "interaction.process-states": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -748,7 +748,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.gestion-del-foco": {
+    "interaction.focus-management": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -760,7 +760,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.activacion-y-cierre": {
+    "interaction.activation-and-dismissal": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -772,7 +772,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.acciones-destructivas-y-deshacer": {
+    "interaction.destructive-actions-and-undo": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -784,7 +784,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.gestos-y-arrastre": {
+    "interaction.gestures-and-dragging": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -796,7 +796,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.actualizacion-y-animacion": {
+    "interaction.updates-and-animation": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -808,7 +808,7 @@
       },
       "exclusionReason": ""
     },
-    "interaccion.accesibilidad": {
+    "interaction.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -820,7 +820,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.acciones": {
+    "components.actions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -832,7 +832,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.entrada-y-seleccion": {
+    "components.input-and-selection": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -844,7 +844,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.estructura-de-campos": {
+    "components.field-structure": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -856,7 +856,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.presentacion": {
+    "components.presentation": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -868,7 +868,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.navegacion": {
+    "components.navigation": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -880,7 +880,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.feedback": {
+    "components.feedback": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -892,7 +892,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.revelado-y-superposicion": {
+    "components.disclosure-and-overlays": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -904,7 +904,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.datos": {
+    "components.data": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -916,7 +916,7 @@
       },
       "exclusionReason": ""
     },
-    "componentes.accesibilidad": {
+    "components.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -928,7 +928,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.formularios-y-validacion": {
+    "patterns.forms-and-validation": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -940,7 +940,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.guardado-y-cancelacion": {
+    "patterns.saving-and-canceling": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -952,7 +952,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.busqueda-filtros-y-resultados": {
+    "patterns.search-filters-and-results": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -964,7 +964,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.acciones-por-lote": {
+    "patterns.batch-actions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -976,7 +976,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.creacion-edicion-y-eliminacion": {
+    "patterns.create-edit-and-delete": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -988,7 +988,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.gestion-de-archivos": {
+    "patterns.file-management": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1000,7 +1000,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.estados-de-ausencia": {
+    "patterns.absence-states": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1012,7 +1012,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.errores-y-reintentos": {
+    "patterns.errors-and-retries": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1024,7 +1024,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.acceso-onboarding-y-permisos": {
+    "patterns.access-onboarding-and-permissions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1036,7 +1036,7 @@
       },
       "exclusionReason": ""
     },
-    "patrones.accesibilidad": {
+    "patterns.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1048,7 +1048,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.niveles-y-jerarquia": {
+    "navigation.levels-and-hierarchy": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1060,7 +1060,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.seleccion-del-patron": {
+    "navigation.pattern-selection": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1072,7 +1072,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.ubicacion-actual": {
+    "navigation.current-location": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1084,7 +1084,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.relacion-entre-mecanismos": {
+    "navigation.relationship-between-mechanisms": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1096,7 +1096,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.navegacion-responsive": {
+    "navigation.responsive-navigation": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1108,7 +1108,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.historial-y-enlaces-directos": {
+    "navigation.history-and-deep-links": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1120,7 +1120,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.persistencia-del-contexto": {
+    "navigation.context-persistence": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1132,7 +1132,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.rutas-titulos-y-foco": {
+    "navigation.routes-titles-and-focus": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1144,7 +1144,7 @@
       },
       "exclusionReason": ""
     },
-    "navegacion.accesibilidad": {
+    "navigation.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1156,7 +1156,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.estructura-general": {
+    "templates.general-structure": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1168,7 +1168,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.listado-y-detalle": {
+    "templates.list-and-detail": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1180,7 +1180,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.formularios-y-resultados": {
+    "templates.forms-and-results": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1192,7 +1192,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.paneles-y-configuracion": {
+    "templates.panels-and-settings": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1204,7 +1204,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.flujos-secuenciales": {
+    "templates.sequential-flows": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1216,7 +1216,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.acceso-error-y-estados-vacios": {
+    "templates.access-error-and-empty-states": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1228,7 +1228,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.titulos-y-acciones-principales": {
+    "templates.titles-and-primary-actions": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1240,7 +1240,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.responsive-y-densidad": {
+    "templates.responsive-and-density": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1252,7 +1252,7 @@
       },
       "exclusionReason": ""
     },
-    "plantillas.accesibilidad": {
+    "templates.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1264,7 +1264,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.tecnologias-y-dependencias": {
+    "implementation.technologies-and-dependencies": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1276,7 +1276,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.paquetes-y-estilos": {
+    "implementation.packages-and-styles": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1288,7 +1288,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.api-de-componentes": {
+    "implementation.component-api": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1300,7 +1300,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.personalizacion-y-temas": {
+    "implementation.customization-and-themes": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1312,7 +1312,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.correspondencia-diseno-y-codigo": {
+    "implementation.design-code-mapping": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1324,7 +1324,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.documentacion-y-ejemplos": {
+    "implementation.documentation-and-examples": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1336,7 +1336,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.compatibilidad": {
+    "implementation.compatibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1348,7 +1348,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.rendimiento": {
+    "implementation.performance": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1360,7 +1360,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.publicacion-y-migracion": {
+    "implementation.publishing-and-migration": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1372,7 +1372,7 @@
       },
       "exclusionReason": ""
     },
-    "implementacion.accesibilidad": {
+    "implementation.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1384,7 +1384,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.aceptacion-y-consistencia": {
+    "quality.acceptance-and-consistency": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1396,7 +1396,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.pruebas-y-regresion": {
+    "quality.testing-and-regression": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1408,7 +1408,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.contenido-real-e-idiomas": {
+    "quality.real-content-and-languages": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1420,7 +1420,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.temas-tamanos-y-dispositivos": {
+    "quality.themes-sizes-and-devices": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1432,7 +1432,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.pruebas-de-usabilidad": {
+    "quality.usability-testing": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1444,7 +1444,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.coherencia-de-entregables": {
+    "quality.deliverable-consistency": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1456,7 +1456,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.problemas-conocidos": {
+    "quality.known-issues": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1468,7 +1468,7 @@
       },
       "exclusionReason": ""
     },
-    "calidad.accesibilidad": {
+    "quality.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1480,7 +1480,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.equipo-y-contribucion": {
+    "governance.team-and-contribution": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1492,7 +1492,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.criterios-de-incorporacion": {
+    "governance.intake-criteria": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1504,7 +1504,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.madurez": {
+    "governance.maturity": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1516,7 +1516,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.excepciones-y-priorizacion": {
+    "governance.exceptions-and-prioritization": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1528,7 +1528,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.versionado-y-retirada": {
+    "governance.versioning-and-retirement": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1540,7 +1540,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.comunicacion-y-soporte": {
+    "governance.communication-and-support": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1552,7 +1552,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.herramientas": {
+    "governance.tools": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1564,7 +1564,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.indicadores": {
+    "governance.metrics": {
       "status": "P",
       "page": "",
       "owner": "",
@@ -1576,7 +1576,7 @@
       },
       "exclusionReason": ""
     },
-    "gobierno.accesibilidad": {
+    "governance.accessibility": {
       "status": "P",
       "page": "",
       "owner": "",

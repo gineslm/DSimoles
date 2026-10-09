@@ -1,51 +1,51 @@
-# Guía general de handoff
+# General handoff guide
 
-Este es el contrato permanente entre Claude Design y Claude Code. No se rellena una plantilla por sesión y no se generan informes adicionales de transferencia.
+This is the permanent contract between Claude Design and Claude Code. No template is filled in per session and no additional transfer reports are generated.
 
-## Qué se transfiere
-| Archivo | Destino y uso |
+## What is transferred
+| File | Destination and use |
 | --- | --- |
-| Página de sección | Ruta `suggestedPath` de su entrada en `data/guide.json`. |
-| Recursos propios | `assets/<categoria>/<subseccion>/`. |
-| Configuración actualizada | Entradas afectadas de `data/project.json`. |
-| Runtime de las páginas `.dc.html` | `assets/_runtime/` (React vendorizado) y `sections/<categoria>/support.js` (generado, idéntico en todas las carpetas). |
-| Cambios de la guía o del contenedor | Solo cuando sean parte explícita del trabajo. |
+| Section page | The `suggestedPath` of its entry in `data/guide.json`. |
+| Own resources | `assets/<category>/<subsection>/`. |
+| Updated configuration | Affected entries of `data/project.json`. |
+| Runtime of `.dc.html` pages | `assets/_runtime/` (vendored React) and `sections/<category>/support.js` (generated, identical in every folder). |
+| Guide or container changes | Only when they are an explicit part of the work. |
 
-Los propios archivos son el entregable. `notes`, `review` y `exclusionReason` recogen las decisiones que no pueden deducirse del código. Git registra las diferencias una vez integradas. Una carpeta, ZIP o acceso MCP son medios válidos si contienen los mismos archivos y conservan sus rutas.
+The files themselves are the deliverable. `notes`, `review` and `exclusionReason` hold the decisions that cannot be deduced from the code. Git records the differences once integrated. A folder, a ZIP or MCP access are valid means if they contain the same files and keep their paths.
 
-## Contrato estable
-- El ID une guía, configuración y página.
-- Las rutas internas son relativas y portables. No se necesita un dominio fijo.
-- Crear o vincular una página no cambia automáticamente el estado.
-- La vista Guía/Desarrollo es una preferencia de consulta, independiente de R/I/P/N.
-- El contenedor web es de solo lectura: lo que muestra es el estado del repo.
+## Stable contract
+- The ID links guide, configuration and page.
+- Internal paths are relative and portable. No fixed domain is needed.
+- Creating or linking a page does not change the status automatically.
+- The Guide/Page view is a viewing preference, independent of R/I/P/N.
+- The web container is read-only: what it shows is the repo's state.
 
-## Flujo y garantías
-1. GitHub es la fuente de verdad.
-2. Claude Design lee el repo, registra su base en `github.md` (commit, versión de `CHANGELOG.md`, recuento de archivos) y compara con el repo al inicio de cada sesión. Si el repo avanzó, se detiene y sincroniza.
-3. Claude Design solo modifica `sections/`, `assets/<categoria>/<subseccion>/` y las entradas afectadas de `project.json`.
-4. Claude Code trae esas rutas y el runtime al repo local por MCP o por archivos. No copia `_ds/`, `github.md` ni `uploads/`.
-5. Si el repo avanzó, `project.json` se integra entrada a entrada y los conflictos se señalan, no se resuelven por antigüedad.
-6. Validación local: `npm run check`, `npm test` y revisión visual por una persona. Después, push según las instrucciones del equipo.
-7. Claude Code registra la integración en `CHANGELOG.md` y Claude Design sincroniza antes de la siguiente sesión.
+## Flow and guarantees
+1. GitHub is the source of truth.
+2. Claude Design reads the repo, records its base in `github.md` (commit, `CHANGELOG.md` version, file count) and compares it with the repo at the start of every session. If the repo has advanced, it stops and synchronizes.
+3. Claude Design only modifies `sections/`, `assets/<category>/<subsection>/` and the affected entries of `project.json`.
+4. Claude Code brings those paths and the runtime to the local repo through MCP or files. It does not copy `_ds/`, `github.md` or `uploads/`.
+5. If the repo has advanced, `project.json` is integrated entry by entry and conflicts are pointed out, not resolved by recency.
+6. Local validation: `npm run check`, `npm test` and visual review by a person. Then push according to the team's instructions.
+7. Claude Code records the integration in `CHANGELOG.md` and Claude Design synchronizes before the next session.
 
-El detalle de cada lado está en [claude-design.md](claude-design.md) y [claude-code.md](claude-code.md).
+The detail of each side is in [claude-design.md](claude-design.md) and [claude-code.md](claude-code.md).
 
-## Estados
-| Transición | Condición |
+## Statuses
+| Transition | Condition |
 | --- | --- |
-| P → I | Desarrollo iniciado. |
-| I → R | Criterios satisfechos y revisión registrada. |
-| R → I | Cambios o incidencias pendientes de revisión. |
-| Cualquiera → N | Exclusión explícita justificada. |
-| N → P o I | Se reincorpora al alcance; nota que explica la decisión. |
-| I o R → P | Reinicio explícito; revisar qué contenido y evidencia siguen vigentes. |
+| P → I | Development started. |
+| I → R | Criteria met and review recorded. |
+| R → I | Changes or issues pending review. |
+| Any → N | Explicit, justified exclusion. |
+| N → P or I | Brought back into scope; a note explains the decision. |
+| I or R → P | Explicit restart; review which content and evidence remain valid. |
 
-## Cierre de trabajo
-1. Claude Design deja los archivos modificados disponibles y actualiza su configuración.
-2. Claude Code compara e integra sobre el repo vigente siguiendo su guía.
-3. Claude Code comprueba la integración y describe el resultado. Si faltan archivos o revisión, mantiene el pendiente visible.
+## Closing the work
+1. Claude Design leaves the modified files available and updates its configuration.
+2. Claude Code compares and integrates on top of the current repo following its guide.
+3. Claude Code checks the integration and describes the result. If files or review are missing, it keeps the pending item visible.
 
-Instrucción de cierre reutilizable: **«Integra los cambios disponibles siguiendo docs/handoff.md y docs/claude-code.md».**
+Reusable closing instruction: **"Integrate the available changes following docs/handoff.md and docs/claude-code.md."**
 
-No es necesario transmitir toda la conversación. Sí deben quedar registradas las decisiones relevantes en los archivos. Un conflicto entre dos decisiones requiere resolver esa diferencia; ninguna guía puede deducir una aprobación ausente.
+There is no need to transmit the whole conversation. Relevant decisions must be recorded in the files. A conflict between two decisions requires resolving that difference; no guide can deduce an approval that is absent.

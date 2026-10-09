@@ -9,9 +9,9 @@ import {spawnSync} from 'node:child_process';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const guide = JSON.parse(readFileSync(path.join(root, 'data/guide.json'), 'utf8'));
 const items = new Map(guide.categories.flatMap(c => c.items.map(i => [i.id, i])));
-const page = 'sections/visuales/color.dc.html';
+const page = 'sections/visuals/color.dc.html';
 
-// Copia del repo en un directorio temporal para mutarla sin tocar el original.
+// Copy of the repo in a temporary directory so it can be mutated without touching the original.
 function sandbox(mutate) {
   const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-check-'));
   cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|\.claude)([\\/]|$)/.test(p)});
@@ -26,60 +26,64 @@ function sandbox(mutate) {
 const edit = (dir, file, fn) => { const p = path.join(dir, file); writeFileSync(p, fn(readFileSync(p, 'utf8'))); };
 const expectFail = (r, text) => { assert.notEqual(r.code, 0, r.out); assert.ok(r.out.includes(text), `Esperaba «${text}» en:\n${r.out}`); };
 
-test('El repositorio tal cual pasa check', () => {
+test('The repository as is passes check', () => {
   const r = sandbox();
   assert.equal(r.code, 0, r.out);
 });
 
-test('sc-for dentro de elementos de tabla falla', () => {
-  expectFail(sandbox(d => edit(d, page, s => s.replace('<sc-for list="{{ roles }}"', '<table><tbody><sc-for list="{{ roles }}"'))), 'dentro de <tbody>');
+test('sc-for inside table elements fails', () => {
+  expectFail(sandbox(d => edit(d, page, s => s.replace('<sc-for list="{{ roles }}"', '<table><tbody><sc-for list="{{ roles }}"'))), 'inside <tbody>');
 });
 
-test('Falta cargar el runtime antes de support.js', () => {
-  expectFail(sandbox(d => edit(d, page, s => s.replace(/<script src="\.\.\/\.\.\/assets\/_runtime\/react-dom[^>]*><\/script>\s*/, ''))), 'debe cargar assets/_runtime/react-dom.production.min.js');
+test('Missing runtime before support.js fails', () => {
+  expectFail(sandbox(d => edit(d, page, s => s.replace(/<script src="\.\.\/\.\.\/assets\/_runtime\/react-dom[^>]*><\/script>\s*/, ''))), 'must load assets/_runtime/react-dom.production.min.js');
 });
 
-test('Una página .dc.html sin lang="es" falla', () => {
-  expectFail(sandbox(d => edit(d, page, s => s.replace('<html lang="es">', '<html>'))), 'lang="es"');
+test('A page image that does not exist fails', () => {
+  expectFail(sandbox(d => edit(d, page, s => s.replace('"src": ""', '"src": "../../assets/visuals/color/no-existe.png"'))), 'cites an image that does not exist');
 });
 
-test('Scripts externos en una página .dc.html fallan', () => {
-  expectFail(sandbox(d => edit(d, page, s => s.replace('<script src="./support.js">', '<script src="https://unpkg.com/x.js"></script>\n<script src="./support.js">'))), 'scripts externos');
+test('A .dc.html page without lang="en" fails', () => {
+  expectFail(sandbox(d => edit(d, page, s => s.replace('<html lang="en">', '<html>'))), 'lang="en"');
 });
 
-test('No pueden coexistir .html y .dc.html', () => {
-  expectFail(sandbox(d => writeFileSync(path.join(d, 'sections/visuales/color.html'), readFileSync(path.join(d, page)))), 'dos páginas');
+test('External scripts in a .dc.html page fail', () => {
+  expectFail(sandbox(d => edit(d, page, s => s.replace('<script src="./support.js">', '<script src="https://unpkg.com/x.js"></script>\n<script src="./support.js">'))), 'external scripts');
 });
 
-test('Sección en I sin página falla', () => {
-  expectFail(sandbox(d => edit(d, 'data/project.json', s => s.replace('"status": "P"', '"status": "I"'))), 'no tiene página');
+test('.html and .dc.html cannot coexist', () => {
+  expectFail(sandbox(d => writeFileSync(path.join(d, 'sections/visuals/color.html'), readFileSync(path.join(d, page)))), 'two pages');
 });
 
-test('La meta ds-section-id debe coincidir con el ID', () => {
-  expectFail(sandbox(d => edit(d, page, s => s.replace('content="visuales.color"', 'content="visuales.otro"'))), 'Meta de identidad ausente');
+test('A section in I without a page fails', () => {
+  expectFail(sandbox(d => edit(d, 'data/project.json', s => s.replace('"status": "P"', '"status": "I"'))), 'has no page');
 });
 
-test('El runtime vendorizado debe coincidir con el SHA-384 de support.js', () => {
-  expectFail(sandbox(d => edit(d, 'assets/_runtime/react.production.min.js', s => s + '\n//')), 'no coincide con la versión');
+test('The ds-section-id meta must match the ID', () => {
+  expectFail(sandbox(d => edit(d, page, s => s.replace('content="visuals.color"', 'content="visuals.other"'))), 'Identity meta missing');
 });
 
-test('Las copias de support.js deben ser idénticas', () => {
-  const id = 'tokens.capas-de-tokens', suggested = items.get(id).suggestedPath.replace(/\.html$/, '.dc.html');
+test('The vendored runtime must match the SHA-384 declared by support.js', () => {
+  expectFail(sandbox(d => edit(d, 'assets/_runtime/react.production.min.js', s => s + '\n//')), 'does not match the version');
+});
+
+test('The support.js copies must be identical', () => {
+  const id = 'tokens.token-layers', suggested = items.get(id).suggestedPath.replace(/\.html$/, '.dc.html');
   expectFail(sandbox(d => {
-    const html = readFileSync(path.join(d, page), 'utf8').replace('content="visuales.color"', `content="${id}"`);
+    const html = readFileSync(path.join(d, page), 'utf8').replace('content="visuals.color"', `content="${id}"`);
     mkdirSync(path.dirname(path.join(d, suggested)), {recursive: true});
     writeFileSync(path.join(d, suggested), html);
-    writeFileSync(path.join(d, path.dirname(suggested), 'support.js'), readFileSync(path.join(d, 'sections/visuales/support.js'), 'utf8') + '\n//');
-  }), 'no son idénticas');
+    writeFileSync(path.join(d, path.dirname(suggested), 'support.js'), readFileSync(path.join(d, 'sections/visuals/support.js'), 'utf8') + '\n//');
+  }), 'are not identical');
 });
 
-test('Una segunda carpeta con copia idéntica de support.js pasa', () => {
-  const id = 'tokens.capas-de-tokens', suggested = items.get(id).suggestedPath.replace(/\.html$/, '.dc.html');
+test('A second folder with an identical support.js copy passes', () => {
+  const id = 'tokens.token-layers', suggested = items.get(id).suggestedPath.replace(/\.html$/, '.dc.html');
   const r = sandbox(d => {
-    const html = readFileSync(path.join(d, page), 'utf8').replace('content="visuales.color"', `content="${id}"`);
+    const html = readFileSync(path.join(d, page), 'utf8').replace('content="visuals.color"', `content="${id}"`);
     mkdirSync(path.dirname(path.join(d, suggested)), {recursive: true});
     writeFileSync(path.join(d, suggested), html);
-    writeFileSync(path.join(d, path.dirname(suggested), 'support.js'), readFileSync(path.join(d, 'sections/visuales/support.js')));
+    writeFileSync(path.join(d, path.dirname(suggested), 'support.js'), readFileSync(path.join(d, 'sections/visuals/support.js')));
   });
   assert.equal(r.code, 0, r.out);
   assert.ok(existsSync(path.join(root, page)));

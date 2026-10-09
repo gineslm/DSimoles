@@ -1,3 +1,3 @@
-# Páginas del DS
+# DS pages
 
-Las páginas de proyecto se crean aquí siguiendo `suggestedPath` de `data/guide.json`. La plantilla inicial no contiene secciones terminadas. Las páginas son `.dc.html` (ver `docs/data-contract.md`). `data/project.json` solo lleva `page` en excepciones; el resto usa la ruta sugerida.
+Project pages are created here following the `suggestedPath` in `data/guide.json`. The initial template contains no finished sections. Pages are `.dc.html` (see `docs/data-contract.md`). `data/project.json` only carries `page` for exceptions; everything else uses the suggested path.

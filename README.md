@@ -1,55 +1,55 @@
 # DSBook · DSimoles
 
-DSBook es el espacio de trabajo; DSimoles es el Design System que se define en él. Guía de definición, contenedor de documentación y matriz de seguimiento del Design System de DSimoles. Se diseña en Claude Design y se integra mediante Claude Code y Git. Nació de una plantilla reutilizable; sus instrucciones están en [docs/plantilla.md](docs/plantilla.md).
+DSBook is the workspace; DSimoles is the Design System defined in it. It provides a definition guide, a documentation container and a tracking matrix for the DSimoles Design System. It is designed in Claude Design and integrated through Claude Code and Git. It started as a reusable template; its instructions are in [docs/template.md](docs/template.md).
 
-## Empezar
-Necesitas Python 3 para servir la web. Node.js 18 o superior permite ejecutar las comprobaciones; no hay paquetes que instalar.
+## Getting started
+You need Python 3 to serve the site. Node.js 18 or later runs the checks; there are no packages to install.
 
 ```sh
 cd DSimoles
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Abre http://localhost:8000. No abras `index.html` directamente: la carga de JSON requiere HTTP. También puedes servir la carpeta desde cualquier hosting estático. No hay un despliegue ni una conexión con GitHub incluidos.
+Open http://localhost:8000. Do not open `index.html` directly: loading the JSON files requires HTTP. You can also serve the folder from any static host. No deployment or GitHub connection is included.
 
-1. Consulta la matriz. Cada categoría se despliega; cada subsección tiene su estado y su contenido.
-2. Activa **Mostrar guía** para consultar instrucciones. Desactívalo para ver el desarrollo asociado.
-3. Crea las páginas en Claude Design, como `.dc.html`, en las rutas indicadas por la guía.
-4. Integra los cambios siguiendo [la guía general de handoff](docs/handoff.md).
+1. Browse the matrix. Each category expands; each subsection has its status and content.
+2. Turn on **Guide** to read the instructions. Turn it off to see the associated page.
+3. Create pages in Claude Design, as `.dc.html`, at the paths the guide indicates.
+4. Integrate changes following the [general handoff guide](docs/handoff.md).
 
-## Estados y filtros
-| Estado | Significado |
+## Statuses and filters
+| Status | Meaning |
 | --- | --- |
-| R · Ready | Desarrollo revisado, con persona, fecha y evidencia registrados. |
-| I · In process | Elaboración o revisión en curso. |
-| P · Pending | Desarrollo pendiente; estado inicial. |
-| N · No aplica | Fuera de alcance con justificación explícita. |
+| R · Ready | Reviewed development, with person, date and evidence recorded. |
+| I · In process | Work or review in progress. |
+| P · Pending | Development pending; initial status. |
+| N · Not applicable | Out of scope with an explicit justification. |
 
-Combina estados en la cabecera y busca por título, categoría o contenido. Los recuentos de categoría representan todos sus elementos; los filtros muestran solo las coincidencias. Hay dos barras de progreso. **Avance**: R / (R + I + P), es decir, las listas sobre las aplicables. **Complejidad**: las subsecciones que no están en N sobre el total de la guía. Si todo es N, el avance muestra «Sin secciones aplicables».
+Combine statuses in the sidebar and search by title, category or content. Category counts represent all their items; filters show only the matches. There are two progress bars. **Progress**: R / (R + I + P), that is, ready subsections over the applicable ones. **Complexity**: subsections that are not N over the total in the guide. If everything is N, progress shows "No applicable sections".
 
-La barra lateral tiene tres bloques separados: **DSB** (marca; comprime y expande la barra), **progreso** (cabecera «Avance / Complejidad» con el recuento de subsecciones mostradas, por ejemplo 132/132, y las dos líneas de progreso) y **contenido** (búsqueda, estado y secciones). Comprimida, el bloque de contenido pasa a tres iconos —lupa, filtro de estado y secciones— que abren un panel al pasar el ratón; un clic lo fija y Escape lo cierra. El panel de estado permite combinar R, I, P y N, y el de secciones incluye «Desplegar todo» y «Plegar todo».
+The sidebar has three separated blocks: **DSB** (brand; collapses and expands the sidebar), **progress** (a "Progress / Complexity" header with the ready-over-applicable count, for example 0/132, and the two progress lines) and **content** (search, status and sections). When collapsed, the content block becomes three icons (magnifier, status filter and sections) that open a panel on hover; a click pins it and Escape closes it. The status panel lets you combine R, I, P and N, and the sections panel includes "Expand all" and "Collapse all".
 
-## Contenedor de solo lectura
-La web muestra el estado del repositorio y no lo modifica: no guarda borradores ni importa o exporta configuración. Todo se edita en Claude Design; Claude Code integra los cambios en Git. Búsqueda, filtros, plegado y el conmutador Guía/Desarrollo son estado de consulta en memoria.
+## Read-only container
+The site shows the state of the repository and does not modify it: it does not keep drafts or import or export configuration. Everything is edited in Claude Design; Claude Code integrates the changes into Git. Search, filters, expansion and the Guide/Page switch are in-memory viewing state.
 
-La página de cada sección se deduce de la ruta sugerida de la guía. `page` en `data/project.json` solo se rellena en excepciones (URL HTTPS externa o ruta distinta acordada). El contenedor comprueba si el archivo existe al desplegar la sección; si no, muestra «Sin página».
+Each section's page is deduced from the guide's suggested path. `page` in `data/project.json` is only filled in for exceptions (an external HTTPS URL or an agreed different path). The container checks whether the file exists when a section is expanded; if it does not, it shows "No page".
 
-## Organización
-Consulta [CLAUDE.md](CLAUDE.md) como entrada para los agentes. Las guías específicas son [Claude Design](docs/claude-design.md), [Claude Code](docs/claude-code.md) y [contrato de datos](docs/data-contract.md).
+## Organization
+See [CLAUDE.md](CLAUDE.md) as the entry point for agents. The specific guides are [Claude Design](docs/claude-design.md), [Claude Code](docs/claude-code.md) and the [data contract](docs/data-contract.md).
 
-## Comprobar
+## Checking
 ```sh
 npm run check
 npm test
 ```
-No requieren instalar dependencias. Hay además una lista de revisión manual en [docs/quality.md](docs/quality.md). Los tests automatizados no certifican accesibilidad ni sustituyen la revisión visual.
+They need no dependencies. There is also a manual review list in [docs/quality.md](docs/quality.md). Automated tests do not certify accessibility and do not replace visual review.
 
-## Reutilizar la plantilla
-Las instrucciones para crear otro proyecto a partir de esta estructura están en [docs/plantilla.md](docs/plantilla.md).
+## Reusing the template
+Instructions for creating another project from this structure are in [docs/template.md](docs/template.md).
 
-## Límites conocidos
-- Las páginas externas pueden impedir su integración en iframe; siempre hay un enlace para abrirlas aparte.
-- Los iframes usan sandbox con scripts, sin acceso al contenedor. Contenido que requiera cookies, almacenamiento o capacidades adicionales debe abrirse aparte o adaptarse conscientemente.
-- La plantilla no edita visualmente el HTML de las secciones. Esa edición se realiza en Claude Design o en el código.
-- R indica revisión registrada según los criterios del proyecto, no certificación de conformidad.
-- Los archivos Markdown de documentación se pueden leer en el editor o GitHub; no se convierten a HTML automáticamente.
+## Known limits
+- External pages may prevent embedding in an iframe; there is always a link to open them separately.
+- Iframes use a sandbox with scripts and no access to the container. Content that needs cookies, storage or additional capabilities must be opened separately or consciously adapted.
+- The template does not visually edit section HTML. That editing happens in Claude Design or in code.
+- R indicates a recorded review according to the project's criteria, not a conformance certification.
+- Markdown documentation files can be read in the editor or on GitHub; they are not converted to HTML automatically.

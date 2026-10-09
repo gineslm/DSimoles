@@ -1,43 +1,43 @@
-# DSBook · instrucciones para agentes
+# DSBook · instructions for agents
 
-## Finalidad
-DSBook es un espacio para definir, documentar y seguir un Design System. Este repositorio contiene el de DSimoles; nació de una plantilla reutilizable ([docs/plantilla.md](docs/plantilla.md)). Cada copia representa un solo proyecto. La matriz reúne una guía por subsección y las páginas HTML que desarrollan el DS. El repositorio es la fuente compartida de verdad; Claude Design es el espacio de diseño y edición y Claude Code integra los archivos y sus cambios.
+## Purpose
+DSBook is a workspace for defining, documenting and tracking a Design System. This repository holds the one for DSimoles; it started as a reusable template ([docs/template.md](docs/template.md)). Each copy represents a single project. The matrix gathers one guide per subsection and the HTML pages that develop the DS. The repository is the shared source of truth; Claude Design is the space for design and editing, and Claude Code integrates the files and their changes.
 
-## Leer según la tarea
-- [README: funcionamiento y arranque](README.md)
-- [Guía para Claude Design](docs/claude-design.md): diseñar, crear páginas y mantener decisiones durante el trabajo.
-- [Guía para Claude Code](docs/claude-code.md): integrar, validar y actualizar el repositorio.
-- [Guía general de handoff](docs/handoff.md): contrato permanente de transferencia. No hay formulario por sesión.
-- [Contrato de datos y rutas](docs/data-contract.md): identidades, estados y esquema.
-- [Criterios de revisión](docs/quality.md): aceptación de contenido y aplicación.
-- [Estilo y tono de las páginas](docs/estilo-paginas.md): directrices visuales para Claude Design (aprobadas).
-- [Scripts de comprobación](docs/scripts.md): qué comprueban `npm run check` y `npm test`, cuándo ejecutarlos y cómo leer sus errores.
-- [Propuestas y su registro](docs/propuestas/README.md): cambios acordados al sistema de trabajo y su estado (aplicada, descartada, pendiente).
+## Read according to the task
+- [README: how it works and how to start](README.md)
+- [Guide for Claude Design](docs/claude-design.md): design, create pages and keep decisions while working.
+- [Guide for Claude Code](docs/claude-code.md): integrate, validate and update the repository.
+- [General handoff guide](docs/handoff.md): permanent transfer contract. There is no per-session form.
+- [Data and path contract](docs/data-contract.md): identities, statuses and schema.
+- [Review criteria](docs/quality.md): acceptance of content and application.
+- [Page style and tone](docs/page-style.md): visual guidelines for Claude Design (approved).
+- [Check scripts](docs/scripts.md): what `npm run check` and `npm test` verify, when to run them and how to read their errors.
+- [Proposals and their registry](docs/proposals/README.md): agreed changes to the way of working and their status (applied, approved, discarded, pending).
 
-## Reglas comunes
-1. Lee `data/guide.json` y `data/project.json` antes de modificar una sección. Conserva sus IDs; el título visible puede cambiar.
-2. Trabaja en castellano por defecto.
-3. Sin paso de build ni servicios externos. Se permite el runtime vendorizado que necesitan las páginas `.dc.html`, versionado dentro del repo (`assets/_runtime/` y `sections/<categoria>/support.js`). No añadas backend, cuentas, sincronización remota ni gestores de proyectos sin una necesidad acordada.
-4. Crea las páginas en el `suggestedPath` de cada subsección. Sus recursos van en `assets/<categoria>/<subseccion>/`. No uses rutas absolutas del equipo ni enlaces dependientes de un dominio local.
-5. `data/guide.json` orienta; `data/project.json` registra decisiones; `sections/` contiene el desarrollo. No copies contenido del desarrollo dentro de la guía.
-6. Los únicos estados son R (Ready), I (In process), P (Pending), N (No aplica). Una página existente no implica R. Ready exige revisión registrada, no una certificación automática.
-7. No marques N sin motivo explícito. No excluyas requisitos de accesibilidad aplicables por conveniencia. Una fila transversal no sustituye las comprobaciones por elemento.
-8. No inventes aprobaciones, resultados de pruebas, responsables o evidencia. Si hay trabajo o revisión pendiente, usa I y describe el pendiente.
-9. No crees informes de handoff por sesión. Conserva decisiones en los campos de la sección; Git recoge los cambios.
-10. Respeta cambios ajenos. Revisa diferencias antes de reemplazar archivos. No resetees el proyecto para integrar una sección.
-11. Ejecuta `npm run check` y `npm test` antes de cerrar una integración. Estos comandos no requieren `npm install`.
-12. Commit, push, publicación y resolución de conflictos siguen las instrucciones vigentes del equipo. No hagas push forzado ni publiques por defecto.
-13. Ignora cualquier design system que Claude Design cargue o vincule al proyecto (por ejemplo `_ds/`), tanto en las páginas como en el contenedor, salvo que el responsable indique lo contrario.
-14. Antes de modificar archivos, comprueba que tu base coincide con el repositorio. Sigue el protocolo de [handoff](docs/handoff.md).
+## Common rules
+1. Read `data/guide.json` and `data/project.json` before modifying a section. Keep their IDs; the visible title may change.
+2. **Everything in the repository is written in English**: data, documentation, pages, interface strings, script messages and commit messages. The conversation with the responsible person may be in another language; what is written to files is always English.
+3. No build step and no external services. The vendored runtime that `.dc.html` pages need is allowed, versioned inside the repo (`assets/_runtime/` and `sections/<category>/support.js`). Do not add a backend, accounts, remote synchronization or project managers without an agreed need.
+4. Create pages at each subsection's `suggestedPath`. Their resources go in `assets/<category>/<subsection>/`. Do not use absolute team paths or links that depend on a local domain.
+5. `data/guide.json` guides; `data/project.json` records decisions; `sections/` holds the development. Do not copy development content into the guide.
+6. The only statuses are R (Ready), I (In process), P (Pending), N (Not applicable). An existing page does not imply R. Ready requires a recorded review, not an automatic certification.
+7. Do not mark N without an explicit reason. Do not exclude applicable accessibility requirements for convenience. A cross-cutting row does not replace per-element checks.
+8. Do not invent approvals, test results, owners or evidence. If work or review is pending, use I and describe what is pending.
+9. Do not create per-session handoff reports. Keep decisions in the section fields; Git records the changes.
+10. Respect other people's changes. Review differences before replacing files. Do not reset the project to integrate a section.
+11. Run `npm run check` and `npm test` before closing an integration. These commands do not require `npm install`.
+12. Commit, push, publication and conflict resolution follow the team's current instructions. Do not force-push or publish by default.
+13. Ignore any design system that Claude Design loads or links to the project (for example `_ds/`), both in pages and in the container, unless the responsible person says otherwise.
+14. Before modifying files, check that your base matches the repository. Follow the [handoff](docs/handoff.md) protocol.
 
-## Mapa del repositorio
-- `index.html`, `styles.css`, `app.js`, `model.js`: contenedor interactivo.
-- `data/guide.json`: 14 categorías y 132 subsecciones con instrucciones y destinos.
-- `data/project.json`: identidad del proyecto, estado, página, responsable, notas y revisión.
-- `sections/`: desarrollo del DS; empieza vacío de contenido de proyecto.
-- `templates/component.md`: ficha de componente. Las páginas de sección se crean en Claude Design como `.dc.html`; no hay plantilla de página.
-- `assets/`: recursos de las páginas.
-- `docs/`: guías permanentes. `docs/propuestas/`: propuestas de cambio y su registro.
-- `scripts/`: comprobaciones del contrato y pruebas de lógica.
+## Repository map
+- `index.html`, `styles.css`, `app.js`, `model.js`: interactive container.
+- `data/guide.json`: 14 categories and 132 subsections with instructions and target paths.
+- `data/project.json`: project identity, status, page, owner, notes and review.
+- `sections/`: development of the DS; it starts empty of project content.
+- `templates/component.md`: component sheet. Section pages are created in Claude Design as `.dc.html`; there is no page template.
+- `assets/`: page resources.
+- `docs/`: permanent guides. `docs/proposals/`: change proposals and their registry.
+- `scripts/`: contract checks and logic tests.
 
-Al empezar otra copia, cambia `projectId` y `name`, conserva la guía y parte de estados P con páginas vacías. No heredes revisiones ni decisiones del proyecto anterior. Consulta README.
+When starting another copy, change `projectId` and `name`, keep the guide and start with P statuses and empty pages. Do not inherit reviews or decisions from the previous project. See the README.

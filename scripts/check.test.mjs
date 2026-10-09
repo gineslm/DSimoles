@@ -88,3 +88,15 @@ test('A second folder with an identical support.js copy passes', () => {
   assert.equal(r.code, 0, r.out);
   assert.ok(existsSync(path.join(root, page)));
 });
+
+test('The seed must start empty and Pending', () => {
+  expectFail(sandbox(d => edit(d, 'seed/project.json', s => s.replace('"status": "P"', '"status": "I"'))), 'seed/');
+});
+
+test('Duplicate subsection IDs in the guide fail', () => {
+  expectFail(sandbox(d => edit(d, 'data/guide.json', s => s.replace('"id": "foundations.system-users"', '"id": "foundations.goals-and-usage-guide"'))), 'Duplicate subsection ID');
+});
+
+test('A project entry without a subsection in the guide fails', () => {
+  expectFail(sandbox(d => edit(d, 'data/project.json', s => s.replace('"foundations.glossary"', '"foundations.ghost"'))), 'Missing section entry');
+});

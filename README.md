@@ -45,7 +45,7 @@ npm test
 They need no dependencies. There is also a manual review list in [docs/quality.md](docs/quality.md). Automated tests do not certify accessibility and do not replace visual review.
 
 ## Reusing the template
-Instructions for creating another project from this structure are in [docs/template.md](docs/template.md).
+A new project starts with `npm run init -- --id <id> --name "<name>"`, which copies `seed/` to `data/`. After that the data belongs to the project. The instructions are in [docs/template.md](docs/template.md).
 
 ## Known limits
 - External pages may prevent embedding in an iframe; there is always a link to open them separately.

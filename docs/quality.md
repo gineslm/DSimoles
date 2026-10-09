@@ -3,7 +3,7 @@
 ## Ready for a section
 - Purpose, decisions, rules, examples and the relationship with design/code are concrete.
 - The applicable accessibility is checked in that section and the evidence is recorded.
-- There are typical examples and edge cases; there are no hidden blocking pending items.
+- There are typical examples and edge cases, and no hidden blocking work: blocking work keeps the section in I. Non-blocking work lives in the section's `tasks` and does not prevent R (for example, a dark theme that is out of scope for now).
 - It is identified who reviewed, when and which criteria/results support R.
 - The necessary links and resources work. If the development lives outside the repo, the team has verified access.
 

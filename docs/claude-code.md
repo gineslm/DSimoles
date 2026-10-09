@@ -14,15 +14,15 @@ Read [CLAUDE.md](../CLAUDE.md), the [contract](data-contract.md) and the [genera
 
 ## Transfer from Claude Design
 Flow: GitHub is the source of truth → Claude Design records its base and works → you bring the changes to the local repo → local validation → push. Guarantees:
-1. **Copy scope.** Copy only `sections/`, `assets/<category>/<subsection>/`, the affected entries of `data/project.json` and the runtime of `.dc.html` pages (`assets/_runtime/` and the `support.js` files). Do not copy `_ds/`, `github.md`, `uploads/` or auxiliary files.
+1. **Copy scope.** Copy only `sections/`, `assets/<category>/<subsection>/`, the affected entries of `data/project.json` and `data/guide.json`, and the runtime of `.dc.html` pages (`assets/_runtime/` and the `support.js` files). Do not copy `_ds/`, `github.md`, `uploads/` or auxiliary files.
 2. **The listing may hide files.** The connector filters by type. For every file that a page links or that `package.json`, `CLAUDE.md` or the contract names, read it by path and compare its content before treating it as absent.
-3. **Integration by ID.** If the repo advanced since Claude Design's base, merge `project.json` entry by entry. If two sides changed the same entry, do not choose: point out the specific conflict to the responsible person. No complete copy wins for being more recent.
+3. **Integration by ID.** If the repo advanced since Claude Design's base, merge `project.json` and `guide.json` entry by entry. If two sides changed the same entry, do not choose: point out the specific conflict to the responsible person. No complete copy wins for being more recent.
 4. **Validation.** `npm run check`, `npm test` and visual review by a person (in the container served over HTTP and with the page opened separately). Look at the whole page, not just the header.
 5. **Closing the cycle.** After pushing, add an entry to `CHANGELOG.md` (version, date, commit, section IDs and one line) and notify Claude Design of the new base. Each entry cites the commit with the changes; it is recorded in a later commit.
 6. If Claude Design modified something outside its scope, do not integrate it without asking. If it made a legitimate minor change inside a page (a style fix, for example), compare it with the repo and record it.
 
 ## Catalog changes
-`guide.json` is shared between copies as a methodological base; do not rewrite it to reflect only the available content. Adding a subsection requires a stable unique ID, its own guide and path, an entry in `project.json` and a version/compatibility update. Do not reuse removed IDs. If you split a component family, keep traceability and avoid counting the same work twice.
+`guide.json` is the project's catalog and belongs to the project: its text and its subsections can change. Claude Design can add categories and subsections and edit guide text; you integrate those changes by ID and `check` validates them against the [catalog rules](data-contract.md#catalog-rules). Ask before integrating anything that changes or deletes an existing ID, renames a folder or removes a subsection; those need an explicit order from the responsible person and a note in `CHANGELOG.md`. If you split a component family, keep traceability and avoid counting the same work twice.
 
 ## New projects
-Start from the clean template, change `projectId` and `name` and keep P as the initial status. A copy of an already developed DS needs all its specific content and evidence cleaned; changing the name is not enough.
+Start from a copy of the repository without the previous project's pages and resources, and run `npm run init -- --id <id> --name "<name>"`. It copies `seed/` to `data/`, sets the identity and refuses to overwrite a project that already has its own. A copy of an already developed DS needs all its specific content, reviews and evidence removed from `sections/` and `assets/`; changing the name is not enough.

@@ -2,19 +2,19 @@
 
 Date: 2026-10-09 · Origin: request from the responsible person after pilot 2. Status of each decision in the [registry](README.md).
 
-This proposal records the confirmed decisions and makes explicit what remains open. Only F10 (English) has been applied so far; the rest is not implemented.
+This proposal records the confirmed decisions and makes explicit what remains open. F1–F5, F10 and the data part of F9 are applied; F6–F8 (the container's structure) and the display of tasks are not implemented yet.
 
 ---
 
 ## F1 · Data becomes the project's ("inherit and own")
-**Status: approved, not applied.**
+**Status: applied (0.11.0).**
 
 **Reason.** Today `data/guide.json` is a frozen methodological base: `validateProject` requires `project.json` to match it exactly and checks `guideVersion`. That prevents customizing the guide and adding sections without inventing override layers.
 
 **Decision.** The initial data lives in an installation folder (`seed/`). When a project is started, it is copied to `data/` and from then on it belongs to the project: the text of a guide is edited, a subsection is added or retired, with no link to the originals. No record of "original values" is kept; Git keeps the history.
 
 ## F2 · Structure: two project files
-**Status: approved, not applied.**
+**Status: applied (0.11.0).**
 
 - `data/guide.json`: catalog (categories and subsections) and the guide text of each one.
 - `data/project.json`: status and record of each subsection (`status`, `page`, `owner`, `notes`, `review`, `exclusionReason`).
@@ -22,7 +22,7 @@ This proposal records the confirmed decisions and makes explicit what remains op
 It is the same shape as today, no longer frozen. The subsection ID remains the key that joins them. A single catalog (it collides on the same entries between whoever edits the guide and whoever edits the status) and a folder per subsection (it needs a generated index) are discarded. If simultaneous work becomes a problem, it can migrate to a folder per subsection without undoing what was done.
 
 ## F3 · The seed lives in this repository
-**Status: approved, not applied.**
+**Status: applied (0.11.0).** `seed/`, `scripts/init.mjs` (`npm run init`) and tests in `scripts/init.test.mjs`; `check` validates the seed.
 
 - `seed/guide.json` (the catalog of 14 categories and 132 subsections) and `seed/project.json` (everything in P, with no page, owner, notes or review).
 - `npm run init` (`scripts/init.mjs`) copies the seed to `data/`, sets `projectId` and `name`, and records the origin seed version.
@@ -31,12 +31,12 @@ It is the same shape as today, no longer frozen. The subsection ID remains the k
 - Splitting the template into its own repository remains a later step (continuation of D6 of pilot 1); it does not change the data.
 
 ## F4 · No template update policy
-**Status: approved, not applied.**
+**Status: applied (0.11.0).** `seedVersion` is recorded in `project.json`.
 
 Improvements to the seed are not propagated to existing projects. `project.json` records `seedVersion` (informational only, for traceability). A command that compares the project with a newer seed and reports what is new, without merging anything, remains a future possibility.
 
 ## F5 · Claude Design can generate sections and subsections
-**Status: approved, not applied.**
+**Status: applied (0.11.0).** The catalog rules are enforced by `validateGuide` and `check`; the scope and process are in `claude-design.md`, `claude-code.md`, `handoff.md` and the data contract.
 
 Claude Design can create **new categories (sections) and subsections**, and edit the text of guides. This extends its write scope (D4 of pilot 1) and requires rules, which `check` validates.
 
@@ -84,7 +84,7 @@ Claude Design can create **new categories (sections) and subsections**, and edit
 The R/I/P/N status keeps being changed where it is changed today: Claude Design edits the `data/project.json` entry, Claude Code integrates it and it goes to Git. The header and the Record view **show** it and do not modify it. The form that generates the order, the local editing server and the per-subsection record file are discarded for now. They remain possible later.
 
 ## F9 · Task queue per subsection (non-blocking)
-**Status: approved in essence; details to confirm.**
+**Status: partial. Data contract, validator, tests and documentation applied (0.11.0); showing the queue in the Record view comes with F7, and Claude Design still has to split Color's notes into `notes` and `tasks`.**
 
 **Reason.** Today `notes` mixes decisions and pending work (in Color, "pending: dark theme, device test, corrections for iMoles…"). The program does not know what a task is, cannot count or show them separately, and does not distinguish what prevents publishing from what will be done later.
 

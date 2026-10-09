@@ -12,9 +12,9 @@ Read [CLAUDE.md](../CLAUDE.md) first. Your role is to develop the DS content and
 ## Synchronization and scope
 1. **Recorded base.** Write in `github.md` (root of your project) the commit and the `CHANGELOG.md` version you start from, and the count of expected files against the ones you see. The connector's listing filters files (for example `scripts/*.mjs`): cross-check the listing with the paths named by `package.json`, `CLAUDE.md` and `docs/data-contract.md`, and read missing ones by path.
 2. **At the start of every session**, compare your base with the repo. If the repo has advanced, stop and synchronize before modifying anything.
-3. **What you may modify:** `sections/`, `assets/<category>/<subsection>/` and the affected entries of `data/project.json`. Do not modify `data/guide.json`, the container (`index.html`, `app.js`, `model.js`, `styles.css`), `docs/` or `scripts/` unless explicitly asked.
+3. **What you may modify:** `sections/`, `assets/<category>/<subsection>/`, the affected entries of `data/project.json` and the affected entries of `data/guide.json` (guide text, new subsections, new categories; see [Creating sections](#creating-sections-and-subsections)). Do not modify the container (`index.html`, `app.js`, `model.js`, `styles.css`), `docs/`, `scripts/` or `seed/` unless explicitly asked. Do not change or delete existing IDs, rename folders or retire subsections unless explicitly asked.
 4. **What is not transferred:** `_ds/`, `github.md`, `uploads/` and Claude Design's auxiliary files.
-5. `data/project.json` is only touched in the affected entries; it is never regenerated as a whole. `owner` is optional.
+5. `data/project.json` and `data/guide.json` are only touched in the affected entries; they are never regenerated as a whole. `owner` is optional.
 
 ## Visual system
 Unless the responsible person says otherwise, ignore any design system that Claude Design loads or links to the project (today `_ds/`): do not apply it to pages or to the container. Section pages use a neutral documentation base and show the system being defined. Do not present values of that system as decided if they are not.
@@ -30,8 +30,18 @@ Unless the responsible person says otherwise, ignore any design system that Clau
 - Do not change the container globally to solve a section's design.
 - If you develop components, also use the [component sheet](../templates/component.md).
 
+## Creating sections and subsections
+You can add categories and subsections to `data/guide.json`. Follow the catalog rules of the [data contract](data-contract.md); `check` enforces them:
+1. Choose a stable ID: category `slug`, subsection `<category-id>.<slug>` (lowercase letters, digits, hyphen, underscore). Never reuse or rename an ID.
+2. Fill every guide field (title, objective, what to define, accessibility, deliverable, acceptance criteria) and set `suggestedPath` to exactly `sections/<category-id>/<slug>.html`. Give it the next visible number in its category.
+3. Add its entry to `data/project.json`, in P, with an empty page, owner, notes, tasks and review.
+4. Create the page and its resources only when development starts, and then follow the steps below.
+5. Do not delete a subsection: to retire one, mark it N with a reason.
+
 ## Status and decisions while working
-Update only the affected entries of `project.json`; never regenerate the whole file. P becomes I when development starts. If an R section is left with unreviewed changes, it returns to I and the pending items are recorded. Keep R only if the review is still valid and up to date.
+Update only the affected entries of `project.json`; never regenerate the whole file. P becomes I when development starts. If an R section is left with unreviewed changes, it returns to I and the blocking items are recorded in `notes`. Keep R only if the review is still valid and up to date.
+
+**Notes and tasks.** `notes` holds the current decisions and context. Work that is not blocking goes in `tasks`, each with `when: "pending"` (short term) or `when: "future"` (later). Tasks never block Ready: a section can be R with open tasks. Work that does block publication keeps the section in I, with its reason in `notes`. Remove a task when it is done. Do not duplicate tasks in the page; the page shows content, the record shows tasks.
 
 To propose R, record `review.by`, `review.date` and `review.evidence`: the person or role who actually reviewed, the date and a summary or links of what was checked. Do not attribute an approval to the user that they have not given. If there is no review, keep I. N requires an explicit decision and `exclusionReason`.
 

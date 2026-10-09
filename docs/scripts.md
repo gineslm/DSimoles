@@ -14,15 +14,16 @@ It checks the real repository. It prints `OK: …` if everything is fine or `Err
 
 | What it checks | What the error looks like | What to do |
 | --- | --- | --- |
-| `project.json` meets the contract with `guide.json` (version, IDs, statuses, fields, safe paths, R and N with their record). | `Invalid status: <id>`, `Ready requires a review: <id>`, `Incompatible project configuration version`. | Fix that entry. If the guide changed, bump `guideVersion`. |
-| The guide's IDs and suggested paths are unique and each entry is complete. | `Duplicate ID or target path`, `Incomplete guide entry: <id>`. | Review `guide.json`; do not reuse IDs. |
+| `project.json` meets the contract with `guide.json` (schema, identity, one entry per subsection and none extra, statuses, fields, tasks, safe paths, R and N with their record). | `Invalid status: <id>`, `Ready requires a review: <id>`, `Missing section entry: <id>`, `Entry without a subsection in the guide: <id>`, `Invalid tasks: <id>`, `Incompatible project configuration version`. | Fix that entry. When adding a subsection, add both its guide entry and its project entry. |
+| The guide is coherent on its own: ID format (`<category>.<slug>`), unique IDs and numbers, `suggestedPath` exactly `sections/<category>/<slug>.html`, complete entries. | `Duplicate subsection ID: <id>`, `Invalid subsection ID (expected <category>.<slug>): <id>`, `Invalid or duplicate suggested path: <id>`, `Incomplete guide entry: <id>`. | Review `guide.json`; do not reuse IDs. |
+| The seed (`seed/guide.json`, `seed/project.json`) is valid and starts empty and Pending. | `seed/: …`. | Restore the seed; a new project is born from it. |
 | The main files exist. | `ENOENT … <file>`. | Restore the missing file. |
 | Each section has at most one page: `<path>.html` or `<path>.dc.html`. | `<id> has two pages: … and …`. | Remove the old one (ask first if it is not yours). |
 | A section in I or R has a page (at the suggested path or in `page`), and if `page` is filled in the file exists. | `<id> is I and has no page at …`, `The page for <id> does not exist: …`. | Create or integrate the page, or return the section to P if there is no development yet. |
 | The page carries `<meta name="ds-section-id">` with its ID. | `Identity meta missing: <file>`. | Place it in the `<head>` with the exact ID from the guide. |
 | The pages' local references (`href` and `src`) exist and do not leave the repo. | `Reference outside the repo: …`, `ENOENT …`. | Fix the relative path. |
 | `.dc.html` pages: they load `react.production.min.js` and `react-dom.production.min.js` from `assets/_runtime/` **before** `./support.js`; there are no external scripts. | `… must load assets/_runtime/… before support.js`, `… links external scripts`, `… does not link support.js`. | Add or reorder the three `<script>` lines. |
-| `.dc.html` pages: `<html>` declares `lang="en"`. | `… must declare lang="en" on <html>`. | Add it by hand if the generated document lacks it; Claude Design must keep it. |
+| `.dc.html` pages: `<html>` declares the project's `language` (for example `lang="en"`). | `… must declare lang="en" on <html>`. | Add it by hand if the generated document lacks it; Claude Design must keep it. |
 | `.dc.html` pages: the images the page cites (in the HTML or in its data, with relative paths) exist and are inside the repo. `src` values with `{{ … }}` expressions are ignored. | `… cites an image that does not exist: <path>`. | Copy the image to `assets/<category>/<subsection>/` or fix the path. |
 | `.dc.html` pages: there is no `<sc-for>` or `<sc-if>` as a direct child of `table`, `thead`, `tbody`, `tfoot`, `tr`, `colgroup`, `select` or `optgroup`. | `<sc-for> inside <tbody>…`. | Use `div` with `role="table"`, `row` and `cell`. In the container's iframe the runtime cannot recover those tags. |
 | The vendored runtime matches (SHA-384) the one `support.js` declares. | `assets/_runtime/<file> does not match the version …/support.js expects`. | Claude Design changed React version: update the files in `assets/_runtime/` and their README. |
@@ -31,11 +32,20 @@ It checks the real repository. It prints `OK: …` if everything is fine or `Err
 It does not download external content or open the browser.
 
 ## `npm test`
-Automated tests, in two files:
-- `scripts/model.test.mjs`: the logic of `model.js` (`validateProject`, `safePage`, `pageCandidates`, `progressOf`). It covers statuses, N excluded from progress, incomplete imports, dangerous paths and diverging versions.
+Automated tests, in three files:
+- `scripts/model.test.mjs`: the logic of `model.js` (`validateGuide`, `validateProject`, `safePage`, `pageCandidates`, `progressOf`). It covers statuses, N excluded from progress, incomplete imports, dangerous paths, the catalog rules, adding a subsection, tasks (which never block R and are not counted) and the project identity.
 - `scripts/check.test.mjs`: it copies the repo to a temporary directory, breaks it in one specific way and verifies that `check` fails with the expected message (and that it passes when it should). It is the test of the `check` rules above. It does not modify your repo.
 
 Reading a failure: `not ok N - <name>` identifies the test; below it you will see the expected result against the obtained one. If a `check.test.mjs` test fails after a change of yours, either the rule no longer does what the table says or the change breaks it: decide which one it is and fix the right one.
+
+- `scripts/init.test.mjs`: runs `npm run init` in a temporary copy: it prints the usage without arguments, refuses to overwrite a project that has its own identity, `--force` starts a new valid project from the seed without touching `sections/`, and it works without `--force` while `data/` still has the seed's identity.
+
+## `npm run init`
+Starts a project from the seed. See the [data contract](data-contract.md#seed-and-init).
+
+```sh
+npm run init -- --id my-ds --name "My Design System" [--language en] [--force]
+```
 
 ## What they do not cover
 They do not test the browser, the container, accessibility or the content of the pages. The manual checks in [quality.md](quality.md) are for that.

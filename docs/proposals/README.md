@@ -29,14 +29,14 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-1 | D9 · Scripts | Applied | 0.6.0 | The scripts already existed; they were extended and documented in [scripts.md](../scripts.md). |
 | [pilot-2](pilot-2-container-and-style.md) | E1 · Container with a sidebar | Applied | 0.7.0 | Menu of 14 categories and 132 subsections, direct links and a drawer on mobile. |
 | pilot-2 | E2 · Style and tone guidelines | Partial | 0.9.0 | Guidelines approved on 2026-10-08 ([page-style.md](../page-style.md)). Pending: Claude Design redoing `visuals.color` with them. |
-| [pilot-3](pilot-3-data-and-structure.md) | F1 · Project-owned data ("inherit and own") | Approved | — | `seed/` + `init`; `data/` becomes the project's. |
-| pilot-3 | F2 · Two-file structure | Approved | — | `guide.json` and `project.json`, no longer frozen. |
-| pilot-3 | F3 · Seed in this repository | Approved | — | Splitting the template into its own repo is left for later. |
-| pilot-3 | F4 · No update policy | Approved | — | Only `seedVersion` is recorded. |
-| pilot-3 | F5 · Claude Design creates sections and subsections | Approved | — | Extends its scope to `guide.json`, entry by entry, with rules validated by `check`. |
+| [pilot-3](pilot-3-data-and-structure.md) | F1 · Project-owned data ("inherit and own") | Applied | 0.11.0 | `seed/` + `init`; `data/` becomes the project's. |
+| pilot-3 | F2 · Two-file structure | Applied | 0.11.0 | `guide.json` and `project.json`, no longer frozen. |
+| pilot-3 | F3 · Seed in this repository | Applied | 0.11.0 | Splitting the template into its own repo is left for later. |
+| pilot-3 | F4 · No update policy | Applied | 0.11.0 | Only `seedVersion` is recorded. |
+| pilot-3 | F5 · Claude Design creates sections and subsections | Applied | 0.11.0 | Extends its scope to `guide.json`, entry by entry, with rules validated by `check`. |
 | pilot-3 | F6 · Sticky header, hash routes and a summary home | Approved | — | Header in the shell; home as a summary by category. |
 | pilot-3 | F7 · Three views: Content, Guide, Record | Approved | — | Navigation among the three goes in the header. |
 | pilot-3 | F8 · Status is changed in Claude Design | Approved | — | The container shows it and does not modify it. |
-| pilot-3 | F9 · Task queue per subsection | Approved | — | `tasks` field (`pending`/`future`), does not block R; `notes` only for decisions, tasks are not counted. Details to confirm. |
+| pilot-3 | F9 · Task queue per subsection | Partial | 0.11.0 | `tasks` field (`pending`/`future`) in the data contract and validator; it does not block R and is not counted. Pending: showing it in the Record view (comes with F7) and Claude Design splitting Color's notes. |
 | pilot-3 | F10 · English-only repository | Applied | 0.10.0 | All content, interface, docs and script messages in English; IDs and paths renamed (see [pilot-3-id-map.md](pilot-3-id-map.md)). |
 | pilot-3 | Search | Pending | — | How it should work is undefined. |

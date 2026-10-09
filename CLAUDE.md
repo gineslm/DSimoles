@@ -15,11 +15,11 @@ DSBook is a workspace for defining, documenting and tracking a Design System. Th
 - [Proposals and their registry](docs/proposals/README.md): agreed changes to the way of working and their status (applied, approved, discarded, pending).
 
 ## Common rules
-1. Read `data/guide.json` and `data/project.json` before modifying a section. Keep their IDs; the visible title may change.
+1. Read `data/guide.json` and `data/project.json` before modifying a section. Keep existing IDs; the visible title may change. The data belongs to the project; the catalog rules are in the [data contract](docs/data-contract.md).
 2. **Everything in the repository is written in English**: data, documentation, pages, interface strings, script messages and commit messages. The conversation with the responsible person may be in another language; what is written to files is always English.
 3. No build step and no external services. The vendored runtime that `.dc.html` pages need is allowed, versioned inside the repo (`assets/_runtime/` and `sections/<category>/support.js`). Do not add a backend, accounts, remote synchronization or project managers without an agreed need.
 4. Create pages at each subsection's `suggestedPath`. Their resources go in `assets/<category>/<subsection>/`. Do not use absolute team paths or links that depend on a local domain.
-5. `data/guide.json` guides; `data/project.json` records decisions; `sections/` holds the development. Do not copy development content into the guide.
+5. `data/guide.json` is the project's catalog and guide text; `data/project.json` records status, decisions and tasks; `sections/` holds the development. Do not copy development content into the guide. Tasks are non-blocking and never prevent Ready; blocking work keeps the section in I.
 6. The only statuses are R (Ready), I (In process), P (Pending), N (Not applicable). An existing page does not imply R. Ready requires a recorded review, not an automatic certification.
 7. Do not mark N without an explicit reason. Do not exclude applicable accessibility requirements for convenience. A cross-cutting row does not replace per-element checks.
 8. Do not invent approvals, test results, owners or evidence. If work or review is pending, use I and describe what is pending.
@@ -32,12 +32,13 @@ DSBook is a workspace for defining, documenting and tracking a Design System. Th
 
 ## Repository map
 - `index.html`, `styles.css`, `app.js`, `model.js`: interactive container.
-- `data/guide.json`: 14 categories and 132 subsections with instructions and target paths.
-- `data/project.json`: project identity, status, page, owner, notes and review.
+- `data/guide.json`: the project's categories and subsections with instructions and target paths (it started with 14 categories and 132 subsections).
+- `data/project.json`: project identity, status, page, owner, notes, tasks and review.
+- `seed/`: the initial catalog and an all-Pending project. `npm run init` copies it to `data/` to start a project.
 - `sections/`: development of the DS; it starts empty of project content.
 - `templates/component.md`: component sheet. Section pages are created in Claude Design as `.dc.html`; there is no page template.
 - `assets/`: page resources.
 - `docs/`: permanent guides. `docs/proposals/`: change proposals and their registry.
 - `scripts/`: contract checks and logic tests.
 
-When starting another copy, change `projectId` and `name`, keep the guide and start with P statuses and empty pages. Do not inherit reviews or decisions from the previous project. See the README.
+When starting another project, run `npm run init -- --id <id> --name "<name>"` on a copy without the previous content. Do not inherit pages, reviews or decisions from another project. See [docs/template.md](docs/template.md).

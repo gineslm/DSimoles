@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "projectId": "dsimoles",
-  "name": "DSimoles",
+  "projectId": "new-design-system",
+  "name": "New Design System",
   "language": "en",
   "seedVersion": "1.0.0",
   "sections": {
@@ -136,10 +136,10 @@
       "exclusionReason": ""
     },
     "visuals.color": {
-      "status": "I",
+      "status": "P",
       "page": "",
-      "owner": "Gines Lopez",
-      "notes": "Paleta fijada por el responsable (2026-10-09) a partir de los prototipos HF de iMoles: marca 225° (marca.600 #00698C), neutros 225°, carmesí #DB2149 (alto), ámbar #8D6F00 (intermedio), teal claro #168072 (bajo), ciruela #6C2768 (no evaluable); coral, verde y violeta retirados. Todos los niveles con relleno sólido y texto blanco. Registradas validación de contraste WCAG 2.2 (todos los pares cumplen) y de visión del color (ΔE OKLab en normal, deuteranopía, protanopía, tritanopía y acromatopsia; pares por debajo de 8 cubiertos con forma y texto por decisión del responsable). Añadida propuesta de valores de interacción (hover 650, pulsado 700, superficies neutro.25/100, foco anillo marca.600 2 px, deshabilitado neutro.150/600, velo neutro.950 48 %) para 7 componentes; contrastes validados. 9 correcciones para iMoles sin aplicar. Formato de tokens para la implementación futura del DS (fuera de este repo): W3C DTCG. Pendiente: aprobar valores de interacción; prueba en dispositivo. Fuera de alcance: tema oscuro y alto contraste. Sin revisión.",
+      "owner": "",
+      "notes": "",
       "tasks": [],
       "review": {
         "by": "",

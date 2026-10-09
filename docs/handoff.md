@@ -7,11 +7,11 @@ This is the permanent contract between Claude Design and Claude Code. No templat
 | --- | --- |
 | Section page | The `suggestedPath` of its entry in `data/guide.json`. |
 | Own resources | `assets/<category>/<subsection>/`. |
-| Updated configuration | Affected entries of `data/project.json`. |
+| Updated configuration | Affected entries of `data/project.json` and, when a subsection or category is created or its guide text edited, of `data/guide.json`. |
 | Runtime of `.dc.html` pages | `assets/_runtime/` (vendored React) and `sections/<category>/support.js` (generated, identical in every folder). |
-| Guide or container changes | Only when they are an explicit part of the work. |
+| Container changes | Only when they are an explicit part of the work. |
 
-The files themselves are the deliverable. `notes`, `review` and `exclusionReason` hold the decisions that cannot be deduced from the code. Git records the differences once integrated. A folder, a ZIP or MCP access are valid means if they contain the same files and keep their paths.
+The files themselves are the deliverable. `notes`, `tasks`, `review` and `exclusionReason` hold the decisions and pending work that cannot be deduced from the code. Git records the differences once integrated. A folder, a ZIP or MCP access are valid means if they contain the same files and keep their paths.
 
 ## Stable contract
 - The ID links guide, configuration and page.
@@ -23,9 +23,9 @@ The files themselves are the deliverable. `notes`, `review` and `exclusionReason
 ## Flow and guarantees
 1. GitHub is the source of truth.
 2. Claude Design reads the repo, records its base in `github.md` (commit, `CHANGELOG.md` version, file count) and compares it with the repo at the start of every session. If the repo has advanced, it stops and synchronizes.
-3. Claude Design only modifies `sections/`, `assets/<category>/<subsection>/` and the affected entries of `project.json`.
+3. Claude Design only modifies `sections/`, `assets/<category>/<subsection>/` and the affected entries of `project.json` and `guide.json`.
 4. Claude Code brings those paths and the runtime to the local repo through MCP or files. It does not copy `_ds/`, `github.md` or `uploads/`.
-5. If the repo has advanced, `project.json` is integrated entry by entry and conflicts are pointed out, not resolved by recency.
+5. If the repo has advanced, `project.json` and `guide.json` are integrated entry by entry and conflicts are pointed out, not resolved by recency.
 6. Local validation: `npm run check`, `npm test` and visual review by a person. Then push according to the team's instructions.
 7. Claude Code records the integration in `CHANGELOG.md` and Claude Design synchronizes before the next session.
 

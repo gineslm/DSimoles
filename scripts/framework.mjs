@@ -1,6 +1,6 @@
 // Reports and records the version of the DSBook framework this repository runs.
 //   npm run framework                          report the version and whether the framework files match it
-//   npm run framework -- --release <version>   record a new version (after an intended framework change)
+//   npm run framework -- --release <version> [--repository <url>]   record a new version (after an intended framework change)
 //   npm run framework -- --compare <folder>    compare with another DSBook repository (its dsbook.json)
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -16,7 +16,7 @@ try {
     const version = opt('release');
     if (!version) fail('usage: npm run framework -- --release <MAJOR.MINOR.PATCH>');
     const before = await readManifest(root).catch(() => null);
-    const m = await release(root, version);
+    const m = await release(root, version, {repository: opt('repository')});
     console.log(`OK: DSBook framework ${before ? `${before.version} → ` : ''}${m.version} recorded (${Object.keys(m.files).length} files).`);
     console.log('Next: add the entry to CHANGELOG.md and port the change to the other DSBook repositories (docs/framework.md).');
   } else if (args.includes('--compare')) {

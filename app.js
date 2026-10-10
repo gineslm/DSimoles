@@ -1,6 +1,6 @@
-import {validateGuide, validateProject, progressOf, pageCandidates, parseRoute, routeHash, breadcrumb, neighbors, defaultView, openTasks} from './model.js';
+import {validateGuide, validateProject, progressOf, pageCandidates, parseRoute, routeHash, breadcrumb, neighbors, defaultView, openTasks, parseRepo, frameworkStatus, shaFromGit, commitState} from './model.js';
 const $=s=>document.querySelector(s), labels={R:'Ready',I:'In process',P:'Pending',N:'Not applicable'};
-let guide,project,route={name:'home'},routeToken=0,filters=new Set(),query='',found=new Map(),resolved=new Map(),navigated=false;
+let guide,project,manifest=null,route={name:'home'},routeToken=0,filters=new Set(),query='',found=new Map(),resolved=new Map(),navigated=false;
 const el=(tag,props={},text)=>{const node=document.createElement(tag);Object.assign(node,props);if(text!==undefined)node.textContent=text;return node;};
 const link=(href,text,props={})=>el('a',{href,...props},text);
 function report(message){$('#error').textContent=message;$('#error').hidden=false;}
@@ -96,6 +96,57 @@ function viewContent(i,page){
   const empty=el('div',{className:'empty'});empty.append(el('h2',{},'No page yet'),el('p',{},'This section does not have a page at its expected path:'),el('code',{},i.suggestedPath),link(`#/${i.id}/info`,'Read the info'));wrap.append(empty);return wrap;
 }
 
+// ---- framework page: what the project is built on and where it lives (the only network calls are the two manual checks)
+async function getJson(url){const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json();}
+async function readLocalCommit(){
+  const text=async p=>{try{const r=await fetch(p,{cache:'no-store'});return r.ok?await r.text():null;}catch{return null;}};
+  const head=await text('.git/HEAD');if(!head)return null;
+  const ref=head.trim().match(/^ref: (\S+)$/)?.[1];
+  return shaFromGit(head,ref?await text(`.git/${ref}`):null,ref?await text('.git/packed-refs'):null);
+}
+function aboutBlock(title,rows,checkFn,hint){
+  const block=el('section',{className:'about-block'}),dl=el('dl'),status=el('p',{className:'about-status'});status.setAttribute('role','status');
+  block.append(el('h2',{},title));
+  for(const [k,v] of rows){const dd=el('dd');dd.append(v instanceof Node?v:document.createTextNode(v));dl.append(el('dt',{},k),dd);}
+  block.append(dl);
+  const actions=el('div',{className:'about-actions'});
+  if(checkFn){const btn=el('button',{type:'button'},'Check for updates');
+    btn.onclick=async()=>{btn.disabled=true;status.textContent='Checking…';try{status.textContent=await checkFn();}catch(e){status.textContent=`Could not check: ${e.message}. It needs a connection, and private repositories cannot be read from the browser.`;}finally{btn.disabled=false;}};
+    actions.append(btn,status);}
+  else actions.append(el('p',{className:'about-status'},hint));
+  block.append(actions);return block;
+}
+function viewFramework(){
+  const wrap=el('div',{className:'view-inner'}),about=el('div',{className:'about'});
+  wrap.append(el('h1',{id:'view-title'},'Framework'),el('p',{className:'lead'},'What this project is built on, and where it lives.'));
+  const m=manifest,src=m&&parseRepo(m.repository),ext=url=>link(url,url.replace('https://',''),{target:'_blank',rel:'noopener noreferrer'});
+  about.append(aboutBlock('DSBook framework',
+    m?[['Version',m.version],['Released',m.released||'Not recorded'],['Source',src?ext(m.repository):'Not recorded']]:[['Version','dsbook.json was not found']],
+    src&&m?async()=>{
+      const remote=await getJson(`https://raw.githubusercontent.com/${src.owner}/${src.repo}/HEAD/dsbook.json`),s=frameworkStatus(m,remote),n=s.differ.length;
+      if(s.state==='current')return `Up to date: DSBook ${s.local}.`;
+      if(s.state==='update')return `Update available: ${s.local} → ${s.remote}${remote.released?` (released ${remote.released})`:''}. ${n} framework file${n===1?'':'s'} differ.`;
+      if(s.state==='ahead')return `This project is ahead of its source (${s.local} here, ${s.remote} there). The change still has to be ported to DSBook.`;
+      return `Same version (${s.local}) but ${n} framework file${n===1?'':'s'} differ: ${s.differ.join(', ')}.`;
+    }:null,'The source repository is not recorded in dsbook.json.'));
+  const repo=parseRepo(project.repository),last=el('span',{},'Shown after checking');
+  about.append(aboutBlock('This project',
+    [['Project',project.name],['Repository',repo?ext(project.repository):'Not set'],['Last commit',last]],
+    repo?async()=>{
+      const api=`https://api.github.com/repos/${repo.owner}/${repo.repo}`,top=await getJson(`${api}/commits/HEAD`);
+      last.textContent=`${top.commit.message.split('\n')[0]} · ${top.sha.slice(0,7)} · ${top.commit.author.date.slice(0,10)}`;
+      const local=await readLocalCommit();
+      if(!local)return 'Your copy’s commit could not be read, so it cannot be compared. Serve the site from the repository folder.';
+      let cmp=null;try{cmp=await getJson(`${api}/compare/${local}...${top.sha}`);}catch(e){if(e.message!=='HTTP 404')throw e;}
+      const r=commitState(cmp),c=r.count;
+      if(r.state==='current')return 'Up to date with GitHub.';
+      if(r.state==='update')return `GitHub has ${c} newer commit${c===1?'':'s'} than this copy. Pull them before working.`;
+      if(r.state==='unpushed')return `This copy has commits that are not on GitHub${c?` (${c})`:''}.`;
+      return 'This copy and GitHub have diverged: both have commits the other lacks.';
+    }:null,'Set "repository" in data/project.json to check the project’s repository.'));
+  wrap.append(about);return wrap;
+}
+
 // ---- routing
 async function renderRoute(t){
   const view=$('#view'),name=project.name;view.classList.remove('frame');view.removeAttribute('aria-label');
@@ -106,6 +157,7 @@ async function renderRoute(t){
     node=effective==='content'?viewContent(item,page):effective==='info'?viewInfo(item):viewRecord(item,entry,page);
     title=`${item.number} ${item.title}`;if(effective==='content'&&page)view.classList.add('frame');
   }else if(route.name==='category'){const c=catOf(route.id);node=viewCategory(c);title=c.title;}
+  else if(route.name==='framework'){node=viewFramework();title='Framework';}
   else if(route.name==='home')node=viewHome();
   else{node=el('div',{className:'view-inner'});node.append(el('h1',{id:'view-title'},'Page not found'),el('p',{},`There is nothing at ${route.hash||'this address'}.`),link('#/','Go to the home page'));}
   renderHead(item,entry,page,effective);
@@ -144,5 +196,5 @@ $('#search').oninput=e=>setQuery(e.target.value);
 $('#panel-state').addEventListener('change',e=>{const s=e.target.dataset.filter;if(!s)return;if(s==='all')filters.clear();else filters.has(s)?filters.delete(s):filters.add(s);onFilterChange();});
 
 // ---- start
-async function init(){try{const results=await Promise.all(['guide','project'].map(async n=>{const r=await fetch(`data/${n}.json`,{cache:'no-store'});if(!r.ok)throw Error(`Could not read ${n}.json`);return r.json();}));[guide,project]=results;validateGuide(guide);validateProject(project,guide);stats();syncFilters();window.addEventListener('hashchange',go);await go();}catch(e){report(`${e.message}. Start the local server described in README.md; opening index.html with file:// cannot load the JSON files.`);}}
+async function init(){try{const results=await Promise.all(['guide','project'].map(async n=>{const r=await fetch(`data/${n}.json`,{cache:'no-store'});if(!r.ok)throw Error(`Could not read ${n}.json`);return r.json();}));[guide,project]=results;manifest=await fetch('dsbook.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);validateGuide(guide);validateProject(project,guide);stats();syncFilters();window.addEventListener('hashchange',go);await go();}catch(e){report(`${e.message}. Start the local server described in README.md; opening index.html with file:// cannot load the JSON files.`);}}
 init();

@@ -68,6 +68,19 @@ test('--release records a new version and makes the files match again', () => {
   });
 });
 
+test('--release records the date and keeps the source repository unless another is given',() => {
+  inCopy(dir => {
+    run(dir, 'framework.mjs', '--release', '2.0.0');
+    const m = manifest(dir);
+    assert.equal(m.repository, manifest(root).repository);
+    assert.match(m.released, /^\d{4}-\d{2}-\d{2}$/);
+    run(dir, 'framework.mjs', '--release', '2.0.1', '--repository', 'https://github.com/someone/other');
+    assert.equal(manifest(dir).repository, 'https://github.com/someone/other');
+    const bad = run(dir, 'framework.mjs', '--release', '2.0.2', '--repository', 'not-a-url');
+    assert.notEqual(bad.code, 0); assert.match(bad.out, /Invalid repository/);
+  });
+});
+
 test('--release rejects a version that is not MAJOR.MINOR.PATCH', () => {
   inCopy(dir => {
     const r = run(dir, 'framework.mjs', '--release', 'v2');

@@ -27,7 +27,7 @@ Open http://localhost:8000. Do not open `index.html` directly: loading the JSON 
 
 Filter by status from the filter icon in the rail (statuses can be combined) and search by title, category or content from the box in the header. Category counts represent all their items; filters show only the matches. The home page shows two progress bars. **Progress**: R / (R + I + P), that is, ready subsections over the applicable ones. **Complexity**: subsections that are not N over the total in the guide. If everything is N, progress shows "No applicable sections".
 
-The left side is a narrow rail with the **DSB** mark (a link to the home page) and two icons: **status** and **sections**. Each opens a dropdown panel on hover; a click pins it and Escape closes it. In the Sections panel, hovering a category opens all its subsections in a submenu; on touch screens each category has a chevron that expands them inline. A dot on the filter icon shows that a filter or a search is active.
+The left side is a narrow rail with the **DSB** mark (it opens the Framework page; the home page is the first breadcrumb) and two icons: **status** and **sections**. Each opens a dropdown panel on hover; a click pins it and Escape closes it. In the Sections panel, hovering a category opens all its subsections in a submenu; on touch screens each category has a chevron that expands them inline. A dot on the filter icon shows that a filter or a search is active.
 
 ## Read-only container
 The site shows the state of the repository and does not modify it: it does not keep drafts or import or export configuration. Everything is edited in Claude Design; Claude Code integrates the changes into Git. Search, filters, the expanded state of the menu and the current address are in-memory viewing state.
@@ -47,6 +47,8 @@ npm test
 They need no dependencies. There is also a manual review list in [docs/quality.md](docs/quality.md). Automated tests do not certify accessibility and do not replace visual review.
 
 ## Framework version
+The DSB mark opens the **Framework** page: the framework version and its source, the project's repository, the latest commit on GitHub, and a *Check for updates* button on each (manual, the only network calls).
+
 The container, the scripts, the seed and the guides in `docs/` are the DSBook framework, shared with other repositories. `dsbook.json` records its version, and `npm run check` fails if a framework file changes without a new version being recorded. `npm run framework -- --compare <folder>` compares this repository with another one. See [docs/framework.md](docs/framework.md).
 
 ## Reusing the template

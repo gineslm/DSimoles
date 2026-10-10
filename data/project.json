@@ -3,6 +3,7 @@
   "projectId": "dsimoles",
   "name": "DSimoles",
   "language": "en",
+  "repository": "https://github.com/gineslm/DSimoles",
   "seedVersion": "1.0.0",
   "sections": {
     "foundations.goals-and-usage-guide": {

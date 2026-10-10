@@ -4,9 +4,11 @@ Every project built with DSBook is a copy of the same base: the container, the s
 
 ## What `dsbook.json` records
 ```json
-{ "framework": "DSBook", "version": "1.0.0", "files": { "app.js": "<sha-256>", … } }
+{ "framework": "DSBook", "version": "1.1.0", "released": "2026-10-10", "repository": "https://github.com/<owner>/DSBook", "files": { "app.js": "<sha-256>", … } }
 ```
 - `version`: the framework version, `MAJOR.MINOR.PATCH`.
+- `released`: the date that version was recorded.
+- `repository`: the framework's source, where updates come from. `--release` keeps it from the previous manifest, or sets it with `--repository <url>`.
 - `files`: the SHA-256 of every framework file (line endings normalized, so a Windows and a Linux checkout agree).
 
 ## What belongs to the framework
@@ -22,7 +24,7 @@ The guides under `docs/` are written without any project name so that they stay 
 ## Commands
 ```sh
 npm run framework                              # report the version and whether the files match it
-npm run framework -- --release 1.1.0           # record a new version after an intended change
+npm run framework -- --release 1.1.0           # record a new version after an intended change (--repository <url> sets the source)
 npm run framework -- --compare ../DSBook       # compare with another DSBook repository
 ```
 `npm run check` runs the first one and **fails** if a framework file differs from what `dsbook.json` records, so a change to the container, a script or a guide can never go unnoticed.
@@ -38,6 +40,13 @@ npm run framework -- --compare ../DSBook       # compare with another DSBook rep
 3. Record it: `npm run framework -- --release <new version>`.
 4. Add an entry to `CHANGELOG.md`: version, date, commit, summary. In DSBook the changelog **is** the framework history. A project notes in its own changelog which framework version it adopted.
 5. **Port it** to the other repositories: copy the framework files (the left column above), run `npm run framework -- --compare <other>` to confirm both manifests are identical, then `check` and `test` there. Never copy `data/`, `sections/` or the project files.
+
+## The Framework page
+The DSB mark in the container opens `#/framework`. It is deliberately small and has two blocks:
+- **DSBook framework**: version, release date and source (from `dsbook.json`), and a *Check for updates* button. The button reads the source's `dsbook.json` from GitHub and says whether the source is newer, this project is ahead of it, the same version has different files, or everything is current.
+- **This project**: name, repository (the optional `repository` in `data/project.json`) and, after pressing its *Check for updates* button, the message of the latest commit on GitHub and whether this copy is current. The copy's own commit is read from `.git`, which a local static server serves; if it cannot be read, the page says so.
+
+Both checks are manual and are the only network calls the container makes. Private repositories cannot be read from the browser. The page cannot see uncommitted changes. Agents do the equivalent check at the start of every session ([claude-code.md](claude-code.md)).
 
 ## Knowing whether two repositories differ
 ```sh

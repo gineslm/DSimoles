@@ -33,13 +33,15 @@ It checks the real repository. It prints `OK: …` if everything is fine or `Err
 It does not download external content or open the browser.
 
 ## `npm test`
-Automated tests, in five files:
+Automated tests, in six files:
 - `scripts/model.test.mjs`: the logic of `model.js` (`validateGuide`, `validateProject`, `safePage`, `pageCandidates`, `progressOf`). It covers statuses, N excluded from progress, incomplete imports, dangerous paths, the catalog rules, adding a subsection, tasks (which never block R and are not counted) and the project identity.
 - `scripts/check.test.mjs`: it copies the repo to a temporary directory, installs a fixture page (`scripts/fixtures/`) so it does not depend on the project having pages, breaks it in one specific way and verifies that `check` fails with the expected message (and that it passes when it should). It is the test of the `check` rules above. It does not modify your repo.
 
 Reading a failure: `not ok N - <name>` identifies the test; below it you will see the expected result against the obtained one. If a `check.test.mjs` test fails after a change of yours, either the rule no longer does what the table says or the change breaks it: decide which one it is and fix the right one.
 
 - `scripts/init.test.mjs`: runs `npm run init` in a temporary copy: it prints the usage without arguments, refuses to overwrite a project that has its own identity, `--force` starts a new valid project from the seed without touching `sections/`, and it works without `--force` while `data/` still has the seed's identity.
+
+- `scripts/about.test.mjs`: the logic behind the Framework page: its route (reserved ID), the optional `repository`, the framework status (update, ahead, diverged, current), reading the local commit from `.git` and interpreting GitHub's comparison. It makes no network calls.
 
 - `scripts/framework.test.mjs`: the framework manifest. A changed or added framework file fails the report and `check`; line endings and project files do not matter; `--release` records a version and `--compare` tells identical and different repositories apart.
 
@@ -57,7 +59,7 @@ Reports, records and compares the version of the DSBook framework. See [framewor
 
 ```sh
 npm run framework
-npm run framework -- --release 1.1.0
+npm run framework -- --release 1.1.0 [--repository https://github.com/<owner>/DSBook]
 npm run framework -- --compare ../DSBook
 ```
 

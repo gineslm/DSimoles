@@ -5,6 +5,7 @@
 import {readFile, readdir, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
+import {parseRepo} from '../model.js';
 
 export const MANIFEST = 'dsbook.json';
 export const SEMVER = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
@@ -51,6 +52,8 @@ export async function readManifest(root) {
   if (m.framework !== 'DSBook' || !SEMVER.test(m.version) || !m.files || typeof m.files !== 'object') {
     throw Error(`${MANIFEST} is not a valid DSBook manifest`);
   }
+  if (m.repository !== undefined && !parseRepo(m.repository)) throw Error(`${MANIFEST}: invalid repository (expected https://github.com/<owner>/<repo>)`);
+  if (m.released !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(m.released)) throw Error(`${MANIFEST}: invalid released date (expected YYYY-MM-DD)`);
   return m;
 }
 
@@ -67,11 +70,16 @@ export async function verify(root) {
   return {version: manifest.version, changed, missing, added, ok: !changed.length && !missing.length && !added.length};
 }
 
-export async function release(root, version) {
+// `repository` is the framework's source (where updates come from); it is kept from the previous manifest unless given.
+export async function release(root, version, {repository} = {}) {
   if (!SEMVER.test(version)) throw Error(`Invalid version "${version}" (expected MAJOR.MINOR.PATCH)`);
+  const previous = await readManifest(root).catch(() => null);
+  const source = repository ?? previous?.repository;
+  if (source !== undefined && !parseRepo(source)) throw Error(`Invalid repository "${source}" (expected https://github.com/<owner>/<repo>)`);
   const files = {};
   for (const rel of await ownedFiles(root)) files[rel] = await hashOf(root, rel);
-  const manifest = {framework: 'DSBook', version, files};
+  const released = new Date().toISOString().slice(0, 10);
+  const manifest = {framework: 'DSBook', version, released, ...(source ? {repository: source} : {}), files};
   await writeFile(path.join(root, MANIFEST), JSON.stringify(manifest, null, 2) + '\n');
   return manifest;
 }

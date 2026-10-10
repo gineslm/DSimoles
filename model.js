@@ -7,6 +7,7 @@ export function validateGuide(g){
   const ids=new Set(),paths=new Set(),catIds=new Set(),catNumbers=new Set(),numbers=new Set();
   for(const c of g.categories){
     if(typeof c.id!=='string'||!SLUG.test(c.id)||catIds.has(c.id))throw Error(`Invalid or duplicate category ID: ${c.id}`);catIds.add(c.id);
+    if(c.id==='framework')throw Error('Reserved category ID: framework');
     if(!filled(String(c.number??''))||catNumbers.has(String(c.number)))throw Error(`Invalid or duplicate category number: ${c.id}`);catNumbers.add(String(c.number));
     for(const f of ['title','objective'])if(!filled(c[f]))throw Error(`Incomplete category: ${c.id}`);
     if(!Array.isArray(c.items))throw Error(`Category without items: ${c.id}`);
@@ -26,6 +27,7 @@ export function validateProject(p,g){
   if(!p||p.schemaVersion!==2)throw Error('Incompatible project configuration version');
   if(typeof p.projectId!=='string'||!/^[a-z0-9-]+$/.test(p.projectId)||!filled(p.name)||typeof p.language!=='string'||!/^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(p.language)||!filled(p.seedVersion))throw Error('Invalid project identity');
   const ids=g.categories.flatMap(c=>c.items.map(i=>i.id));
+  if(p.repository!==undefined&&!parseRepo(p.repository))throw Error('Invalid repository (expected https://github.com/<owner>/<repo>)');
   if(!p.sections||typeof p.sections!=='object')throw Error('Invalid sections');
   for(const id of ids)if(!p.sections[id])throw Error(`Missing section entry: ${id}`);
   const known=new Set(ids);for(const k of Object.keys(p.sections))if(!known.has(k))throw Error(`Entry without a subsection in the guide: ${k}`);
@@ -55,14 +57,16 @@ export function parseRoute(hash,guide){
   if(!parts[0])return{name:'home'};
   const [id,view,...rest]=parts;
   if(rest.length)return{name:'notfound',hash:String(hash||'')};
+  if(id==='framework')return view?{name:'notfound',hash:String(hash||'')}:{name:'framework'};
   if(guide.categories.some(c=>c.id===id))return view?{name:'notfound',hash:String(hash||'')}:{name:'category',id};
   if(guide.categories.some(c=>c.items.some(i=>i.id===id))){if(view&&!VIEWS.includes(view))return{name:'notfound',hash:String(hash||'')};return{name:'section',id,view:view||null};}
   return{name:'notfound',hash:String(hash||'')};
 }
-export function routeHash(route){return route.name==='home'?'#/':route.name==='category'?`#/${route.id}`:route.name==='section'?`#/${route.id}${route.view?`/${route.view}`:''}`:'#/';}
+export function routeHash(route){return route.name==='home'?'#/':route.name==='framework'?'#/framework':route.name==='category'?`#/${route.id}`:route.name==='section'?`#/${route.id}${route.view?`/${route.view}`:''}`:'#/';}
 export function breadcrumb(guide,route,projectName){
   const home={label:projectName,hash:'#/'};
   if(route.name==='home'||route.name==='notfound')return[{label:projectName}];
+  if(route.name==='framework')return[home,{label:'Framework'}];
   const c=route.name==='category'?guide.categories.find(x=>x.id===route.id):guide.categories.find(x=>x.items.some(i=>i.id===route.id));
   const cat={label:`${String(c.number).padStart(2,'0')} ${c.title}`,hash:`#/${c.id}`};
   if(route.name==='category')return[home,{label:cat.label}];
@@ -73,3 +77,29 @@ export function neighbors(guide,id){const flat=guide.categories.flatMap(c=>c.ite
 // Default view of a section: its page if it has one and it is being worked on or ready; otherwise its guide.
 export function defaultView(entry,hasPage){return hasPage&&(entry.status==='I'||entry.status==='R')?'content':'info';}
 export function openTasks(entry){return{pending:entry.tasks.filter(t=>t.when==='pending'),future:entry.tasks.filter(t=>t.when==='future')};}
+
+// ---- framework and repository status (pure: the container does the fetching)
+// A GitHub repository URL: https://github.com/<owner>/<repo>
+export function parseRepo(url){const m=typeof url==='string'&&url.match(/^https:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_-][A-Za-z0-9_.-]*?)(?:\.git)?\/?$/);return m?{owner:m[1],repo:m[2]}:null;}
+export function compareVersions(a,b){const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let k=0;k<3;k++)if(x[k]!==y[k])return x[k]<y[k]?-1:1;return 0;}
+// Local manifest against the source's: the source is newer ('update'), older ('ahead'), the same version with other files ('diverged') or identical ('current').
+export function frameworkStatus(local,remote){
+  const cmp=compareVersions(local.version,remote.version),names=new Set([...Object.keys(local.files||{}),...Object.keys(remote.files||{})]);
+  const differ=[...names].filter(n=>(local.files||{})[n]!==(remote.files||{})[n]).sort();
+  return{state:cmp<0?'update':cmp>0?'ahead':differ.length?'diverged':'current',differ,local:local.version,remote:remote.version};
+}
+// The commit a local clone is at, from the text of .git/HEAD, of the file it points to and of .git/packed-refs.
+export function shaFromGit(head,refFile,packed){
+  const h=String(head||'').trim();if(/^[0-9a-f]{40}$/.test(h))return h;
+  const ref=h.match(/^ref: (\S+)$/)?.[1];if(!ref)return null;
+  const direct=String(refFile||'').trim();if(/^[0-9a-f]{40}$/.test(direct))return direct;
+  const line=String(packed||'').split(/\r?\n/).find(l=>l.endsWith(` ${ref}`)&&/^[0-9a-f]{40} /.test(l));return line?line.slice(0,40):null;
+}
+// GitHub's compare of <local>...<remote>: null means the local commit is not on GitHub.
+export function commitState(cmp){
+  if(!cmp)return{state:'unpushed'};
+  if(cmp.status==='identical')return{state:'current'};
+  if(cmp.status==='ahead')return{state:'update',count:cmp.ahead_by};
+  if(cmp.status==='behind')return{state:'unpushed',count:cmp.behind_by};
+  return{state:'diverged'};
+}

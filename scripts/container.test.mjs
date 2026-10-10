@@ -87,6 +87,16 @@ test('Container: home, sections, views, filters and legacy links work without co
       assert.equal(await b.eval(`document.querySelector('.empty h2').textContent`), 'No page yet');
     }
     await b.go('#/');
+    assert.equal(await b.eval(`document.getElementById('home-link').getAttribute('href')`), '#/framework', 'the DSB mark opens the framework page');
+    await b.eval(`document.getElementById('home-link').click()`); await sleep(400);
+    assert.equal(await b.eval(`location.hash`), '#/framework');
+    assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'Framework');
+    assert.deepEqual(await b.eval(`[...document.querySelectorAll('.about-block h2')].map(h => h.textContent)`), ['DSBook framework', 'This project']);
+    const manifest = JSON.parse(readFileSync(path.join(root, 'dsbook.json'), 'utf8'));
+    assert.equal(await b.eval(`document.querySelector('.about-block dd').textContent`), manifest.version, 'the page shows the framework version from dsbook.json');
+    assert.equal(await b.eval(`document.querySelectorAll('.about-block button').length`) >= 1, true, 'there is a check button');
+    assert.equal(await b.eval(`document.querySelector('#crumbs a').getAttribute('href')`), '#/', 'the breadcrumb leads back to the home page');
+    await b.go('#/');
     const counts = {};
     for (const s of Object.values(project.sections)) counts[s.status] = (counts[s.status] || 0) + 1;
     await b.eval(`document.querySelector('[data-filter="I"]').click()`); await sleep(300);

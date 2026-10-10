@@ -2,6 +2,12 @@
 
 Read [CLAUDE.md](../CLAUDE.md), the [contract](data-contract.md) and the [general handoff guide](handoff.md). Your role is to consolidate what was edited in Claude Design without losing other teams' work.
 
+## At the start of a session
+Check that your copy is current before working, and say so if it is not:
+1. `git fetch` and `git status -sb`: report whether the remote has commits you do not have, or you have commits it does not.
+2. If `dsbook.json` names a source repository, check whether the framework there is newer. With a local clone of it, `npm run framework -- --compare <folder>` does it; otherwise read its `dsbook.json` on GitHub. The Framework page of the container offers both checks by hand.
+3. Never pull, merge or port on your own: report what you found and let the responsible person decide.
+
 ## Integration
 1. Inspect the branch, `git status` and existing differences. Do not overwrite unrelated changes or clean the tree automatically.
 2. Read the current guide and project. Compare the received files with the repository by section ID, not only by title.

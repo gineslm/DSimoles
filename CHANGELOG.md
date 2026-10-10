@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.17.0 · 2026-10-10 · (filled in after the commit)
+## 0.17.0 · 2026-10-10 · c993acf
 Sections: visuals.color.
 The Color page integrated from Claude Design in English: the hand-written context line, status labels and the final Pending section are gone, the iMoles interface copy stays verbatim in `lang="es"`, and the capture boxes are still empty. `project.json` entry `visuals.color`: notes in English (decisions and context) and 13 tasks (12 pending, 1 future); status I, owner kept, no review recorded.
 

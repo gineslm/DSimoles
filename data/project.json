@@ -46,7 +46,7 @@
       "exclusionReason": ""
     },
     "foundations.existing-ecosystem": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -56,10 +56,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "foundations.interface-inventory": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -69,10 +69,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "foundations.design-principles": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -82,10 +82,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "foundations.system-boundaries": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -95,10 +95,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "foundations.glossary": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -108,10 +108,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "foundations.decision-log": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -121,7 +121,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "foundations.accessibility": {
       "status": "P",
@@ -255,7 +255,7 @@
       "exclusionReason": ""
     },
     "visuals.shape": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -265,10 +265,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "visuals.elevation": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -278,10 +278,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "visuals.opacity": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -291,10 +291,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "visuals.motion": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -304,7 +304,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "visuals.accessibility": {
       "status": "P",
@@ -346,7 +346,7 @@
       "exclusionReason": ""
     },
     "tokens.token-lifecycle": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -356,10 +356,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.simple-and-composite-values": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -369,10 +369,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.light-theme": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -382,10 +382,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.dark-theme": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -395,10 +395,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.brand-variants": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -408,10 +408,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.density-and-platforms": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -421,10 +421,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.design-code-mapping": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -434,10 +434,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.visual-and-action-categories": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -447,10 +447,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.additional-categories": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -460,10 +460,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "tokens.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -473,7 +473,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.libraries-and-licenses": {
       "status": "P",
@@ -489,7 +489,7 @@
       "exclusionReason": ""
     },
     "resources.icon-construction": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -499,10 +499,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.stroke-and-fill": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -512,10 +512,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.types-of-graphic-resources": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -525,10 +525,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.icons-and-labels": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -538,10 +538,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.photography-and-illustration": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -551,10 +551,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.crops-and-proportions": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -564,10 +564,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.loading-formats-and-export": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -577,10 +577,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "resources.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -590,7 +590,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "layout.containers-and-grid": {
       "status": "P",
@@ -606,7 +606,7 @@
       "exclusionReason": ""
     },
     "layout.alignment-and-hierarchy": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -616,7 +616,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "layout.breakpoints": {
       "status": "P",
@@ -632,7 +632,7 @@
       "exclusionReason": ""
     },
     "layout.viewport-and-container": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -642,10 +642,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "layout.grid-and-flexbox": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -655,10 +655,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "layout.responsive-reflow": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -668,10 +668,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "layout.content-and-overflow": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -681,10 +681,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "layout.scrolling-and-density": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -694,10 +694,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "layout.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -707,10 +707,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.voice-tone-and-terminology": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -720,10 +720,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.titles-labels-and-actions": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -733,10 +733,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.help-and-instructions": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -746,10 +746,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.interface-messages": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -759,10 +759,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.text-length": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -772,10 +772,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.conventions-and-formats": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -785,10 +785,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.translation-and-pluralization": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -798,10 +798,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.right-to-left-scripts": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -811,10 +811,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "content.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -824,10 +824,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.input-modalities": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -837,10 +837,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.interaction-states": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -850,10 +850,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.process-states": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -863,10 +863,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.focus-management": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -876,10 +876,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.activation-and-dismissal": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -889,10 +889,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.destructive-actions-and-undo": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -902,10 +902,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.gestures-and-dragging": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -915,10 +915,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.updates-and-animation": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -928,10 +928,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "interaction.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -941,7 +941,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "components.actions": {
       "status": "P",
@@ -1074,7 +1074,7 @@
       "exclusionReason": ""
     },
     "patterns.saving-and-canceling": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1084,10 +1084,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.search-filters-and-results": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1097,10 +1097,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.batch-actions": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1110,10 +1110,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.create-edit-and-delete": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1123,10 +1123,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.file-management": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1136,10 +1136,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.absence-states": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1149,10 +1149,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.errors-and-retries": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1162,10 +1162,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.access-onboarding-and-permissions": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1175,10 +1175,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "patterns.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1188,7 +1188,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "navigation.levels-and-hierarchy": {
       "status": "P",
@@ -1204,7 +1204,7 @@
       "exclusionReason": ""
     },
     "navigation.pattern-selection": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1214,7 +1214,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "navigation.current-location": {
       "status": "P",
@@ -1230,7 +1230,7 @@
       "exclusionReason": ""
     },
     "navigation.relationship-between-mechanisms": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1240,10 +1240,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "navigation.responsive-navigation": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1253,10 +1253,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "navigation.history-and-deep-links": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1266,10 +1266,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "navigation.context-persistence": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1279,10 +1279,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "navigation.routes-titles-and-focus": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1292,10 +1292,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "navigation.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1305,10 +1305,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.general-structure": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1318,10 +1318,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.list-and-detail": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1331,10 +1331,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.forms-and-results": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1344,10 +1344,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.panels-and-settings": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1357,10 +1357,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.sequential-flows": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1370,10 +1370,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.access-error-and-empty-states": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1383,10 +1383,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.titles-and-primary-actions": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1396,10 +1396,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.responsive-and-density": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1409,10 +1409,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "templates.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1422,10 +1422,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.technologies-and-dependencies": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1435,10 +1435,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.packages-and-styles": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1448,10 +1448,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.component-api": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1461,10 +1461,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.customization-and-themes": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1474,10 +1474,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.design-code-mapping": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1487,10 +1487,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.documentation-and-examples": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1500,10 +1500,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.compatibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1513,10 +1513,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.performance": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1526,10 +1526,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.publishing-and-migration": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1539,10 +1539,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1552,10 +1552,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.acceptance-and-consistency": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1565,10 +1565,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.testing-and-regression": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1578,10 +1578,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.real-content-and-languages": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1591,10 +1591,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.themes-sizes-and-devices": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1604,10 +1604,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.usability-testing": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1617,10 +1617,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.deliverable-consistency": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1630,10 +1630,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.known-issues": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1643,10 +1643,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "quality.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1656,10 +1656,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.team-and-contribution": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1669,10 +1669,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.intake-criteria": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1682,10 +1682,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.maturity": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1695,10 +1695,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.exceptions-and-prioritization": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1708,10 +1708,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.versioning-and-retirement": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1721,10 +1721,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.communication-and-support": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1734,10 +1734,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.tools": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1747,10 +1747,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.metrics": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1760,10 +1760,10 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "governance.accessibility": {
-      "status": "P",
+      "status": "N",
       "page": "",
       "owner": "",
       "notes": "",
@@ -1773,7 +1773,7 @@
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": ""
+      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     }
   }
 }

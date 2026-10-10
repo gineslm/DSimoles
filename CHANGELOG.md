@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.18.0 · 2026-10-10 · (filled in after the commit)
+Sections: all (statuses).
+Triage by the owner: 26 subsections stay Pending (0.1, 0.2, 0.3, 0.10, 1.2–1.5, 1.10, 2.1, 2.2, 3.1, 4.1, 4.3, all of 7, 8.1, 9.1, 9.3), 1.1 Color stays In process and the other 105 are Not applicable for now, with a common reason, to be opened progressively as the project requires. Framework 1.1.1 (the progress test no longer depends on the project's statuses, change commit 43ec42f).
+
 ## 0.17.0 · 2026-10-10 · c993acf
 Sections: visuals.color.
 The Color page integrated from Claude Design in English: the hand-written context line, status labels and the final Pending section are gone, the iMoles interface copy stays verbatim in `lang="es"`, and the capture boxes are still empty. `project.json` entry `visuals.color`: notes in English (decisions and context) and 13 tasks (12 pending, 1 future); status I, owner kept, no review recorded.

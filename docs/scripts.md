@@ -33,7 +33,7 @@ It checks the real repository. It prints `OK: …` if everything is fine or `Err
 It does not download external content or open the browser.
 
 ## `npm test`
-Automated tests, in six files:
+Automated tests, in seven files:
 - `scripts/model.test.mjs`: the logic of `model.js` (`validateGuide`, `validateProject`, `safePage`, `pageCandidates`, `progressOf`). It covers statuses, N excluded from progress, incomplete imports, dangerous paths, the catalog rules, adding a subsection, tasks (which never block R and are not counted) and the project identity.
 - `scripts/check.test.mjs`: it copies the repo to a temporary directory, installs a fixture page (`scripts/fixtures/`) so it does not depend on the project having pages, breaks it in one specific way and verifies that `check` fails with the expected message (and that it passes when it should). It is the test of the `check` rules above. It does not modify your repo.
 
@@ -43,9 +43,14 @@ Reading a failure: `not ok N - <name>` identifies the test; below it you will se
 
 - `scripts/about.test.mjs`: the logic behind the Framework page: its route (reserved ID), the optional `repository`, the framework status (update, ahead, diverged, current), reading the local commit from `.git` and interpreting GitHub's comparison. It makes no network calls.
 
+- `scripts/serve.test.mjs`: `npm start` serves the repository, skips a busy port (two projects can run at once) and does not leave the repository folder.
+
 - `scripts/framework.test.mjs`: the framework manifest. A changed or added framework file fails the report and `check`; line endings and project files do not matter; `--release` records a version and `--compare` tells identical and different repositories apart.
 
 - `scripts/container.test.mjs`: a browser smoke test. It starts a local static server and drives a headless Chrome through the DevTools protocol: the home page, a subsection with a page (iframe, tabs, status, no document scroll), the guide and record views, a subsection without a page, the status filter, old links and a wrong address, and it fails on any console error. It needs Chrome (set `DSBOOK_CHROME` to a path if it is not found) and Node 22 or later; otherwise it is **skipped**, not failed.
+
+## `npm start`
+Serves the repository as static files on the first free port from 8000 (`npm start -- --port 9000` starts from another one) and prints the address. It needs no Python and no packages.
 
 ## `npm run init`
 Starts a project from the seed. See the [data contract](data-contract.md#seed-and-init).

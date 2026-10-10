@@ -2,7 +2,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {validateGuide, validateProject, parseRoute, routeHash, breadcrumb, parseRepo, compareVersions, frameworkStatus, shaFromGit, commitState} from '../model.js';
+import {readFileSync} from 'node:fs';
+import {validateGuide, validateProject, parseRoute, routeHash, breadcrumb, parseRepo, isSeedProject, compareVersions, frameworkStatus, shaFromGit, commitState} from '../model.js';
 
 const guide = JSON.parse(await readFile(new URL('../data/guide.json', import.meta.url)));
 const base = JSON.parse(await readFile(new URL('../data/project.json', import.meta.url)));
@@ -34,6 +35,13 @@ test('The project repository is optional and must be a GitHub URL', () => {
   }
   assert.deepEqual(parseRepo('https://github.com/gineslm/DSbook.git/'), {owner: 'gineslm', repo: 'DSbook'});
   assert.equal(parseRepo('https://github.com/a/b/c'), null);
+});
+
+test('A copy that still has the seed identity counts as not started', () => {
+  const seed = JSON.parse(readFileSync(new URL('../seed/project.json', import.meta.url), 'utf8'));
+  assert.equal(isSeedProject(seed, seed), true);
+  assert.equal(isSeedProject({...seed, projectId: 'my-ds'}, seed), false);
+  assert.equal(isSeedProject(seed, null), false);
 });
 
 test('Framework status: update, ahead, diverged or current', () => {

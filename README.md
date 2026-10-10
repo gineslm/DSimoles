@@ -3,14 +3,14 @@
 DSBook is the workspace; DSimoles is the Design System defined in it. It provides a definition guide, a documentation container and a tracking matrix for the DSimoles Design System. It is designed in Claude Design and integrated through Claude Code and Git. It started as a reusable template; its instructions are in [docs/template.md](docs/template.md).
 
 ## Getting started
-You need Python 3 to serve the site. Node.js 18 or later runs the checks; there are no packages to install.
+You need Node.js 18 or later; there are no packages to install.
 
 ```sh
 cd DSimoles
-python3 -m http.server 8000 --bind 127.0.0.1
+npm start
 ```
 
-Open http://localhost:8000. Do not open `index.html` directly: loading the JSON files requires HTTP. You can also serve the folder from any static host. No deployment or GitHub connection is included.
+`npm start` serves the site on the first free port from 8000 and prints the address, so several projects can run at once (`npm start -- --port 9000` starts from another port). Open that address. Do not open `index.html` directly: loading the JSON files requires HTTP. You can also serve the folder from any static host. No deployment or GitHub connection is included.
 
 1. Browse the home page (a summary by category) or pick a subsection in the Sections menu of the rail. Each subsection has its own address, for example `#/visuals.color`.
 2. A subsection has three views, chosen in the header: **Content** (its page), **Info** (the section's guide: what to define and the acceptance criteria) and **Record** (status, owner, notes, tasks and review).

@@ -46,6 +46,8 @@ The DSB mark in the container opens `#/framework`. It is deliberately small. On 
 - **DSBook framework**: version, release date and source (from `dsbook.json`), and a *Check for updates* button. The button reads the source's `dsbook.json` from GitHub and says whether the source is newer, this project is ahead of it, the same version has different files, or everything is current.
 - **This project**: name, repository (the optional `repository` in `data/project.json`) and, after pressing its *Check for updates* button, the message of the latest commit on GitHub and whether this copy is current. The copy's own commit is read from `.git`, which a local static server serves; if it cannot be read, the page says so.
 
+While a copy still has the seed's identity (`npm run init` has not been run) there is no project yet, so the page shows only the framework block and a note saying how to start one.
+
 Both checks are manual and are the only network calls the container makes. Private repositories cannot be read from the browser. The page cannot see uncommitted changes. Agents do the equivalent check at the start of every session ([claude-code.md](claude-code.md)).
 
 ## Knowing whether two repositories differ

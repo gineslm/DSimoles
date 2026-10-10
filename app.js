@@ -1,6 +1,6 @@
-import {validateGuide, validateProject, progressOf, pageCandidates, parseRoute, routeHash, breadcrumb, neighbors, defaultView, openTasks, parseRepo, frameworkStatus, shaFromGit, commitState} from './model.js';
+import {validateGuide, validateProject, progressOf, pageCandidates, parseRoute, routeHash, breadcrumb, neighbors, defaultView, openTasks, parseRepo, frameworkStatus, shaFromGit, commitState, isSeedProject} from './model.js';
 const $=s=>document.querySelector(s), labels={R:'Ready',I:'In process',P:'Pending',N:'Not applicable'};
-let guide,project,manifest=null,route={name:'home'},routeToken=0,filters=new Set(),query='',found=new Map(),resolved=new Map(),navigated=false;
+let guide,project,manifest=null,seed=null,route={name:'home'},routeToken=0,filters=new Set(),query='',found=new Map(),resolved=new Map(),navigated=false;
 const el=(tag,props={},text)=>{const node=document.createElement(tag);Object.assign(node,props);if(text!==undefined)node.textContent=text;return node;};
 const link=(href,text,props={})=>el('a',{href,...props},text);
 function report(message){$('#error').textContent=message;$('#error').hidden=false;}
@@ -130,8 +130,9 @@ function viewFramework(){
       if(s.state==='ahead')return `This project is ahead of its source (${s.local} here, ${s.remote} there). The change still has to be ported to DSBook.`;
       return `Same version (${s.local}) but ${n} framework file${n===1?'':'s'} differ: ${s.differ.join(', ')}.`;
     }:null,'The source repository is not recorded in dsbook.json.'));
-  const repo=parseRepo(project.repository),last=el('span',{},'Shown after checking');
-  about.append(aboutBlock('This project',
+  const uninit=isSeedProject(project,seed),repo=parseRepo(project.repository),last=el('span',{},'Shown after checking');
+  if(uninit)about.append(el('p',{className:'about-status'},'This copy has not been started as a project yet. Run npm run init -- --id <id> --name "<name>" (see docs/template.md).'));
+  else about.append(aboutBlock('This project',
     [['Project',project.name],['Repository',repo?ext(project.repository):'Not set'],['Last commit',last]],
     repo?async()=>{
       const api=`https://api.github.com/repos/${repo.owner}/${repo.repo}`,top=await getJson(`${api}/commits/HEAD`);
@@ -197,5 +198,5 @@ $('#search').oninput=e=>setQuery(e.target.value);
 $('#panel-state').addEventListener('change',e=>{const s=e.target.dataset.filter;if(!s)return;if(s==='all')filters.clear();else filters.has(s)?filters.delete(s):filters.add(s);onFilterChange();});
 
 // ---- start
-async function init(){try{const results=await Promise.all(['guide','project'].map(async n=>{const r=await fetch(`data/${n}.json`,{cache:'no-store'});if(!r.ok)throw Error(`Could not read ${n}.json`);return r.json();}));[guide,project]=results;manifest=await fetch('dsbook.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);validateGuide(guide);validateProject(project,guide);stats();syncFilters();window.addEventListener('hashchange',go);await go();}catch(e){report(`${e.message}. Start the local server described in README.md; opening index.html with file:// cannot load the JSON files.`);}}
+async function init(){try{const results=await Promise.all(['guide','project'].map(async n=>{const r=await fetch(`data/${n}.json`,{cache:'no-store'});if(!r.ok)throw Error(`Could not read ${n}.json`);return r.json();}));[guide,project]=results;manifest=await fetch('dsbook.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);seed=await fetch('seed/project.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);validateGuide(guide);validateProject(project,guide);stats();syncFilters();window.addEventListener('hashchange',go);await go();}catch(e){report(`${e.message}. Start the local server described in README.md; opening index.html with file:// cannot load the JSON files.`);}}
 init();

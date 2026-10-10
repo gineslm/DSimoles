@@ -91,7 +91,8 @@ test('Container: home, sections, views, filters and legacy links work without co
     await b.eval(`document.getElementById('home-link').click()`); await sleep(400);
     assert.equal(await b.eval(`location.hash`), '#/framework');
     assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'DSBook framework');
-    assert.deepEqual(await b.eval(`[...document.querySelectorAll('.about-block h2')].map(h => h.textContent)`), ['DSBook framework', 'This project']);
+    const seed = JSON.parse(readFileSync(path.join(root, 'seed/project.json'), 'utf8'));
+    assert.deepEqual(await b.eval(`[...document.querySelectorAll('.about-block h2')].map(h => h.textContent)`), project.projectId === seed.projectId ? ['DSBook framework'] : ['DSBook framework', 'This project'], 'a copy that has not been started shows only the framework');
     const manifest = JSON.parse(readFileSync(path.join(root, 'dsbook.json'), 'utf8'));
     assert.equal(await b.eval(`document.querySelector('.about-block dd').textContent`), manifest.version, 'the page shows the framework version from dsbook.json');
     assert.equal(await b.eval(`document.querySelectorAll('.about-block button').length`) >= 1, true, 'there is a check button');

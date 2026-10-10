@@ -78,6 +78,9 @@ export function neighbors(guide,id){const flat=guide.categories.flatMap(c=>c.ite
 export function defaultView(entry,hasPage){return hasPage&&(entry.status==='I'||entry.status==='R')?'content':'info';}
 export function openTasks(entry){return{pending:entry.tasks.filter(t=>t.when==='pending'),future:entry.tasks.filter(t=>t.when==='future')};}
 
+// A copy that still carries the seed's identity has not been started as a project yet (npm run init).
+export function isSeedProject(project,seed){return !!seed&&project.projectId===seed.projectId;}
+
 // ---- framework and repository status (pure: the container does the fetching)
 // A GitHub repository URL: https://github.com/<owner>/<repo>
 export function parseRepo(url){const m=typeof url==='string'&&url.match(/^https:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_-][A-Za-z0-9_.-]*?)(?:\.git)?\/?$/);return m?{owner:m[1],repo:m[2]}:null;}

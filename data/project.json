@@ -5,6 +5,20 @@
   "language": "en",
   "repository": "https://github.com/gineslm/DSimoles",
   "seedVersion": "1.0.0",
+  "record": {
+    "owner": "",
+    "notes": "Sections triaged on 2026-10-10: only the ones in use are open; the rest are Not applicable for now and are reopened as the project requires.",
+    "tasks": [
+      {
+        "text": "Unlink the Ginés López design system from the Claude Design project settings",
+        "when": "pending"
+      },
+      {
+        "text": "Confirm the owner approvals recorded in the notes of visuals.color: interaction values and English token names (2026-10-10)",
+        "when": "pending"
+      }
+    ]
+  },
   "sections": {
     "foundations.goals-and-usage-guide": {
       "status": "P",
@@ -140,7 +154,7 @@
       "status": "I",
       "page": "",
       "owner": "Gines Lopez",
-      "notes": "Palette fixed by the owner on 2026-10-09, derived from the iMoles HF prototypes: brand hue 225° (brand.600 #00698C), neutrals in the brand hue, crimson #DB2149 (high risk), amber #8D6F00 (intermediate), light teal #168072 (low), plum #6C2768 (not assessable); coral, green and violet removed. All four levels use a solid fill with white text and a tint with dark text from their family. Contrast validated against WCAG 2.2 (all listed pairs pass). Color-vision differences recorded as ΔE OKLab in normal vision, deuteranopia, protanopia, tritanopia and achromatopsia; by decision of the owner, pairs below 8 are covered by badge shape and text (WCAG 1.4.1). Interaction values approved by the owner on 2026-10-10 (hover step 650, pressed 700, surfaces neutral.25/100, focus ring brand.600, disabled neutral.150/600, scrim neutral.950 at 48%). Token format for the future DS implementation, outside this repo: W3C DTCG. Token names in English, confirmed by the owner on 2026-10-10. Corrections the iMoles prototype needs to adopt this palette are listed on the page and kept as tasks here; they are iMoles work, not work of this section. Stays in I: no recorded review.",
+      "notes": "Palette fixed by the owner on 2026-10-09, derived from the iMoles HF prototypes: brand hue 225° (brand.600 #00698C), neutrals in the brand hue, crimson #DB2149 (high risk), amber #8D6F00 (intermediate), light teal #168072 (low), plum #6C2768 (not assessable); coral, green and violet removed. All four levels use a solid fill with white text and a tint with dark text from their family. Contrast validated against WCAG 2.2 (all listed pairs pass). Color-vision differences recorded as ΔE OKLab in normal vision, deuteranopia, protanopia, tritanopia and achromatopsia; by decision of the owner, pairs below 8 are covered by badge shape and text (WCAG 1.4.1). Interaction values approved by the owner on 2026-10-10 (hover step 650, pressed 700, surfaces neutral.25/100, focus ring brand.600, disabled neutral.150/600, scrim neutral.950 at 48%). Token format for the future DS implementation, outside this repo: W3C DTCG. Token names in English, confirmed by the owner on 2026-10-10. Corrections the iMoles prototype needs to adopt this palette are listed on the page and kept as tasks in implementation.publishing-and-migration; they are iMoles work, not work of this section. Stays in I: no recorded review.",
       "tasks": [
         {
           "text": "Validate on device the difference between default and pressed interaction states",
@@ -152,42 +166,6 @@
         },
         {
           "text": "Check color distinction with users or an on-device color-vision simulation tool",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Replace the palette in imoles-tokens.css: Apply the primitives on this page: brand 225°, neutrals 225°, light teal for low risk, amber.600, plum; remove coral, green and violet.",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Regular actions with a risk color: action.primary = brand.600 for all; action.alert only for booking an appointment for high risk.",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Intermediate-risk badge: A single amber.600 fill (4.77:1) for badge and action.",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Notices with risk colors: status.warning, status.error and status.info (neutral).",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Insufficient field outline: border.control = neutral.400.",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Chip Estado · high risk outside the tokens: risk.high.tint + risk.high.text.",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Neutral chip: text.body in the chip.",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · High-risk secondary label: Remove it; use risk.high.text.",
-          "when": "pending"
-        },
-        {
-          "text": "iMoles prototype · Duplicated and hard-coded values: Merge into text.secondary and border.subtle; use text.inverse and bg.surface; shadow as an elevation token (1.5).",
           "when": "pending"
         },
         {
@@ -1529,17 +1507,54 @@
       "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
     },
     "implementation.publishing-and-migration": {
-      "status": "N",
+      "status": "P",
       "page": "",
       "owner": "",
-      "notes": "",
-      "tasks": [],
+      "notes": "Reopened from Not applicable on 2026-10-10 because it received the iMoles prototype adoption tasks moved from visuals.color. Previous exclusion reason: Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10).",
+      "tasks": [
+        {
+          "text": "iMoles prototype · Replace the palette in imoles-tokens.css: Apply the primitives on this page: brand 225°, neutrals 225°, light teal for low risk, amber.600, plum; remove coral, green and violet.",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · Regular actions with a risk color: action.primary = brand.600 for all; action.alert only for booking an appointment for high risk.",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · Intermediate-risk badge: A single amber.600 fill (4.77:1) for badge and action.",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · Notices with risk colors: status.warning, status.error and status.info (neutral).",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · Insufficient field outline: border.control = neutral.400.",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · Chip Estado · high risk outside the tokens: risk.high.tint + risk.high.text.",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · Neutral chip: text.body in the chip.",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · High-risk secondary label: Remove it; use risk.high.text.",
+          "when": "pending"
+        },
+        {
+          "text": "iMoles prototype · Duplicated and hard-coded values: Merge into text.secondary and border.subtle; use text.inverse and bg.surface; shadow as an elevation token (1.5).",
+          "when": "pending"
+        }
+      ],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Out of scope for now. Sections are opened progressively as the project requires (owner's triage, 2026-10-10)."
+      "exclusionReason": ""
     },
     "implementation.accessibility": {
       "status": "N",

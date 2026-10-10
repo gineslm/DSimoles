@@ -6,6 +6,14 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.20.0 · 2026-10-10 · c12ad0f
+Sections: visuals.color, implementation.publishing-and-migration.
+The 9 iMoles prototype tasks leave visuals.color (4 tasks stay) for implementation.publishing-and-migration, reopened from N to P with its previous reason kept in the notes (proposal H8, H9). The project record gets its notes and two administrative tasks.
+
+## 0.19.0 · 2026-10-10 · c7490d2
+Sections: none.
+The home as a record (proposal pilot-5, framework 1.2.0): Content, Info (empty) and Record views at #/home/<view>; the project record (owner, notes, tasks); the tasks of every section gathered read-only; one task model; a Not applicable section cannot have tasks. The Sections menu cascade uses any-hover and is covered by a browser test. Documentation and the proposal in eaa58b3.
+
 ## 0.18.0 · 2026-10-10 · 9de3a8e
 Sections: all (statuses).
 Triage by the owner: 26 subsections stay Pending (0.1, 0.2, 0.3, 0.10, 1.2–1.5, 1.10, 2.1, 2.2, 3.1, 4.1, 4.3, all of 7, 8.1, 9.1, 9.3), 1.1 Color stays In process and the other 105 are Not applicable for now, with a common reason, to be opened progressively as the project requires. Framework 1.1.1 (the progress test no longer depends on the project's statuses, change commit 43ec42f).

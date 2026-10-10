@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.15.1 · 2026-10-10 · (filled in after the commit)
+## 0.15.1 · 2026-10-10 · 324f200
 Sections: none.
 The `init` test no longer depends on the project's identity, so it passes in a fresh DSBook copy. Framework 1.0.0 was re-recorded with this change; it had not been published.
 

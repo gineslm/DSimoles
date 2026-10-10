@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.15.0 · 2026-10-10 · (filled in after the commit)
+## 0.15.0 · 2026-10-10 · 1c4a0b3
 Sections: none.
 DSBook framework 1.0.0 recorded (`dsbook.json`, `npm run framework`, `docs/framework.md`): the container, scripts, seed, vendored runtime and guides are versioned and hashed, and `check` fails if they change without a new version. The guides lose their project names, `docs/template.md` is rewritten, and the `check` tests use their own fixture page instead of the Color page.
 

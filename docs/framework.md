@@ -42,7 +42,7 @@ npm run framework -- --compare ../DSBook       # compare with another DSBook rep
 5. **Port it** to the other repositories: copy the framework files (the left column above), run `npm run framework -- --compare <other>` to confirm both manifests are identical, then `check` and `test` there. Never copy `data/`, `sections/` or the project files.
 
 ## The Framework page
-The DSB mark in the container opens `#/framework`. It is deliberately small and has two blocks:
+The DSB mark in the container opens `#/framework`. It is deliberately small. On the left, two short texts: what DSBook is and how it works (the site only shows the state; the work happens in Claude Design, is integrated by Claude Code and is kept in step through a GitHub repository). On the right, two blocks:
 - **DSBook framework**: version, release date and source (from `dsbook.json`), and a *Check for updates* button. The button reads the source's `dsbook.json` from GitHub and says whether the source is newer, this project is ahead of it, the same version has different files, or everything is current.
 - **This project**: name, repository (the optional `repository` in `data/project.json`) and, after pressing its *Check for updates* button, the message of the latest commit on GitHub and whether this copy is current. The copy's own commit is read from `.git`, which a local static server serves; if it cannot be read, the page says so.
 

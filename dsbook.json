@@ -5,14 +5,14 @@
   "repository": "https://github.com/gineslm/DSbook",
   "files": {
     ".gitattributes": "7cd03d725ca95ddf81d469986a68384ef55f3d5919d500dba8b25f283ce51058",
-    "app.js": "33be83297516606cdcaba81ca5d04ba2055080b7e3b736ec47c16b82d7ccde3f",
+    "app.js": "026083278936479f0b7e4b707227d302062caf625856d8abd6cb057c017b968a",
     "assets/_runtime/README.md": "44484b60ad9f65e8b45bcf8acdd1587c8b3e033cb8cbc07ba4937a79b01380bd",
     "assets/_runtime/react-dom.production.min.js": "35f4f974f4b2bcd44da73963347f8952e341f83909e4498227d4e26b98f66f0d",
     "assets/_runtime/react.production.min.js": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd",
     "docs/claude-code.md": "805f671a77e1f686a4087af3d8ece4f7148976ead0cc242e405ee35c163f6919",
     "docs/claude-design.md": "5b176870c0721a3a30137cb59272a9d44bc88588abdc403745827ba149379b76",
     "docs/data-contract.md": "dc1f243b92bcae0a31aba7f2afad86d4295d5f2506e02a87a0b716c61940aa97",
-    "docs/framework.md": "bba0597b3270c8b4d012e33e16d4f7de4edebb8060c9e05daa4dac4ca785fa99",
+    "docs/framework.md": "67ab637b68f79747cc93e1623e5e7dfd1accc421df044b61af1c0a153f7a75a6",
     "docs/handoff.md": "a521a2686b68933e9dda429edadd876a265c93d5ff841f07ada2f95140aa9891",
     "docs/page-style.md": "4d4bde3653b22d3083390b5d330c7df985ce5a74af2b3c99a9b3dd7918d6438b",
     "docs/quality.md": "d022e8e1d22f19646ee42b237b3f926a7e318243c682f34bb928cce0592b526b",
@@ -35,7 +35,7 @@
     "scripts/model.test.mjs": "ee32e8861a233737aab28a9be1c5283d43313f68b2ef0c683e2eafd87a131b52",
     "seed/guide.json": "0adfe954a8622d01fbed2022a44512b12d9401d6aa302bebe27a30e22c12cb2e",
     "seed/project.json": "faab4334bb3c70df5df17d472e6613121c052cbfdc0d234c74443d7ab2035bda",
-    "styles.css": "4d484b4fdb6551d6c57fd891976e8e024f2fdc7ca53aca75e3c97c7b1d406ea0",
+    "styles.css": "4208fed2295810e994bcde130741b16dcc9ff94147a53a843f7cffdc50f54658",
     "templates/component.md": "211193dd93d47921758aacba42446f5aa9cc1a5677e09cde8c3a7a11a9fe4774"
   }
 }

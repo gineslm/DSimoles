@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.20.1 · 2026-10-10 · (filled in after the commit)
+## 0.20.1 · 2026-10-10 · 257684f
 Sections: none.
 The Sections menu cascade no longer depends on hover-capability media queries, which Firefox on this PC answered differently from Chrome (it showed the inline chevron accordion). Hover is detected from pointer events, the wide layout is always the cascade, and a browser test reproduces the old failure by emulating touch. Framework 1.2.0 re-recorded with it; it had not been published.
 

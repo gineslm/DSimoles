@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.16.3 · 2026-10-10 · (filled in after the commit)
+## 0.16.3 · 2026-10-10 · f2f7cb6
 Sections: none.
 The Framework page is titled "DSBook framework" (heading, breadcrumb and tab title). Framework 1.1.0 was re-recorded with it; it had not been published.
 

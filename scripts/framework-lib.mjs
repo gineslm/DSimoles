@@ -16,6 +16,7 @@ const FOLDERS = [
   {dir: 'scripts', deep: true},
   {dir: 'seed', deep: true},
   {dir: 'assets/_runtime', deep: true},
+  {dir: 'assets/_framework', deep: true},
   {dir: 'docs', deep: false},
 ];
 // Vendored files are byte-exact (their hash is also checked against support.js); everything else is text

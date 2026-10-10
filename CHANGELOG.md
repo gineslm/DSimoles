@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.16.5 · 2026-10-10 · (filled in after the commit)
+Sections: none.
+The DSBook logo is a vector (`assets/_framework/dsbook-logo.svg`, Roboto Bold and Medium converted to outlines, so it needs no font) used in the rail and as the tab icon. Framework 1.1.0 was re-recorded with it; it had not been published.
+
 ## 0.16.4 · 2026-10-10 · 4e15fc4
 Sections: none.
 `npm start` is now `scripts/serve.mjs`: it takes the first free port from 8000 and prints the address, so two projects no longer clash (and Python is no longer needed). A copy that still has the seed's identity shows only the framework block on the DSBook framework page. Framework 1.1.0 was re-recorded with it; it had not been published.

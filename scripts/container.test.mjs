@@ -87,7 +87,7 @@ test('Container: home, sections, views, filters and legacy links work without co
       assert.equal(await b.eval(`document.querySelector('.empty h2').textContent`), 'No page yet');
     }
     await b.go('#/');
-    assert.equal(await b.eval(`document.getElementById('home-link').getAttribute('href')`), '#/framework', 'the DSB mark opens the framework page');
+    assert.equal(await b.eval(`document.getElementById('home-link').getAttribute('href')`), '#/framework', 'the DSBook logo opens the framework page');
     await b.eval(`document.getElementById('home-link').click()`); await sleep(400);
     assert.equal(await b.eval(`location.hash`), '#/framework');
     assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'DSBook framework');

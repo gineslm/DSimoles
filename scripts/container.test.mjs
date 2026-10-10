@@ -54,6 +54,7 @@ async function session(fn) {
       errors,
       async goto(hash) { await send('Page.navigate', {url: base + hash}); await sleep(1200); },
       async eval(expr) { const r = await send('Runtime.evaluate', {expression: expr, awaitPromise: true, returnByValue: true}); if (r.exceptionDetails) throw Error(r.exceptionDetails.exception?.description || r.exceptionDetails.text); return r.result.value; },
+      async mouse(x, y, wait = 30) { await send('Input.dispatchMouseEvent', {type: 'mouseMoved', x, y}); await sleep(wait); },
       async go(hash) { await b.eval(`location.hash=${JSON.stringify(hash)}`); await sleep(500); },
     };
     try { await fn(b); } finally { ws.close(); }
@@ -64,7 +65,6 @@ test('Container: home, sections, views, filters and legacy links work without co
   await session(async b => {
     await b.goto('');
     assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'home shows one card per category');
-    assert.equal(await b.eval(`document.getElementById('views').hidden`), true, 'no view tabs on the home page');
     assert.equal(await b.eval(`document.querySelectorAll('.meters progress').length`), 2, 'the home page shows progress and complexity');
 
     if (withPage) {
@@ -97,6 +97,32 @@ test('Container: home, sections, views, filters and legacy links work without co
     assert.equal(await b.eval(`document.querySelector('.about-block dd').textContent`), manifest.version, 'the page shows the framework version from dsbook.json');
     assert.equal(await b.eval(`document.querySelectorAll('.about-block button').length`) >= 1, true, 'there is a check button');
     assert.equal(await b.eval(`document.querySelector('#crumbs a').getAttribute('href')`), '#/', 'the breadcrumb leads back to the home page');
+    await b.go('#/');
+    assert.deepEqual(await b.eval(`[...document.querySelectorAll('#views a')].map(a => a.textContent)`), ['Content', 'Info', 'Record'], 'the home page has the same three views as a section');
+    assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Content');
+    assert.equal(await b.eval(`document.getElementById('head-status').hidden && document.getElementById('pager').hidden`), true, 'no status or previous/next on the home page');
+    await b.go('#/home/info');
+    assert.equal(await b.eval(`document.querySelector('#view .empty h2').textContent`), 'No information yet', 'the home Info view exists and is empty');
+    await b.go('#/home/record');
+    assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Record');
+    assert.deepEqual(await b.eval(`[...document.querySelectorAll('#view h2')].map(h => h.textContent).filter(t => ['Owner', 'Notes', 'Project tasks', 'Section tasks'].includes(t))`), ['Owner', 'Notes', 'Project tasks', 'Section tasks']);
+    const gathered = guide.categories.flatMap(c => c.items).filter(i => project.sections[i.id].tasks.length);
+    assert.equal(await b.eval(`document.querySelectorAll('.task-section').length`), gathered.length, 'every section with tasks appears, with no filtering');
+    await b.eval(`document.querySelector('[data-filter="N"]').click()`); await sleep(300);
+    assert.equal(await b.eval(`document.querySelectorAll('.task-section').length`), gathered.length, 'status filters do not hide tasks');
+    await b.eval(`document.querySelector('[data-filter="all"]').click()`); await sleep(200);
+    await b.go('#/');
+    // the Sections menu opens on hover and shows the subsections of a category on hover
+    await b.goto('');
+    const at = sel => b.eval(`(() => { const r = document.querySelector(${JSON.stringify(sel)}).getBoundingClientRect(); return {x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2)}; })()`);
+    const icon = await at('#sections-btn');
+    await b.mouse(icon.x, icon.y, 250);
+    const row = await at('.menu-cat:nth-child(3) .menu-cat-link');
+    for (let k = 1; k <= 8; k++) await b.mouse(Math.round(icon.x + (row.x - icon.x) * k / 8), Math.round(icon.y + (row.y - icon.y) * k / 8), 15);
+    await sleep(300);
+    assert.equal(await b.eval(`document.getElementById('sidebar').dataset.panel`), 'sections', 'hovering the Sections icon opens its panel');
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).display`), 'block', 'hovering a category shows its subsections');
+    await b.mouse(5, 5, 400);
     await b.go('#/');
     const counts = {};
     for (const s of Object.values(project.sections)) counts[s.status] = (counts[s.status] || 0) + 1;

@@ -1,5 +1,9 @@
 const SLUG=/^[a-z0-9_-]+$/,DATE=/^\d{4}-\d{2}-\d{2}$/,STATUSES=['R','I','P','N'],WHEN=['pending','future'];
 const filled=v=>typeof v==='string'&&v.trim().length>0;
+// Route words that no category may use: the framework page and the views of the home page (#/home/<view>).
+const RESERVED=['framework','home'];
+// A task is {text, when}. Section tasks and the project's tasks share this one shape.
+export function validateTasks(tasks){return Array.isArray(tasks)&&tasks.every(t=>t&&typeof t==='object'&&Object.keys(t).sort().join()==='text,when'&&filled(t.text)&&WHEN.includes(t.when));}
 export function safePage(page){return typeof page==='string'&&(/^sections\/(?:[a-z0-9_-]+\/)*[a-z0-9_-]+(?:\.dc)?\.html$/.test(page)||/^https:\/\/[^\s]+$/i.test(page)&&(()=>{try{const u=new URL(page);return !!u.hostname&&!u.username&&!u.password;}catch{return false;}})());}
 // The guide is owned by the project: it is checked against itself, not against a frozen base.
 export function validateGuide(g){
@@ -7,7 +11,7 @@ export function validateGuide(g){
   const ids=new Set(),paths=new Set(),catIds=new Set(),catNumbers=new Set(),numbers=new Set();
   for(const c of g.categories){
     if(typeof c.id!=='string'||!SLUG.test(c.id)||catIds.has(c.id))throw Error(`Invalid or duplicate category ID: ${c.id}`);catIds.add(c.id);
-    if(c.id==='framework')throw Error('Reserved category ID: framework');
+    if(RESERVED.includes(c.id))throw Error(`Reserved category ID: ${c.id}`);
     if(!filled(String(c.number??''))||catNumbers.has(String(c.number)))throw Error(`Invalid or duplicate category number: ${c.id}`);catNumbers.add(String(c.number));
     for(const f of ['title','objective'])if(!filled(c[f]))throw Error(`Incomplete category: ${c.id}`);
     if(!Array.isArray(c.items))throw Error(`Category without items: ${c.id}`);
@@ -28,6 +32,7 @@ export function validateProject(p,g){
   if(typeof p.projectId!=='string'||!/^[a-z0-9-]+$/.test(p.projectId)||!filled(p.name)||typeof p.language!=='string'||!/^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(p.language)||!filled(p.seedVersion))throw Error('Invalid project identity');
   const ids=g.categories.flatMap(c=>c.items.map(i=>i.id));
   if(p.repository!==undefined&&!parseRepo(p.repository))throw Error('Invalid repository (expected https://github.com/<owner>/<repo>)');
+  if(p.record!==undefined){const r=p.record;if(!r||typeof r!=='object'||Object.keys(r).sort().join()!=='notes,owner,tasks'||typeof r.owner!=='string'||typeof r.notes!=='string'||!validateTasks(r.tasks))throw Error('Invalid project record');}
   if(!p.sections||typeof p.sections!=='object')throw Error('Invalid sections');
   for(const id of ids)if(!p.sections[id])throw Error(`Missing section entry: ${id}`);
   const known=new Set(ids);for(const k of Object.keys(p.sections))if(!known.has(k))throw Error(`Entry without a subsection in the guide: ${k}`);
@@ -39,9 +44,10 @@ export function validateProject(p,g){
     if(!s.review||['by','date','evidence'].some(k=>typeof s.review[k]!=='string'))throw Error(`Invalid review: ${id}`);
     if(s.review.date&&!DATE.test(s.review.date))throw Error(`Invalid date: ${id}`);
     // Tasks never block Ready: they are validated for shape only and never related to the status.
-    if(!Array.isArray(s.tasks)||s.tasks.some(t=>!t||typeof t!=='object'||Object.keys(t).sort().join()!=='text,when'||!filled(t.text)||!WHEN.includes(t.when)))throw Error(`Invalid tasks: ${id}`);
+    if(!validateTasks(s.tasks))throw Error(`Invalid tasks: ${id}`);
     if(s.status==='R'&&['by','date','evidence'].some(k=>!s.review[k].trim()))throw Error(`Ready requires a review: ${id}`);
     if(s.status==='N'&&!s.exclusionReason.trim())throw Error(`Not applicable requires a reason: ${id}`);
+    if(s.status==='N'&&s.tasks.length)throw Error(`A Not applicable section cannot have tasks: ${id}. Remove them, or reopen the section (P) if the work belongs to it`);
   }
   return true;
 }
@@ -58,11 +64,12 @@ export function parseRoute(hash,guide){
   const [id,view,...rest]=parts;
   if(rest.length)return{name:'notfound',hash:String(hash||'')};
   if(id==='framework')return view?{name:'notfound',hash:String(hash||'')}:{name:'framework'};
+  if(id==='home'){if(!view)return{name:'home'};return VIEWS.includes(view)?{name:'home',view}:{name:'notfound',hash:String(hash||'')};}
   if(guide.categories.some(c=>c.id===id))return view?{name:'notfound',hash:String(hash||'')}:{name:'category',id};
   if(guide.categories.some(c=>c.items.some(i=>i.id===id))){if(view&&!VIEWS.includes(view))return{name:'notfound',hash:String(hash||'')};return{name:'section',id,view:view||null};}
   return{name:'notfound',hash:String(hash||'')};
 }
-export function routeHash(route){return route.name==='home'?'#/':route.name==='framework'?'#/framework':route.name==='category'?`#/${route.id}`:route.name==='section'?`#/${route.id}${route.view?`/${route.view}`:''}`:'#/';}
+export function routeHash(route){return route.name==='home'?(route.view?`#/home/${route.view}`:'#/'):route.name==='framework'?'#/framework':route.name==='category'?`#/${route.id}`:route.name==='section'?`#/${route.id}${route.view?`/${route.view}`:''}`:'#/';}
 export function breadcrumb(guide,route,projectName){
   const home={label:projectName,hash:'#/'};
   if(route.name==='home'||route.name==='notfound')return[{label:projectName}];
@@ -76,6 +83,12 @@ export function breadcrumb(guide,route,projectName){
 export function neighbors(guide,id){const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id)),k=flat.indexOf(id);return{prev:k>0?flat[k-1]:null,next:k>=0&&k<flat.length-1?flat[k+1]:null};}
 // Default view of a section: its page if it has one and it is being worked on or ready; otherwise its guide.
 export function defaultView(entry,hasPage){return hasPage&&(entry.status==='I'||entry.status==='R')?'content':'info';}
+// The view of the home page: Content (the summary) unless the address says otherwise.
+export function homeView(route){return route.view||'content';}
+// The project's own record (owner, notes, tasks); a project without one has an empty record.
+export function projectRecord(project){return project.record||{owner:'',notes:'',tasks:[]};}
+// Every open task of every section, grouped by category and subsection. Sections without tasks are left out.
+export function collectTasks(guide,project){return guide.categories.map(c=>({category:c,sections:c.items.filter(i=>project.sections[i.id].tasks.length).map(i=>({item:i,...openTasks(project.sections[i.id])}))})).filter(g=>g.sections.length);}
 export function openTasks(entry){return{pending:entry.tasks.filter(t=>t.when==='pending'),future:entry.tasks.filter(t=>t.when==='future')};}
 
 // A copy that still carries the seed's identity has not been started as a project yet (npm run init).

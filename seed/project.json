@@ -4,6 +4,11 @@
   "name": "New Design System",
   "language": "en",
   "seedVersion": "1.0.0",
+  "record": {
+    "owner": "",
+    "notes": "",
+    "tasks": []
+  },
   "sections": {
     "foundations.goals-and-usage-guide": {
       "status": "P",

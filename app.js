@@ -1,4 +1,4 @@
-import {validateGuide, validateProject, progressOf, pageCandidates, parseRoute, routeHash, breadcrumb, neighbors, defaultView, openTasks, parseRepo, frameworkStatus, shaFromGit, commitState, isSeedProject} from './model.js';
+import {validateGuide, validateProject, progressOf, pageCandidates, parseRoute, routeHash, breadcrumb, neighbors, defaultView, openTasks, homeView, projectRecord, collectTasks, parseRepo, frameworkStatus, shaFromGit, commitState, isSeedProject} from './model.js';
 const $=s=>document.querySelector(s), labels={R:'Ready',I:'In process',P:'Pending',N:'Not applicable'};
 let guide,project,manifest=null,seed=null,route={name:'home'},routeToken=0,filters=new Set(),query='',found=new Map(),resolved=new Map(),navigated=false;
 const el=(tag,props={},text)=>{const node=document.createElement(tag);Object.assign(node,props);if(text!==undefined)node.textContent=text;return node;};
@@ -16,7 +16,7 @@ function visible(){return guide.categories.map(c=>({c,items:c.items.filter(i=>(!
 // ---- rail: status filter and sections menu
 function stats(){const counts={R:0,I:0,P:0,N:0};Object.values(project.sections).forEach(s=>counts[s.status]++);document.querySelectorAll('[data-count]').forEach(n=>n.textContent=counts[n.dataset.count]);}
 function syncFilters(){document.querySelectorAll('[data-filter]').forEach(c=>{c.checked=c.dataset.filter==='all'?!filters.size:filters.has(c.dataset.filter);});$('#state-btn').dataset.active=String(filters.size>0||!!query);}
-const canHover=matchMedia('(hover:hover) and (min-width:951px)');
+const canHover=matchMedia('(any-hover:hover) and (min-width:951px)');
 let closeTimer=null;
 function openCat(cat){clearTimeout(closeTimer);document.querySelectorAll('.menu-cat.open').forEach(x=>{if(x!==cat)x.classList.remove('open');});cat.classList.add('open');
   const sub=cat.querySelector('.submenu');if(canHover.matches&&sub){const wrap=$('#menu-wrap').getBoundingClientRect(),row=cat.getBoundingClientRect();sub.style.left=`${wrap.right}px`;sub.style.top=`${Math.max(8,Math.min(row.top,innerHeight-sub.offsetHeight-8))}px`;}}
@@ -38,16 +38,19 @@ function onFilterChange(){syncFilters();renderMenu(visible());if(route.name==='h
 function renderHead(item,entry,page,effective){
   const crumbs=$('#crumbs');crumbs.replaceChildren();
   breadcrumb(guide,route,project.name).forEach((c,k,all)=>{const li=el('li');if(c.hash&&k<all.length-1)li.append(link(c.hash,c.label));else{const s=el('span',{},c.label);s.setAttribute('aria-current','page');li.append(s);}crumbs.append(li);});
-  const section=route.name==='section',views=$('#views'),status=$('#head-status'),pager=$('#pager');
-  views.hidden=status.hidden=pager.hidden=$('#sep-views').hidden=$('#sep-pager').hidden=!section;
+  const section=route.name==='section',home=route.name==='home',views=$('#views'),status=$('#head-status'),pager=$('#pager');
+  views.hidden=$('#sep-views').hidden=!(section||home);status.hidden=pager.hidden=$('#sep-pager').hidden=!section;
+  if(!section&&!home)return;
+  const root=section?`#/${item.id}`:'#/home',current=section?effective:homeView(route);
+  views.replaceChildren(...[['content','Content'],['info','Info'],['record','Record']].map(([v,t])=>{const a=link(home&&v==='content'?'#/':`${root}/${v}`,t);if(v===current)a.setAttribute('aria-current','page');return a;}));
   if(!section)return;
-  views.replaceChildren(...[['content','Content'],['info','Info'],['record','Record']].map(([v,t])=>{const a=link(`#/${item.id}/${v}`,t);if(v===effective)a.setAttribute('aria-current','page');return a;}));
   status.textContent=`${entry.status} · ${labels[entry.status]}`;status.dataset.value=entry.status;
   const n=neighbors(guide,item.id);pager.replaceChildren(...[['prev','‹','Previous'],['next','›','Next']].map(([k,glyph,word])=>{const id=n[k];if(!id){const s=el('span',{className:'pager-btn'},glyph);s.setAttribute('aria-disabled','true');s.setAttribute('aria-label',`${word} section (none)`);return s;}return link(`#/${id}`,glyph,{className:'pager-btn',title:`${word}: ${itemOf(id).title}`,ariaLabel:`${word} section: ${itemOf(id).title}`});}));
 }
 
 // ---- views
-function viewHome(){
+function viewHome(){const v=homeView(route);return v==='info'?viewHomeInfo():v==='record'?viewHomeRecord():viewSummary();}
+function viewSummary(){
   const wrap=el('div',{className:'view-inner'}),total=guide.categories.reduce((n,c)=>n+c.items.length,0),p=progressOf(project);
   wrap.append(el('h1',{id:'view-title'},project.name),el('p',{className:'lead'},`${total} subsections in ${guide.categories.length} categories.`));
   const meter=(title,value,text)=>{const m=el('div',{className:'meter'}),h=el('div',{className:'meter-head'});h.append(el('span',{},title),el('span',{},text));const bar=el('progress',{max:100,value:value||0});bar.setAttribute('aria-label',`${title}: ${text}`);m.append(h,bar);return m;};
@@ -74,6 +77,38 @@ function viewInfo(i){
   for(const [title,value] of [['Objective',i.objective],['What to define',i.define],['Accessibility',i.accessibility],['Expected deliverable',i.deliverable]]){const box=el('div');box.append(el('h2',{},title),el('p',{},value));grid.append(box);}
   const box=el('div',{className:'wide'}),ul=el('ul');box.append(el('h2',{},'Acceptance criteria'));for(const t of i.acceptance)ul.append(el('li',{},t));box.append(ul);grid.append(box);wrap.append(grid);return wrap;
 }
+// The one task list: pending and future tasks of a section or of the project. Tasks never block Ready.
+function tasksList(t,{note=true,level='h3'}={}){
+  const tasks=el('div',{className:'tasks'});
+  for(const [title,list] of [['Pending',t.pending],['Future',t.future]]){if(!list.length)continue;tasks.append(el(level,{},title));const ul=el('ul');list.forEach(x=>ul.append(el('li',{},x.text)));tasks.append(ul);}
+  if(!tasks.childNodes.length)tasks.append(el('p',{className:'muted'},'No tasks.'));else if(note)tasks.append(el('p',{className:'muted small'},'Tasks never block Ready.'));
+  return tasks;
+}
+// Home page, Info view: reserved for a guide to the project and the framework; no content yet.
+function viewHomeInfo(){
+  const wrap=el('div',{className:'view-inner'}),empty=el('div',{className:'empty'});
+  wrap.append(el('h1',{id:'view-title'},project.name));
+  empty.append(el('h2',{},'No information yet'),el('p',{},'This view is reserved for a guide to this project and to the framework. It has no content yet.'));
+  wrap.append(empty);return wrap;
+}
+// Home page, Record view: the project record, then the tasks of every section (read-only: each one is edited in its own section).
+function viewHomeRecord(){
+  const wrap=el('div',{className:'view-inner'}),r=projectRecord(project),rec=el('div',{className:'record'});
+  wrap.append(el('h1',{id:'view-title'},project.name));
+  const field=(title,node,wide)=>{const box=el('div',wide?{className:'wide'}:{});box.append(el('h2',{},title),node);rec.append(box);};
+  const text=v=>el('p',{className:v?'':'muted'},v||'Not recorded');
+  field('Owner',text(r.owner));field('Notes',text(r.notes),true);field('Project tasks',tasksList(openTasks(r),{note:false}),true);
+  wrap.append(rec);
+  const sec=el('div',{className:'section-tasks'}),groups=collectTasks(guide,project);
+  sec.append(el('h2',{},'Section tasks'),el('p',{className:'muted small'},'Read-only: each task is edited in the Record of its section. Tasks never block Ready.'));
+  if(!groups.length)sec.append(el('p',{className:'muted'},'No tasks in any section.'));
+  for(const g of groups){
+    const cat=el('div',{className:'task-group'}),h=el('h3',{});h.append(link(`#/${g.category.id}`,`${String(g.category.number).padStart(2,'0')} ${g.category.title}`));cat.append(h);
+    for(const s of g.sections){const row=el('div',{className:'task-section'}),title=el('p',{className:'task-section-title'});title.append(link(`#/${s.item.id}/record`,`${s.item.number} ${s.item.title}`),statusTag(project.sections[s.item.id].status));row.append(title,tasksList(s,{note:false,level:'h4'}));cat.append(row);}
+    sec.append(cat);
+  }
+  wrap.append(sec);return wrap;
+}
 function viewRecord(i,p,page){
   const wrap=el('div',{className:'view-inner'});wrap.append(el('h1',{id:'view-title'},i.title));
   const rec=el('div',{className:'record'}),field=(title,node,wide)=>{const box=el('div',wide?{className:'wide'}:{});box.append(el('h2',{},title));box.append(node);rec.append(box);};
@@ -82,10 +117,7 @@ function viewRecord(i,p,page){
   field('Owner',text(p.owner));
   field('Page',text(page||`No page · expected at ${i.suggestedPath}`));
   field('Decisions and notes',text(p.notes),true);
-  const t=openTasks(p),tasks=el('div',{className:'tasks'});
-  for(const [title,list] of [['Pending',t.pending],['Future',t.future]]){if(!list.length)continue;tasks.append(el('h3',{},title));const ul=el('ul');list.forEach(x=>ul.append(el('li',{},x.text)));tasks.append(ul);}
-  if(!tasks.childNodes.length)tasks.append(el('p',{className:'muted'},'No tasks.'));else tasks.append(el('p',{className:'muted small'},'Tasks never block Ready.'));
-  field('Tasks',tasks,true);
+  field('Tasks',tasksList(openTasks(p)),true);
   if(p.status==='N')field('Exclusion reason',text(p.exclusionReason),true);
   field('Review · name',text(p.review.by));field('Review · date',text(p.review.date));field('Review · evidence',text(p.review.evidence),true);
   wrap.append(rec);return wrap;
@@ -164,7 +196,8 @@ async function renderRoute(t){
   else{node=el('div',{className:'view-inner'});node.append(el('h1',{id:'view-title'},'Page not found'),el('p',{},`There is nothing at ${route.hash||'this address'}.`),link('#/','Go to the home page'));}
   renderHead(item,entry,page,effective);
   if(node.tagName==='IFRAME'){view.setAttribute('aria-label',`${title} page`);view.removeAttribute('aria-labelledby');view.replaceChildren(node);}else{view.setAttribute('aria-labelledby','view-title');view.replaceChildren(node);}
-  document.title=route.name==='home'?`DSBook · ${name}`:`${title} · DSBook · ${name}`;
+  const plain=route.name==='home'&&homeView(route)==='content';if(route.name==='home'&&!plain)title=homeView(route)==='info'?'Info':'Record';
+  document.title=plain?`DSBook · ${name}`:`${title} · DSBook · ${name}`;
   view.scrollTop=0;if(navigated)view.focus({preventScroll:true});navigated=true;
 }
 async function go(){
@@ -182,7 +215,7 @@ function applyFlyout(){const c=current();side.dataset.panel=c||'';for(const k in
 function closeFlyout(){pinned=null;hover=null;clearTimeout(leaveTimer);if(side.contains(document.activeElement)&&document.activeElement!==document.body)document.activeElement.blur();applyFlyout();}
 for(const [k,{btn,el:pel}] of Object.entries(panels)){
 btn.onclick=()=>{if(pinned===k)closeFlyout();else{pinned=k;applyFlyout();}};
-for(const n of [btn,pel]){n.addEventListener('mouseenter',()=>{if(!matchMedia('(hover:hover)').matches)return;clearTimeout(leaveTimer);hover=k;applyFlyout();});n.addEventListener('mouseleave',()=>{clearTimeout(leaveTimer);leaveTimer=setTimeout(()=>{if(hover===k)hover=null;applyFlyout();},250);});}
+for(const n of [btn,pel]){n.addEventListener('mouseenter',()=>{if(!matchMedia('(any-hover:hover)').matches)return;clearTimeout(leaveTimer);hover=k;applyFlyout();});n.addEventListener('mouseleave',()=>{clearTimeout(leaveTimer);leaveTimer=setTimeout(()=>{if(hover===k)hover=null;applyFlyout();},250);});}
 pel.addEventListener('focusout',()=>setTimeout(applyFlyout,0));}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&side.dataset.panel){const k=current();closeFlyout();panels[k]?.btn.focus();}});
 document.addEventListener('click',e=>{if(pinned&&e.target.isConnected&&!side.contains(e.target))closeFlyout();});

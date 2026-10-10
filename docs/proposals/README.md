@@ -47,3 +47,13 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-4 | G5 · Header order | Applied | 0.13.0 | Breadcrumb, status, view tabs; the open-in-a-new-tab icon was removed. |
 | pilot-4 | G6 · Neutral palette and a full border for the active element | Applied | 0.13.0 | Grays only; status labels differ by fill and border, not color. |
 | pilot-4 | G7 · Right-aligned header group and the Info view | Applied | 0.14.0 | Tabs, separator, a magnifier that unfolds the search, separator, previous/next. The Guide tab is now Info (`/info`). |
+| [pilot-5](pilot-5-home-record.md) | H1 · The home page has three views | Applied | 0.19.0 | `#/home/<view>`; Content stays the default. |
+| pilot-5 | H2 · Info is implemented empty | Applied | 0.19.0 | Reserved for a guide to the project and the framework. |
+| pilot-5 | H3 · Record: project tasks and the tasks of every section | Applied | 0.19.0 | The section tasks are read-only, with links to their records. |
+| pilot-5 | H4 · The project record has no status or review | Applied | 0.19.0 | `record` is `{owner, notes, tasks}`. |
+| pilot-5 | H5 · One task model | Applied | 0.19.0 | One shape, one validation, one list. |
+| pilot-5 | H6 · Tasks are not filtered | Applied | 0.19.0 | |
+| pilot-5 | H7 · No task counter | Applied | 0.19.0 | |
+| pilot-5 | H8 · Tasks and Not applicable | Applied | 0.19.0 | N cannot have tasks; adding one reopens the section, openly. |
+| pilot-5 | H9 · Tasks go where they belong | Applied | 0.20.0 | iMoles tasks moved to `implementation.publishing-and-migration`. |
+| pilot-5 | H10 · Framework 1.2.0 | Applied | 0.19.0 | |

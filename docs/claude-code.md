@@ -27,6 +27,9 @@ Flow: GitHub is the source of truth → Claude Design records its base and works
 5. **Closing the cycle.** After pushing, add an entry to `CHANGELOG.md` (version, date, commit, section IDs and one line) and notify Claude Design of the new base. Each entry cites the commit with the changes; it is recorded in a later commit.
 6. If Claude Design modified something outside its scope, do not integrate it without asking. If it made a legitimate minor change inside a page (a style fix, for example), compare it with the repo and record it.
 
+## Not applicable sections and tasks
+A task added to an N section is a reopening. Check first that it belongs there; if not, it goes to the right section or to the project `record`. If it does belong, set the section to P, move the previous exclusion reason into `notes` with the date and tell the responsible person. `check` fails while an N section has tasks. Do not reopen when unsure: ask.
+
 ## Catalog changes
 `guide.json` is the project's catalog and belongs to the project: its text and its subsections can change. Claude Design can add categories and subsections and edit guide text; you integrate those changes by ID and `check` validates them against the [catalog rules](data-contract.md#catalog-rules). Ask before integrating anything that changes or deletes an existing ID, renames a folder or removes a subsection; those need an explicit order from the responsible person and a note in `CHANGELOG.md`. If you split a component family, keep traceability and avoid counting the same work twice.
 

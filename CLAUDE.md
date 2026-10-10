@@ -20,7 +20,7 @@ DSBook is a workspace for defining, documenting and tracking a Design System. Th
 2. **Everything in the repository is written in English**: data, documentation, pages, interface strings, script messages and commit messages. The conversation with the responsible person may be in another language; what is written to files is always English.
 3. No build step and no external services; the only network calls are the two manual *Check for updates* buttons of the Framework page. The vendored runtime that `.dc.html` pages need is allowed, versioned inside the repo (`assets/_runtime/` and `sections/<category>/support.js`). Do not add a backend, accounts, remote synchronization or project managers without an agreed need.
 4. Create pages at each subsection's `suggestedPath`. Their resources go in `assets/<category>/<subsection>/`. Do not use absolute team paths or links that depend on a local domain.
-5. `data/guide.json` is the project's catalog and guide text; `data/project.json` records status, decisions and tasks; `sections/` holds the development. Do not copy development content into the guide. Tasks are non-blocking and never prevent Ready; blocking work keeps the section in I.
+5. `data/guide.json` is the project's catalog and guide text; `data/project.json` records status, decisions and tasks; `sections/` holds the development. Do not copy development content into the guide. Tasks are non-blocking and never prevent Ready; blocking work keeps the section in I. A Not applicable section cannot have tasks: adding one means reopening it (see [data contract](docs/data-contract.md#notes-and-tasks)).
 6. The only statuses are R (Ready), I (In process), P (Pending), N (Not applicable). An existing page does not imply R. Ready requires a recorded review, not an automatic certification.
 7. Do not mark N without an explicit reason. Do not exclude applicable accessibility requirements for convenience. A cross-cutting row does not replace per-element checks.
 8. Do not invent approvals, test results, owners or evidence. If work or review is pending, use I and describe what is pending.
@@ -36,7 +36,7 @@ DSBook is a workspace for defining, documenting and tracking a Design System. Th
 - `dsbook.json`: the version of the DSBook framework this repository carries and the hash of each framework file.
 - `index.html`, `styles.css`, `app.js`, `model.js`: interactive container.
 - `data/guide.json`: the project's categories and subsections with instructions and target paths (it started with 14 categories and 132 subsections).
-- `data/project.json`: project identity, status, page, owner, notes, tasks and review.
+- `data/project.json`: project identity and record (owner, notes, tasks), and for each section its status, page, owner, notes, tasks and review.
 - `seed/`: the initial catalog and an all-Pending project. `npm run init` copies it to `data/` to start a project.
 - `sections/`: development of the DS; it starts empty of project content.
 - `templates/component.md`: component sheet. Section pages are created in Claude Design as `.dc.html`; there is no page template.

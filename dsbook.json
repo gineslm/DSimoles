@@ -1,6 +1,6 @@
 {
   "framework": "DSBook",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "released": "2026-10-10",
   "repository": "https://github.com/gineslm/DSbook",
   "files": {
@@ -33,7 +33,7 @@
     "scripts/framework.test.mjs": "d623e1112387f019faa4b82946b37afa7a6890beae7e836d2fdf2bc0aae15805",
     "scripts/init.mjs": "e24ae9d4986d26b151042d5fd204d71c527f2e203adc65db5d8e83069270653a",
     "scripts/init.test.mjs": "0f0ae3770749320b44931cfc76f79f54f416e5011010ca4a5ba9baa4460b1835",
-    "scripts/model.test.mjs": "ee32e8861a233737aab28a9be1c5283d43313f68b2ef0c683e2eafd87a131b52",
+    "scripts/model.test.mjs": "39c7f5363bd7cbdf01ae814142af31d9547ab32f788dae28a25d507b1974cba6",
     "scripts/serve.mjs": "dcf803cb217392efd498771ff2396416248f40f73616fa824b9d03771b07f1bc",
     "scripts/serve.test.mjs": "00a5227abed300fd9f0eb8ae5d434a97e1a9bd15e1208e4309464fed9fc8396a",
     "seed/guide.json": "0adfe954a8622d01fbed2022a44512b12d9401d6aa302bebe27a30e22c12cb2e",

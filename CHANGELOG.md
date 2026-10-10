@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.18.0 · 2026-10-10 · (filled in after the commit)
+## 0.18.0 · 2026-10-10 · 9de3a8e
 Sections: all (statuses).
 Triage by the owner: 26 subsections stay Pending (0.1, 0.2, 0.3, 0.10, 1.2–1.5, 1.10, 2.1, 2.2, 3.1, 4.1, 4.3, all of 7, 8.1, 9.1, 9.3), 1.1 Color stays In process and the other 105 are Not applicable for now, with a common reason, to be opened progressively as the project requires. Framework 1.1.1 (the progress test no longer depends on the project's statuses, change commit 43ec42f).
 

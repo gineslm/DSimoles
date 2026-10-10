@@ -32,10 +32,13 @@ test('init without arguments prints the usage and fails', () => {
 });
 
 test('init refuses to overwrite a project that already has its own identity', () => {
-  const r = run(['--id', 'other-ds', '--name', 'Other DS']);
+  const r = run(['--id', 'other-ds', '--name', 'Other DS'], dir => {
+    const p = path.join(dir, 'data/project.json');
+    writeFileSync(p, JSON.stringify({...json(dir, 'data/project.json'), projectId: 'existing-ds'}, null, 2));
+  });
   assert.notEqual(r.code, 0);
-  assert.match(r.out, /already belongs to the project "dsimoles"/);
-  assert.equal(r.project.projectId, 'dsimoles');
+  assert.match(r.out, /already belongs to the project "existing-ds"/);
+  assert.equal(r.project.projectId, 'existing-ds');
 });
 
 test('init --force starts a new project from the seed and does not touch sections/', () => {

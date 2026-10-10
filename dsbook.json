@@ -28,7 +28,7 @@
     "scripts/framework.mjs": "bbeaed744648963cc7c2568c04bfa756de8250278abe712e9df9b35c94674263",
     "scripts/framework.test.mjs": "280fb8176b91a45a4ec9666613fa8bb17cf3484ea96d634027e2a798f9d6ef12",
     "scripts/init.mjs": "e24ae9d4986d26b151042d5fd204d71c527f2e203adc65db5d8e83069270653a",
-    "scripts/init.test.mjs": "e77501ec220b354b879ba868aa40960853fb21e25b7fbe3ca1b1573d212bc0ac",
+    "scripts/init.test.mjs": "0f0ae3770749320b44931cfc76f79f54f416e5011010ca4a5ba9baa4460b1835",
     "scripts/model.test.mjs": "ee32e8861a233737aab28a9be1c5283d43313f68b2ef0c683e2eafd87a131b52",
     "seed/guide.json": "0adfe954a8622d01fbed2022a44512b12d9401d6aa302bebe27a30e22c12cb2e",
     "seed/project.json": "faab4334bb3c70df5df17d472e6613121c052cbfdc0d234c74443d7ab2035bda",

@@ -119,7 +119,7 @@ function aboutBlock(title,rows,checkFn,hint){
 function viewFramework(){
   const wrap=el('div',{className:'view-inner'}),cols=el('div',{className:'about-cols'}),text=el('div',{className:'about-text'}),about=el('div',{className:'about'});
   for(const [title,body] of [['What it is','DSBook is a tool that guides the development of a Design System and its evolution over time. It lists what a complete system should define, gives every subsection a page and a record, and shows at a glance what is ready, in process, pending or not applicable.'],['How it works','This site only shows the state of the project: the work is not done here. The design happens in Claude Design, which writes the pages, notes and statuses. Claude Code brings them into the repository, runs the checks and commits. A GitHub repository is the source of truth that keeps both in step. To work, pick a subsection in the Sections menu, read what it asks for, develop it in Claude Design and let the agents integrate it.']]){const s=el('section');s.append(el('h2',{},title),el('p',{},body));text.append(s);}
-  wrap.append(el('h1',{id:'view-title'},'Framework'));
+  wrap.append(el('h1',{id:'view-title'},'DSBook framework'));
   const m=manifest,src=m&&parseRepo(m.repository),ext=url=>link(url,url.replace('https://',''),{target:'_blank',rel:'noopener noreferrer'});
   about.append(aboutBlock('DSBook framework',
     m?[['Version',m.version],['Released',m.released||'Not recorded'],['Source',src?ext(m.repository):'Not recorded']]:[['Version','dsbook.json was not found']],
@@ -158,7 +158,7 @@ async function renderRoute(t){
     node=effective==='content'?viewContent(item,page):effective==='info'?viewInfo(item):viewRecord(item,entry,page);
     title=`${item.number} ${item.title}`;if(effective==='content'&&page)view.classList.add('frame');
   }else if(route.name==='category'){const c=catOf(route.id);node=viewCategory(c);title=c.title;}
-  else if(route.name==='framework'){node=viewFramework();title='Framework';}
+  else if(route.name==='framework'){node=viewFramework();title='DSBook framework';}
   else if(route.name==='home')node=viewHome();
   else{node=el('div',{className:'view-inner'});node.append(el('h1',{id:'view-title'},'Page not found'),el('p',{},`There is nothing at ${route.hash||'this address'}.`),link('#/','Go to the home page'));}
   renderHead(item,entry,page,effective);

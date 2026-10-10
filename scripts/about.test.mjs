@@ -12,7 +12,7 @@ test('The framework page is a route of its own', () => {
   assert.deepEqual(route('#/framework'), {name: 'framework'});
   assert.equal(route('#/framework/info').name, 'notfound');
   assert.equal(routeHash(route('#/framework')), '#/framework');
-  assert.deepEqual(breadcrumb(guide, route('#/framework'), 'Example DS'), [{label: 'Example DS', hash: '#/'}, {label: 'Framework'}]);
+  assert.deepEqual(breadcrumb(guide, route('#/framework'), 'Example DS'), [{label: 'Example DS', hash: '#/'}, {label: 'DSBook framework'}]);
 });
 
 test('A category cannot take the ID of the framework page', () => {

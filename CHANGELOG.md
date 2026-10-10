@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.16.3 · 2026-10-10 · (filled in after the commit)
+Sections: none.
+The Framework page is titled "DSBook framework" (heading, breadcrumb and tab title). Framework 1.1.0 was re-recorded with it; it had not been published.
+
 ## 0.16.2 · 2026-10-10 · af68c3a
 Sections: none.
 The Framework page puts two short texts (what DSBook is, how it works with Claude Design, Claude Code and GitHub) on the left and the framework and project blocks on the right. Framework 1.1.0 was re-recorded with it; it had not been published.

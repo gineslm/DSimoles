@@ -90,7 +90,7 @@ test('Container: home, sections, views, filters and legacy links work without co
     assert.equal(await b.eval(`document.getElementById('home-link').getAttribute('href')`), '#/framework', 'the DSB mark opens the framework page');
     await b.eval(`document.getElementById('home-link').click()`); await sleep(400);
     assert.equal(await b.eval(`location.hash`), '#/framework');
-    assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'Framework');
+    assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'DSBook framework');
     assert.deepEqual(await b.eval(`[...document.querySelectorAll('.about-block h2')].map(h => h.textContent)`), ['DSBook framework', 'This project']);
     const manifest = JSON.parse(readFileSync(path.join(root, 'dsbook.json'), 'utf8'));
     assert.equal(await b.eval(`document.querySelector('.about-block dd').textContent`), manifest.version, 'the page shows the framework version from dsbook.json');

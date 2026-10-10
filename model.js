@@ -66,7 +66,7 @@ export function routeHash(route){return route.name==='home'?'#/':route.name==='f
 export function breadcrumb(guide,route,projectName){
   const home={label:projectName,hash:'#/'};
   if(route.name==='home'||route.name==='notfound')return[{label:projectName}];
-  if(route.name==='framework')return[home,{label:'Framework'}];
+  if(route.name==='framework')return[home,{label:'DSBook framework'}];
   const c=route.name==='category'?guide.categories.find(x=>x.id===route.id):guide.categories.find(x=>x.items.some(i=>i.id===route.id));
   const cat={label:`${String(c.number).padStart(2,'0')} ${c.title}`,hash:`#/${c.id}`};
   if(route.name==='category')return[home,{label:cat.label}];

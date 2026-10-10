@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.16.5 · 2026-10-10 · (filled in after the commit)
+## 0.16.5 · 2026-10-10 · bab036c
 Sections: none.
 The DSBook logo is a vector (`assets/_framework/dsbook-logo.svg`, Roboto Bold and Medium converted to outlines, so it needs no font) used in the rail and as the tab icon. Framework 1.1.0 was re-recorded with it; it had not been published.
 

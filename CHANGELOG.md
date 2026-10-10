@@ -6,7 +6,7 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
-## 0.16.0 · 2026-10-10 · (filled in after the commit)
+## 0.16.0 · 2026-10-10 · d87e0de
 Sections: none.
 DSBook framework 1.1.0. The DSB mark opens a new Framework page (`#/framework`): the framework version, release date and source, the project's repository and the latest commit on GitHub, each with a manual *Check for updates* button. `dsbook.json` gains `released` and `repository`; `data/project.json` gains an optional `repository`; `framework --release` takes `--repository`. Agents check the remote at the start of a session (docs/claude-code.md). Tests for the page's logic (`scripts/about.test.mjs`) and its route.
 

@@ -5,7 +5,7 @@
   "repository": "https://github.com/gineslm/DSbook",
   "files": {
     ".gitattributes": "7cd03d725ca95ddf81d469986a68384ef55f3d5919d500dba8b25f283ce51058",
-    "app.js": "3612530a59f2efb519de006709503f49f7fcefc6e57be03ae626d183689ef6e3",
+    "app.js": "f6ac989ab82c0ccbadac60f180444e5e22a5e0be346a261ad0b41fad867b1ea1",
     "assets/_framework/dsbook-logo.svg": "427396b2c088eec7f558464e21ec234199b49f5c3c0e59a324bdd98cd26c4da6",
     "assets/_runtime/README.md": "44484b60ad9f65e8b45bcf8acdd1587c8b3e033cb8cbc07ba4937a79b01380bd",
     "assets/_runtime/react-dom.production.min.js": "35f4f974f4b2bcd44da73963347f8952e341f83909e4498227d4e26b98f66f0d",
@@ -17,7 +17,7 @@
     "docs/handoff.md": "a521a2686b68933e9dda429edadd876a265c93d5ff841f07ada2f95140aa9891",
     "docs/page-style.md": "4d4bde3653b22d3083390b5d330c7df985ce5a74af2b3c99a9b3dd7918d6438b",
     "docs/quality.md": "adce8f834f179df2baf583ca9e23f0848a4f1c6ced11fe6030a0284045d13a4b",
-    "docs/scripts.md": "91e09224ce9b167643cad8c705e31872fd8401db27ef7d87908dc67742e5677c",
+    "docs/scripts.md": "dc12b981f89083f1415a579ca3b089f03e1944436f4e6d5283c045081ee00e30",
     "docs/template.md": "fbf1a905a8fe490f98bcd38441ade9cff140569ca7993e191675c24f6f246245",
     "index.html": "e9bc4183e632ea10faeb58a1500341a07936ea1f533dc08786260eba5cec2dd0",
     "model.js": "8d5fb589e09c61fc6de04494643cf5bfe012c095763656833269431e8a2f0d0a",
@@ -25,7 +25,7 @@
     "scripts/about.test.mjs": "08936572e57c2a6aa2e253b2cb7331a176da9972cd3da4b98a78aec7ced54c25",
     "scripts/check.mjs": "502ff0bf963e1d4e37b6d78347fcf60de9e4836f2f5e2ade18dc177c691c91ca",
     "scripts/check.test.mjs": "b54498a3080bd3b5d5b801d2e6ddd5595d8d8402e71a106a9e0ecdfe2d220cef",
-    "scripts/container.test.mjs": "620f52e23b9efbc0858e62e640ad9ab2eef71f524cf6a61fa5a46e964ed00dca",
+    "scripts/container.test.mjs": "c51dd04a21380312c50fe3d1756b81dde2e712c7ed60a84b6641ad4bc9f6360b",
     "scripts/fixtures/page.dc.html": "05b565b2f09e8b58f12f2d2ec97883594cbc569bc09337ee8cb2d12d3c3f8c66",
     "scripts/fixtures/support.js": "34a65c4151c5df4e8b148dcf1897bcc567a2eb8afb25f2bbb8785ea6bdbbf4cd",
     "scripts/framework-lib.mjs": "90a82ab7b1064abcd5df6be76d88c915c5850820832e2862efc0c3d613c1a16e",
@@ -39,7 +39,7 @@
     "scripts/serve.test.mjs": "00a5227abed300fd9f0eb8ae5d434a97e1a9bd15e1208e4309464fed9fc8396a",
     "seed/guide.json": "0adfe954a8622d01fbed2022a44512b12d9401d6aa302bebe27a30e22c12cb2e",
     "seed/project.json": "560ec003bbc50b1b2ea5c7412dd99de8825067eb0fdb2cbcbc296861cd97a5a7",
-    "styles.css": "5c1d8eef8a18a458e702f4abc48c2d690d1cd1cd92a572f03cda8358edd6b788",
+    "styles.css": "b58afc83bf766236f1232540c2e455dc8a72d469657ea8054cececd7d9046983",
     "templates/component.md": "211193dd93d47921758aacba42446f5aa9cc1a5677e09cde8c3a7a11a9fe4774"
   }
 }

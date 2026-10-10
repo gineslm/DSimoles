@@ -53,7 +53,7 @@ The nine iMoles prototype tasks that sat in `visuals.color` moved to `implementa
 New view, new optional field and a new check rule: a MINOR version. The guides for Claude Design and Claude Code explain the reopening rule, and Claude Design may edit the project record.
 
 ## A fix made along the way
-The cascade of the Sections menu depended on the media query `(hover:hover)`, which some touch-capable laptops do not report even with a mouse. It now uses `(any-hover:hover)`, and the browser smoke test hovers the menu so a regression is caught. The cause of the reported problem could not be reproduced in Chrome from 1024 to 1920 px wide, so this is the most plausible explanation, not a confirmed one.
+The cascade of the Sections menu worked in Chrome but not in Firefox, where each category showed a chevron that opened the subsections inline. The cause: the cascade was enabled only when the browser reported hover capability through a media query, and the layout switched to the inline accordion when it did not. Browsers answer that query differently, and a touch-capable PC can report no hover at all even with a mouse. Reproduced by emulating touch in Chrome: the old code never opened the cascade. Now the wide layout is always the cascade, hovering is detected from pointer events (a mouse or a pen) and the chevron is also available for touch; only narrow screens (950 px or less) use the inline accordion. A browser test hovers the menu, also with touch emulated.
 
 ## Verification
 Checked on the real state of the project: the home Record lists the tasks of Color (4) and of Publishing and migration (9) next to the two project tasks, links lead to the sections' records, and no filter changes the list. The mobile layout has no horizontal scroll.

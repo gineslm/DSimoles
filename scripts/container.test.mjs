@@ -55,6 +55,7 @@ async function session(fn) {
       async goto(hash) { await send('Page.navigate', {url: base + hash}); await sleep(1200); },
       async eval(expr) { const r = await send('Runtime.evaluate', {expression: expr, awaitPromise: true, returnByValue: true}); if (r.exceptionDetails) throw Error(r.exceptionDetails.exception?.description || r.exceptionDetails.text); return r.result.value; },
       async mouse(x, y, wait = 30) { await send('Input.dispatchMouseEvent', {type: 'mouseMoved', x, y}); await sleep(wait); },
+      async touch(on) { await send('Emulation.setTouchEmulationEnabled', {enabled: on, maxTouchPoints: 5}); },
       async go(hash) { await b.eval(`location.hash=${JSON.stringify(hash)}`); await sleep(500); },
     };
     try { await fn(b); } finally { ws.close(); }
@@ -123,6 +124,20 @@ test('Container: home, sections, views, filters and legacy links work without co
     assert.equal(await b.eval(`document.getElementById('sidebar').dataset.panel`), 'sections', 'hovering the Sections icon opens its panel');
     assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).display`), 'block', 'hovering a category shows its subsections');
     await b.mouse(5, 5, 400);
+    // a PC that reports no hover and a coarse pointer (some Firefox setups do) must still get the cascade with a mouse
+    await b.touch(true);
+    await b.goto('');
+    assert.equal(await b.eval(`matchMedia('(any-hover:none)').matches`), true, 'the browser now reports no hover capability');
+    const icon2 = await at('#sections-btn');
+    await b.mouse(icon2.x, icon2.y, 250);
+    const row2 = await at('.menu-cat:nth-child(3) .menu-cat-link');
+    for (let k = 1; k <= 8; k++) await b.mouse(Math.round(icon2.x + (row2.x - icon2.x) * k / 8), Math.round(icon2.y + (row2.y - icon2.y) * k / 8), 15);
+    await sleep(300);
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).position`), 'fixed', 'without hover capability the wide layout is still the cascade');
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).display`), 'block', 'hovering a category still shows its subsections');
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-chevron')).display`), 'block', 'the chevron is available too, for touch');
+    await b.mouse(5, 5, 400);
+    await b.touch(false);
     await b.go('#/');
     const counts = {};
     for (const s of Object.values(project.sections)) counts[s.status] = (counts[s.status] || 0) + 1;

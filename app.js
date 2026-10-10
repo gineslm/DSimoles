@@ -118,7 +118,7 @@ function aboutBlock(title,rows,checkFn,hint){
 }
 function viewFramework(){
   const wrap=el('div',{className:'view-inner'}),about=el('div',{className:'about'});
-  wrap.append(el('h1',{id:'view-title'},'Framework'),el('p',{className:'lead'},'What this project is built on, and where it lives.'));
+  wrap.append(el('h1',{id:'view-title'},'Framework'),el('p',{className:'lead about-intro'},'DSBook is a tool that guides the development of a Design System and its evolution over time. It lists what a complete system should define, gives every subsection a page and a record, and shows at a glance what is ready, in process, pending or not applicable. Pick a subsection in the Sections menu, read what it asks for, develop it in Claude Design and record its status; this site only shows the state of the repository.'));
   const m=manifest,src=m&&parseRepo(m.repository),ext=url=>link(url,url.replace('https://',''),{target:'_blank',rel:'noopener noreferrer'});
   about.append(aboutBlock('DSBook framework',
     m?[['Version',m.version],['Released',m.released||'Not recorded'],['Source',src?ext(m.repository):'Not recorded']]:[['Version','dsbook.json was not found']],

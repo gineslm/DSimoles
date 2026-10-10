@@ -5,7 +5,7 @@
   "repository": "https://github.com/gineslm/DSbook",
   "files": {
     ".gitattributes": "7cd03d725ca95ddf81d469986a68384ef55f3d5919d500dba8b25f283ce51058",
-    "app.js": "e362252caad41eaea1f099d5c2db9a5686d33ddeb35a4a839bb86098a6ae479d",
+    "app.js": "33be83297516606cdcaba81ca5d04ba2055080b7e3b736ec47c16b82d7ccde3f",
     "assets/_runtime/README.md": "44484b60ad9f65e8b45bcf8acdd1587c8b3e033cb8cbc07ba4937a79b01380bd",
     "assets/_runtime/react-dom.production.min.js": "35f4f974f4b2bcd44da73963347f8952e341f83909e4498227d4e26b98f66f0d",
     "assets/_runtime/react.production.min.js": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd",
@@ -35,7 +35,7 @@
     "scripts/model.test.mjs": "ee32e8861a233737aab28a9be1c5283d43313f68b2ef0c683e2eafd87a131b52",
     "seed/guide.json": "0adfe954a8622d01fbed2022a44512b12d9401d6aa302bebe27a30e22c12cb2e",
     "seed/project.json": "faab4334bb3c70df5df17d472e6613121c052cbfdc0d234c74443d7ab2035bda",
-    "styles.css": "9e28c4e2f86d482bf0fc1fbe212f46b1364fe7e4f8d98fb15749862a212a4393",
+    "styles.css": "4d484b4fdb6551d6c57fd891976e8e024f2fdc7ca53aca75e3c97c7b1d406ea0",
     "templates/component.md": "211193dd93d47921758aacba42446f5aa9cc1a5677e09cde8c3a7a11a9fe4774"
   }
 }

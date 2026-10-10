@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="ds-section-id" content="visuals.color">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><title>Fixture page</title></helmet>
+<main>
+<h1>Fixture page</h1>
+<ul>
+<sc-for list="{{ roles }}" as="role"><li>{{ role.name }}</li></sc-for>
+</ul>
+<img src="{{ capture.src }}" alt="{{ capture.alt }}">
+</main>
+<script type="application/json" id="data">{"capture": {"src": "", "alt": ""}, "roles": []}</script>
+</x-dc>
+</body>
+</html>

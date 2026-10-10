@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {cpSync, mkdtempSync, readFileSync, writeFileSync, mkdirSync, rmSync, existsSync} from 'node:fs';
+import {cpSync, mkdtempSync, readFileSync, writeFileSync, mkdirSync, rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -12,10 +12,17 @@ const items = new Map(guide.categories.flatMap(c => c.items.map(i => [i.id, i]))
 const page = 'sections/visuals/color.dc.html';
 
 // Copy of the repo in a temporary directory so it can be mutated without touching the original.
-function sandbox(mutate) {
+// Unless `asIs` is set, the fixture page and support.js are installed first, so these tests do not
+// depend on the project having developed any page (a fresh DSBook has none).
+function sandbox(mutate, {asIs = false} = {}) {
   const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-check-'));
   cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|\.claude)([\\/]|$)/.test(p)});
   try {
+    if (!asIs) {
+      mkdirSync(path.join(dir, 'sections/visuals'), {recursive: true});
+      cpSync(path.join(root, 'scripts/fixtures/page.dc.html'), path.join(dir, page));
+      cpSync(path.join(root, 'scripts/fixtures/support.js'), path.join(dir, 'sections/visuals/support.js'));
+    }
     mutate?.(dir);
     const r = spawnSync(process.execPath, ['scripts/check.mjs'], {cwd: dir, encoding: 'utf8'});
     return {code: r.status, out: r.stdout + r.stderr};
@@ -27,6 +34,11 @@ const edit = (dir, file, fn) => { const p = path.join(dir, file); writeFileSync(
 const expectFail = (r, text) => { assert.notEqual(r.code, 0, r.out); assert.ok(r.out.includes(text), `Esperaba «${text}» en:\n${r.out}`); };
 
 test('The repository as is passes check', () => {
+  const r = sandbox(undefined, {asIs: true});
+  assert.equal(r.code, 0, r.out);
+});
+
+test('A repository with the fixture page passes check', () => {
   const r = sandbox();
   assert.equal(r.code, 0, r.out);
 });
@@ -86,7 +98,6 @@ test('A second folder with an identical support.js copy passes', () => {
     writeFileSync(path.join(d, path.dirname(suggested), 'support.js'), readFileSync(path.join(d, 'sections/visuals/support.js')));
   });
   assert.equal(r.code, 0, r.out);
-  assert.ok(existsSync(path.join(root, page)));
 });
 
 test('The seed must start empty and Pending', () => {

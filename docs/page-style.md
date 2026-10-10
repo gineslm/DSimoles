@@ -1,8 +1,8 @@
 # Style and tone of section pages
 
-> **Status: approved by the responsible person (2026-10-08).** The values come from the pilot page (`visuals.color`). If something clashes with what you see in a page, say so instead of deciding on your own.
+> **Status: approved by the responsible person (2026-10-08).** The values come from the pilot page of the first project that used DSBook. If something clashes with what you see in a page, say so instead of deciding on your own.
 
-These guidelines apply to the `.dc.html` pages in `sections/`. They do not define the DSimoles Design System: they are the **neutral documentation base** (CLAUDE.md, rule 13). The system being defined is shown inside them with its own values, which are marked as pending while they are not decided.
+These guidelines apply to the `.dc.html` pages in `sections/`. They do not define the Design System of the project: they are the **neutral documentation base** (CLAUDE.md, rule 13). The system being defined is shown inside them with its own values, which are marked as pending while they are not decided.
 
 ## Tone: visual first
 - **Show before explaining.** Every section starts with something you can see: color swatches, scales, applied examples, diagrams, correct/incorrect comparisons. Text accompanies, it does not replace.
@@ -80,4 +80,4 @@ Contrasts are calculated with the WCAG 2.2 formula for normal text; only text, n
 - `lang="en"` on the document's `<html>` tag (enforced by `check`) and descriptive page titles.
 
 ## What is not decided here
-The DSimoles Design System values (palettes, scales, product typography, spacing) are decided in their sections (`visuals.color`, `visuals.typography`, `visuals.spacing`…). These guidelines only fix how they are documented.
+The values of the Design System (palettes, scales, product typography, spacing) are decided in their sections (`visuals.color`, `visuals.typography`, `visuals.spacing`…). These guidelines only fix how they are documented.

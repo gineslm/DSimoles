@@ -57,9 +57,9 @@ test('Routes: old #item-<id> and #cat-<id> links are translated',()=>{
 });
 test('routeHash is the inverse of parseRoute',()=>{for(const h of ['#/','#/visuals','#/visuals.color','#/visuals.color/info','#/visuals.color/record'])assert.equal(routeHash(route(h)),h);});
 test('Breadcrumb follows category and subsection',()=>{
-  assert.deepEqual(breadcrumb(guide,route('#/'),'DSimoles'),[{label:'DSimoles'}]);
-  const c=breadcrumb(guide,route('#/visuals'),'DSimoles');assert.equal(c.length,2);assert.equal(c[0].hash,'#/');assert.match(c[1].label,/^01 /);
-  const s=breadcrumb(guide,route('#/visuals.color/info'),'DSimoles');assert.deepEqual(s.map(x=>x.hash),['#/','#/visuals',undefined]);assert.equal(s[2].label,'1.1 Color');
+  assert.deepEqual(breadcrumb(guide,route('#/'),'Example DS'),[{label:'Example DS'}]);
+  const c=breadcrumb(guide,route('#/visuals'),'Example DS');assert.equal(c.length,2);assert.equal(c[0].hash,'#/');assert.match(c[1].label,/^01 /);
+  const s=breadcrumb(guide,route('#/visuals.color/info'),'Example DS');assert.deepEqual(s.map(x=>x.hash),['#/','#/visuals',undefined]);assert.equal(s[2].label,'1.1 Color');
 });
 test('Neighbors follow the guide order across categories',()=>{
   const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id));

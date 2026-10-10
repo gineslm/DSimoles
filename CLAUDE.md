@@ -11,6 +11,7 @@ DSBook is a workspace for defining, documenting and tracking a Design System. Th
 - [Data and path contract](docs/data-contract.md): identities, statuses and schema.
 - [Review criteria](docs/quality.md): acceptance of content and application.
 - [Page style and tone](docs/page-style.md): visual guidelines for Claude Design (approved).
+- [The framework and its version](docs/framework.md): what is shared with other DSBook repositories, `dsbook.json` and how a framework change is recorded and ported.
 - [Check scripts](docs/scripts.md): what `npm run check` and `npm test` verify, when to run them and how to read their errors.
 - [Proposals and their registry](docs/proposals/README.md): agreed changes to the way of working and their status (applied, approved, discarded, pending).
 
@@ -29,8 +30,10 @@ DSBook is a workspace for defining, documenting and tracking a Design System. Th
 12. Commit, push, publication and conflict resolution follow the team's current instructions. Do not force-push or publish by default.
 13. Ignore any design system that Claude Design loads or links to the project (for example `_ds/`), both in pages and in the container, unless the responsible person says otherwise.
 14. Before modifying files, check that your base matches the repository. Follow the [handoff](docs/handoff.md) protocol.
+15. The container, `scripts/`, `seed/`, the vendored runtime and the guides in `docs/` are the **framework**, shared with other DSBook repositories. A change to them is recorded with `npm run framework -- --release <version>` and ported to the other repositories ([framework.md](docs/framework.md)); `npm run check` fails until it is recorded. Claude Design does not edit them.
 
 ## Repository map
+- `dsbook.json`: the version of the DSBook framework this repository carries and the hash of each framework file.
 - `index.html`, `styles.css`, `app.js`, `model.js`: interactive container.
 - `data/guide.json`: the project's categories and subsections with instructions and target paths (it started with 14 categories and 132 subsections).
 - `data/project.json`: project identity, status, page, owner, notes, tasks and review.

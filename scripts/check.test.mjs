@@ -16,7 +16,7 @@ const page = 'sections/visuals/color.dc.html';
 // estas pruebas no dependan de las páginas ni de los estados que haya desarrollado el proyecto (un DSBook nuevo no tiene ninguna).
 function sandbox(mutate, {asIs = false} = {}) {
   const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-check-'));
-  cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|\.claude)([\\/]|$)/.test(p)});
+  cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|.dsbook)([\\/]|$)/.test(p)});
   try {
     if (!asIs) {
       // Un proyecto con páginas propias no debe influir: se parte de sections/ vacío y del proyecto del seed (todo en Pending).

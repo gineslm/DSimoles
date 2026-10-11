@@ -18,6 +18,7 @@ const FOLDERS = [
   {dir: 'assets/_runtime', deep: true},
   {dir: 'assets/_framework', deep: true},
   {dir: 'docs', deep: false},
+  {dir: '.claude/skills', deep: true},
 ];
 // Los archivos vendorizados se comparan byte a byte (su hash también se comprueba contra support.js); todo lo demás es texto
 // y se calcula con saltos de línea LF para que coincidan un checkout de Windows y uno de Linux.

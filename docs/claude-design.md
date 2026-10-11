@@ -18,6 +18,11 @@ Sigues el [ciclo de trabajo](handoff.md#el-ciclo-de-trabajo): el repositorio es 
 4. **Qué no se transfiere:** `_ds/`, `github.md`, `uploads/` y los archivos auxiliares de Claude Design.
 5. `data/project.json` y `data/guide.json` solo se tocan en las entradas afectadas; nunca se regeneran enteros. `owner` es opcional.
 
+## Proteger tu trabajo y entregar el manifiesto
+- Cuando Claude Code te lo pida con un prompt de `design-diff --request`, genera `design-manifest.json` en la raíz de tu proyecto con el SHA-256 de cada archivo (el prompt trae el algoritmo exacto y un nonce que debes copiar tal cual). No cambies ningún otro archivo. Si no puedes calcular un hash real, dilo; no lo inventes.
+- **Antes de adoptar cambios del repositorio**, compara el hash de cada archivo tuyo con el campo `design` de `design-baseline.json` (raíz del repo). Si tu archivo cambió desde la última integración y el contenido del repo difiere del tuyo, **no lo sobrescribas**: guarda tu copia en `_backup/<fecha>/<ruta>` y avisa a la persona responsable. Nunca des por perdido ni por integrado un trabajo sin comprobarlo.
+- `_backup/` no se transfiere al repositorio.
+
 ## Sistema visual
 Salvo que la persona responsable diga otra cosa, ignora cualquier design system que Claude Design cargue o enlace al proyecto (hoy `_ds/`): no lo apliques a las páginas ni al contenedor. Las páginas de sección usan una base neutra de documentación y muestran el sistema que se está definiendo. No presentes valores de ese sistema como decididos si no lo están.
 

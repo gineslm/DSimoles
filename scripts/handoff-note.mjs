@@ -45,11 +45,18 @@ for (const p of tryGit('ls-tree', '-r', '--name-only', baseSha)?.split('\n') ?? 
 const manifestBefore = show('dsbook.json'), manifestNow = await now('dsbook.json');
 const fwVersion = manifestBefore?.version !== manifestNow?.version ? `${manifestBefore?.version ?? '—'} → ${manifestNow?.version ?? '—'}` : (manifestNow?.version ?? '—');
 
-let div = null;
-if (opt('divergences')) {
-  try { div = JSON.parse(await readFile(opt('divergences'), 'utf8')); } catch (e) { fail(`no se pudo leer ${opt('divergences')}: ${e.message}`); }
+// Comparación con Claude Design: la que se indica, o la última de `design-diff --manifest` (.dsbook/last-diff.json).
+let div = null, divSource = opt('divergences');
+if (!divSource) { try { await readFile(path.join(root, '.dsbook/last-diff.json'), 'utf8'); divSource = path.join(root, '.dsbook/last-diff.json'); } catch {} }
+if (divSource) {
+  try { div = JSON.parse(await readFile(divSource, 'utf8')); } catch (e) { fail(`no se pudo leer ${divSource}: ${e.message}`); }
+  if (div.pending) { // resultado de la comparación a tres bandas
+    if (div.blocking?.length && !args.includes('--force')) fail(`hay ${div.blocking.length} archivo(s) de Claude Design sin integrar o sin confirmar: ${div.blocking.slice(0, 8).join(', ')}${div.blocking.length > 8 ? ', …' : ''}. Resuélvelos (design-diff --record) antes de avisar a Claude Design, o usa --force bajo tu responsabilidad.`);
+    div = {generated: div.at, mode: 'manifest', different: [...div.repoAhead, ...div.needsConfirm, ...div.pending], onlyRepo: div.repoOnly, onlyDesign: div.newInDesign, recorded: div.recorded, repoAhead: div.repoAhead};
+  }
 }
 const divergent = new Set([...(div?.different ?? []), ...(div?.onlyRepo ?? [])]);
+const unchecked = !div;
 const origin = p => !div ? '' : divergent.has(p) ? ' · hecho en Claude Code' : ' · coincide con Claude Design';
 
 const groups = {};
@@ -76,19 +83,21 @@ for (const t of Object.keys(TYPES)) {
   lines.push('');
 }
 if (structural) lines.push('> La estructura del catálogo cambió (IDs, números o rutas de `data/guide.json`): Claude Design debe actualizar su mapa de pantallas y no renombrar nada por su cuenta.', '');
+if (unchecked) lines.push('## ⚠ Sin comprobar con Claude Design', '', 'Este aviso se generó sin una comparación con el manifiesto de Claude Design (`npm run design-diff -- --manifest …`). No se ha verificado que no haya trabajo suyo sin integrar.', '');
 if (div) {
   lines.push('## Diferencias con la versión de Claude Design', '',
-    `Comparación del ${div.generated?.slice(0, 10) ?? '—'} (${div.mode === 'content' ? 'contenido' : 'solo rutas'}).`, '');
+    `Comparación del ${div.generated?.slice(0, 10) ?? '—'} (${div.mode === 'content' ? 'contenido' : div.mode === 'manifest' ? 'manifiesto de hashes' : 'solo rutas'}).`, '');
   const sect = (title, list) => { if (list?.length) lines.push(`- ${title} (${list.length}): ${list.map(p => `\`${p}\``).join(', ')}`); };
   sect('Con contenido distinto', div.different); sect('Solo en este repositorio', div.onlyRepo); sect('Solo en Claude Design (no se ha traído)', div.onlyDesign);
   if (!div.different?.length && !div.onlyRepo?.length && !div.onlyDesign?.length) lines.push('- Ninguna: el repositorio y Claude Design coinciden.');
   lines.push('');
 }
 lines.push('## Qué debe hacer Claude Design', '',
-  '1. Leer el repositorio y comprobar que el commit indicado en el prompt contiene lo que figura arriba.',
-  '2. Para lo marcado «hecho en Claude Code» o con contenido distinto: adoptar la versión del repositorio como base antes de seguir editando. No la sobrescribas con tu copia anterior.',
-  '3. Actualizar `github.md` con el nuevo commit, la versión de `CHANGELOG.md` y la versión del framework.',
-  '4. Responder con lo que comprobó, lo que difiere y su nueva base.', '',
+  '1. **Antes de nada, protege tu trabajo.** Calcula el hash de cada archivo que tengas y compáralo con `design-baseline.json` (raíz del repositorio, campo `design`). Si tu hash difiere de la base y el contenido del repositorio difiere del tuyo, **no lo sobrescribas**: guarda tu copia en `_backup/<fecha>/<ruta>` y avísame.',
+  '2. Leer el repositorio y comprobar que el commit indicado en el prompt contiene lo que figura arriba.',
+  '3. Para lo marcado «hecho en Claude Code» o con contenido distinto: adoptar la versión del repositorio como base antes de seguir editando, salvo lo protegido en el paso 1.',
+  '4. Actualizar `github.md` con el nuevo commit, la versión de `CHANGELOG.md` y la versión del framework.',
+  '5. Responder con lo que comprobó, lo que difiere, lo que protegió y su nueva base.', '',
   '## Qué no debe tocar', '',
   '- El framework (contenedor, `scripts/`, `seed/`, runtime y `docs/`).',
   '- IDs, rutas y carpetas existentes.',

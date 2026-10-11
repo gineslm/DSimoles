@@ -55,7 +55,7 @@ test('diffTrees separa lo que solo tiene cada lado y lo que difiere', () => {
 
 function inCopy(fn, {git = false} = {}) {
   const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-hand-'));
-  cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|\.claude)([\\/]|$)/.test(p)});
+  cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|.dsbook)([\\/]|$)/.test(p)});
   try {
     if (git) {
       const g = (...a) => spawnSync('git', ['-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'commit.gpgsign=false', ...a], {cwd: dir, encoding: 'utf8'});

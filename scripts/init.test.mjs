@@ -14,7 +14,7 @@ const listing = dir => readdirSync(path.join(dir, 'sections'), {recursive: true}
 // Ejecuta el equivalente de `npm run init` dentro de una copia temporal del repo.
 function run(args, mutate) {
   const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-init-'));
-  cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|\.claude)([\\/]|$)/.test(p)});
+  cpSync(root, dir, {recursive: true, filter: p => !/[\\/](\.git|node_modules|.dsbook)([\\/]|$)/.test(p)});
   try {
     mutate?.(dir);
     const before = listing(dir);

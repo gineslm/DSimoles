@@ -3,7 +3,7 @@
 Lee [CLAUDE.md](../CLAUDE.md), el [contrato](data-contract.md) y la [guía general de handoff](handoff.md). Tu papel es consolidar lo editado en Claude Design sin perder el trabajo de otros equipos.
 
 ## Al empezar una sesión
-Sigues el [ciclo de trabajo](handoff.md#el-ciclo-de-trabajo). Antes de nada comprueba tus accesos: git en el repo local y la conexión MCP al proyecto de Claude Design (su dirección está en la sección "Conexiones del proyecto" de `CLAUDE.md`). Si falta alguno, detente, di cuál falta y pídelo a la persona responsable. Después comprueba que tu copia está al día antes de trabajar, y avisa si no lo está:
+Sigues el [ciclo de trabajo](handoff.md#el-ciclo-de-trabajo). El procedimiento paso a paso, con las protecciones, está en el skill `dsbook-handoff` (`.claude/skills/`). Antes de nada comprueba tus accesos: git en el repo local y la conexión MCP al proyecto de Claude Design (su dirección está en la sección "Conexiones del proyecto" de `CLAUDE.md`). Si falta alguno, detente, di cuál falta y pídelo a la persona responsable. Después comprueba que tu copia está al día antes de trabajar, y avisa si no lo está:
 1. `git fetch` y `git status -sb`: indica si el remoto tiene commits que no tienes, o si tú tienes commits que él no tiene.
 2. Si `dsbook.json` nombra un repositorio de origen, comprueba si el framework de allí es más nuevo. Con un clon local, `npm run framework -- --compare <carpeta>` lo hace; si no, lee su `dsbook.json` en GitHub. La página Framework del contenedor ofrece ambas comprobaciones a mano.
 3. No hagas pull, merge ni port por tu cuenta: informa de lo que encuentres y deja que decida la persona responsable.

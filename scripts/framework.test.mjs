@@ -11,7 +11,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Ejecuta un script en una copia temporal del repo para no tocar nunca el original.
 function inCopy(fn) {
   const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-fw-'));
-  cpSync(root, dir, {recursive: true, filter: p => !/[\/](\.git|node_modules|\.claude)([\/]|$)/.test(p)});
+  cpSync(root, dir, {recursive: true, filter: p => !/[\/](\.git|node_modules|.dsbook)([\/]|$)/.test(p)});
   try { return fn(dir); } finally { rmSync(dir, {recursive: true, force: true}); }
 }
 const run = (dir, script, ...args) => { const r = spawnSync(process.execPath, [`scripts/${script}`, ...args], {cwd: dir, encoding: 'utf8'}); return {code: r.status, out: r.stdout + r.stderr}; };

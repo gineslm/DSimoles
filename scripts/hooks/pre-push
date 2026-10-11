@@ -1,0 +1,4 @@
+#!/bin/sh
+# Hook de git instalado por `npm run hooks:install`: bloquea el push si hay trabajo de Claude Design sin integrar.
+root="$(git rev-parse --show-toplevel)"
+exec node "$root/scripts/pre-push-check.mjs"

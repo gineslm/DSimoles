@@ -17,7 +17,7 @@ Todo proyecto construido con DSBook es una copia de la misma base: el contenedor
 | `index.html`, `styles.css`, `app.js`, `model.js` | `data/guide.json`, `data/project.json` |
 | `scripts/` (comprobaciones, pruebas, fixtures), `package.json` | `sections/`, `assets/<category>/` |
 | `seed/`, `assets/_runtime/`, `assets/_framework/` (el logo), `templates/component.md` | `README.md`, `CLAUDE.md`, `CHANGELOG.md`, `LICENSE` |
-| `docs/*.md` (las guías permanentes) y `.gitattributes` | `docs/proposals/` (el historial del método) |
+| `docs/*.md` (las guías permanentes), `.claude/skills/` (el procedimiento de traspaso) y `.gitattributes` | `docs/proposals/` (el historial del método), `design-baseline.json`, `handoff-last.md` |
 
 Las guías de `docs/` se escriben sin ningún nombre de proyecto para que sigan siendo idénticas. Lo específico de un proyecto va en su `README.md` y su `CLAUDE.md`.
 

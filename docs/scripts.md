@@ -33,7 +33,7 @@ Comprueba el repositorio real. Imprime `OK: …` si todo está bien o `Error: �
 No descarga contenido externo ni abre el navegador.
 
 ## `npm test`
-Pruebas automáticas, en nueve archivos:
+Pruebas automáticas, en diez archivos:
 - `scripts/model.test.mjs`: la lógica de `model.js` (`validateGuide`, `validateProject`, `safePage`, `pageCandidates`, `progressOf`). Cubre estados, N excluido de Progress, importaciones incompletas, rutas peligrosas, las reglas del catálogo, añadir una subsección, tasks (que nunca bloquean R y no se cuentan) y la identidad del proyecto.
 - `scripts/check.test.mjs`: copia el repo a un directorio temporal, instala una página fixture (`scripts/fixtures/`) para no depender de que el proyecto tenga páginas, la rompe de una forma concreta y verifica que `check` falla con el mensaje esperado (y que pasa cuando debe). Es la prueba de las reglas de `check` de arriba. No modifica tu repo.
 
@@ -50,6 +50,8 @@ Leer un fallo: `not ok N - <name>` identifica la prueba; debajo verás el result
 - `scripts/framework.test.mjs`: el manifiesto del framework. Un archivo del framework cambiado o añadido hace fallar el informe y `check`; los saltos de línea y los archivos del proyecto no importan; `--release` registra una versión y `--compare` distingue repositorios idénticos de distintos.
 
 - `scripts/handoff.test.mjs`: la clasificación por tipo de los archivos, la comparación de `design-diff` con una copia de Claude Design (contenido y solo rutas) y el aviso que escribe `handoff-note`, en un repositorio git temporal.
+
+- `scripts/handoff-protection.test.mjs`: la protección del trabajo de Claude Design: la comparación a tres bandas, el manifiesto con nonce, el registro de la integración y los descartes, el control previo al push y la negativa de `handoff-note` a avisar con trabajo sin integrar.
 
 - `scripts/container.test.mjs`: una prueba de humo en navegador. Arranca un servidor estático local y maneja un Chrome headless por el protocolo DevTools: la home, una subsección con página (iframe, pestañas, estado, sin scroll del documento), las vistas Info y Record, las tres vistas de la home (el Record reúne las tasks de todas las secciones y ningún filtro las oculta), el menú Sections abriéndose con hover (también cuando el navegador no informa de capacidad de hover, como en algunas configuraciones de Firefox), una subsección sin página, el filtro de estado, los enlaces antiguos y una dirección errónea, y falla ante cualquier error de consola. Necesita Chrome (define `DSBOOK_CHROME` con una ruta si no lo encuentra) y Node 22 o posterior; si no, se **omite**, no falla.
 
@@ -73,18 +75,47 @@ npm run framework -- --compare ../DSBook
 ```
 
 ## `npm run design-diff`
-Compara lo que hay en un proyecto de Claude Design con este repositorio y lo agrupa por tipo (Diseño, Estructura, Framework, Proyecto). Sirve para saber, antes de integrar, qué tiene Claude Design que falta aquí, y, justo antes del commit, qué diferencias quedan a propósito (por ejemplo una traducción).
+Compara el proyecto de Claude Design con este repositorio y **protege su trabajo de perderse**. Hay tres usos.
+
+**Con el manifiesto de hashes (el normal).** Ahorra leer páginas: Claude Design calcula el SHA-256 de todos sus archivos y los deja en un único `design-manifest.json`; solo se leen después los archivos que difieren.
 
 ```sh
-npm run design-diff -- <carpeta>                 # copia de los archivos de Claude Design: compara contenido y rutas
-npm run design-diff -- --listing <lista.json>    # solo rutas: la salida de list_files (array de rutas o {"paths": […]})
-npm run design-diff -- <carpeta> --json out.json # guarda el resultado para handoff-note
+npm run design-diff -- --request                 # imprime el prompt que pide el manifiesto a Claude Design (con un nonce)
+npm run design-diff -- --manifest <archivo>      # compara a tres bandas (el JSON, o la respuesta de get_file tal cual)
+npm run design-diff -- --record                  # registra la integración en design-baseline.json
 ```
 
-El script **no se conecta** a Claude Design: lo hace el agente por MCP y le entrega la lista (`list_files`, barata y suficiente para ver páginas nuevas o ausentes) o una carpeta con los archivos (`get_file` de los que haya que contrastar, o una exportación que haga la persona responsable). Ignora lo que no se transfiere (`_ds/`, `uploads/`, `github.md`, `scripts/`). Sale con código 1 si hay diferencias.
+La comparación es **a tres bandas**: lo que Claude Design tiene ahora, lo que tiene el repositorio y lo último que se integró (`design-baseline.json`, que se versiona). Así distingue:
+
+| Situación | Significa | Efecto |
+| --- | --- | --- |
+| Claude Design cambió un archivo y el repo no se ha tocado | **Sin integrar**: se perdería al actualizar Claude Design desde el repo | Bloquea |
+| Existe en Claude Design y no en el repo | **Nuevo**: por traer | Bloquea |
+| Cambió en ambos lados, o no hay historia | **Por confirmar** que se integró | Bloquea hasta confirmarlo |
+| Claude Design no cambió y el repo sí | El repo va por delante (Claude Code); Claude Design debe adoptarlo | Informa |
+| Ya no existe en Claude Design | Eliminado allí: decide si también aquí | Informa |
+
+Detalles:
+- **Nonce.** `--request` guarda un nonce y lo incluye en el prompt; `--manifest` rechaza un manifiesto que no lo lleve, para que no se compare con uno antiguo (`--no-nonce` lo omite bajo tu responsabilidad).
+- **`--record`** solo funciona si no queda nada sin resolver: los archivos por confirmar exigen `--confirm todo` o `--confirm ruta1,ruta2`, y lo sin integrar se resuelve integrándolo o con `--discard <ruta> --reason "motivo"`. El descarte queda anotado con su motivo y fecha; si Claude Design vuelve a cambiar ese archivo, reaparece.
+- **SVG.** Claude Design reserializa los SVG al importarlos (expande las etiquetas autocerradas y quita el salto de línea final); se comparan en forma canónica.
+- Escribe `.dsbook/last-diff.json` (local, no se versiona), que leen el control previo al push y `handoff-note`.
+- Códigos de salida: 0 sin diferencias, 1 diferencias sin riesgo, **2 trabajo de Claude Design sin integrar o sin confirmar**.
+
+**Comparación simple.** Sin manifiesto: `npm run design-diff -- <carpeta>` compara contenido y rutas con una copia de los archivos de Claude Design, y `npm run design-diff -- --listing <lista.json>` solo las rutas (la salida de `list_files`). Con `--json salida.json` guarda el resultado.
+
+El script **no se conecta** a Claude Design: lo hace el agente por MCP. Ignora lo que no se transfiere (`_ds/`, `_backup/`, `uploads/`, `github.md`, `design-manifest.json`, `scripts/`).
+
+## `npm run hooks:install` y el control previo al push
+`npm run hooks:install` configura `core.hooksPath` para este clon. A partir de ahí, `git push` ejecuta `scripts/pre-push-check.mjs`, que **bloquea el push** si:
+- no hay una comparación con Claude Design (`.dsbook/last-diff.json`),
+- tiene más de 24 horas (`DSBOOK_MAX_DIFF_HOURS` lo cambia),
+- o quedan archivos de Claude Design sin integrar o sin confirmar.
+
+Saltárselo es una decisión de la persona responsable: `DSBOOK_SKIP_DESIGN_CHECK=1 git push`.
 
 ## `npm run handoff-note`
-Escribe `handoff-last.md` en la raíz: el aviso para Claude Design con lo que cambia este envío respecto al último publicado.
+Escribe `handoff-last.md` en la raíz: el aviso para Claude Design con lo que cambia este envío respecto al último publicado. Lee por defecto la última comparación (`.dsbook/last-diff.json`): **se niega a avisar** si queda trabajo de Claude Design sin integrar (`--force` lo permite bajo tu responsabilidad) y, si nunca hubo comparación, lo deja escrito en el aviso («Sin comprobar con Claude Design»).
 
 ```sh
 npm run handoff-note                             # árbol de trabajo frente a origin/main

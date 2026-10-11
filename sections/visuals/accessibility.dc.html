@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="visuals.accessibility">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Accesibilidad · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="visuals.accessibility" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Accesibilidad</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Comprobaciones de contraste y de visión del color de la paleta definida en <a href="./color.dc.html">Color</a>.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Contraste</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">WCAG 2.2: texto 4.5:1 (1.4.3); iconos, bordes de controles y focus 3:1 (1.4.11). Ratios calculados con la luminancia relativa de WCAG a partir de los valores hex. <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.disabled</span> está exento.</p>
+<div style="overflow-x:auto">
+<div role="table" aria-label="Contraste de las parejas de roles" style="min-width:620px;font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pareja</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primer plano / fondo</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Mínimo</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Ratio</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Resultado</div>
+</div>
+<div role="rowgroup">
+<sc-for list="{{ contrastes }}" as="c" hint-placeholder-count="32">
+<div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
+<div role="cell" style="padding:6px 8px;border-bottom:1px solid #d4d4d4"><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:24px;background:{{ c.bg }};color:{{ c.fg }};border:1px solid #d4d4d4;font-weight:700;font-size:13px" aria-hidden="true">Aa</span></div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:12px;overflow-wrap:anywhere">{{ c.par }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;color:#3d3d3d">{{ c.min }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums">{{ c.ratio }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-weight:{{ c.peso }}">{{ c.res }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · prueba en dispositivo.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Visión del color</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Diferencia perceptual ΔE en OKLab (×100) entre los cinco rellenos, en visión normal y simulando deuteranopía, protanopía y tritanopía (Machado 2009, severidad 1) y acromatopsia (solo luminancia). WCAG no fija un mínimo entre colores; exige que el color no sea la única señal (1.4.1). Objetivo práctico: 8 o más. Por debajo, la forma del badge y el texto garantizan la distinción.</p>
+<div style="overflow-x:auto">
+<div role="table" aria-label="Diferencia perceptual entre rellenos según el tipo de visión" style="min-width:640px;font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pareja</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Normal</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Deuter.</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Protan.</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Tritan.</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Acromat.</div>
+</div>
+<div role="rowgroup">
+<sc-for list="{{ matriz }}" as="m" hint-placeholder-count="10">
+<div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">{{ m.par }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wn }}">{{ m.n }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wd }}">{{ m.de }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wp }}">{{ m.pr }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wt }}">{{ m.tr }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wa }}">{{ m.ac }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Negrita: valores por debajo de 8. Con acromatopsia los cinco rellenos tienen una luminosidad similar porque todos llevan texto blanco a 4.5:1; solo la forma y el texto los distinguen.</p>
+<h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Ficha por color</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px">
+<sc-for list="{{ fichas }}" as="f" hint-placeholder-count="5">
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #d4d4d4">
+<div style="width:32px;height:32px;background:{{ f.base }};flex-shrink:0"></div>
+<div style="display:flex;flex-direction:column;min-width:0">
+<span style="font-size:15px;font-weight:600">{{ f.nombre }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5a5a5a">{{ f.paso }} · {{ f.base }}</span>
+</div>
+</div>
+<div style="padding:12px 16px;display:flex;flex-direction:column;gap:2px;font-size:13px">
+<span style="font-weight:600">Contraste</span>
+<span>Blanco sobre relleno · {{ f.blanco }}</span>
+<span>Texto 700 sobre tinte · {{ f.texto }}</span>
+<span>Relleno como icono sobre blanco · {{ f.icono }}</span>
+<span style="font-weight:600;margin-top:8px">Vecino más cercano según la visión</span>
+<sc-for list="{{ f.vecinos }}" as="v" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:1fr 1.2fr 0.9fr;gap:8px">
+<span style="color:#3d3d3d">{{ v.vision }}</span>
+<span style="font-variant-numeric:tabular-nums">{{ v.texto }}</span>
+<span style="font-weight:{{ v.peso }}">{{ v.estado }}</span>
+</div>
+</sc-for>
+<span style="font-weight:600;margin-top:8px">Señal complementaria</span>
+<span>{{ f.shape }} <sc-if value="{{ f.hasLabel }}" hint-placeholder-val="{{ true }}"><span>«{{ f.label }}»</span></sc-if></span>
+</div>
+</div>
+</sc-for>
+</div>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · probar con usuarios o con una herramienta de simulación de visión del color en dispositivo.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Por cubrir</h2>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · tipografía (tamaños mínimos, zoom al 200%), objetivos táctiles (44 px), espaciado para el reflujo del texto (1.4.12). Se añaden cuando esas secciones tengan valores.</p>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+ "contrastes": [
+  {
+   "par": "text.primary / bg.surface",
+   "fg": "#132E38",
+   "bg": "#FFFFFF",
+   "ratio": "14.23",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.primary / bg.page",
+   "fg": "#132E38",
+   "bg": "#F0F8FC",
+   "ratio": "13.24",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.body / bg.surface",
+   "fg": "#3F565F",
+   "bg": "#FFFFFF",
+   "ratio": "7.76",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.body / bg.page",
+   "fg": "#3F565F",
+   "bg": "#F0F8FC",
+   "ratio": "7.22",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.body / chip.neutral.bg",
+   "fg": "#3F565F",
+   "bg": "#EAF2F6",
+   "ratio": "6.84",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.secondary / bg.surface",
+   "fg": "#5D747E",
+   "bg": "#FFFFFF",
+   "ratio": "4.92",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.secondary / bg.page",
+   "fg": "#5D747E",
+   "bg": "#F0F8FC",
+   "ratio": "4.58",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.secondary / bg.tint",
+   "fg": "#5D747E",
+   "bg": "#F4FAFD",
+   "ratio": "4.68",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "icon.inactive / bg.surface",
+   "fg": "#6D8690",
+   "bg": "#FFFFFF",
+   "ratio": "3.84",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "border.control / bg.surface",
+   "fg": "#7B9099",
+   "bg": "#FFFFFF",
+   "ratio": "3.34",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "border.control / bg.page",
+   "fg": "#7B9099",
+   "bg": "#F0F8FC",
+   "ratio": "3.11",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / action.primary",
+   "fg": "#FFFFFF",
+   "bg": "#00698C",
+   "ratio": "6.18",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "brand.primary / bg.surface",
+   "fg": "#00698C",
+   "bg": "#FFFFFF",
+   "ratio": "6.18",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "border.focus / bg.page",
+   "fg": "#00698C",
+   "bg": "#F0F8FC",
+   "ratio": "5.75",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "brand.text / bg.surface",
+   "fg": "#005471",
+   "bg": "#FFFFFF",
+   "ratio": "8.38",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "brand.text / bg.page",
+   "fg": "#005471",
+   "bg": "#F0F8FC",
+   "ratio": "7.79",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "selection.text / selection.bg",
+   "fg": "#005471",
+   "bg": "#DAF3FE",
+   "ratio": "7.27",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "status.info.label / status.info.bg",
+   "fg": "#3F565F",
+   "bg": "#EAF2F6",
+   "ratio": "6.84",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / risk.high.fill",
+   "fg": "#FFFFFF",
+   "bg": "#DB2149",
+   "ratio": "4.85",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.high.text / risk.high.tint",
+   "fg": "#A8183B",
+   "bg": "#FDF4F6",
+   "ratio": "6.80",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.high.body / risk.high.tint",
+   "fg": "#5C2A37",
+   "bg": "#FDF4F6",
+   "ratio": "10.56",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.high.fill / bg.surface",
+   "fg": "#DB2149",
+   "bg": "#FFFFFF",
+   "ratio": "4.85",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / risk.medium.fill",
+   "fg": "#FFFFFF",
+   "bg": "#8D6F00",
+   "ratio": "4.77",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.medium.text / risk.medium.tint",
+   "fg": "#705700",
+   "bg": "#FAF0D2",
+   "ratio": "6.05",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.medium.body / risk.medium.tint",
+   "fg": "#57450C",
+   "bg": "#FAF0D2",
+   "ratio": "8.16",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.medium.fill / bg.surface",
+   "fg": "#8D6F00",
+   "bg": "#FFFFFF",
+   "ratio": "4.77",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / risk.low.fill",
+   "fg": "#FFFFFF",
+   "bg": "#168072",
+   "ratio": "4.81",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.low.text / risk.low.tint",
+   "fg": "#0B6459",
+   "bg": "#E1F3EE",
+   "ratio": "6.12",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "risk.low.fill / bg.surface",
+   "fg": "#168072",
+   "bg": "#FFFFFF",
+   "ratio": "4.81",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / not-assessable.fill",
+   "fg": "#FFFFFF",
+   "bg": "#6C2768",
+   "ratio": "9.87",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "not-assessable.text / not-assessable.tint",
+   "fg": "#5E1F5A",
+   "bg": "#FAEAF8",
+   "ratio": "10.00",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "not-assessable.fill / bg.surface",
+   "fg": "#6C2768",
+   "bg": "#FFFFFF",
+   "ratio": "9.87",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / action.primary.hover",
+   "fg": "#FFFFFF",
+   "bg": "#005D80",
+   "ratio": "7.30",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / action.primary.pressed",
+   "fg": "#FFFFFF",
+   "bg": "#005471",
+   "ratio": "8.38",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / action.alert.hover",
+   "fg": "#FFFFFF",
+   "bg": "#CC003E",
+   "ratio": "5.77",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.inverse / action.alert.pressed",
+   "fg": "#FFFFFF",
+   "bg": "#A8183B",
+   "ratio": "7.35",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "brand.text / action.secondary.hover",
+   "fg": "#005471",
+   "bg": "#EFF9FD",
+   "ratio": "7.83",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "brand.text / action.secondary.pressed",
+   "fg": "#005471",
+   "bg": "#DAF3FE",
+   "ratio": "7.27",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "text.body / surface.pressed",
+   "fg": "#3F565F",
+   "bg": "#EAF2F6",
+   "ratio": "6.84",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "border.control.hover / bg.surface",
+   "fg": "#6D8690",
+   "bg": "#FFFFFF",
+   "ratio": "3.84",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "link.hover / bg.surface",
+   "fg": "#00485F",
+   "bg": "#FFFFFF",
+   "ratio": "10.04",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "focus.ring / bg.page",
+   "fg": "#00698C",
+   "bg": "#F0F8FC",
+   "ratio": "5.75",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "focus.ring / bg.surface",
+   "fg": "#00698C",
+   "bg": "#FFFFFF",
+   "ratio": "6.18",
+   "min": "3:1 no texto",
+   "res": "Cumple",
+   "peso": 400
+  },
+  {
+   "par": "disabled.text / disabled.bg",
+   "fg": "#5D747E",
+   "bg": "#DCE9EE",
+   "ratio": "3.97",
+   "min": "Exento (1.4.3)",
+   "res": "Exento",
+   "peso": 400
+  }
+ ],
+ "matriz": [
+  {
+   "par": "Brand / Crimson",
+   "n": "31.4",
+   "de": "19.8",
+   "pr": "10.5",
+   "tr": "34.4",
+   "ac": "5.7",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Brand / Amber",
+   "n": "20.9",
+   "de": "21.1",
+   "pr": "17.5",
+   "tr": "16.6",
+   "ac": "6.1",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Brand / Teal",
+   "n": "9.5",
+   "de": "9.4",
+   "pr": "9.2",
+   "tr": "4.9",
+   "ac": "5.9",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 700,
+   "wa": 700
+  },
+  {
+   "par": "Brand / Plum",
+   "n": "19.5",
+   "de": "8.4",
+   "pr": "15.6",
+   "tr": "20.7",
+   "ac": "11",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  },
+  {
+   "par": "Crimson / Amber",
+   "n": "21.3",
+   "de": "4.5",
+   "pr": "11.3",
+   "tr": "17.8",
+   "ac": "0.4",
+   "wn": 400,
+   "wd": 700,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Crimson / Teal",
+   "n": "30.7",
+   "de": "10.6",
+   "pr": "11",
+   "tr": "34.1",
+   "ac": "0.2",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Crimson / Plum",
+   "n": "23.7",
+   "de": "23.8",
+   "pr": "14.8",
+   "tr": "25.8",
+   "ac": "16.6",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  },
+  {
+   "par": "Amber / Teal",
+   "n": "14.9",
+   "de": "12.5",
+   "pr": "10.7",
+   "tr": "16.5",
+   "ac": "0.2",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 700
+  },
+  {
+   "par": "Amber / Plum",
+   "n": "26.1",
+   "de": "23.6",
+   "pr": "25.9",
+   "tr": "16.5",
+   "ac": "17.1",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  },
+  {
+   "par": "Teal / Plum",
+   "n": "25.5",
+   "de": "14.7",
+   "pr": "22.9",
+   "tr": "24.2",
+   "ac": "16.9",
+   "wn": 400,
+   "wd": 400,
+   "wp": 400,
+   "wt": 400,
+   "wa": 400
+  }
+ ],
+ "fichas": [
+  {
+   "nombre": "Brand",
+   "base": "#00698C",
+   "ink": "#005471",
+   "tint": "#DAF3FE",
+   "paso": "brand.600",
+   "blanco": "6.18:1",
+   "texto": "7.27:1",
+   "icono": "6.18:1",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Teal · 9.5",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Plum · 8.4",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Teal · 9.2",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Teal · 4.9",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Crimson · 5.7",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ],
+   "shape": "Botón con texto; no indica un nivel",
+   "label": "",
+   "hasLabel": false
+  },
+  {
+   "nombre": "Crimson",
+   "base": "#DB2149",
+   "ink": "#A8183B",
+   "tint": "#FDF4F6",
+   "paso": "crimson.600",
+   "blanco": "4.85:1",
+   "texto": "6.80:1",
+   "icono": "4.85:1",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Amber · 21.3",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Amber · 4.5",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Brand · 10.5",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Amber · 17.8",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Teal · 0.2",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ],
+   "shape": "Triángulo +",
+   "label": "Riesgo alto",
+   "hasLabel": true
+  },
+  {
+   "nombre": "Amber",
+   "base": "#8D6F00",
+   "ink": "#705700",
+   "tint": "#FAF0D2",
+   "paso": "amber.600",
+   "blanco": "4.77:1",
+   "texto": "6.05:1",
+   "icono": "4.77:1",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Teal · 14.9",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Crimson · 4.5",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Teal · 10.7",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Teal · 16.5",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Teal · 0.2",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ],
+   "shape": "Rombo +",
+   "label": "Riesgo intermedio",
+   "hasLabel": true
+  },
+  {
+   "nombre": "Teal",
+   "base": "#168072",
+   "ink": "#0B6459",
+   "tint": "#E1F3EE",
+   "paso": "teal.600",
+   "blanco": "4.81:1",
+   "texto": "6.12:1",
+   "icono": "4.81:1",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Brand · 9.5",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Brand · 9.4",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Brand · 9.2",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Brand · 4.9",
+     "estado": "Forma y texto",
+     "peso": 700
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Crimson · 0.2",
+     "estado": "Forma y texto",
+     "peso": 700
+    }
+   ],
+   "shape": "Círculo +",
+   "label": "Riesgo bajo",
+   "hasLabel": true
+  },
+  {
+   "nombre": "Plum",
+   "base": "#6C2768",
+   "ink": "#5E1F5A",
+   "tint": "#FAEAF8",
+   "paso": "plum.600",
+   "blanco": "9.87:1",
+   "texto": "10.00:1",
+   "icono": "9.87:1",
+   "vecinos": [
+    {
+     "vision": "Normal",
+     "texto": "Brand · 19.5",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Deuteranopía",
+     "texto": "Brand · 8.4",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Protanopía",
+     "texto": "Crimson · 14.8",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Tritanopía",
+     "texto": "Amber · 16.5",
+     "estado": "Separados",
+     "peso": 400
+    },
+    {
+     "vision": "Acromatopsia",
+     "texto": "Brand · 11",
+     "estado": "Separados",
+     "peso": 400
+    }
+   ],
+   "shape": "Signo de interrogación +",
+   "label": "No evaluable",
+   "hasLabel": true
+  }
+ ]
+};
+  }
+}
+</script>
+</body>
+</html>

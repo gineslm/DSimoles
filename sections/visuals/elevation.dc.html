@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="visuals.elevation">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Elevación · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="visuals.elevation" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Elevación</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">En iMoles la sombra significa «esto se puede tocar», no profundidad.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Observado en iMoles</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px 20px;background:#F0F8FC;display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:16px;background:#ffffff;box-shadow:0 1px 2px rgba(18,48,43,.10), 0 8px 20px -8px rgba(18,48,43,.28)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">--imoles-shadow-interactive</span><span style="font-size:13px;color:#3d3d3d">Tarjetas de seguimiento, filas de acción, filas de foto</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 1px 2px rgba(18,48,43,.10), 0 8px 20px -8px rgba(18,48,43,.28)</span></div></div>
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px 20px;background:#F0F8FC;display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:16px;background:#00698C;box-shadow:0 2px 4px rgba(18,48,43,.20), 0 12px 24px -8px rgba(18,48,43,.45)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">--imoles-shadow-interactive-solid</span><span style="font-size:13px;color:#3d3d3d">La misma regla sobre rellenos de color sólido</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 2px 4px rgba(18,48,43,.20), 0 12px 24px -8px rgba(18,48,43,.45)</span></div></div>
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px 20px;background:#F0F8FC;display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:16px;background:#ffffff;box-shadow:0 20px 40px -14px rgba(14,124,110,.22)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">--imoles-shadow-phone</span><span style="font-size:13px;color:#3d3d3d">Solo el marco de presentación, no la interfaz</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 20px 40px -14px rgba(14,124,110,.22)</span></div></div>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Valores copiados de imoles-tokens.css. El color de la sombra sigue siendo la antigua tinta verde azulada.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Propuesta</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">elevation.interactive</span> y <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">elevation.interactive-solid</span>, recoloreadas con neutral.950.</li>
+<li><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">elevation.overlay</span> para el menú de opciones, hoy codificado a mano en el prototipo.</li>
+<li>Los botones primarios fijos y los menús dentro de hojas no llevan sombra interactiva.</li>
+<li>La sombra nunca es la única señal de interactividad.</li>
+</ul>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · decisión del owner sobre los tres niveles y el valor del overlay.</p>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

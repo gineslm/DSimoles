@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="visuals.borders">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Bordes · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="visuals.borders" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Bordes</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Dos grosores y tres colores; un borde que transmite significado llega a 3:1 y va acompañado de una segunda señal.</p>
+</header>
+
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Valores decididos por Claude Design a partir del prototipo de iMoles, pendientes de revisión del owner.</p>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Grosores</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:1px;background:#132E38"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.width.default · 1</span><span style="font-size:12px;color:#5a5a5a">Tarjetas, campos, separadores</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:2px;background:#132E38"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.width.strong · 2</span><span style="font-size:12px;color:#5a5a5a">Opción seleccionada, campo con focus, botón secundario</span></div>
+</div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Colores</h2>
+<div role="table" aria-label="Colores de borde" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,0.8fr) minmax(0,1.4fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Token</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Valor</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Sobre blanco</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Uso</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,0.8fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">border.subtle</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="display:inline-flex;gap:8px;align-items:center"><span style="width:16px;height:16px;border:1px solid #d4d4d4;background:#DCE9EE"></span>neutral.150</span></div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">1.24 · decorativo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Contorno de tarjeta, separadores</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,0.8fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">border.strong</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="display:inline-flex;gap:8px;align-items:center"><span style="width:16px;height:16px;border:1px solid #d4d4d4;background:#C0DDEA"></span>neutral.200</span></div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">1.42 · decorativo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Contorno más marcado, no informativo</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,0.8fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">border.control</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="display:inline-flex;gap:8px;align-items:center"><span style="width:16px;height:16px;background:#7B9099"></span>neutral.400</span></div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">3.34</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Campo y opción sin seleccionar</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,0.8fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">border.focus</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="display:inline-flex;gap:8px;align-items:center"><span style="width:16px;height:16px;background:#00698C"></span>brand.600</span></div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">6.18</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Campo con focus, opción seleccionada</div></div>
+</div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">En uso</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><div style="height:72px;box-sizing:border-box;border-radius:14px;background:#ffffff;display:flex;align-items:center;padding:0 16px;font-family:'Roboto',system-ui,sans-serif;font-size:16px;color:#132E38;border:1px solid #DCE9EE;border-radius:16px">Gemelo izquierdo</div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.subtle · 1</span><span style="font-size:12px;color:#5a5a5a">Tarjeta</span></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><div style="height:72px;box-sizing:border-box;border-radius:14px;background:#ffffff;display:flex;align-items:center;padding:0 16px;font-family:'Roboto',system-ui,sans-serif;font-size:16px;color:#132E38;border:1px solid #7B9099">Mi referencia</div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.control · 1</span><span style="font-size:12px;color:#5a5a5a">Campo</span></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><div style="height:72px;box-sizing:border-box;border-radius:14px;background:#ffffff;display:flex;align-items:center;padding:0 16px;font-family:'Roboto',system-ui,sans-serif;font-size:16px;color:#132E38;border:2px solid #00698C">Mi referencia|</div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.focus · 2</span><span style="font-size:12px;color:#5a5a5a">Campo con focus</span></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><div style="height:72px;box-sizing:border-box;border-radius:14px;background:#ffffff;display:flex;align-items:center;padding:0 16px;font-family:'Roboto',system-ui,sans-serif;font-size:16px;color:#132E38;border:2px solid #00698C"><span style="display:flex;justify-content:space-between;width:100%;align-items:center"><span>Brazo</span><span style="font-size:18px;color:#00698C" aria-label="Seleccionada">✓</span></span></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.focus · 2 + check</span><span style="font-size:12px;color:#5a5a5a">Opción seleccionada: borde y check</span></div>
+</div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Correcto e incorrecto</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+<div style="display:flex;flex-direction:column;gap:8px"><div style="background:#EAF2F6;border-radius:16px;padding:12px 16px;display:flex;flex-direction:column;gap:2px"><span style="font-family:'Roboto Condensed','Arial Narrow',system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#3F565F">Resumen</span><span style="font-family:'Roboto',system-ui,sans-serif;font-weight:500;font-size:16px;color:#132E38">Antebrazo izquierdo</span></div><span style="font-size:13px">Correcto · el tinte y la etiqueta destacan la tarjeta</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="background:#ffffff;border-left:3px solid #00698C;padding:12px 16px;display:flex;flex-direction:column;gap:2px"><span style="font-family:'Roboto Condensed','Arial Narrow',system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#3F565F">Resumen</span><span style="font-family:'Roboto',system-ui,sans-serif;font-weight:500;font-size:16px;color:#132E38">Antebrazo izquierdo</span></div><span style="font-size:13px">Incorrecto · acento lateral de 3 px (la Card Resumen actual)</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="background:#ffffff;border:1px solid #DCE9EE;border-radius:14px;height:48px;display:flex;align-items:center;padding:0 16px;font-family:'Roboto',system-ui,sans-serif;font-size:16px;color:#5D747E">Mi referencia</div><span style="font-size:13px">Incorrecto · campo con border.subtle: 1.24:1, por debajo de 3:1</span></div>
+</div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Reglas</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>La selección y el focus cambian el grosor y añaden una segunda señal (check, cursor, etiqueta).</li><li>Los bordes informativos llegan a 3:1; los bordes decorativos no transmiten significado.</li><li>Sin acentos laterales: usa tinte, etiqueta o icono.</li><li>Radio interior = radio exterior − grosor del borde.</li></ul>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>1.4.11 Contraste de elementos no textuales: los contornos de campos y opciones ≥ 3:1.</li><li>1.4.1 Uso del color: la selección nunca se muestra solo con el color del borde.</li></ul>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Pending</h2>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · tokens de borde para los avisos de riesgo (borde del tinte) y para las pantallas oscuras de la cámara.</p>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

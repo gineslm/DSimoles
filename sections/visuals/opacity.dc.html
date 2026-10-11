@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="visuals.opacity">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Opacidad · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="visuals.opacity" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Opacidad</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Un único valor de opacidad en uso: el scrim modal.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Scrim</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="position:relative;height:200px;background:#F0F8FC;overflow:hidden">
+<div style="position:absolute;left:16px;right:16px;top:16px;height:56px;background:#ffffff;border:1px solid #DCE9EE;border-radius:16px"></div>
+<div style="position:absolute;left:16px;right:16px;top:84px;height:56px;background:#ffffff;border:1px solid #DCE9EE;border-radius:16px"></div>
+<div style="position:absolute;inset:0;background:rgba(19,46,56,0.48)"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:72px;background:#ffffff;border-radius:16px 16px 0 0"></div>
+</div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">scrim.modal</span> · neutral.950 al 48% · bajo menús y hojas</span>
+</div>
+</div>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>La opacidad nunca se usa para bajar el contraste del texto ni para mostrar el estado disabled.</li>
+<li>Disabled usa tokens sólidos (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.*</span>).</li>
+</ul>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · decidir si las capas sobre imágenes (revisión de fotos, detalle de captura) necesitan un segundo valor.</p>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

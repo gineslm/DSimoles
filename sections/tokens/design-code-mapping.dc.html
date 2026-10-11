@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="tokens.design-code-mapping">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Correspondencia diseño y código · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="tokens.design-code-mapping" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Correspondencia diseño y código</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Cómo viaja el nombre de un token hasta el código.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Formato de tokens</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Decisión para la futura implementación del design system, fuera de este repositorio: aquí no se genera ningún archivo de tokens. Formato W3C Design Tokens Community Group (DTCG): JSON con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$value</span> y <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$type</span>; los tokens semánticos referencian a los primitivos con llaves.</p>
+<pre style="margin:0;padding:16px;background:#f6f6f6;border:1px solid #d4d4d4;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5">{
+  "color": {
+    "brand": { "600": { "$type": "color", "$value": "#00698C" } },
+    "action": {
+      "primary": { "$type": "color", "$value": "{color.brand.600}" }
+    }
+  }
+}</pre>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Nombre en cada medio</h2>
+<div role="table" aria-label="Nombre en cada medio" style="font-size:14px;max-width:640px">
+<div role="row" style="display:grid;grid-template-columns:1fr 1fr">
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Medio</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Forma</div>
+</div>
+<div role="row" style="display:grid;grid-template-columns:1fr 1fr"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Diseño y documentación</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">action.primary</div></div>
+<div role="row" style="display:grid;grid-template-columns:1fr 1fr"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">JSON DTCG</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">color.action.primary</div></div>
+<div role="row" style="display:grid;grid-template-columns:1fr 1fr"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">CSS</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">--color-action-primary</div></div>
+</div>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · el prefijo CSS y las plataformas de destino (web, iOS, Android) no están decididos; la fila de CSS es una propuesta.</p>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="interaction.interaction-states">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Estados de interacción · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="interaction.interaction-states" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Estados de interacción</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Default, hover, pressed, focus, disabled y selected de cada elemento interactivo. Los tokens de color vienen de <a href="../visuals/color.dc.html">Color</a>.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Estados por elemento</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles no define estados de interacción; estos valores, derivados de las escalas, fueron aprobados por el owner el 2026-10-10. Rellenos: hover un paso intermedio (650), pressed 700. Superficies (tarjeta, fila, opción): neutral.25 y neutral.100. En táctil, pressed es el feedback principal; hover solo se aplica con puntero.</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<sc-for list="{{ interaccion }}" as="c" hint-placeholder-count="7">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:14px;font-weight:600">{{ c.nombre }}</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px">
+<sc-for list="{{ c.estados }}" as="s" hint-placeholder-count="5">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="min-height:{{ c.alto }};box-sizing:border-box;padding:{{ c.pad }};align-self:{{ c.alinear }};border-radius:{{ c.radio }};background:{{ s.bg }};color:{{ s.fg }};border:{{ s.borde }};outline:{{ s.outline }};outline-offset:2px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.03em"><span>{{ c.texto }}</span></div>
+<span style="font-size:12px;font-weight:600">{{ s.estado }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a">{{ s.token }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>Disabled: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.bg</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.text</span> (3.97:1). Exento de contraste, pero se mantiene legible. Sin sombra.</li>
+<li>Loading: conserva el color del rol y añade un indicador en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.inverse</span>; no pasa a disabled.</li>
+<li>Selected: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">selection.*</span>; el borde de 2 px y el texto acompañan al color.</li>
+<li>Scrim modal: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">neutral.950</span> al 48% bajo menús y hojas.</li>
+<li>Enlace: el anillo de focus se ajusta al texto (6 px de margen lateral, radio de 2 px) para que no se confunda con un botón. El área táctil puede crecer hasta 44 px sin cambiar el anillo visible.</li>
+<li>Los badges y chips de nivel no son interactivos: no tienen estados.</li>
+</ul>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · validar en dispositivo la diferencia entre default y pressed.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Reglas</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>Cada estado cambia algo más que el color: el borde, el anillo o el texto lo acompañan.</li>
+<li>Primero lo táctil: pressed es obligatorio; hover solo con puntero.</li>
+<li>El focus se documenta en <a href="./focus-management.dc.html">Gestión del foco</a>.</li>
+</ul>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+ "interaccion": [
+  {
+   "nombre": "Botón primario",
+   "texto": "Hacer la foto",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Default",
+     "bg": "#00698C",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "brand.600"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#005D80",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #005D80",
+     "outline": "none",
+     "token": "brand.650"
+    },
+    {
+     "estado": "Pressed",
+     "bg": "#005471",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #005471",
+     "outline": "none",
+     "token": "brand.700"
+    },
+    {
+     "estado": "Focus",
+     "bg": "#00698C",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #00698C",
+     "outline": "2px solid #00698C",
+     "token": "+ ring"
+    },
+    {
+     "estado": "Disabled",
+     "bg": "#DCE9EE",
+     "fg": "#5D747E",
+     "borde": "1.5px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutral.150 / 600"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Botón de alerta",
+   "texto": "Pedir cita",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Default",
+     "bg": "#DB2149",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #DB2149",
+     "outline": "none",
+     "token": "crimson.600"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#CC003E",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #CC003E",
+     "outline": "none",
+     "token": "crimson.650"
+    },
+    {
+     "estado": "Pressed",
+     "bg": "#A8183B",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #A8183B",
+     "outline": "none",
+     "token": "crimson.700"
+    },
+    {
+     "estado": "Focus",
+     "bg": "#DB2149",
+     "fg": "#FFFFFF",
+     "borde": "1.5px solid #DB2149",
+     "outline": "2px solid #00698C",
+     "token": "+ ring"
+    },
+    {
+     "estado": "Disabled",
+     "bg": "#DCE9EE",
+     "fg": "#5D747E",
+     "borde": "1.5px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutral.150 / 600"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Secundario de marca",
+   "texto": "Ver la serie",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Default",
+     "bg": "#FFFFFF",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "fondo blanco"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#EFF9FD",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "brand.50"
+    },
+    {
+     "estado": "Pressed",
+     "bg": "#DAF3FE",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "none",
+     "token": "brand.100"
+    },
+    {
+     "estado": "Focus",
+     "bg": "#FFFFFF",
+     "fg": "#005471",
+     "borde": "1.5px solid #00698C",
+     "outline": "2px solid #00698C",
+     "token": "+ ring"
+    },
+    {
+     "estado": "Disabled",
+     "bg": "#FFFFFF",
+     "fg": "#5D747E",
+     "borde": "1.5px solid #DCE9EE",
+     "outline": "none",
+     "token": "borde neutral.150"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Tarjeta / fila",
+   "texto": "Gemelo derecho · 01",
+   "radio": "16px",
+   "estados": [
+    {
+     "estado": "Default",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "surface"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#F4FAFD",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutral.25"
+    },
+    {
+     "estado": "Pressed",
+     "bg": "#EAF2F6",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "neutral.100"
+    },
+    {
+     "estado": "Focus",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #DCE9EE",
+     "outline": "2px solid #00698C",
+     "token": "+ ring"
+    },
+    {
+     "estado": "Archived",
+     "bg": "#FFFFFF",
+     "fg": "#5D747E",
+     "borde": "1px solid #DCE9EE",
+     "outline": "none",
+     "token": "sin sombra"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Opción",
+   "texto": "Brazo",
+   "radio": "14px",
+   "estados": [
+    {
+     "estado": "Default",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #7B9099",
+     "outline": "none",
+     "token": "border.control"
+    },
+    {
+     "estado": "Hover",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #6D8690",
+     "outline": "none",
+     "token": "neutral.500"
+    },
+    {
+     "estado": "Pressed",
+     "bg": "#EAF2F6",
+     "fg": "#132E38",
+     "borde": "1px solid #6D8690",
+     "outline": "none",
+     "token": "neutral.100"
+    },
+    {
+     "estado": "Selected",
+     "bg": "#DAF3FE",
+     "fg": "#005471",
+     "borde": "2px solid #00698C",
+     "outline": "none",
+     "token": "selection.*"
+    },
+    {
+     "estado": "Focus",
+     "bg": "#FFFFFF",
+     "fg": "#132E38",
+     "borde": "1px solid #7B9099",
+     "outline": "2px solid #00698C",
+     "token": "+ ring"
+    }
+   ],
+   "alto": "44px",
+   "pad": "8px 12px",
+   "alinear": "stretch"
+  },
+  {
+   "nombre": "Enlace",
+   "texto": "Ver el análisis ›",
+   "radio": "2px",
+   "estados": [
+    {
+     "estado": "Default",
+     "bg": "transparent",
+     "fg": "#005471",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "brand.700"
+    },
+    {
+     "estado": "Hover",
+     "bg": "transparent",
+     "fg": "#00485F",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "brand.800 + subrayado"
+    },
+    {
+     "estado": "Pressed",
+     "bg": "transparent",
+     "fg": "#003142",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "brand.900"
+    },
+    {
+     "estado": "Focus",
+     "bg": "transparent",
+     "fg": "#005471",
+     "borde": "1px solid transparent",
+     "outline": "2px solid #00698C",
+     "token": "+ ring"
+    },
+    {
+     "estado": "Visited",
+     "bg": "transparent",
+     "fg": "#005471",
+     "borde": "1px solid transparent",
+     "outline": "none",
+     "token": "sin cambio"
+    }
+   ],
+   "alto": "0",
+   "pad": "0 6px",
+   "alinear": "flex-start"
+  }
+ ]
+};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="tokens.token-layers">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Capas de tokens · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="tokens.token-layers" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Capas de tokens</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Tres capas: primitivo (valor), semántico (función), componente (propiedad).</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">De token a componente</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Cómo llega un color al estilo de un componente: el valor (primitivo) se asigna a una función (semántico) y la función se aplica a una propiedad del componente.</p>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px">
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Primitivo</span><div style="height:36px;background:#00698C"></div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">brand.600</span></div>
+<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Semántico</span><div style="height:36px;background:#00698C;display:flex;align-items:center;padding:0 10px;color:#ffffff;font-size:12px">acción primaria</div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">action.primary</span></div>
+<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Componente</span><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Hacer la foto</div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">button.primary.bg</span></div>
+</div>
+<p style="margin:0;font-size:14px">Los componentes usan roles semánticos. Nunca primitivos ni valores hex.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Otras categorías</h2>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · aplicar las mismas tres capas a tipografía, espaciado, radio y elevación cuando esas secciones fijen sus escalas.</p>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

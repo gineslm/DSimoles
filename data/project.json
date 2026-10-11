@@ -21,10 +21,10 @@
   },
   "sections": {
     "foundations.goals-and-usage-guide": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Vista profesional fuera de alcance en esta iteración (owner, 2026-10-10).",
       "tasks": [],
       "review": {
         "by": "",
@@ -34,10 +34,10 @@
       "exclusionReason": ""
     },
     "foundations.system-users": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -47,11 +47,16 @@
       "exclusionReason": ""
     },
     "foundations.products-and-requirements": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
-      "tasks": [],
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Marco de diseño fijado en 390 × 844 el 2026-10-10 (el owner pidió el estándar actual); comprobado a 360 y 430.",
+      "tasks": [
+        {
+          "text": "MDR de la UE: confirmar con un especialista regulatorio si iMoles es software de producto sanitario (probablemente clase IIa o superior según la Regla 11) y qué implica para la interfaz: advertencias, finalidad prevista, instrucciones de uso, etiquetado CE/UDI, expediente de usabilidad (IEC 62366-1). Aplazado por el owner el 2026-10-10.",
+          "when": "future"
+        }
+      ],
       "review": {
         "by": "",
         "date": "",
@@ -138,10 +143,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "foundations.accessibility": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -154,18 +159,10 @@
       "status": "I",
       "page": "",
       "owner": "Gines Lopez",
-      "notes": "Paleta fijada por el owner el 2026-10-09, derivada de los prototipos HF de iMoles: matiz de marca 225° (brand.600 #00698C), neutros en el matiz de marca, carmesí #DB2149 (riesgo alto), ámbar #8D6F00 (intermedio), verde azulado claro #168072 (bajo), ciruela #6C2768 (no evaluable); se eliminan coral, verde y violeta. Los cuatro niveles usan un relleno sólido con texto blanco y un tinte con texto oscuro de su familia. Contraste validado frente a WCAG 2.2 (todas las parejas listadas pasan). Las diferencias de visión del color se registran como ΔE OKLab en visión normal, deuteranopía, protanopía, tritanopía y acromatopsia; por decisión del owner, las parejas por debajo de 8 se cubren con la forma del badge y el texto (WCAG 1.4.1). Valores de interacción aprobados por el owner el 2026-10-10 (hover paso 650, pressed 700, superficies neutral.25/100, focus ring brand.600, disabled neutral.150/600, scrim neutral.950 al 48%). Formato de tokens para la futura implementación del DS, fuera de este repo: W3C DTCG. Nombres de tokens en inglés, confirmados por el owner el 2026-10-10. Las correcciones que el prototipo de iMoles necesita para adoptar esta paleta están listadas en la página y se mantienen como tasks en implementation.publishing-and-migration; son trabajo de iMoles, no de esta sección. Se queda en I: no hay review registrada.",
+      "notes": "Paleta fijada por el owner el 2026-10-09, derivada de los prototipos HF de iMoles: matiz de marca 225° (brand.600 #00698C), neutros en el matiz de marca, carmesí #DB2149 (riesgo alto), ámbar #8D6F00 (intermedio), verde azulado claro #168072 (bajo), ciruela #6C2768 (no evaluable); se eliminan coral, verde y violeta. Los cuatro niveles usan un relleno sólido con texto blanco y un tinte con texto oscuro de su familia. Contraste validado frente a WCAG 2.2 (todas las parejas listadas pasan). Las diferencias de visión del color se registran como ΔE OKLab en visión normal, deuteranopía, protanopía, tritanopía y acromatopsia; por decisión del owner, las parejas por debajo de 8 se cubren con la forma del badge y el texto (WCAG 1.4.1). Valores de interacción aprobados por el owner el 2026-10-10 (hover paso 650, pressed 700, superficies neutral.25/100, focus ring brand.600, disabled neutral.150/600, scrim neutral.950 al 48%). Formato de tokens para la futura implementación del DS, fuera de este repo: W3C DTCG. Nombres de tokens en inglés, confirmados por el owner el 2026-10-10. Las correcciones que el prototipo de iMoles necesita para adoptar esta paleta están listadas en la página y se mantienen como tasks en implementation.publishing-and-migration; son trabajo de iMoles, no de esta sección. Se queda en I: no hay review registrada. El 2026-10-10, por decisión del owner, se movió el contenido ajeno al alcance de la sección: contraste y visión del color a visuals.accessibility; valores de interacción a interaction.interaction-states; anillo de focus a interaction.focus-management; scrim a visuals.opacity; diagrama de tokens a tokens.token-layers; formato de tokens a tokens.design-code-mapping; correcciones de iMoles a implementation.publishing-and-migration.",
       "tasks": [
         {
-          "text": "Validar en dispositivo la diferencia entre los estados de interacción default y pressed",
-          "when": "pending"
-        },
-        {
           "text": "Probar la paleta en dispositivo",
-          "when": "pending"
-        },
-        {
-          "text": "Comprobar la distinción de color con usuarios o con una herramienta de simulación de visión del color en dispositivo",
           "when": "pending"
         },
         {
@@ -181,10 +178,10 @@
       "exclusionReason": ""
     },
     "visuals.typography": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner. Escala reducida a 8 estilos: body-lg unificado en body, ui-sm en tag (12 px), caption y small a 400.",
       "tasks": [],
       "review": {
         "by": "",
@@ -194,10 +191,10 @@
       "exclusionReason": ""
     },
     "visuals.spacing": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -207,10 +204,10 @@
       "exclusionReason": ""
     },
     "visuals.dimensions": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -220,10 +217,10 @@
       "exclusionReason": ""
     },
     "visuals.borders": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -233,43 +230,43 @@
       "exclusionReason": ""
     },
     "visuals.shape": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Borrador: radios observados en imoles-tokens.css y una propuesta de escala, sin decidir. Se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "visuals.elevation": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Borrador: sombras observadas en imoles-tokens.css y una propuesta de tres niveles, sin decidir. Se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "visuals.opacity": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Scrim neutral.950 al 48% aprobado por el owner el 2026-10-10. Página de borrador. Se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "visuals.motion": {
       "status": "N",
@@ -285,11 +282,16 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "visuals.accessibility": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
-      "tasks": [],
+      "notes": "Iniciada el 2026-10-10 con las comprobaciones de contraste y de visión del color separadas de visuals.color. Faltan por cubrir tipografía, objetivos táctiles y espaciado del texto. Se queda en I: no hay review registrada.",
+      "tasks": [
+        {
+          "text": "Comprobar la distinción de color con usuarios o con una herramienta de simulación de visión del color en dispositivo",
+          "when": "pending"
+        }
+      ],
       "review": {
         "by": "",
         "date": "",
@@ -298,10 +300,10 @@
       "exclusionReason": ""
     },
     "tokens.token-layers": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Iniciada el 2026-10-10 con el diagrama primitivo → semántico → componente separado de visuals.color. Otras categorías pendientes. Se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
@@ -311,10 +313,10 @@
       "exclusionReason": ""
     },
     "tokens.naming-and-aliases": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -402,17 +404,17 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "tokens.design-code-mapping": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Formato de tokens W3C DTCG decidido por el owner (movido desde visuals.color). La fila de nomenclatura CSS es una propuesta. Se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "tokens.visual-and-action-categories": {
       "status": "N",
@@ -454,10 +456,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "resources.libraries-and-licenses": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -571,10 +573,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "layout.containers-and-grid": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -597,10 +599,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "layout.breakpoints": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -818,17 +820,22 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "interaction.interaction-states": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
-      "tasks": [],
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Contiene los valores de interacción por elemento aprobados por el owner el 2026-10-10 (hover 650, pressed 700, superficies neutral.25/100, disabled neutral.150/600). Se queda en I: no hay review registrada.",
+      "tasks": [
+        {
+          "text": "Validar en dispositivo la diferencia entre los estados de interacción default y pressed",
+          "when": "pending"
+        }
+      ],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "interaction.process-states": {
       "status": "N",
@@ -844,17 +851,17 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "interaction.focus-management": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Anillo de focus aprobado por el owner el 2026-10-10 (2 px brand.600, desplazamiento de 2 px). Orden y movimiento del foco sin definir todavía. Se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "interaction.activation-and-dismissal": {
       "status": "N",
@@ -922,10 +929,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "components.actions": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -935,10 +942,10 @@
       "exclusionReason": ""
     },
     "components.input-and-selection": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -948,10 +955,10 @@
       "exclusionReason": ""
     },
     "components.field-structure": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -961,10 +968,10 @@
       "exclusionReason": ""
     },
     "components.presentation": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -974,10 +981,10 @@
       "exclusionReason": ""
     },
     "components.navigation": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -987,10 +994,10 @@
       "exclusionReason": ""
     },
     "components.feedback": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1000,10 +1007,10 @@
       "exclusionReason": ""
     },
     "components.disclosure-and-overlays": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1013,10 +1020,10 @@
       "exclusionReason": ""
     },
     "components.data": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1026,10 +1033,10 @@
       "exclusionReason": ""
     },
     "components.accessibility": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1039,10 +1046,10 @@
       "exclusionReason": ""
     },
     "patterns.forms-and-validation": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1169,10 +1176,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "navigation.levels-and-hierarchy": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1195,10 +1202,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "navigation.current-location": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1507,10 +1514,10 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "implementation.publishing-and-migration": {
-      "status": "P",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Reabierta desde Not applicable el 2026-10-10 porque recibió las tasks de adopción del prototipo de iMoles movidas desde visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10).",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 porque recibió las tasks de adopción del prototipo de iMoles movidas desde visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Página iniciada el 2026-10-10 con las correcciones de color separadas de visuals.color.",
       "tasks": [
         {
           "text": "Prototipo iMoles · Sustituir la paleta en imoles-tokens.css: aplicar los primitivos de esta página: brand 225°, neutros 225°, verde azulado claro para riesgo bajo, amber.600, plum; eliminar coral, verde y violeta.",
@@ -1546,6 +1553,86 @@
         },
         {
           "text": "Prototipo iMoles · Valores duplicados y codificados a mano: unificar en text.secondary y border.subtle; usar text.inverse y bg.surface; sombra como token de elevación (1.5).",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Tipografía: cuerpo 300 15 → 400 16/1.5; sustituir los tamaños de fuente codificados a mano por tokens de texto; nada por debajo de 12 px.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Tipografía: espaciado entre letras .03–.14em → .05em (etiquetas) y .08em (ancho).",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Etiquetas de campo: la etiqueta de Campo Texto pasa de condensada 11 en mayúsculas a Roboto 500 14, en minúsculas con mayúscula inicial.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Espaciado: los valores fuera de escala (5, 6, 9, 10, 13, 14, 18, 22, 30 px) pasan al paso space.* más cercano; padding de chip 4 8, padding de campo 12 16.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Dimensiones: botón secundario de 46 a 48 px; el botón de menú de la cabecera del seguimiento recibe un objetivo de 44 px.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Bordes: botón secundario de 1.5 a 2 px; unificar line y line-soft; eliminar el acento de 3 px de Card Resumen.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Forma: unificar --imoles-radius-note (18) en radius.lg (16).",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Botones: unificar la variante secondary-brand en secondary.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Campo Opcion: exponer las listas de opciones como grupos radio con navegación por teclas de flecha.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Navegación: etiqueta de Tab Boton de 10 a 12 px; ocultar la navegación inferior dentro de los flujos 3–5 y 8–9; Paginador anunciado como «Paso n de N».",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Perfil: añadir el contenido de la pestaña (cuenta, datos y privacidad, notificaciones, aviso legal) o una pantalla provisional.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Feedback: usar confirmaciones persistentes en línea; sin toasts.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Comparación: etiquetar las capturas lado a lado como comparación visual sin medición automática.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Formularios: mantener «Continuar» activo y mostrar errores en línea al enviar.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Tokens: renombrar --imoles-* a los nombres nuevos con prefijo --ds-; conservar los nombres antiguos como alias obsoletos hasta eliminarlos.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Fuentes: alojar Roboto, Roboto Condensed y Material Symbols en el proyecto en lugar de usar Google Fonts.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Marco: volver a comprobar cada pantalla a 390 × 844, 360 × 640 y 430 × 932.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Pantallas pequeñas: a 360 de ancho y 640 de alto, el área de acción fija más la navegación inferior dejan poca altura de contenido; revisar las pantallas de resultado 5.x y de ubicación 3.x.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Retícula de opciones: a 320–360, dos columnas dejan unos 130 px por opción; los nombres largos de partes del cuerpo deben ajustarse en varias líneas o pasar a una columna.",
+          "when": "pending"
+        },
+        {
+          "text": "Prototipo iMoles · Imagen de captura: la altura fija de 220 px de Captura Detalle pasa a una proporción 4:3 del ancho del contenido.",
           "when": "pending"
         }
       ],

@@ -62,25 +62,6 @@ a:hover{color:#5a5a5a}
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">De token a componente</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Cómo llega un color al estilo de un componente: el valor (primitivo) se asigna a una función (semántico) y la función se aplica a una propiedad del componente.</p>
-<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px">
-<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
-<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Primitivo</span><div style="height:36px;background:#00698C"></div>
-<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">brand.600</span></div>
-<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
-<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
-<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Semántico</span><div style="height:36px;background:#00698C;display:flex;align-items:center;padding:0 10px;color:#ffffff;font-size:12px">acción primaria</div>
-<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">action.primary</span></div>
-<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
-<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
-<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Componente</span><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span>Hacer la foto</span></div>
-<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">button.primary.bg</span></div>
-</div>
-<p style="margin:0;font-size:14px">Los componentes usan roles semánticos. Nunca primitivos ni valores hex.</p>
-</section>
-
-<section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Roles semánticos</h2>
 <div style="overflow-x:auto">
 <div role="table" aria-label="Roles semánticos" style="min-width:600px;font-size:14px">
@@ -153,150 +134,16 @@ a:hover{color:#5a5a5a}
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Valores de interacción</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles no define estados de interacción; estos valores, derivados de las escalas, fueron aprobados por el owner el 2026-10-10. Rellenos: hover un paso intermedio (650), pressed 700. Superficies (tarjeta, fila, opción): neutral.25 y neutral.100. En táctil, pressed es el feedback principal; hover solo se aplica con puntero.</p>
-<div style="display:flex;flex-direction:column;gap:14px">
-<sc-for list="{{ interaccion }}" as="c" hint-placeholder-count="7">
-<div style="display:flex;flex-direction:column;gap:8px">
-<span style="font-size:14px;font-weight:600">{{ c.nombre }}</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px">
-<sc-for list="{{ c.estados }}" as="s" hint-placeholder-count="5">
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
-<div style="min-height:{{ c.alto }};box-sizing:border-box;padding:{{ c.pad }};align-self:{{ c.alinear }};border-radius:{{ c.radio }};background:{{ s.bg }};color:{{ s.fg }};border:{{ s.borde }};outline:{{ s.outline }};outline-offset:2px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.03em"><span>{{ c.texto }}</span></div>
-<span style="font-size:12px;font-weight:600">{{ s.estado }}</span>
-<span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a">{{ s.token }}</span>
-</div>
-</sc-for>
-</div>
-</div>
-</sc-for>
-</div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Relacionado</h2>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
-<li>Focus visible: anillo de 2 px en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">focus.ring</span>, a 2 px del elemento. 5.75:1 sobre bg.page (WCAG 1.4.11 y 2.4.7). Igual en todos los componentes, también sobre rellenos de color.</li>
-<li>Disabled: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.bg</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.text</span> (3.97:1). Exento de contraste, pero se mantiene legible. Sin sombra.</li>
-<li>Loading: conserva el color del rol y añade un indicador en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.inverse</span>; no pasa a disabled.</li>
-<li>Selected: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">selection.*</span>; el borde de 2 px y el texto acompañan al color.</li>
-<li>Scrim modal: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">neutral.950</span> al 48% bajo menús y hojas.</li>
-<li>Enlace: el anillo de focus se ajusta al texto (6 px de margen lateral, radio de 2 px) para que no se confunda con un botón. El área táctil puede crecer hasta 44 px sin cambiar el anillo visible.</li>
-<li>Los badges y chips de nivel no son interactivos: no tienen estados.</li>
+<li><a href="./accessibility.dc.html">Accesibilidad</a> · contraste de cada pareja y comprobaciones de visión del color.</li>
+<li><a href="../interaction/interaction-states.dc.html">Estados de interacción</a> · estados de cada elemento.</li>
+<li><a href="../interaction/focus-management.dc.html">Gestión del foco</a> · anillo de focus.</li>
+<li><a href="./opacity.dc.html">Opacidad</a> · scrim modal.</li>
+<li><a href="../tokens/token-layers.dc.html">Capas de tokens</a> · de token a componente.</li>
+<li><a href="../tokens/design-code-mapping.dc.html">Correspondencia diseño y código</a> · formato de tokens.</li>
+<li><a href="../implementation/publishing-and-migration.dc.html">Publicación y migración</a> · correcciones para el prototipo de iMoles.</li>
 </ul>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · validar en dispositivo la diferencia entre default y pressed.</p>
-</section>
-
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Validación · contraste</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">WCAG 2.2: texto 4.5:1 (1.4.3); iconos, bordes de controles y focus 3:1 (1.4.11). Ratios calculados con la luminancia relativa de WCAG a partir de los valores hex. <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.disabled</span> está exento.</p>
-<div style="overflow-x:auto">
-<div role="table" aria-label="Contraste de las parejas de roles" style="min-width:620px;font-size:14px">
-<div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pareja</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primer plano / fondo</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Mínimo</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Ratio</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Resultado</div>
-</div>
-<div role="rowgroup">
-<sc-for list="{{ contrastes }}" as="c" hint-placeholder-count="32">
-<div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
-<div role="cell" style="padding:6px 8px;border-bottom:1px solid #d4d4d4"><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:24px;background:{{ c.bg }};color:{{ c.fg }};border:1px solid #d4d4d4;font-weight:700;font-size:13px" aria-hidden="true">Aa</span></div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:12px;overflow-wrap:anywhere">{{ c.par }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;color:#3d3d3d">{{ c.min }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums">{{ c.ratio }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-weight:{{ c.peso }}">{{ c.res }}</div>
-</div>
-</sc-for>
-</div>
-</div>
-</div>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · prueba en dispositivo.</p>
-</section>
-
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Validación · visión del color</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Diferencia perceptual ΔE en OKLab (×100) entre los cinco rellenos, en visión normal y simulando deuteranopía, protanopía y tritanopía (Machado 2009, severidad 1) y acromatopsia (solo luminancia). WCAG no fija un mínimo entre colores; exige que el color no sea la única señal (1.4.1). Objetivo práctico: 8 o más. Por debajo, la forma del badge y el texto garantizan la distinción.</p>
-<div style="overflow-x:auto">
-<div role="table" aria-label="Diferencia perceptual entre rellenos según el tipo de visión" style="min-width:640px;font-size:14px">
-<div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pareja</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Normal</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Deuter.</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Protan.</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Tritan.</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Acromat.</div>
-</div>
-<div role="rowgroup">
-<sc-for list="{{ matriz }}" as="m" hint-placeholder-count="10">
-<div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">{{ m.par }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wn }}">{{ m.n }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wd }}">{{ m.de }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wp }}">{{ m.pr }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wt }}">{{ m.tr }}</div>
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wa }}">{{ m.ac }}</div>
-</div>
-</sc-for>
-</div>
-</div>
-</div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Negrita: valores por debajo de 8. Con acromatopsia los cinco rellenos tienen una luminosidad similar porque todos llevan texto blanco a 4.5:1; solo la forma y el texto los distinguen.</p>
-<h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Ficha por color</h3>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px">
-<sc-for list="{{ fichas }}" as="f" hint-placeholder-count="5">
-<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #d4d4d4">
-<div style="width:32px;height:32px;background:{{ f.base }};flex-shrink:0"></div>
-<div style="display:flex;flex-direction:column;min-width:0">
-<span style="font-size:15px;font-weight:600">{{ f.nombre }}</span>
-<span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5a5a5a">{{ f.paso }} · {{ f.base }}</span>
-</div>
-</div>
-<div style="padding:12px 16px;display:flex;flex-direction:column;gap:2px;font-size:13px">
-<span style="font-weight:600">Contraste</span>
-<span>Blanco sobre relleno · {{ f.blanco }}</span>
-<span>Texto 700 sobre tinte · {{ f.texto }}</span>
-<span>Relleno como icono sobre blanco · {{ f.icono }}</span>
-<span style="font-weight:600;margin-top:8px">Vecino más cercano según la visión</span>
-<sc-for list="{{ f.vecinos }}" as="v" hint-placeholder-count="5">
-<div style="display:grid;grid-template-columns:1fr 1.2fr 0.9fr;gap:8px">
-<span style="color:#3d3d3d">{{ v.vision }}</span>
-<span style="font-variant-numeric:tabular-nums">{{ v.texto }}</span>
-<span style="font-weight:{{ v.peso }}">{{ v.estado }}</span>
-</div>
-</sc-for>
-<span style="font-weight:600;margin-top:8px">Señal complementaria</span>
-<span>{{ f.shape }} <sc-if value="{{ f.hasLabel }}" hint-placeholder-val="{{ true }}"><span>«{{ f.label }}»</span></sc-if></span>
-</div>
-</div>
-</sc-for>
-</div>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · probar con usuarios o con una herramienta de simulación de visión del color en dispositivo.</p>
-</section>
-
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Correcciones para iMoles</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#5a5a5a">Cambios que el prototipo necesita para aplicar esta paleta. Ninguno está aplicado.</p>
-<ol style="margin:0;padding-left:24px;max-width:72ch;display:flex;flex-direction:column;gap:10px">
-<sc-for list="{{ propuestas }}" as="q" hint-placeholder-count="9">
-<li style="display:flex;flex-direction:column;gap:2px">
-<span style="font-weight:600">{{ q.titulo }}</span>
-<span style="font-size:14px;color:#3d3d3d">{{ q.problema }}</span>
-<span style="font-size:14px">Propuesta · {{ q.propuesta }}</span>
-</li>
-</sc-for>
-</ol>
-</section>
-
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Formato de tokens</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Decisión para la futura implementación del design system, fuera de este repositorio: aquí no se genera ningún archivo de tokens. Formato W3C Design Tokens Community Group (DTCG): JSON con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$value</span> and <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$type</span>; los tokens semánticos referencian a los primitivos con llaves.</p>
-<pre style="margin:0;padding:16px;background:#f6f6f6;border:1px solid #d4d4d4;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5">{
-  "color": {
-    "brand": { "600": { "$type": "color", "$value": "#00698C" } },
-    "action": {
-      "primary": { "$type": "color", "$value": "{color.brand.600}" }
-    }
-  }
-}</pre>
 </section>
 
 </main>

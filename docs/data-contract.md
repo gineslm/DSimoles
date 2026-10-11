@@ -1,85 +1,85 @@
-# Data and path contract · v2
+# Contrato de datos y rutas · v2
 
-## Project-owned data
-The data belongs to the project. It starts as a copy of `seed/` (see [Seed and init](#seed-and-init)) and from then on it is edited freely: the text of a guide, new subsections, retired ones. There is no link to the seed except the informational `seedVersion`.
+## Datos propiedad del proyecto
+Los datos pertenecen al proyecto. Empiezan como una copia de `seed/` (ver [Seed e init](#seed-e-init)) y desde ahí se editan libremente: el texto de una guía, subsecciones nuevas, subsecciones retiradas. No hay más vínculo con el seed que el `seedVersion` informativo.
 
-`data/guide.json` contains `schemaVersion` (1), `version` and `categories`. Each category has an ID, a visible number, a title, an objective and `items`. Each item has a globally unique ID, a number, a title, an objective, a definition, accessibility, a deliverable, acceptance criteria and a suggested path.
+`data/guide.json` contiene `schemaVersion` (1), `version` y `categories`. Cada categoría tiene un ID, un número visible, un título, un objetivo e `items`. Cada item tiene un ID único global, un número, un título, un objetivo, una definición, accesibilidad, un entregable, criterios de aceptación y una ruta sugerida.
 
-`data/project.json` contains `schemaVersion: 2`, `projectId` (slug), `name`, `language` (for example `en`), `seedVersion`, an optional `repository` (the project's GitHub URL, `https://github.com/<owner>/<repo>`, shown on the Framework page), an optional `record` (the project's own record, see [Project record](#project-record)) and `sections` (a map by ID). There must be exactly one entry per guide item and no entry without an item.
+`data/project.json` contiene `schemaVersion: 2`, `projectId` (slug), `name`, `language` (por ejemplo `es`), `seedVersion`, un `repository` opcional (la URL de GitHub del proyecto, `https://github.com/<owner>/<repo>`, que se muestra en la página Framework), un `record` opcional (el registro propio del proyecto, ver [Project record](#project-record)) y `sections` (un mapa por ID). Debe haber exactamente una entrada por item de la guía y ninguna entrada sin item.
 
 ```json
 {
   "status": "I",
   "page": "",
   "owner": "Design team",
-  "notes": "Palette fixed by the owner; interaction values are a proposal.",
+  "notes": "Paleta fijada por el owner; los valores de interacción son una propuesta.",
   "tasks": [
-    {"text": "Define the dark theme", "when": "future"},
-    {"text": "Approve the interaction values", "when": "pending"}
+    {"text": "Definir el tema oscuro", "when": "future"},
+    {"text": "Aprobar los valores de interacción", "when": "pending"}
   ],
   "review": {"by": "", "date": "", "evidence": ""},
   "exclusionReason": ""
 }
 ```
 
-All the fields above are required, even if their value is empty (`tasks` may be `[]`). `owner` is optional in practice: it may stay empty and it does not condition any status. Allowed statuses: R/I/P/N. `review.date` uses YYYY-MM-DD or is empty. R needs the three review fields to be non-empty; N needs a reason. The validator checks presence, not the truthfulness or sufficiency of the review.
+Todos los campos anteriores son obligatorios, aunque su valor esté vacío (`tasks` puede ser `[]`). `owner` es opcional en la práctica: puede quedar vacío y no condiciona ningún estado. Estados permitidos: R/I/P/N. `review.date` usa YYYY-MM-DD o está vacío. R necesita que los tres campos de review no estén vacíos; N necesita un motivo. El validador comprueba la presencia, no la veracidad ni la suficiencia de la review.
 
-### Notes and tasks
-- `notes` holds the **current decisions and context** of the section. It is not a to-do list.
-- `tasks` is the section's queue of work that is **not blocking**: each task is `{"text", "when"}` with `when` either `pending` (short term) or `future` (later). When a task is done it is removed from the list; the history is in Git.
-- **Tasks never block Ready.** A section can be R with open tasks. Work that does block publication keeps the section in I, with its reason in `notes`; it is not recorded as a task.
-- The validator checks the shape of `tasks`. The only relationship with the status that it enforces is that **a Not applicable section cannot have tasks**. Tasks are shown in each section's record and are **not counted** anywhere (not in progress, not in complexity).
-- **Reopening a Not applicable section.** A task that belongs to an N section means the exclusion is being reconsidered. First check that it really belongs there; if it belongs to another section or to the project, put it there and leave the N alone. If it does belong, the section is **reopened**: status P, the previous exclusion reason moved to `notes` with the date, and the responsible person told. A reopening is never silent. `check` fails while an N section has tasks, so a forgotten one cannot slip through.
+### Notes y tasks
+- `notes` guarda las **decisiones y el contexto actuales** de la sección. No es una lista de pendientes.
+- `tasks` es la cola de trabajo de la sección que **no bloquea**: cada task es `{"text", "when"}` con `when` igual a `pending` (corto plazo) o `future` (más adelante). Cuando una task está hecha se elimina de la lista; el historial está en Git.
+- **Las tasks nunca bloquean Ready.** Una sección puede ser R con tasks abiertas. El trabajo que sí bloquea la publicación mantiene la sección en I, con su motivo en `notes`; no se registra como task.
+- El validador comprueba la forma de `tasks`. La única relación con el estado que hace cumplir es que **una sección Not applicable no puede tener tasks**. Las tasks se muestran en el Record de cada sección y **no se cuentan** en ningún sitio (ni en Progress ni en Complexity).
+- **Reabrir una sección Not applicable.** Una task que pertenece a una sección N significa que se está reconsiderando la exclusión. Comprueba primero que realmente pertenece ahí; si pertenece a otra sección o al proyecto, ponla allí y deja la N en paz. Si sí pertenece, la sección se **reabre**: estado P, el motivo de exclusión anterior se mueve a `notes` con la fecha, y se informa a la persona responsable. Una reapertura nunca es silenciosa. `check` falla mientras una sección N tenga tasks, así que una olvidada no puede colarse.
 
 ### Project record
-`record` is the project's own record, shown in the Record view of the home page: `{"owner": "", "notes": "", "tasks": []}`, with exactly those three keys. It has no status and no review, because progress is computed from the sections. Its `tasks` have the same shape as a section's. Use them for work that belongs to no subsection (administrative work on the project). Work on the framework itself belongs in the framework's repository, not here. A project may omit `record`; the seed starts it empty.
+`record` es el registro propio del proyecto, que se muestra en la vista Record de la home: `{"owner": "", "notes": "", "tasks": []}`, con exactamente esas tres claves. No tiene estado ni review, porque Progress se calcula a partir de las secciones. Sus `tasks` tienen la misma forma que las de una sección. Úsalas para el trabajo que no pertenece a ninguna subsección (trabajo administrativo del proyecto). El trabajo sobre el framework mismo pertenece al repositorio del framework, no a este. Un proyecto puede omitir `record`; el seed lo empieza vacío.
 
-The Record view of the home page also gathers, read-only, the tasks of every section, grouped by category and subsection and without filtering. Each one is edited in its own section.
+La vista Record de la home reúne además, en solo lectura, las tasks de todas las secciones, agrupadas por categoría y subsección y sin filtrar. Cada una se edita en su propia sección.
 
-## Catalog rules
-The guide is the project's catalog. These rules keep it coherent and are enforced by `check`:
-1. Category IDs and subsection slugs use lowercase letters, digits, hyphen and underscore. A subsection ID is `<category-id>.<slug>`. IDs are stable, unique and never reused.
-2. Every subsection has exactly one entry in `project.json`, and every entry belongs to a subsection.
-3. A new subsection starts in P, with no page, owner, notes, tasks or review.
-4. `suggestedPath` is exactly `sections/<category-id>/<slug>.html` and is unique (a `.dc.html` page is also accepted, see below).
-5. Category numbers and subsection numbers are not repeated. A new one takes the next number in its category (or the next category number).
-6. Retiring a subsection is done by marking it N with a reason, not by deleting it. Deleting it from the catalog needs an explicit order and a note in `CHANGELOG.md`.
-7. Totals (number of categories and subsections) come from the data, never from fixed text.
+## Reglas del catálogo
+La guía es el catálogo del proyecto. Estas reglas lo mantienen coherente y las hace cumplir `check`:
+1. Los IDs de categoría y los slugs de subsección usan letras minúsculas, dígitos, guion y guion bajo. El ID de una subsección es `<category-id>.<slug>`. Los IDs son estables, únicos y nunca se reutilizan.
+2. Cada subsección tiene exactamente una entrada en `project.json`, y cada entrada pertenece a una subsección.
+3. Una subsección nueva empieza en P, sin page, owner, notes, tasks ni review.
+4. `suggestedPath` es exactamente `sections/<category-id>/<slug>.html` y es único (también se acepta una página `.dc.html`, ver más abajo).
+5. Los números de categoría y de subsección no se repiten. Una nueva toma el siguiente número de su categoría (o el siguiente número de categoría).
+6. Una subsección se retira marcándola N con un motivo, no borrándola. Borrarla del catálogo necesita una orden explícita y una nota en `CHANGELOG.md`.
+7. Los totales (número de categorías y subsecciones) salen de los datos, nunca de un texto fijo.
 
-A new category also means a new folder `sections/<category-id>/` and, once it has `.dc.html` pages, its own `support.js` (identical to the others).
+Una categoría nueva significa también una carpeta nueva `sections/<category-id>/` y, cuando tenga páginas `.dc.html`, su propio `support.js` (idéntico a los demás).
 
-## Seed and init
-`seed/guide.json` is the initial catalog; `seed/project.json` is an all-Pending project (`projectId` `new-design-system`). `check` and `test` validate both, so a new project is born valid.
+## Seed e init
+`seed/guide.json` es el catálogo inicial; `seed/project.json` es un proyecto con todo en Pending (`projectId` `new-design-system`). `check` y `test` validan ambos, así que un proyecto nuevo nace válido.
 
 ```sh
-npm run init -- --id my-ds --name "My Design System" [--language en]
+npm run init -- --id my-ds --name "My Design System" [--language es]
 ```
 
-- Copies the seed to `data/`, sets `projectId`, `name` and `language`, and records the seed version in `seedVersion`.
-- Does not touch `sections/` or `assets/`.
-- Refuses if `data/project.json` already belongs to a project (a `projectId` other than the seed's), because it would overwrite its statuses, notes and reviews. `--force` overrides that on purpose.
+- Copia el seed a `data/`, fija `projectId`, `name` y `language`, y registra la versión del seed en `seedVersion`.
+- No toca `sections/` ni `assets/`.
+- Se niega si `data/project.json` ya pertenece a un proyecto (un `projectId` distinto del del seed), porque sobrescribiría sus estados, notes y reviews. `--force` lo permite a propósito.
 
-Improvements made to the seed later are not propagated to existing projects.
+Las mejoras que se hagan después al seed no se propagan a los proyectos existentes.
 
-## Paths
-Complete example:
+## Rutas
+Ejemplo completo:
 - ID: `visuals.color`.
 - HTML: `sections/visuals/color.html`.
-- Resources: `assets/visuals/color/`.
-- From that page: `../../assets/visuals/color/palette.svg`.
-- From the container: `sections/visuals/color.html`.
+- Recursos: `assets/visuals/color/`.
+- Desde esa página: `../../assets/visuals/color/palette.svg`.
+- Desde el contenedor: `sections/visuals/color.html`.
 
-An empty `page` means "use the guide's suggested path if the file exists". It is only filled in for exceptions. When filled in, it accepts a `sections/...html` or `sections/...dc.html` path with lowercase alphanumeric, hyphen or underscore segments, or an HTTPS URL without credentials. It does not accept `javascript:`, `data:`, disk paths, `../` or HTTP URLs. The suggested path stays reserved without creating an empty file for every subsection. A section in I or R needs a page, at the suggested path or in `page`.
+Un `page` vacío significa "usa la ruta sugerida de la guía si el archivo existe". Solo se rellena para excepciones. Cuando se rellena, acepta una ruta `sections/...html` o `sections/...dc.html` con segmentos alfanuméricos en minúscula, guion o guion bajo, o una URL HTTPS sin credenciales. No acepta `javascript:`, `data:`, rutas de disco, `../` ni URLs HTTP. La ruta sugerida queda reservada sin crear un archivo vacío para cada subsección. Una sección en I o R necesita una página, en la ruta sugerida o en `page`.
 
-The page contains `<meta name="ds-section-id" content="visuals.color">`. The container does not need to read its internal data. It is shown in an isolated iframe with `allow-scripts`; a separate link exists as an alternative. Do not copy external pages or assume permission to embed them.
+La página contiene `<meta name="ds-section-id" content="visuals.color">`. El contenedor no necesita leer sus datos internos. Se muestra en un iframe aislado con `allow-scripts`; existe un enlace aparte como alternativa. No copies páginas externas ni asumas permiso para incrustarlas.
 
-## `.dc.html` pages
-Section pages are created as Design Components. The guide's suggested path admits two variants: `sections/visuals/color.html` and `sections/visuals/color.dc.html`. `guide.json` does not change. A section has **one** page: if both variants exist, `check` fails.
+## Páginas `.dc.html`
+Las páginas de sección se crean como Design Components. La ruta sugerida de la guía admite dos variantes: `sections/visuals/color.html` y `sections/visuals/color.dc.html`. `guide.json` no cambia. Una sección tiene **una** página: si existen las dos variantes, `check` falla.
 
-A `.dc.html` page loads, in this order and with relative paths, `../../assets/_runtime/react.production.min.js`, `../../assets/_runtime/react-dom.production.min.js` and `./support.js`. `support.js` is generated by Claude Design in each `sections/` folder: it is not edited and all its copies must be identical. External scripts are not allowed. `<sc-for>` and `<sc-if>` tags cannot be direct children of table elements or `select`: inside the container's iframe, which does not allow `fetch` of the page itself, they are not recovered. Images cited by the page, in its HTML or in its data, must exist. The `<meta name="ds-section-id">` goes in the `<head>` and `<html>` carries `lang` equal to the project's `language`.
+Una página `.dc.html` carga, en este orden y con rutas relativas, `../../assets/_runtime/react.production.min.js`, `../../assets/_runtime/react-dom.production.min.js` y `./support.js`. `support.js` lo genera Claude Design en cada carpeta de `sections/`: no se edita y todas sus copias deben ser idénticas. No se permiten scripts externos. Las etiquetas `<sc-for>` y `<sc-if>` no pueden ser hijas directas de elementos de tabla ni de `select`: dentro del iframe del contenedor, que no permite `fetch` de la propia página, no se recuperan. Las imágenes que cita la página, en su HTML o en sus datos, deben existir. La `<meta name="ds-section-id">` va en el `<head>` y `<html>` lleva un `lang` igual al `language` del proyecto.
 
-## Routes
-The container uses hash routes: `#/` (home), `#/home/<content|info|record>` (the home views), `#/framework` (the Framework page; `home` and `framework` are reserved: no category may use those IDs), `#/<category-id>` and `#/<subsection-id>[/content|info|record]`. A category ID has no dot; a subsection ID is `<category-id>.<slug>`. Old `#item-<id>` and `#cat-<id>` links are translated. Without an explicit view, a subsection in I or R with a page opens its page (Content); any other opens its Info view (the guide text).
+## Rutas del contenedor
+El contenedor usa rutas hash: `#/` (home), `#/home/<content|info|record>` (las vistas de la home), `#/framework` (la página Framework; `home` y `framework` están reservados: ninguna categoría puede usar esos IDs), `#/<category-id>` y `#/<subsection-id>[/content|info|record]`. Un ID de categoría no tiene punto; un ID de subsección es `<category-id>.<slug>`. Los enlaces antiguos `#item-<id>` y `#cat-<id>` se traducen. Sin una vista explícita, una subsección en I o R con página abre su página (Content); cualquier otra abre su vista Info (el texto de la guía).
 
-## Viewing state
-Search, filters, the expanded state of the menu and the current address are in-memory viewing state; they are not written to the repository. Progress is computed and not stored. Category statuses are summarized and not editable.
+## Estado de visualización
+La búsqueda, los filtros, el estado expandido del menú y la dirección actual son estado de visualización en memoria; no se escriben en el repositorio. Progress se calcula y no se almacena. Los estados de categoría se resumen y no son editables.

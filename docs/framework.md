@@ -1,61 +1,61 @@
-# The DSBook framework and its version
+# El framework DSBook y su versión
 
-Every project built with DSBook is a copy of the same base: the container, the scripts, the seed, the vendored runtime and the permanent guides. That base is **the framework**. Several repositories can carry it (DSBook itself and each project), and over time they may drift apart. `dsbook.json` makes that visible.
+Todo proyecto construido con DSBook es una copia de la misma base: el contenedor, los scripts, el seed, el runtime vendorizado y las guías permanentes. Esa base es **el framework**. Varios repositorios pueden llevarlo (el propio DSBook y cada proyecto) y con el tiempo pueden divergir. `dsbook.json` lo hace visible.
 
-## What `dsbook.json` records
+## Qué registra `dsbook.json`
 ```json
-{ "framework": "DSBook", "version": "1.1.0", "released": "2026-10-10", "repository": "https://github.com/<owner>/DSBook", "files": { "app.js": "<sha-256>", … } }
+{ "framework": "DSBook", "version": "2.0.0", "released": "2026-10-11", "repository": "https://github.com/<owner>/DSBook", "files": { "app.js": "<sha-256>", … } }
 ```
-- `version`: the framework version, `MAJOR.MINOR.PATCH`.
-- `released`: the date that version was recorded.
-- `repository`: the framework's source, where updates come from. `--release` keeps it from the previous manifest, or sets it with `--repository <url>`.
-- `files`: the SHA-256 of every framework file (line endings normalized, so a Windows and a Linux checkout agree).
+- `version`: la versión del framework, `MAJOR.MINOR.PATCH`.
+- `released`: la fecha en que se registró esa versión.
+- `repository`: el origen del framework, de donde vienen las actualizaciones. `--release` lo conserva del manifiesto anterior, o lo fija con `--repository <url>`.
+- `files`: el SHA-256 de cada archivo del framework (con los saltos de línea normalizados, para que coincidan un checkout de Windows y uno de Linux).
 
-## What belongs to the framework
-| Framework (shared, same in every repository) | Project (its own) |
+## Qué pertenece al framework
+| Framework (compartido, igual en cada repositorio) | Proyecto (propio) |
 | --- | --- |
 | `index.html`, `styles.css`, `app.js`, `model.js` | `data/guide.json`, `data/project.json` |
-| `scripts/` (checks, tests, fixtures), `package.json` | `sections/`, `assets/<category>/` |
-| `seed/`, `assets/_runtime/`, `assets/_framework/` (the logo), `templates/component.md` | `README.md`, `CLAUDE.md`, `CHANGELOG.md`, `LICENSE` |
-| `docs/*.md` (the permanent guides) and `.gitattributes` | `docs/proposals/` (the history of the method) |
+| `scripts/` (comprobaciones, pruebas, fixtures), `package.json` | `sections/`, `assets/<category>/` |
+| `seed/`, `assets/_runtime/`, `assets/_framework/` (el logo), `templates/component.md` | `README.md`, `CLAUDE.md`, `CHANGELOG.md`, `LICENSE` |
+| `docs/*.md` (las guías permanentes) y `.gitattributes` | `docs/proposals/` (el historial del método) |
 
-The guides under `docs/` are written without any project name so that they stay identical. A project's specifics go in its `README.md` and `CLAUDE.md`.
+Las guías de `docs/` se escriben sin ningún nombre de proyecto para que sigan siendo idénticas. Lo específico de un proyecto va en su `README.md` y su `CLAUDE.md`.
 
-## Commands
+## Comandos
 ```sh
-npm run framework                              # report the version and whether the files match it
-npm run framework -- --release 1.1.0           # record a new version after an intended change (--repository <url> sets the source)
-npm run framework -- --compare ../DSBook       # compare with another DSBook repository
+npm run framework                              # informa de la versión y de si los archivos coinciden con ella
+npm run framework -- --release 1.1.0           # registra una versión nueva tras un cambio intencionado (--repository <url> fija el origen)
+npm run framework -- --compare ../DSBook       # compara con otro repositorio DSBook
 ```
-`npm run check` runs the first one and **fails** if a framework file differs from what `dsbook.json` records, so a change to the container, a script or a guide can never go unnoticed.
+`npm run check` ejecuta el primero y **falla** si un archivo del framework difiere de lo que registra `dsbook.json`, de modo que un cambio en el contenedor, un script o una guía nunca pasa inadvertido.
 
-## Versions
-- **PATCH**: fixes and wording that change no behavior (a typo in a guide, a CSS correction).
-- **MINOR**: new capabilities that keep existing projects valid (a new view, a new check, a new optional field).
-- **MAJOR**: anything that requires a project to change its data or its pages (a new `schemaVersion`, renamed routes or IDs, a stricter check that existing pages may fail).
+## Versiones
+- **PATCH**: correcciones y redacción que no cambian el comportamiento (una errata en una guía, una corrección de CSS).
+- **MINOR**: capacidades nuevas que mantienen válidos los proyectos existentes (una vista nueva, una comprobación nueva, un campo opcional nuevo).
+- **MAJOR**: cualquier cosa que obligue a un proyecto a cambiar sus datos o sus páginas (un `schemaVersion` nuevo, rutas o IDs renombrados, una comprobación más estricta que las páginas existentes pueden incumplir, un cambio de idioma).
 
-## Workflow
-1. **Change the framework in one place.** The preferred place is the DSBook repository. If a project needs the change first, make it there, but treat it as a draft until it reaches DSBook.
-2. Run `npm run check` and `npm test`. A framework change fails `check` until it is recorded.
-3. Record it: `npm run framework -- --release <new version>`.
-4. Add an entry to `CHANGELOG.md`: version, date, commit, summary. In DSBook the changelog **is** the framework history. A project notes in its own changelog which framework version it adopted.
-5. **Port it** to the other repositories: copy the framework files (the left column above), run `npm run framework -- --compare <other>` to confirm both manifests are identical, then `check` and `test` there. Never copy `data/`, `sections/` or the project files.
+## Flujo de trabajo
+1. **Cambia el framework en un solo sitio.** El lugar preferido es el repositorio DSBook. Si un proyecto necesita el cambio antes, hazlo allí, pero trátalo como borrador hasta que llegue a DSBook.
+2. Ejecuta `npm run check` y `npm test`. Un cambio en el framework hace fallar `check` hasta que se registra.
+3. Regístralo: `npm run framework -- --release <nueva versión>`.
+4. Añade una entrada a `CHANGELOG.md`: versión, fecha, commit, resumen. En DSBook el changelog **es** el historial del framework. Un proyecto anota en su propio changelog qué versión del framework adoptó.
+5. **Pórtalo** a los demás repositorios: copia los archivos del framework (la columna izquierda de arriba), ejecuta `npm run framework -- --compare <otro>` para confirmar que ambos manifiestos son idénticos, y luego `check` y `test` allí. No copies nunca `data/`, `sections/` ni los archivos del proyecto.
 
-## The Framework page
-The DSBook logo in the container opens `#/framework`. It is deliberately small. On the left, two short texts: what DSBook is and how it works (the site only shows the state; the work happens in Claude Design, is integrated by Claude Code and is kept in step through a GitHub repository). On the right, two blocks:
-- **DSBook framework**: version, release date and source (from `dsbook.json`), and a *Check for updates* button. The button reads the source's `dsbook.json` from GitHub and says whether the source is newer, this project is ahead of it, the same version has different files, or everything is current.
-- **This project**: name, repository (the optional `repository` in `data/project.json`) and, after pressing its *Check for updates* button, the message of the latest commit on GitHub and whether this copy is current. The copy's own commit is read from `.git`, which a local static server serves; if it cannot be read, the page says so.
+## La página Framework
+El logo de DSBook en el contenedor abre `#/framework`. Es deliberadamente pequeña. A la izquierda, dos textos breves: qué es DSBook y cómo funciona (el sitio solo muestra el estado; el trabajo ocurre en Claude Design, lo integra Claude Code y se mantiene sincronizado mediante un repositorio de GitHub). A la derecha, dos bloques:
+- **DSBook framework**: versión, fecha de publicación y origen (de `dsbook.json`), y un botón *Check for updates*. El botón lee el `dsbook.json` del origen en GitHub e indica si el origen es más nuevo, si este proyecto va por delante, si la misma versión tiene archivos distintos o si todo está al día.
+- **This project**: nombre, repositorio (el `repository` opcional de `data/project.json`) y, tras pulsar su botón *Check for updates*, el mensaje del último commit en GitHub y si esta copia está al día. El commit de la propia copia se lee de `.git`, que un servidor estático local sirve; si no se puede leer, la página lo dice.
 
-While a copy still has the seed's identity (`npm run init` has not been run) there is no project yet, so the page shows only the framework block and a note saying how to start one.
+Mientras una copia aún tiene la identidad del seed (no se ha ejecutado `npm run init`) no hay proyecto todavía, así que la página muestra solo el bloque del framework y una nota que dice cómo empezar uno.
 
-Both checks are manual and are the only network calls the container makes. Private repositories cannot be read from the browser. The page cannot see uncommitted changes. Agents do the equivalent check at the start of every session ([claude-code.md](claude-code.md)).
+Ambas comprobaciones son manuales y son las únicas llamadas de red que hace el contenedor. Los repositorios privados no se pueden leer desde el navegador. La página no ve los cambios sin commitear. Los agentes hacen la comprobación equivalente al empezar cada sesión ([claude-code.md](claude-code.md)).
 
-## Knowing whether two repositories differ
+## Saber si dos repositorios difieren
 ```sh
 npm run framework -- --compare ../DSBook
 ```
-It prints both versions and the files whose hash differs. Same version with different files means somebody changed the framework without recording it (check would have failed in that repository). Different versions mean one of them is ahead: the changelog of DSBook says by how much.
+Imprime ambas versiones y los archivos cuyo hash difiere. La misma versión con archivos distintos significa que alguien cambió el framework sin registrarlo (`check` habría fallado en ese repositorio). Versiones distintas significan que uno va por delante: el changelog de DSBook dice por cuánto.
 
-## Limits
-- The manifest detects differences; it does not merge them. If two repositories changed the same framework file, decide by reading the diff.
-- A project can adopt a newer framework version at its own pace, but until it does, the guides it carries describe the older one.
+## Límites
+- El manifiesto detecta diferencias; no las fusiona. Si dos repositorios cambiaron el mismo archivo del framework, decide leyendo el diff.
+- Un proyecto puede adoptar una versión nueva del framework a su ritmo, pero hasta que lo haga, las guías que lleva describen la versión anterior.

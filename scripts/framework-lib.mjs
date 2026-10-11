@@ -1,7 +1,7 @@
-// The DSBook framework is the part of the repository that every project shares: the container, the scripts,
-// the seed, the vendored runtime and the permanent guides. `dsbook.json` records its version and the SHA-256
-// of each of those files, so two repositories can tell whether they run the same framework.
-// A project's own files (data/, sections/, assets/<category>/, README, CLAUDE.md, CHANGELOG, LICENSE) are not part of it.
+// El framework DSBook es la parte del repositorio que comparten todos los proyectos: el contenedor, los scripts,
+// el seed, el runtime vendorizado y las guías permanentes. `dsbook.json` registra su versión y el SHA-256
+// de cada uno de esos archivos, para que dos repositorios puedan saber si usan el mismo framework.
+// Los archivos propios de un proyecto (data/, sections/, assets/<category>/, README, CLAUDE.md, CHANGELOG, LICENSE) no forman parte.
 import {readFile, readdir, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
@@ -10,7 +10,7 @@ import {parseRepo} from '../model.js';
 export const MANIFEST = 'dsbook.json';
 export const SEMVER = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
 
-// Single files, and folders with the way they are walked.
+// Archivos sueltos, y carpetas con la forma de recorrerlas.
 const FILES = ['package.json', 'index.html', 'styles.css', 'app.js', 'model.js', '.gitattributes', 'templates/component.md'];
 const FOLDERS = [
   {dir: 'scripts', deep: true},
@@ -19,8 +19,8 @@ const FOLDERS = [
   {dir: 'assets/_framework', deep: true},
   {dir: 'docs', deep: false},
 ];
-// Vendored files are byte-exact (their hash is also checked against support.js); everything else is text
-// and is hashed with LF line endings so a Windows checkout and a Linux one agree.
+// Los archivos vendorizados se comparan byte a byte (su hash también se comprueba contra support.js); todo lo demás es texto
+// y se calcula con saltos de línea LF para que coincidan un checkout de Windows y uno de Linux.
 const isBinaryLike = rel => rel.startsWith('assets/_runtime/') && /\.js$/.test(rel);
 
 async function walk(root, dir, deep) {
@@ -51,14 +51,14 @@ export async function hashOf(root, rel) {
 export async function readManifest(root) {
   const m = JSON.parse(await readFile(path.join(root, MANIFEST), 'utf8'));
   if (m.framework !== 'DSBook' || !SEMVER.test(m.version) || !m.files || typeof m.files !== 'object') {
-    throw Error(`${MANIFEST} is not a valid DSBook manifest`);
+    throw Error(`${MANIFEST} no es un manifiesto DSBook válido`);
   }
-  if (m.repository !== undefined && !parseRepo(m.repository)) throw Error(`${MANIFEST}: invalid repository (expected https://github.com/<owner>/<repo>)`);
-  if (m.released !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(m.released)) throw Error(`${MANIFEST}: invalid released date (expected YYYY-MM-DD)`);
+  if (m.repository !== undefined && !parseRepo(m.repository)) throw Error(`${MANIFEST}: repositorio no válido (se esperaba https://github.com/<owner>/<repo>)`);
+  if (m.released !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(m.released)) throw Error(`${MANIFEST}: fecha de publicación no válida (se esperaba YYYY-MM-DD)`);
   return m;
 }
 
-// Compares the files on disk with the manifest.
+// Compara los archivos del disco con el manifiesto.
 export async function verify(root) {
   const manifest = await readManifest(root);
   const present = await ownedFiles(root);
@@ -71,12 +71,12 @@ export async function verify(root) {
   return {version: manifest.version, changed, missing, added, ok: !changed.length && !missing.length && !added.length};
 }
 
-// `repository` is the framework's source (where updates come from); it is kept from the previous manifest unless given.
+// `repository` es el origen del framework (de donde vienen las actualizaciones); se conserva del manifiesto anterior salvo que se indique.
 export async function release(root, version, {repository} = {}) {
-  if (!SEMVER.test(version)) throw Error(`Invalid version "${version}" (expected MAJOR.MINOR.PATCH)`);
+  if (!SEMVER.test(version)) throw Error(`Versión "${version}" no válida (se esperaba MAJOR.MINOR.PATCH)`);
   const previous = await readManifest(root).catch(() => null);
   const source = repository ?? previous?.repository;
-  if (source !== undefined && !parseRepo(source)) throw Error(`Invalid repository "${source}" (expected https://github.com/<owner>/<repo>)`);
+  if (source !== undefined && !parseRepo(source)) throw Error(`Repositorio "${source}" no válido (se esperaba https://github.com/<owner>/<repo>)`);
   const files = {};
   for (const rel of await ownedFiles(root)) files[rel] = await hashOf(root, rel);
   const released = new Date().toISOString().slice(0, 10);
@@ -85,7 +85,7 @@ export async function release(root, version, {repository} = {}) {
   return manifest;
 }
 
-// Compares two manifests (no need to hash the other repository's files).
+// Compara dos manifiestos (no hace falta calcular el hash de los archivos del otro repositorio).
 export function compare(a, b) {
   const names = new Set([...Object.keys(a.files), ...Object.keys(b.files)]);
   const differ = [...names].filter(n => a.files[n] !== b.files[n]).sort();
@@ -94,8 +94,8 @@ export function compare(a, b) {
 
 export function describe(r) {
   const parts = [];
-  if (r.changed.length) parts.push(`changed: ${r.changed.join(', ')}`);
-  if (r.missing.length) parts.push(`missing: ${r.missing.join(', ')}`);
-  if (r.added.length) parts.push(`not in the manifest: ${r.added.join(', ')}`);
+  if (r.changed.length) parts.push(`cambiados: ${r.changed.join(', ')}`);
+  if (r.missing.length) parts.push(`ausentes: ${r.missing.join(', ')}`);
+  if (r.added.length) parts.push(`fuera del manifiesto: ${r.added.join(', ')}`);
   return parts.join('; ');
 }

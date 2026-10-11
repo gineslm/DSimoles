@@ -1,7 +1,7 @@
-// Serves this repository as static files on 127.0.0.1 so the container can load its JSON files.
-//   npm start                  first free port from 8000
-//   npm start -- --port 9000   first free port from 9000 (--port 0 lets the system choose)
-// Two projects can run at the same time: each one prints the address it got.
+// Sirve este repositorio como archivos estáticos en 127.0.0.1 para que el contenedor pueda cargar sus JSON.
+//   npm start                  primer puerto libre desde 8000
+//   npm start -- --port 9000   primer puerto libre desde 9000 (--port 0 deja que elija el sistema)
+// Dos proyectos pueden correr a la vez: cada uno imprime la dirección que obtuvo.
 import {createServer} from 'node:http';
 import {readFile, stat} from 'node:fs/promises';
 import path from 'node:path';
@@ -26,13 +26,13 @@ const server = createServer(async (req, res) => {
 function listen(port, tries = 0) {
   server.once('error', e => {
     if (e.code === 'EADDRINUSE' && tries < 50) listen(port + 1, tries + 1);
-    else { console.error(`Error: could not start the server (${e.message})`); process.exit(1); }
+    else { console.error(`Error: no se pudo arrancar el servidor (${e.message})`); process.exit(1); }
   });
   server.listen(port, '127.0.0.1', () => {
     const {port: got} = server.address();
-    console.log(`Serving ${path.basename(root)} at http://localhost:${got}`);
-    if (port !== start && start !== 0) console.log(`(port ${start} was busy)`);
-    console.log('Press Ctrl+C to stop.');
+    console.log(`Sirviendo ${path.basename(root)} en http://localhost:${got}`);
+    if (port !== start && start !== 0) console.log(`(el puerto ${start} estaba ocupado)`);
+    console.log('Pulsa Ctrl+C para detener.');
   });
 }
 listen(start);

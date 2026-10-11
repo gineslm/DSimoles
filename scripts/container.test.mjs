@@ -1,5 +1,5 @@
-// Browser smoke test of the container. It drives a local headless Chrome through the DevTools protocol
-// and is skipped when Chrome (or Node's global WebSocket) is not available. Set DSBOOK_CHROME to a browser path to force one.
+// Prueba de humo del contenedor en navegador. Maneja un Chrome headless local por el protocolo DevTools
+// y se omite cuando Chrome (o el WebSocket global de Node) no está disponible. Define DSBOOK_CHROME con la ruta de un navegador para forzar uno.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {existsSync, readFileSync, statSync, mkdtempSync, rmSync} from 'node:fs';
@@ -14,7 +14,7 @@ const guide = JSON.parse(readFileSync(path.join(root, 'data/guide.json'), 'utf8'
 const project = JSON.parse(readFileSync(path.join(root, 'data/project.json'), 'utf8'));
 const CANDIDATES = [process.env.DSBOOK_CHROME, 'C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', '/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'];
 const chrome = CANDIDATES.find(p => p && existsSync(p));
-const skip = typeof WebSocket === 'undefined' ? 'Node has no global WebSocket (use Node 22+)' : !chrome ? 'Chrome not found (set DSBOOK_CHROME)' : false;
+const skip = typeof WebSocket === 'undefined' ? 'Node no tiene WebSocket global (usa Node 22+)' : !chrome ? 'Chrome no encontrado (define DSBOOK_CHROME)' : false;
 
 const MIME = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.md': 'text/markdown; charset=utf-8'};
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -62,58 +62,58 @@ async function session(fn) {
   } finally { proc.kill(); server.close(); try { rmSync(dir, {recursive: true, force: true}); } catch {} }
 }
 
-test('Container: home, sections, views, filters and legacy links work without console errors', {skip, timeout: 60000}, async () => {
+test('Contenedor: la home, las secciones, las vistas, los filtros y los enlaces antiguos funcionan sin errores de consola', {skip, timeout: 60000}, async () => {
   await session(async b => {
     await b.goto('');
-    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'home shows one card per category');
-    assert.equal(await b.eval(`document.querySelectorAll('.meters progress').length`), 2, 'the home page shows progress and complexity');
+    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'la home muestra una tarjeta por categoría');
+    assert.equal(await b.eval(`document.querySelectorAll('.meters progress').length`), 2, 'la home muestra Progress y Complexity');
 
     if (withPage) {
       await b.go(`#/${withPage.id}`);
-      assert.equal(await b.eval(`!!document.querySelector('#view iframe')`), true, 'a section in I/R with a page opens its page by default');
+      assert.equal(await b.eval(`!!document.querySelector('#view iframe')`), true, 'una sección en I/R con página abre su página por defecto');
       assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Content');
       assert.equal(await b.eval(`document.getElementById('head-status').textContent`).then(t => t.startsWith(project.sections[withPage.id].status)), true);
-      assert.equal(await b.eval(`document.documentElement.scrollHeight <= innerHeight`), true, 'the page does not add document scroll: the iframe fills the view');
+      assert.equal(await b.eval(`document.documentElement.scrollHeight <= innerHeight`), true, 'la página no añade scroll al documento: el iframe llena la vista');
       await b.go(`#/${withPage.id}/info`);
       assert.equal(await b.eval(`document.querySelectorAll('.guide-grid > div').length`), 5);
       await b.go(`#/${withPage.id}/record`);
       assert.match(await b.eval(`[...document.querySelectorAll('.record h2')].map(h => h.textContent).join()`), /Status.*Owner.*Tasks.*Review/);
       await b.goto(`#item-${withPage.id}`);
-      assert.equal(await b.eval(`location.hash`), `#/${withPage.id}`, 'old #item-<id> links are translated');
+      assert.equal(await b.eval(`location.hash`), `#/${withPage.id}`, 'los enlaces antiguos #item-<id> se traducen');
     }
     if (withoutPage) {
       await b.go(`#/${withoutPage.id}`);
-      assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Info', 'a section without a page opens its info view');
+      assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Info', 'una sección sin página abre su vista Info');
       await b.go(`#/${withoutPage.id}/content`);
-      assert.equal(await b.eval(`document.querySelector('.empty h2').textContent`), 'No page yet');
+      assert.equal(await b.eval(`document.querySelector('.empty h2').textContent`), 'Aún no hay página');
     }
     await b.go('#/');
-    assert.equal(await b.eval(`document.getElementById('home-link').getAttribute('href')`), '#/framework', 'the DSBook logo opens the framework page');
+    assert.equal(await b.eval(`document.getElementById('home-link').getAttribute('href')`), '#/framework', 'el logo de DSBook abre la página Framework');
     await b.eval(`document.getElementById('home-link').click()`); await sleep(400);
     assert.equal(await b.eval(`location.hash`), '#/framework');
     assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'DSBook framework');
     const seed = JSON.parse(readFileSync(path.join(root, 'seed/project.json'), 'utf8'));
-    assert.deepEqual(await b.eval(`[...document.querySelectorAll('.about-block h2')].map(h => h.textContent)`), project.projectId === seed.projectId ? ['DSBook framework'] : ['DSBook framework', 'This project'], 'a copy that has not been started shows only the framework');
+    assert.deepEqual(await b.eval(`[...document.querySelectorAll('.about-block h2')].map(h => h.textContent)`), project.projectId === seed.projectId ? ['DSBook framework'] : ['DSBook framework', 'This project'], 'una copia que no se ha iniciado muestra solo el framework');
     const manifest = JSON.parse(readFileSync(path.join(root, 'dsbook.json'), 'utf8'));
-    assert.equal(await b.eval(`document.querySelector('.about-block dd').textContent`), manifest.version, 'the page shows the framework version from dsbook.json');
-    assert.equal(await b.eval(`document.querySelectorAll('.about-block button').length`) >= 1, true, 'there is a check button');
-    assert.equal(await b.eval(`document.querySelector('#crumbs a').getAttribute('href')`), '#/', 'the breadcrumb leads back to the home page');
+    assert.equal(await b.eval(`document.querySelector('.about-block dd').textContent`), manifest.version, 'la página muestra la versión del framework de dsbook.json');
+    assert.equal(await b.eval(`document.querySelectorAll('.about-block button').length`) >= 1, true, 'hay un botón de comprobación');
+    assert.equal(await b.eval(`document.querySelector('#crumbs a').getAttribute('href')`), '#/', 'el breadcrumb lleva de vuelta a la home');
     await b.go('#/');
-    assert.deepEqual(await b.eval(`[...document.querySelectorAll('#views a')].map(a => a.textContent)`), ['Content', 'Info', 'Record'], 'the home page has the same three views as a section');
+    assert.deepEqual(await b.eval(`[...document.querySelectorAll('#views a')].map(a => a.textContent)`), ['Content', 'Info', 'Record'], 'la home tiene las mismas tres vistas que una sección');
     assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Content');
-    assert.equal(await b.eval(`document.getElementById('head-status').hidden && document.getElementById('pager').hidden`), true, 'no status or previous/next on the home page');
+    assert.equal(await b.eval(`document.getElementById('head-status').hidden && document.getElementById('pager').hidden`), true, 'sin estado ni anterior/siguiente en la home');
     await b.go('#/home/info');
-    assert.equal(await b.eval(`document.querySelector('#view .empty h2').textContent`), 'No information yet', 'the home Info view exists and is empty');
+    assert.equal(await b.eval(`document.querySelector('#view .empty h2').textContent`), 'Aún no hay información', 'la vista Info de la home existe y está vacía');
     await b.go('#/home/record');
     assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Record');
     assert.deepEqual(await b.eval(`[...document.querySelectorAll('#view h2')].map(h => h.textContent).filter(t => ['Owner', 'Notes', 'Project tasks', 'Section tasks'].includes(t))`), ['Owner', 'Notes', 'Project tasks', 'Section tasks']);
     const gathered = guide.categories.flatMap(c => c.items).filter(i => project.sections[i.id].tasks.length);
-    assert.equal(await b.eval(`document.querySelectorAll('.task-section').length`), gathered.length, 'every section with tasks appears, with no filtering');
+    assert.equal(await b.eval(`document.querySelectorAll('.task-section').length`), gathered.length, 'cada sección con tasks aparece, sin filtrar');
     await b.eval(`document.querySelector('[data-filter="N"]').click()`); await sleep(300);
-    assert.equal(await b.eval(`document.querySelectorAll('.task-section').length`), gathered.length, 'status filters do not hide tasks');
+    assert.equal(await b.eval(`document.querySelectorAll('.task-section').length`), gathered.length, 'los filtros de estado no ocultan tasks');
     await b.eval(`document.querySelector('[data-filter="all"]').click()`); await sleep(200);
     await b.go('#/');
-    // the Sections menu opens on hover and shows the subsections of a category on hover
+    // el menú Sections se abre con hover y muestra las subsecciones de una categoría con hover
     await b.goto('');
     const at = sel => b.eval(`(() => { const r = document.querySelector(${JSON.stringify(sel)}).getBoundingClientRect(); return {x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2)}; })()`);
     const icon = await at('#sections-btn');
@@ -121,21 +121,21 @@ test('Container: home, sections, views, filters and legacy links work without co
     const row = await at('.menu-cat:nth-child(3) .menu-cat-link');
     for (let k = 1; k <= 8; k++) await b.mouse(Math.round(icon.x + (row.x - icon.x) * k / 8), Math.round(icon.y + (row.y - icon.y) * k / 8), 15);
     await sleep(300);
-    assert.equal(await b.eval(`document.getElementById('sidebar').dataset.panel`), 'sections', 'hovering the Sections icon opens its panel');
-    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).display`), 'block', 'hovering a category shows its subsections');
+    assert.equal(await b.eval(`document.getElementById('sidebar').dataset.panel`), 'sections', 'pasar el puntero por el icono Sections abre su panel');
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).display`), 'block', 'pasar el puntero por una categoría muestra sus subsecciones');
     await b.mouse(5, 5, 400);
-    // a PC that reports no hover and a coarse pointer (some Firefox setups do) must still get the cascade with a mouse
+    // un PC que informa de que no hay hover y de un puntero grueso (algunas configuraciones de Firefox) debe seguir recibiendo la cascada con un ratón
     await b.touch(true);
     await b.goto('');
-    assert.equal(await b.eval(`matchMedia('(any-hover:none)').matches`), true, 'the browser now reports no hover capability');
+    assert.equal(await b.eval(`matchMedia('(any-hover:none)').matches`), true, 'el navegador ahora informa de que no hay capacidad de hover');
     const icon2 = await at('#sections-btn');
     await b.mouse(icon2.x, icon2.y, 250);
     const row2 = await at('.menu-cat:nth-child(3) .menu-cat-link');
     for (let k = 1; k <= 8; k++) await b.mouse(Math.round(icon2.x + (row2.x - icon2.x) * k / 8), Math.round(icon2.y + (row2.y - icon2.y) * k / 8), 15);
     await sleep(300);
-    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).position`), 'fixed', 'without hover capability the wide layout is still the cascade');
-    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).display`), 'block', 'hovering a category still shows its subsections');
-    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-chevron')).display`), 'block', 'the chevron is available too, for touch');
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).position`), 'fixed', 'sin capacidad de hover el diseño ancho sigue siendo la cascada');
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-cat.open .submenu')).display`), 'block', 'pasar el puntero por una categoría sigue mostrando sus subsecciones');
+    assert.equal(await b.eval(`getComputedStyle(document.querySelector('.menu-chevron')).display`), 'block', 'el chevron también está disponible, para táctil');
     await b.mouse(5, 5, 400);
     await b.touch(false);
     await b.go('#/');
@@ -143,10 +143,10 @@ test('Container: home, sections, views, filters and legacy links work without co
     for (const s of Object.values(project.sections)) counts[s.status] = (counts[s.status] || 0) + 1;
     await b.eval(`document.querySelector('[data-filter="I"]').click()`); await sleep(300);
     const withI = guide.categories.filter(c => c.items.some(i => project.sections[i.id].status === 'I')).length;
-    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), withI, 'the I filter trims the home page');
+    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), withI, 'el filtro I recorta la home');
     await b.eval(`document.querySelector('[data-filter="all"]').click()`);
     await b.go('#/nope');
-    assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'Page not found');
-    assert.deepEqual(b.errors, [], 'no console errors or exceptions');
+    assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'Página no encontrada');
+    assert.deepEqual(b.errors, [], 'sin errores de consola ni excepciones');
   });
 });

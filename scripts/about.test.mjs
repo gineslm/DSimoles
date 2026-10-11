@@ -1,4 +1,4 @@
-// The logic behind the Framework page: its route, the repository fields and the update comparisons.
+// La lógica de la página Framework: su ruta, los campos del repositorio y las comparaciones de actualización.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -9,42 +9,42 @@ const guide = JSON.parse(await readFile(new URL('../data/guide.json', import.met
 const base = JSON.parse(await readFile(new URL('../data/project.json', import.meta.url)));
 const route = h => parseRoute(h, guide);
 
-test('The framework page is a route of its own', () => {
+test('La página Framework es una ruta propia', () => {
   assert.deepEqual(route('#/framework'), {name: 'framework'});
   assert.equal(route('#/framework/info').name, 'notfound');
   assert.equal(routeHash(route('#/framework')), '#/framework');
   assert.deepEqual(breadcrumb(guide, route('#/framework'), 'Example DS'), [{label: 'Example DS', hash: '#/'}, {label: 'DSBook framework'}]);
 });
 
-test('A category cannot take the ID of the framework page', () => {
+test('Una categoría no puede tomar el ID de la página Framework', () => {
   const g = structuredClone(guide);
   g.categories[0].id = 'framework';
   g.categories[0].items.forEach(i => {
     i.id = i.id.replace(/^[^.]+/, 'framework');
     i.suggestedPath = i.suggestedPath.replace(/^sections\/[^/]+\//, 'sections/framework/');
   });
-  assert.throws(() => validateGuide(g), /Reserved category ID/);
+  assert.throws(() => validateGuide(g), /ID de categoría reservado/);
 });
 
-test('The project repository is optional and must be a GitHub URL', () => {
+test('El repositorio del proyecto es opcional y debe ser una URL de GitHub', () => {
   const p = structuredClone(base);
   p.repository = 'https://github.com/someone/ds-project';
   assert.equal(validateProject(p, guide), true);
   for (const bad of ['http://github.com/a/b', 'https://example.com/a/b', 'https://github.com/a', 'github.com/a/b', 42]) {
-    assert.throws(() => validateProject({...p, repository: bad}, guide), /Invalid repository/, String(bad));
+    assert.throws(() => validateProject({...p, repository: bad}, guide), /Repositorio no válido/, String(bad));
   }
   assert.deepEqual(parseRepo('https://github.com/gineslm/DSbook.git/'), {owner: 'gineslm', repo: 'DSbook'});
   assert.equal(parseRepo('https://github.com/a/b/c'), null);
 });
 
-test('A copy that still has the seed identity counts as not started', () => {
+test('Una copia que aún tiene la identidad del seed cuenta como no iniciada', () => {
   const seed = JSON.parse(readFileSync(new URL('../seed/project.json', import.meta.url), 'utf8'));
   assert.equal(isSeedProject(seed, seed), true);
   assert.equal(isSeedProject({...seed, projectId: 'my-ds'}, seed), false);
   assert.equal(isSeedProject(seed, null), false);
 });
 
-test('Framework status: update, ahead, diverged or current', () => {
+test('Estado del framework: update, ahead, diverged o current', () => {
   const m = (version, files) => ({version, files});
   assert.equal(compareVersions('1.10.0', '1.2.0'), 1);
   assert.equal(compareVersions('1.0.0', '1.0.0'), 0);
@@ -55,7 +55,7 @@ test('Framework status: update, ahead, diverged or current', () => {
   assert.equal(frameworkStatus(m('1.1.0', {a: '1'}), m('1.1.0', {a: '1'})).state, 'current');
 });
 
-test('The local commit is read from .git and the GitHub comparison is interpreted', () => {
+test('El commit local se lee de .git y se interpreta la comparación de GitHub', () => {
   const a = 'a'.repeat(40), b = 'b'.repeat(40);
   assert.equal(shaFromGit(a + '\n'), a);
   assert.equal(shaFromGit('ref: refs/heads/main\n', b + '\n', ''), b);

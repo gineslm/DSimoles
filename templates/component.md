@@ -1,20 +1,20 @@
-# Component sheet
+# Ficha de componente
 
-Complete it inside the development page. This sheet serves as a content guide, not as a per-session handoff.
+Complétala dentro de la página de desarrollo. Esta ficha sirve como guía de contenido, no como handoff por sesión.
 
-- Identification: ID, name, family and owner.
-- Purpose: when to use it and alternatives.
-- Anatomy: parts, slots and dependencies.
-- Variants and sizes: options and allowed combinations.
-- States: rest, focus, selection, loading, error and other applicable ones.
-- Behavior: activation, dismissal, cancellation and focus.
-- Content: labels, help, messages and limits.
-- Responsive: available space, zoom, long texts and languages.
-- Accessibility: semantics, accessible name, keyboard and announcements.
-- Tokens: references and customization.
-- API: properties, events, default values and constraints.
-- Examples: typical use, edge cases and incorrect use.
-- Acceptance: expected results, tests and evidence.
-- Maintenance: limitations, migrations and retirement.
+- Identificación: ID, nombre, familia y owner.
+- Propósito: cuándo usarlo y alternativas.
+- Anatomía: partes, slots y dependencias.
+- Variantes y tamaños: opciones y combinaciones permitidas.
+- Estados: reposo, foco, selección, carga, error y otros aplicables.
+- Comportamiento: activación, cierre, cancelación y foco.
+- Contenido: etiquetas, ayuda, mensajes y límites.
+- Responsive: espacio disponible, zoom, textos largos e idiomas.
+- Accesibilidad: semántica, nombre accesible, teclado y anuncios.
+- Tokens: referencias y personalización.
+- API: propiedades, eventos, valores por defecto y restricciones.
+- Ejemplos: uso típico, casos límite y uso incorrecto.
+- Aceptación: resultados esperados, pruebas y evidencia.
+- Mantenimiento: limitaciones, migraciones y retirada.
 
-Justify the fields that do not apply. Do not turn a visual example into evidence of tested behavior.
+Justifica los campos que no apliquen. No conviertas un ejemplo visual en evidencia de un comportamiento probado.

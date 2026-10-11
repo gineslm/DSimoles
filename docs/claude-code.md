@@ -1,37 +1,37 @@
-# Guide for Claude Code
+# Guía para Claude Code
 
-Read [CLAUDE.md](../CLAUDE.md), the [contract](data-contract.md) and the [general handoff guide](handoff.md). Your role is to consolidate what was edited in Claude Design without losing other teams' work.
+Lee [CLAUDE.md](../CLAUDE.md), el [contrato](data-contract.md) y la [guía general de handoff](handoff.md). Tu papel es consolidar lo editado en Claude Design sin perder el trabajo de otros equipos.
 
-## At the start of a session
-Check that your copy is current before working, and say so if it is not:
-1. `git fetch` and `git status -sb`: report whether the remote has commits you do not have, or you have commits it does not.
-2. If `dsbook.json` names a source repository, check whether the framework there is newer. With a local clone of it, `npm run framework -- --compare <folder>` does it; otherwise read its `dsbook.json` on GitHub. The Framework page of the container offers both checks by hand.
-3. Never pull, merge or port on your own: report what you found and let the responsible person decide.
+## Al empezar una sesión
+Sigues el [ciclo de trabajo](handoff.md#el-ciclo-de-trabajo). Antes de nada comprueba tus accesos: git en el repo local y la conexión MCP al proyecto de Claude Design (su dirección está en la sección "Conexiones del proyecto" de `CLAUDE.md`). Si falta alguno, detente, di cuál falta y pídelo a la persona responsable. Después comprueba que tu copia está al día antes de trabajar, y avisa si no lo está:
+1. `git fetch` y `git status -sb`: indica si el remoto tiene commits que no tienes, o si tú tienes commits que él no tiene.
+2. Si `dsbook.json` nombra un repositorio de origen, comprueba si el framework de allí es más nuevo. Con un clon local, `npm run framework -- --compare <carpeta>` lo hace; si no, lee su `dsbook.json` en GitHub. La página Framework del contenedor ofrece ambas comprobaciones a mano.
+3. No hagas pull, merge ni port por tu cuenta: informa de lo que encuentres y deja que decida la persona responsable.
 
-## Integration
-1. Inspect the branch, `git status` and existing differences. Do not overwrite unrelated changes or clean the tree automatically.
-2. Read the current guide and project. Compare the received files with the repository by section ID, not only by title.
-3. For each page, use `suggestedPath` or an explicitly agreed exception. Check its `ds-section-id` meta. Keep resources inside the repo and fix relative links.
-4. Integrate `project.json` field by field in the affected sections. A complete `project.json` received must not overwrite statuses, notes or reviews of sections that another team modified. If there is not enough common base to resolve a difference, point out the specific conflict before choosing.
-5. Review the status against the content and evidence. Use I if issues remain. Do not produce R just because a file exists, and do not invent a design review. Do not mark N without a recorded decision.
-6. Run `npm run check` and `npm test`. Serve the folder and perform the applicable manual checks from `quality.md`. Record the testing limitations you actually encountered.
-7. Review `git diff --check` and `git diff`. Avoid temporary files, duplicate exports, secrets, caches or accidentally vendored dependencies.
-8. Summarize changes, verifications and pending items. Create commits and push to the remote only according to the team's current instructions. Do not force-push, deploy or merge by inference.
+## Integración
+1. Inspecciona la rama, `git status` y las diferencias existentes. No sobrescribas cambios ajenos ni limpies el árbol automáticamente.
+2. Lee la guía y el proyecto actuales. Compara los archivos recibidos con el repositorio por ID de sección, no solo por título.
+3. Para cada página, usa `suggestedPath` o una excepción acordada explícitamente. Comprueba su meta `ds-section-id`. Mantén los recursos dentro del repo y corrige los enlaces relativos.
+4. Integra `project.json` campo a campo en las secciones afectadas. Un `project.json` completo recibido no debe sobrescribir estados, notes ni reviews de secciones que otro equipo modificó. Si no hay base común suficiente para resolver una diferencia, señala el conflicto concreto antes de elegir.
+5. Revisa el estado frente al contenido y la evidencia. Usa I si quedan problemas. No produzcas R solo porque exista un archivo, y no inventes una design review. No marques N sin una decisión registrada.
+6. Ejecuta `npm run check` y `npm test`. Sirve la carpeta y haz las comprobaciones manuales aplicables de `quality.md`. Registra las limitaciones de prueba que realmente encontraste.
+7. Revisa `git diff --check` y `git diff`. Evita archivos temporales, exportaciones duplicadas, secretos, cachés o dependencias vendorizadas por accidente.
+8. Resume cambios, verificaciones y pendientes. Crea commits y haz push al remoto solo según las instrucciones vigentes del equipo. No hagas force-push, deploy ni merge por inferencia.
 
-## Transfer from Claude Design
-Flow: GitHub is the source of truth → Claude Design records its base and works → you bring the changes to the local repo → local validation → push. Guarantees:
-1. **Copy scope.** Copy only `sections/`, `assets/<category>/<subsection>/`, the affected entries of `data/project.json` and `data/guide.json`, and the runtime of `.dc.html` pages (`assets/_runtime/` and the `support.js` files). Do not copy `_ds/`, `github.md`, `uploads/` or auxiliary files.
-2. **The listing may hide files.** The connector filters by type. For every file that a page links or that `package.json`, `CLAUDE.md` or the contract names, read it by path and compare its content before treating it as absent.
-3. **Integration by ID.** If the repo advanced since Claude Design's base, merge `project.json` and `guide.json` entry by entry. If two sides changed the same entry, do not choose: point out the specific conflict to the responsible person. No complete copy wins for being more recent.
-4. **Validation.** `npm run check`, `npm test` and visual review by a person (in the container served over HTTP and with the page opened separately). Look at the whole page, not just the header.
-5. **Closing the cycle.** After pushing, add an entry to `CHANGELOG.md` (version, date, commit, section IDs and one line) and notify Claude Design of the new base. Each entry cites the commit with the changes; it is recorded in a later commit.
-6. If Claude Design modified something outside its scope, do not integrate it without asking. If it made a legitimate minor change inside a page (a style fix, for example), compare it with the repo and record it.
+## Transferencia desde Claude Design
+Flujo: GitHub es la fuente de verdad → Claude Design registra su base y trabaja → tú traes los cambios al repo local → validación local → push. Garantías:
+1. **Alcance de la copia.** Copia solo `sections/`, `assets/<category>/<subsection>/`, las entradas afectadas de `data/project.json` y `data/guide.json`, y el runtime de las páginas `.dc.html` (`assets/_runtime/` y los `support.js`). No copies `_ds/`, `github.md`, `uploads/` ni archivos auxiliares.
+2. **El listado puede ocultar archivos.** El conector filtra por tipo. Para cada archivo que enlaza una página o que nombran `package.json`, `CLAUDE.md` o el contrato, léelo por su ruta y compara su contenido antes de darlo por ausente.
+3. **Integración por ID.** Si el repo avanzó desde la base de Claude Design, integra `project.json` y `guide.json` entrada por entrada. Si los dos lados cambiaron la misma entrada, no elijas: señala el conflicto concreto a la persona responsable. Ninguna copia completa gana por ser más reciente.
+4. **Validación.** `npm run check`, `npm test` y revisión visual por una persona (en el contenedor servido por HTTP y con la página abierta aparte). Mira la página entera, no solo la cabecera.
+5. **Cierre del ciclo.** Tras el push, añade una entrada a `CHANGELOG.md` (versión, fecha, commit, IDs de sección y una línea) y entrega el [aviso a Claude Design](handoff.md#el-aviso-a-claude-design): `npm run handoff-note` antes del commit (genera `handoff-last.md`) y, tras el push, el prompt con el hash publicado. Cada entrada cita el commit con los cambios; se registra en un commit posterior.
+6. Si Claude Design modificó algo fuera de su alcance, no lo integres sin preguntar. Si hizo un cambio menor legítimo dentro de una página (por ejemplo, una corrección de estilo), compáralo con el repo y regístralo.
 
-## Not applicable sections and tasks
-A task added to an N section is a reopening. Check first that it belongs there; if not, it goes to the right section or to the project `record`. If it does belong, set the section to P, move the previous exclusion reason into `notes` with the date and tell the responsible person. `check` fails while an N section has tasks. Do not reopen when unsure: ask.
+## Secciones Not applicable y tasks
+Una task añadida a una sección N es una reapertura. Comprueba primero que pertenece ahí; si no, va a la sección correcta o al `record` del proyecto. Si sí pertenece, pasa la sección a P, mueve el motivo de exclusión anterior a `notes` con la fecha e informa a la persona responsable. `check` falla mientras una sección N tenga tasks. No reabras si dudas: pregunta.
 
-## Catalog changes
-`guide.json` is the project's catalog and belongs to the project: its text and its subsections can change. Claude Design can add categories and subsections and edit guide text; you integrate those changes by ID and `check` validates them against the [catalog rules](data-contract.md#catalog-rules). Ask before integrating anything that changes or deletes an existing ID, renames a folder or removes a subsection; those need an explicit order from the responsible person and a note in `CHANGELOG.md`. If you split a component family, keep traceability and avoid counting the same work twice.
+## Cambios de catálogo
+`guide.json` es el catálogo del proyecto y le pertenece: su texto y sus subsecciones pueden cambiar. Claude Design puede añadir categorías y subsecciones y editar el texto de la guía; tú integras esos cambios por ID y `check` los valida con las [reglas del catálogo](data-contract.md#reglas-del-catálogo). Pregunta antes de integrar cualquier cosa que cambie o elimine un ID existente, renombre una carpeta o retire una subsección; eso necesita una orden explícita de la persona responsable y una nota en `CHANGELOG.md`. Si divides una familia de componentes, conserva la trazabilidad y evita contar dos veces el mismo trabajo.
 
-## New projects
-Start from a copy of the repository without the previous project's pages and resources, and run `npm run init -- --id <id> --name "<name>"`. It copies `seed/` to `data/`, sets the identity and refuses to overwrite a project that already has its own. A copy of an already developed DS needs all its specific content, reviews and evidence removed from `sections/` and `assets/`; changing the name is not enough.
+## Proyectos nuevos
+Parte de una copia del repositorio sin las páginas ni los recursos del proyecto anterior, y ejecuta `npm run init -- --id <id> --name "<name>"`. Copia `seed/` a `data/`, fija la identidad y se niega a sobrescribir un proyecto que ya tiene el suyo. Una copia de un DS ya desarrollado necesita que se elimine de `sections/` y `assets/` todo su contenido específico, reviews y evidencia; cambiar el nombre no basta.

@@ -1,23 +1,23 @@
-# Review criteria
+# Criterios de review
 
-## Ready for a section
-- Purpose, decisions, rules, examples and the relationship with design/code are concrete.
-- The applicable accessibility is checked in that section and the evidence is recorded.
-- There are typical examples and edge cases, and no hidden blocking work: blocking work keeps the section in I. Non-blocking work lives in the section's `tasks` and does not prevent R (for example, a dark theme that is out of scope for now).
-- It is identified who reviewed, when and which criteria/results support R.
-- The necessary links and resources work. If the development lives outside the repo, the team has verified access.
+## Ready para una sección
+- El propósito, las decisiones, las reglas, los ejemplos y la relación con diseño/código son concretos.
+- La accesibilidad aplicable se comprueba en esa sección y la evidencia queda registrada.
+- Hay ejemplos típicos y casos límite, y ningún trabajo bloqueante oculto: el trabajo bloqueante mantiene la sección en I. El trabajo no bloqueante vive en las `tasks` de la sección y no impide R (por ejemplo, un tema oscuro que queda fuera de alcance por ahora).
+- Se identifica quién revisó, cuándo y qué criterios/resultados respaldan R.
+- Los enlaces y recursos necesarios funcionan. Si el desarrollo vive fuera del repo, el equipo ha verificado el acceso.
 
-## Available technical checks
-`npm run check` and `npm test`. What each one verifies, when to run them and how to read their errors is in [scripts.md](scripts.md). In short: guide/project contract, a single page per section, I and R with a page, identity meta, local references, the vendored runtime of `.dc.html` pages and the logic of `model.js`. They do not download external content or test the browser.
+## Comprobaciones técnicas disponibles
+`npm run check` y `npm test`. Qué verifica cada una, cuándo ejecutarlas y cómo leer sus errores está en [scripts.md](scripts.md). En resumen: contrato guía/proyecto, una sola página por sección, I y R con página, meta de identidad, referencias locales, el runtime vendorizado de las páginas `.dc.html` y la lógica de `model.js`. No descargan contenido externo ni prueban el navegador.
 
-## Manual review of the application
-1. Load over HTTP and operate with the keyboard. Rail: open the status and sections panels with hover, click and Escape; hover a category and check that all its subsections open in a submenu that stays open while the pointer moves into it; choose a subsection and check that the panel closes, the focus moves to the main area, the current item is marked (`aria-current`) and the browser's back button returns to the previous view. At mobile width, check the inline chevrons instead of the hover cascade.
-2. Combine R/I/P/N and search; check empty results on the home page and in a category, and that the menu follows the filters.
-3. Open a subsection with a page, one without a page and a wrong address. With a page in I or R it opens on Content; otherwise on Info. Check the three views and the header (breadcrumb links and status on the left; on the right the view tabs, the magnifier that unfolds the search field and previous/next, with separators). Content with no page must say "No page yet". The home page has the same three views: Content (the summary), Info (empty by design for now) and Record (the project record and the tasks of every section, never filtered). Walk through the **whole** page inside the container, not just its top, and compare it with opening it separately. Check that the header does not take too much height at mobile width.
-4. Check mobile/desktop widths, zoom, long texts and focus order.
-5. Review labels and announcements with a screen reader, contrast and the project's accessibility criteria.
+## Review manual de la aplicación
+1. Carga por HTTP y opera con el teclado. Rail: abre los paneles de estado y de secciones con hover, clic y Escape; pasa el puntero por una categoría y comprueba que todas sus subsecciones se abren en un submenú que sigue abierto mientras el puntero entra en él; elige una subsección y comprueba que el panel se cierra, el foco pasa al área principal, el elemento actual está marcado (`aria-current`) y el botón Atrás del navegador vuelve a la vista anterior. En ancho móvil, comprueba los chevrons en línea en lugar de la cascada por hover.
+2. Combina R/I/P/N y la búsqueda; comprueba los resultados vacíos en la home y en una categoría, y que el menú sigue los filtros.
+3. Abre una subsección con página, una sin página y una dirección errónea. Con página en I o R abre en Content; si no, en Info. Comprueba las tres vistas y la cabecera (enlaces del breadcrumb y estado a la izquierda; a la derecha las pestañas de vista, la lupa que despliega el campo de búsqueda y anterior/siguiente, con separadores). Content sin página debe decir "Aún no hay página". La home tiene las mismas tres vistas: Content (el resumen), Info (vacía a propósito por ahora) y Record (el project record y las tasks de todas las secciones, nunca filtradas). Recorre la página **entera** dentro del contenedor, no solo su parte superior, y compárala con abrirla aparte. Comprueba que la cabecera no ocupa demasiada altura en ancho móvil.
+4. Comprueba los anchos móvil/escritorio, el zoom, los textos largos y el orden del foco.
+5. Revisa etiquetas y anuncios con un lector de pantalla, el contraste y los criterios de accesibilidad del proyecto.
 
-The original methodological guide proposes [WCAG](https://www.w3.org/TR/WCAG22/), [APG](https://www.w3.org/WAI/ARIA/apg/) and [DTCG](https://www.designtokens.org/tr/2025.10/format/) as references. Review their applicability when defining each project. The template does not claim certified conformance.
+La guía metodológica original propone [WCAG](https://www.w3.org/TR/WCAG22/), [APG](https://www.w3.org/WAI/ARIA/apg/) y [DTCG](https://www.designtokens.org/tr/2025.10/format/) como referencias. Revisa su aplicabilidad al definir cada proyecto. La plantilla no afirma una conformidad certificada.
 
-## Scope of the checks
-The automated checks validate structure, contract and logic. Visual and functional review in the browser, accessibility and the content of each page are manual and belong to a person; no automated check equals a review. Moving to R requires that recorded review.
+## Alcance de las comprobaciones
+Las comprobaciones automáticas validan estructura, contrato y lógica. La review visual y funcional en el navegador, la accesibilidad y el contenido de cada página son manuales y corresponden a una persona; ninguna comprobación automática equivale a una review. Pasar a R exige esa review registrada.

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,16 +22,16 @@ a:hover{color:#5a5a5a}
 
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Color</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">One brand color, four level colors with solid fill and white text, and neutrals in the brand hue.</p>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Un color de marca, cuatro colores de nivel con relleno sólido y texto blanco, y neutros en el matiz de marca.</p>
 </header>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Fills with white text</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Rellenos con texto blanco</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px">
 <sc-for list="{{ fichas }}" as="r" hint-placeholder-count="5">
 <div style="background:{{ r.base }};color:#ffffff;padding:14px;min-height:110px;display:flex;flex-direction:column;justify-content:space-between;gap:8px">
 <span style="font-size:15px;font-weight:700">{{ r.nombre }}</span>
-<span style="font-size:12px;line-height:1.4">{{ r.shape }} <sc-if value="{{ r.hasLabel }}" hint-placeholder-val="{{ true }}"><span lang="es">«{{ r.label }}»</span></sc-if></span>
+<span style="font-size:12px;line-height:1.4">{{ r.shape }} <sc-if value="{{ r.hasLabel }}" hint-placeholder-val="{{ true }}"><span>«{{ r.label }}»</span></sc-if></span>
 <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">{{ r.paso }} · {{ r.base }}</span>
 </div>
 </sc-for>
@@ -39,8 +39,8 @@ a:hover{color:#5a5a5a}
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Primitives</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#5a5a5a">Brand and neutrals built in OKLCH (hue 225°). Level families only have the steps in use. Last line: equivalence with <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">--imoles-*</span>.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Primitivos</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#5a5a5a">Marca y neutros construidos en OKLCH (matiz 225°). Las familias de nivel solo tienen los pasos en uso. Última línea: equivalencia con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">--imoles-*</span>.</p>
 <sc-for list="{{ paletas }}" as="p" hint-placeholder-count="6">
 <div style="display:flex;flex-direction:column;gap:8px">
 <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline">
@@ -62,33 +62,33 @@ a:hover{color:#5a5a5a}
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">From token to component</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">How a color reaches a component style: the value (primitive) is assigned to a function (semantic), and the function is applied to a component property.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">De token a componente</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Cómo llega un color al estilo de un componente: el valor (primitivo) se asigna a una función (semántico) y la función se aplica a una propiedad del componente.</p>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px">
 <div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
-<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Primitive</span><div style="height:36px;background:#00698C"></div>
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Primitivo</span><div style="height:36px;background:#00698C"></div>
 <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">brand.600</span></div>
 <span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
 <div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
-<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Semantic</span><div style="height:36px;background:#00698C;display:flex;align-items:center;padding:0 10px;color:#ffffff;font-size:12px">primary action</div>
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Semántico</span><div style="height:36px;background:#00698C;display:flex;align-items:center;padding:0 10px;color:#ffffff;font-size:12px">acción primaria</div>
 <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">action.primary</span></div>
 <span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
 <div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
-<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Component</span><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span lang="es">Hacer la foto</span></div>
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Componente</span><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span>Hacer la foto</span></div>
 <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">button.primary.bg</span></div>
 </div>
-<p style="margin:0;font-size:14px">Components use semantic roles. Never primitives or hex values.</p>
+<p style="margin:0;font-size:14px">Los componentes usan roles semánticos. Nunca primitivos ni valores hex.</p>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Semantic roles</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Roles semánticos</h2>
 <div style="overflow-x:auto">
-<div role="table" aria-label="Semantic roles" style="min-width:600px;font-size:14px">
+<div role="table" aria-label="Roles semánticos" style="min-width:600px;font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:32px 1.4fr 1fr 1.8fr">
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Swatch</span></div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Role</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primitive</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Use</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Muestra</span></div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Rol</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primitivo</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Uso</div>
 </div>
 <div role="rowgroup">
 <sc-for list="{{ roles }}" as="r" hint-placeholder-count="27">
@@ -105,34 +105,34 @@ a:hover{color:#5a5a5a}
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Brand usage</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Uso de la marca</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px"><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span lang="es">Hacer la foto</span></div></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.600</span> · button, navigation, icon</span></div>
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span>Hacer la foto</span></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.600</span> · botón, navegación, icono</span></div>
 <div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#005471"><span lang="es">Ver el análisis ›</span></span></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.700</span> · text and link</span></div>
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#005471"><span>Ver el análisis ›</span></span></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.700</span> · texto y enlace</span></div>
 <div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
 <div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:0"><div style="width:36px;height:36px;background:#81D1F0"></div><div style="width:36px;height:36px;background:#42B3DB"></div><div style="width:36px;height:36px;background:#00698C"></div></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.300 · 400</span> · logo and corporate imagery only</span></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.300 · 400</span> · solo logotipo e imagen corporativa</span></div></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px"><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">Don’t</span>
-<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="display:flex;align-items:center;gap:6px;background:#00698C;color:#ffffff;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0.01 0Z"></path></svg><span lang="es">Riesgo bajo</span></div></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">The brand color does not indicate a risk level.</span>
+<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No hacer</span>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="display:flex;align-items:center;gap:6px;background:#00698C;color:#ffffff;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0.01 0Z"></path></svg><span>Riesgo bajo</span></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">El color de marca no indica un nivel de riesgo.</span>
 </div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">Don’t</span>
-<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><span style="font-size:14px;color:#00698C">Text in brand.600</span></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">Brand text in 600: 4.47:1 on bg.page.</span>
+<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No hacer</span>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><span style="font-size:14px;color:#00698C">Texto en brand.600</span></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">Texto de marca en 600: 4.47:1 sobre bg.page.</span>
 </div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">Don’t</span>
-<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="height:40px;padding:0 16px;border-radius:12px;background:#42B3DB;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span lang="es">Hacer la foto</span></div></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">300 and 400 never in the UI.</span>
+<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No hacer</span>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="height:40px;padding:0 16px;border-radius:12px;background:#42B3DB;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span>Hacer la foto</span></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">300 y 400 nunca en la interfaz.</span>
 </div></div>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Risk levels</h2>
-<p style="margin:0;font-size:14px">Same treatment for all four levels: fill with white text, and tint with dark text from its family.</p>
+<p style="margin:0;font-size:14px">Mismo tratamiento para los cuatro niveles: relleno con texto blanco y tinte con texto oscuro de su familia.</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
 <sc-for list="{{ riesgos }}" as="n" hint-placeholder-count="4">
@@ -140,10 +140,10 @@ a:hover{color:#5a5a5a}
 <div style="background:{{ n.tinte }};padding:16px;display:flex;flex-direction:column;gap:10px">
 <div style="display:flex;align-items:center;gap:8px;align-self:flex-start;background:{{ n.fill }};color:#ffffff;padding:4px 10px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="{{ n.forma }}"></path></svg>
-<span lang="es">{{ n.etiqueta }}</span>
+<span>{{ n.etiqueta }}</span>
 </div>
-<p style="margin:0;font-size:14px;font-weight:600;color:{{ n.ink }}">Text on tint</p>
-<p style="margin:0;font-size:14px;color:{{ n.texto }}">Paragraph on tint</p>
+<p style="margin:0;font-size:14px;font-weight:600;color:{{ n.ink }}">Texto sobre tinte</p>
+<p style="margin:0;font-size:14px;color:{{ n.texto }}">Párrafo sobre tinte</p>
 </div>
 <div style="padding:12px 16px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#3d3d3d">{{ n.roles }}</div>
 </div>
@@ -153,8 +153,8 @@ a:hover{color:#5a5a5a}
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Interaction values</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles defines no interaction states; these values, derived from the scales, were approved by the owner on 2026-10-10. Fills: hover one intermediate step (650), pressed 700. Surfaces (card, row, option): neutral.25 and neutral.100. On touch, pressed is the main feedback; hover only applies with a pointer.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Valores de interacción</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles no define estados de interacción; estos valores, derivados de las escalas, fueron aprobados por el owner el 2026-10-10. Rellenos: hover un paso intermedio (650), pressed 700. Superficies (tarjeta, fila, opción): neutral.25 y neutral.100. En táctil, pressed es el feedback principal; hover solo se aplica con puntero.</p>
 <div style="display:flex;flex-direction:column;gap:14px">
 <sc-for list="{{ interaccion }}" as="c" hint-placeholder-count="7">
 <div style="display:flex;flex-direction:column;gap:8px">
@@ -162,7 +162,7 @@ a:hover{color:#5a5a5a}
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px">
 <sc-for list="{{ c.estados }}" as="s" hint-placeholder-count="5">
 <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
-<div style="min-height:{{ c.alto }};box-sizing:border-box;padding:{{ c.pad }};align-self:{{ c.alinear }};border-radius:{{ c.radio }};background:{{ s.bg }};color:{{ s.fg }};border:{{ s.borde }};outline:{{ s.outline }};outline-offset:2px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.03em"><span lang="es">{{ c.texto }}</span></div>
+<div style="min-height:{{ c.alto }};box-sizing:border-box;padding:{{ c.pad }};align-self:{{ c.alinear }};border-radius:{{ c.radio }};background:{{ s.bg }};color:{{ s.fg }};border:{{ s.borde }};outline:{{ s.outline }};outline-offset:2px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.03em"><span>{{ c.texto }}</span></div>
 <span style="font-size:12px;font-weight:600">{{ s.estado }}</span>
 <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a">{{ s.token }}</span>
 </div>
@@ -172,28 +172,28 @@ a:hover{color:#5a5a5a}
 </sc-for>
 </div>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
-<li>Visible focus: 2 px ring in <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">focus.ring</span>, 2 px away from the element. 5.75:1 on bg.page (WCAG 1.4.11 and 2.4.7). Same in every component, also on color fills.</li>
-<li>Disabled: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.bg</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.text</span> (3.97:1). Exempt from contrast, but kept legible. No shadow.</li>
-<li>Loading: keeps the role color and adds an indicator in <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.inverse</span>; it does not switch to disabled.</li>
-<li>Selected: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">selection.*</span>; the 2 px border and the text accompany the color.</li>
-<li>Modal scrim: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">neutral.950</span> at 48% under menus and sheets.</li>
-<li>Link: the focus ring hugs the text (6 px side margin, 2 px radius) so it is not mistaken for a button. The touch area can grow to 44 px without changing the visible ring.</li>
-<li>Level badges and chips are not interactive: they have no states.</li>
+<li>Focus visible: anillo de 2 px en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">focus.ring</span>, a 2 px del elemento. 5.75:1 sobre bg.page (WCAG 1.4.11 y 2.4.7). Igual en todos los componentes, también sobre rellenos de color.</li>
+<li>Disabled: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.bg</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.text</span> (3.97:1). Exento de contraste, pero se mantiene legible. Sin sombra.</li>
+<li>Loading: conserva el color del rol y añade un indicador en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.inverse</span>; no pasa a disabled.</li>
+<li>Selected: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">selection.*</span>; el borde de 2 px y el texto acompañan al color.</li>
+<li>Scrim modal: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">neutral.950</span> al 48% bajo menús y hojas.</li>
+<li>Enlace: el anillo de focus se ajusta al texto (6 px de margen lateral, radio de 2 px) para que no se confunda con un botón. El área táctil puede crecer hasta 44 px sin cambiar el anillo visible.</li>
+<li>Los badges y chips de nivel no son interactivos: no tienen estados.</li>
 </ul>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · validate on device the difference between default and pressed.</p>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · validar en dispositivo la diferencia entre default y pressed.</p>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Validation · contrast</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">WCAG 2.2: text 4.5:1 (1.4.3); icons, control borders and focus 3:1 (1.4.11). Ratios calculated with WCAG relative luminance from the hex values. <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.disabled</span> is exempt.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Validación · contraste</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">WCAG 2.2: texto 4.5:1 (1.4.3); iconos, bordes de controles y focus 3:1 (1.4.11). Ratios calculados con la luminancia relativa de WCAG a partir de los valores hex. <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.disabled</span> está exento.</p>
 <div style="overflow-x:auto">
-<div role="table" aria-label="Contrast of role pairs" style="min-width:620px;font-size:14px">
+<div role="table" aria-label="Contraste de las parejas de roles" style="min-width:620px;font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pair</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Foreground / background</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Minimum</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pareja</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Primer plano / fondo</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Mínimo</div>
 <div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Ratio</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Result</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Resultado</div>
 </div>
 <div role="rowgroup">
 <sc-for list="{{ contrastes }}" as="c" hint-placeholder-count="32">
@@ -208,21 +208,21 @@ a:hover{color:#5a5a5a}
 </div>
 </div>
 </div>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · on-device test.</p>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · prueba en dispositivo.</p>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Validation · color vision</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Perceptual difference ΔE in OKLab (×100) between the five fills, in normal vision and simulating deuteranopia, protanopia and tritanopia (Machado 2009, severity 1) and achromatopsia (luminance only). WCAG sets no minimum between colors; it requires that color is not the only cue (1.4.1). Practical target: 8 or more. Below it, the badge shape and text guarantee the distinction.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Validación · visión del color</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Diferencia perceptual ΔE en OKLab (×100) entre los cinco rellenos, en visión normal y simulando deuteranopía, protanopía y tritanopía (Machado 2009, severidad 1) y acromatopsia (solo luminancia). WCAG no fija un mínimo entre colores; exige que el color no sea la única señal (1.4.1). Objetivo práctico: 8 o más. Por debajo, la forma del badge y el texto garantizan la distinción.</p>
 <div style="overflow-x:auto">
-<div role="table" aria-label="Perceptual difference between fills by vision type" style="min-width:640px;font-size:14px">
+<div role="table" aria-label="Diferencia perceptual entre rellenos según el tipo de visión" style="min-width:640px;font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pair</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Pareja</div>
 <div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Normal</div>
 <div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Deuter.</div>
 <div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Protan.</div>
 <div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Tritan.</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Achromat.</div>
+<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;text-align:right">Acromat.</div>
 </div>
 <div role="rowgroup">
 <sc-for list="{{ matriz }}" as="m" hint-placeholder-count="10">
@@ -238,8 +238,8 @@ a:hover{color:#5a5a5a}
 </div>
 </div>
 </div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Bold: values below 8. With achromatopsia the five fills have similar lightness because all carry white text at 4.5:1; only shape and text tell them apart.</p>
-<h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Sheet per color</h3>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Negrita: valores por debajo de 8. Con acromatopsia los cinco rellenos tienen una luminosidad similar porque todos llevan texto blanco a 4.5:1; solo la forma y el texto los distinguen.</p>
+<h3 style="margin:8px 0 0;font-size:17px;font-weight:600">Ficha por color</h3>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px">
 <sc-for list="{{ fichas }}" as="f" hint-placeholder-count="5">
 <div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
@@ -251,11 +251,11 @@ a:hover{color:#5a5a5a}
 </div>
 </div>
 <div style="padding:12px 16px;display:flex;flex-direction:column;gap:2px;font-size:13px">
-<span style="font-weight:600">Contrast</span>
-<span>White on fill · {{ f.blanco }}</span>
-<span>700 text on tint · {{ f.texto }}</span>
-<span>Fill as icon on white · {{ f.icono }}</span>
-<span style="font-weight:600;margin-top:8px">Nearest neighbor by vision</span>
+<span style="font-weight:600">Contraste</span>
+<span>Blanco sobre relleno · {{ f.blanco }}</span>
+<span>Texto 700 sobre tinte · {{ f.texto }}</span>
+<span>Relleno como icono sobre blanco · {{ f.icono }}</span>
+<span style="font-weight:600;margin-top:8px">Vecino más cercano según la visión</span>
 <sc-for list="{{ f.vecinos }}" as="v" hint-placeholder-count="5">
 <div style="display:grid;grid-template-columns:1fr 1.2fr 0.9fr;gap:8px">
 <span style="color:#3d3d3d">{{ v.vision }}</span>
@@ -263,32 +263,32 @@ a:hover{color:#5a5a5a}
 <span style="font-weight:{{ v.peso }}">{{ v.estado }}</span>
 </div>
 </sc-for>
-<span style="font-weight:600;margin-top:8px">Complementary cue</span>
-<span>{{ f.shape }} <sc-if value="{{ f.hasLabel }}" hint-placeholder-val="{{ true }}"><span lang="es">«{{ f.label }}»</span></sc-if></span>
+<span style="font-weight:600;margin-top:8px">Señal complementaria</span>
+<span>{{ f.shape }} <sc-if value="{{ f.hasLabel }}" hint-placeholder-val="{{ true }}"><span>«{{ f.label }}»</span></sc-if></span>
 </div>
 </div>
 </sc-for>
 </div>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · test with users or with an on-device color-vision simulation tool.</p>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · probar con usuarios o con una herramienta de simulación de visión del color en dispositivo.</p>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Corrections for iMoles</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#5a5a5a">Changes the prototype needs to apply this palette. None is applied.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Correcciones para iMoles</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#5a5a5a">Cambios que el prototipo necesita para aplicar esta paleta. Ninguno está aplicado.</p>
 <ol style="margin:0;padding-left:24px;max-width:72ch;display:flex;flex-direction:column;gap:10px">
 <sc-for list="{{ propuestas }}" as="q" hint-placeholder-count="9">
 <li style="display:flex;flex-direction:column;gap:2px">
 <span style="font-weight:600">{{ q.titulo }}</span>
 <span style="font-size:14px;color:#3d3d3d">{{ q.problema }}</span>
-<span style="font-size:14px">Proposal · {{ q.propuesta }}</span>
+<span style="font-size:14px">Propuesta · {{ q.propuesta }}</span>
 </li>
 </sc-for>
 </ol>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Token format</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Decision for the future implementation of the design system, outside this repository: no token file is generated here. W3C Design Tokens Community Group (DTCG) format: JSON with <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$value</span> and <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$type</span>; semantic tokens reference primitives with braces.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Formato de tokens</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Decisión para la futura implementación del design system, fuera de este repositorio: aquí no se genera ningún archivo de tokens. Formato W3C Design Tokens Community Group (DTCG): JSON con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$value</span> and <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$type</span>; los tokens semánticos referencian a los primitivos con llaves.</p>
 <pre style="margin:0;padding:16px;background:#f6f6f6;border:1px solid #d4d4d4;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5">{
   "color": {
     "brand": { "600": { "$type": "color", "$value": "#00698C" } },
@@ -308,7 +308,7 @@ class Component extends DCLogic {
  "paletas": [
   {
    "nombre": "Brand",
-   "nota": "Hue 225° · brand color = 600",
+   "nota": "Matiz 225° · color de marca = 600",
    "pasos": [
     {
      "paso": "brand.900",
@@ -323,17 +323,17 @@ class Component extends DCLogic {
     {
      "paso": "brand.700",
      "hex": "#005471",
-     "token": "replaces --imoles-teal-dark"
+     "token": "sustituye a --imoles-teal-dark"
     },
     {
      "paso": "brand.650",
      "hex": "#005D80",
-     "token": "new · hover"
+     "token": "nuevo · hover"
     },
     {
      "paso": "brand.600",
      "hex": "#00698C",
-     "token": "replaces --imoles-teal"
+     "token": "sustituye a --imoles-teal"
     },
     {
      "paso": "brand.500",
@@ -343,12 +343,12 @@ class Component extends DCLogic {
     {
      "paso": "brand.400",
      "hex": "#42B3DB",
-     "token": "expressive"
+     "token": "expresivo"
     },
     {
      "paso": "brand.300",
      "hex": "#81D1F0",
-     "token": "expressive"
+     "token": "expresivo"
     },
     {
      "paso": "brand.200",
@@ -358,7 +358,7 @@ class Component extends DCLogic {
     {
      "paso": "brand.100",
      "hex": "#DAF3FE",
-     "token": "replaces --imoles-teal-tint"
+     "token": "sustituye a --imoles-teal-tint"
     },
     {
      "paso": "brand.50",
@@ -369,7 +369,7 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Neutral",
-   "nota": "Brand hue · same lightness as the iMoles neutrals",
+   "nota": "Matiz de marca · misma luminosidad que los neutros de iMoles",
    "pasos": [
     {
      "paso": "neutral.950",
@@ -394,7 +394,7 @@ class Component extends DCLogic {
     {
      "paso": "neutral.400",
      "hex": "#7B9099",
-     "token": "new"
+     "token": "nuevo"
     },
     {
      "paso": "neutral.300",
@@ -435,7 +435,7 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Crimson",
-   "nota": "High risk · error",
+   "nota": "Riesgo alto · error",
    "pasos": [
     {
      "paso": "crimson.900",
@@ -450,7 +450,7 @@ class Component extends DCLogic {
     {
      "paso": "crimson.650",
      "hex": "#CC003E",
-     "token": "new · hover"
+     "token": "nuevo · hover"
     },
     {
      "paso": "crimson.600",
@@ -471,69 +471,69 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Amber",
-   "nota": "Intermediate risk · warning",
+   "nota": "Riesgo intermedio · warning",
    "pasos": [
     {
      "paso": "amber.900",
      "hex": "#57450C",
-     "token": "replaces --imoles-riesgo-intermedio-text"
+     "token": "sustituye a --imoles-riesgo-intermedio-text"
     },
     {
      "paso": "amber.700",
      "hex": "#705700",
-     "token": "replaces --imoles-riesgo-intermedio-ink"
+     "token": "sustituye a --imoles-riesgo-intermedio-ink"
     },
     {
      "paso": "amber.600",
      "hex": "#8D6F00",
-     "token": "replaces --imoles-riesgo-intermedio and --imoles-accion-intermedio"
+     "token": "sustituye a --imoles-riesgo-intermedio y --imoles-accion-intermedio"
     },
     {
      "paso": "amber.100",
      "hex": "#FAF0D2",
-     "token": "replaces --imoles-riesgo-intermedio-tint"
+     "token": "sustituye a --imoles-riesgo-intermedio-tint"
     }
    ]
   },
   {
    "nombre": "Teal",
-   "nota": "Low risk",
+   "nota": "Riesgo bajo",
    "pasos": [
     {
      "paso": "teal.700",
      "hex": "#0B6459",
-     "token": "replaces --imoles-riesgo-bajo-ink"
+     "token": "sustituye a --imoles-riesgo-bajo-ink"
     },
     {
      "paso": "teal.600",
      "hex": "#168072",
-     "token": "replaces --imoles-riesgo-bajo"
+     "token": "sustituye a --imoles-riesgo-bajo"
     },
     {
      "paso": "teal.100",
      "hex": "#E1F3EE",
-     "token": "replaces --imoles-riesgo-bajo-tint"
+     "token": "sustituye a --imoles-riesgo-bajo-tint"
     }
    ]
   },
   {
    "nombre": "Plum",
-   "nota": "Not assessable · technical failure",
+   "nota": "No evaluable · fallo técnico",
    "pasos": [
     {
      "paso": "plum.700",
      "hex": "#5E1F5A",
-     "token": "replaces --imoles-no-evaluable-ink and -text"
+     "token": "sustituye a --imoles-no-evaluable-ink y -text"
     },
     {
      "paso": "plum.600",
      "hex": "#6C2768",
-     "token": "replaces --imoles-no-evaluable"
+     "token": "sustituye a --imoles-no-evaluable"
     },
     {
      "paso": "plum.100",
      "hex": "#FAEAF8",
-     "token": "replaces --imoles-no-evaluable-tint"
+     "token": "sustituye a --imoles-no-evaluable-tint"
     }
    ]
   }
@@ -543,253 +543,253 @@ class Component extends DCLogic {
    "hex": "#132E38",
    "rol": "text.primary",
    "prim": "neutral.950",
-   "uso": "Headings and active text"
+   "uso": "Títulos y texto activo"
   },
   {
    "hex": "#3F565F",
    "rol": "text.body",
    "prim": "neutral.800",
-   "uso": "Paragraphs; neutral chip text"
+   "uso": "Párrafos; texto del chip neutro"
   },
   {
    "hex": "#5D747E",
    "rol": "text.secondary",
    "prim": "neutral.600",
-   "uso": "Metadata and captions"
+   "uso": "Metadatos y pies"
   },
   {
    "hex": "#A6B3B8",
    "rol": "text.disabled",
    "prim": "neutral.300",
-   "uso": "Disabled control text only · exempt from contrast"
+   "uso": "Solo texto de controles disabled · exento de contraste"
   },
   {
    "hex": "#FFFFFF",
    "rol": "text.inverse",
    "prim": "neutral.0",
-   "uso": "Text on brand and risk fills"
+   "uso": "Texto sobre rellenos de marca y de riesgo"
   },
   {
    "hex": "#6D8690",
    "rol": "icon.inactive",
    "prim": "neutral.500",
-   "uso": "Inactive icons · 3.85:1, not for text"
+   "uso": "Iconos inactivos · 3.85:1, no para texto"
   },
   {
    "hex": "#F0F8FC",
    "rol": "bg.page",
    "prim": "neutral.50",
-   "uso": "Screen background"
+   "uso": "Fondo de pantalla"
   },
   {
    "hex": "#FFFFFF",
    "rol": "bg.surface",
    "prim": "neutral.0",
-   "uso": "Cards and sheets"
+   "uso": "Tarjetas y hojas"
   },
   {
    "hex": "#F4FAFD",
    "rol": "bg.tint",
    "prim": "neutral.25",
-   "uso": "Supporting blocks"
+   "uso": "Bloques de apoyo"
   },
   {
    "hex": "#DCE9EE",
    "rol": "border.subtle",
    "prim": "neutral.150",
-   "uso": "Dividers and card outline"
+   "uso": "Separadores y contorno de tarjeta"
   },
   {
    "hex": "#C0DDEA",
    "rol": "border.strong",
    "prim": "neutral.200",
-   "uso": "Heavier outline, not informative"
+   "uso": "Contorno más marcado, no informativo"
   },
   {
    "hex": "#7B9099",
    "rol": "border.control",
    "prim": "neutral.400",
-   "uso": "Field and unselected option outline"
+   "uso": "Contorno de campos y de opciones sin seleccionar"
   },
   {
    "hex": "#00698C",
    "rol": "border.focus",
    "prim": "brand.600",
-   "uso": "Focused field"
+   "uso": "Campo con focus"
   },
   {
    "hex": "#EAF2F6",
    "rol": "chip.neutral.bg",
    "prim": "neutral.100",
-   "uso": "Chip: upcoming / pending / in progress"
+   "uso": "Chip: próximo / pendiente / en curso"
   },
   {
    "hex": "#00698C",
    "rol": "brand.primary",
    "prim": "brand.600",
-   "uso": "Brand, navigation, brand icons"
+   "uso": "Marca, navegación, iconos de marca"
   },
   {
    "hex": "#005471",
    "rol": "brand.text",
    "prim": "brand.700",
-   "uso": "Brand text and links"
+   "uso": "Texto y enlaces de marca"
   },
   {
    "hex": "#DAF3FE",
    "rol": "brand.tint",
    "prim": "brand.100",
-   "uso": "Soft brand background"
+   "uso": "Fondo suave de marca"
   },
   {
    "hex": "#42B3DB",
    "rol": "brand.expressive",
    "prim": "brand.300 / 400",
-   "uso": "Two-tone logo or corporate imagery; never UI"
+   "uso": "Logotipo bicolor o imagen corporativa; nunca en la interfaz"
   },
   {
    "hex": "#00698C",
    "rol": "action.primary",
    "prim": "brand.600",
-   "uso": "Primary button and actionable items"
+   "uso": "Botón primario y elementos accionables"
   },
   {
    "hex": "#DB2149",
    "rol": "action.alert",
    "prim": "crimson.600",
-   "uso": "Only booking an appointment for high risk"
+   "uso": "Solo para pedir cita con riesgo alto"
   },
   {
    "hex": "#DAF3FE",
    "rol": "selection.bg",
    "prim": "brand.100",
-   "uso": "Selected option"
+   "uso": "Opción seleccionada"
   },
   {
    "hex": "#00698C",
    "rol": "selection.border",
    "prim": "brand.600",
-   "uso": "Selected option"
+   "uso": "Opción seleccionada"
   },
   {
    "hex": "#005471",
    "rol": "selection.text",
    "prim": "brand.700",
-   "uso": "Selected option"
+   "uso": "Opción seleccionada"
   },
   {
    "hex": "#EAF2F6",
    "rol": "status.info.bg",
    "prim": "neutral.100",
-   "uso": "Informative notice"
+   "uso": "Aviso informativo"
   },
   {
    "hex": "#3F565F",
    "rol": "status.info.label",
    "prim": "neutral.800",
-   "uso": "Informative notice label"
+   "uso": "Etiqueta del aviso informativo"
   },
   {
    "hex": "#FAF0D2",
    "rol": "status.warning.*",
    "prim": "amber.100 / 700 / 900",
-   "uso": "Interface warning"
+   "uso": "Aviso de la interfaz"
   },
   {
    "hex": "#FDF4F6",
    "rol": "status.error.*",
    "prim": "crimson.50 / 700 / 900",
-   "uso": "Interface error"
+   "uso": "Error de la interfaz"
   },
   {
    "hex": "#005D80",
    "rol": "action.primary.hover",
    "prim": "brand.650",
-   "uso": "Primary button · pointer over"
+   "uso": "Botón primario · puntero encima"
   },
   {
    "hex": "#005471",
    "rol": "action.primary.pressed",
    "prim": "brand.700",
-   "uso": "Primary button · pressed"
+   "uso": "Botón primario · pulsado"
   },
   {
    "hex": "#CC003E",
    "rol": "action.alert.hover",
    "prim": "crimson.650",
-   "uso": "Book appointment · pointer over"
+   "uso": "Pedir cita · puntero encima"
   },
   {
    "hex": "#A8183B",
    "rol": "action.alert.pressed",
    "prim": "crimson.700",
-   "uso": "Book appointment · pressed"
+   "uso": "Pedir cita · pulsado"
   },
   {
    "hex": "#EFF9FD",
    "rol": "action.secondary.hover",
    "prim": "brand.50",
-   "uso": "Brand secondary button · background"
+   "uso": "Botón secundario de marca · fondo"
   },
   {
    "hex": "#DAF3FE",
    "rol": "action.secondary.pressed",
    "prim": "brand.100",
-   "uso": "Brand secondary button · background"
+   "uso": "Botón secundario de marca · fondo"
   },
   {
    "hex": "#F4FAFD",
    "rol": "surface.hover",
    "prim": "neutral.25",
-   "uso": "Card, row and neutral button"
+   "uso": "Tarjeta, fila y botón neutro"
   },
   {
    "hex": "#EAF2F6",
    "rol": "surface.pressed",
    "prim": "neutral.100",
-   "uso": "Card, row, option and neutral button"
+   "uso": "Tarjeta, fila, opción y botón neutro"
   },
   {
    "hex": "#6D8690",
    "rol": "border.control.hover",
    "prim": "neutral.500",
-   "uso": "Field and option · pointer over"
+   "uso": "Campo y opción · puntero encima"
   },
   {
    "hex": "#00485F",
    "rol": "link.hover",
    "prim": "brand.800",
-   "uso": "Link · underlined"
+   "uso": "Enlace · subrayado"
   },
   {
    "hex": "#003142",
    "rol": "link.pressed",
    "prim": "brand.900",
-   "uso": "Pressed link"
+   "uso": "Enlace pulsado"
   },
   {
    "hex": "#00698C",
    "rol": "focus.ring",
    "prim": "brand.600",
-   "uso": "2 px ring, 2 px away from the element"
+   "uso": "Anillo de 2 px, a 2 px del elemento"
   },
   {
    "hex": "#DCE9EE",
    "rol": "disabled.bg",
    "prim": "neutral.150",
-   "uso": "Disabled control fill"
+   "uso": "Relleno de control disabled"
   },
   {
    "hex": "#5D747E",
    "rol": "disabled.text",
    "prim": "neutral.600",
-   "uso": "Disabled control text"
+   "uso": "Texto de control disabled"
   },
   {
    "hex": "#132E38",
    "rol": "scrim.modal",
    "prim": "neutral.950 · 48%",
-   "uso": "Layer under menus and modal sheets"
+   "uso": "Capa bajo menús y hojas modales"
   }
  ],
  "riesgos": [
@@ -836,8 +836,8 @@ class Component extends DCLogic {
    "fg": "#132E38",
    "bg": "#FFFFFF",
    "ratio": "14.23",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -845,8 +845,8 @@ class Component extends DCLogic {
    "fg": "#132E38",
    "bg": "#F0F8FC",
    "ratio": "13.24",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -854,8 +854,8 @@ class Component extends DCLogic {
    "fg": "#3F565F",
    "bg": "#FFFFFF",
    "ratio": "7.76",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -863,8 +863,8 @@ class Component extends DCLogic {
    "fg": "#3F565F",
    "bg": "#F0F8FC",
    "ratio": "7.22",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -872,8 +872,8 @@ class Component extends DCLogic {
    "fg": "#3F565F",
    "bg": "#EAF2F6",
    "ratio": "6.84",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -881,8 +881,8 @@ class Component extends DCLogic {
    "fg": "#5D747E",
    "bg": "#FFFFFF",
    "ratio": "4.92",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -890,8 +890,8 @@ class Component extends DCLogic {
    "fg": "#5D747E",
    "bg": "#F0F8FC",
    "ratio": "4.58",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -899,8 +899,8 @@ class Component extends DCLogic {
    "fg": "#5D747E",
    "bg": "#F4FAFD",
    "ratio": "4.68",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -908,8 +908,8 @@ class Component extends DCLogic {
    "fg": "#6D8690",
    "bg": "#FFFFFF",
    "ratio": "3.84",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -917,8 +917,8 @@ class Component extends DCLogic {
    "fg": "#7B9099",
    "bg": "#FFFFFF",
    "ratio": "3.34",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -926,8 +926,8 @@ class Component extends DCLogic {
    "fg": "#7B9099",
    "bg": "#F0F8FC",
    "ratio": "3.11",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -935,8 +935,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#00698C",
    "ratio": "6.18",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -944,8 +944,8 @@ class Component extends DCLogic {
    "fg": "#00698C",
    "bg": "#FFFFFF",
    "ratio": "6.18",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -953,8 +953,8 @@ class Component extends DCLogic {
    "fg": "#00698C",
    "bg": "#F0F8FC",
    "ratio": "5.75",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -962,8 +962,8 @@ class Component extends DCLogic {
    "fg": "#005471",
    "bg": "#FFFFFF",
    "ratio": "8.38",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -971,8 +971,8 @@ class Component extends DCLogic {
    "fg": "#005471",
    "bg": "#F0F8FC",
    "ratio": "7.79",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -980,8 +980,8 @@ class Component extends DCLogic {
    "fg": "#005471",
    "bg": "#DAF3FE",
    "ratio": "7.27",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -989,8 +989,8 @@ class Component extends DCLogic {
    "fg": "#3F565F",
    "bg": "#EAF2F6",
    "ratio": "6.84",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -998,8 +998,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#DB2149",
    "ratio": "4.85",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1007,8 +1007,8 @@ class Component extends DCLogic {
    "fg": "#A8183B",
    "bg": "#FDF4F6",
    "ratio": "6.80",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1016,8 +1016,8 @@ class Component extends DCLogic {
    "fg": "#5C2A37",
    "bg": "#FDF4F6",
    "ratio": "10.56",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1025,8 +1025,8 @@ class Component extends DCLogic {
    "fg": "#DB2149",
    "bg": "#FFFFFF",
    "ratio": "4.85",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1034,8 +1034,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#8D6F00",
    "ratio": "4.77",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1043,8 +1043,8 @@ class Component extends DCLogic {
    "fg": "#705700",
    "bg": "#FAF0D2",
    "ratio": "6.05",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1052,8 +1052,8 @@ class Component extends DCLogic {
    "fg": "#57450C",
    "bg": "#FAF0D2",
    "ratio": "8.16",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1061,8 +1061,8 @@ class Component extends DCLogic {
    "fg": "#8D6F00",
    "bg": "#FFFFFF",
    "ratio": "4.77",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1070,8 +1070,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#168072",
    "ratio": "4.81",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1079,8 +1079,8 @@ class Component extends DCLogic {
    "fg": "#0B6459",
    "bg": "#E1F3EE",
    "ratio": "6.12",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1088,8 +1088,8 @@ class Component extends DCLogic {
    "fg": "#168072",
    "bg": "#FFFFFF",
    "ratio": "4.81",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1097,8 +1097,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#6C2768",
    "ratio": "9.87",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1106,8 +1106,8 @@ class Component extends DCLogic {
    "fg": "#5E1F5A",
    "bg": "#FAEAF8",
    "ratio": "10.00",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1115,8 +1115,8 @@ class Component extends DCLogic {
    "fg": "#6C2768",
    "bg": "#FFFFFF",
    "ratio": "9.87",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1124,8 +1124,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#005D80",
    "ratio": "7.30",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1133,8 +1133,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#005471",
    "ratio": "8.38",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1142,8 +1142,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#CC003E",
    "ratio": "5.77",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1151,8 +1151,8 @@ class Component extends DCLogic {
    "fg": "#FFFFFF",
    "bg": "#A8183B",
    "ratio": "7.35",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1160,8 +1160,8 @@ class Component extends DCLogic {
    "fg": "#005471",
    "bg": "#EFF9FD",
    "ratio": "7.83",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1169,8 +1169,8 @@ class Component extends DCLogic {
    "fg": "#005471",
    "bg": "#DAF3FE",
    "ratio": "7.27",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1178,8 +1178,8 @@ class Component extends DCLogic {
    "fg": "#3F565F",
    "bg": "#EAF2F6",
    "ratio": "6.84",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1187,8 +1187,8 @@ class Component extends DCLogic {
    "fg": "#6D8690",
    "bg": "#FFFFFF",
    "ratio": "3.84",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1196,8 +1196,8 @@ class Component extends DCLogic {
    "fg": "#00485F",
    "bg": "#FFFFFF",
    "ratio": "10.04",
-   "min": "4.5:1 text",
-   "res": "Pass",
+   "min": "4.5:1 texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1205,8 +1205,8 @@ class Component extends DCLogic {
    "fg": "#00698C",
    "bg": "#F0F8FC",
    "ratio": "5.75",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1214,8 +1214,8 @@ class Component extends DCLogic {
    "fg": "#00698C",
    "bg": "#FFFFFF",
    "ratio": "6.18",
-   "min": "3:1 non-text",
-   "res": "Pass",
+   "min": "3:1 no texto",
+   "res": "Cumple",
    "peso": 400
   },
   {
@@ -1223,8 +1223,8 @@ class Component extends DCLogic {
    "fg": "#5D747E",
    "bg": "#DCE9EE",
    "ratio": "3.97",
-   "min": "Exempt (1.4.3)",
-   "res": "Exempt",
+   "min": "Exento (1.4.3)",
+   "res": "Exento",
    "peso": 400
   }
  ],
@@ -1242,35 +1242,35 @@ class Component extends DCLogic {
     {
      "vision": "Normal",
      "texto": "Teal · 9.5",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Deuteranopia",
+     "vision": "Deuteranopía",
      "texto": "Plum · 8.4",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Protanopia",
+     "vision": "Protanopía",
      "texto": "Teal · 9.2",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Tritanopia",
+     "vision": "Tritanopía",
      "texto": "Teal · 4.9",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     },
     {
-     "vision": "Achromatopsia",
+     "vision": "Acromatopsia",
      "texto": "Crimson · 5.7",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     }
    ],
-   "shape": "Button with text; not a level cue",
+   "shape": "Botón con texto; no indica un nivel",
    "label": "",
    "hasLabel": false
   },
@@ -1287,35 +1287,35 @@ class Component extends DCLogic {
     {
      "vision": "Normal",
      "texto": "Amber · 21.3",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Deuteranopia",
+     "vision": "Deuteranopía",
      "texto": "Amber · 4.5",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     },
     {
-     "vision": "Protanopia",
+     "vision": "Protanopía",
      "texto": "Brand · 10.5",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Tritanopia",
+     "vision": "Tritanopía",
      "texto": "Amber · 17.8",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Achromatopsia",
+     "vision": "Acromatopsia",
      "texto": "Teal · 0.2",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     }
    ],
-   "shape": "Triangle +",
+   "shape": "Triángulo +",
    "label": "Riesgo alto",
    "hasLabel": true
   },
@@ -1332,35 +1332,35 @@ class Component extends DCLogic {
     {
      "vision": "Normal",
      "texto": "Teal · 14.9",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Deuteranopia",
+     "vision": "Deuteranopía",
      "texto": "Crimson · 4.5",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     },
     {
-     "vision": "Protanopia",
+     "vision": "Protanopía",
      "texto": "Teal · 10.7",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Tritanopia",
+     "vision": "Tritanopía",
      "texto": "Teal · 16.5",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Achromatopsia",
+     "vision": "Acromatopsia",
      "texto": "Teal · 0.2",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     }
    ],
-   "shape": "Diamond +",
+   "shape": "Rombo +",
    "label": "Riesgo intermedio",
    "hasLabel": true
   },
@@ -1377,35 +1377,35 @@ class Component extends DCLogic {
     {
      "vision": "Normal",
      "texto": "Brand · 9.5",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Deuteranopia",
+     "vision": "Deuteranopía",
      "texto": "Brand · 9.4",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Protanopia",
+     "vision": "Protanopía",
      "texto": "Brand · 9.2",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Tritanopia",
+     "vision": "Tritanopía",
      "texto": "Brand · 4.9",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     },
     {
-     "vision": "Achromatopsia",
+     "vision": "Acromatopsia",
      "texto": "Crimson · 0.2",
-     "estado": "Shape and text",
+     "estado": "Forma y texto",
      "peso": 700
     }
    ],
-   "shape": "Circle +",
+   "shape": "Círculo +",
    "label": "Riesgo bajo",
    "hasLabel": true
   },
@@ -1422,35 +1422,35 @@ class Component extends DCLogic {
     {
      "vision": "Normal",
      "texto": "Brand · 19.5",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Deuteranopia",
+     "vision": "Deuteranopía",
      "texto": "Brand · 8.4",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Protanopia",
+     "vision": "Protanopía",
      "texto": "Crimson · 14.8",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Tritanopia",
+     "vision": "Tritanopía",
      "texto": "Amber · 16.5",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     },
     {
-     "vision": "Achromatopsia",
+     "vision": "Acromatopsia",
      "texto": "Brand · 11",
-     "estado": "Separated",
+     "estado": "Separados",
      "peso": 400
     }
    ],
-   "shape": "Question mark +",
+   "shape": "Signo de interrogación +",
    "label": "No evaluable",
    "hasLabel": true
   }
@@ -1589,54 +1589,54 @@ class Component extends DCLogic {
  ],
  "propuestas": [
   {
-   "titulo": "Replace the palette in imoles-tokens.css",
-   "problema": "Teal as brand, low-risk green almost identical (1.03:1), unused coral, violet close to the new brand.",
-   "propuesta": "Apply the primitives on this page: brand 225°, neutrals 225°, light teal for low risk, amber.600, plum; remove coral, green and violet."
+   "titulo": "Sustituir la paleta en imoles-tokens.css",
+   "problema": "El teal como marca, el verde de riesgo bajo casi idéntico (1.03:1), un coral sin uso y un violeta cercano a la nueva marca.",
+   "propuesta": "Aplicar los primitivos de esta página: brand 225°, neutros 225°, verde azulado claro para riesgo bajo, amber.600, plum; eliminar coral, verde y violeta."
   },
   {
-   "titulo": "Regular actions with a risk color",
-   "problema": "Acción paints take photo, read report, first photo and check-up with --imoles-accion-bajo; Botón primario uses teal.",
-   "propuesta": "action.primary = brand.600 for all; action.alert only for booking an appointment for high risk."
+   "titulo": "Acciones normales con color de riesgo",
+   "problema": "Acción pinta hacer la foto, leer el informe, primera foto y revisión con --imoles-accion-bajo; Botón primario usa teal.",
+   "propuesta": "action.primary = brand.600 para todas; action.alert solo para pedir cita con riesgo alto."
   },
   {
-   "titulo": "Intermediate-risk badge",
-   "problema": "White text on #B5790A: 3.68:1. A separate --imoles-accion-intermedio exists.",
-   "propuesta": "A single amber.600 fill (4.77:1) for badge and action."
+   "titulo": "Badge de riesgo intermedio",
+   "problema": "Texto blanco sobre #B5790A: 3.68:1. Existe un --imoles-accion-intermedio aparte.",
+   "propuesta": "Un único relleno amber.600 (4.77:1) para el badge y la acción."
   },
   {
-   "titulo": "Notices with risk colors",
-   "problema": "Aviso Inline uses intermediate risk for “warning”, high risk for “error” and teal for “info”.",
-   "propuesta": "status.warning, status.error and status.info (neutral)."
+   "titulo": "Avisos con colores de riesgo",
+   "problema": "Aviso Inline usa el riesgo intermedio para “warning”, el riesgo alto para “error” y teal para “info”.",
+   "propuesta": "status.warning, status.error y status.info (neutro)."
   },
   {
-   "titulo": "Insufficient field outline",
-   "problema": "Campo Texto and Campo Opción without focus use border.subtle: 1.24:1 (minimum 3:1, WCAG 1.4.11).",
+   "titulo": "Contorno de campo insuficiente",
+   "problema": "Campo Texto y Campo Opción sin focus usan border.subtle: 1.24:1 (mínimo 3:1, WCAG 1.4.11).",
    "propuesta": "border.control = neutral.400."
   },
   {
-   "titulo": "Chip Estado · high risk outside the tokens",
-   "problema": "Uses #FBE8E3 / #A8321F, an earlier crimson.",
+   "titulo": "Chip Estado · high risk fuera de los tokens",
+   "problema": "Usa #FBE8E3 / #A8321F, un carmesí anterior.",
    "propuesta": "risk.high.tint + risk.high.text."
   },
   {
-   "titulo": "Neutral chip",
-   "problema": "text.secondary on chip.neutral.bg does not reach 4.5:1.",
-   "propuesta": "text.body in the chip."
+   "titulo": "Chip neutro",
+   "problema": "text.secondary sobre chip.neutral.bg no llega a 4.5:1.",
+   "propuesta": "text.body en el chip."
   },
   {
-   "titulo": "High-risk secondary label",
-   "problema": "--imoles-riesgo-alto-label gives 4.41:1 on its tint.",
-   "propuesta": "Remove it; use risk.high.text."
+   "titulo": "Etiqueta secundaria de riesgo alto",
+   "problema": "--imoles-riesgo-alto-label da 4.41:1 sobre su tinte.",
+   "propuesta": "Eliminarla; usar risk.high.text."
   },
   {
-   "titulo": "Duplicated and hard-coded values",
-   "problema": "--imoles-caption aliases muted; --imoles-line-soft almost equals --imoles-line; an old value left commented; #FFFFFF and the menu shadow hard-coded.",
-   "propuesta": "Merge into text.secondary and border.subtle; use text.inverse and bg.surface; shadow as an elevation token (1.5)."
+   "titulo": "Valores duplicados y codificados a mano",
+   "problema": "--imoles-caption es un alias de muted; --imoles-line-soft casi iguala a --imoles-line; un valor antiguo quedó comentado; #FFFFFF y la sombra del menú están codificados a mano.",
+   "propuesta": "Unificar en text.secondary y border.subtle; usar text.inverse y bg.surface; sombra como token de elevación (1.5)."
   }
  ],
  "interaccion": [
   {
-   "nombre": "Primary button",
+   "nombre": "Botón primario",
    "texto": "Hacer la foto",
    "radio": "14px",
    "estados": [
@@ -1686,7 +1686,7 @@ class Component extends DCLogic {
    "alinear": "stretch"
   },
   {
-   "nombre": "Alert button",
+   "nombre": "Botón de alerta",
    "texto": "Pedir cita",
    "radio": "14px",
    "estados": [
@@ -1736,7 +1736,7 @@ class Component extends DCLogic {
    "alinear": "stretch"
   },
   {
-   "nombre": "Brand secondary",
+   "nombre": "Secundario de marca",
    "texto": "Ver la serie",
    "radio": "14px",
    "estados": [
@@ -1746,7 +1746,7 @@ class Component extends DCLogic {
      "fg": "#005471",
      "borde": "1.5px solid #00698C",
      "outline": "none",
-     "token": "white background"
+     "token": "fondo blanco"
     },
     {
      "estado": "Hover",
@@ -1778,7 +1778,7 @@ class Component extends DCLogic {
      "fg": "#5D747E",
      "borde": "1.5px solid #DCE9EE",
      "outline": "none",
-     "token": "border neutral.150"
+     "token": "borde neutral.150"
     }
    ],
    "alto": "44px",
@@ -1786,7 +1786,7 @@ class Component extends DCLogic {
    "alinear": "stretch"
   },
   {
-   "nombre": "Card / row",
+   "nombre": "Tarjeta / fila",
    "texto": "Gemelo derecho · 01",
    "radio": "16px",
    "estados": [
@@ -1828,7 +1828,7 @@ class Component extends DCLogic {
      "fg": "#5D747E",
      "borde": "1px solid #DCE9EE",
      "outline": "none",
-     "token": "no shadow"
+     "token": "sin sombra"
     }
    ],
    "alto": "44px",
@@ -1836,7 +1836,7 @@ class Component extends DCLogic {
    "alinear": "stretch"
   },
   {
-   "nombre": "Option",
+   "nombre": "Opción",
    "texto": "Brazo",
    "radio": "14px",
    "estados": [
@@ -1886,7 +1886,7 @@ class Component extends DCLogic {
    "alinear": "stretch"
   },
   {
-   "nombre": "Link",
+   "nombre": "Enlace",
    "texto": "Ver el análisis ›",
    "radio": "2px",
    "estados": [
@@ -1904,7 +1904,7 @@ class Component extends DCLogic {
      "fg": "#00485F",
      "borde": "1px solid transparent",
      "outline": "none",
-     "token": "brand.800 + underline"
+     "token": "brand.800 + subrayado"
     },
     {
      "estado": "Pressed",
@@ -1928,7 +1928,7 @@ class Component extends DCLogic {
      "fg": "#005471",
      "borde": "1px solid transparent",
      "outline": "none",
-     "token": "no change"
+     "token": "sin cambio"
     }
    ],
    "alto": "0",

@@ -38,7 +38,7 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-3 | F7 · Three views: Content, Info, Record | Applied | 0.12.0 | Navigation among the three goes in the header. Pending: Claude Design removing the context line and status label from its pages. |
 | pilot-3 | F8 · Status is changed in Claude Design | Applied | 0.12.0 | The container shows it and does not modify it. |
 | pilot-3 | F9 · Task queue per subsection | Partial | 0.12.0 | `tasks` field (`pending`/`future`) in the contract, validator and Record view; it does not block R and is not counted. Pending: Claude Design splitting Color's notes. |
-| pilot-3 | F10 · English-only repository | Applied | 0.10.0 | All content, interface, docs and script messages in English; IDs and paths renamed (see [pilot-3-id-map.md](pilot-3-id-map.md)). |
+| pilot-3 | F10 · English-only repository | Applied, then superseded | 0.10.0 | All content, interface, docs and script messages in English; IDs and paths renamed (see [pilot-3-id-map.md](pilot-3-id-map.md)). Reverted by [pilot-6](pilot-6-castellano.md) J1 (framework 2.0.0); the IDs and paths stay. |
 | pilot-3 | Search | Pending | — | How it should work is undefined. It now lives in the header and filters the menu, the home page and the category lists. |
 | [pilot-4](pilot-4-container-refinements.md) | G1 · The sidebar is an icon rail only | Applied | 0.13.0 | DSB is a link to the home page; the status and sections icons open dropdown panels. |
 | pilot-4 | G2 · Search lives in the header | Applied | 0.13.0 | |
@@ -57,3 +57,11 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-5 | H8 · Tasks and Not applicable | Applied | 0.19.0 | N cannot have tasks; adding one reopens the section, openly. |
 | pilot-5 | H9 · Tasks go where they belong | Applied | 0.20.0 | iMoles tasks moved to `implementation.publishing-and-migration`. |
 | pilot-5 | H10 · Framework 1.2.0 | Applied | 0.19.0 | |
+| [pilot-6](pilot-6-castellano.md) | J1 · Todo se escribe en castellano | Applied | 0.21.0 | Revierte F10; el repositorio sigue teniendo un solo idioma. |
+| pilot-6 | J2 · Términos y etiquetas en inglés | Applied | 0.21.0 | Lista en [glossary.md](../glossary.md). |
+| pilot-6 | J3 · La guía se restaura desde el castellano original | Applied | 0.21.0 | 14 categorías y 132 subsecciones; IDs sin cambios. |
+| pilot-6 | J4 · Framework 2.0.0 | Applied | 0.21.0 | Cambio MAJOR: `check` exige `lang="es"`. |
+| pilot-6 | J5 · El historial no se reescribe | Applied | 0.21.0 | `CHANGELOG.md` anterior y `docs/proposals/` se quedan en su idioma. |
+| pilot-6 | J6 · La página Color se traduce aquí | Applied | 0.21.0 | Claude Design debe partir de esta versión. |
+| pilot-6 | J7 · El ciclo de trabajo y los accesos quedan escritos | Applied | 0.21.0 | Framework 2.0.1; proyecto de Claude Design registrado en `CLAUDE.md`. |
+| pilot-6 | J8 · Scripts para el traspaso con Claude Design | Applied | 0.21.0 | Framework 2.1.0: `design-diff` y `handoff-note`. |

@@ -1,3 +1,3 @@
-# Local resources
+# Recursos locales
 
-Organize resources by `assets/<category>/<subsection>/`. Keep provenance and license where applicable. Do not include private resources from another project when copying the template.
+Organiza los recursos por `assets/<category>/<subsection>/`. Conserva la procedencia y la licencia cuando proceda. No incluyas recursos privados de otro proyecto al copiar la plantilla.

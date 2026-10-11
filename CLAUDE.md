@@ -1,47 +1,69 @@
-# DSBook · instructions for agents
+# DSBook · instrucciones para agentes
 
-## Purpose
-DSBook is a workspace for defining, documenting and tracking a Design System. This repository holds the one for DSimoles; it started as a reusable template ([docs/template.md](docs/template.md)). Each copy represents a single project. The matrix gathers one guide per subsection and the HTML pages that develop the DS. The repository is the shared source of truth; Claude Design is the space for design and editing, and Claude Code integrates the files and their changes.
+## Propósito
+DSBook es un workspace para definir, documentar y seguir un Design System. Este repositorio contiene el de DSimoles; empezó como una plantilla reutilizable ([docs/template.md](docs/template.md)). Cada copia representa un único proyecto. La matriz reúne una guía por subsección y las páginas HTML que desarrollan el DS. El repositorio es la fuente de verdad compartida; Claude Design es el espacio de diseño y edición, y Claude Code integra los archivos y sus cambios.
 
-## Read according to the task
-- [README: how it works and how to start](README.md)
-- [Guide for Claude Design](docs/claude-design.md): design, create pages and keep decisions while working.
-- [Guide for Claude Code](docs/claude-code.md): integrate, validate and update the repository.
-- [General handoff guide](docs/handoff.md): permanent transfer contract. There is no per-session form.
-- [Data and path contract](docs/data-contract.md): identities, statuses and schema.
-- [Review criteria](docs/quality.md): acceptance of content and application.
-- [Page style and tone](docs/page-style.md): visual guidelines for Claude Design (approved).
-- [The framework and its version](docs/framework.md): what is shared with other DSBook repositories, `dsbook.json` and how a framework change is recorded and ported.
-- [Check scripts](docs/scripts.md): what `npm run check` and `npm test` verify, when to run them and how to read their errors.
-- [Proposals and their registry](docs/proposals/README.md): agreed changes to the way of working and their status (applied, approved, discarded, pending).
+## El ciclo de trabajo
+Es el mismo para todo el equipo y está detallado en [docs/handoff.md](docs/handoff.md#el-ciclo-de-trabajo):
+1. **GitHub** es la única fuente de verdad.
+2. **Claude Design** lee el repo, registra su base y construye y avanza los diseños.
+3. **Claude Code** se conecta por MCP al proyecto de Claude Design y trae sus cambios.
+4. **Claude Code** los implementa en local, con `npm run check` y `npm test`.
+5. **La persona responsable valida** en local. Sin su visto bueno no se sube nada.
+6. **Claude Code sube a GitHub**, registra la integración en `CHANGELOG.md` y entrega el aviso para Claude Design (`npm run handoff-note` antes del commit y un prompt con el hash tras el push).
+7. **Claude Design confirma** la actualización en el repo y sigue desde la nueva base.
 
-## Common rules
-1. Read `data/guide.json` and `data/project.json` before modifying a section. Keep existing IDs; the visible title may change. The data belongs to the project; the catalog rules are in the [data contract](docs/data-contract.md).
-2. **Everything in the repository is written in English**: data, documentation, pages, interface strings, script messages and commit messages. The conversation with the responsible person may be in another language; what is written to files is always English.
-3. No build step and no external services; the only network calls are the two manual *Check for updates* buttons of the Framework page. The vendored runtime that `.dc.html` pages need is allowed, versioned inside the repo (`assets/_runtime/` and `sections/<category>/support.js`). Do not add a backend, accounts, remote synchronization or project managers without an agreed need.
-4. Create pages at each subsection's `suggestedPath`. Their resources go in `assets/<category>/<subsection>/`. Do not use absolute team paths or links that depend on a local domain.
-5. `data/guide.json` is the project's catalog and guide text; `data/project.json` records status, decisions and tasks; `sections/` holds the development. Do not copy development content into the guide. Tasks are non-blocking and never prevent Ready; blocking work keeps the section in I. A Not applicable section cannot have tasks: adding one means reopening it (see [data contract](docs/data-contract.md#notes-and-tasks)).
-6. The only statuses are R (Ready), I (In process), P (Pending), N (Not applicable). An existing page does not imply R. Ready requires a recorded review, not an automatic certification.
-7. Do not mark N without an explicit reason. Do not exclude applicable accessibility requirements for convenience. A cross-cutting row does not replace per-element checks.
-8. Do not invent approvals, test results, owners or evidence. If work or review is pending, use I and describe what is pending.
-9. Do not create per-session handoff reports. Keep decisions in the section fields; Git records the changes.
-10. Respect other people's changes. Review differences before replacing files. Do not reset the project to integrate a section.
-11. Run `npm run check` and `npm test` before closing an integration. These commands do not require `npm install`.
-12. Commit, push, publication and conflict resolution follow the team's current instructions. Do not force-push or publish by default.
-13. Ignore any design system that Claude Design loads or links to the project (for example `_ds/`), both in pages and in the container, unless the responsible person says otherwise.
-14. Before modifying files, check that your base matches the repository. Follow the [handoff](docs/handoff.md) protocol.
-15. The container, `scripts/`, `seed/`, the vendored runtime and the guides in `docs/` are the **framework**, shared with other DSBook repositories. A change to them is recorded with `npm run framework -- --release <version>` and ported to the other repositories ([framework.md](docs/framework.md)); `npm run check` fails until it is recorded. Claude Design does not edit them.
+**Accesos.** Antes de trabajar, comprueba que tienes lo que tu papel necesita: git (`fetch`, `push`) y la conexión MCP al proyecto de Claude Design en el caso de Claude Code; el repo en GitHub en el caso de Claude Design. Si falta alguno, **detente, di cuál falta y pídelo a la persona responsable**. No trabajes con una copia que no sabes si está al día ni des por bueno un estado que no has podido leer.
 
-## Repository map
-- `dsbook.json`: the version of the DSBook framework this repository carries and the hash of each framework file.
-- `index.html`, `styles.css`, `app.js`, `model.js`: interactive container.
-- `data/guide.json`: the project's categories and subsections with instructions and target paths (it started with 14 categories and 132 subsections).
-- `data/project.json`: project identity and record (owner, notes, tasks), and for each section its status, page, owner, notes, tasks and review.
-- `seed/`: the initial catalog and an all-Pending project. `npm run init` copies it to `data/` to start a project.
-- `sections/`: development of the DS; it starts empty of project content.
-- `templates/component.md`: component sheet. Section pages are created in Claude Design as `.dc.html`; there is no page template.
-- `assets/`: page resources.
-- `docs/`: permanent guides. `docs/proposals/`: change proposals and their registry.
-- `scripts/`: contract checks and logic tests.
+## Lee según la tarea
+- [README: cómo funciona y cómo empezar](README.md)
+- [Guía para Claude Design](docs/claude-design.md): diseñar, crear páginas y mantener las decisiones mientras se trabaja.
+- [Guía para Claude Code](docs/claude-code.md): integrar, validar y actualizar el repositorio.
+- [Guía general de handoff](docs/handoff.md): contrato permanente de transferencia. No hay formulario por sesión.
+- [Contrato de datos y rutas](docs/data-contract.md): identidades, estados y schema.
+- [Criterios de review](docs/quality.md): aceptación del contenido y de la aplicación.
+- [Estilo y tono de las páginas](docs/page-style.md): pautas visuales para Claude Design (aprobadas).
+- [Glosario y regla de idioma](docs/glossary.md): qué se escribe en castellano y qué términos se quedan en inglés.
+- [El framework y su versión](docs/framework.md): qué se comparte con otros repositorios DSBook, `dsbook.json` y cómo se registra y se porta un cambio del framework.
+- [Scripts de comprobación](docs/scripts.md): qué verifican `npm run check` y `npm test`, cuándo ejecutarlos y cómo leer sus errores.
+- [Propuestas y su registro](docs/proposals/README.md): cambios acordados en la forma de trabajar y su estado (applied, approved, discarded, pending).
 
-When starting another project, run `npm run init -- --id <id> --name "<name>"` on a copy without the previous content. Do not inherit pages, reviews or decisions from another project. See [docs/template.md](docs/template.md).
+## Reglas comunes
+1. Lee `data/guide.json` y `data/project.json` antes de modificar una sección. Conserva los IDs existentes; el título visible puede cambiar. Los datos pertenecen al proyecto; las reglas del catálogo están en el [contrato de datos](docs/data-contract.md).
+2. **Todo lo que se escribe en el repositorio va en castellano**: datos, documentación, páginas, textos de la interfaz, mensajes de los scripts y mensajes de commit. Los **términos y las etiquetas** se quedan en inglés (Ready, task, review, token, Content, Record…; la lista está en el [glosario](docs/glossary.md)). La conversación con la persona responsable también es en castellano. El historial anterior a la versión 2.0.0 del framework (`CHANGELOG.md`, `docs/proposals/`) se queda en el idioma en que se escribió.
+3. Sin paso de build y sin servicios externos; las únicas llamadas de red son los dos botones manuales *Check for updates* de la página Framework. El runtime vendorizado que necesitan las páginas `.dc.html` está permitido, versionado dentro del repo (`assets/_runtime/` y `sections/<category>/support.js`). No añadas backend, cuentas, sincronización remota ni gestores de proyecto sin una necesidad acordada.
+4. Crea las páginas en el `suggestedPath` de cada subsección. Sus recursos van en `assets/<category>/<subsection>/`. No uses rutas absolutas de equipo ni enlaces que dependan de un dominio local.
+5. `data/guide.json` es el catálogo del proyecto y el texto de la guía; `data/project.json` registra estado, decisiones y tasks; `sections/` contiene el desarrollo. No copies contenido de desarrollo a la guía. Las tasks no bloquean y nunca impiden Ready; el trabajo bloqueante mantiene la sección en I. Una sección Not applicable no puede tener tasks: añadir una significa reabrirla (ver el [contrato de datos](docs/data-contract.md#notes-y-tasks)).
+6. Los únicos estados son R (Ready), I (In process), P (Pending), N (Not applicable). Una página existente no implica R. Ready exige una review registrada, no una certificación automática.
+7. No marques N sin un motivo explícito. No excluyas por comodidad requisitos de accesibilidad aplicables. Una fila transversal no sustituye las comprobaciones por elemento.
+8. No inventes aprobaciones, resultados de pruebas, owners ni evidencia. Si el trabajo o la review están pendientes, usa I y describe lo que falta.
+9. No crees informes de handoff por sesión. Las decisiones se guardan en los campos de la sección; Git registra los cambios.
+10. Respeta los cambios ajenos. Revisa las diferencias antes de reemplazar archivos. No reinicies el proyecto para integrar una sección.
+11. Ejecuta `npm run check` y `npm test` antes de cerrar una integración. Estos comandos no requieren `npm install`.
+12. Commit, push, publicación y resolución de conflictos siguen las instrucciones vigentes del equipo. No hagas force-push ni publiques por defecto.
+13. Ignora cualquier design system que Claude Design cargue o enlace al proyecto (por ejemplo `_ds/`), tanto en las páginas como en el contenedor, salvo que la persona responsable diga otra cosa.
+14. Antes de modificar archivos, comprueba que tu base coincide con el repositorio. Sigue el protocolo de [handoff](docs/handoff.md).
+15. El contenedor, `scripts/`, `seed/`, el runtime vendorizado y las guías de `docs/` son el **framework**, compartido con otros repositorios DSBook. Un cambio en ellos se registra con `npm run framework -- --release <version>` y se porta a los demás repositorios ([framework.md](docs/framework.md)); `npm run check` falla hasta que se registra. Claude Design no los edita.
+
+## Mapa del repositorio
+- `dsbook.json`: la versión del framework DSBook que lleva este repositorio y el hash de cada archivo del framework.
+- `index.html`, `styles.css`, `app.js`, `model.js`: contenedor interactivo.
+- `data/guide.json`: las categorías y subsecciones del proyecto con instrucciones y rutas de destino (empezó con 14 categorías y 132 subsecciones).
+- `data/project.json`: identidad y record del proyecto (owner, notes, tasks) y, para cada sección, su estado, página, owner, notes, tasks y review.
+- `seed/`: el catálogo inicial y un proyecto con todo en Pending. `npm run init` lo copia a `data/` para empezar un proyecto.
+- `sections/`: desarrollo del DS; empieza sin contenido del proyecto.
+- `templates/component.md`: ficha de componente. Las páginas de sección se crean en Claude Design como `.dc.html`; no hay plantilla de página.
+- `assets/`: recursos de las páginas.
+- `docs/`: guías permanentes. `docs/proposals/`: propuestas de cambio y su registro.
+- `scripts/`: comprobaciones del contrato y pruebas de lógica.
+
+Para empezar otro proyecto, ejecuta `npm run init -- --id <id> --name "<name>"` en una copia sin el contenido anterior. No heredes páginas, reviews ni decisiones de otro proyecto. Ver [docs/template.md](docs/template.md).
+
+## Conexiones del proyecto
+| Qué | Dónde |
+| --- | --- |
+| Repositorio (fuente de verdad) | https://github.com/gineslm/DSimoles, rama `main` |
+| Proyecto de Claude Design | https://claude.ai/design/p/2d62264d-9d57-47c4-9fdb-3581d6ec7438 (id `2d62264d-9d57-47c4-9fdb-3581d6ec7438`, "DSimoles project inquiry") |
+| Framework (origen de las actualizaciones) | https://github.com/gineslm/DSbook |
+
+Si no tienes acceso a alguno de ellos, pídelo a la persona responsable antes de trabajar (ver "El ciclo de trabajo").

@@ -1,62 +1,64 @@
 # DSBook · DSimoles
 
-DSBook is the workspace; DSimoles is the Design System defined in it. It provides a definition guide, a documentation container and a tracking matrix for the DSimoles Design System. It is designed in Claude Design and integrated through Claude Code and Git. It started as a reusable template; its instructions are in [docs/template.md](docs/template.md).
+DSBook es el workspace; DSimoles es el Design System que se define en él. Ofrece una guía de definición, un contenedor de documentación y una matriz de seguimiento para el Design System DSimoles. Se diseña en Claude Design y se integra con Claude Code y Git. Empezó como una plantilla reutilizable; sus instrucciones están en [docs/template.md](docs/template.md).
 
-## Getting started
-You need Node.js 18 or later; there are no packages to install.
+## Primeros pasos
+Necesitas Node.js 18 o posterior; no hay paquetes que instalar.
 
 ```sh
 cd DSimoles
 npm start
 ```
 
-`npm start` serves the site on the first free port from 8000 and prints the address, so several projects can run at once (`npm start -- --port 9000` starts from another port). Open that address. Do not open `index.html` directly: loading the JSON files requires HTTP. You can also serve the folder from any static host. No deployment or GitHub connection is included.
+`npm start` sirve el sitio en el primer puerto libre desde 8000 e imprime la dirección, de modo que varios proyectos pueden correr a la vez (`npm start -- --port 9000` empieza desde otro puerto). Abre esa dirección. No abras `index.html` directamente: cargar los archivos JSON requiere HTTP. También puedes servir la carpeta desde cualquier alojamiento estático. No se incluye despliegue ni conexión con GitHub.
 
-1. Browse the home page (a summary by category) or pick a subsection in the Sections menu of the rail. Each subsection has its own address, for example `#/visuals.color`.
-2. A subsection has three views, chosen in the header: **Content** (its page), **Info** (the section's guide: what to define and the acceptance criteria) and **Record** (status, owner, notes, tasks and review).
-3. Create pages in Claude Design, as `.dc.html`, at the paths the guide indicates.
-4. Integrate changes following the [general handoff guide](docs/handoff.md).
+1. Recorre la home (un resumen por categoría) o elige una subsección en el menú Sections del rail. Cada subsección tiene su propia dirección, por ejemplo `#/visuals.color`.
+2. Una subsección tiene tres vistas, que se eligen en la cabecera: **Content** (su página), **Info** (la guía de la sección: qué definir y los criterios de aceptación) y **Record** (estado, owner, notes, tasks y review).
+3. Crea las páginas en Claude Design, como `.dc.html`, en las rutas que indica la guía.
+4. Integra los cambios siguiendo la [guía general de handoff](docs/handoff.md).
 
-## Statuses and filters
-| Status | Meaning |
+## Estados y filtros
+| Estado | Significado |
 | --- | --- |
-| R · Ready | Reviewed development, with person, date and evidence recorded. |
-| I · In process | Work or review in progress. |
-| P · Pending | Development pending; initial status. |
-| N · Not applicable | Out of scope with an explicit justification. |
+| R · Ready | Desarrollo revisado, con persona, fecha y evidencia registradas. |
+| I · In process | Trabajo o review en curso. |
+| P · Pending | Desarrollo pendiente; estado inicial. |
+| N · Not applicable | Fuera de alcance con una justificación explícita. |
 
-Filter by status from the filter icon in the rail (statuses can be combined) and search by title, category or content from the box in the header. Category counts represent all their items; filters show only the matches. The home page shows two progress bars. **Progress**: R / (R + I + P), that is, ready subsections over the applicable ones. **Complexity**: subsections that are not N over the total in the guide. If everything is N, progress shows "No applicable sections".
+Filtra por estado desde el icono de filtro del rail (los estados se pueden combinar) y busca por título, categoría o contenido desde el cuadro de la cabecera. Los contadores de categoría representan todos sus items; los filtros muestran solo las coincidencias. La home muestra dos barras de progreso. **Progress**: R / (R + I + P), es decir, las subsecciones Ready sobre las aplicables. **Complexity**: las subsecciones que no son N sobre el total de la guía. Si todo es N, Progress muestra "Sin secciones aplicables".
 
-The left side is a narrow rail with the **DSBook logo** (it opens the Framework page; the home page is the first breadcrumb) and two icons: **status** and **sections**. Each opens a dropdown panel on hover; a click pins it and Escape closes it. In the Sections panel, hovering a category opens all its subsections in a submenu; on touch screens each category has a chevron that expands them inline. A dot on the filter icon shows that a filter or a search is active.
+El lado izquierdo es un rail estrecho con el **logo de DSBook** (abre la página Framework; la home es el primer breadcrumb) y dos iconos: **estado** y **secciones**. Cada uno abre un panel desplegable con hover; un clic lo fija y Escape lo cierra. En el panel Sections, pasar el puntero por una categoría abre todas sus subsecciones en un submenú; en pantallas táctiles cada categoría tiene un chevron que las expande en línea. Un punto sobre el icono de filtro indica que hay un filtro o una búsqueda activos.
 
-## Read-only container
-The site shows the state of the repository and does not modify it: it does not keep drafts or import or export configuration. Everything is edited in Claude Design; Claude Code integrates the changes into Git. Search, filters, the expanded state of the menu and the current address are in-memory viewing state.
+## Contenedor de solo lectura
+El sitio muestra el estado del repositorio y no lo modifica: no guarda borradores ni importa o exporta configuración. Todo se edita en Claude Design; Claude Code integra los cambios en Git. La búsqueda, los filtros, el estado expandido del menú y la dirección actual son estado de visualización en memoria.
 
-The main area shows one thing at a time, chosen by the address (hash routes): `#/` is the home page, `#/<category>` lists a category's subsections and `#/<subsection>[/content|info|record]` shows a subsection. A sticky header carries the breadcrumb and the status (read-only) on the left, and on the right the view tabs, a magnifier that unfolds the search field, and previous/next buttons, with separators between the groups. A subsection in I or R with a page opens on **Content**; any other opens on **Info**. The home page has the same three views at `#/home/<view>`: **Content** is the summary, **Info** is empty for now (reserved for a guide to the project and the framework) and **Record** shows the project record (owner, notes and the project's own tasks) and, read-only, the tasks of every section. Old `#item-<id>` and `#cat-<id>` links are translated.
+El área principal muestra una sola cosa cada vez, según la dirección (rutas hash): `#/` es la home, `#/<category>` lista las subsecciones de una categoría y `#/<subsection>[/content|info|record]` muestra una subsección. Una cabecera fija lleva el breadcrumb y el estado (solo lectura) a la izquierda y, a la derecha, las pestañas de vista, una lupa que despliega el campo de búsqueda y los botones anterior/siguiente, con separadores entre los grupos. Una subsección en I o R con página abre en **Content**; cualquier otra abre en **Info**. La home tiene las mismas tres vistas en `#/home/<view>`: **Content** es el resumen, **Info** está vacía por ahora (reservada para una guía del proyecto y del framework) y **Record** muestra el project record (owner, notes y las tasks propias del proyecto) y, en solo lectura, las tasks de todas las secciones. Los enlaces antiguos `#item-<id>` y `#cat-<id>` se traducen.
 
-The page of each subsection is deduced from the guide's suggested path. `page` in `data/project.json` is only filled in for exceptions (an external HTTPS URL or an agreed different path). The container checks whether the file exists when a subsection is opened; if it does not, the Content view says "No page yet" with the expected path.
+La página de cada subsección se deduce de la ruta sugerida de la guía. `page` en `data/project.json` solo se rellena para excepciones (una URL HTTPS externa o una ruta distinta acordada). El contenedor comprueba si el archivo existe al abrir una subsección; si no existe, la vista Content dice "Aún no hay página" con la ruta esperada.
 
-## Organization
-See [CLAUDE.md](CLAUDE.md) as the entry point for agents. The specific guides are [Claude Design](docs/claude-design.md), [Claude Code](docs/claude-code.md) and the [data contract](docs/data-contract.md).
+## Organización
+Consulta [CLAUDE.md](CLAUDE.md) como punto de entrada para los agentes. Las guías específicas son [Claude Design](docs/claude-design.md), [Claude Code](docs/claude-code.md) y el [contrato de datos](docs/data-contract.md). La regla de idioma y el glosario están en [docs/glossary.md](docs/glossary.md).
 
-## Checking
+## Comprobaciones
 ```sh
 npm run check
 npm test
 ```
-They need no dependencies. There is also a manual review list in [docs/quality.md](docs/quality.md). Automated tests do not certify accessibility and do not replace visual review.
+No necesitan dependencias. También hay una lista de review manual en [docs/quality.md](docs/quality.md). Las pruebas automáticas no certifican la accesibilidad y no sustituyen la revisión visual.
 
-## Framework version
-The DSBook logo opens the **Framework** page: the framework version and its source, the project's repository, the latest commit on GitHub, and a *Check for updates* button on each (manual, the only network calls).
+## Versión del framework
+El logo de DSBook abre la página **Framework**: la versión del framework y su origen, el repositorio del proyecto, el último commit en GitHub y un botón *Check for updates* en cada bloque (manual, las únicas llamadas de red).
 
-The container, the scripts, the seed and the guides in `docs/` are the DSBook framework, shared with other repositories. `dsbook.json` records its version, and `npm run check` fails if a framework file changes without a new version being recorded. `npm run framework -- --compare <folder>` compares this repository with another one. See [docs/framework.md](docs/framework.md).
+El contenedor, los scripts, el seed y las guías de `docs/` son el framework DSBook, compartido con otros repositorios. `dsbook.json` registra su versión, y `npm run check` falla si un archivo del framework cambia sin que se registre una versión nueva. `npm run framework -- --compare <folder>` compara este repositorio con otro. Ver [docs/framework.md](docs/framework.md).
 
-## Reusing the template
-A new project starts with `npm run init -- --id <id> --name "<name>"`, which copies `seed/` to `data/`. After that the data belongs to the project. The instructions are in [docs/template.md](docs/template.md).
+Para el traspaso con Claude Design hay dos comandos: `npm run design-diff` (compara un proyecto de Claude Design con este repositorio) y `npm run handoff-note` (escribe `handoff-last.md`, el aviso para Claude Design). Ver [docs/scripts.md](docs/scripts.md).
 
-## Known limits
-- External pages may prevent embedding in an iframe; there is always a link to open them separately.
-- Iframes use a sandbox with scripts and no access to the container. Content that needs cookies, storage or additional capabilities must be opened separately or consciously adapted.
-- The template does not visually edit section HTML. That editing happens in Claude Design or in code.
-- R indicates a recorded review according to the project's criteria, not a conformance certification.
-- Markdown documentation files can be read in the editor or on GitHub; they are not converted to HTML automatically.
+## Reutilizar la plantilla
+Un proyecto nuevo empieza con `npm run init -- --id <id> --name "<name>"`, que copia `seed/` a `data/`. Después, los datos pertenecen al proyecto. Las instrucciones están en [docs/template.md](docs/template.md).
+
+## Límites conocidos
+- Las páginas externas pueden impedir su incrustación en un iframe; siempre hay un enlace para abrirlas aparte.
+- Los iframes usan un sandbox con scripts y sin acceso al contenedor. El contenido que necesite cookies, almacenamiento o capacidades adicionales debe abrirse aparte o adaptarse conscientemente.
+- La plantilla no edita visualmente el HTML de las secciones. Esa edición ocurre en Claude Design o en código.
+- R indica una review registrada según los criterios del proyecto, no una certificación de conformidad.
+- Los archivos de documentación Markdown se pueden leer en el editor o en GitHub; no se convierten a HTML automáticamente.

@@ -65,3 +65,4 @@ A proposal is an agreed change to the **way of working** (container, contract, g
 | pilot-6 | J6 · La página Color se traduce aquí | Applied | 0.21.0 | Claude Design debe partir de esta versión. |
 | pilot-6 | J7 · El ciclo de trabajo y los accesos quedan escritos | Applied | 0.21.0 | Framework 2.0.1; proyecto de Claude Design registrado en `CLAUDE.md`. |
 | pilot-6 | J8 · Scripts para el traspaso con Claude Design | Applied | 0.21.0 | Framework 2.1.0: `design-diff` y `handoff-note`. |
+| pilot-6 | J9 · Protección contra la pérdida de trabajo de Claude Design | Applied | 0.21.0 | Framework 2.2.0: manifiesto, tres bandas, `design-baseline.json`, hook de push y skill. |

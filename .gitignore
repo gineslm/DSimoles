@@ -3,4 +3,6 @@ Thumbs.db
 node_modules/
 *.log
 __pycache__/
-.claude/
+.claude/*
+!.claude/skills/
+.dsbook/

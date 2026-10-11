@@ -13,6 +13,8 @@ Es el mismo para todo el equipo y está detallado en [docs/handoff.md](docs/hand
 6. **Claude Code sube a GitHub**, registra la integración en `CHANGELOG.md` y entrega el aviso para Claude Design (`npm run handoff-note` antes del commit y un prompt con el hash tras el push).
 7. **Claude Design confirma** la actualización en el repo y sigue desde la nueva base.
 
+**Protección.** Un archivo que Claude Design cambió y que el repo no tiene se perdería al actualizar Claude Design desde el repo. `design-diff` lo detecta con un manifiesto de hashes, `--record` exige integrar, confirmar o descartar con motivo, y el hook de push (`npm run hooks:install`) bloquea el push mientras quede algo. Procedimiento completo: skill `dsbook-handoff`.
+
 **Accesos.** Antes de trabajar, comprueba que tienes lo que tu papel necesita: git (`fetch`, `push`) y la conexión MCP al proyecto de Claude Design en el caso de Claude Code; el repo en GitHub en el caso de Claude Design. Si falta alguno, **detente, di cuál falta y pídelo a la persona responsable**. No trabajes con una copia que no sabes si está al día ni des por bueno un estado que no has podido leer.
 
 ## Lee según la tarea

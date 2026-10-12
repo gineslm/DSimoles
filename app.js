@@ -51,17 +51,54 @@ function renderHead(item,entry,page,effective){
 
 // ---- views
 function viewHome(){const v=homeView(route);return v==='info'?viewHomeInfo():v==='record'?viewHomeRecord():viewSummary();}
-function viewSummary(){
-  const wrap=el('div',{className:'view-inner'}),total=guide.categories.reduce((n,c)=>n+c.items.length,0),p=progressOf(project);
-  wrap.append(el('h1',{id:'view-title'},project.name),el('p',{className:'lead'},`${total} subsecciones en ${guide.categories.length} categorías.`));
-  const meter=(title,value,text)=>{const m=el('div',{className:'meter'}),h=el('div',{className:'meter-head'});h.append(el('span',{},title),el('span',{},text));const bar=el('progress',{max:100,value:value||0});bar.setAttribute('aria-label',`${title}: ${text}`);m.append(h,bar);return m;};
-  const meters=el('div',{className:'meters'});meters.append(meter('Progress',p.percent,p.applicable?`${p.ready} de ${p.applicable} aplicables en Ready`:'Sin secciones aplicables'),meter('Complexity',p.scope,`${p.applicable} de ${p.total} no son N`));wrap.append(meters);
+// Vista de la home: tarjetas por categoría o lista con todas las subsecciones. Es estado de visualización en memoria.
+let homeLayout='cards';const collapsedCats=new Set();
+const ICONS={cards:'<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+  list:'<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.4" fill="currentColor"/><circle cx="4.5" cy="12" r="1.4" fill="currentColor"/><circle cx="4.5" cy="18" r="1.4" fill="currentColor"/></svg>'};
+const countsOf=c=>{const counts={R:0,I:0,P:0,N:0};c.items.forEach(i=>counts[project.sections[i.id].status]++);return counts;};
+function summaryCards(){
   const cards=el('div',{className:'cards'});
-  for(const {c} of visible()){const counts={R:0,I:0,P:0,N:0};c.items.forEach(i=>counts[project.sections[i.id].status]++);const applicable=c.items.length-counts.N,card=link(`#/${c.id}`,'',{className:'card'});
+  for(const {c} of visible()){const counts=countsOf(c),applicable=c.items.length-counts.N,card=link(`#/${c.id}`,'',{className:'card'});
     const bar=el('progress',{max:100,value:applicable?Math.round(counts.R/applicable*100):0});bar.setAttribute('aria-label',`${c.title}: ${counts.R} de ${applicable} subsecciones aplicables en Ready`);
     card.append(el('span',{className:'card-num'},String(c.number).padStart(2,'0')),el('span',{className:'card-title'},c.title),el('span',{className:'card-text'},c.objective),bar,el('span',{className:'card-counts'},Object.keys(labels).map(s=>`${s} ${counts[s]}`).join(' · ')));cards.append(card);}
   if(!cards.childNodes.length)cards.append(el('p',{className:'no-results'},'Ninguna categoría coincide con estos filtros. Prueba con otro estado u otra búsqueda.'));
-  wrap.append(cards);
+  return cards;
+}
+function summaryList(onChange){
+  const tree=el('div',{className:'tree'}),shown=visible();
+  for(const {c,items} of shown){
+    const counts=countsOf(c),open=!collapsedCats.has(c.id),cat=el('section',{className:'tree-cat'}),head=el('div',{className:'tree-head'});
+    const chev=el('button',{type:'button',className:'tree-toggle'});chev.setAttribute('aria-expanded',String(open));chev.setAttribute('aria-controls',`tree-${c.id}`);chev.setAttribute('aria-label',`${c.title}: ${open?'contraer':'expandir'}`);chev.append(el('span',{className:'tree-chevron','aria-hidden':'true'}));
+    const h=el('h2',{className:'tree-title'});h.append(el('span',{className:'tree-num'},String(c.number).padStart(2,'0')),link(`#/${c.id}`,c.title));
+    head.append(chev,h,el('span',{className:'tree-counts'},Object.keys(labels).map(s=>`${s} ${counts[s]}`).join(' · ')));
+    const list=el('ul',{className:'rows tree-rows',id:`tree-${c.id}`});list.hidden=!open;
+    for(const i of items){const li=el('li'),a=link(`#/${i.id}`,'',{className:'row'});a.append(el('span',{className:'row-num'},i.number),el('span',{className:'row-title'},i.title),statusTag(project.sections[i.id].status));li.append(a);list.append(li);}
+    chev.onclick=()=>{const now=list.hidden;list.hidden=!now;if(now)collapsedCats.delete(c.id);else collapsedCats.add(c.id);chev.setAttribute('aria-expanded',String(now));chev.setAttribute('aria-label',`${c.title}: ${now?'contraer':'expandir'}`);onChange?.();};
+    cat.append(head,list);tree.append(cat);
+  }
+  if(!shown.length)tree.append(el('p',{className:'no-results'},'Ninguna categoría coincide con estos filtros. Prueba con otro estado u otra búsqueda.'));
+  return tree;
+}
+function layoutControls(holder){
+  const box=el('div',{className:'lead-tools'}),all=el('button',{type:'button',className:'tree-all'},'Contraer todo'),seg=el('div',{className:'seg',role:'group'});
+  seg.setAttribute('aria-label','Vista de la home');
+  const buttons={};
+  const sync=()=>{for(const k in buttons)buttons[k].setAttribute('aria-pressed',String(k===homeLayout));all.hidden=homeLayout!=='list';all.textContent=collapsedCats.size?'Expandir todo':'Contraer todo';};
+  const fill=()=>holder.replaceChildren(homeLayout==='list'?summaryList(sync):summaryCards());
+  for(const [k,text] of [['cards','Tarjetas'],['list','Lista']]){
+    const b=el('button',{type:'button',className:'seg-btn'});b.innerHTML=ICONS[k];b.append(text);buttons[k]=b;
+    b.onclick=()=>{if(homeLayout===k)return;homeLayout=k;fill();sync();};seg.append(b);
+  }
+  all.onclick=()=>{if(collapsedCats.size)collapsedCats.clear();else visible().forEach(({c})=>collapsedCats.add(c.id));fill();sync();};
+  sync();box.append(all,seg);fill();return box;
+}
+function viewSummary(){
+  const wrap=el('div',{className:'view-inner'}),total=guide.categories.reduce((n,c)=>n+c.items.length,0),p=progressOf(project),holder=el('div',{className:'home-body'});
+  wrap.append(el('h1',{id:'view-title'},project.name));
+  const bar=el('div',{className:'lead-row'});bar.append(el('p',{className:'lead'},`${total} subsecciones en ${guide.categories.length} categorías.`),layoutControls(holder));wrap.append(bar);
+  const meter=(title,value,text)=>{const m=el('div',{className:'meter'}),h=el('div',{className:'meter-head'});h.append(el('span',{},title),el('span',{},text));const bar=el('progress',{max:100,value:value||0});bar.setAttribute('aria-label',`${title}: ${text}`);m.append(h,bar);return m;};
+  const meters=el('div',{className:'meters'});meters.append(meter('Progress',p.percent,p.applicable?`${p.ready} de ${p.applicable} aplicables en Ready`:'Sin secciones aplicables'),meter('Complexity',p.scope,`${p.applicable} de ${p.total} no son N`));wrap.append(meters);
+  wrap.append(holder);
   const foot=el('p',{className:'muted small'});foot.append('Solo lectura: todo se edita en Claude Design. ',link('README.md','README'),' · ',link('CLAUDE.md','Guía para agentes'));wrap.append(foot);return wrap;
 }
 function viewCategory(c){

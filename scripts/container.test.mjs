@@ -67,10 +67,23 @@ test('Contenedor: la home, las secciones, las vistas, los filtros y los enlaces 
     await b.goto('');
     assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'la home muestra una tarjeta por categoría');
     assert.equal(await b.eval(`document.querySelectorAll('.meters progress').length`), 2, 'la home muestra Progress y Complexity');
+    // selector de vista de la home: tarjetas (por defecto) o lista con todas las subsecciones
+    assert.equal(await b.eval(`document.querySelector('.seg-btn[aria-pressed=true]').textContent.trim()`), 'Tarjetas', 'por defecto, tarjetas');
+    await b.eval(`document.querySelectorAll('.seg-btn')[1].click()`); await sleep(200);
+    assert.equal(await b.eval(`document.querySelectorAll('.tree-cat').length`), guide.categories.length, 'la lista muestra todas las categorías');
+    assert.equal(await b.eval(`document.querySelectorAll('.tree-rows .row').length`), items.length, 'y todas las subsecciones');
+    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), 0, 'sin tarjetas en la lista');
+    await b.eval(`document.querySelector('.tree-toggle').click()`); await sleep(100);
+    assert.equal(await b.eval(`document.querySelector('.tree-rows').hidden`), true, 'cada categoría se puede contraer');
+    assert.equal(await b.eval(`document.querySelector('.tree-all').textContent`), 'Expandir todo');
+    await b.eval(`document.querySelectorAll('.seg-btn')[0].click()`); await sleep(200);
+    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'se vuelve a las tarjetas');
 
     if (withPage) {
       await b.go(`#/${withPage.id}`);
       assert.equal(await b.eval(`!!document.querySelector('#view iframe')`), true, 'una sección en I/R con página abre su página por defecto');
+      assert.equal(await b.eval(`getComputedStyle(document.querySelector('#views [aria-current]')).borderBottomWidth`), '3px', 'la vista activa es una pestaña con indicador');
+      assert.equal(await b.eval(`getComputedStyle(document.querySelector('#views a:not([aria-current])')).borderBottomColor`), 'rgba(0, 0, 0, 0)', 'las inactivas no llevan indicador');
       assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Content');
       assert.equal(await b.eval(`document.getElementById('head-status').textContent`).then(t => t.startsWith(project.sections[withPage.id].status)), true);
       assert.equal(await b.eval(`document.documentElement.scrollHeight <= innerHeight`), true, 'la página no añade scroll al documento: el iframe llena la vista');

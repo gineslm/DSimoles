@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.21.0 · 2026-10-12 · 3551cc0 c4ec117 52be4dc 2b941f0 7ea72cf d6fa244 f1e2df5
+Sections: todas (texto de la guía y de los datos); contenido nuevo de Claude Design en 34 secciones (foundations: 4, visuals: 9, tokens: 3, resources, layout: 2, interaction: 2, navigation: 2, patterns, implementation, components: 9).
+El repositorio entero pasa a castellano, con los términos y las etiquetas en inglés (propuesta pilot-6, framework 2.0.0 y `docs/glossary.md`). La guía se restaura del castellano original, `project.json` pasa a `language: es` y se traducen sus notes y tasks. Se trae de Claude Design el trabajo hecho desde 0.20.1: 33 páginas nuevas (24 de borrador esquemático, 9 separadas de visuals.color), visuals.color más corta y 9 `support.js`, todo traducido; 34 secciones en I, 6 reabiertas desde N y 29 tasks en implementation.publishing-and-migration. Los valores son propuestas sin validar por el owner; ninguna sección está en R. Se adopta el framework 2.2.1: ciclo de trabajo y accesos, `design-diff` y `handoff-note`, protección contra la pérdida de trabajo de Claude Design (`design-baseline.json`, hook de push) y el skill `dsbook-handoff`. Primera integración registrada con el manifiesto de hashes de Claude Design (82 archivos).
+
 ## 0.20.1 · 2026-10-10 · 257684f
 Sections: none.
 The Sections menu cascade no longer depends on hover-capability media queries, which Firefox on this PC answered differently from Chrome (it showed the inline chevron accordion). Hover is detected from pointer events, the wide layout is always the cascade, and a browser test reproduces the old failure by emulating touch. Framework 1.2.0 re-recorded with it; it had not been published.

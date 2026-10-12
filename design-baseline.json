@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "files": {
+    ".gitattributes": {
+      "design": "7cd03d725ca95ddf81d469986a68384ef55f3d5919d500dba8b25f283ce51058",
+      "repo": "7cd03d725ca95ddf81d469986a68384ef55f3d5919d500dba8b25f283ce51058"
+    },
+    ".gitignore": {
+      "design": "e476cb8f7aa736a669251f146979a6d58a962101e3f8a42b84e2e1f92c3036f4",
+      "repo": "62a0ca4cac014d35af0c1af50549026ce7074eb522c885501fe64591b48b2b05"
+    },
+    "CHANGELOG.md": {
+      "design": "135b9420eab623d0a16aecfc11039eff3e3be6b27d26974bcbc3d9fb15692fb8",
+      "repo": "a06859878d6d40ed818c2a0cec3b96ead91b981e1f69c8667c8bbd6c53ba2313"
+    },
+    "CLAUDE.md": {
+      "design": "d6d89d0075ecda5347d824b82ea23d2e8da7d8b656ecd66a73cf87b1a19be818",
+      "repo": "b11ee9cb639069a6bd1d6e6ac378887a33830bd79bd3aa4f68c0d13cceccfc4e"
+    },
+    "README.md": {
+      "design": "3873b796396c99d44de012a00ca6c3dde8395cd85996b534e1e8bf19a97645d5",
+      "repo": "aa12962a7acfab50999387540a3e711846107b9609f6fec3618636de1e16d944"
+    },
+    "app.js": {
+      "design": "f6ac989ab82c0ccbadac60f180444e5e22a5e0be346a261ad0b41fad867b1ea1",
+      "repo": "5920e6c2b7788535c26be3f6d3fc6c53528694817e900034f1b9b446ecc16f5b"
+    },
+    "assets/README.md": {
+      "design": "e44eda2820dd674592c41becf8044fbfb7ea4062645b93176a1bbe3e9c4c8b27",
+      "repo": "7af4d3c267d5b07e75923eb82b9162f40fae231eb15eb2e0de2ec44d837655da"
+    },
+    "assets/_framework/dsbook-logo.svg": {
+      "design": "131278d0ee7988c483dd7d4d60c78bd8596daf06d70a90a4b418913bfbfe9e02",
+      "repo": "131278d0ee7988c483dd7d4d60c78bd8596daf06d70a90a4b418913bfbfe9e02"
+    },
+    "assets/_runtime/README.md": {
+      "design": "44484b60ad9f65e8b45bcf8acdd1587c8b3e033cb8cbc07ba4937a79b01380bd",
+      "repo": "58f568ec7dc45d0555794a547f4b0ff7fb24c52ef43e2a036ac78517d97ae7b8"
+    },
+    "assets/_runtime/react-dom.production.min.js": {
+      "design": "35f4f974f4b2bcd44da73963347f8952e341f83909e4498227d4e26b98f66f0d",
+      "repo": "35f4f974f4b2bcd44da73963347f8952e341f83909e4498227d4e26b98f66f0d"
+    },
+    "assets/_runtime/react.production.min.js": {
+      "design": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd",
+      "repo": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd"
+    },
+    "data/guide.json": {
+      "design": "0adfe954a8622d01fbed2022a44512b12d9401d6aa302bebe27a30e22c12cb2e",
+      "repo": "0e3f25b32b16d70a25e46987593e1effcdc695b332f6a92842f49586575fa85d"
+    },
+    "data/project.json": {
+      "design": "66d453d66f6f38b9e663e47743d07f2c4b34c54d49a992d89026425c2bf1e3e6",
+      "repo": "31ef09a213a4c3c92257c8eef566ab590fd1143a54c6cc773dd8887c3352adef"
+    },
+    "docs/claude-code.md": {
+      "design": "16b2a7f0c6d054c934a44fe80baa9408d28c877350647d492e1f3c17897fb625",
+      "repo": "56b9176dc1e7b98f1fb8164f83ef153ca3f3fd3039ea2c6bf012964c2a9e8315"
+    },
+    "docs/claude-design.md": {
+      "design": "0058af95bd9277206bd094a470e9f2fbb12be59a9a7a46b9c461c087805298ef",
+      "repo": "0f43aa6d365c33d86a0a08b80ebc03556cdf9dbc6623105063dd1272a3f3d3ae"
+    },
+    "docs/data-contract.md": {
+      "design": "716d492f8cedcdaac1cbd6cb0be78e60e5d25ac74f4f1b58458c84cbca95b25c",
+      "repo": "66968feb91ba285661c2be767f18fb1508d84ef271cc89603a8748227ab7ac8b"
+    },
+    "docs/framework.md": {
+      "design": "af922fd763d01a3ba4c75115f723714ef17e25037e82f8892b9315e83aadc8ed",
+      "repo": "51bf5832c810fb53d18522b49e92ded8727e7ad3da5ed52ffa9da593bc7f2a47"
+    },
+    "docs/handoff.md": {
+      "design": "a521a2686b68933e9dda429edadd876a265c93d5ff841f07ada2f95140aa9891",
+      "repo": "78e372cc1ed4f11719f55ac16711f963ad3f03759d3407db5d6b7f8446cb6038"
+    },
+    "docs/page-style.md": {
+      "design": "4d4bde3653b22d3083390b5d330c7df985ce5a74af2b3c99a9b3dd7918d6438b",
+      "repo": "46234f04c1508504221893b88b9ee54c14a661ac1ac510373d20d29bc955111f"
+    },
+    "docs/proposals/README.md": {
+      "design": "44a6d0ea432f3f442574cc634879bde20c99b9ce514ae0d2a4eb14eb2e76271a",
+      "repo": "94af05e87c812a1c85e72ce213f9a18a82ce2ea3bfa9456f42d22d7348ec8f10"
+    },
+    "docs/proposals/pilot-1-decisions.md": {
+      "design": "2323d444a942a9aeda036bc4d420d3721f97e7d24558aec098022aaec58a83d7",
+      "repo": "2323d444a942a9aeda036bc4d420d3721f97e7d24558aec098022aaec58a83d7"
+    },
+    "docs/proposals/pilot-2-container-and-style.md": {
+      "design": "5a47259b1d23b4ea296e2a8833634d7aaa4d6a14a5bfc6059f586adc602e553c",
+      "repo": "5a47259b1d23b4ea296e2a8833634d7aaa4d6a14a5bfc6059f586adc602e553c"
+    },
+    "docs/proposals/pilot-3-data-and-structure.md": {
+      "design": "0bac8b74317a6b80bc1bded9380964ec2cbf101f97bb0089be8eaa695a933ad0",
+      "repo": "0bac8b74317a6b80bc1bded9380964ec2cbf101f97bb0089be8eaa695a933ad0"
+    },
+    "docs/proposals/pilot-3-id-map.md": {
+      "design": "15b21c0d3e48ef57f39b401495776b91556a6829899a21ad2a39be65f34e5953",
+      "repo": "15b21c0d3e48ef57f39b401495776b91556a6829899a21ad2a39be65f34e5953"
+    },
+    "docs/proposals/pilot-4-container-refinements.md": {
+      "design": "96d9846d24039ce33c87e83b93e85763b08cb13a13476d67962bdf23e7be6d20",
+      "repo": "96d9846d24039ce33c87e83b93e85763b08cb13a13476d67962bdf23e7be6d20"
+    },
+    "docs/proposals/pilot-5-home-record.md": {
+      "design": "af7a608bb3bb51cefc04ae7e1ddd1b5292a878fb529d6647397913cc017f2001",
+      "repo": "af7a608bb3bb51cefc04ae7e1ddd1b5292a878fb529d6647397913cc017f2001"
+    },
+    "docs/quality.md": {
+      "design": "adce8f834f179df2baf583ca9e23f0848a4f1c6ced11fe6030a0284045d13a4b",
+      "repo": "f2999772013715d70af008e70eec1d1be73d7d1a4b86fc6a3a44634ab2c74bdc"
+    },
+    "docs/scripts.md": {
+      "design": "dc12b981f89083f1415a579ca3b089f03e1944436f4e6d5283c045081ee00e30",
+      "repo": "ad5f0b941e071c575c2cbc0f83695cfd2cfa5ff9a02b707dcbb900cb449ef3a6"
+    },
+    "docs/template.md": {
+      "design": "fbf1a905a8fe490f98bcd38441ade9cff140569ca7993e191675c24f6f246245",
+      "repo": "4e1ff5be2511884d1456f88a89b784f4a3367ec814fb7acfa436119308e53925"
+    },
+    "dsbook.json": {
+      "design": "711b7a15b208d88dcf3ff3bc3c664e021fb03f286d70f5673e7385bd33d635ab",
+      "repo": "54e34be855d75600cc2e797054e8c8ab5b80bd9ed106779c6cec75fc18357211"
+    },
+    "index.html": {
+      "design": "e9bc4183e632ea10faeb58a1500341a07936ea1f533dc08786260eba5cec2dd0",
+      "repo": "dec6b481d2bda9b198b7ddb4cc33797bbfff7fcdcaf9cfd656bacd46601bd8c7"
+    },
+    "model.js": {
+      "design": "8d5fb589e09c61fc6de04494643cf5bfe012c095763656833269431e8a2f0d0a",
+      "repo": "28f1e101278dbafb1561d96dbd06a72f5b832f34d983753bbd507361545f15d9"
+    },
+    "package.json": {
+      "design": "5dbfa5d68bc0f01f19ad3630bb302d94f3cb8551cf4b125142fcd618ec6b70a5",
+      "repo": "0e79cb7195e2f6b5d646ac4f26e32c1ca055a7ac3072c67f76b865d6f46591a5"
+    },
+    "sections/README.md": {
+      "design": "fb08ab55c463f9eb0fc4b390600ab5baf0e6b64b46eed6888e6a29aa1d814410",
+      "repo": "a2f3f168423983c03aaa11f2d383bd7096a3c93f75b1aade0b735e3bc78c234d"
+    },
+    "sections/components/accessibility.dc.html": {
+      "design": "62af8a1403f836902669a5d489e03eeb8f86acf83616d82b63bbf02b402a3da5",
+      "repo": "dfca92f7c44d122a9b704617b59f04bb0740959e71514b6ef821ce46bf297dc7"
+    },
+    "sections/components/actions.dc.html": {
+      "design": "3d44a24cdb666a8164a73204646ba84f2823109688236c7aa821c24a9faf9c73",
+      "repo": "2805554d0ed5e6159322aac0ccc42b18283653ac5b764def224654176e844d95"
+    },
+    "sections/components/data.dc.html": {
+      "design": "a938a78790438af40d5b7a52a8248dcf4a0eccbeff7dbec1ac87eac9e7937df3",
+      "repo": "1d5c2fb663a5b99841d85835bf655b820c66af1816c3ef44e3b51d7f5e0a7c54"
+    },
+    "sections/components/disclosure-and-overlays.dc.html": {
+      "design": "7eb3768504638e95c3cecab623b5fd1e83830da13c2210ec5a07e96f11cf942d",
+      "repo": "657accde38624363d9ddd6806028b9ab58ba568b5fb090791e5215a3e9870c6a"
+    },
+    "sections/components/feedback.dc.html": {
+      "design": "acbeca016bea18fa5cfeed6baf4dd249363a82d61d41b162b04c0d3a5e689424",
+      "repo": "e5933b9db1fd604f5e447d3bee06380ffa2dff3d3b43892437efa557d2d24d6e"
+    },
+    "sections/components/field-structure.dc.html": {
+      "design": "7d869e1dbd255fa662a7cf60b7f02347d56a919d64b287cef1332f147ec1a4d8",
+      "repo": "b6259adf801affa31d5bfaa65a95844ef00479274921be7208d2af50afb54c3d"
+    },
+    "sections/components/input-and-selection.dc.html": {
+      "design": "9397b5542e65726cd74774fe4cbd509685b0d7688813f168efcedc67591746a4",
+      "repo": "4698d70c8d03e641ccccb164aed5e07addd88b0f94f7c08031a4bc5b38c6b765"
+    },
+    "sections/components/navigation.dc.html": {
+      "design": "db16bd39c4d88a23c0df6836c81dde98588487df3c781da127de35fc1b6b1e84",
+      "repo": "5136f99d79c5a3c772d7cb10a19236269ec00c8424da15cf9ed806d1e130d8d2"
+    },
+    "sections/components/presentation.dc.html": {
+      "design": "ee1aebeb4e8f8bd5642f428acdacc85b2205342e421774cf2cf3c4f1b6599769",
+      "repo": "4528c4c3c24fcecfbd32d6ea440ddabc018da383876b746bcfc55602d7eca994"
+    },
+    "sections/components/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/foundations/accessibility.dc.html": {
+      "design": "2f30fffc80f024409c9e8536b8b42300e81243aa26d65edf816c98da04527ae9",
+      "repo": "785813473f5950987d21b06f13557a1a3509b9dde23428d05de0d64fcbfc3fee"
+    },
+    "sections/foundations/goals-and-usage-guide.dc.html": {
+      "design": "f1526cf369833adb66ea1e3feecd921f297fe1a20557c002e684f91458cb7569",
+      "repo": "b6b401849bbe8e67d7577526fd0834aa02203d9146c8d7032a22487557e467e2"
+    },
+    "sections/foundations/products-and-requirements.dc.html": {
+      "design": "299b1b72a48aba4db356df781a6827e3b77b1c51b1ae1587ce7fae7c99c56e9f",
+      "repo": "8d7ea8059ac259978a7784af7a747d21f93fc815ad16734e26b3b22a49e4a79d"
+    },
+    "sections/foundations/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/foundations/system-users.dc.html": {
+      "design": "7a37bd887b14aae12bfd3821e54d36a7960768383c230276c2ecd63646e90836",
+      "repo": "1828cd29ec21d3f9a1d8728dcb730e243ad3162bc31d86de8643a8e852efa341"
+    },
+    "sections/implementation/publishing-and-migration.dc.html": {
+      "design": "eead39f3177993a4caf49b4dfd06dc7120fbd75762b8ab62fdfe0d031072756e",
+      "repo": "5500b83cb4d529a06d3c5f710ae11e29800b0693c53ccbd194a29eda01e49c2e"
+    },
+    "sections/implementation/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/interaction/focus-management.dc.html": {
+      "design": "aa20e2c43458356201c69343c4eb4a0782d89d92e45ed095cf44b7ca173725da",
+      "repo": "c76526a8e864180f26d8fdbdcf94671d107591240c78f0209cfdd8de0ecd9fd5"
+    },
+    "sections/interaction/interaction-states.dc.html": {
+      "design": "4a6c40a3551fc3c9991ec8a03c53f0a96c12cce424442515ba9e3ac673c7ad0f",
+      "repo": "60fec3c0db46bf5e6558f4e32391df86a2212b242bc7a05eb9d723b7bf3107b1"
+    },
+    "sections/interaction/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/layout/breakpoints.dc.html": {
+      "design": "8c0490eff62d00338b55b929d317ecc5da11673d0a78f645d9136589456a4ed8",
+      "repo": "7c9ae95a2c652735c622dc45becac101dede322fb918910d42c63e61ff35ea2c"
+    },
+    "sections/layout/containers-and-grid.dc.html": {
+      "design": "8d38e411f20688854ab4035f61b74aa9a8b0dc480331552707dbb91ff0593971",
+      "repo": "6c405fdea8e0e61efcc377c138d088c09189c82fdfbd9e2ac7bbb41f02f15255"
+    },
+    "sections/layout/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/navigation/current-location.dc.html": {
+      "design": "1734b6ff89d3e65da87a75d5fb58684fca78383dd356d4ea55ba7f9667dcba84",
+      "repo": "d889115bb1f22d3fd612839945feec2c08e4d8e0a3530c69e02570c3467f3ed1"
+    },
+    "sections/navigation/levels-and-hierarchy.dc.html": {
+      "design": "d5e98cf1b85c8e30d2fa291d9f16874a77fb52d3674c5328277ca02a69a6fb57",
+      "repo": "fde4c9852fc3549fd3486abf04840cc2f496a89838d16a8851f2b08050d6599f"
+    },
+    "sections/navigation/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/patterns/forms-and-validation.dc.html": {
+      "design": "e3a3bd6b8428b7c763579292b6405c63a8b34d1c9394c79a5a3a2eeb5088aacc",
+      "repo": "8ad71df4fbb987e9e42005070a3924bcb6bad64d215812faeb8bac2389ddca03"
+    },
+    "sections/patterns/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/resources/libraries-and-licenses.dc.html": {
+      "design": "7e2b721f6cd326a7e7f7d6ca72330ccd1dd3c23dd30fd4b2f18e8890dc9dc7d8",
+      "repo": "b6067dfd1753932db1a54d9f996c1c2b7bc093c6db0641da3730531c9f24048f"
+    },
+    "sections/resources/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/tokens/design-code-mapping.dc.html": {
+      "design": "54b2984e8ae52a71633d523515d737e7b55f65da2e34d2f7c88cde45df86f938",
+      "repo": "89038562b46c2a773b352dfb184eb3b00242132f7d0fec9270d0eec44910105c"
+    },
+    "sections/tokens/naming-and-aliases.dc.html": {
+      "design": "bd5c735d2dfc8280a095dbac3409c4530262b144c5c7f04a1f1f9d1a4ae41f9d",
+      "repo": "e62da3777d3d8fa24f889a5b0fed2a51493d38108cea7a9847b68484d45db464"
+    },
+    "sections/tokens/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/tokens/token-layers.dc.html": {
+      "design": "e113a2ab79453ae9d5d9935d11577a9a2f9218a5b53a38f2c4cbf1f2e5b66ff6",
+      "repo": "3d6d17a3d9dd9fa3496d011a53e07ce7c6cccdec3185c8ec92843ea08782b2ad"
+    },
+    "sections/visuals/accessibility.dc.html": {
+      "design": "7c6f18f7217fae0dc9e7ca0d73e20f7a46d5a87f8f91927bed038e300c3494f4",
+      "repo": "f723330ddd54e0045a3114f6dceb2fd8c866df77dc5cb074e7b3fe4339c7c070"
+    },
+    "sections/visuals/borders.dc.html": {
+      "design": "b78d2fa877fb0be3407a8b340a086ecaef7e33f4be27c84ee465dbe549ac7e5f",
+      "repo": "0f9c2893db119542d75968d3d613d8345c2fc47796a4c061296d32be4dfa15ef"
+    },
+    "sections/visuals/color.dc.html": {
+      "design": "66ed15a3fc4f8a1753a2836be300472938b0abc16882f40efb37a89155f6b0c2",
+      "repo": "90a6479dec0b61703bad6f01e02d09c98e04081b8f94b88dbc317883356059fb"
+    },
+    "sections/visuals/dimensions.dc.html": {
+      "design": "87053c016a8176e5e1716057f1c18e879f22171f5b51740e5c6628967511e8a4",
+      "repo": "3af68d9023406fb7c06a788e4a3025096649e11008aa7e38c2d8f3d35373d670"
+    },
+    "sections/visuals/elevation.dc.html": {
+      "design": "6536963a7564a648bdb35833f586fb4afeaa13e5fcee5d114e185d3bc14b7213",
+      "repo": "2127b9210cdfdab2edebbbfee7d6c65222f2d399e3969076d07e3af71e0f2255"
+    },
+    "sections/visuals/opacity.dc.html": {
+      "design": "6bb048c766a76f832a15629619abfd4bf4ddf2829749b80bb12d2f4f57c493d8",
+      "repo": "ffad6242d2ec540842861a13d381c7c8c828f726b24008ab91a74e97f203193b"
+    },
+    "sections/visuals/shape.dc.html": {
+      "design": "b56ec2375727e042c5489de52e4ef8cac1867e1d8e555842eeac43906ec8e295",
+      "repo": "391585155ac96627fa5ab9b101553d527dde0e8f1d2c4049755cd6bd37c875ce"
+    },
+    "sections/visuals/spacing.dc.html": {
+      "design": "1ac6d350e27294ccc0409140ddf859923e8b12774f869916d758d6144fbc0ab5",
+      "repo": "8f75760be41c6955c97967aed8cf0aa40c194182d4a8eef66a6116c432c85c53"
+    },
+    "sections/visuals/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/visuals/typography.dc.html": {
+      "design": "428dd8d3e24b0ed78097f1a0e6e957776f423f57463d75fd40cdbcfeebc49644",
+      "repo": "d4ad96a7c584ccc31e1248a53a735555a25a749f8c5bb039e82fea796bdea9f2"
+    },
+    "seed/guide.json": {
+      "design": "0adfe954a8622d01fbed2022a44512b12d9401d6aa302bebe27a30e22c12cb2e",
+      "repo": "e849123b1f9ee05e8eb6398fbb677b0e2237f3cd7307c1f229c13d6a7ffdaa3a"
+    },
+    "seed/project.json": {
+      "design": "560ec003bbc50b1b2ea5c7412dd99de8825067eb0fdb2cbcbc296861cd97a5a7",
+      "repo": "1d2c56188bc8b57c80ca86d3016fbe34da6f2d2a990bb99cd96e73422543037b"
+    },
+    "styles.css": {
+      "design": "b58afc83bf766236f1232540c2e455dc8a72d469657ea8054cececd7d9046983",
+      "repo": "f121cfc1ca0bfdc5211cb367bc1063c865b31f1e322f8dbcd18dd4e42615f1a3"
+    },
+    "templates/component.md": {
+      "design": "211193dd93d47921758aacba42446f5aa9cc1a5677e09cde8c3a7a11a9fe4774",
+      "repo": "b154f61895113e9881708398c8e2feef3148df2069d0717656ce80d3531e3892"
+    }
+  },
+  "discarded": [],
+  "recorded": "2026-10-12T16:09:58.337Z",
+  "manifestGenerated": "2026-10-11T12:07:43.982Z"
+}

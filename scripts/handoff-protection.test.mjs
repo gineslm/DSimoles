@@ -8,7 +8,7 @@ import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
-import {canonicalSvg, threeWay, parseManifest} from './handoff-lib.mjs';
+import {canonicalSvg, threeWay, parseManifest, DESIGN_IGNORED} from './handoff-lib.mjs';
 import {hashOf} from './framework-lib.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -66,6 +66,11 @@ test('threeWay: lo hecho en Claude Code tras registrar no bloquea y un descarte 
   assert.deepEqual(r2.discarded, ['a']); assert.deepEqual(r2.blocking, []);
   const r3 = threeWay({baseline, discarded: [{path: 'a', designHash: 'd2'}], design: M({a: 'd3'}), repo: M({a: 'r1'})});
   assert.deepEqual(r3.pending, ['a'], 'si Claude Design vuelve a cambiar, reaparece');
+});
+
+test('Los archivos que genera Claude Code no cuentan como trabajo de Claude Design', () => {
+  for (const p of ['design-baseline.json', 'handoff-last.md', 'design-manifest.json', '_backup/2026-10-12/a.html', 'github.md']) assert.match(p, DESIGN_IGNORED, p);
+  assert.doesNotMatch('sections/visuals/color.dc.html', DESIGN_IGNORED);
 });
 
 test('Un SVG reserializado por Claude Design coincide con el original en forma canónica', () => {

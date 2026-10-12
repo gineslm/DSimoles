@@ -48,8 +48,9 @@ export function changedGuideIds(before, after) {
   return [...new Set([...a.keys(), ...b.keys()])].filter(id => a.get(id) !== b.get(id)).sort();
 }
 
-// Rutas del proyecto de Claude Design que no se transfieren (y su copia de seguridad).
-export const DESIGN_IGNORED = /^(_ds\/|_backup\/|uploads\/|github\.md$|design-manifest\.json$|\.thumbnail$|scripts\/|node_modules\/|\.git\/|\.claude\/|\.dsbook\/)/;
+// Rutas del proyecto de Claude Design que no se comparan: lo que no se transfiere, su copia de seguridad y los dos archivos que genera
+// Claude Code (design-baseline.json y handoff-last.md): Claude Design los lee del repositorio y su copia siempre va un envío por detrás.
+export const DESIGN_IGNORED = /^(_ds\/|_backup\/|uploads\/|github\.md$|design-manifest\.json$|design-baseline\.json$|handoff-last\.md$|\.thumbnail$|scripts\/|node_modules\/|\.git\/|\.claude\/|\.dsbook\/)/;
 // Rutas del repositorio que no existen en Claude Design por diseño.
 export const REPO_IGNORED = /^(design-baseline\.json$|handoff-last\.md$|\.dsbook\/|node_modules\/|\.git\/|\.claude\/|scripts\/)/;
 

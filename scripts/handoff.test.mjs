@@ -161,9 +161,10 @@ test('handoff-note detecta un cambio de estructura y marca lo hecho en Claude Co
 
 test('handoff-note sin cambios no escribe nada', () => {
   inCopy((dir, g) => {
+    const f = path.join(dir, 'handoff-last.md'), before = existsSync(f) ? readFileSync(f, 'utf8') : null;
     const r = run(dir, 'handoff-note.mjs', '--base', 'HEAD');
     assert.notEqual(r.code, 0);
     assert.match(r.out, /nada que avisar/);
-    assert.equal(existsSync(path.join(dir, 'handoff-last.md')), false);
+    assert.equal(existsSync(f) ? readFileSync(f, 'utf8') : null, before, 'no escribe ni cambia el aviso');
   }, {git: true});
 });

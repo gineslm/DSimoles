@@ -62,7 +62,8 @@ const origin = p => !div ? '' : divergent.has(p) ? ' · hecho en Claude Code' : 
 const groups = {};
 for (const [p, s] of [...status].sort(([a], [b]) => a.localeCompare(b))) (groups[classify(p, {frameworkFiles: fw, structural})] ??= []).push([p, s]);
 
-const rel = ids => ids.length ? ` — IDs: ${ids.join(', ')}` : '';
+// Con cambios masivos (por ejemplo una traducción) la lista de IDs sería enorme: se acorta.
+const rel = ids => !ids.length ? '' : ids.length <= 25 ? ` — IDs: ${ids.join(', ')}` : ` — ${ids.length} IDs, entre ellos: ${ids.slice(0, 12).join(', ')}, …`;
 const lines = [];
 const today = new Date().toISOString().slice(0, 10);
 lines.push('# Aviso de traspaso a Claude Design', '',

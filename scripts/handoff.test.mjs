@@ -147,6 +147,7 @@ test('handoff-note detecta un cambio de estructura y marca lo hecho en Claude Co
     gd.categories[0].items[0].number = '0.99';
     writeFileSync(gp, JSON.stringify(gd, null, 2) + '\n');
     writeFileSync(path.join(dir, 'sections/zzz.txt'), 'x');
+    writeFileSync(path.join(dir, 'scripts/zz.mjs'), '// x\n');
     const div = path.join(dir, 'div.json');
     writeFileSync(div, JSON.stringify({generated: '2026-10-11T00:00:00Z', mode: 'content', different: ['sections/zzz.txt'], onlyRepo: [], onlyDesign: []}));
     const r = run(dir, 'handoff-note.mjs', '--base', 'HEAD', '--divergences', div, '--out', 'salida.md');
@@ -156,6 +157,7 @@ test('handoff-note detecta un cambio de estructura y marca lo hecho en Claude Co
     assert.match(md, /actualizar su mapa de pantallas/);
     assert.match(md, /`sections\/zzz\.txt` · nuevo · hecho en Claude Code/);
     assert.match(md, /## Diferencias con la versión de Claude Design/);
+    assert.match(md, /`scripts\/zz\.mjs` · nuevo\n/, 'lo que la comparación no cubre no se etiqueta como coincidente');
   }, {git: true});
 });
 

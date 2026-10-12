@@ -9,7 +9,7 @@ import {execFileSync} from 'node:child_process';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {ownedFiles} from './framework-lib.mjs';
-import {classify, TYPES, structureChanged, changedSectionIds, changedGuideIds} from './handoff-lib.mjs';
+import {classify, TYPES, structureChanged, changedSectionIds, changedGuideIds, DESIGN_IGNORED} from './handoff-lib.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -57,7 +57,8 @@ if (divSource) {
 }
 const divergent = new Set([...(div?.different ?? []), ...(div?.onlyRepo ?? [])]);
 const unchecked = !div;
-const origin = p => !div ? '' : divergent.has(p) ? ' · hecho en Claude Code' : ' · coincide con Claude Design';
+// Lo que la comparación no cubre (scripts/, los archivos que genera Claude Code…) no se etiqueta: no se sabe si coincide.
+const origin = p => !div || DESIGN_IGNORED.test(p) ? '' : divergent.has(p) ? ' · hecho en Claude Code' : ' · coincide con Claude Design';
 
 const groups = {};
 for (const [p, s] of [...status].sort(([a], [b]) => a.localeCompare(b))) (groups[classify(p, {frameworkFiles: fw, structural})] ??= []).push([p, s]);

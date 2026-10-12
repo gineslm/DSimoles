@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.22.0 · 2026-10-12 · 86d9784 ff8a780 f22dd01
+Sections: none.
+Dos cambios de diseño del contenedor (framework 2.3.0): la home puede verse como Tarjetas o como Lista con todas las categorías y subsecciones (contraíbles y compactas), y las vistas Content, Info y Record parecen ahora pestañas. Sin cambios en páginas ni datos de Claude Design: la comparación del 2026-10-12 sigue vigente y limpia (la persona responsable confirmó que no se ha tocado Claude Design desde entonces). Framework 2.3.1: `handoff-note` no etiqueta como coincidente lo que la comparación no cubre.
+
 ## 0.21.1 · 2026-10-12 · 5b62a5f
 Sections: none.
 Primera sincronización real con Claude Design tras la 0.21.0: Claude Design adoptó el commit f040da4 sin cambios (84 archivos idénticos, sin trabajo propio sin integrar, sin copias en _backup). Framework 2.2.2: `design-diff` ya no señala `design-baseline.json` ni `handoff-last.md` como nuevos en Claude Design. `design-baseline.json` actualizada.

@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.25.0 · 2026-10-13 · 7946647 0fc602e b8fa162
+Sections: foundations.goals-and-usage-guide, foundations.system-users, foundations.products-and-requirements, foundations.design-principles, foundations.accessibility (todas R), quality.accessibility, governance.team-and-contribution, governance.accessibility (N → I, borradores), documentation.reference-evidence (nueva), documentation.imoles-app (retitulada).
+Integración de Claude Design con el manifiesto de hashes (107 archivos): 14 archivos sin integrar o nuevos, todos idénticos byte a byte a su manifiesto. Cinco secciones de foundations pasan a Ready con la review registrada en Claude Design (no re-revisadas aquí), se abre la sección 14.2 Evidencia de referencia (134 subsecciones) y se traen tres borradores de gobierno y calidad. Framework 2.5.0: Anterior/Siguiente de la cabecera se mueven solo entre las subsecciones que pasan los filtros y la búsqueda. `design-baseline.json` actualizada.
+
 ## 0.24.0 · 2026-10-13 · e50e5e5
 Sections: none.
 Framework 2.4.0: la vista por defecto de la home es la Lista (todas las categorías con sus subsecciones, contraíbles) en lugar de las Tarjetas; el selector sigue disponible. Sin cambios en páginas ni datos de Claude Design.

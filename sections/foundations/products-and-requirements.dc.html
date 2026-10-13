@@ -22,40 +22,82 @@ a:hover{color:#5a5a5a}
 
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Productos y requerimientos</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">Productos a los que sirve el sistema y restricciones que imponen.</p>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Borrador esquemático · decisiones tomadas por Claude Design, pendientes de revisión del owner. Origen: observado en iMoles, normalizado a partir de valores observados o extrapolado.</p>
 </header>
 
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Vista propuesta</h2>
-<div role="table" aria-label="Vista propuesta" style="font-size:14px">
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Bloque</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Muestra</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Producto</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">iMoles v3 como referencia; prototipo v2 como interfaz actual.</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Restricciones</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Plataforma, idioma, procesamiento, normativa.</div></div>
+<section aria-labelledby="h-1" style="display:flex;flex-direction:column;gap:16px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">1 · Ecosistema</span>
+<h2 id="h-1" style="margin:0;font-size:22px;font-weight:600">1.1 Requerimientos del ecosistema</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Lo que el DS garantiza en todos los productos de iMoles, sea cual sea su plataforma.</p>
+<div role="table" aria-label="Requerimientos del ecosistema" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Requerimiento</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Qué garantiza el DS</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Look and feel unificado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Un mismo lenguaje visual (color, tipografía, forma, iconografía y tono) en todo el ecosistema</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Fuente única</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Diseño y código parten de los mismos valores; nada se codifica a mano</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Accesibilidad</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Todo lo compartido cumple el objetivo de conformidad de <a href="./accessibility.dc.html">0.10 Accesibilidad</a></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Independencia del producto</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Lo compartido no depende de la plataforma ni del producto que lo usa</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Gobierno de la imagen</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Un mecanismo para mantener, cambiar y ampliar el lenguaje visual sin perder coherencia</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Formato de tokens</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Tokens independientes de la plataforma (DTCG); primero la salida CSS, iOS y Android después</div></div>
 </div>
 </section>
 
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Valores propuestos</h2>
-<div role="table" aria-label="Valores propuestos" style="font-size:14px">
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Requerimiento</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Valor</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Origen</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Plataforma</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Teléfono móvil, en vertical</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Ancho del marco de diseño</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">390 × 844 pt; comprobado a 360 y 430</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Extrapolado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Idioma</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Interfaz en castellano; sistema documentado en castellano con términos en inglés</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Análisis</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">En el dispositivo (Pasos Proceso, Captura Detalle)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Cámara</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Captura asistida dentro de la app más galería</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Normativa</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Posible software de producto sanitario (MDR de la UE): afecta a etiquetas, advertencias e instrucciones de uso</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Extrapolado</div></div>
+<section aria-labelledby="h-2" style="display:flex;flex-direction:column;gap:16px;border-top:2px solid #1f1f1f;padding-top:32px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">2 · Productos</span>
+<h2 id="h-2" style="margin:0;font-size:22px;font-weight:600">2.1 App de paciente · iMoles</h2>
+<div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px;align-items:start">
+<p style="margin:0;max-width:72ch;color:#3d3d3d">App de prediagnóstico médico para la detección y el seguimiento de marcas en la piel. Registra cada marca, da una evaluación de riesgo de cada foto, guarda su evolución y recomienda qué acción tomar. No da un diagnóstico: se coordina con el seguimiento médico.</p>
+<div style="border:1px solid #d4d4d4;padding:12px 16px;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Definición completa</span>
+<a href="../documentation/imoles-app.dc.html">14.1 App de paciente · iMoles</a>
+</div>
+</div>
+
+<h3 style="margin:16px 0 0;font-size:17px;font-weight:600">Contexto de uso</h3>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Las personas usuarias y sus necesidades están en <a href="./system-users.dc.html">0.3 Usuarios del sistema</a>.</p>
+<div role="table" aria-label="Contexto de uso" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Aspecto</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Qué implica para el DS</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Móvil, a menudo con una mano</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Acción principal alcanzable con el pulgar; objetivos táctiles según <a href="../visuals/dimensions.dc.html">1.4 Dimensiones</a></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Uso espaciado en el tiempo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Avisos y recordatorios; al volver, la persona ve qué tiene pendiente</div></div>
+</div>
+
+<h3 style="margin:16px 0 0;font-size:17px;font-weight:600">Alcance funcional</h3>
+<ul aria-label="Funciones de la app" style="margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px">
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Cuenta y datos personales</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Privacidad ante terceros</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Seguimiento en el tiempo</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Agenda de controles</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Captura asistida</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Captura con ayuda</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Comprobación de calidad</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Análisis de imagen</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Resultado y acción recomendada</li>
+<li style="border:1px solid #d4d4d4;padding:4px 10px;font-size:14px">Informe para compartir</li>
+</ul>
+<p style="margin:0;font-size:14px;color:#3d3d3d;max-width:72ch">Qué hace cada función: <a href="../documentation/imoles-app.dc.html">14.1 App de paciente · iMoles</a>.</p>
+
+<h3 style="margin:16px 0 0;font-size:17px;font-weight:600">Requerimientos de UX y UI</h3>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Patrones y componentes que el DS debe ofrecer para diseñar esas funciones.</p>
+<div role="table" aria-label="Requerimientos de UX y UI" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,2.2fr) minmax(0,0.6fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Familia</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Qué debe aportar el DS</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Principios</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,2.2fr) minmax(0,0.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Resultado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Niveles de riesgo con texto, riesgo bajo que nunca se presenta como ausencia de riesgo y siempre con fecha de próxima revisión, estado no concluyente propio, detalle desplegable bajo la acción y limitaciones del resultado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-size:13px"><a href="./design-principles.dc.html">E1 · E3 · E4 · E5 · A1</a></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,2.2fr) minmax(0,0.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Captura</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Guía de encuadre, estados de calidad antes del análisis con motivo y corrección, errores recuperables y modo con ayuda que devuelve el control al titular</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-size:13px"><a href="./design-principles.dc.html">E4 · A3 · A4</a></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,2.2fr) minmax(0,0.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Flujos y respuesta</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Flujos por pasos con «Paso n de N» y salida clara, sin navegación inferior dentro del flujo; confirmaciones persistentes en línea, sin toasts; continuidad del contexto</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-size:13px"><a href="./design-principles.dc.html">A5</a></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,2.2fr) minmax(0,0.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Seguimiento</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Serie de fotos de cada marca, historial y evolución; agenda de controles como vista principal</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-size:13px"><a href="./design-principles.dc.html">A2</a></div></div>
+</div>
+
+<h3 style="margin:16px 0 0;font-size:17px;font-weight:600">Requerimientos técnicos</h3>
+<div role="table" aria-label="Requerimientos técnicos" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Requerimiento</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Valor</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Plataforma</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Teléfono móvil, en vertical</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Marco de diseño</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">390 × 844 pt como referencia; se comprueba en anchos de 360 a 430 pt (del Android estrecho al iPhone grande)</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Idioma</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Prototipo en castellano; el público objetivo no está definido</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Cámara</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Captura asistida dentro de la app más galería</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Análisis de imagen</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Sin definir: en el dispositivo, como muestra el prototipo, o en un servidor.<br><strong>Dependencias técnicas:</strong> capacidad del dispositivo, tamaño del modelo, tiempos de espera, estados de error y sin conexión.<br><strong>Dependencias de seguridad:</strong> si las imágenes salen del dispositivo, consentimiento, cifrado en tránsito y en reposo, almacenamiento y retención, y cumplimiento del RGPD para datos de salud</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;font-weight:600">Normativa</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0">Posible software de producto sanitario (MDR de la UE); afecta a etiquetas, advertencias e instrucciones de uso. Aplazado por el owner; necesita un especialista</div></div>
 </div>
 </section>
 
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Decisiones</h2>
-<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Tokens independientes de la plataforma (DTCG); primero la salida CSS, iOS/Android después.</li></ul>
-</section>
-
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Decisiones abiertas</h2>
-<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Clasificación normativa (MDR de la UE): aplazada; necesita validación de un especialista.</li></ul>
+<section aria-labelledby="h-nuevo" style="display:flex;flex-direction:column;gap:12px">
+<h2 id="h-nuevo" style="margin:0;font-size:22px;font-weight:600">Productos nuevos</h2>
+<p style="margin:0;font-size:14px;max-width:72ch">Cada producto que se incorpore al ecosistema añade aquí su bloque, con la misma estructura, y su definición en la categoría 14 Documentación.</p>
 </section>
 
 </main>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="foundations.design-principles">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Principios de diseño · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+<main data-screen-label="foundations.design-principles" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Principios de diseño</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Criterios para decidir cuando hay varias opciones válidas.</p>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Se organizan en dos ámbitos. Los principios del ecosistema se aplican a todos los productos de iMoles y garantizan que comparten la misma forma de comunicar. Los principios de producto concretan o añaden criterios para una aplicación concreta, según su plataforma y su contexto de uso, sin contradecir nunca los del ecosistema.</p>
+</header>
+
+<section aria-label="Ámbitos" style="display:flex;flex-direction:column;gap:12px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+<a href="#h-eco" style="text-decoration:none;border:2px solid #1f1f1f;padding:15px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Ecosistema · E1–E5</span><span style="font-size:14px;color:#3d3d3d">Se aplican a todos los productos de iMoles.</span></a>
+<a href="#h-app" style="text-decoration:none;border:1px solid #d4d4d4;padding:16px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Producto · App de paciente · iMoles · A1–A5</span><span style="font-size:14px;color:#3d3d3d">Concretan o añaden criterios para un producto.</span></a>
+</div>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>Un principio de producto nunca contradice uno del ecosistema.</li>
+<li>Cada producto nuevo añade aquí sus principios específicos.</li>
+</ul>
+</section>
+
+<section aria-labelledby="h-eco" style="display:flex;flex-direction:column;gap:0">
+<h2 id="h-eco" style="margin:0 0 16px;font-size:22px;font-weight:600">Principios del ecosistema</h2>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">E1</span></span>
+<h3 id="pE1" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">Tono clínico sereno, sin falsa seguridad</h3>
+<span style="font-size:15px;color:#3d3d3d">Las interfaces transmiten calma y precisión: superficies poco saturadas y un solo acento por pantalla.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Un único color de acento por pantalla.</li><li>La urgencia se expresa con claridad en el texto, no con alarma visual.</li><li>La calma nunca se transmite a costa de dar a entender que no hay riesgo.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">Un acento: la acción principal.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Varios colores intensos compitiendo en la misma pantalla.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">Con riesgo alto, el mensaje es directo y la acción clara, sin dramatizar.</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">E2</span></span>
+<h3 id="pE2" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">Toda información clínica orienta a un siguiente paso</h3>
+<span style="font-size:15px;color:#3d3d3d">Cada resultado indica qué hacer, quién lo hace y en qué plazo.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Un resultado siempre va acompañado de una acción recomendada.</li><li>La acción incluye responsable y plazo.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">Riesgo intermedio · <strong>Pide cita con tu médico</strong> en el plazo indicado.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Riesgo intermedio.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">Con riesgo bajo también hay un paso: cuándo volver a revisar.</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">E3</span></span>
+<h3 id="pE3" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">La información se presenta por capas</h3>
+<span style="font-size:15px;color:#3d3d3d">Primero lo que hay que hacer; después el detalle; al final el dato completo para quien lo necesita.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>La acción recomendada ocupa el primer nivel, grande y en lenguaje llano.</li><li>El detalle del análisis se despliega a petición.</li><li>El dato completo se reserva para el informe profesional.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">Acción recomendada arriba · «Ver detalle del análisis» desplegable · informe exportable.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Todas las cifras del modelo en la primera pantalla.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">El profesional necesita el dato completo: lo recibe en el informe, no en la pantalla del paciente.</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">E4</span></span>
+<h3 id="pE4" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">Lo no concluyente se dice como tal</h3>
+<span style="font-size:15px;color:#3d3d3d">«No evaluable» y el fallo técnico tienen su propio estado, distinto de cualquier nivel de riesgo.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Un fallo nunca se muestra como resultado.</li><li>El estado no concluyente explica qué hacer para repetir.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px"><strong>No hemos podido evaluar esta foto.</strong> Repítela siguiendo la guía de la toma.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Riesgo bajo <span style="color:#5a5a5a">(mostrado por defecto cuando el análisis falla)</span></span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">Si el análisis falla dos veces, el siguiente paso es consultar a un profesional, no insistir.</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">E5</span></span>
+<h3 id="pE5" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">El riesgo nunca depende solo del color</h3>
+<span style="font-size:15px;color:#3d3d3d">El nivel de riesgo se lee siempre en texto; el color lo refuerza, no lo sustituye.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Toda insignia de riesgo lleva su texto.</li><li>Los colores de riesgo se reservan para el riesgo: ninguna acción normal los usa.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="align-self:flex-start;display:inline-flex;gap:6px;align-items:center;border:1px solid #1f1f1f;padding:2px 10px;font-size:13px;font-weight:600"><span aria-hidden="true">●</span>Riesgo alto</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="display:inline-flex;gap:6px;align-items:center;font-size:13px"><span aria-hidden="true" style="font-size:16px">●</span><span style="color:#5a5a5a">(solo un punto de color)</span></span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">En escala de grises o con daltonismo, el nivel de riesgo se sigue entendiendo.</span></div>
+</div>
+</div>
+</details>
+</section>
+
+<section aria-labelledby="h-app" style="display:flex;flex-direction:column;gap:0">
+<h2 id="h-app" style="margin:0 0 16px;font-size:22px;font-weight:600">Principios de la app de paciente · iMoles</h2>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">A1</span></span>
+<h3 id="pA1" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">Evaluación, no diagnóstico</h3>
+<span style="font-size:15px;color:#3d3d3d">La app nunca presenta una estimación de riesgo como un diagnóstico médico.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Los resultados hablan de «riesgo estimado», nunca de «diagnóstico».</li><li>Toda recomendación remite al profesional para confirmar.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">Riesgo estimado alto · un profesional debe valorarlo.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Tienes un melanoma.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">Con riesgo bajo, la app no transmite que la marca «está bien».</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">A2</span></span>
+<h3 id="pA2" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">El seguimiento da valor a cada foto</h3>
+<span style="font-size:15px;color:#3d3d3d">Una foto aislada vale menos que una serie: la app anima a mantener el registro de cada marca.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Cada foto se asocia a un seguimiento.</li><li>La evolución de la marca está siempre a mano.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">Foto añadida al seguimiento «Espalda, lado izquierdo» · próxima foto recordada.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Foto analizada sin relación con las anteriores.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">La primera foto de una marca: se explica que el resultado mejora con nuevas fotos.</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">A3</span></span>
+<h3 id="pA3" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">Una foto que no sirve se corrige, no se evalúa</h3>
+<span style="font-size:15px;color:#3d3d3d">La calidad de la imagen se comprueba antes del análisis; si no basta, se ayuda a repetirla en lugar de dar un resultado poco fiable.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>La calidad se comprueba antes de analizar.</li><li>Se explica el motivo y cómo corregirlo, incluida la opción de pedir ayuda.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">La foto está desenfocada. Acerca la cámara o pide ayuda.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Analizar la foto y mostrar un resultado de baja fiabilidad.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">Tras varios intentos fallidos se propone la captura con ayuda o se deja la tarea pendiente, sin forzar un resultado.</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">A4</span></span>
+<h3 id="pA4" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">Pensada para recibir ayuda, sin perder al titular</h3>
+<span style="font-size:15px;color:#3d3d3d">Otra persona puede ayudar en una tarea puntual, pero la cuenta, los datos y las decisiones siguen siendo del paciente.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Las instrucciones de las tareas asistidas se dirigen también a quien ayuda.</li><li>Al terminar la ayuda, el control vuelve al titular de forma explícita.</li><li>La persona asistente solo ve lo necesario para la tarea.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">«Pide a alguien que te ayude con la foto» · al terminar, el paciente revisa y confirma.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">La persona asistente accede al historial completo para hacer una foto.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">Si el paciente no puede confirmar la foto, la tarea queda pendiente; no se da por buena en su nombre.</span></div>
+</div>
+</div>
+</details>
+<details style="border-top:2px solid #1f1f1f">
+<summary style="cursor:pointer;padding:16px 0;list-style:none;display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.6fr) 32px;gap:8px 24px;align-items:baseline">
+<span style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">A5</span></span>
+<h3 id="pA5" style="margin:0;font-size:18px;font-weight:600;line-height:1.35;text-align:left">Una acción principal por pantalla, al alcance del pulgar</h3>
+<span style="font-size:15px;color:#3d3d3d">Cada pantalla tiene una sola acción principal, situada donde se alcanza con una mano.</span>
+<span aria-hidden="true" style="justify-self:end;font-size:18px;line-height:1">▾</span>
+</summary>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 32px;padding:0 0 24px 112px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;font-weight:600">Efecto en las decisiones</span>
+<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Un solo botón primario por pantalla.</li><li>La acción principal se sitúa en la parte inferior.</li></ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="border:2px solid #1f1f1f;padding:11px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">✓ Sí</span><span style="font-size:14px">Botón principal abajo; «Ver detalle» como acción secundaria.</span></div>
+<div style="border:1px dashed #8a8a8a;padding:12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">✕ No</span><span style="font-size:14px">Dos botones primarios uno junto a otro.</span></div>
+<div style="background:#f6f6f6;padding:12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-size:14px">En un formulario largo, la acción principal sigue visible al final del recorrido.</span></div>
+</div>
+</div>
+</details>
+</section>
+
+
+<section aria-labelledby="h-a11y" style="display:flex;flex-direction:column;gap:16px">
+<h2 id="h-a11y" style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>E5: el color nunca es la única señal (WCAG 1.4.1).</li>
+<li>A5: la acción principal tiene un objetivo táctil suficiente; el tamaño se fija en <a href="../visuals/dimensions.dc.html">1.4 Dimensiones</a>.</li>
+<li>El nivel de conformidad y la evidencia se fijan en <a href="./accessibility.dc.html">0.10 Accesibilidad</a>.</li>
+</ul>
+</section>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

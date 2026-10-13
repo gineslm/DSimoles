@@ -24,23 +24,8 @@
           "suggestedPath": "sections/foundations/goals-and-usage-guide.html"
         },
         {
-          "id": "foundations.system-users",
-          "number": "0.2",
-          "title": "Usuarios del sistema",
-          "objective": "Definir usuarios del sistema para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Usuarios del sistema: diseño, desarrollo, contenido, QA y producto.",
-          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
-          "deliverable": "Página de usuarios del sistema con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/foundations/system-users.html"
-        },
-        {
           "id": "foundations.products-and-requirements",
-          "number": "0.3",
+          "number": "0.2",
           "title": "Productos y requerimientos",
           "objective": "Definir productos y requerimientos para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Productos, plataformas y canales incluidos; requerimientos técnicos, de marca, negocio y contexto.",
@@ -52,6 +37,21 @@
             "La revisión de diseño y las comprobaciones aplicables están registradas."
           ],
           "suggestedPath": "sections/foundations/products-and-requirements.html"
+        },
+        {
+          "id": "foundations.system-users",
+          "number": "0.3",
+          "title": "Usuarios del sistema",
+          "objective": "Definir usuarios del sistema para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Personas usuarias del ecosistema y sus necesidades.",
+          "accessibility": "Objetivo de conformidad, necesidades de usuarios, responsabilidades y evidencia requerida.",
+          "deliverable": "Página de usuarios del sistema con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/foundations/system-users.html"
         },
         {
           "id": "foundations.existing-ecosystem",
@@ -2103,7 +2103,7 @@
         {
           "id": "documentation.imoles-app",
           "number": "14.1",
-          "title": "App de pacientes de iMoles",
+          "title": "App de paciente · iMoles",
           "objective": "Describir el producto para que el equipo entienda qué debe cubrir el DS.",
           "define": "Qué es el producto, qué hace, qué no es, sus flujos principales, su estado y sus fuentes de referencia.",
           "accessibility": "Necesidades de los usuarios del producto que condicionan el DS.",
@@ -2114,6 +2114,21 @@
             "La revisión del owner está registrada."
           ],
           "suggestedPath": "sections/documentation/imoles-app.html"
+        },
+        {
+          "id": "documentation.reference-evidence",
+          "number": "14.2",
+          "title": "Evidencia de referencia",
+          "objective": "Reunir los estudios externos que fundamentan perfiles, tensiones y criterios de diseño.",
+          "define": "Fuentes, qué aporta cada una, criterio de interpretación y origen de cada perfil.",
+          "accessibility": "Necesidades de los usuarios documentadas en las fuentes que condicionan el DS.",
+          "deliverable": "Página de evidencia de referencia con fuentes enlazadas y su relación con los perfiles.",
+          "acceptance": [
+            "Cada fuente tiene referencia verificable.",
+            "Se distingue evidencia, inferencia y criterio de diseño.",
+            "La revisión del owner está registrada."
+          ],
+          "suggestedPath": "sections/documentation/reference-evidence.html"
         }
       ]
     }

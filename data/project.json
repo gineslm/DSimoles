@@ -21,46 +21,59 @@
   },
   "sections": {
     "foundations.goals-and-usage-guide": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Reestructurada el 2026-10-13 con el guion del owner: 1 explicaciones generales (qué es un DS, qué es DSimoles como DS y como framework, ciclo de evolución, cómo se trabaja en el framework) y 2 concreción de la fase actual (ecosistema y estado; objetivos y requerimientos). El alcance lo muestran los estados de las secciones; implementación y QA van en sus secciones. Retirados por decisión del owner: alcance por ediciones, guía por roles, origen de los valores y bloque propio de accesibilidad. DSimoles es un DS para aplicaciones médicas; la primera edición cubre el prototipo de iMoles (listo para evaluación; siguientes fases: financiación, ajustes, estudios clínicos) y debe poder extenderse a la app de profesionales y a aplicaciones web. El castellano es el idioma del prototipo, no del público. El nombre DSimoles es provisional. El bloque Estado del proyecto se actualiza en cada cambio de fase y los objetivos se ajustan a él. Objetivos propuestos por Claude Design, pendientes de revisión del owner. Retirados de la página: el alcance de producto (ya está en 0.3) y los 5 principios del borrador anterior, que esperan destino en 0.6 Principios de diseño (hoy N): 1) el riesgo nunca se transmite solo con color; 2) cada resultado muestra acción, responsable y plazo; 3) «No evaluable» y el fallo técnico tienen estado visual propio; 4) tono clínico sereno, un solo acento por pantalla; 5) una acción principal por pantalla, alcanzable con el pulgar.",
+      "owner": "Gines Lopez",
+      "notes": "Rehecha el 2026-10-13 con el owner. Estructura: 1 Qué es DSimoles (1.1 qué es un design system y sus cuatro objetivos: coherencia, reutilización, calidad y evolución como gobierno de la imagen; 1.2 DSimoles frente a DSBook; 1.3 ciclo de evolución que arranca en el estado del producto; 1.4 vistas Content, Info y Record, estados y significado de Ready) y 2 Contexto del producto · DSimoles v0.1 (2.1 estado del ecosistema y del producto; 2.2 objetivos de la fase con enlace a 0.2). Anexo enlazado a 14.1. Los requerimientos del ecosistema y del producto se trasladaron a 0.2. Retirados por decisión del owner: alcance por ediciones, guía por roles, origen de los valores, bloque propio de accesibilidad y trazabilidad como objetivo del DS. Los 5 principios del primer borrador se trasladaron a 0.6 Principios de diseño el 2026-10-13: 1) el riesgo nunca se transmite solo con color; 2) cada resultado muestra acción, responsable y plazo; 3) «No evaluable» y el fallo técnico tienen estado visual propio; 4) tono clínico sereno, un solo acento por pantalla; 5) una acción principal por pantalla, alcanzable con el pulgar. Versión del DS de esta fase: v0.1 (confirmada por el owner el 2026-10-13).",
       "tasks": [],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-13",
+        "evidence": "Revisión en sesión con Claude Design: estructura 1 Qué es DSimoles (1.1–1.4) y 2 Contexto del producto (2.1–2.2, v0.1), anexo enlazado a 14.1 y requerimientos trasladados a 0.2. El owner retiró las marcas de pendiente y la da por Ready."
       },
       "exclusionReason": ""
     },
     "foundations.system-users": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Rehecha el 2026-10-13 con el owner. Roles del ecosistema: titular de la cuenta, persona asistente y profesional sanitario (rol del ecosistema, no de la app de paciente · iMoles); los roles no son excluyentes. Necesidades comunes: sin formación médica, inquietud por la salud, capacidades diversas (valores en 1.2 y 1.4), autonomía variable y comprensión de la incertidumbre. App de paciente · iMoles: user personas Ana, Jose (el que necesita continuidad) y Persona asistente; Marta se retira de la app por decisión del owner. Cinco tensiones con criterio e implicación para el DS. Un único aviso remite a 14.2 Evidencia de referencia (estudios de SkinVision) y a un análisis propio futuro.",
+      "tasks": [
+        {
+          "text": "Definir en 0.2 el alcance de la asistencia en la app de paciente: en qué procesos interviene la persona asistente, cuándo entra y sale del flujo y cómo se mantiene la continuidad para el titular.",
+          "when": "pending"
+        },
+        {
+          "text": "Crear en 14 Documentación una página por perfil (Ana, Jose, Persona asistente) y enlazarlas desde las fichas de 0.3.",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-13",
+        "evidence": "Revisión en sesión con Claude Design: roles del ecosistema (titular, persona asistente, profesional sanitario fuera de la app), necesidades comunes, user personas de la app de paciente · iMoles (Ana, Jose, Persona asistente), cinco tensiones con criterio e implicación para el DS y aviso único con enlace a 14.2. El owner la da por Ready."
       },
       "exclusionReason": ""
     },
     "foundations.products-and-requirements": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Marco de diseño fijado en 390 × 844 el 2026-10-10 (el owner pidió el estándar actual); comprobado a 360 y 430.",
+      "owner": "Gines Lopez",
+      "notes": "Rehecha el 2026-10-13 con el owner. Estructura: 1.1 requerimientos del ecosistema (look and feel, fuente única, accesibilidad, independencia del producto, gobierno de la imagen, formato de tokens) y 2.1 app de pacientes (descripción breve con enlace a 14.1, contexto de uso, requerimientos de UX y UI, requerimientos técnicos). La columna de estado de cada requerimiento se retiró a petición del owner el 2026-10-13. Las personas usuarias pasaron a 0.3. Marco de diseño fijado en 390 × 844 el 2026-10-10 (el owner pidió el estándar actual); comprobado a 360 y 430. Formato de tokens DTCG y requerimientos validados por el owner en la review del 2026-10-13. El idioma del público objetivo no está definido. Auditoría de coherencia con 0.3 y 0.6 (2026-10-13): añadidos los requerimientos de UX y UI «Captura con ayuda», «Privacidad ante terceros», «Agenda de controles» e «Informe para el profesional»; el objetivo táctil remite a 1.4 Dimensiones; producto renombrado «App de paciente · iMoles». Revisión de cobertura de las tensiones de 0.3 (2026-10-13): añadidos «Comprobación de calidad», «Detalle del resultado», «Limitaciones del resultado» y «Riesgo bajo sin falsa seguridad». Reorganizado el 2026-10-13 a petición del owner: el bloque de la app separa el alcance funcional (lista de funciones con enlace a 14.1) de los requerimientos de UX y UI, agrupados en cuatro familias de patrones (resultado, captura, flujos y respuesta, seguimiento) con referencia a los principios de 0.6 en lugar de repetirlos.",
       "tasks": [
+        {
+          "text": "Análisis de imagen: decidir si se hace en el dispositivo o en un servidor. Dependencias técnicas: capacidad del dispositivo, tamaño del modelo, tiempos de espera y estados de error y sin conexión. Dependencias de seguridad si las imágenes se comparten o se envían: consentimiento, cifrado en tránsito y en reposo, almacenamiento y retención, y RGPD para datos de salud. La decisión afecta a los patrones de espera, error, consentimiento y privacidad del DS.",
+          "when": "pending"
+        },
         {
           "text": "MDR de la UE: confirmar con un especialista regulatorio si iMoles es software de producto sanitario (probablemente clase IIa o superior según la Regla 11) y qué implica para la interfaz: advertencias, finalidad prevista, instrucciones de uso, etiquetado CE/UDI, expediente de usabilidad (IEC 62366-1). Aplazado por el owner el 2026-10-10.",
           "when": "future"
         }
       ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-13",
+        "evidence": "Revisión en sesión con Claude Design tras la auditoría de coherencia con 0.3 y 0.6: requerimientos del ecosistema, alcance funcional de la app de paciente · iMoles, requerimientos de UX y UI en cuatro familias con referencia a los principios, contexto de uso y requerimientos técnicos. El owner la da por Ready."
       },
       "exclusionReason": ""
     },
@@ -91,17 +104,26 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "foundations.design-principles": {
-      "status": "N",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Reabierta desde Not applicable el 2026-10-13 a petición del owner, para recibir los 5 principios retirados de 0.1. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Principios organizados por ámbito: ecosistema (E1–E4) y app de pacientes (A1–A3), ordenados de lo más general a lo más específico. A1 «Evaluación, no diagnóstico» y A2 «El seguimiento da valor a cada foto» se extrajeron de 14.1. Cada principio en acordeón con descripción, efecto en las decisiones, ejemplo sí/no y caso límite. Ready a expensas de que aparezcan nuevos principios. Auditoría de coherencia con 0.2 y 0.3 (2026-10-13): añadidos E3 «La información se presenta por capas» y A3 «La ayuda no sustituye al titular»; renumerados E4–E5 y A4. Revisión de cobertura de las tensiones de 0.3 (2026-10-13): E1 ampliado a «Tono clínico sereno, sin falsa seguridad». Ajuste del 2026-10-13: nuevo A3 «Una foto que no sirve se corrige, no se evalúa» (tensión 2 de 0.3); el antiguo A3 pasa a A4 «Pensada para recibir ayuda, sin perder al titular»; «Una acción principal» pasa a A5.",
+      "tasks": [
+        {
+          "text": "Decidir si hay un orden de prioridad entre principios cuando chocan.",
+          "when": "pending"
+        },
+        {
+          "text": "Añadir principios nuevos cuando aparezcan otros productos o necesidades del ecosistema.",
+          "when": "future"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-13",
+        "evidence": "Revisión en sesión con Claude Design tras la auditoría de coherencia con 0.2 y 0.3: 5 principios del ecosistema (E1–E5) y 5 de la app de paciente · iMoles (A1–A5), ordenados de lo general a lo específico, que cubren las cinco tensiones de 0.3. El owner la da por Ready."
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "foundations.system-boundaries": {
       "status": "N",
@@ -143,15 +165,20 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "foundations.accessibility": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Rehecha el 2026-10-13 con el owner siguiendo el patrón ecosistema / productos. 1 Ecosistema: objetivo WCAG 2.2 AA obligatorio y AAA de contraste (7:1) para cuerpo y riesgo cuando la paleta lo permita (decisión anterior); compromisos transversales con la sección donde se concretan; necesidades de usuarios enlazadas a 0.3; responsabilidades por perfil; evidencia requerida para Ready. 2 App de paciente · iMoles: captura sin depender de la vista, alternativa asistida, resultado anunciado, progreso del análisis, sin límites de tiempo, imágenes de lesiones y orientación. Abierto: la app bloquea la orientación vertical; WCAG 1.3.4 exige justificar que es esencial. Responsabilidades trasladadas a 13.9 y evidencia requerida a 12.8 (2026-10-13); en 0.10 queda un bloque breve con enlaces. Añadido el compromiso «Visión del color» (2026-10-13), que remite al análisis de la paleta con disfunciones cromáticas en 1.10.",
+      "tasks": [
+        {
+          "text": "Orientación: justificar si el bloqueo en vertical de la app de paciente · iMoles es esencial (WCAG 1.3.4) o admitir horizontal.",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-13",
+        "evidence": "Revisión en sesión con Claude Design: objetivo WCAG 2.2 AA con AAA de contraste cuando la paleta lo permita, compromisos transversales con la sección donde se concretan (incluida la visión del color de 1.10), necesidades enlazadas a 0.3, responsabilidades y evidencia remitidas a 13.9 y 12.8, y requerimientos específicos de la app de paciente · iMoles. El owner la da por Ready."
       },
       "exclusionReason": ""
     },
@@ -1748,30 +1775,30 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "quality.accessibility": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-13 a petición del owner para recibir como borrador las cinco comprobaciones de accesibilidad requeridas antes de Ready (contraste, prueba sin color, ampliación al 200 %, teclado, lector de pantalla), trasladadas desde 0.10. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10).",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "governance.team-and-contribution": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-13 a petición del owner, para recibir como borrador los perfiles del equipo que trabaja con el DS (diseño, desarrollo, contenido, QA y producto) retirados de 0.3 Usuarios del sistema. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Falta definir responsables, responsabilidades y el modelo de contribución y revisión.",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "governance.intake-criteria": {
       "status": "N",
@@ -1865,23 +1892,36 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "governance.accessibility": {
-      "status": "N",
+      "status": "I",
       "page": "",
       "owner": "",
-      "notes": "",
+      "notes": "Reabierta desde Not applicable el 2026-10-13 a petición del owner para recibir como borrador la tabla de responsabilidades de accesibilidad por perfil (diseño, desarrollo, contenido, QA), trasladadas desde 0.10. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10).",
       "tasks": [],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+      "exclusionReason": ""
     },
     "documentation.imoles-app": {
       "status": "I",
       "page": "",
       "owner": "",
       "notes": "Creada el 2026-10-13 a petición del owner como categoría 14 Documentación. Describe la app de pacientes de iMoles a partir de las pantallas de presentación (1.1–1.3) y del índice del prototipo navegable; es el anexo enlazado desde 0.1. Pendiente de revisión del owner.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "documentation.reference-evidence": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Creada el 2026-10-13 a petición del owner con las fuentes externas de los perfiles de 0.3: Sangers et al. 2022, Smak Gregoor et al. 2023 y Kips et al. 2026. Los datos de Kips (1.904 lesiones; captura fallida en el 16,6 % en condiciones óptimas) se verificaron en la publicación; los de Sangers y Smak Gregoor vienen de la revisión del owner y falta contrastarlos con los artículos.",
       "tasks": [],
       "review": {
         "by": "",

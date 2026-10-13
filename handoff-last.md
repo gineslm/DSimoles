@@ -1,32 +1,58 @@
 # Aviso de traspaso a Claude Design
 
-Generado el 2026-10-13 · base: `a7dc809a4f4b` (origin/main) · framework: 2.3.2 → 2.4.0.
+Generado el 2026-10-13 · base: `509e3783bfb8` (origin/main) · framework: 2.4.0 → 2.5.0.
 
 Este archivo describe lo que cambia respecto a la base. No contiene el hash de su propio commit: el prompt que lo acompaña lo indica. Se reescribe en cada envío; el historial está en `CHANGELOG.md`.
 
 ## Resumen
 
-- Framework: 4 archivos
+- Diseño: 13 archivos
+- Estructura: 1 archivo
+- Framework: 6 archivos
 - Proyecto (documentación): 1 archivo
 
 ## Cambios por tipo
 
+### Diseño
+
+- `data/project.json` · modificado · coincide con Claude Design — IDs: documentation.reference-evidence, foundations.accessibility, foundations.design-principles, foundations.goals-and-usage-guide, foundations.products-and-requirements, foundations.system-users, governance.accessibility, governance.team-and-contribution, quality.accessibility
+- `sections/documentation/imoles-app.dc.html` · modificado · coincide con Claude Design
+- `sections/documentation/reference-evidence.dc.html` · nuevo · coincide con Claude Design
+- `sections/foundations/accessibility.dc.html` · modificado · coincide con Claude Design
+- `sections/foundations/design-principles.dc.html` · nuevo · coincide con Claude Design
+- `sections/foundations/goals-and-usage-guide.dc.html` · modificado · coincide con Claude Design
+- `sections/foundations/products-and-requirements.dc.html` · modificado · coincide con Claude Design
+- `sections/foundations/system-users.dc.html` · modificado · coincide con Claude Design
+- `sections/governance/accessibility.dc.html` · nuevo · coincide con Claude Design
+- `sections/governance/support.js` · nuevo · coincide con Claude Design
+- `sections/governance/team-and-contribution.dc.html` · nuevo · coincide con Claude Design
+- `sections/quality/accessibility.dc.html` · nuevo · coincide con Claude Design
+- `sections/quality/support.js` · nuevo · coincide con Claude Design
+
+### Estructura
+
+- `data/guide.json` · modificado · coincide con Claude Design — IDs: documentation.imoles-app, documentation.reference-evidence, foundations.products-and-requirements, foundations.system-users
+
 ### Framework
 
-- `app.js` · modificado · coincide con Claude Design
-- `docs/quality.md` · modificado · coincide con Claude Design
+- `app.js` · modificado · hecho en Claude Code
+- `docs/quality.md` · modificado · hecho en Claude Code
 - `dsbook.json` · modificado · hecho en Claude Code
+- `model.js` · modificado · hecho en Claude Code
 - `scripts/container.test.mjs` · modificado
+- `scripts/model.test.mjs` · modificado
 
 ### Proyecto (documentación)
 
-- `README.md` · modificado · coincide con Claude Design
+- `design-baseline.json` · modificado
+
+> La estructura del catálogo cambió (IDs, números o rutas de `data/guide.json`): Claude Design debe actualizar su mapa de pantallas y no renombrar nada por su cuenta.
 
 ## Diferencias con la versión de Claude Design
 
 Comparación del 2026-10-13 (manifiesto de hashes).
 
-- Con contenido distinto (2): `CHANGELOG.md`, `dsbook.json`
+- Con contenido distinto (6): `CHANGELOG.md`, `README.md`, `app.js`, `docs/quality.md`, `dsbook.json`, `model.js`
 
 ## Qué debe hacer Claude Design
 

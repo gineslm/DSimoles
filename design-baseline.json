@@ -11,7 +11,7 @@
     },
     "CHANGELOG.md": {
       "design": "953324409da741fda5905b068d5aaf97560e731cfb0c63d5da2c722d044df7c0",
-      "repo": "6d4124a20334b57ce0b30cb66f515013e26316c3ccc1bb166c039854f9682b51"
+      "repo": "67b10eaf2453a904a35f071b5b262a6f24c120e0943cbaff2e1b528debf1d39a"
     },
     "CLAUDE.md": {
       "design": "b11ee9cb639069a6bd1d6e6ac378887a33830bd79bd3aa4f68c0d13cceccfc4e",
@@ -19,11 +19,11 @@
     },
     "README.md": {
       "design": "b7ca00c26e7738a38a12267a0593bc2c49d17bb2022ebf16e381ae31dc8e4fde",
-      "repo": "b7ca00c26e7738a38a12267a0593bc2c49d17bb2022ebf16e381ae31dc8e4fde"
+      "repo": "fe152efcd9a24542035306fe7572cd1950471404cf04b8d8ce2e8d6a36b7fd76"
     },
     "app.js": {
       "design": "f36b1e41ac64a819ba10be8111874f635ee870a430d33b61b88991fbf4eb666c",
-      "repo": "f36b1e41ac64a819ba10be8111874f635ee870a430d33b61b88991fbf4eb666c"
+      "repo": "ba86ca16c968d84d019dce6d72fe624670100f74f0b24736dc9c656a60d397e7"
     },
     "assets/README.md": {
       "design": "7af4d3c267d5b07e75923eb82b9162f40fae231eb15eb2e0de2ec44d837655da",
@@ -46,12 +46,12 @@
       "repo": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd"
     },
     "data/guide.json": {
-      "design": "e344b55d9d17428c7a5b164d206f2e17bfa43474cd3ad4ff611a20461b8acae5",
-      "repo": "e344b55d9d17428c7a5b164d206f2e17bfa43474cd3ad4ff611a20461b8acae5"
+      "design": "c525e14e45cae2d29fb9d17c175831eec495536d2640dd7f847fbbd475ece94a",
+      "repo": "c525e14e45cae2d29fb9d17c175831eec495536d2640dd7f847fbbd475ece94a"
     },
     "data/project.json": {
-      "design": "7fa108de2a7ba2f464b062676ab7a5541134b95d4afce63ccda64a7705a683eb",
-      "repo": "7fa108de2a7ba2f464b062676ab7a5541134b95d4afce63ccda64a7705a683eb"
+      "design": "5d21419bd8b2e909881d330d94fc6423abe7db621a2fd6cde15c92897405d5f1",
+      "repo": "5d21419bd8b2e909881d330d94fc6423abe7db621a2fd6cde15c92897405d5f1"
     },
     "docs/claude-code.md": {
       "design": "56b9176dc1e7b98f1fb8164f83ef153ca3f3fd3039ea2c6bf012964c2a9e8315",
@@ -107,7 +107,7 @@
     },
     "docs/quality.md": {
       "design": "c48af4b9b65ce34ce0d230521b84db737f5931c2f23c8a76eb17d84801e7d6e7",
-      "repo": "c48af4b9b65ce34ce0d230521b84db737f5931c2f23c8a76eb17d84801e7d6e7"
+      "repo": "5394bf1176ebf09276fc2926a0d2b88ecc8f756c285064e50382e8b418179da4"
     },
     "docs/scripts.md": {
       "design": "ad5f0b941e071c575c2cbc0f83695cfd2cfa5ff9a02b707dcbb900cb449ef3a6",
@@ -119,7 +119,7 @@
     },
     "dsbook.json": {
       "design": "da01e4eac56468adf49769282e00a763421bcd448990b79d87fce30ca630e944",
-      "repo": "228907b399080ce75fd355a652c2b66176ed17f851f89b452c4f9aa6820bf200"
+      "repo": "a24f7766f7af15ca4298e792ea1b5b13b9a54c42243589b466b6175fae7aadd0"
     },
     "index.html": {
       "design": "dec6b481d2bda9b198b7ddb4cc33797bbfff7fcdcaf9cfd656bacd46601bd8c7",
@@ -127,7 +127,7 @@
     },
     "model.js": {
       "design": "28f1e101278dbafb1561d96dbd06a72f5b832f34d983753bbd507361545f15d9",
-      "repo": "28f1e101278dbafb1561d96dbd06a72f5b832f34d983753bbd507361545f15d9"
+      "repo": "6d3cfd2717c89721fded2616def9cc3cf87fb6534189e863f84fd998fb85836b"
     },
     "package.json": {
       "design": "0e79cb7195e2f6b5d646ac4f26e32c1ca055a7ac3072c67f76b865d6f46591a5",
@@ -178,24 +178,24 @@
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/foundations/accessibility.dc.html": {
-      "design": "785813473f5950987d21b06f13557a1a3509b9dde23428d05de0d64fcbfc3fee",
-      "repo": "785813473f5950987d21b06f13557a1a3509b9dde23428d05de0d64fcbfc3fee"
+      "design": "ec6fab61eb61bd4deb42b8619a750ba8f9d3dd2e1138af65aa2e1b78bb325df6",
+      "repo": "ec6fab61eb61bd4deb42b8619a750ba8f9d3dd2e1138af65aa2e1b78bb325df6"
     },
     "sections/foundations/goals-and-usage-guide.dc.html": {
-      "design": "c613a148169990acd97ae5308a747658d75237e36acbe469d5e993c912c00a17",
-      "repo": "c613a148169990acd97ae5308a747658d75237e36acbe469d5e993c912c00a17"
+      "design": "6609ac6d6163fdf78af5895db85ce03d7379a5ac8ccd91750d354f45fcc42d2e",
+      "repo": "6609ac6d6163fdf78af5895db85ce03d7379a5ac8ccd91750d354f45fcc42d2e"
     },
     "sections/foundations/products-and-requirements.dc.html": {
-      "design": "8d7ea8059ac259978a7784af7a747d21f93fc815ad16734e26b3b22a49e4a79d",
-      "repo": "8d7ea8059ac259978a7784af7a747d21f93fc815ad16734e26b3b22a49e4a79d"
+      "design": "b0044ffc7e4ee736a83f222456d819e558c01f6e3c4593d7941b6f4a48815f1b",
+      "repo": "b0044ffc7e4ee736a83f222456d819e558c01f6e3c4593d7941b6f4a48815f1b"
     },
     "sections/foundations/support.js": {
       "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/foundations/system-users.dc.html": {
-      "design": "1828cd29ec21d3f9a1d8728dcb730e243ad3162bc31d86de8643a8e852efa341",
-      "repo": "1828cd29ec21d3f9a1d8728dcb730e243ad3162bc31d86de8643a8e852efa341"
+      "design": "8da5cd9cab313ecd60333479ba2a0fb1c323becfcb6e91c566d65ccd9cd53874",
+      "repo": "8da5cd9cab313ecd60333479ba2a0fb1c323becfcb6e91c566d65ccd9cd53874"
     },
     "sections/implementation/publishing-and-migration.dc.html": {
       "design": "5500b83cb4d529a06d3c5f710ae11e29800b0693c53ccbd194a29eda01e49c2e",
@@ -338,15 +338,43 @@
       "repo": "936e0e5a2c6dd50183fe583022a33cf4c7886d815a055a2ee0dbe884aa5a4d57"
     },
     "sections/documentation/imoles-app.dc.html": {
-      "design": "d6d3e581022fb330cc93f596cd3f58cd085703b18c0c329d9ea1d25255e09a84",
-      "repo": "d6d3e581022fb330cc93f596cd3f58cd085703b18c0c329d9ea1d25255e09a84"
+      "design": "ca9eb64f63be33c26096e996b4a1f0a851f80339eb9e538323b27366aa66393e",
+      "repo": "ca9eb64f63be33c26096e996b4a1f0a851f80339eb9e538323b27366aa66393e"
     },
     "sections/documentation/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/documentation/reference-evidence.dc.html": {
+      "design": "f2dc1ffb849bb68868e6105ef68e093c2d7b9e1a103f3de4e270c18df0330201",
+      "repo": "f2dc1ffb849bb68868e6105ef68e093c2d7b9e1a103f3de4e270c18df0330201"
+    },
+    "sections/foundations/design-principles.dc.html": {
+      "design": "3e5fe099fe59cc763985f6a03378f4a801c6be55b002386d4d9e16a0e5435dc3",
+      "repo": "3e5fe099fe59cc763985f6a03378f4a801c6be55b002386d4d9e16a0e5435dc3"
+    },
+    "sections/governance/accessibility.dc.html": {
+      "design": "e0e1a221ed32fed1bf8c8469679186056ab75584339f43c38d54d33b1682ffca",
+      "repo": "e0e1a221ed32fed1bf8c8469679186056ab75584339f43c38d54d33b1682ffca"
+    },
+    "sections/governance/support.js": {
+      "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+    },
+    "sections/governance/team-and-contribution.dc.html": {
+      "design": "d64753b290c26d21e8064478c19475440a5508c3561b67601581466b8450d02e",
+      "repo": "d64753b290c26d21e8064478c19475440a5508c3561b67601581466b8450d02e"
+    },
+    "sections/quality/accessibility.dc.html": {
+      "design": "49e3097efb3303bc814d0ad01593e77a2a3f3909f69b779080776233835edab9",
+      "repo": "49e3097efb3303bc814d0ad01593e77a2a3f3909f69b779080776233835edab9"
+    },
+    "sections/quality/support.js": {
       "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     }
   },
   "discarded": [],
-  "recorded": "2026-10-13T07:03:04.516Z",
-  "manifestGenerated": "2026-10-13T06:51:40.007Z"
+  "recorded": "2026-10-13T11:59:32.895Z",
+  "manifestGenerated": "2026-10-13T11:20:31.328Z"
 }

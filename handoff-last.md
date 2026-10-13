@@ -1,39 +1,49 @@
 # Aviso de traspaso a Claude Design
 
-Generado el 2026-10-12 · base: `f040da4c7a6b` (origin/main) · framework: 2.2.1 → 2.3.1.
+Generado el 2026-10-13 · base: `08beb60ba368` (origin/main) · framework: 2.3.1 → 2.3.2.
 
 Este archivo describe lo que cambia respecto a la base. No contiene el hash de su propio commit: el prompt que lo acompaña lo indica. Se reescribe en cada envío; el historial está en `CHANGELOG.md`.
 
 ## Resumen
 
-- Framework: 9 archivos
-- Proyecto (documentación): 3 archivos
+- Diseño: 4 archivos
+- Estructura: 1 archivo
+- Framework: 5 archivos
+- Proyecto (documentación): 2 archivos
 
 ## Cambios por tipo
 
+### Diseño
+
+- `data/project.json` · modificado · coincide con Claude Design — IDs: documentation.imoles-app, foundations.goals-and-usage-guide
+- `sections/documentation/imoles-app.dc.html` · nuevo · coincide con Claude Design
+- `sections/documentation/support.js` · nuevo · coincide con Claude Design
+- `sections/foundations/goals-and-usage-guide.dc.html` · modificado · coincide con Claude Design
+
+### Estructura
+
+- `data/guide.json` · modificado · coincide con Claude Design — IDs: documentation, documentation.imoles-app
+
 ### Framework
 
-- `app.js` · modificado · hecho en Claude Code
-- `docs/quality.md` · modificado · hecho en Claude Code
 - `dsbook.json` · modificado · hecho en Claude Code
-- `scripts/container.test.mjs` · modificado
-- `scripts/handoff-lib.mjs` · modificado
-- `scripts/handoff-note.mjs` · modificado
-- `scripts/handoff-protection.test.mjs` · modificado
-- `scripts/handoff.test.mjs` · modificado
-- `styles.css` · modificado · hecho en Claude Code
+- `scripts/about.test.mjs` · modificado
+- `scripts/check.test.mjs` · modificado
+- `scripts/home.test.mjs` · modificado
+- `scripts/model.test.mjs` · modificado
 
 ### Proyecto (documentación)
 
 - `CHANGELOG.md` · modificado · hecho en Claude Code
 - `design-baseline.json` · modificado
-- `README.md` · modificado · hecho en Claude Code
+
+> La estructura del catálogo cambió (IDs, números o rutas de `data/guide.json`): Claude Design debe actualizar su mapa de pantallas y no renombrar nada por su cuenta.
 
 ## Diferencias con la versión de Claude Design
 
-Comparación del 2026-10-12 (manifiesto de hashes).
+Comparación del 2026-10-13 (manifiesto de hashes).
 
-- Con contenido distinto (6): `CHANGELOG.md`, `README.md`, `app.js`, `docs/quality.md`, `dsbook.json`, `styles.css`
+- Con contenido distinto (2): `CHANGELOG.md`, `dsbook.json`
 
 ## Qué debe hacer Claude Design
 

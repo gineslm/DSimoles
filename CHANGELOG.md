@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.23.0 · 2026-10-13 · 897ef66 c0a4955
+Sections: foundations.goals-and-usage-guide, documentation.imoles-app (nueva).
+Primera integración real con el proceso de manifiesto de hashes: Claude Design reestructuró 0.1 Objetivos y guía de uso con el guion del owner y creó la categoría 14 Documentación con 14.1 App de pacientes de iMoles (In process, pendiente de review del owner). Se detectaron 3 archivos sin integrar y 2 nuevos, y los 5 coinciden byte a byte con su manifiesto. 15 categorías y 133 subsecciones. Framework 2.3.2: las pruebas usan el seed y no se rompen al crecer el catálogo del proyecto.
+
 ## 0.22.0 · 2026-10-12 · 86d9784 ff8a780 f22dd01
 Sections: none.
 Dos cambios de diseño del contenedor (framework 2.3.0): la home puede verse como Tarjetas o como Lista con todas las categorías y subsecciones (contraíbles y compactas), y las vistas Content, Info y Record parecen ahora pestañas. Sin cambios en páginas ni datos de Claude Design: la comparación del 2026-10-12 sigue vigente y limpia (la persona responsable confirmó que no se ha tocado Claude Design desde entonces). Framework 2.3.1: `handoff-note` no etiqueta como coincidente lo que la comparación no cubre.

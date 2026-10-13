@@ -7,7 +7,7 @@ import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const guide = JSON.parse(readFileSync(path.join(root, 'data/guide.json'), 'utf8'));
+const guide = JSON.parse(readFileSync(path.join(root, 'seed/guide.json'), 'utf8'));
 const items = new Map(guide.categories.flatMap(c => c.items.map(i => [i.id, i])));
 const page = 'sections/visuals/color.dc.html';
 
@@ -22,6 +22,7 @@ function sandbox(mutate, {asIs = false} = {}) {
       // Un proyecto con páginas propias no debe influir: se parte de sections/ vacío y del proyecto del seed (todo en Pending).
       for (const e of readdirSync(path.join(dir, 'sections'), {withFileTypes: true})) if (e.isDirectory()) rmSync(path.join(dir, 'sections', e.name), {recursive: true, force: true});
       cpSync(path.join(root, 'seed/project.json'), path.join(dir, 'data/project.json'));
+      cpSync(path.join(root, 'seed/guide.json'), path.join(dir, 'data/guide.json'));
       mkdirSync(path.join(dir, 'sections/visuals'), {recursive: true});
       cpSync(path.join(root, 'scripts/fixtures/page.dc.html'), path.join(dir, page));
       cpSync(path.join(root, 'scripts/fixtures/support.js'), path.join(dir, 'sections/visuals/support.js'));

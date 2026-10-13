@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {validateGuide, validateProject, validateTasks, parseRoute, routeHash, breadcrumb, homeView, projectRecord, collectTasks} from '../model.js';
 
-const guide = JSON.parse(await readFile(new URL('../data/guide.json', import.meta.url)));
-const base = JSON.parse(await readFile(new URL('../data/project.json', import.meta.url)));
+const guide = JSON.parse(await readFile(new URL('../seed/guide.json', import.meta.url)));
+const base = JSON.parse(await readFile(new URL('../seed/project.json', import.meta.url)));
 const route = h => parseRoute(h, guide);
 const copy = () => structuredClone(base);
 // Un proyecto sin secciones N ni tasks, para que cada prueba controle exactamente lo que comprueba.
@@ -101,6 +101,8 @@ test('Las tasks se reúnen de todas las secciones, agrupadas por categoría y si
   assert.deepEqual(all[1].sections.map(s => s.item.id), [b]);
 });
 
-test('El proyecto real cumple su propio contrato con el record incluido', () => {
-  assert.equal(validateProject(base, guide), true);
+test('El proyecto real cumple su propio contrato con el record incluido', async () => {
+  const realGuide = JSON.parse(await readFile(new URL('../data/guide.json', import.meta.url))), real = JSON.parse(await readFile(new URL('../data/project.json', import.meta.url)));
+  assert.equal(validateProject(real, realGuide), true);
+  assert.equal(validateProject(base, guide), true, 'y el seed también');
 });

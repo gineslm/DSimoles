@@ -5,8 +5,8 @@ import {readFile} from 'node:fs/promises';
 import {readFileSync} from 'node:fs';
 import {validateGuide, validateProject, parseRoute, routeHash, breadcrumb, parseRepo, isSeedProject, compareVersions, frameworkStatus, shaFromGit, commitState} from '../model.js';
 
-const guide = JSON.parse(await readFile(new URL('../data/guide.json', import.meta.url)));
-const base = JSON.parse(await readFile(new URL('../data/project.json', import.meta.url)));
+const guide = JSON.parse(await readFile(new URL('../seed/guide.json', import.meta.url)));
+const base = JSON.parse(await readFile(new URL('../seed/project.json', import.meta.url)));
 const route = h => parseRoute(h, guide);
 
 test('La página Framework es una ruta propia', () => {

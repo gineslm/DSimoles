@@ -10,19 +10,19 @@
       "repo": "62a0ca4cac014d35af0c1af50549026ce7074eb522c885501fe64591b48b2b05"
     },
     "CHANGELOG.md": {
-      "design": "953324409da741fda5905b068d5aaf97560e731cfb0c63d5da2c722d044df7c0",
-      "repo": "67b10eaf2453a904a35f071b5b262a6f24c120e0943cbaff2e1b528debf1d39a"
+      "design": "6973aef1d4fe946c7456c8f6d7c9fc72a9ee577b6ffcd43067a04af9993ab0e8",
+      "repo": "6973aef1d4fe946c7456c8f6d7c9fc72a9ee577b6ffcd43067a04af9993ab0e8"
     },
     "CLAUDE.md": {
       "design": "b11ee9cb639069a6bd1d6e6ac378887a33830bd79bd3aa4f68c0d13cceccfc4e",
       "repo": "b11ee9cb639069a6bd1d6e6ac378887a33830bd79bd3aa4f68c0d13cceccfc4e"
     },
     "README.md": {
-      "design": "b7ca00c26e7738a38a12267a0593bc2c49d17bb2022ebf16e381ae31dc8e4fde",
+      "design": "fe152efcd9a24542035306fe7572cd1950471404cf04b8d8ce2e8d6a36b7fd76",
       "repo": "fe152efcd9a24542035306fe7572cd1950471404cf04b8d8ce2e8d6a36b7fd76"
     },
     "app.js": {
-      "design": "f36b1e41ac64a819ba10be8111874f635ee870a430d33b61b88991fbf4eb666c",
+      "design": "ba86ca16c968d84d019dce6d72fe624670100f74f0b24736dc9c656a60d397e7",
       "repo": "ba86ca16c968d84d019dce6d72fe624670100f74f0b24736dc9c656a60d397e7"
     },
     "assets/README.md": {
@@ -106,7 +106,7 @@
       "repo": "af7a608bb3bb51cefc04ae7e1ddd1b5292a878fb529d6647397913cc017f2001"
     },
     "docs/quality.md": {
-      "design": "c48af4b9b65ce34ce0d230521b84db737f5931c2f23c8a76eb17d84801e7d6e7",
+      "design": "5394bf1176ebf09276fc2926a0d2b88ecc8f756c285064e50382e8b418179da4",
       "repo": "5394bf1176ebf09276fc2926a0d2b88ecc8f756c285064e50382e8b418179da4"
     },
     "docs/scripts.md": {
@@ -118,7 +118,7 @@
       "repo": "4e1ff5be2511884d1456f88a89b784f4a3367ec814fb7acfa436119308e53925"
     },
     "dsbook.json": {
-      "design": "da01e4eac56468adf49769282e00a763421bcd448990b79d87fce30ca630e944",
+      "design": "a24f7766f7af15ca4298e792ea1b5b13b9a54c42243589b466b6175fae7aadd0",
       "repo": "a24f7766f7af15ca4298e792ea1b5b13b9a54c42243589b466b6175fae7aadd0"
     },
     "index.html": {
@@ -126,7 +126,7 @@
       "repo": "dec6b481d2bda9b198b7ddb4cc33797bbfff7fcdcaf9cfd656bacd46601bd8c7"
     },
     "model.js": {
-      "design": "28f1e101278dbafb1561d96dbd06a72f5b832f34d983753bbd507361545f15d9",
+      "design": "6d3cfd2717c89721fded2616def9cc3cf87fb6534189e863f84fd998fb85836b",
       "repo": "6d3cfd2717c89721fded2616def9cc3cf87fb6534189e863f84fd998fb85836b"
     },
     "package.json": {
@@ -375,6 +375,6 @@
     }
   },
   "discarded": [],
-  "recorded": "2026-10-13T11:59:32.895Z",
-  "manifestGenerated": "2026-10-13T11:20:31.328Z"
+  "recorded": "2026-10-13T12:09:03.878Z",
+  "manifestGenerated": "2026-10-13T12:06:20.707Z"
 }

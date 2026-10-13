@@ -1,43 +1,26 @@
 # Aviso de traspaso a Claude Design
 
-Generado el 2026-10-13 · base: `08beb60ba368` (origin/main) · framework: 2.3.1 → 2.3.2.
+Generado el 2026-10-13 · base: `a7dc809a4f4b` (origin/main) · framework: 2.3.2 → 2.4.0.
 
 Este archivo describe lo que cambia respecto a la base. No contiene el hash de su propio commit: el prompt que lo acompaña lo indica. Se reescribe en cada envío; el historial está en `CHANGELOG.md`.
 
 ## Resumen
 
-- Diseño: 4 archivos
-- Estructura: 1 archivo
-- Framework: 5 archivos
-- Proyecto (documentación): 2 archivos
+- Framework: 4 archivos
+- Proyecto (documentación): 1 archivo
 
 ## Cambios por tipo
 
-### Diseño
-
-- `data/project.json` · modificado · coincide con Claude Design — IDs: documentation.imoles-app, foundations.goals-and-usage-guide
-- `sections/documentation/imoles-app.dc.html` · nuevo · coincide con Claude Design
-- `sections/documentation/support.js` · nuevo · coincide con Claude Design
-- `sections/foundations/goals-and-usage-guide.dc.html` · modificado · coincide con Claude Design
-
-### Estructura
-
-- `data/guide.json` · modificado · coincide con Claude Design — IDs: documentation, documentation.imoles-app
-
 ### Framework
 
+- `app.js` · modificado · coincide con Claude Design
+- `docs/quality.md` · modificado · coincide con Claude Design
 - `dsbook.json` · modificado · hecho en Claude Code
-- `scripts/about.test.mjs` · modificado
-- `scripts/check.test.mjs` · modificado
-- `scripts/home.test.mjs` · modificado
-- `scripts/model.test.mjs` · modificado
+- `scripts/container.test.mjs` · modificado
 
 ### Proyecto (documentación)
 
-- `CHANGELOG.md` · modificado · hecho en Claude Code
-- `design-baseline.json` · modificado
-
-> La estructura del catálogo cambió (IDs, números o rutas de `data/guide.json`): Claude Design debe actualizar su mapa de pantallas y no renombrar nada por su cuenta.
+- `README.md` · modificado · coincide con Claude Design
 
 ## Diferencias con la versión de Claude Design
 

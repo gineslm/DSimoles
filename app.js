@@ -52,7 +52,7 @@ function renderHead(item,entry,page,effective){
 // ---- views
 function viewHome(){const v=homeView(route);return v==='info'?viewHomeInfo():v==='record'?viewHomeRecord():viewSummary();}
 // Vista de la home: tarjetas por categoría o lista con todas las subsecciones. Es estado de visualización en memoria.
-let homeLayout='cards';const collapsedCats=new Set();
+let homeLayout='list';const collapsedCats=new Set();
 const ICONS={cards:'<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
   list:'<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.4" fill="currentColor"/><circle cx="4.5" cy="12" r="1.4" fill="currentColor"/><circle cx="4.5" cy="18" r="1.4" fill="currentColor"/></svg>'};
 const countsOf=c=>{const counts={R:0,I:0,P:0,N:0};c.items.forEach(i=>counts[project.sections[i.id].status]++);return counts;};

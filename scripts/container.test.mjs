@@ -65,11 +65,9 @@ async function session(fn) {
 test('Contenedor: la home, las secciones, las vistas, los filtros y los enlaces antiguos funcionan sin errores de consola', {skip, timeout: 60000}, async () => {
   await session(async b => {
     await b.goto('');
-    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'la home muestra una tarjeta por categoría');
     assert.equal(await b.eval(`document.querySelectorAll('.meters progress').length`), 2, 'la home muestra Progress y Complexity');
-    // selector de vista de la home: tarjetas (por defecto) o lista con todas las subsecciones
-    assert.equal(await b.eval(`document.querySelector('.seg-btn[aria-pressed=true]').textContent.trim()`), 'Tarjetas', 'por defecto, tarjetas');
-    await b.eval(`document.querySelectorAll('.seg-btn')[1].click()`); await sleep(200);
+    // selector de vista de la home: lista con todas las subsecciones (por defecto) o tarjetas
+    assert.equal(await b.eval(`document.querySelector('.seg-btn[aria-pressed=true]').textContent.trim()`), 'Lista', 'por defecto, la lista');
     assert.equal(await b.eval(`document.querySelectorAll('.tree-cat').length`), guide.categories.length, 'la lista muestra todas las categorías');
     assert.equal(await b.eval(`document.querySelectorAll('.tree-rows .row').length`), items.length, 'y todas las subsecciones');
     assert.equal(await b.eval(`document.querySelectorAll('.card').length`), 0, 'sin tarjetas en la lista');
@@ -77,7 +75,8 @@ test('Contenedor: la home, las secciones, las vistas, los filtros y los enlaces 
     assert.equal(await b.eval(`document.querySelector('.tree-rows').hidden`), true, 'cada categoría se puede contraer');
     assert.equal(await b.eval(`document.querySelector('.tree-all').textContent`), 'Expandir todo');
     await b.eval(`document.querySelectorAll('.seg-btn')[0].click()`); await sleep(200);
-    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'se vuelve a las tarjetas');
+    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), guide.categories.length, 'la home muestra una tarjeta por categoría en el otro modo');
+    assert.equal(await b.eval(`document.querySelector('.seg-btn[aria-pressed=true]').textContent.trim()`), 'Tarjetas');
 
     if (withPage) {
       await b.go(`#/${withPage.id}`);
@@ -156,7 +155,7 @@ test('Contenedor: la home, las secciones, las vistas, los filtros y los enlaces 
     for (const s of Object.values(project.sections)) counts[s.status] = (counts[s.status] || 0) + 1;
     await b.eval(`document.querySelector('[data-filter="I"]').click()`); await sleep(300);
     const withI = guide.categories.filter(c => c.items.some(i => project.sections[i.id].status === 'I')).length;
-    assert.equal(await b.eval(`document.querySelectorAll('.card').length`), withI, 'el filtro I recorta la home');
+    assert.equal(await b.eval(`document.querySelectorAll('.card, .tree-cat').length`), withI, 'el filtro I recorta la home (en cualquiera de las dos vistas)');
     await b.eval(`document.querySelector('[data-filter="all"]').click()`);
     await b.go('#/nope');
     assert.equal(await b.eval(`document.querySelector('#view h1').textContent`), 'Página no encontrada');

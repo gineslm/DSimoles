@@ -24,7 +24,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Vista profesional fuera de alcance en esta iteración (owner, 2026-10-10).",
+      "notes": "Reestructurada el 2026-10-13 con el guion del owner: 1 explicaciones generales (qué es un DS, qué es DSimoles como DS y como framework, ciclo de evolución, cómo se trabaja en el framework) y 2 concreción de la fase actual (ecosistema y estado; objetivos y requerimientos). El alcance lo muestran los estados de las secciones; implementación y QA van en sus secciones. Retirados por decisión del owner: alcance por ediciones, guía por roles, origen de los valores y bloque propio de accesibilidad. DSimoles es un DS para aplicaciones médicas; la primera edición cubre el prototipo de iMoles (listo para evaluación; siguientes fases: financiación, ajustes, estudios clínicos) y debe poder extenderse a la app de profesionales y a aplicaciones web. El castellano es el idioma del prototipo, no del público. El nombre DSimoles es provisional. El bloque Estado del proyecto se actualiza en cada cambio de fase y los objetivos se ajustan a él. Objetivos propuestos por Claude Design, pendientes de revisión del owner. Retirados de la página: el alcance de producto (ya está en 0.3) y los 5 principios del borrador anterior, que esperan destino en 0.6 Principios de diseño (hoy N): 1) el riesgo nunca se transmite solo con color; 2) cada resultado muestra acción, responsable y plazo; 3) «No evaluable» y el fallo técnico tienen estado visual propio; 4) tono clínico sereno, un solo acento por pantalla; 5) una acción principal por pantalla, alcanzable con el pulgar.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1876,6 +1876,19 @@
         "evidence": ""
       },
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
+    },
+    "documentation.imoles-app": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Creada el 2026-10-13 a petición del owner como categoría 14 Documentación. Describe la app de pacientes de iMoles a partir de las pantallas de presentación (1.1–1.3) y del índice del prototipo navegable; es el anexo enlazado desde 0.1. Pendiente de revisión del owner.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
     }
   }
 }

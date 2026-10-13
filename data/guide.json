@@ -2093,6 +2093,29 @@
           "suggestedPath": "sections/governance/accessibility.html"
         }
       ]
+    },
+    {
+      "id": "documentation",
+      "number": "14",
+      "title": "Documentación",
+      "objective": "Reúne la documentación de referencia de los productos que usan el DS.",
+      "items": [
+        {
+          "id": "documentation.imoles-app",
+          "number": "14.1",
+          "title": "App de pacientes de iMoles",
+          "objective": "Describir el producto para que el equipo entienda qué debe cubrir el DS.",
+          "define": "Qué es el producto, qué hace, qué no es, sus flujos principales, su estado y sus fuentes de referencia.",
+          "accessibility": "Necesidades de los usuarios del producto que condicionan el DS.",
+          "deliverable": "Página de descripción del producto con sus flujos, su estado y enlaces a las fuentes.",
+          "acceptance": [
+            "La descripción coincide con las fuentes de referencia.",
+            "Los flujos principales están identificados.",
+            "La revisión del owner está registrada."
+          ],
+          "suggestedPath": "sections/documentation/imoles-app.html"
+        }
+      ]
     }
   ]
 }

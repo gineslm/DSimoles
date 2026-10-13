@@ -114,6 +114,15 @@ test('Contenedor: la home, las secciones, las vistas, los filtros y los enlaces 
     assert.deepEqual(await b.eval(`[...document.querySelectorAll('#views a')].map(a => a.textContent)`), ['Content', 'Info', 'Record'], 'la home tiene las mismas tres vistas que una sección');
     assert.equal(await b.eval(`document.querySelector('#views [aria-current]').textContent`), 'Content');
     assert.equal(await b.eval(`document.getElementById('head-status').hidden && document.getElementById('pager').hidden`), true, 'sin estado ni anterior/siguiente en la home');
+    // Anterior / Siguiente se mueven solo entre las secciones que pasan la búsqueda
+    await b.go('#/' + items[0].id);
+    assert.equal(await b.eval(`document.querySelector('#pager a[aria-label^="Siguiente"]').getAttribute('href')`), '#/' + items[1].id, 'sin filtros, la siguiente es la contigua');
+    const setSearch = v => b.eval(`(() => { const i = document.getElementById('search'); i.hidden = false; i.value = ${JSON.stringify(v)}; i.dispatchEvent(new Event('input')); })()`);
+    await setSearch(`${items[2].number} ${items[2].title}`); await sleep(200);
+    assert.equal(await b.eval(`document.querySelector('#pager a[aria-label^="Siguiente"]').getAttribute('href')`), '#/' + items[2].id, 'con la búsqueda, la siguiente salta a la que coincide');
+    assert.equal(await b.eval(`document.querySelector('#pager [aria-label^="Anterior"]').getAttribute('aria-disabled')`), 'true', 'y no hay anterior que coincida');
+    await setSearch(''); await sleep(200);
+    assert.equal(await b.eval(`document.querySelector('#pager a[aria-label^="Siguiente"]').getAttribute('href')`), '#/' + items[1].id, 'al limpiar la búsqueda vuelve la contigua');
     await b.go('#/home/info');
     assert.equal(await b.eval(`document.querySelector('#view .empty h2').textContent`), 'Aún no hay información', 'la vista Info de la home existe y está vacía');
     await b.go('#/home/record');

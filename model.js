@@ -80,7 +80,8 @@ export function breadcrumb(guide,route,projectName){
   const i=c.items.find(x=>x.id===route.id);
   return[home,cat,{label:`${i.number} ${i.title}`}];
 }
-export function neighbors(guide,id){const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id)),k=flat.indexOf(id);return{prev:k>0?flat[k-1]:null,next:k>=0&&k<flat.length-1?flat[k+1]:null};}
+// Vecinos de una sección en el orden de la guía. Con `allowed` (un Set de IDs, p. ej. las secciones que pasan los filtros) solo cuentan esas, aunque la sección actual no esté entre ellas.
+export function neighbors(guide,id,allowed=null){const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id)),k=flat.indexOf(id),ok=i=>!allowed||allowed.has(i);if(k<0)return{prev:null,next:null};const prev=flat.slice(0,k).reverse().find(ok)??null,next=flat.slice(k+1).find(ok)??null;return{prev,next};}
 // Vista por defecto de una sección: su página si la tiene y está In process o Ready; si no, su Info.
 export function defaultView(entry,hasPage){return hasPage&&(entry.status==='I'||entry.status==='R')?'content':'info';}
 // La vista de la home: Content (el resumen) salvo que la dirección diga otra cosa.

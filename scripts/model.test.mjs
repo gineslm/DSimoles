@@ -67,6 +67,15 @@ test('Los vecinos siguen el orden de la guía entre categorías',()=>{
   assert.deepEqual(neighbors(guide,flat.at(-1)),{prev:flat.at(-2),next:null});
   const last0=guide.categories[0].items.at(-1).id;assert.equal(neighbors(guide,last0).next,guide.categories[1].items[0].id);
 });
+test('Con un conjunto permitido, los vecinos saltan lo que no pasa los filtros (aunque la sección actual no esté en él)',()=>{
+  const flat=guide.categories.flatMap(c=>c.items.map(i=>i.id)),ok=new Set([flat[1],flat[4],flat[7]]);
+  assert.deepEqual(neighbors(guide,flat[4],ok),{prev:flat[1],next:flat[7]});
+  assert.deepEqual(neighbors(guide,flat[1],ok),{prev:null,next:flat[4]});
+  assert.deepEqual(neighbors(guide,flat[7],ok),{prev:flat[4],next:null});
+  assert.deepEqual(neighbors(guide,flat[5],ok),{prev:flat[4],next:flat[7]});
+  assert.deepEqual(neighbors(guide,flat[0],new Set()),{prev:null,next:null});
+  assert.deepEqual(neighbors(guide,'no.existe',ok),{prev:null,next:null});
+});
 test('Vista por defecto: la página si existe y el estado es I o R; si no, Info',()=>{
   for(const [status,hasPage,view] of [['I',true,'content'],['R',true,'content'],['P',true,'info'],['N',true,'info'],['I',false,'info'],['R',false,'info']])assert.equal(defaultView({status},hasPage),view,`${status} ${hasPage}`);
 });

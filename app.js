@@ -33,7 +33,7 @@ cat.addEventListener('pointerenter',e=>{if(wide.matches&&e.pointerType!=='touch'
 cat.addEventListener('focusin',()=>{if(wide.matches)openCat(cat);});cat.addEventListener('focusout',()=>{if(wide.matches)closeCat(cat);});
 menu.append(cat);}
 menu.scrollTop=top;if(focusKey)menu.querySelector(`[data-key="${CSS.escape(focusKey)}"]`)?.focus({preventScroll:true});}
-function onFilterChange(){syncFilters();renderMenu(visible());if(route.name==='home'||route.name==='category')renderRoute(routeToken);}
+function onFilterChange(){syncFilters();renderMenu(visible());if(route.name==='home'||route.name==='category')renderRoute(routeToken);else if(route.name==='section')renderPager(itemOf(route.id));}
 
 // ---- header: breadcrumb, status, views, pager
 function renderHead(item,entry,page,effective){
@@ -46,7 +46,12 @@ function renderHead(item,entry,page,effective){
   views.replaceChildren(...[['content','Content'],['info','Info'],['record','Record']].map(([v,t])=>{const a=link(home&&v==='content'?'#/':`${root}/${v}`,t);if(v===current)a.setAttribute('aria-current','page');return a;}));
   if(!section)return;
   status.textContent=`${entry.status} · ${labels[entry.status]}`;status.dataset.value=entry.status;
-  const n=neighbors(guide,item.id);pager.replaceChildren(...[['prev','‹','Anterior'],['next','›','Siguiente']].map(([k,glyph,word])=>{const id=n[k];if(!id){const s=el('span',{className:'pager-btn'},glyph);s.setAttribute('aria-disabled','true');s.setAttribute('aria-label',`${word}: no hay sección`);return s;}return link(`#/${id}`,glyph,{className:'pager-btn',title:`${word}: ${itemOf(id).title}`,ariaLabel:`${word}: sección ${itemOf(id).title}`});}));
+  renderPager(item);
+}
+// Anterior / Siguiente se mueven entre las secciones que pasan los filtros y la búsqueda
+function renderPager(item){
+  const shown=new Set(visible().flatMap(v=>v.items.map(i=>i.id))),n=neighbors(guide,item.id,filters.size||query?shown:null);
+  $('#pager').replaceChildren(...[['prev','‹','Anterior'],['next','›','Siguiente']].map(([k,glyph,word])=>{const id=n[k];if(!id){const s=el('span',{className:'pager-btn'},glyph);s.setAttribute('aria-disabled','true');s.setAttribute('aria-label',`${word}: no hay sección`);return s;}return link(`#/${id}`,glyph,{className:'pager-btn',title:`${word}: ${itemOf(id).title}`,ariaLabel:`${word}: sección ${itemOf(id).title}`});}));
 }
 
 // ---- views

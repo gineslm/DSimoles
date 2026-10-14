@@ -1,6 +1,6 @@
 {
   "framework": "DSBook",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "released": "2026-10-14",
   "repository": "https://github.com/gineslm/DSbook",
   "files": {
@@ -36,7 +36,7 @@
     "scripts/framework.test.mjs": "00778a2b4b1b9fdf1864fa95d24f54f030d26f2ba30696f6b4c45dfe440eb53a",
     "scripts/handoff-lib.mjs": "654bd9d8f468caf58625e6cd4bac387c238fd598a58bd3999177693ec0dc3787",
     "scripts/handoff-note.mjs": "c4aa6bcff8b759dc818b0a244e04d219af3674e3ee0f2f12d92f66d9033ccf62",
-    "scripts/handoff-protection.test.mjs": "dcc07563db91dddf812bd0e6e8e09bc611f5497df9cac08948bfb4033bf02d31",
+    "scripts/handoff-protection.test.mjs": "6e3849428c92eecd0c43c3d81d89e545ba2e6003670af3f3f1d5c186057424a5",
     "scripts/handoff.test.mjs": "b1e02bb61897323c4305c6e883f164bcaf86ab7be24a56451376e79f31d39679",
     "scripts/home.test.mjs": "39783c25348c28e259ac1b95002f5b4c1544dbbc1e772f89e9f1c0d664b3b3ce",
     "scripts/hooks-install.mjs": "d2789915232d8701ed39a1edfffbcbc3c2bf2f2f9a5938cbf71001aa3665a5c3",

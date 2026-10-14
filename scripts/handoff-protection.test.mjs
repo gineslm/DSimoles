@@ -14,7 +14,8 @@ import {hashOf} from './framework-lib.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const H = x => createHash('sha256').update(x).digest('hex');
 const M = o => new Map(Object.entries(o));
-const EXCLUDE = /[\\/](\.git|node_modules|\.dsbook)([\\/]|$)/;
+// El baseline real del proyecto no entra en la copia: las pruebas parten de un registro vacío y no dependen de lo ya descartado.
+const EXCLUDE = /[\\/](\.git|node_modules|\.dsbook)([\\/]|$)|[\\/]design-baseline\.json$/;
 
 function inCopy(fn, {git = false} = {}) {
   const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-prot-'));

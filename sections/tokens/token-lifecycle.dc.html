@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="tokens.token-lifecycle">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Ciclo de vida de tokens · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="tokens.token-lifecycle" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Ciclo de vida de tokens</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Un token entra cuando un componente o una app lo necesita, no por anticipado, y sale cuando deja de usarse.</p>
+</header>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Estados</h2>
+<div role="table" aria-label="Estados" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,2fr) minmax(0,0.9fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Estado</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Significa</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Se puede usar</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,2fr) minmax(0,0.9fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Propuesto</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Declarado en su página y en el archivo, pendiente de review</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Solo en el componente o la app que lo pidió</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,2fr) minmax(0,0.9fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Activo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Revisado y documentado en la página de su categoría</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Sí</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,2fr) minmax(0,0.9fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Obsoleto</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Tiene sustituto; se mantiene como alias del token nuevo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">No en código nuevo</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,2fr) minmax(0,0.9fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Retirado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Se borra del archivo y de la página</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">No</div></div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Crear o reutilizar</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Antes de crear un token se recorre este orden.</p>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:14px"><li>¿Hay un semántico con esa función? Se usa, aunque su valor no sea el que esperabas: si el valor no encaja, se revisa el semántico, no se crea otro.</li><li>¿Lo necesitan dos o más componentes, o una app? Se crea un semántico en la página de su categoría, a continuación de los primitivos.</li><li>¿Lo necesita un solo componente? Se crea un token de componente en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/tokens.css</span>.</li><li>¿Falta el valor en la escala? Se añade el primitivo y después el token que lo usa. Un primitivo nunca entra solo.</li><li>Las familias base (texto, fondos y superficies, bordes, acción primaria y sus estados, foco, feedback y deshabilitado) se declaran completas desde el principio, aunque falte algún uso.</li></ol>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Promover, modificar y retirar</h2>
+<div role="table" aria-label="Cambios" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Cambio</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Regla</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Promover</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Un token de componente que aparece en un segundo componente pasa a semántico. El token de componente queda obsoleto y apunta al semántico.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Cambiar un primitivo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Afecta a todos los semánticos que lo usan. La review revisa el contraste de cada pareja afectada.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Cambiar la referencia de un semántico</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Es una decisión de diseño: review y entrada en el CHANGELOG.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Renombrar</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Token nuevo y alias obsoleto con el nombre antiguo (<a href="naming-and-aliases.dc.html">2.2</a>).</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Retirar</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Sin usos en la librería ni en las apps: pasa a obsoleto y se borra en la siguiente versión mayor. Las familias base no se retiran.</div></div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Caso límite: obsoletos y candidatos a retirar</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Recuento automático de var(--ds-*) en components/ y sections/. No cuenta los usos de la app de iMoles, así que nada se retira sin comprobarlos.</p>
+<div role="table" aria-label="Candidatos" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Token</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Usos</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Estado</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">type.tag · type.tag-tracking</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Unificados en type.ui: misma tipografía, 0,03em de diferencia de espaciado y la mitad de los usos ya con el de type.ui. Migrados los 8 componentes</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Obsoletos desde 2026-10-14; alias de type.ui</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">size.control.lg</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Button lg (52) retirado: la diferencia con 44 era demasiado pequeña. La acción principal usa md.</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Obsoleto desde 2026-10-14; alias de size.control.md</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">size.icon-button.2xs · .sm · .xl · .target</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">IconButton queda en xs 28 · md 36 · lg 44. El área táctil ampliada sale del DS base.</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Obsoletos desde 2026-10-14; alias de xs · md · lg · size.target.min</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">size.icon.sm</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Icono de 18 retirado: escala 16 · 20 · 24.</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Obsoleto desde 2026-10-14; alias de size.icon.xs</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">component.button.label-lg</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Etiqueta del Button lg retirado.</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Obsoleto desde 2026-10-14; alias de component.button.label-md</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">color.brand.expressive</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">0 en la librería y en las páginas al 2026-10-14</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Pendiente de comprobar en iMoles</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">color.brand.expressive-light</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">0 en la librería y en las páginas al 2026-10-14</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Pendiente de comprobar en iMoles</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">color.status.success.body · color.status.unknown.body</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">0 en la librería</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Se quedan: familia base de feedback</div></div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Comprobaciones</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:14px"><li>Cada token nuevo nombra en su review el componente o la app que lo pidió.</li><li>Un semántico de color nuevo se aprueba con su pareja de contraste comprobada en cada tema existente.</li><li>Antes de cada versión: recuento de usos de cada token; los que tienen 0 usos y no son de una familia base pasan a candidatos.</li></ul>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

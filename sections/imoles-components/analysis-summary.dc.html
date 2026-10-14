@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="imoles-components.analysis-summary">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Button.js"></script>
+<script src="../../components/StatusChip.js"></script>
+<script src="../../components/RiskBadge.js"></script>
+<script src="../../components/SummaryCard.js"></script>
+<script src="../../components/ListRow.js"></script>
+<script src="../../components/FollowUpCard.js"></script>
+<script src="../../components/DescriptionList.js"></script>
+<script src="../../components/Disclosure.js"></script>
+<script src="../../components/AnalysisSummary.js"></script>
+<script src="../../components/IconButton.js"></script>
+<script src="../../components/OptionsMenu.js"></script>
+<script src="../../components/FollowUpHeader.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>AnalysisSummary · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.7 AnalysisSummary" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">AnalysisSummary</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Resultado de un análisis: nivel, qué hacer, por qué y los datos en una segunda capa.</p>
+<p style="margin:0;font-size:14px;max-width:72ch"><strong style="font-weight:600">Construido con</strong> · <a href="../components/disclosure.dc.html">Disclosure</a>.</p>
+</header>
+<section aria-label="AnalysisSummary" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/AnalysisSummary.js</span> · HF: 2 Entidad - Analisis Resumen (5.1–5.3)</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Por nivel</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:380px;display:flex;flex-direction:column;gap:24px"><x-import component-from-global-scope="DSimoles.AnalysisSummary" level="high" badge-label="Riesgo estimado alto · consulta preferente" title="Solicita cita lo antes posible para que valoren esta lesión" description="El análisis ha identificado señales que requieren valoración profesional. El diagnóstico corresponde a un profesional sanitario." rows="Lesión::Omóplato izquierdo · 01 | Fotos comparadas::3 · desde nov 2025 | Cambio registrado::Borde y color | Urgencia de la valoración::Preferente" hint-size="100%,300px"></x-import>
+<div style="height:1px;background:#d4d4d4"></div>
+<x-import component-from-global-scope="DSimoles.AnalysisSummary" level="low" badge-label="Riesgo estimado bajo" title="Haz la próxima foto en junio" description="No hay cambios relevantes respecto a las fotos anteriores." rows="Fotos comparadas::4 · desde sep 2025 | Cambio registrado::Ninguno | Próxima foto::Junio 2026" hint-size="100%,260px"></x-import></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Datos abiertos</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:380px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.AnalysisSummary" level="high" badge-label="Riesgo estimado alto" title="Solicita cita lo antes posible" rows="Lesión::Omóplato izquierdo · 01 | Fotos comparadas::3 · desde nov 2025 | Cambio registrado::Borde y color" open="{{ true }}" hint-size="100%,320px"></x-import></div></div>
+
+<h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
+<div role="table" aria-label="Ficha de AnalysisSummary" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Definición</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Propósito</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Cabecera de las pantallas de resultado. La acción que sigue va debajo, con ActionCard o Button.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Anatomía</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">RiskBadge md · título (h2) · descripción · Disclosure con DescriptionList.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Accesibilidad</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Orden de lectura: nivel → indicación → explicación → datos. El panel de datos es un &lt;details&gt; nativo.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Tokens</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.title</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.body</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">risk.high.tint / .body</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">component.disclosure.risk-border</span> (nuevo).</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">API</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">level</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">badge-label</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">title</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">description</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">rows</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">open</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">heading-level</span>.</div></div>
+</div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Cambios respecto a la HF</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Descripción de 300 15 a type.body.</li><li>Intermedio y bajo usaban un panel blanco con borde: pasan al tono neutral del Disclosure.</li></ul>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

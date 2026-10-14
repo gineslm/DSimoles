@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ds-section-id" content="visuals.opacity">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <script src="../../assets/_runtime/react.production.min.js"></script>
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -29,21 +30,21 @@ a:hover{color:#5a5a5a}
 <h2 style="margin:0;font-size:22px;font-weight:600">Scrim</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
 <div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<div style="position:relative;height:200px;background:#F0F8FC;overflow:hidden">
-<div style="position:absolute;left:16px;right:16px;top:16px;height:56px;background:#ffffff;border:1px solid #DCE9EE;border-radius:16px"></div>
-<div style="position:absolute;left:16px;right:16px;top:84px;height:56px;background:#ffffff;border:1px solid #DCE9EE;border-radius:16px"></div>
-<div style="position:absolute;inset:0;background:rgba(19,46,56,0.48)"></div>
-<div style="position:absolute;left:0;right:0;bottom:0;height:72px;background:#ffffff;border-radius:16px 16px 0 0"></div>
+<div style="position:relative;height:200px;background:var(--ds-color-neutral-50);overflow:hidden">
+<div style="position:absolute;left:16px;right:16px;top:16px;height:56px;background:var(--ds-color-bg-surface);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-150);border-radius:var(--ds-radius-card)"></div>
+<div style="position:absolute;left:16px;right:16px;top:84px;height:56px;background:var(--ds-color-bg-surface);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-150);border-radius:var(--ds-radius-card)"></div>
+<div style="position:absolute;inset:0;background:var(--ds-color-scrim-modal)"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:72px;background:var(--ds-color-bg-surface);border-radius:var(--ds-radius-card) var(--ds-radius-card) 0 0"></div>
 </div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">scrim.modal</span> · neutral.950 al 48% · bajo menús y hojas</span>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.scrim.modal</span> · color.neutral.950 al <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">opacity.scrim</span> (48%) · bajo menús y hojas</span>
 </div>
 </div>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
 <li>La opacidad nunca se usa para bajar el contraste del texto ni para mostrar el estado disabled.</li>
-<li>Disabled usa tokens sólidos (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.*</span>).</li>
+<li>Disabled usa tokens sólidos (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.disabled.*</span>).</li>
 </ul>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · decidir si las capas sobre imágenes (revisión de fotos, detalle de captura) necesitan un segundo valor.</p>
 </section>
+
 
 </main>
 </x-dc>

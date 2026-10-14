@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ds-section-id" content="tokens.design-code-mapping">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <script src="../../assets/_runtime/react.production.min.js"></script>
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -19,15 +20,13 @@ a:hover{color:#5a5a5a}
 </style>
 </helmet>
 <main data-screen-label="tokens.design-code-mapping" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
-
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Correspondencia diseño y código</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">Cómo viaja el nombre de un token hasta el código.</p>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Cómo viaja un token hasta el código: la librería lo aplica con mixins Sass y las apps con clases utilitarias.</p>
 </header>
-
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Formato de tokens</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Decisión para la futura implementación del design system, fuera de este repositorio: aquí no se genera ningún archivo de tokens. Formato W3C Design Tokens Community Group (DTCG): JSON con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$value</span> y <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$type</span>; los tokens semánticos referencian a los primitivos con llaves.</p>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Decidido por el owner: formato W3C Design Tokens Community Group (DTCG), JSON con <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$value</span> y <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">$type</span>. Los semánticos apuntan a los primitivos con llaves. En este repositorio no se genera ningún archivo de tokens.</p>
 <pre style="margin:0;padding:16px;background:#f6f6f6;border:1px solid #d4d4d4;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5">{
   "color": {
     "brand": { "600": { "$type": "color", "$value": "#00698C" } },
@@ -37,21 +36,65 @@ a:hover{color:#5a5a5a}
   }
 }</pre>
 </section>
-
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Nombre en cada medio</h2>
-<div role="table" aria-label="Nombre en cada medio" style="font-size:14px;max-width:640px">
-<div role="row" style="display:grid;grid-template-columns:1fr 1fr">
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Medio</div>
-<div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600">Forma</div>
+<div role="table" aria-label="Nombre en cada medio" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Medio</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Forma</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Diseño, documentación y JSON DTCG</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">color.action.primary</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">CSS (variable)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">--ds-color-action-primary</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Sass (mixin, solo valores compuestos)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">@include t-body</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Clase utilitaria (apps)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px;">.t-body</div></div>
 </div>
-<div role="row" style="display:grid;grid-template-columns:1fr 1fr"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Diseño y documentación</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">action.primary</div></div>
-<div role="row" style="display:grid;grid-template-columns:1fr 1fr"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">JSON DTCG</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">color.action.primary</div></div>
-<div role="row" style="display:grid;grid-template-columns:1fr 1fr"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">CSS</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;font-family:ui-monospace,Menlo,monospace;font-size:13px">--color-action-primary</div></div>
-</div>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · el prefijo CSS y las plataformas de destino (web, iOS, Android) no están decididos; la fila de CSS es una propuesta.</p>
 </section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Cadena de aplicación</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Los mixins se aplican a los componentes de la librería; las clases derivadas de esos mixins se consumen desde los templates de las apps.</p>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px">
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Token</span><div style="height:36px;background:var(--ds-color-bg-surface);border:1px solid var(--ds-color-border-subtle)"></div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;overflow-wrap:anywhere">--ds-color-bg-surface</span></div>
+<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Mixin · Sass</span><div style="font-size:13px;color:#3d3d3d">Agrupa uno o varios tokens</div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;overflow-wrap:anywhere">@mixin bg-surface</span></div>
+<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">Librería</span><div style="font-size:13px;color:#3d3d3d">El CSS del componente hace @include</div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;overflow-wrap:anywhere">.dsm-card</span></div>
+<span aria-hidden="true" style="align-self:center;font-size:20px;color:#5a5a5a">→</span>
+<div style="border:1px solid #d4d4d4;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5a5a5a">App</span><div style="font-size:13px;color:#3d3d3d">El template usa la clase derivada</div>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;overflow-wrap:anywhere">class="bg-surface"</span></div>
+</div><div role="table" aria-label="Dónde se usa cada pieza" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,0.8fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Pieza</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Vive en</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">La usa</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Origen</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Tokens (CSS)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">tokens.css</span> de la librería</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Mixins y, por excepción, CSS propio de la app (solo semánticos)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Decidido</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Mixins</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">_mixins.scss</span> de la librería</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Solo el CSS de los componentes de la librería y el archivo de utilidades</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Decidido</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Clases utilitarias</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">utilities.css</span>, compilado desde los mixins</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Solo los templates de las apps, en su layout y su contenido propio</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Decidido</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Componentes</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">La librería: dentro de la app o en un paquete externo que consume el ecosistema</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Las apps, por sus props; nunca se les añaden clases utilitarias</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a;">Decidido</div></div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Ejemplo</h2>
+<pre style="margin:0;padding:16px;background:#f6f6f6;border:1px solid #d4d4d4;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5">// _mixins.scss · librería: solo semánticos
+@mixin t-body { font: var(--ds-type-body); color: var(--ds-color-text-body); }
+@mixin bg-surface { background: var(--ds-color-bg-surface); }
 
+// InlineAlert.scss · componente de la librería
+.dsm-alert__text { @include t-body; }
+
+// utilities.scss → utilities.css · una clase por mixin
+.t-body { @include t-body; }
+.bg-surface { @include bg-surface; }</pre><pre style="margin:0;padding:16px;background:#f6f6f6;border:1px solid #d4d4d4;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5">&lt;!-- template de una app --&gt;
+&lt;section class="stack gap-3 p-4 bg-surface r-md"&gt;
+  &lt;p class="t-body"&gt;Texto propio de la app&lt;/p&gt;
+  &lt;ds-button variant="primary"&gt;Continuar&lt;/ds-button&gt;  &lt;!-- sin clases utilitarias --&gt;
+&lt;/section&gt;</pre>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Reglas</h2>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:14px"><li>Los mixins leen variables CSS, no variables Sass: el valor se resuelve en el navegador y un tema solo cambia variables.</li><li>Una clase utilitaria existe solo si existe su mixin, y un mixin solo si lo usa un componente o una app.</li><li>Una app no aplica clases utilitarias a un componente de la librería. Si necesita otra apariencia, pide una variante del componente.</li><li>La librería de referencia de este repositorio (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/</span>) no usa Sass porque el repo no tiene build: cada componente inyecta el CSS ya resuelto, el mismo que daría el @include.</li></ol>
+</section>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · herramienta de generación desde el JSON DTCG (por ejemplo, Style Dictionary) y plataformas de destino además de web (iOS, Android).</p>
 </main>
 </x-dc>
 <script type="text/x-dc" data-dc-script>

@@ -53,47 +53,47 @@ class Component extends DCLogic {
   {
    "titulo": "Sustituir la paleta en imoles-tokens.css",
    "problema": "El teal como marca, el verde de riesgo bajo casi idéntico (1.03:1), un coral sin uso y un violeta cercano a la nueva marca.",
-   "propuesta": "Aplicar los primitivos de esta página: brand 225°, neutros 225°, verde azulado claro para riesgo bajo, amber.600, plum; eliminar coral, verde y violeta."
+   "propuesta": "Aplicar los primitivos de esta página: brand 225°, neutros 225°, verde azulado claro para riesgo bajo, color.amber.600, plum; eliminar coral, verde y violeta."
   },
   {
    "titulo": "Acciones normales con color de riesgo",
    "problema": "Acción pinta hacer la foto, leer el informe, primera foto y revisión con --imoles-accion-bajo; Botón primario usa teal.",
-   "propuesta": "action.primary = brand.600 para todas; action.alert solo para pedir cita con riesgo alto."
+   "propuesta": "color.action.primary = color.brand.600 para todas; color.action.alert solo para pedir cita con riesgo alto."
   },
   {
    "titulo": "Badge de riesgo intermedio",
    "problema": "Texto blanco sobre #B5790A: 3.68:1. Existe un --imoles-accion-intermedio aparte.",
-   "propuesta": "Un único relleno amber.600 (4.77:1) para el badge y la acción."
+   "propuesta": "Un único relleno color.amber.600 (4.77:1) para el badge y la acción."
   },
   {
    "titulo": "Avisos con colores de riesgo",
    "problema": "Aviso Inline usa el riesgo intermedio para “warning”, el riesgo alto para “error” y teal para “info”.",
-   "propuesta": "status.warning, status.error y status.info (neutro)."
+   "propuesta": "color.status.warning, color.status.error y color.status.info (neutro)."
   },
   {
    "titulo": "Contorno de campo insuficiente",
-   "problema": "Campo Texto y Campo Opción sin focus usan border.subtle: 1.24:1 (mínimo 3:1, WCAG 1.4.11).",
-   "propuesta": "border.control = neutral.400."
+   "problema": "Campo Texto y Campo Opción sin focus usan color.border.subtle: 1.24:1 (mínimo 3:1, WCAG 1.4.11).",
+   "propuesta": "color.border.control = color.neutral.400."
   },
   {
    "titulo": "Chip Estado · high risk fuera de los tokens",
    "problema": "Usa #FBE8E3 / #A8321F, un carmesí anterior.",
-   "propuesta": "risk.high.tint + risk.high.text."
+   "propuesta": "color.risk.high.tint + color.risk.high.text."
   },
   {
    "titulo": "Chip neutro",
-   "problema": "text.secondary sobre chip.neutral.bg no llega a 4.5:1.",
-   "propuesta": "text.body en el chip."
+   "problema": "color.text.secondary sobre color.chip.neutral.bg no llega a 4.5:1.",
+   "propuesta": "color.text.body en el chip."
   },
   {
    "titulo": "Etiqueta secundaria de riesgo alto",
    "problema": "--imoles-riesgo-alto-label da 4.41:1 sobre su tinte.",
-   "propuesta": "Eliminarla; usar risk.high.text."
+   "propuesta": "Eliminarla; usar color.risk.high.text."
   },
   {
    "titulo": "Valores duplicados y codificados a mano",
    "problema": "--imoles-caption es un alias de muted; --imoles-line-soft casi iguala a --imoles-line; un valor antiguo quedó comentado; #FFFFFF y la sombra del menú están codificados a mano.",
-   "propuesta": "Unificar en text.secondary y border.subtle; usar text.inverse y bg.surface; sombra como token de elevación (1.5)."
+   "propuesta": "Unificar en color.text.secondary y color.border.subtle; usar color.text.inverse y color.bg.surface; sombra como token de elevación (1.5)."
   }
  ]
 };

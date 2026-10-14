@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ds-section-id" content="visuals.color">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <script src="../../assets/_runtime/react.production.min.js"></script>
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -88,32 +89,32 @@ a:hover{color:#5a5a5a}
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Uso de la marca</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px"><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><div style="height:40px;padding:0 16px;border-radius:12px;background:#00698C;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span>Hacer la foto</span></div></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.600</span> · botón, navegación, icono</span></div>
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><div style="height:40px;padding:0 var(--ds-space-4);border-radius:var(--ds-radius-button);background:var(--ds-color-brand-600);color:var(--ds-color-text-inverse);display:flex;align-items:center;font:var(--ds-type-ui);letter-spacing:var(--ds-type-ui-tracking);text-transform:uppercase"><span>Hacer la foto</span></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">color.brand.600</span> · botón, navegación, icono</span></div>
 <div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#005471"><span>Ver el análisis ›</span></span></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.700</span> · texto y enlace</span></div>
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center"><span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ds-color-brand-700)"><span>Ver el análisis ›</span></span></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">color.brand.700</span> · texto y enlace</span></div>
 <div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
-<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:0"><div style="width:36px;height:36px;background:#81D1F0"></div><div style="width:36px;height:36px;background:#42B3DB"></div><div style="width:36px;height:36px;background:#00698C"></div></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">brand.300 · 400</span> · solo logotipo e imagen corporativa</span></div></div>
+<div style="padding:16px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:0"><div style="width:36px;height:36px;background:var(--ds-color-brand-300)"></div><div style="width:36px;height:36px;background:var(--ds-color-brand-400)"></div><div style="width:36px;height:36px;background:var(--ds-color-brand-600)"></div></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4"><span style="font-family:ui-monospace,Menlo,monospace">color.brand.300 · 400</span> · solo logotipo e imagen corporativa</span></div></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px"><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
 <span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No hacer</span>
-<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="display:flex;align-items:center;gap:6px;background:#00698C;color:#ffffff;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0.01 0Z"></path></svg><span>Riesgo bajo</span></div></div>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="display:flex;align-items:center;gap:6px;background:var(--ds-color-brand-600);color:var(--ds-color-text-inverse);padding:var(--ds-space-1) 10px;border-radius:var(--ds-radius-pill);font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0.01 0Z"></path></svg><span>Riesgo bajo</span></div></div>
 <span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">El color de marca no indica un nivel de riesgo.</span>
 </div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
 <span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No hacer</span>
-<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><span style="font-size:14px;color:#00698C">Texto en brand.600</span></div>
-<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">Texto de marca en 600: 4.47:1 sobre bg.page.</span>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><span style="font-size:14px;color:var(--ds-color-brand-600)">Texto en color.brand.600</span></div>
+<span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">Texto de marca en 600: 4.47:1 sobre color.bg.page.</span>
 </div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
 <span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid #d4d4d4;color:#5a5a5a">No hacer</span>
-<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="height:40px;padding:0 16px;border-radius:12px;background:#42B3DB;color:#ffffff;display:flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase"><span>Hacer la foto</span></div></div>
+<div style="padding:16px 12px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#ffffff"><div style="height:40px;padding:0 var(--ds-space-4);border-radius:var(--ds-radius-button);background:var(--ds-color-brand-400);color:var(--ds-color-text-inverse);display:flex;align-items:center;font:var(--ds-type-ui);letter-spacing:var(--ds-type-ui-tracking);text-transform:uppercase"><span>Hacer la foto</span></div></div>
 <span style="padding:8px 12px;font-size:13px;border-top:1px solid #d4d4d4">300 y 400 nunca en la interfaz.</span>
 </div></div>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Risk levels</h2>
-<p style="margin:0;font-size:14px">Mismo tratamiento para los cuatro niveles: relleno con texto blanco y tinte con texto oscuro de su familia.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Colores de estado</h2>
+<p style="margin:0;font-size:14px">Cuatro colores de estado del ecosistema, con el mismo tratamiento: relleno con texto blanco y tinte con texto oscuro de su familia. En iMoles representan los niveles de riesgo (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.risk.*</span>, alias de producto).</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
 <sc-for list="{{ riesgos }}" as="n" hint-placeholder-count="4">
@@ -151,6 +152,34 @@ a:hover{color:#5a5a5a}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   renderVals() {
+    const cs = getComputedStyle(document.documentElement);
+    const hexOf = v => { const x = cs.getPropertyValue(v).trim(); return /^#[0-9a-f]{6}$/i.test(x) ? x.toUpperCase() : x || v; };
+    const roleVar = n => { const v = '--ds-' + n.trim().replace(/\./g, '-'); return cs.getPropertyValue(v).trim() ? v : null; };
+    const walk = o => Array.isArray(o) ? o.map(walk) : o && typeof o === 'object' ? Object.fromEntries(Object.entries(o).map(([k, v]) => [k, walk(v)])) : typeof o === 'string' && o.startsWith('--ds-') ? hexOf(o) : o;
+    const lin = c => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    const rgb = h => [1, 3, 5].map(i => lin(parseInt(h.slice(i, i + 2), 16)));
+    const lum = h => { const [r, g, b] = rgb(h); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+    const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+    const M = { de: [[0.367322,0.860646,-0.227968],[0.280085,0.672501,0.047413],[-0.011820,0.042940,0.968881]], pr: [[0.152286,1.052583,-0.204868],[0.114503,0.786281,0.099216],[-0.003882,-0.048116,1.051998]], tr: [[1.255528,-0.076749,-0.178779],[-0.078411,0.930809,0.147602],[0.004733,0.691367,0.303900]] };
+    const cl = x => Math.min(1, Math.max(0, x));
+    const sim = (h, k) => { const v = rgb(h); if (k === 'n') return v; if (k === 'ac') { const Y = 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; return [Y, Y, Y]; } return M[k].map(r => cl(r[0] * v[0] + r[1] * v[1] + r[2] * v[2])); };
+    const oklab = ([r, g, b]) => { const l = Math.cbrt(0.4122214708*r+0.5363325363*g+0.0514459929*b), m = Math.cbrt(0.2119034982*r+0.6806995451*g+0.1073969566*b), s = Math.cbrt(0.0883024619*r+0.2817188376*g+0.6299787005*b); return [0.2104542553*l+0.7936177850*m-0.0040720468*s, 1.9779984951*l-2.4285922050*m+0.4505937099*s, 0.0259040371*l+0.7827717662*m-0.8086757660*s]; };
+    const dE = (a, b, k) => { const A = oklab(sim(a, k)), B = oklab(sim(b, k)); return Math.hypot(A[0]-B[0], A[1]-B[1], A[2]-B[2]) * 100; };
+    const r1 = x => String(Math.round(x * 10) / 10);
+    const d = this.data();
+    if (d.roles) d.roles.forEach(r => { const v = roleVar(r.rol.replace('.*', '')); if (v) r.hex = v; });
+    if (d.contrastes) d.contrastes.forEach(c => { const [f, b] = c.par.split(' / ').map(roleVar); if (f) c.fg = f; if (b) c.bg = b; });
+    const o = walk(d);
+    if (o.contrastes) o.contrastes.forEach(c => { const x = ratio(c.fg, c.bg), m = parseFloat(c.min); c.ratio = x.toFixed(2); if (!isNaN(m)) { const ok = x >= m; c.res = ok ? 'Cumple' : 'No cumple'; c.peso = ok ? 400 : 700; } });
+    if (o.fichas && o.fichas[0] && o.fichas[0].vecinos) {
+      const F = o.fichas, K = ['n', 'de', 'pr', 'tr', 'ac'], NV = ['Normal', 'Deuteranopía', 'Protanopía', 'Tritanopía', 'Acromatopsia'];
+      F.forEach(f => { f.blanco = ratio('#FFFFFF', f.base).toFixed(2) + ':1'; f.texto = ratio(f.ink, f.tint).toFixed(2) + ':1'; f.icono = ratio(f.base, '#FFFFFF').toFixed(2) + ':1';
+        f.vecinos = K.map((k, i) => { let best = null; F.forEach(g => { if (g !== f) { const e = dE(f.base, g.base, k); if (!best || e < best.e) best = { e, n: g.nombre }; } }); const low = best.e < 8; return { vision: NV[i], texto: best.n + ' · ' + r1(best.e), estado: low ? 'Forma y texto' : 'Separados', peso: low ? 700 : 400 }; }); });
+      if (o.matriz) { const W = { n: 'wn', de: 'wd', pr: 'wp', tr: 'wt', ac: 'wa' }; o.matriz.forEach(m => { const [a, b] = m.par.split(' / ').map(n => F.find(f => f.nombre === n)); if (!a || !b) return; K.forEach(k => { const e = dE(a.base, b.base, k); m[k] = r1(e); m[W[k]] = e < 8 ? 700 : 400; }); }); }
+    }
+    return o;
+  }
+  data() {
     return {
  "paletas": [
   {
@@ -158,58 +187,58 @@ class Component extends DCLogic {
    "nota": "Matiz 225° · color de marca = 600",
    "pasos": [
     {
-     "paso": "brand.900",
-     "hex": "#003142",
+     "paso": "color.brand.900",
+     "hex": "--ds-color-brand-900",
      "token": ""
     },
     {
-     "paso": "brand.800",
-     "hex": "#00485F",
+     "paso": "color.brand.800",
+     "hex": "--ds-color-brand-800",
      "token": ""
     },
     {
-     "paso": "brand.700",
-     "hex": "#005471",
+     "paso": "color.brand.700",
+     "hex": "--ds-color-brand-700",
      "token": "sustituye a --imoles-teal-dark"
     },
     {
-     "paso": "brand.650",
-     "hex": "#005D80",
+     "paso": "color.brand.650",
+     "hex": "--ds-color-brand-650",
      "token": "nuevo · hover"
     },
     {
-     "paso": "brand.600",
-     "hex": "#00698C",
+     "paso": "color.brand.600",
+     "hex": "--ds-color-brand-600",
      "token": "sustituye a --imoles-teal"
     },
     {
-     "paso": "brand.500",
-     "hex": "#008EB4",
+     "paso": "color.brand.500",
+     "hex": "--ds-color-brand-500",
      "token": ""
     },
     {
-     "paso": "brand.400",
-     "hex": "#42B3DB",
+     "paso": "color.brand.400",
+     "hex": "--ds-color-brand-400",
      "token": "expresivo"
     },
     {
-     "paso": "brand.300",
-     "hex": "#81D1F0",
+     "paso": "color.brand.300",
+     "hex": "--ds-color-brand-300",
      "token": "expresivo"
     },
     {
-     "paso": "brand.200",
-     "hex": "#B4E7FC",
+     "paso": "color.brand.200",
+     "hex": "--ds-color-brand-200",
      "token": ""
     },
     {
-     "paso": "brand.100",
-     "hex": "#DAF3FE",
+     "paso": "color.brand.100",
+     "hex": "--ds-color-brand-100",
      "token": "sustituye a --imoles-teal-tint"
     },
     {
-     "paso": "brand.50",
-     "hex": "#EFF9FD",
+     "paso": "color.brand.50",
+     "hex": "--ds-color-brand-50",
      "token": ""
     }
    ]
@@ -219,63 +248,63 @@ class Component extends DCLogic {
    "nota": "Matiz de marca · misma luminosidad que los neutros de iMoles",
    "pasos": [
     {
-     "paso": "neutral.950",
-     "hex": "#132E38",
+     "paso": "color.neutral.950",
+     "hex": "--ds-color-neutral-950",
      "token": "--imoles-ink"
     },
     {
-     "paso": "neutral.800",
-     "hex": "#3F565F",
+     "paso": "color.neutral.800",
+     "hex": "--ds-color-neutral-800",
      "token": "--imoles-body"
     },
     {
-     "paso": "neutral.600",
-     "hex": "#5D747E",
+     "paso": "color.neutral.600",
+     "hex": "--ds-color-neutral-600",
      "token": "--imoles-muted"
     },
     {
-     "paso": "neutral.500",
-     "hex": "#6D8690",
+     "paso": "color.neutral.500",
+     "hex": "--ds-color-neutral-500",
      "token": "--imoles-muted-icon"
     },
     {
-     "paso": "neutral.400",
-     "hex": "#7B9099",
+     "paso": "color.neutral.400",
+     "hex": "--ds-color-neutral-400",
      "token": "nuevo"
     },
     {
-     "paso": "neutral.300",
-     "hex": "#A6B3B8",
+     "paso": "color.neutral.300",
+     "hex": "--ds-color-neutral-300",
      "token": "--imoles-faint"
     },
     {
-     "paso": "neutral.200",
-     "hex": "#C0DDEA",
+     "paso": "color.neutral.200",
+     "hex": "--ds-color-neutral-200",
      "token": "--imoles-line-strong"
     },
     {
-     "paso": "neutral.150",
-     "hex": "#DCE9EE",
+     "paso": "color.neutral.150",
+     "hex": "--ds-color-neutral-150",
      "token": "--imoles-line"
     },
     {
-     "paso": "neutral.100",
-     "hex": "#EAF2F6",
+     "paso": "color.neutral.100",
+     "hex": "--ds-color-neutral-100",
      "token": "--imoles-chip-neutral-bg"
     },
     {
-     "paso": "neutral.50",
-     "hex": "#F0F8FC",
+     "paso": "color.neutral.50",
+     "hex": "--ds-color-neutral-50",
      "token": "--imoles-page-bg"
     },
     {
-     "paso": "neutral.25",
-     "hex": "#F4FAFD",
+     "paso": "color.neutral.25",
+     "hex": "--ds-color-neutral-25",
      "token": "--imoles-tint"
     },
     {
-     "paso": "neutral.0",
-     "hex": "#FFFFFF",
+     "paso": "color.neutral.0",
+     "hex": "--ds-color-neutral-0",
      "token": "--imoles-surface"
     }
    ]
@@ -285,33 +314,33 @@ class Component extends DCLogic {
    "nota": "Riesgo alto · error",
    "pasos": [
     {
-     "paso": "crimson.900",
-     "hex": "#5C2A37",
+     "paso": "color.crimson.900",
+     "hex": "--ds-color-crimson-900",
      "token": "--imoles-riesgo-alto-text"
     },
     {
-     "paso": "crimson.700",
-     "hex": "#A8183B",
+     "paso": "color.crimson.700",
+     "hex": "--ds-color-crimson-700",
      "token": "--imoles-riesgo-alto-ink"
     },
     {
-     "paso": "crimson.650",
-     "hex": "#CC003E",
+     "paso": "color.crimson.650",
+     "hex": "--ds-color-crimson-650",
      "token": "nuevo · hover"
     },
     {
-     "paso": "crimson.600",
-     "hex": "#DB2149",
+     "paso": "color.crimson.600",
+     "hex": "--ds-color-crimson-600",
      "token": "--imoles-riesgo-alto"
     },
     {
-     "paso": "crimson.200",
-     "hex": "#F4C9D3",
+     "paso": "color.crimson.200",
+     "hex": "--ds-color-crimson-200",
      "token": "--imoles-riesgo-alto-tint-border"
     },
     {
-     "paso": "crimson.50",
-     "hex": "#FDF4F6",
+     "paso": "color.crimson.50",
+     "hex": "--ds-color-crimson-50",
      "token": "--imoles-riesgo-alto-tint"
     }
    ]
@@ -321,23 +350,23 @@ class Component extends DCLogic {
    "nota": "Riesgo intermedio · warning",
    "pasos": [
     {
-     "paso": "amber.900",
-     "hex": "#57450C",
+     "paso": "color.amber.900",
+     "hex": "--ds-color-amber-900",
      "token": "sustituye a --imoles-riesgo-intermedio-text"
     },
     {
-     "paso": "amber.700",
-     "hex": "#705700",
+     "paso": "color.amber.700",
+     "hex": "--ds-color-amber-700",
      "token": "sustituye a --imoles-riesgo-intermedio-ink"
     },
     {
-     "paso": "amber.600",
-     "hex": "#8D6F00",
+     "paso": "color.amber.600",
+     "hex": "--ds-color-amber-600",
      "token": "sustituye a --imoles-riesgo-intermedio y --imoles-accion-intermedio"
     },
     {
-     "paso": "amber.100",
-     "hex": "#FAF0D2",
+     "paso": "color.amber.100",
+     "hex": "--ds-color-amber-100",
      "token": "sustituye a --imoles-riesgo-intermedio-tint"
     }
    ]
@@ -347,18 +376,18 @@ class Component extends DCLogic {
    "nota": "Riesgo bajo",
    "pasos": [
     {
-     "paso": "teal.700",
-     "hex": "#0B6459",
+     "paso": "color.teal.700",
+     "hex": "--ds-color-teal-700",
      "token": "sustituye a --imoles-riesgo-bajo-ink"
     },
     {
-     "paso": "teal.600",
-     "hex": "#168072",
+     "paso": "color.teal.600",
+     "hex": "--ds-color-teal-600",
      "token": "sustituye a --imoles-riesgo-bajo"
     },
     {
-     "paso": "teal.100",
-     "hex": "#E1F3EE",
+     "paso": "color.teal.100",
+     "hex": "--ds-color-teal-100",
      "token": "sustituye a --imoles-riesgo-bajo-tint"
     }
    ]
@@ -368,18 +397,18 @@ class Component extends DCLogic {
    "nota": "No evaluable · fallo técnico",
    "pasos": [
     {
-     "paso": "plum.700",
-     "hex": "#5E1F5A",
+     "paso": "color.plum.700",
+     "hex": "--ds-color-plum-700",
      "token": "sustituye a --imoles-no-evaluable-ink y -text"
     },
     {
-     "paso": "plum.600",
-     "hex": "#6C2768",
+     "paso": "color.plum.600",
+     "hex": "--ds-color-plum-600",
      "token": "sustituye a --imoles-no-evaluable"
     },
     {
-     "paso": "plum.100",
-     "hex": "#FAEAF8",
+     "paso": "color.plum.100",
+     "hex": "--ds-color-plum-100",
      "token": "sustituye a --imoles-no-evaluable-tint"
     }
    ]
@@ -387,255 +416,267 @@ class Component extends DCLogic {
  ],
  "roles": [
   {
-   "hex": "#132E38",
-   "rol": "text.primary",
-   "prim": "neutral.950",
+   "hex": "--ds-color-neutral-950",
+   "rol": "color.text.primary",
+   "prim": "color.neutral.950",
    "uso": "Títulos y texto activo"
   },
   {
-   "hex": "#3F565F",
-   "rol": "text.body",
-   "prim": "neutral.800",
+   "hex": "--ds-color-neutral-800",
+   "rol": "color.text.body",
+   "prim": "color.neutral.800",
    "uso": "Párrafos; texto del chip neutro"
   },
   {
-   "hex": "#5D747E",
-   "rol": "text.secondary",
-   "prim": "neutral.600",
+   "hex": "--ds-color-neutral-600",
+   "rol": "color.text.secondary",
+   "prim": "color.neutral.600",
    "uso": "Metadatos y pies"
   },
   {
-   "hex": "#A6B3B8",
-   "rol": "text.disabled",
-   "prim": "neutral.300",
+   "hex": "--ds-color-neutral-300",
+   "rol": "color.text.disabled",
+   "prim": "color.neutral.300",
    "uso": "Solo texto de controles disabled · exento de contraste"
   },
   {
-   "hex": "#FFFFFF",
-   "rol": "text.inverse",
-   "prim": "neutral.0",
+   "hex": "--ds-color-neutral-0",
+   "rol": "color.text.inverse",
+   "prim": "color.neutral.0",
    "uso": "Texto sobre rellenos de marca y de riesgo"
   },
   {
-   "hex": "#6D8690",
-   "rol": "icon.inactive",
-   "prim": "neutral.500",
+   "hex": "--ds-color-neutral-500",
+   "rol": "color.icon.inactive",
+   "prim": "color.neutral.500",
    "uso": "Iconos inactivos · 3.85:1, no para texto"
   },
   {
-   "hex": "#F0F8FC",
-   "rol": "bg.page",
-   "prim": "neutral.50",
+   "hex": "--ds-color-neutral-50",
+   "rol": "color.bg.page",
+   "prim": "color.neutral.50",
    "uso": "Fondo de pantalla"
   },
   {
-   "hex": "#FFFFFF",
-   "rol": "bg.surface",
-   "prim": "neutral.0",
+   "hex": "--ds-color-neutral-0",
+   "rol": "color.bg.surface",
+   "prim": "color.neutral.0",
    "uso": "Tarjetas y hojas"
   },
   {
-   "hex": "#F4FAFD",
-   "rol": "bg.tint",
-   "prim": "neutral.25",
+   "hex": "--ds-color-neutral-25",
+   "rol": "color.bg.tint",
+   "prim": "color.neutral.25",
    "uso": "Bloques de apoyo"
   },
   {
-   "hex": "#DCE9EE",
-   "rol": "border.subtle",
-   "prim": "neutral.150",
+   "hex": "--ds-color-neutral-150",
+   "rol": "color.border.subtle",
+   "prim": "color.neutral.150",
    "uso": "Separadores y contorno de tarjeta"
   },
   {
-   "hex": "#C0DDEA",
-   "rol": "border.strong",
-   "prim": "neutral.200",
+   "hex": "--ds-color-neutral-200",
+   "rol": "color.border.emphasis",
+   "prim": "color.neutral.200",
    "uso": "Contorno más marcado, no informativo"
   },
   {
-   "hex": "#7B9099",
-   "rol": "border.control",
-   "prim": "neutral.400",
+   "hex": "--ds-color-neutral-400",
+   "rol": "color.border.control",
+   "prim": "color.neutral.400",
    "uso": "Contorno de campos y de opciones sin seleccionar"
   },
   {
-   "hex": "#00698C",
-   "rol": "border.focus",
-   "prim": "brand.600",
+   "hex": "--ds-color-brand-600",
+   "rol": "color.focus.ring",
+   "prim": "color.brand.600",
    "uso": "Campo con focus"
   },
   {
-   "hex": "#EAF2F6",
-   "rol": "chip.neutral.bg",
-   "prim": "neutral.100",
+   "hex": "--ds-color-neutral-100",
+   "rol": "color.chip.neutral.bg",
+   "prim": "color.neutral.100",
    "uso": "Chip: próximo / pendiente / en curso"
   },
   {
-   "hex": "#00698C",
-   "rol": "brand.primary",
-   "prim": "brand.600",
+   "hex": "--ds-color-brand-600",
+   "rol": "color.brand.primary",
+   "prim": "color.brand.600",
    "uso": "Marca, navegación, iconos de marca"
   },
   {
-   "hex": "#005471",
-   "rol": "brand.text",
-   "prim": "brand.700",
+   "hex": "--ds-color-brand-700",
+   "rol": "color.brand.text",
+   "prim": "color.brand.700",
    "uso": "Texto y enlaces de marca"
   },
   {
-   "hex": "#DAF3FE",
-   "rol": "brand.tint",
-   "prim": "brand.100",
+   "hex": "--ds-color-brand-100",
+   "rol": "color.brand.tint",
+   "prim": "color.brand.100",
    "uso": "Fondo suave de marca"
   },
   {
-   "hex": "#42B3DB",
-   "rol": "brand.expressive",
-   "prim": "brand.300 / 400",
+   "hex": "--ds-color-brand-400",
+   "rol": "color.brand.expressive",
+   "prim": "color.brand.300 / 400",
    "uso": "Logotipo bicolor o imagen corporativa; nunca en la interfaz"
   },
   {
-   "hex": "#00698C",
-   "rol": "action.primary",
-   "prim": "brand.600",
+   "hex": "--ds-color-brand-600",
+   "rol": "color.action.primary",
+   "prim": "color.brand.600",
    "uso": "Botón primario y elementos accionables"
   },
   {
-   "hex": "#DB2149",
-   "rol": "action.alert",
-   "prim": "crimson.600",
+   "hex": "--ds-color-crimson-600",
+   "rol": "color.action.alert",
+   "prim": "color.crimson.600",
    "uso": "Solo para pedir cita con riesgo alto"
   },
   {
-   "hex": "#DAF3FE",
-   "rol": "selection.bg",
-   "prim": "brand.100",
+   "hex": "--ds-color-brand-100",
+   "rol": "color.selection.bg",
+   "prim": "color.brand.100",
    "uso": "Opción seleccionada"
   },
   {
-   "hex": "#00698C",
-   "rol": "selection.border",
-   "prim": "brand.600",
+   "hex": "--ds-color-brand-600",
+   "rol": "color.selection.border",
+   "prim": "color.brand.600",
    "uso": "Opción seleccionada"
   },
   {
-   "hex": "#005471",
-   "rol": "selection.text",
-   "prim": "brand.700",
+   "hex": "--ds-color-brand-700",
+   "rol": "color.selection.text",
+   "prim": "color.brand.700",
    "uso": "Opción seleccionada"
   },
   {
-   "hex": "#EAF2F6",
-   "rol": "status.info.bg",
-   "prim": "neutral.100",
-   "uso": "Aviso informativo"
+   "hex": "--ds-color-crimson-600",
+   "rol": "color.status.error.*",
+   "prim": "crimson.600 / 700 / 50 / 900",
+   "uso": "Error, riesgo alto · fill, text, tint, body"
   },
   {
-   "hex": "#3F565F",
-   "rol": "status.info.label",
-   "prim": "neutral.800",
-   "uso": "Etiqueta del aviso informativo"
+   "hex": "--ds-color-amber-600",
+   "rol": "color.status.warning.*",
+   "prim": "amber.600 / 700 / 100 / 900",
+   "uso": "Aviso, riesgo intermedio"
   },
   {
-   "hex": "#FAF0D2",
-   "rol": "status.warning.*",
-   "prim": "amber.100 / 700 / 900",
-   "uso": "Aviso de la interfaz"
+   "hex": "--ds-color-teal-600",
+   "rol": "color.status.success.*",
+   "prim": "teal.600 / 700 / 100",
+   "uso": "Resultado favorable, riesgo bajo"
   },
   {
-   "hex": "#FDF4F6",
-   "rol": "status.error.*",
-   "prim": "crimson.50 / 700 / 900",
-   "uso": "Error de la interfaz"
+   "hex": "--ds-color-plum-600",
+   "rol": "color.status.unknown.*",
+   "prim": "plum.600 / 700 / 100",
+   "uso": "Sin resultado: no evaluable, fallo técnico"
   },
   {
-   "hex": "#005D80",
-   "rol": "action.primary.hover",
-   "prim": "brand.650",
+   "hex": "--ds-color-neutral-100",
+   "rol": "color.status.info.*",
+   "prim": "neutral.100 / 800",
+   "uso": "Aviso informativo · tint, text"
+  },
+  {
+   "hex": "--ds-color-crimson-600",
+   "rol": "color.risk.* (iMoles)",
+   "prim": "alias de color.status.*",
+   "uso": "risk.high → error · risk.medium → warning · risk.low → success · not-assessable → unknown"
+  },
+  {
+   "hex": "--ds-color-brand-650",
+   "rol": "color.action.primary.hover",
+   "prim": "color.brand.650",
    "uso": "Botón primario · puntero encima"
   },
   {
-   "hex": "#005471",
-   "rol": "action.primary.pressed",
-   "prim": "brand.700",
+   "hex": "--ds-color-brand-700",
+   "rol": "color.action.primary.pressed",
+   "prim": "color.brand.700",
    "uso": "Botón primario · pulsado"
   },
   {
-   "hex": "#CC003E",
-   "rol": "action.alert.hover",
-   "prim": "crimson.650",
+   "hex": "--ds-color-crimson-650",
+   "rol": "color.action.alert.hover",
+   "prim": "color.crimson.650",
    "uso": "Pedir cita · puntero encima"
   },
   {
-   "hex": "#A8183B",
-   "rol": "action.alert.pressed",
-   "prim": "crimson.700",
+   "hex": "--ds-color-crimson-700",
+   "rol": "color.action.alert.pressed",
+   "prim": "color.crimson.700",
    "uso": "Pedir cita · pulsado"
   },
   {
-   "hex": "#EFF9FD",
-   "rol": "action.secondary.hover",
-   "prim": "brand.50",
-   "uso": "Botón secundario de marca · fondo"
+   "hex": "--ds-color-action-secondary-hover",
+   "rol": "color.action.secondary.hover",
+   "prim": "brand.600 al 8 % (capa)",
+   "uso": "Botón secundario e IconButton · hover"
   },
   {
-   "hex": "#DAF3FE",
-   "rol": "action.secondary.pressed",
-   "prim": "brand.100",
-   "uso": "Botón secundario de marca · fondo"
+   "hex": "--ds-color-action-secondary-pressed",
+   "rol": "color.action.secondary.pressed",
+   "prim": "brand.600 al 16 % (capa)",
+   "uso": "Botón secundario e IconButton · pulsado"
   },
   {
-   "hex": "#F4FAFD",
-   "rol": "surface.hover",
-   "prim": "neutral.25",
+   "hex": "--ds-color-surface-hover",
+   "rol": "color.surface.hover",
+   "prim": "brand.600 al 6 % (capa)",
    "uso": "Tarjeta, fila y botón neutro"
   },
   {
-   "hex": "#EAF2F6",
-   "rol": "surface.pressed",
-   "prim": "neutral.100",
+   "hex": "--ds-color-surface-pressed",
+   "rol": "color.surface.pressed",
+   "prim": "brand.600 al 12 % (capa)",
    "uso": "Tarjeta, fila, opción y botón neutro"
   },
   {
-   "hex": "#6D8690",
-   "rol": "border.control.hover",
-   "prim": "neutral.500",
+   "hex": "--ds-color-neutral-500",
+   "rol": "color.border.control.hover",
+   "prim": "color.neutral.500",
    "uso": "Campo y opción · puntero encima"
   },
   {
-   "hex": "#00485F",
-   "rol": "link.hover",
-   "prim": "brand.800",
+   "hex": "--ds-color-brand-800",
+   "rol": "color.link.hover",
+   "prim": "color.brand.800",
    "uso": "Enlace · subrayado"
   },
   {
-   "hex": "#003142",
-   "rol": "link.pressed",
-   "prim": "brand.900",
+   "hex": "--ds-color-brand-900",
+   "rol": "color.link.pressed",
+   "prim": "color.brand.900",
    "uso": "Enlace pulsado"
   },
   {
-   "hex": "#00698C",
-   "rol": "focus.ring",
-   "prim": "brand.600",
+   "hex": "--ds-color-brand-600",
+   "rol": "color.focus.ring",
+   "prim": "color.brand.600",
    "uso": "Anillo de 2 px, a 2 px del elemento"
   },
   {
-   "hex": "#DCE9EE",
-   "rol": "disabled.bg",
-   "prim": "neutral.150",
+   "hex": "--ds-color-neutral-150",
+   "rol": "color.disabled.bg",
+   "prim": "color.neutral.150",
    "uso": "Relleno de control disabled"
   },
   {
-   "hex": "#5D747E",
-   "rol": "disabled.text",
-   "prim": "neutral.600",
+   "hex": "--ds-color-neutral-600",
+   "rol": "color.disabled.text",
+   "prim": "color.neutral.600",
    "uso": "Texto de control disabled"
   },
   {
-   "hex": "#132E38",
-   "rol": "scrim.modal",
-   "prim": "neutral.950 · 48%",
+   "hex": "--ds-color-neutral-950",
+   "rol": "color.scrim.modal",
+   "prim": "color.neutral.950 · 48%",
    "uso": "Capa bajo menús y hojas modales"
   }
  ],
@@ -643,432 +684,432 @@ class Component extends DCLogic {
   {
    "etiqueta": "Riesgo alto",
    "forma": "M12 3 L22 20 L2 20 Z",
-   "fill": "#DB2149",
-   "tinte": "#FDF4F6",
-   "ink": "#A8183B",
-   "texto": "#5C2A37",
-   "roles": "risk.high.fill · .texto · .tinte · .parrafo"
+   "fill": "--ds-color-crimson-600",
+   "tinte": "--ds-color-crimson-50",
+   "ink": "--ds-color-crimson-700",
+   "texto": "--ds-color-crimson-900",
+   "roles": "color.status.error.* · iMoles: risk.high"
   },
   {
    "etiqueta": "Riesgo intermedio",
    "forma": "M12 2 L22 12 L12 22 L2 12 Z",
-   "fill": "#8D6F00",
-   "tinte": "#FAF0D2",
-   "ink": "#705700",
-   "texto": "#57450C",
-   "roles": "risk.medium.fill · .texto · .tinte · .parrafo"
+   "fill": "--ds-color-amber-600",
+   "tinte": "--ds-color-amber-100",
+   "ink": "--ds-color-amber-700",
+   "texto": "--ds-color-amber-900",
+   "roles": "color.status.warning.* · iMoles: risk.medium"
   },
   {
    "etiqueta": "Riesgo bajo",
    "forma": "M12 2a10 10 0 1 0 0.01 0Z",
-   "fill": "#168072",
-   "tinte": "#E1F3EE",
-   "ink": "#0B6459",
-   "texto": "#0B6459",
-   "roles": "risk.low.fill · .texto · .tinte"
+   "fill": "--ds-color-teal-600",
+   "tinte": "--ds-color-teal-100",
+   "ink": "--ds-color-teal-700",
+   "texto": "--ds-color-teal-700",
+   "roles": "color.status.success.* · iMoles: risk.low"
   },
   {
    "etiqueta": "No evaluable",
    "forma": "M12 2a10 10 0 1 0 0.01 0Z M12 6.5c-2 0-3.4 1.3-3.4 3.1h2c0-.8.6-1.3 1.4-1.3s1.4.5 1.4 1.2c0 1.4-2.4 1.5-2.4 4h2c0-1.7 2.4-2 2.4-4.1 0-1.7-1.4-2.9-3.4-2.9Z M11 15.5h2v2h-2Z",
-   "fill": "#6C2768",
-   "tinte": "#FAEAF8",
-   "ink": "#5E1F5A",
-   "texto": "#5E1F5A",
-   "roles": "not-assessable.fill · .texto · .tinte"
+   "fill": "--ds-color-plum-600",
+   "tinte": "--ds-color-plum-100",
+   "ink": "--ds-color-plum-700",
+   "texto": "--ds-color-plum-700",
+   "roles": "color.status.unknown.* · iMoles: not-assessable"
   }
  ],
  "contrastes": [
   {
-   "par": "text.primary / bg.surface",
-   "fg": "#132E38",
-   "bg": "#FFFFFF",
+   "par": "color.text.primary / color.bg.surface",
+   "fg": "--ds-color-neutral-950",
+   "bg": "--ds-color-neutral-0",
    "ratio": "14.23",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.primary / bg.page",
-   "fg": "#132E38",
-   "bg": "#F0F8FC",
+   "par": "color.text.primary / color.bg.page",
+   "fg": "--ds-color-neutral-950",
+   "bg": "--ds-color-neutral-50",
    "ratio": "13.24",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / bg.surface",
-   "fg": "#3F565F",
-   "bg": "#FFFFFF",
+   "par": "color.text.body / color.bg.surface",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-0",
    "ratio": "7.76",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / bg.page",
-   "fg": "#3F565F",
-   "bg": "#F0F8FC",
+   "par": "color.text.body / color.bg.page",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-50",
    "ratio": "7.22",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / chip.neutral.bg",
-   "fg": "#3F565F",
-   "bg": "#EAF2F6",
+   "par": "color.text.body / color.chip.neutral.bg",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-100",
    "ratio": "6.84",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.secondary / bg.surface",
-   "fg": "#5D747E",
-   "bg": "#FFFFFF",
+   "par": "color.text.secondary / color.bg.surface",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.92",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.secondary / bg.page",
-   "fg": "#5D747E",
-   "bg": "#F0F8FC",
+   "par": "color.text.secondary / color.bg.page",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-50",
    "ratio": "4.58",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.secondary / bg.tint",
-   "fg": "#5D747E",
-   "bg": "#F4FAFD",
+   "par": "color.text.secondary / color.bg.tint",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-25",
    "ratio": "4.68",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "icon.inactive / bg.surface",
-   "fg": "#6D8690",
-   "bg": "#FFFFFF",
+   "par": "color.icon.inactive / color.bg.surface",
+   "fg": "--ds-color-neutral-500",
+   "bg": "--ds-color-neutral-0",
    "ratio": "3.84",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.control / bg.surface",
-   "fg": "#7B9099",
-   "bg": "#FFFFFF",
+   "par": "color.border.control / color.bg.surface",
+   "fg": "--ds-color-neutral-400",
+   "bg": "--ds-color-neutral-0",
    "ratio": "3.34",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.control / bg.page",
-   "fg": "#7B9099",
-   "bg": "#F0F8FC",
+   "par": "color.border.control / color.bg.page",
+   "fg": "--ds-color-neutral-400",
+   "bg": "--ds-color-neutral-50",
    "ratio": "3.11",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.primary",
-   "fg": "#FFFFFF",
-   "bg": "#00698C",
+   "par": "color.text.inverse / color.action.primary",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-brand-600",
    "ratio": "6.18",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.primary / bg.surface",
-   "fg": "#00698C",
-   "bg": "#FFFFFF",
+   "par": "color.brand.primary / color.bg.surface",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "6.18",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.focus / bg.page",
-   "fg": "#00698C",
-   "bg": "#F0F8FC",
+   "par": "color.focus.ring / color.bg.page",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-50",
    "ratio": "5.75",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / bg.surface",
-   "fg": "#005471",
-   "bg": "#FFFFFF",
+   "par": "color.brand.text / color.bg.surface",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-neutral-0",
    "ratio": "8.38",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / bg.page",
-   "fg": "#005471",
-   "bg": "#F0F8FC",
+   "par": "color.brand.text / color.bg.page",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-neutral-50",
    "ratio": "7.79",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "selection.text / selection.bg",
-   "fg": "#005471",
-   "bg": "#DAF3FE",
+   "par": "color.selection.text / color.selection.bg",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-brand-100",
    "ratio": "7.27",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "status.info.label / status.info.bg",
-   "fg": "#3F565F",
-   "bg": "#EAF2F6",
+   "par": "color.status.info.text / color.status.info.tint",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-100",
    "ratio": "6.84",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / risk.high.fill",
-   "fg": "#FFFFFF",
-   "bg": "#DB2149",
+   "par": "color.text.inverse / color.status.error.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-crimson-600",
    "ratio": "4.85",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.high.text / risk.high.tint",
-   "fg": "#A8183B",
-   "bg": "#FDF4F6",
+   "par": "color.status.error.text / color.status.error.tint",
+   "fg": "--ds-color-crimson-700",
+   "bg": "--ds-color-crimson-50",
    "ratio": "6.80",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.high.body / risk.high.tint",
-   "fg": "#5C2A37",
-   "bg": "#FDF4F6",
+   "par": "color.status.error.body / color.status.error.tint",
+   "fg": "--ds-color-crimson-900",
+   "bg": "--ds-color-crimson-50",
    "ratio": "10.56",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.high.fill / bg.surface",
-   "fg": "#DB2149",
-   "bg": "#FFFFFF",
+   "par": "color.status.error.fill / color.bg.surface",
+   "fg": "--ds-color-crimson-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.85",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / risk.medium.fill",
-   "fg": "#FFFFFF",
-   "bg": "#8D6F00",
+   "par": "color.text.inverse / color.status.warning.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-amber-600",
    "ratio": "4.77",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.medium.text / risk.medium.tint",
-   "fg": "#705700",
-   "bg": "#FAF0D2",
+   "par": "color.status.warning.text / color.status.warning.tint",
+   "fg": "--ds-color-amber-700",
+   "bg": "--ds-color-amber-100",
    "ratio": "6.05",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.medium.body / risk.medium.tint",
-   "fg": "#57450C",
-   "bg": "#FAF0D2",
+   "par": "color.status.warning.body / color.status.warning.tint",
+   "fg": "--ds-color-amber-900",
+   "bg": "--ds-color-amber-100",
    "ratio": "8.16",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.medium.fill / bg.surface",
-   "fg": "#8D6F00",
-   "bg": "#FFFFFF",
+   "par": "color.status.warning.fill / color.bg.surface",
+   "fg": "--ds-color-amber-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.77",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / risk.low.fill",
-   "fg": "#FFFFFF",
-   "bg": "#168072",
+   "par": "color.text.inverse / color.status.success.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-teal-600",
    "ratio": "4.81",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.low.text / risk.low.tint",
-   "fg": "#0B6459",
-   "bg": "#E1F3EE",
+   "par": "color.status.success.text / color.status.success.tint",
+   "fg": "--ds-color-teal-700",
+   "bg": "--ds-color-teal-100",
    "ratio": "6.12",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.low.fill / bg.surface",
-   "fg": "#168072",
-   "bg": "#FFFFFF",
+   "par": "color.status.success.fill / color.bg.surface",
+   "fg": "--ds-color-teal-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.81",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / not-assessable.fill",
-   "fg": "#FFFFFF",
-   "bg": "#6C2768",
+   "par": "color.text.inverse / color.status.unknown.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-plum-600",
    "ratio": "9.87",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "not-assessable.text / not-assessable.tint",
-   "fg": "#5E1F5A",
-   "bg": "#FAEAF8",
+   "par": "color.status.unknown.text / color.status.unknown.tint",
+   "fg": "--ds-color-plum-700",
+   "bg": "--ds-color-plum-100",
    "ratio": "10.00",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "not-assessable.fill / bg.surface",
-   "fg": "#6C2768",
-   "bg": "#FFFFFF",
+   "par": "color.status.unknown.fill / color.bg.surface",
+   "fg": "--ds-color-plum-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "9.87",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.primary.hover",
-   "fg": "#FFFFFF",
-   "bg": "#005D80",
+   "par": "color.text.inverse / color.action.primary.hover",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-brand-650",
    "ratio": "7.30",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.primary.pressed",
-   "fg": "#FFFFFF",
-   "bg": "#005471",
+   "par": "color.text.inverse / color.action.primary.pressed",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-brand-700",
    "ratio": "8.38",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.alert.hover",
-   "fg": "#FFFFFF",
-   "bg": "#CC003E",
+   "par": "color.text.inverse / color.action.alert.hover",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-crimson-650",
    "ratio": "5.77",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.alert.pressed",
-   "fg": "#FFFFFF",
-   "bg": "#A8183B",
+   "par": "color.text.inverse / color.action.alert.pressed",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-crimson-700",
    "ratio": "7.35",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / action.secondary.hover",
-   "fg": "#005471",
-   "bg": "#EFF9FD",
-   "ratio": "7.83",
+   "par": "color.brand.text / color.action.secondary.hover (sobre bg.page)",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-action-secondary-hover",
+   "ratio": "6.95",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / action.secondary.pressed",
-   "fg": "#005471",
-   "bg": "#DAF3FE",
-   "ratio": "7.27",
+   "par": "color.brand.text / color.action.secondary.pressed (sobre bg.page)",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-action-secondary-pressed",
+   "ratio": "6.17",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / surface.pressed",
-   "fg": "#3F565F",
-   "bg": "#EAF2F6",
+   "par": "color.text.body / color.surface.pressed",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-100",
    "ratio": "6.84",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.control.hover / bg.surface",
-   "fg": "#6D8690",
-   "bg": "#FFFFFF",
+   "par": "color.border.control.hover / color.bg.surface",
+   "fg": "--ds-color-neutral-500",
+   "bg": "--ds-color-neutral-0",
    "ratio": "3.84",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "link.hover / bg.surface",
-   "fg": "#00485F",
-   "bg": "#FFFFFF",
+   "par": "color.link.hover / color.bg.surface",
+   "fg": "--ds-color-brand-800",
+   "bg": "--ds-color-neutral-0",
    "ratio": "10.04",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "focus.ring / bg.page",
-   "fg": "#00698C",
-   "bg": "#F0F8FC",
+   "par": "color.focus.ring / color.bg.page",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-50",
    "ratio": "5.75",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "focus.ring / bg.surface",
-   "fg": "#00698C",
-   "bg": "#FFFFFF",
+   "par": "color.focus.ring / color.bg.surface",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "6.18",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "disabled.text / disabled.bg",
-   "fg": "#5D747E",
-   "bg": "#DCE9EE",
+   "par": "color.disabled.text / color.disabled.bg",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-150",
    "ratio": "3.97",
    "min": "Exento (1.4.3)",
    "res": "Exento",
@@ -1078,10 +1119,10 @@ class Component extends DCLogic {
  "fichas": [
   {
    "nombre": "Brand",
-   "base": "#00698C",
-   "ink": "#005471",
-   "tint": "#DAF3FE",
-   "paso": "brand.600",
+   "base": "--ds-color-brand-600",
+   "ink": "--ds-color-brand-700",
+   "tint": "--ds-color-brand-100",
+   "paso": "color.brand.600",
    "blanco": "6.18:1",
    "texto": "7.27:1",
    "icono": "6.18:1",
@@ -1123,10 +1164,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Crimson",
-   "base": "#DB2149",
-   "ink": "#A8183B",
-   "tint": "#FDF4F6",
-   "paso": "crimson.600",
+   "base": "--ds-color-crimson-600",
+   "ink": "--ds-color-crimson-700",
+   "tint": "--ds-color-crimson-50",
+   "paso": "color.crimson.600",
    "blanco": "4.85:1",
    "texto": "6.80:1",
    "icono": "4.85:1",
@@ -1168,10 +1209,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Amber",
-   "base": "#8D6F00",
-   "ink": "#705700",
-   "tint": "#FAF0D2",
-   "paso": "amber.600",
+   "base": "--ds-color-amber-600",
+   "ink": "--ds-color-amber-700",
+   "tint": "--ds-color-amber-100",
+   "paso": "color.amber.600",
    "blanco": "4.77:1",
    "texto": "6.05:1",
    "icono": "4.77:1",
@@ -1213,10 +1254,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Teal",
-   "base": "#168072",
-   "ink": "#0B6459",
-   "tint": "#E1F3EE",
-   "paso": "teal.600",
+   "base": "--ds-color-teal-600",
+   "ink": "--ds-color-teal-700",
+   "tint": "--ds-color-teal-100",
+   "paso": "color.teal.600",
    "blanco": "4.81:1",
    "texto": "6.12:1",
    "icono": "4.81:1",
@@ -1258,10 +1299,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Plum",
-   "base": "#6C2768",
-   "ink": "#5E1F5A",
-   "tint": "#FAEAF8",
-   "paso": "plum.600",
+   "base": "--ds-color-plum-600",
+   "ink": "--ds-color-plum-700",
+   "tint": "--ds-color-plum-100",
+   "paso": "color.plum.600",
    "blanco": "9.87:1",
    "texto": "10.00:1",
    "icono": "9.87:1",
@@ -1438,47 +1479,47 @@ class Component extends DCLogic {
   {
    "titulo": "Sustituir la paleta en imoles-tokens.css",
    "problema": "El teal como marca, el verde de riesgo bajo casi idéntico (1.03:1), un coral sin uso y un violeta cercano a la nueva marca.",
-   "propuesta": "Aplicar los primitivos de esta página: brand 225°, neutros 225°, verde azulado claro para riesgo bajo, amber.600, plum; eliminar coral, verde y violeta."
+   "propuesta": "Aplicar los primitivos de esta página: brand 225°, neutros 225°, verde azulado claro para riesgo bajo, color.amber.600, plum; eliminar coral, verde y violeta."
   },
   {
    "titulo": "Acciones normales con color de riesgo",
    "problema": "Acción pinta hacer la foto, leer el informe, primera foto y revisión con --imoles-accion-bajo; Botón primario usa teal.",
-   "propuesta": "action.primary = brand.600 para todas; action.alert solo para pedir cita con riesgo alto."
+   "propuesta": "color.action.primary = color.brand.600 para todas; color.action.alert solo para pedir cita con riesgo alto."
   },
   {
    "titulo": "Badge de riesgo intermedio",
    "problema": "Texto blanco sobre #B5790A: 3.68:1. Existe un --imoles-accion-intermedio aparte.",
-   "propuesta": "Un único relleno amber.600 (4.77:1) para el badge y la acción."
+   "propuesta": "Un único relleno color.amber.600 (4.77:1) para el badge y la acción."
   },
   {
    "titulo": "Avisos con colores de riesgo",
    "problema": "Aviso Inline usa el riesgo intermedio para “warning”, el riesgo alto para “error” y teal para “info”.",
-   "propuesta": "status.warning, status.error y status.info (neutro)."
+   "propuesta": "color.status.warning, color.status.error y color.status.info (neutro)."
   },
   {
    "titulo": "Contorno de campo insuficiente",
-   "problema": "Campo Texto y Campo Opción sin focus usan border.subtle: 1.24:1 (mínimo 3:1, WCAG 1.4.11).",
-   "propuesta": "border.control = neutral.400."
+   "problema": "Campo Texto y Campo Opción sin focus usan color.border.subtle: 1.24:1 (mínimo 3:1, WCAG 1.4.11).",
+   "propuesta": "color.border.control = color.neutral.400."
   },
   {
    "titulo": "Chip Estado · high risk fuera de los tokens",
    "problema": "Usa #FBE8E3 / #A8321F, un carmesí anterior.",
-   "propuesta": "risk.high.tint + risk.high.text."
+   "propuesta": "color.status.error.tint + color.status.error.text."
   },
   {
    "titulo": "Chip neutro",
-   "problema": "text.secondary sobre chip.neutral.bg no llega a 4.5:1.",
-   "propuesta": "text.body en el chip."
+   "problema": "color.text.secondary sobre color.chip.neutral.bg no llega a 4.5:1.",
+   "propuesta": "color.text.body en el chip."
   },
   {
    "titulo": "Etiqueta secundaria de riesgo alto",
    "problema": "--imoles-riesgo-alto-label da 4.41:1 sobre su tinte.",
-   "propuesta": "Eliminarla; usar risk.high.text."
+   "propuesta": "Eliminarla; usar color.status.error.text."
   },
   {
    "titulo": "Valores duplicados y codificados a mano",
    "problema": "--imoles-caption es un alias de muted; --imoles-line-soft casi iguala a --imoles-line; un valor antiguo quedó comentado; #FFFFFF y la sombra del menú están codificados a mano.",
-   "propuesta": "Unificar en text.secondary y border.subtle; usar text.inverse y bg.surface; sombra como token de elevación (1.5)."
+   "propuesta": "Unificar en color.text.secondary y color.border.subtle; usar color.text.inverse y color.bg.surface; sombra como token de elevación (1.5)."
   }
  ],
  "interaccion": [
@@ -1489,43 +1530,43 @@ class Component extends DCLogic {
    "estados": [
     {
      "estado": "Default",
-     "bg": "#00698C",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-brand-600",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #00698C",
      "outline": "none",
-     "token": "brand.600"
+     "token": "color.brand.600"
     },
     {
      "estado": "Hover",
-     "bg": "#005D80",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-brand-650",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #005D80",
      "outline": "none",
-     "token": "brand.650"
+     "token": "color.brand.650"
     },
     {
      "estado": "Pressed",
-     "bg": "#005471",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-brand-700",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #005471",
      "outline": "none",
-     "token": "brand.700"
+     "token": "color.brand.700"
     },
     {
      "estado": "Focus",
-     "bg": "#00698C",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-brand-600",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #00698C",
      "outline": "2px solid #00698C",
      "token": "+ ring"
     },
     {
      "estado": "Disabled",
-     "bg": "#DCE9EE",
-     "fg": "#5D747E",
+     "bg": "--ds-color-neutral-150",
+     "fg": "--ds-color-neutral-600",
      "borde": "1.5px solid #DCE9EE",
      "outline": "none",
-     "token": "neutral.150 / 600"
+     "token": "color.neutral.150 / 600"
     }
    ],
    "alto": "44px",
@@ -1539,43 +1580,43 @@ class Component extends DCLogic {
    "estados": [
     {
      "estado": "Default",
-     "bg": "#DB2149",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-crimson-600",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #DB2149",
      "outline": "none",
-     "token": "crimson.600"
+     "token": "color.crimson.600"
     },
     {
      "estado": "Hover",
-     "bg": "#CC003E",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-crimson-650",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #CC003E",
      "outline": "none",
-     "token": "crimson.650"
+     "token": "color.crimson.650"
     },
     {
      "estado": "Pressed",
-     "bg": "#A8183B",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-crimson-700",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #A8183B",
      "outline": "none",
-     "token": "crimson.700"
+     "token": "color.crimson.700"
     },
     {
      "estado": "Focus",
-     "bg": "#DB2149",
-     "fg": "#FFFFFF",
+     "bg": "--ds-color-crimson-600",
+     "fg": "--ds-color-neutral-0",
      "borde": "1.5px solid #DB2149",
      "outline": "2px solid #00698C",
      "token": "+ ring"
     },
     {
      "estado": "Disabled",
-     "bg": "#DCE9EE",
-     "fg": "#5D747E",
+     "bg": "--ds-color-neutral-150",
+     "fg": "--ds-color-neutral-600",
      "borde": "1.5px solid #DCE9EE",
      "outline": "none",
-     "token": "neutral.150 / 600"
+     "token": "color.neutral.150 / 600"
     }
    ],
    "alto": "44px",
@@ -1589,43 +1630,43 @@ class Component extends DCLogic {
    "estados": [
     {
      "estado": "Default",
-     "bg": "#FFFFFF",
-     "fg": "#005471",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-brand-700",
      "borde": "1.5px solid #00698C",
      "outline": "none",
      "token": "fondo blanco"
     },
     {
      "estado": "Hover",
-     "bg": "#EFF9FD",
-     "fg": "#005471",
+     "bg": "--ds-color-action-secondary-hover",
+     "fg": "--ds-color-brand-700",
      "borde": "1.5px solid #00698C",
      "outline": "none",
-     "token": "brand.50"
+     "token": "color.action.secondary.hover"
     },
     {
      "estado": "Pressed",
-     "bg": "#DAF3FE",
-     "fg": "#005471",
+     "bg": "--ds-color-action-secondary-pressed",
+     "fg": "--ds-color-brand-700",
      "borde": "1.5px solid #00698C",
      "outline": "none",
-     "token": "brand.100"
+     "token": "color.action.secondary.pressed"
     },
     {
      "estado": "Focus",
-     "bg": "#FFFFFF",
-     "fg": "#005471",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-brand-700",
      "borde": "1.5px solid #00698C",
      "outline": "2px solid #00698C",
      "token": "+ ring"
     },
     {
      "estado": "Disabled",
-     "bg": "#FFFFFF",
-     "fg": "#5D747E",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-neutral-600",
      "borde": "1.5px solid #DCE9EE",
      "outline": "none",
-     "token": "borde neutral.150"
+     "token": "borde color.neutral.150"
     }
    ],
    "alto": "44px",
@@ -1639,40 +1680,40 @@ class Component extends DCLogic {
    "estados": [
     {
      "estado": "Default",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #DCE9EE",
      "outline": "none",
      "token": "surface"
     },
     {
      "estado": "Hover",
-     "bg": "#F4FAFD",
-     "fg": "#132E38",
+     "bg": "--ds-color-surface-hover",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #DCE9EE",
      "outline": "none",
-     "token": "neutral.25"
+     "token": "color.surface.hover"
     },
     {
      "estado": "Pressed",
-     "bg": "#EAF2F6",
-     "fg": "#132E38",
+     "bg": "--ds-color-surface-pressed",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #DCE9EE",
      "outline": "none",
-     "token": "neutral.100"
+     "token": "color.surface.pressed"
     },
     {
      "estado": "Focus",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #DCE9EE",
      "outline": "2px solid #00698C",
      "token": "+ ring"
     },
     {
      "estado": "Archived",
-     "bg": "#FFFFFF",
-     "fg": "#5D747E",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-neutral-600",
      "borde": "1px solid #DCE9EE",
      "outline": "none",
      "token": "sin sombra"
@@ -1689,40 +1730,40 @@ class Component extends DCLogic {
    "estados": [
     {
      "estado": "Default",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #7B9099",
      "outline": "none",
-     "token": "border.control"
+     "token": "color.border.control"
     },
     {
      "estado": "Hover",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #6D8690",
      "outline": "none",
-     "token": "neutral.500"
+     "token": "color.neutral.500"
     },
     {
      "estado": "Pressed",
-     "bg": "#EAF2F6",
-     "fg": "#132E38",
+     "bg": "--ds-color-neutral-100",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #6D8690",
      "outline": "none",
-     "token": "neutral.100"
+     "token": "color.neutral.100"
     },
     {
      "estado": "Selected",
-     "bg": "#DAF3FE",
-     "fg": "#005471",
+     "bg": "--ds-color-brand-100",
+     "fg": "--ds-color-brand-700",
      "borde": "2px solid #00698C",
      "outline": "none",
-     "token": "selection.*"
+     "token": "color.selection.*"
     },
     {
      "estado": "Focus",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
+     "bg": "--ds-color-neutral-0",
+     "fg": "--ds-color-neutral-950",
      "borde": "1px solid #7B9099",
      "outline": "2px solid #00698C",
      "token": "+ ring"
@@ -1740,31 +1781,31 @@ class Component extends DCLogic {
     {
      "estado": "Default",
      "bg": "transparent",
-     "fg": "#005471",
+     "fg": "--ds-color-brand-700",
      "borde": "1px solid transparent",
      "outline": "none",
-     "token": "brand.700"
+     "token": "color.brand.700"
     },
     {
      "estado": "Hover",
      "bg": "transparent",
-     "fg": "#00485F",
+     "fg": "--ds-color-brand-800",
      "borde": "1px solid transparent",
      "outline": "none",
-     "token": "brand.800 + subrayado"
+     "token": "color.brand.800 + subrayado"
     },
     {
      "estado": "Pressed",
      "bg": "transparent",
-     "fg": "#003142",
+     "fg": "--ds-color-brand-900",
      "borde": "1px solid transparent",
      "outline": "none",
-     "token": "brand.900"
+     "token": "color.brand.900"
     },
     {
      "estado": "Focus",
      "bg": "transparent",
-     "fg": "#005471",
+     "fg": "--ds-color-brand-700",
      "borde": "1px solid transparent",
      "outline": "2px solid #00698C",
      "token": "+ ring"
@@ -1772,7 +1813,7 @@ class Component extends DCLogic {
     {
      "estado": "Visited",
      "bg": "transparent",
-     "fg": "#005471",
+     "fg": "--ds-color-brand-700",
      "borde": "1px solid transparent",
      "outline": "none",
      "token": "sin cambio"

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ds-section-id" content="visuals.elevation">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <script src="../../assets/_runtime/react.production.min.js"></script>
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -26,25 +27,23 @@ a:hover{color:#5a5a5a}
 </header>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Observado en iMoles</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Niveles</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
-<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px 20px;background:#F0F8FC;display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:16px;background:#ffffff;box-shadow:0 1px 2px rgba(18,48,43,.10), 0 8px 20px -8px rgba(18,48,43,.28)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">--imoles-shadow-interactive</span><span style="font-size:13px;color:#3d3d3d">Tarjetas de seguimiento, filas de acción, filas de foto</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 1px 2px rgba(18,48,43,.10), 0 8px 20px -8px rgba(18,48,43,.28)</span></div></div>
-<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px 20px;background:#F0F8FC;display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:16px;background:#00698C;box-shadow:0 2px 4px rgba(18,48,43,.20), 0 12px 24px -8px rgba(18,48,43,.45)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">--imoles-shadow-interactive-solid</span><span style="font-size:13px;color:#3d3d3d">La misma regla sobre rellenos de color sólido</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 2px 4px rgba(18,48,43,.20), 0 12px 24px -8px rgba(18,48,43,.45)</span></div></div>
-<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px 20px;background:#F0F8FC;display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:16px;background:#ffffff;box-shadow:0 20px 40px -14px rgba(14,124,110,.22)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">--imoles-shadow-phone</span><span style="font-size:13px;color:#3d3d3d">Solo el marco de presentación, no la interfaz</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 20px 40px -14px rgba(14,124,110,.22)</span></div></div>
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px var(--ds-space-5);background:var(--ds-color-neutral-50);display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:var(--ds-radius-card);background:var(--ds-color-bg-surface);box-shadow:var(--ds-elevation-interactive)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">elevation.interactive</span><span style="font-size:13px;color:#3d3d3d">Tarjetas de seguimiento, filas de acción, filas de foto</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 1px 2px neutral.950/10%, 0 8px 20px -8px neutral.950/28% · sustituye a --imoles-shadow-interactive</span></div></div>
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px var(--ds-space-5);background:var(--ds-color-neutral-50);display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:var(--ds-radius-card);background:var(--ds-color-action-primary);box-shadow:var(--ds-elevation-interactive-solid)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">elevation.interactive-solid</span><span style="font-size:13px;color:#3d3d3d">La misma regla sobre rellenos de color sólido</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 2px 4px neutral.950/20%, 0 12px 24px -8px neutral.950/45% · sustituye a --imoles-shadow-interactive-solid</span></div></div>
+<div style="border:1px solid #d4d4d4;display:flex;flex-direction:column"><div style="padding:28px var(--ds-space-5);background:var(--ds-color-neutral-50);display:flex;justify-content:center"><div style="width:100%;height:64px;border-radius:var(--ds-radius-card);background:var(--ds-color-bg-surface);box-shadow:0 20px 40px -14px rgba(14,124,110,.22)"></div></div><div style="padding:8px 12px;border-top:1px solid #d4d4d4;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600">--imoles-shadow-phone</span><span style="font-size:13px;color:#3d3d3d">Solo el marco de presentación, no la interfaz</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">0 20px 40px -14px rgba(14,124,110,.22)</span></div></div>
 </div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Valores copiados de imoles-tokens.css. El color de la sombra sigue siendo la antigua tinta verde azulada.</p>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Geometría de imoles-tokens.css; la tinta pasa de la antigua verde azulada a color.neutral.950. --imoles-shadow-phone queda fuera del DS.</p>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Propuesta</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Reglas</h2>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
-<li><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">elevation.interactive</span> y <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">elevation.interactive-solid</span>, recoloreadas con neutral.950.</li>
-<li><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">elevation.overlay</span> para el menú de opciones, hoy codificado a mano en el prototipo.</li>
 <li>Los botones primarios fijos y los menús dentro de hojas no llevan sombra interactiva.</li>
 <li>La sombra nunca es la única señal de interactividad.</li>
 </ul>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · decisión del owner sobre los tres niveles y el valor del overlay.</p>
 </section>
+
 
 </main>
 </x-dc>

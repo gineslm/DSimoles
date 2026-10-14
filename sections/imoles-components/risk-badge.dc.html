@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="imoles-components.risk-badge">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Button.js"></script>
+<script src="../../components/StatusChip.js"></script>
+<script src="../../components/RiskBadge.js"></script>
+<script src="../../components/SummaryCard.js"></script>
+<script src="../../components/ListRow.js"></script>
+<script src="../../components/FollowUpCard.js"></script>
+<script src="../../components/DescriptionList.js"></script>
+<script src="../../components/Disclosure.js"></script>
+<script src="../../components/AnalysisSummary.js"></script>
+<script src="../../components/IconButton.js"></script>
+<script src="../../components/OptionsMenu.js"></script>
+<script src="../../components/FollowUpHeader.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>RiskBadge · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.1 RiskBadge" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">RiskBadge</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Nombra el nivel de riesgo estimado de un análisis con color, forma y texto.</p>
+<p style="margin:0;font-size:14px;max-width:72ch"><strong style="font-weight:600">Construido con</strong> · tokens y estilos base, sin otros componentes.</p>
+</header>
+<section aria-label="RiskBadge" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/RiskBadge.js</span> · HF: 1 Base - Insignia Riesgo</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Niveles · md</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.RiskBadge" level="high" label="Riesgo estimado alto" hint-size="240px,32px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="medium" label="Riesgo estimado intermedio" hint-size="240px,32px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="low" label="Riesgo estimado bajo" hint-size="240px,32px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="not-assessable" label="Calidad insuficiente" hint-size="240px,32px"></x-import></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Tamaño sm e inline</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.RiskBadge" level="high" label="Riesgo estimado alto" size="sm" hint-size="220px,24px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="medium" label="Riesgo estimado intermedio" size="sm" hint-size="220px,24px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="low" label="Riesgo estimado bajo" size="sm" hint-size="220px,24px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="not-assessable" label="Calidad insuficiente" size="sm" hint-size="220px,24px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="high" label="Riesgo estimado alto" size="inline" hint-size="220px,20px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="medium" label="Riesgo estimado intermedio" size="inline" hint-size="220px,20px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="low" label="Riesgo estimado bajo" size="inline" hint-size="220px,20px"></x-import>
+<x-import component-from-global-scope="DSimoles.RiskBadge" level="not-assessable" label="Calidad insuficiente" size="inline" hint-size="220px,20px"></x-import></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Caso límite: etiqueta en dos líneas</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:260px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.RiskBadge" level="high" label="Riesgo estimado alto · consulta preferente en tu centro de salud" hint-size="100%,56px"></x-import></div></div>
+
+<h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
+<div role="table" aria-label="Ficha de RiskBadge" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Definición</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Propósito</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Resultado de un análisis (5.1–5.4), detalle de una foto y filas del historial (inline).</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Anatomía</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Hexágono con lados a 56° y esquinas de 4 px · forma de riesgo (▲ alto, ◆ intermedio, ● bajo, ? no evaluable) · etiqueta.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">No interactivo.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Accesibilidad</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">La forma es aria-hidden; el nivel se lee en la etiqueta, que siempre lo nombra. Texto blanco sobre los rellenos: 4.6–7:1 (comprobar con color). inline usa el color de texto de riesgo.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Tokens</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">risk.high / medium / low .fill / .text</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">not-assessable.fill / .text</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.inverse</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.ui</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.small</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">component.risk-badge.tip</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">component.risk-glyph.md / sm</span> (nuevos).</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">API</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">level</span> high | medium | low | not-assessable · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">label</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size</span> md | sm | inline.</div></div>
+</div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<div role="table" aria-label="Accesibilidad de RiskBadge" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Implementación</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Semántica</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">texto</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Nombre accesible</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Etiqueta visible</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Teclado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">—</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">—</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Forma aria-hidden</div></div>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="../components/accessibility.dc.html#h-pruebas">7.22 Accesibilidad</a>).</p>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

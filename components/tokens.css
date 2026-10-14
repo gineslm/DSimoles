@@ -1,0 +1,44 @@
+/* DSimoles · tokens de componente (--ds-component-*).
+   Propuestas de Claude Design del 2026-10-13, pendientes de revisión del owner.
+   Solo existen donde un componente necesita un valor que la capa de roles (assets/visuals/tokens.css) no cubre.
+   Apuntan a semánticos o a primitivos (decisión del owner, 2026-10-14); ningún valor suelto salvo los marcados «nuevo».
+   Solo los usa su componente. Si un segundo componente necesita el mismo valor, se promueve a semántico (tokens.token-lifecycle). */
+:root{
+  /* Button y ActionCard (bloque): etiqueta condensada de 14 px; type.ui es de 12 */
+  /* Escala por tamaño (1.4 Dimensiones): md 44 · sm 36 · xs 28 */
+  --ds-component-button-label-md:700 14px/1.15 var(--ds-type-family-condensed);
+  --ds-component-button-label-sm:700 13px/1.15 var(--ds-type-family-condensed);
+  --ds-component-button-label-xs:700 12px/1.15 var(--ds-type-family-condensed);
+  --ds-component-button-label:var(--ds-component-button-label-md); /* ActionCard (bloque) */
+  --ds-component-button-padding-inline:var(--ds-space-5);
+
+  /* Field: etiqueta Roboto 500 14 (task de adopción del prototipo) */
+  --ds-component-field-label:500 14px/1.4 var(--ds-type-family-sans); /* nuevo */
+  --ds-component-textarea-min-height:120px; /* nuevo · HF 120 px */
+
+  /* RiskBadge: hexágono con lados a 56°; profundidad de la punta = alto × 0.3372 */
+  --ds-component-risk-badge-tip:0.3372; /* nuevo · HF */
+  --ds-component-risk-glyph-md:16px; /* nuevo · HF 16 */
+  --ds-component-risk-glyph-sm:14px; /* nuevo · HF 13 → 14 */
+
+  --ds-component-button-label-lg:var(--ds-component-button-label-md); /* obsoleto desde 2026-10-14: Button lg retirado */
+
+  /* Thumbnail sin foto: neutro de la marca en vez de #E8E2DC */
+  --ds-component-thumb-placeholder:var(--ds-color-neutral-150);
+
+  /* BackLink sobre la cámara (fondo oscuro): HF #B8C7C4 */
+  --ds-component-on-dark-text:var(--ds-color-neutral-200);
+  --ds-component-on-dark-bg:var(--ds-color-neutral-950);
+  /* IconButton sobre fondo oscuro: hover; antes neutral-0 directo en el CSS del componente */
+  --ds-component-icon-button-on-dark-hover:color-mix(in srgb, var(--ds-color-neutral-0) 12%, transparent);
+
+  /* Disclosure de riesgo alto: borde del panel; HF --imoles-riesgo-alto-tint-border */
+  --ds-component-disclosure-risk-border:var(--ds-color-crimson-200);
+
+  /* OptionsMenu: elevation.overlay sigue sin decidir (visuals.elevation) */
+  --ds-component-menu-elevation:var(--ds-elevation-interactive-solid);
+  --ds-component-menu-min-width:240px; /* nuevo */
+
+  /* Foto de la captura en CaptureDetail / FollowUpCard */
+  --ds-component-thumb-radius-inner:calc(var(--ds-radius-card) - var(--ds-space-2));
+}

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ds-section-id" content="visuals.accessibility">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <script src="../../assets/_runtime/react.production.min.js"></script>
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -27,7 +28,7 @@ a:hover{color:#5a5a5a}
 
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Contraste</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">WCAG 2.2: texto 4.5:1 (1.4.3); iconos, bordes de controles y focus 3:1 (1.4.11). Ratios calculados con la luminancia relativa de WCAG a partir de los valores hex. <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.disabled</span> está exento.</p>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">WCAG 2.2: texto 4.5:1 (1.4.3); iconos, bordes de controles y focus 3:1 (1.4.11). Ratios calculados en la página con la luminancia relativa de WCAG, a partir de los valores actuales de <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">tokens.css</span>. <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.text.disabled</span> está exento.</p>
 <div style="overflow-x:auto">
 <div role="table" aria-label="Contraste de las parejas de roles" style="min-width:620px;font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:56px 2.6fr 1.1fr 0.7fr 0.9fr">
@@ -55,7 +56,7 @@ a:hover{color:#5a5a5a}
 
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Visión del color</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Diferencia perceptual ΔE en OKLab (×100) entre los cinco rellenos, en visión normal y simulando deuteranopía, protanopía y tritanopía (Machado 2009, severidad 1) y acromatopsia (solo luminancia). WCAG no fija un mínimo entre colores; exige que el color no sea la única señal (1.4.1). Objetivo práctico: 8 o más. Por debajo, la forma del badge y el texto garantizan la distinción.</p>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Diferencia perceptual ΔE en OKLab (×100) entre los cinco rellenos, calculada en la página a partir de <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">tokens.css</span>, en visión normal y simulando deuteranopía, protanopía y tritanopía (Machado 2009, severidad 1) y acromatopsia (solo luminancia). WCAG no fija un mínimo entre colores; exige que el color no sea la única señal (1.4.1). Objetivo práctico: 8 o más. Por debajo, la forma del badge y el texto garantizan la distinción.</p>
 <div style="overflow-x:auto">
 <div role="table" aria-label="Diferencia perceptual entre rellenos según el tipo de visión" style="min-width:640px;font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
@@ -69,7 +70,7 @@ a:hover{color:#5a5a5a}
 <div role="rowgroup">
 <sc-for list="{{ matriz }}" as="m" hint-placeholder-count="10">
 <div role="row" style="display:grid;grid-template-columns:1.8fr repeat(5,1fr)">
-<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">{{ m.par }}</div>
+<div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;display:flex;gap:4px;align-items:center"><span style="width:20px;height:20px;background:{{ m.ca }};flex:none" aria-hidden="true"></span><span style="width:20px;height:20px;background:{{ m.cb }};flex:none" aria-hidden="true"></span><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">{{ m.par }}</span></div>
 <div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wn }}">{{ m.n }}</div>
 <div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wd }}">{{ m.de }}</div>
 <div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;text-align:right;font-variant-numeric:tabular-nums;font-weight:{{ m.wp }}">{{ m.pr }}</div>
@@ -115,8 +116,21 @@ a:hover{color:#5a5a5a}
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Por cubrir</h2>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · tipografía (tamaños mínimos, zoom al 200%), objetivos táctiles (44 px), espaciado para el reflujo del texto (1.4.12). Se añaden cuando esas secciones tengan valores.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Tipografía, objetivos y espaciado</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li><a href="./typography.dc.html">Tipografía</a> · 1.4.4: texto al 200% sin pérdida de contenido. Nada por debajo de 12 px; texto corrido desde <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.body</span> (16 px). Peso 300 solo desde 21 px.</li>
+<li><a href="./typography.dc.html">Tipografía</a> · 1.4.12: interlineado 1.5 y espaciado de párrafo 2× sin recortes.</li>
+<li><a href="./dimensions.dc.html">Dimensiones</a> · 2.5.8 (AA): todos los pasos de la escala (28 · 36 · 44) miden 24 o más. 2.5.5 (AAA): solo 44 visibles (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.control.md</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.icon-button.lg</span>). El DS base no usa área táctil ampliada: el nivel se mide sobre el tamaño visible. iMoles exige AA (2.5.8): todos los pasos de la escala lo cumplen. Para productos AAA, ejemplo de área ampliada en 7.22 Accesibilidad.</li>
+<li>Estados hover y pressed: capa translúcida de brand.600 (8 / 16 %; 6 / 12 % en superficies) sobre el fondo propio del control. WCAG no exige contraste para el hover; el cambio se percibe igual sobre bg.page, bg.surface y bg.tint (≥ 1.09:1 hover, ≥ 1.19:1 pressed).</li>
+<li><a href="./spacing.dc.html">Espaciado</a> · 2.5.8: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">space.2</span> (8 px) como mínimo entre objetivos contiguos; los contenedores crecen con el texto.</li>
+<li><a href="./borders.dc.html">Bordes</a> · 1.4.11: contornos informativos a 3:1 o más (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.border.control</span>); 1.4.1: la selección lleva borde, check y color.</li>
+</ul>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · son objetivos de diseño: falta comprobarlos en dispositivo con el texto del sistema al 200% y con lector de pantalla.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Nivel de accesibilidad por producto</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">El DS define el contexto y el rango del ecosistema: los valores disponibles y el nivel WCAG que cumple cada uno. El nivel exigido lo fija cada producto. En tamaños y áreas interactivas, por ejemplo, el DS ofrece una escala con su cobertura (AAA, AA o sin nivel) y cada producto usa solo los valores que cumplen su nivel. La aplicación concreta está en <a href="./dimensions.dc.html">1.4 Dimensiones</a>, en <a href="../components/accessibility.dc.html#h-estrategia">7.22 Accesibilidad</a> y en cada componente.</p>
 </section>
 
 </main>
@@ -124,399 +138,427 @@ a:hover{color:#5a5a5a}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   renderVals() {
+    const cs = getComputedStyle(document.documentElement);
+    const hexOf = v => { const x = cs.getPropertyValue(v).trim(); return /^#[0-9a-f]{6}$/i.test(x) ? x.toUpperCase() : x || v; };
+    const roleVar = n => { const v = '--ds-' + n.trim().replace(/\./g, '-'); return cs.getPropertyValue(v).trim() ? v : null; };
+    const walk = o => Array.isArray(o) ? o.map(walk) : o && typeof o === 'object' ? Object.fromEntries(Object.entries(o).map(([k, v]) => [k, walk(v)])) : typeof o === 'string' && o.startsWith('--ds-') ? hexOf(o) : o;
+    const lin = c => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    const rgb = h => [1, 3, 5].map(i => lin(parseInt(h.slice(i, i + 2), 16)));
+    const lum = h => { const [r, g, b] = rgb(h); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+    const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+    const M = { de: [[0.367322,0.860646,-0.227968],[0.280085,0.672501,0.047413],[-0.011820,0.042940,0.968881]], pr: [[0.152286,1.052583,-0.204868],[0.114503,0.786281,0.099216],[-0.003882,-0.048116,1.051998]], tr: [[1.255528,-0.076749,-0.178779],[-0.078411,0.930809,0.147602],[0.004733,0.691367,0.303900]] };
+    const cl = x => Math.min(1, Math.max(0, x));
+    const sim = (h, k) => { const v = rgb(h); if (k === 'n') return v; if (k === 'ac') { const Y = 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; return [Y, Y, Y]; } return M[k].map(r => cl(r[0] * v[0] + r[1] * v[1] + r[2] * v[2])); };
+    const oklab = ([r, g, b]) => { const l = Math.cbrt(0.4122214708*r+0.5363325363*g+0.0514459929*b), m = Math.cbrt(0.2119034982*r+0.6806995451*g+0.1073969566*b), s = Math.cbrt(0.0883024619*r+0.2817188376*g+0.6299787005*b); return [0.2104542553*l+0.7936177850*m-0.0040720468*s, 1.9779984951*l-2.4285922050*m+0.4505937099*s, 0.0259040371*l+0.7827717662*m-0.8086757660*s]; };
+    const dE = (a, b, k) => { const A = oklab(sim(a, k)), B = oklab(sim(b, k)); return Math.hypot(A[0]-B[0], A[1]-B[1], A[2]-B[2]) * 100; };
+    const r1 = x => String(Math.round(x * 10) / 10);
+    const d = this.data();
+    if (d.roles) d.roles.forEach(r => { const v = roleVar(r.rol.replace('.*', '')); if (v) r.hex = v; });
+    if (d.contrastes) d.contrastes.forEach(c => { const [f, b] = c.par.split(' / ').map(roleVar); if (f) c.fg = f; if (b) c.bg = b; });
+    const o = walk(d);
+    if (o.contrastes) o.contrastes.forEach(c => { const x = ratio(c.fg, c.bg), m = parseFloat(c.min); c.ratio = x.toFixed(2); if (!isNaN(m)) { const ok = x >= m; c.res = ok ? 'Cumple' : 'No cumple'; c.peso = ok ? 400 : 700; } });
+    if (o.fichas && o.fichas[0] && o.fichas[0].vecinos) {
+      const F = o.fichas, K = ['n', 'de', 'pr', 'tr', 'ac'], NV = ['Normal', 'Deuteranopía', 'Protanopía', 'Tritanopía', 'Acromatopsia'];
+      F.forEach(f => { f.blanco = ratio('#FFFFFF', f.base).toFixed(2) + ':1'; f.texto = ratio(f.ink, f.tint).toFixed(2) + ':1'; f.icono = ratio(f.base, '#FFFFFF').toFixed(2) + ':1';
+        f.vecinos = K.map((k, i) => { let best = null; F.forEach(g => { if (g !== f) { const e = dE(f.base, g.base, k); if (!best || e < best.e) best = { e, n: g.nombre }; } }); const low = best.e < 8; return { vision: NV[i], texto: best.n + ' · ' + r1(best.e), estado: low ? 'Forma y texto' : 'Separados', peso: low ? 700 : 400 }; }); });
+      if (o.matriz) { const W = { n: 'wn', de: 'wd', pr: 'wp', tr: 'wt', ac: 'wa' }; o.matriz.forEach(m => { const [a, b] = m.par.split(' / ').map(n => F.find(f => f.nombre === n)); if (!a || !b) return; m.ca = a.base; m.cb = b.base; K.forEach(k => { const e = dE(a.base, b.base, k); m[k] = r1(e); m[W[k]] = e < 8 ? 700 : 400; }); }); }
+    }
+    return o;
+  }
+  data() {
     return {
  "contrastes": [
   {
-   "par": "text.primary / bg.surface",
-   "fg": "#132E38",
-   "bg": "#FFFFFF",
+   "par": "color.text.primary / color.bg.surface",
+   "fg": "--ds-color-neutral-950",
+   "bg": "--ds-color-neutral-0",
    "ratio": "14.23",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.primary / bg.page",
-   "fg": "#132E38",
-   "bg": "#F0F8FC",
+   "par": "color.text.primary / color.bg.page",
+   "fg": "--ds-color-neutral-950",
+   "bg": "--ds-color-neutral-50",
    "ratio": "13.24",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / bg.surface",
-   "fg": "#3F565F",
-   "bg": "#FFFFFF",
+   "par": "color.text.body / color.bg.surface",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-0",
    "ratio": "7.76",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / bg.page",
-   "fg": "#3F565F",
-   "bg": "#F0F8FC",
+   "par": "color.text.body / color.bg.page",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-50",
    "ratio": "7.22",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / chip.neutral.bg",
-   "fg": "#3F565F",
-   "bg": "#EAF2F6",
+   "par": "color.text.body / color.chip.neutral.bg",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-100",
    "ratio": "6.84",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.secondary / bg.surface",
-   "fg": "#5D747E",
-   "bg": "#FFFFFF",
+   "par": "color.text.secondary / color.bg.surface",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.92",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.secondary / bg.page",
-   "fg": "#5D747E",
-   "bg": "#F0F8FC",
+   "par": "color.text.secondary / color.bg.page",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-50",
    "ratio": "4.58",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.secondary / bg.tint",
-   "fg": "#5D747E",
-   "bg": "#F4FAFD",
+   "par": "color.text.secondary / color.bg.tint",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-25",
    "ratio": "4.68",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "icon.inactive / bg.surface",
-   "fg": "#6D8690",
-   "bg": "#FFFFFF",
+   "par": "color.icon.inactive / color.bg.surface",
+   "fg": "--ds-color-neutral-500",
+   "bg": "--ds-color-neutral-0",
    "ratio": "3.84",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.control / bg.surface",
-   "fg": "#7B9099",
-   "bg": "#FFFFFF",
+   "par": "color.border.control / color.bg.surface",
+   "fg": "--ds-color-neutral-400",
+   "bg": "--ds-color-neutral-0",
    "ratio": "3.34",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.control / bg.page",
-   "fg": "#7B9099",
-   "bg": "#F0F8FC",
+   "par": "color.border.control / color.bg.page",
+   "fg": "--ds-color-neutral-400",
+   "bg": "--ds-color-neutral-50",
    "ratio": "3.11",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.primary",
-   "fg": "#FFFFFF",
-   "bg": "#00698C",
+   "par": "color.text.inverse / color.action.primary",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-brand-600",
    "ratio": "6.18",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.primary / bg.surface",
-   "fg": "#00698C",
-   "bg": "#FFFFFF",
+   "par": "color.brand.primary / color.bg.surface",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "6.18",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.focus / bg.page",
-   "fg": "#00698C",
-   "bg": "#F0F8FC",
+   "par": "color.focus.ring / color.bg.page",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-50",
    "ratio": "5.75",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / bg.surface",
-   "fg": "#005471",
-   "bg": "#FFFFFF",
+   "par": "color.brand.text / color.bg.surface",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-neutral-0",
    "ratio": "8.38",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / bg.page",
-   "fg": "#005471",
-   "bg": "#F0F8FC",
+   "par": "color.brand.text / color.bg.page",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-neutral-50",
    "ratio": "7.79",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "selection.text / selection.bg",
-   "fg": "#005471",
-   "bg": "#DAF3FE",
+   "par": "color.selection.text / color.selection.bg",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-brand-100",
    "ratio": "7.27",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "status.info.label / status.info.bg",
-   "fg": "#3F565F",
-   "bg": "#EAF2F6",
+   "par": "color.status.info.text / color.status.info.tint",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-100",
    "ratio": "6.84",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / risk.high.fill",
-   "fg": "#FFFFFF",
-   "bg": "#DB2149",
+   "par": "color.text.inverse / color.status.error.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-crimson-600",
    "ratio": "4.85",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.high.text / risk.high.tint",
-   "fg": "#A8183B",
-   "bg": "#FDF4F6",
+   "par": "color.status.error.text / color.status.error.tint",
+   "fg": "--ds-color-crimson-700",
+   "bg": "--ds-color-crimson-50",
    "ratio": "6.80",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.high.body / risk.high.tint",
-   "fg": "#5C2A37",
-   "bg": "#FDF4F6",
+   "par": "color.status.error.body / color.status.error.tint",
+   "fg": "--ds-color-crimson-900",
+   "bg": "--ds-color-crimson-50",
    "ratio": "10.56",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.high.fill / bg.surface",
-   "fg": "#DB2149",
-   "bg": "#FFFFFF",
+   "par": "color.status.error.fill / color.bg.surface",
+   "fg": "--ds-color-crimson-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.85",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / risk.medium.fill",
-   "fg": "#FFFFFF",
-   "bg": "#8D6F00",
+   "par": "color.text.inverse / color.status.warning.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-amber-600",
    "ratio": "4.77",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.medium.text / risk.medium.tint",
-   "fg": "#705700",
-   "bg": "#FAF0D2",
+   "par": "color.status.warning.text / color.status.warning.tint",
+   "fg": "--ds-color-amber-700",
+   "bg": "--ds-color-amber-100",
    "ratio": "6.05",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.medium.body / risk.medium.tint",
-   "fg": "#57450C",
-   "bg": "#FAF0D2",
+   "par": "color.status.warning.body / color.status.warning.tint",
+   "fg": "--ds-color-amber-900",
+   "bg": "--ds-color-amber-100",
    "ratio": "8.16",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.medium.fill / bg.surface",
-   "fg": "#8D6F00",
-   "bg": "#FFFFFF",
+   "par": "color.status.warning.fill / color.bg.surface",
+   "fg": "--ds-color-amber-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.77",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / risk.low.fill",
-   "fg": "#FFFFFF",
-   "bg": "#168072",
+   "par": "color.text.inverse / color.status.success.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-teal-600",
    "ratio": "4.81",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.low.text / risk.low.tint",
-   "fg": "#0B6459",
-   "bg": "#E1F3EE",
+   "par": "color.status.success.text / color.status.success.tint",
+   "fg": "--ds-color-teal-700",
+   "bg": "--ds-color-teal-100",
    "ratio": "6.12",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "risk.low.fill / bg.surface",
-   "fg": "#168072",
-   "bg": "#FFFFFF",
+   "par": "color.status.success.fill / color.bg.surface",
+   "fg": "--ds-color-teal-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "4.81",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / not-assessable.fill",
-   "fg": "#FFFFFF",
-   "bg": "#6C2768",
+   "par": "color.text.inverse / color.status.unknown.fill",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-plum-600",
    "ratio": "9.87",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "not-assessable.text / not-assessable.tint",
-   "fg": "#5E1F5A",
-   "bg": "#FAEAF8",
+   "par": "color.status.unknown.text / color.status.unknown.tint",
+   "fg": "--ds-color-plum-700",
+   "bg": "--ds-color-plum-100",
    "ratio": "10.00",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "not-assessable.fill / bg.surface",
-   "fg": "#6C2768",
-   "bg": "#FFFFFF",
+   "par": "color.status.unknown.fill / color.bg.surface",
+   "fg": "--ds-color-plum-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "9.87",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.primary.hover",
-   "fg": "#FFFFFF",
-   "bg": "#005D80",
+   "par": "color.text.inverse / color.action.primary.hover",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-brand-650",
    "ratio": "7.30",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.primary.pressed",
-   "fg": "#FFFFFF",
-   "bg": "#005471",
+   "par": "color.text.inverse / color.action.primary.pressed",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-brand-700",
    "ratio": "8.38",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.alert.hover",
-   "fg": "#FFFFFF",
-   "bg": "#CC003E",
+   "par": "color.text.inverse / color.action.alert.hover",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-crimson-650",
    "ratio": "5.77",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.inverse / action.alert.pressed",
-   "fg": "#FFFFFF",
-   "bg": "#A8183B",
+   "par": "color.text.inverse / color.action.alert.pressed",
+   "fg": "--ds-color-neutral-0",
+   "bg": "--ds-color-crimson-700",
    "ratio": "7.35",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / action.secondary.hover",
-   "fg": "#005471",
-   "bg": "#EFF9FD",
-   "ratio": "7.83",
+   "par": "color.brand.text / color.action.secondary.hover (sobre bg.page, el caso peor)",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-action-secondary-hover",
+   "ratio": "6.95",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "brand.text / action.secondary.pressed",
-   "fg": "#005471",
-   "bg": "#DAF3FE",
-   "ratio": "7.27",
+   "par": "color.brand.text / color.action.secondary.pressed (sobre bg.page, el caso peor)",
+   "fg": "--ds-color-brand-700",
+   "bg": "--ds-color-action-secondary-pressed",
+   "ratio": "6.17",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "text.body / surface.pressed",
-   "fg": "#3F565F",
-   "bg": "#EAF2F6",
+   "par": "color.text.body / color.surface.pressed",
+   "fg": "--ds-color-neutral-800",
+   "bg": "--ds-color-neutral-100",
    "ratio": "6.84",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "border.control.hover / bg.surface",
-   "fg": "#6D8690",
-   "bg": "#FFFFFF",
+   "par": "color.border.control.hover / color.bg.surface",
+   "fg": "--ds-color-neutral-500",
+   "bg": "--ds-color-neutral-0",
    "ratio": "3.84",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "link.hover / bg.surface",
-   "fg": "#00485F",
-   "bg": "#FFFFFF",
+   "par": "color.link.hover / color.bg.surface",
+   "fg": "--ds-color-brand-800",
+   "bg": "--ds-color-neutral-0",
    "ratio": "10.04",
    "min": "4.5:1 texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "focus.ring / bg.page",
-   "fg": "#00698C",
-   "bg": "#F0F8FC",
+   "par": "color.focus.ring / color.bg.page",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-50",
    "ratio": "5.75",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "focus.ring / bg.surface",
-   "fg": "#00698C",
-   "bg": "#FFFFFF",
+   "par": "color.focus.ring / color.bg.surface",
+   "fg": "--ds-color-brand-600",
+   "bg": "--ds-color-neutral-0",
    "ratio": "6.18",
    "min": "3:1 no texto",
    "res": "Cumple",
    "peso": 400
   },
   {
-   "par": "disabled.text / disabled.bg",
-   "fg": "#5D747E",
-   "bg": "#DCE9EE",
+   "par": "color.disabled.text / color.disabled.bg",
+   "fg": "--ds-color-neutral-600",
+   "bg": "--ds-color-neutral-150",
    "ratio": "3.97",
    "min": "Exento (1.4.3)",
    "res": "Exento",
@@ -658,10 +700,10 @@ class Component extends DCLogic {
  "fichas": [
   {
    "nombre": "Brand",
-   "base": "#00698C",
-   "ink": "#005471",
-   "tint": "#DAF3FE",
-   "paso": "brand.600",
+   "base": "--ds-color-brand-600",
+   "ink": "--ds-color-brand-700",
+   "tint": "--ds-color-brand-100",
+   "paso": "color.brand.600",
    "blanco": "6.18:1",
    "texto": "7.27:1",
    "icono": "6.18:1",
@@ -703,10 +745,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Crimson",
-   "base": "#DB2149",
-   "ink": "#A8183B",
-   "tint": "#FDF4F6",
-   "paso": "crimson.600",
+   "base": "--ds-color-crimson-600",
+   "ink": "--ds-color-crimson-700",
+   "tint": "--ds-color-crimson-50",
+   "paso": "color.crimson.600",
    "blanco": "4.85:1",
    "texto": "6.80:1",
    "icono": "4.85:1",
@@ -748,10 +790,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Amber",
-   "base": "#8D6F00",
-   "ink": "#705700",
-   "tint": "#FAF0D2",
-   "paso": "amber.600",
+   "base": "--ds-color-amber-600",
+   "ink": "--ds-color-amber-700",
+   "tint": "--ds-color-amber-100",
+   "paso": "color.amber.600",
    "blanco": "4.77:1",
    "texto": "6.05:1",
    "icono": "4.77:1",
@@ -793,10 +835,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Teal",
-   "base": "#168072",
-   "ink": "#0B6459",
-   "tint": "#E1F3EE",
-   "paso": "teal.600",
+   "base": "--ds-color-teal-600",
+   "ink": "--ds-color-teal-700",
+   "tint": "--ds-color-teal-100",
+   "paso": "color.teal.600",
    "blanco": "4.81:1",
    "texto": "6.12:1",
    "icono": "4.81:1",
@@ -838,10 +880,10 @@ class Component extends DCLogic {
   },
   {
    "nombre": "Plum",
-   "base": "#6C2768",
-   "ink": "#5E1F5A",
-   "tint": "#FAEAF8",
-   "paso": "plum.600",
+   "base": "--ds-color-plum-600",
+   "ink": "--ds-color-plum-700",
+   "tint": "--ds-color-plum-100",
+   "paso": "color.plum.600",
    "blanco": "9.87:1",
    "texto": "10.00:1",
    "icono": "9.87:1",

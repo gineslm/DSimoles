@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ds-section-id" content="interaction.interaction-states">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <script src="../../assets/_runtime/react.production.min.js"></script>
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -27,29 +28,57 @@ a:hover{color:#5a5a5a}
 
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Estados por elemento</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles no define estados de interacción; estos valores, derivados de las escalas, fueron aprobados por el owner el 2026-10-10. Rellenos: hover un paso intermedio (650), pressed 700. Superficies (tarjeta, fila, opción): neutral.25 y neutral.100. En táctil, pressed es el feedback principal; hover solo se aplica con puntero.</p>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles no define estados de interacción; estos valores, derivados de las escalas, fueron aprobados por el owner el 2026-10-10. Rellenos: hover un paso intermedio (650), pressed 700. Secundario y superficies (tarjeta, fila, opción): capa translúcida de brand.600 sobre el fondo del control, 8 / 16 % y 6 / 12 %; se ve igual sobre cualquier fondo. En táctil, pressed es el feedback principal; hover solo se aplica con puntero.</p>
 <div style="display:flex;flex-direction:column;gap:14px">
-<sc-for list="{{ interaccion }}" as="c" hint-placeholder-count="7">
+<sc-for list="{{ interaccion }}" as="c" hint-placeholder-count="6">
 <div style="display:flex;flex-direction:column;gap:8px">
 <span style="font-size:14px;font-weight:600">{{ c.nombre }}</span>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px">
 <sc-for list="{{ c.estados }}" as="s" hint-placeholder-count="5">
 <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
-<div style="min-height:{{ c.alto }};box-sizing:border-box;padding:{{ c.pad }};align-self:{{ c.alinear }};border-radius:{{ c.radio }};background:{{ s.bg }};color:{{ s.fg }};border:{{ s.borde }};outline:{{ s.outline }};outline-offset:2px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.03em"><span>{{ c.texto }}</span></div>
+<div style="min-height:{{ c.alto }};box-sizing:border-box;padding:{{ c.pad }};align-self:{{ c.alinear }};border-radius:{{ c.radio }};background:{{ s.bg }};color:{{ s.fg }};border:{{ s.borde }};outline:{{ s.outline }};outline-offset:var(--ds-focus-ring-offset);display:flex;align-items:center;justify-content:center;gap:var(--ds-space-1);text-align:center;font:{{ c.font }};letter-spacing:{{ c.tracking }};text-transform:{{ c.caps }}"><span style="white-space:nowrap">{{ c.texto }}</span><sc-if value="{{ c.externo }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" style="flex-shrink:0;fill:currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></sc-if></div>
+<span style="font-size:12px;font-weight:600">{{ s.estado }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a;overflow-wrap:anywhere">{{ s.token }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<h3 style="margin:0;font-size:17px;font-weight:600">Card interactiva e ítem de lista</h3>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Toda la superficie es el objetivo táctil. El chevron indica que lleva a otra pantalla; el estado cambia el fondo y el focus añade el anillo.</p>
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:14px;font-weight:600">Card interactiva</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px">
+<sc-for list="{{ superficieEstados }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="box-sizing:border-box;padding:var(--ds-space-3);border-radius:var(--ds-radius-card);background:{{ s.bg }};border:var(--ds-border-width-thin) solid var(--ds-color-border-subtle);box-shadow:var(--ds-elevation-interactive);outline:{{ s.outline }};outline-offset:var(--ds-focus-ring-offset);display:flex;align-items:center;gap:var(--ds-space-3);color:var(--ds-color-text-primary)"><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font:var(--ds-type-label)">Gemelo derecho</span><span style="font:var(--ds-type-small);color:var(--ds-color-text-secondary)">3 capturas</span></div><span aria-hidden="true" style="font-family:var(--ds-type-family-icon);font-size:var(--ds-size-icon-md);line-height:1;color:var(--ds-color-icon-inactive)">chevron_right</span></div>
 <span style="font-size:12px;font-weight:600">{{ s.estado }}</span>
 <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a">{{ s.token }}</span>
 </div>
 </sc-for>
 </div>
 </div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:14px;font-weight:600">Ítem de lista</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px">
+<sc-for list="{{ superficieEstados }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="box-sizing:border-box;min-height:var(--ds-size-target-min);padding:var(--ds-space-2) var(--ds-space-3);background:{{ s.bg }};border-top:var(--ds-border-width-thin) solid var(--ds-color-border-subtle);border-bottom:var(--ds-border-width-thin) solid var(--ds-color-border-subtle);outline:{{ s.outline }};outline-offset:calc(var(--ds-focus-ring-width) * -1);display:flex;align-items:center;gap:var(--ds-space-3);color:var(--ds-color-text-primary)"><span style="flex:1;min-width:0;font:var(--ds-type-body)">Brazo izquierdo</span><span aria-hidden="true" style="font-family:var(--ds-type-family-icon);font-size:var(--ds-size-icon-md);line-height:1;color:var(--ds-color-icon-inactive)">chevron_right</span></div>
+<span style="font-size:12px;font-weight:600">{{ s.estado }}</span>
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#5a5a5a">{{ s.token }}</span>
+</div>
 </sc-for>
 </div>
+</div>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
-<li>Disabled: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.bg</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled.text</span> (3.97:1). Exento de contraste, pero se mantiene legible. Sin sombra.</li>
-<li>Loading: conserva el color del rol y añade un indicador en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.inverse</span>; no pasa a disabled.</li>
-<li>Selected: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">selection.*</span>; el borde de 2 px y el texto acompañan al color.</li>
-<li>Scrim modal: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">neutral.950</span> al 48% bajo menús y hojas.</li>
-<li>Enlace: el anillo de focus se ajusta al texto (6 px de margen lateral, radio de 2 px) para que no se confunda con un botón. El área táctil puede crecer hasta 44 px sin cambiar el anillo visible.</li>
+<li>Disabled: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.disabled.bg</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.disabled.text</span> (3.97:1). Exento de contraste, pero se mantiene legible. Sin sombra.</li>
+<li>Loading: conserva el color del rol y añade un indicador en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.text.inverse</span>; no pasa a disabled.</li>
+<li>Selected: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.selection.*</span>; el borde <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.width.thick</span> y el texto acompañan al color.</li>
+<li>Scrim modal: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.scrim.modal</span> (color.neutral.950 · opacity.scrim) bajo menús y hojas.</li>
+<li>Enlace: el anillo de focus se ajusta al texto (4 px de margen lateral, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">space.1</span>; radio <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">radius.xs</span>) para que no se confunda con un botón. El área táctil puede crecer hasta 44 px sin cambiar el anillo visible.</li>
+<li>Enlace externo: lleva siempre el icono <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">open_in_new</span> detrás del texto y un texto oculto «(se abre en otra ventana)» para lectores de pantalla (WCAG 3.2.5, G201). El icono es decorativo (aria-hidden) y hereda el color del enlace.</li>
+<li>Ítem de lista: el anillo de focus va por dentro para no solaparse con los ítems vecinos.</li>
 <li>Los badges y chips de nivel no son interactivos: no tienen estados.</li>
 </ul>
 <p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · validar en dispositivo la diferencia entre default y pressed.</p>
@@ -74,303 +103,293 @@ class Component extends DCLogic {
   {
    "nombre": "Botón primario",
    "texto": "Hacer la foto",
-   "radio": "14px",
+   "radio": "var(--ds-radius-button)",
    "estados": [
     {
      "estado": "Default",
-     "bg": "#00698C",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #00698C",
+     "bg": "var(--ds-color-action-primary)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-primary)",
      "outline": "none",
-     "token": "brand.600"
+     "token": "color.action.primary"
     },
     {
      "estado": "Hover",
-     "bg": "#005D80",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #005D80",
+     "bg": "var(--ds-color-action-primary-hover)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-primary-hover)",
      "outline": "none",
-     "token": "brand.650"
+     "token": "color.action.primary.hover"
     },
     {
      "estado": "Pressed",
-     "bg": "#005471",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #005471",
+     "bg": "var(--ds-color-action-primary-pressed)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-primary-pressed)",
      "outline": "none",
-     "token": "brand.700"
+     "token": "color.action.primary.pressed"
     },
     {
      "estado": "Focus",
-     "bg": "#00698C",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #00698C",
-     "outline": "2px solid #00698C",
-     "token": "+ ring"
+     "bg": "var(--ds-color-action-primary)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-primary)",
+     "outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)",
+     "token": "+ color.focus.ring"
     },
     {
      "estado": "Disabled",
-     "bg": "#DCE9EE",
-     "fg": "#5D747E",
-     "borde": "1.5px solid #DCE9EE",
+     "bg": "var(--ds-color-disabled-bg)",
+     "fg": "var(--ds-color-disabled-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-disabled-bg)",
      "outline": "none",
-     "token": "neutral.150 / 600"
+     "token": "color.disabled.bg / .text"
     }
    ],
-   "alto": "44px",
-   "pad": "8px 12px",
-   "alinear": "stretch"
+   "alto": "var(--ds-size-control-sm)",
+   "pad": "var(--ds-space-2) var(--ds-space-3)",
+   "alinear": "stretch",
+   "font": "var(--ds-type-ui)",
+   "tracking": "var(--ds-type-ui-tracking)",
+   "caps": "uppercase"
   },
   {
    "nombre": "Botón de alerta",
    "texto": "Pedir cita",
-   "radio": "14px",
+   "radio": "var(--ds-radius-button)",
    "estados": [
     {
      "estado": "Default",
-     "bg": "#DB2149",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #DB2149",
+     "bg": "var(--ds-color-action-alert)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-alert)",
      "outline": "none",
-     "token": "crimson.600"
+     "token": "color.action.alert"
     },
     {
      "estado": "Hover",
-     "bg": "#CC003E",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #CC003E",
+     "bg": "var(--ds-color-action-alert-hover)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-alert-hover)",
      "outline": "none",
-     "token": "crimson.650"
+     "token": "color.action.alert.hover"
     },
     {
      "estado": "Pressed",
-     "bg": "#A8183B",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #A8183B",
+     "bg": "var(--ds-color-action-alert-pressed)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-alert-pressed)",
      "outline": "none",
-     "token": "crimson.700"
+     "token": "color.action.alert.pressed"
     },
     {
      "estado": "Focus",
-     "bg": "#DB2149",
-     "fg": "#FFFFFF",
-     "borde": "1.5px solid #DB2149",
-     "outline": "2px solid #00698C",
-     "token": "+ ring"
+     "bg": "var(--ds-color-action-alert)",
+     "fg": "var(--ds-color-text-inverse)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-action-alert)",
+     "outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)",
+     "token": "+ color.focus.ring"
     },
     {
      "estado": "Disabled",
-     "bg": "#DCE9EE",
-     "fg": "#5D747E",
-     "borde": "1.5px solid #DCE9EE",
+     "bg": "var(--ds-color-disabled-bg)",
+     "fg": "var(--ds-color-disabled-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-disabled-bg)",
      "outline": "none",
-     "token": "neutral.150 / 600"
+     "token": "color.disabled.bg / .text"
     }
    ],
-   "alto": "44px",
-   "pad": "8px 12px",
-   "alinear": "stretch"
+   "alto": "var(--ds-size-control-sm)",
+   "pad": "var(--ds-space-2) var(--ds-space-3)",
+   "alinear": "stretch",
+   "font": "var(--ds-type-ui)",
+   "tracking": "var(--ds-type-ui-tracking)",
+   "caps": "uppercase"
   },
   {
    "nombre": "Secundario de marca",
    "texto": "Ver la serie",
-   "radio": "14px",
+   "radio": "var(--ds-radius-button)",
    "estados": [
     {
      "estado": "Default",
-     "bg": "#FFFFFF",
-     "fg": "#005471",
-     "borde": "1.5px solid #00698C",
+     "bg": "var(--ds-color-bg-surface)",
+     "fg": "var(--ds-color-brand-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-brand-primary)",
      "outline": "none",
-     "token": "fondo blanco"
+     "token": "color.bg.surface"
     },
     {
      "estado": "Hover",
-     "bg": "#EFF9FD",
-     "fg": "#005471",
-     "borde": "1.5px solid #00698C",
+     "bg": "var(--ds-color-action-secondary-hover)",
+     "fg": "var(--ds-color-brand-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-brand-primary)",
      "outline": "none",
-     "token": "brand.50"
+     "token": "color.action.secondary.hover"
     },
     {
      "estado": "Pressed",
-     "bg": "#DAF3FE",
-     "fg": "#005471",
-     "borde": "1.5px solid #00698C",
+     "bg": "var(--ds-color-action-secondary-pressed)",
+     "fg": "var(--ds-color-brand-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-brand-primary)",
      "outline": "none",
-     "token": "brand.100"
+     "token": "color.action.secondary.pressed"
     },
     {
      "estado": "Focus",
-     "bg": "#FFFFFF",
-     "fg": "#005471",
-     "borde": "1.5px solid #00698C",
-     "outline": "2px solid #00698C",
-     "token": "+ ring"
+     "bg": "var(--ds-color-bg-surface)",
+     "fg": "var(--ds-color-brand-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-brand-primary)",
+     "outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)",
+     "token": "+ color.focus.ring"
     },
     {
      "estado": "Disabled",
-     "bg": "#FFFFFF",
-     "fg": "#5D747E",
-     "borde": "1.5px solid #DCE9EE",
+     "bg": "var(--ds-color-bg-surface)",
+     "fg": "var(--ds-color-disabled-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-disabled-bg)",
      "outline": "none",
-     "token": "borde neutral.150"
+     "token": "borde color.disabled.bg"
     }
    ],
-   "alto": "44px",
-   "pad": "8px 12px",
-   "alinear": "stretch"
-  },
-  {
-   "nombre": "Tarjeta / fila",
-   "texto": "Gemelo derecho · 01",
-   "radio": "16px",
-   "estados": [
-    {
-     "estado": "Default",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
-     "borde": "1px solid #DCE9EE",
-     "outline": "none",
-     "token": "surface"
-    },
-    {
-     "estado": "Hover",
-     "bg": "#F4FAFD",
-     "fg": "#132E38",
-     "borde": "1px solid #DCE9EE",
-     "outline": "none",
-     "token": "neutral.25"
-    },
-    {
-     "estado": "Pressed",
-     "bg": "#EAF2F6",
-     "fg": "#132E38",
-     "borde": "1px solid #DCE9EE",
-     "outline": "none",
-     "token": "neutral.100"
-    },
-    {
-     "estado": "Focus",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
-     "borde": "1px solid #DCE9EE",
-     "outline": "2px solid #00698C",
-     "token": "+ ring"
-    },
-    {
-     "estado": "Archived",
-     "bg": "#FFFFFF",
-     "fg": "#5D747E",
-     "borde": "1px solid #DCE9EE",
-     "outline": "none",
-     "token": "sin sombra"
-    }
-   ],
-   "alto": "44px",
-   "pad": "8px 12px",
-   "alinear": "stretch"
+   "alto": "var(--ds-size-control-sm)",
+   "pad": "var(--ds-space-2) var(--ds-space-3)",
+   "alinear": "stretch",
+   "font": "var(--ds-type-ui)",
+   "tracking": "var(--ds-type-ui-tracking)",
+   "caps": "uppercase"
   },
   {
    "nombre": "Opción",
    "texto": "Brazo",
-   "radio": "14px",
+   "radio": "var(--ds-radius-button)",
    "estados": [
     {
      "estado": "Default",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
-     "borde": "1px solid #7B9099",
+     "bg": "var(--ds-color-bg-surface)",
+     "fg": "var(--ds-color-text-primary)",
+     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control)",
      "outline": "none",
-     "token": "border.control"
+     "token": "color.border.control"
     },
     {
      "estado": "Hover",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
-     "borde": "1px solid #6D8690",
+     "bg": "var(--ds-color-bg-surface)",
+     "fg": "var(--ds-color-text-primary)",
+     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control-hover)",
      "outline": "none",
-     "token": "neutral.500"
+     "token": "color.border.control.hover"
     },
     {
      "estado": "Pressed",
-     "bg": "#EAF2F6",
-     "fg": "#132E38",
-     "borde": "1px solid #6D8690",
+     "bg": "var(--ds-color-surface-pressed)",
+     "fg": "var(--ds-color-text-primary)",
+     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control-hover)",
      "outline": "none",
-     "token": "neutral.100"
+     "token": "color.surface.pressed"
     },
     {
      "estado": "Selected",
-     "bg": "#DAF3FE",
-     "fg": "#005471",
-     "borde": "2px solid #00698C",
+     "bg": "var(--ds-color-selection-bg)",
+     "fg": "var(--ds-color-selection-text)",
+     "borde": "var(--ds-border-width-thick) solid var(--ds-color-selection-border)",
      "outline": "none",
-     "token": "selection.*"
+     "token": "color.selection.*"
     },
     {
      "estado": "Focus",
-     "bg": "#FFFFFF",
-     "fg": "#132E38",
-     "borde": "1px solid #7B9099",
-     "outline": "2px solid #00698C",
-     "token": "+ ring"
+     "bg": "var(--ds-color-bg-surface)",
+     "fg": "var(--ds-color-text-primary)",
+     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control)",
+     "outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)",
+     "token": "+ color.focus.ring"
     }
    ],
-   "alto": "44px",
-   "pad": "8px 12px",
-   "alinear": "stretch"
+   "alto": "var(--ds-size-control-sm)",
+   "pad": "var(--ds-space-2) var(--ds-space-3)",
+   "alinear": "stretch",
+   "font": "var(--ds-type-ui)",
+   "tracking": "var(--ds-type-ui-tracking)",
+   "caps": "uppercase"
   },
   {
    "nombre": "Enlace",
    "texto": "Ver el análisis ›",
-   "radio": "2px",
+   "radio": "var(--ds-radius-xs)",
    "estados": [
     {
      "estado": "Default",
      "bg": "transparent",
-     "fg": "#005471",
-     "borde": "1px solid transparent",
+     "fg": "var(--ds-color-link-default)",
+     "borde": "var(--ds-border-width-thin) solid transparent",
      "outline": "none",
-     "token": "brand.700"
+     "token": "color.link.default"
     },
     {
      "estado": "Hover",
      "bg": "transparent",
-     "fg": "#00485F",
-     "borde": "1px solid transparent",
+     "fg": "var(--ds-color-link-hover)",
+     "borde": "var(--ds-border-width-thin) solid transparent",
      "outline": "none",
-     "token": "brand.800 + subrayado"
+     "token": "color.link.hover + subrayado"
     },
     {
      "estado": "Pressed",
      "bg": "transparent",
-     "fg": "#003142",
-     "borde": "1px solid transparent",
+     "fg": "var(--ds-color-link-pressed)",
+     "borde": "var(--ds-border-width-thin) solid transparent",
      "outline": "none",
-     "token": "brand.900"
+     "token": "color.link.pressed"
     },
     {
      "estado": "Focus",
      "bg": "transparent",
-     "fg": "#005471",
-     "borde": "1px solid transparent",
-     "outline": "2px solid #00698C",
-     "token": "+ ring"
+     "fg": "var(--ds-color-link-default)",
+     "borde": "var(--ds-border-width-thin) solid transparent",
+     "outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)",
+     "token": "+ color.focus.ring"
     },
     {
      "estado": "Visited",
      "bg": "transparent",
-     "fg": "#005471",
-     "borde": "1px solid transparent",
+     "fg": "var(--ds-color-link-default)",
+     "borde": "var(--ds-border-width-thin) solid transparent",
      "outline": "none",
      "token": "sin cambio"
     }
    ],
    "alto": "0",
-   "pad": "0 6px",
-   "alinear": "flex-start"
+   "pad": "0 var(--ds-space-1)",
+   "alinear": "flex-start",
+   "font": "var(--ds-type-ui)",
+   "tracking": "var(--ds-type-ui-tracking)",
+   "caps": "uppercase"
+  },
+  {
+   "nombre": "Enlace externo",
+   "texto": "Web AEDV",
+   "externo": true,
+   "radio": "var(--ds-radius-xs)",
+   "estados": [
+    {"estado": "Default","bg": "transparent","fg": "var(--ds-color-link-default)","borde": "var(--ds-border-width-thin) solid transparent","outline": "none","token": "color.link.default + open_in_new"},
+    {"estado": "Hover","bg": "transparent","fg": "var(--ds-color-link-hover)","borde": "var(--ds-border-width-thin) solid transparent","outline": "none","token": "color.link.hover + subrayado"},
+    {"estado": "Pressed","bg": "transparent","fg": "var(--ds-color-link-pressed)","borde": "var(--ds-border-width-thin) solid transparent","outline": "none","token": "color.link.pressed"},
+    {"estado": "Focus","bg": "transparent","fg": "var(--ds-color-link-default)","borde": "var(--ds-border-width-thin) solid transparent","outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)","token": "+ color.focus.ring"},
+    {"estado": "Visited","bg": "transparent","fg": "var(--ds-color-link-default)","borde": "var(--ds-border-width-thin) solid transparent","outline": "none","token": "sin cambio"}
+   ],
+   "alto": "0",
+   "pad": "0 var(--ds-space-1)",
+   "alinear": "flex-start",
+   "font": "var(--ds-type-ui)",
+   "tracking": "var(--ds-type-ui-tracking)",
+   "caps": "uppercase"
   }
+ ],
+ "superficieEstados": [
+  {"estado": "Default","bg": "var(--ds-color-bg-surface)","outline": "none","token": "color.bg.surface"},
+  {"estado": "Hover","bg": "var(--ds-color-surface-hover)","outline": "none","token": "color.surface.hover"},
+  {"estado": "Pressed","bg": "var(--ds-color-surface-pressed)","outline": "none","token": "color.surface.pressed"},
+  {"estado": "Focus","bg": "var(--ds-color-bg-surface)","outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)","token": "+ color.focus.ring"}
  ]
 };
   }

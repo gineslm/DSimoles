@@ -10,11 +10,19 @@
     "notes": "Triaje de secciones del 2026-10-10: solo están abiertas las que se usan; el resto son Not applicable por ahora y se reabren según lo requiera el proyecto.",
     "tasks": [
       {
+        "text": "Al cerrar los fundamentos visuales, ajustar el prototipo de iMoles con las tablas «Valores fuera de escala en el prototipo» de cada sección de visuals.",
+        "when": "future"
+      },
+      {
         "text": "Desvincular el design system de Ginés López de los ajustes del proyecto de Claude Design",
         "when": "pending"
       },
       {
         "text": "Confirmar las aprobaciones del owner registradas en las notes de visuals.color: valores de interacción y nombres de tokens en inglés (2026-10-10)",
+        "when": "pending"
+      },
+      {
+        "text": "Integración: components/ es una carpeta nueva en la raíz (decisión del owner del 2026-10-13). Las páginas de sections/components la cargan con rutas relativas; revisar el contrato de datos y npm run check.",
         "when": "pending"
       }
     ]
@@ -186,7 +194,7 @@
       "status": "I",
       "page": "",
       "owner": "Gines Lopez",
-      "notes": "Paleta fijada por el owner el 2026-10-09, derivada de los prototipos HF de iMoles: matiz de marca 225° (brand.600 #00698C), neutros en el matiz de marca, carmesí #DB2149 (riesgo alto), ámbar #8D6F00 (intermedio), verde azulado claro #168072 (bajo), ciruela #6C2768 (no evaluable); se eliminan coral, verde y violeta. Los cuatro niveles usan un relleno sólido con texto blanco y un tinte con texto oscuro de su familia. Contraste validado frente a WCAG 2.2 (todas las parejas listadas pasan). Las diferencias de visión del color se registran como ΔE OKLab en visión normal, deuteranopía, protanopía, tritanopía y acromatopsia; por decisión del owner, las parejas por debajo de 8 se cubren con la forma del badge y el texto (WCAG 1.4.1). Valores de interacción aprobados por el owner el 2026-10-10 (hover paso 650, pressed 700, superficies neutral.25/100, focus ring brand.600, disabled neutral.150/600, scrim neutral.950 al 48%). Formato de tokens para la futura implementación del DS, fuera de este repo: W3C DTCG. Nombres de tokens en inglés, confirmados por el owner el 2026-10-10. Las correcciones que el prototipo de iMoles necesita para adoptar esta paleta están listadas en la página y se mantienen como tasks en implementation.publishing-and-migration; son trabajo de iMoles, no de esta sección. Se queda en I: no hay review registrada. El 2026-10-10, por decisión del owner, se movió el contenido ajeno al alcance de la sección: contraste y visión del color a visuals.accessibility; valores de interacción a interaction.interaction-states; anillo de focus a interaction.focus-management; scrim a visuals.opacity; diagrama de tokens a tokens.token-layers; formato de tokens a tokens.design-code-mapping; correcciones de iMoles a implementation.publishing-and-migration.",
+      "notes": "Paleta fijada por el owner el 2026-10-09, derivada de los prototipos HF de iMoles: matiz de marca 225° (brand.600 #00698C), neutros en el matiz de marca, carmesí #DB2149 (riesgo alto), ámbar #8D6F00 (intermedio), verde azulado claro #168072 (bajo), ciruela #6C2768 (no evaluable); se eliminan coral, verde y violeta. Los cuatro niveles usan un relleno sólido con texto blanco y un tinte con texto oscuro de su familia. Contraste validado frente a WCAG 2.2 (todas las parejas listadas pasan). Las diferencias de visión del color se registran como ΔE OKLab en visión normal, deuteranopía, protanopía, tritanopía y acromatopsia; por decisión del owner, las parejas por debajo de 8 se cubren con la forma del badge y el texto (WCAG 1.4.1). Valores de interacción aprobados por el owner el 2026-10-10 (hover paso 650, pressed 700, superficies neutral.25/100, focus ring brand.600, disabled neutral.150/600, scrim neutral.950 al 48%). Formato de tokens para la futura implementación del DS, fuera de este repo: W3C DTCG. Nombres de tokens en inglés, confirmados por el owner el 2026-10-10. Las correcciones que el prototipo de iMoles necesita para adoptar esta paleta están listadas en la página y se mantienen como tasks en implementation.publishing-and-migration; son trabajo de iMoles, no de esta sección. Ready el 2026-10-14 por decisión del owner. El 2026-10-10, por decisión del owner, se movió el contenido ajeno al alcance de la sección: contraste y visión del color a visuals.accessibility; valores de interacción a interaction.interaction-states; anillo de focus a interaction.focus-management; scrim a visuals.opacity; diagrama de tokens a tokens.token-layers; formato de tokens a tokens.design-code-mapping; correcciones de iMoles a implementation.publishing-and-migration. 2026-10-13: los tokens se definen en assets/visuals/tokens.css (--ds-*) y las páginas los referencian; los nombres llevan prefijo de categoría (color.*). border.strong pasa a color.border.emphasis; border.focus se elimina (campo con focus: color.focus.ring; opción seleccionada: color.selection.border). Nuevo color.link.default (brand.700). 2026-10-13 (2): propuesta de Claude Design, pendiente del owner: los cuatro colores de nivel pasan a ser colores de estado del ecosistema, color.status.{error, warning, success, unknown}.{fill, text, tint, body}, más status.info.{tint, text}; color.risk.* y color.not-assessable.* quedan como alias de producto de iMoles. status.*.bg/label pasan a tint/text. 2026-10-14 (alturas/radios/hover, decisión del owner): hover y pressed secondary y de superficie pasan a capa translúcida de brand.600. Reabierta: cambió el contenido tras la review; necesita review nueva.",
       "tasks": [
         {
           "text": "Probar la paleta en dispositivo",
@@ -198,35 +206,53 @@
         }
       ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página 1.1 Color y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
     "visuals.typography": {
       "status": "I",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner. Escala reducida a 8 estilos: body-lg unificado en body, ui-sm en tag (12 px), caption y small a 400.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner. Escala reducida a 7 estilos (8 hasta la unificación de type.tag, 2026-10-14): body-lg unificado en body, ui-sm en tag (12 px), caption y small a 400. 2026-10-13: estilos renombrados a type.* para no chocar con color.text.*. Fuentes alojadas en assets/visuals/typography/fonts/ (Roboto 300/400/500, Roboto Condensed 700, Material Symbols Rounded 400, subconjunto latin) y cargadas desde tokens.css. 2026-10-13 (2): Material Symbols Rounded se usa en 16 archivos del prototipo con 11 iconos (16, 18, 20, 24 y 26 px); Roboto no tiene glifos de icono y no puede sustituirla. Se aloja un subconjunto de 4 KB con esos 11 iconos. Añadidos los bloques Encabezados (h1 type.title, h2 type.result, h3 type.label; h4–h6 sin uso) y Composición, como propuesta. 2026-10-14: type.tag se unifica en type.ui por decisión del owner (solo cambiaba el espaciado, 0,08em frente a 0,05em). type.ui pasa a 700 12/1.35 porque todos los usos de type.tag ya sobrescribían el interlineado a 1.35. type.tag y type.tag-tracking quedan como alias obsoletos de type.ui hasta la siguiente versión mayor. Migrados BackLink, SummaryCard, InlineAlert, OptionsMenu, StatusChip, FilterChips, SegmentedControl y RiskBadge. 2026-10-14: interlineado de type.body de 1.5 (24 px) a 1.375 (22 px) a petición del owner, por excesivo en párrafos. WCAG 1.4.12 exige que el texto admita 1.5 si la persona lo impone, no que sea el valor por defecto. 1.375 se fija como interlineado estándar de párrafo, también para type.caption (antes 1.45) y type.small (antes 1.4), a petición del owner. Los estilos de titular y etiqueta conservan el suyo. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (2): por decisión del owner, type.body, type.caption y type.small pasan de 1.375 a 1.2, en bloque y en lista. Regla: en una lista el espacio entre elementos (space.2 en DescriptionList) es siempre mayor que el interlineado. Añadido el bloque «Interlineado en bloque y en lista». Accesibilidad: con 1.2 se cumple 1.4.12 (AA) siempre que los componentes no recorten texto; no se cumple 1.4.8 (AAA) en texto en bloque. 2026-10-14 (alturas/radios/hover, decisión del owner): type.ui 12/16; iconos 16 · 20 · 24; muestra de botón a 44. Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [
+        {
+          "text": "Confirmar las licencias de las fuentes alojadas (Material Symbols se publica con Apache 2.0) y registrarlas en resources.libraries-and-licenses",
+          "when": "pending"
+        },
+        {
+          "text": "Definir la correspondencia con Dynamic Type de iOS y la escala de fuente de Android, y el formato de salida de los tokens.",
+          "when": "pending"
+        },
+        {
+          "text": "Decidir si el DS ofrece un interlineado de bloque de 1.5 (p. ej. type.leading.relaxed) para los productos que exijan WCAG 1.4.8 (AAA).",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
     "visuals.spacing": {
       "status": "I",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner. 2026-10-13: space.0-5 pasa a space.half. Escala y espaciado semántico en tokens.css. 2026-10-13 (2): la escala de 4 px se mantiene; los usos anotados vienen de las pantallas de iMoles (imoles-tokens.css). 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): muestra de botón a 44 (lg retirado). Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [
+        {
+          "text": "Comprobar la densidad a 360 × 640 y decidir si el padding lateral de pantalla baja a 16 px a 320.",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
@@ -234,7 +260,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner. 2026-10-13: 2.5.5 se presenta como objetivo de diseño, no como cumplido. Tamaños en tokens.css. 2026-10-13 (2): propuesta: size.target.min separado del tamaño visible; 44 en iMoles, hasta 24 en el ecosistema para productos con puntero. Controles con botón sm, botón solo-icono e icono suelto con su área táctil. Registrados los valores fuera de escala del prototipo. 2026-10-14: por decisión del owner, los tokens siguen la escala validada en 7.1, con nivel de cobertura por tamaño: size.control lg 52 · md 44 (antes 48) · sm 36 (antes 44) · xs 28 (nuevo); size.icon-button 2xs 20 · xs 24 · sm 32 · md 40 · lg 44 · xl 48, por defecto md (antes 36); size.icon.xs 16 (nuevo); size.target.min-aa 24 y -aaa 44, con size.target.min = aaa como perfil de iMoles. Button lleva etiqueta, padding e icono por tamaño (component.button.label-lg/md/sm/xs). ListRow pasa su botón a md para mantener 44. 2026-10-14 (2): propuesta en validación (pruebas/propuesta-alturas.dc.html), pendiente de aplicar a tokens: alturas 28 · 36 · 44 · 48 · 52 (excepción 24 para no interactivos y enlaces); iconos 16 · 20 · 24 en paralelo a los controles; IconButton solo 28 (icono 16) · 36 (20) · 48 (24), sin 32 ni 44; RiskBadge md 28 · sm 24 · inline; radio botón = campo = 10 y card 16; AAA con tamaños bajo 44 mediante área ampliada y separación de 44 − medida visible por eje. 2026-10-14 (3): por decisión del owner, Button lg (52) sale del DS: la diferencia con 44 es demasiado pequeña. md (44) es el tamaño de la acción principal: AAA y mismo alto que los campos. Escala de alturas propuesta: 28 · 36 · 44 · 48. 2026-10-14 (4): por decisión del owner, el área táctil ampliada sale del DS base (técnicamente problemática); queda como nota. AAA = 44 visibles o más. 2026-10-14 (5): formularios: se mantiene 44 para campos, opciones y botón; descartado 36. Propuesta cerrada por el owner, lista para aplicar. 2026-10-14 (alturas/radios/hover, decisión del owner): Escala de alturas 28 · 36 · 44, IconButton 28 · 36 · 44, iconos 16 · 20 · 24, Pager 44 en iMoles, área ampliada fuera del DS base. 2026-10-14 (6): por decisión del owner iMoles baja a AA: size.target.min = 24, sin área ampliada; Pager vuelve a 28 (icono 16). El área ampliada se documenta como ejemplo para productos AAA en 7.22.",
       "tasks": [],
       "review": {
         "by": "",
@@ -247,7 +273,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. Página visual construida el 2026-10-10 con los valores decididos; pendiente de revisión del owner. 2026-10-13: grosores renombrados a border.width.thin/thick; colores de borde con prefijo color.border.*. La regla de radio anidado se queda solo en visuals.shape. 2026-10-13 (2): por decisión de la persona responsable, nuevo border.width.heavy (4) para el acento lateral de la Card Resumen; el acento lateral pasa a ser correcto si lleva etiqueta. Registrados los valores fuera de escala (1.5 y 3 px). 2026-10-14: las muestras de «En uso» tenían un alto fijo de 72 px escrito en la propia página, sin relación con los tokens ni con los componentes. Pasan a los valores reales: campo y opción con size.control.md (48) y padding space.3/space.4 como TextField; tarjeta con el padding de tarjeta.",
       "tasks": [],
       "review": {
         "by": "",
@@ -260,7 +286,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Borrador: radios observados en imoles-tokens.css y una propuesta de escala, sin decidir. Se queda en I.",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Borrador: radios observados en imoles-tokens.css y una propuesta de escala, sin decidir. Se queda en I. 2026-10-13: por decisión de la persona responsable, 18 px se unifica en radius.lg (16); 12 px pasa a radius.md. Escala xs 2 · sm 4 · md 14 · lg 16 · pill 999 en tokens.css. 2026-10-13 (2): registrados los valores fuera de escala del prototipo. 2026-10-14: por decisión del owner se quita del DS la referencia al radio 18 del prototipo (--imoles-radius-note → radius.lg); queda en el documento de discrepancias. 2026-10-14: prueba por decisión del owner: radius.lg toma el valor de radius.md (un único radio de 14) para ver cómo afecta al DS. 2026-10-14 (2): descartado el radio único (el botón xs se confundía con un chip). Por decisión del owner (prueba E en pruebas/radios.dc.html): escala xs 2 · sm 4 · md 6 · lg 10 · xl 14 · pill; semánticos por rol radius.button (6), radius.field (10) y radius.card (14). Reglas: acción < entrada < contenedor; anidados = exterior − padding, mínimo 4. Componentes migrados a los semánticos: Button y BottomNav (button); TextField y ChoiceList (field); InlineAlert, Disclosure, CaptureRow, ListRow, ActionCard, FollowUpCard y OptionsMenu (card). 2026-10-14 (alturas/radios/hover, decisión del owner): radius.button = radius.field (10), radius.card 16, filas agrupadas sin radio propio.",
       "tasks": [],
       "review": {
         "by": "",
@@ -270,28 +296,38 @@
       "exclusionReason": ""
     },
     "visuals.elevation": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Borrador: sombras observadas en imoles-tokens.css y una propuesta de tres niveles, sin decidir. Se queda en I.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Borrador: sombras observadas en imoles-tokens.css y una propuesta de tres niveles, sin decidir. Se queda en I. 2026-10-13: por decisión de la persona responsable, la tinta de las sombras pasa a color.neutral.950: elevation.interactive y elevation.interactive-solid en tokens.css. elevation.overlay sigue sin decidir. 2026-10-13 (2): registrados los valores fuera de escala del prototipo. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [
+        {
+          "text": "Decidir el nivel y el valor de elevation.overlay (menú de opciones).",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
     "visuals.opacity": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Scrim neutral.950 al 48% aprobado por el owner el 2026-10-10. Página de borrador. Se queda en I.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Scrim neutral.950 al 48% aprobado por el owner el 2026-10-10. Página de borrador. Se queda en I. 2026-10-13: opacity.scrim (0.48) en tokens.css; color.scrim.modal se compone a partir de él. 2026-10-13 (2): registrados los valores fuera de escala del prototipo (.14 y capas blancas sobre foto). 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [
+        {
+          "text": "Decidir si las capas sobre imágenes (revisión de fotos, detalle de captura) necesitan un segundo valor de opacidad.",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
@@ -312,7 +348,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Iniciada el 2026-10-10 con las comprobaciones de contraste y de visión del color separadas de visuals.color. Faltan por cubrir tipografía, objetivos táctiles y espaciado del texto. Se queda en I: no hay review registrada.",
+      "notes": "Iniciada el 2026-10-10 con las comprobaciones de contraste y de visión del color separadas de visuals.color. Se queda en I: no hay review registrada. 2026-10-13: contrastes y ΔE se calculan en la página a partir de tokens.css. Añadido el bloque de tipografía, objetivos táctiles y espaciado con enlaces a sus secciones, como objetivos de diseño sin comprobar en dispositivo. 2026-10-14: añadida la nota de nivel de accesibilidad por producto. 2026-10-14 (alturas/radios/hover, decisión del owner): 2.5.5 sobre tamaño visible; hover/pressed como capa translúcida y su contraste.",
       "tasks": [
         {
           "text": "Comprobar la distinción de color con usuarios o con una herramienta de simulación de visión del color en dispositivo",
@@ -327,56 +363,71 @@
       "exclusionReason": ""
     },
     "tokens.token-layers": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Iniciada el 2026-10-10 con el diagrama primitivo → semántico → componente separado de visuals.color. Otras categorías pendientes. Se queda en I.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "2026-10-14: decisiones del owner: los primitivos nunca se usan en componentes ni en apps (se publican en CSS y lo impiden el lint y la review); los tokens de componente pueden apuntar a semánticos o a primitivos; los semánticos se declaran a continuación de los primitivos y solo cuando se usan, salvo las familias base (texto, fondos y superficies, bordes, acción primaria y estados, foco, feedback, deshabilitado). La capa semántica de producto (risk) está observada en iMoles. Corregido IconButton, que usaba neutral-0 en su CSS. Sin review: se queda en I. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [
+        {
+          "text": "Revisar los ejemplos de componente de las páginas de visuals e interaction.focus-management que usan primitivos y pasarlos a semánticos (las muestras de escala pueden seguir usándolos).",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
     "tokens.naming-and-aliases": {
+      "status": "R",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. 2026-10-14: añadidos los tokens de componente (component.{componente}.{propiedad}, propuesta), los mixins y las clases utilitarias. Decidido por el owner: clases con nombre corto por familia. Los prefijos concretos (t-, text-, bg-, p-, gap-, r-, e-, stack/row/grid) y el nombre de los mixins son propuestas. Riesgo de colisión sin prefijo ds- documentado. Sin review: se queda en I. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "tokens.token-lifecycle": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Reabierta desde Not applicable el 2026-10-14 a petición del owner para documentar el alta de tokens por demanda. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Estados propuesto, activo, obsoleto y retirado; orden de creación o reutilización; promoción de token de componente a semántico. Las reglas de estados y retirada son propuestas. Primer caso aplicado el 2026-10-14: type.tag y type.tag-tracking pasan a obsoletos, como alias de type.ui. Sin review: se queda en I. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): nuevos obsoletos: size.control.lg, size.icon-button.2xs/sm/xl/target, size.icon.sm, component.button.label-lg. Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [
+        {
+          "text": "Comprobar en la app de iMoles los usos de color.brand.expressive y color.brand.expressive-light (0 en la librería y en las páginas) antes de marcarlos obsoletos.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "tokens.simple-and-composite-values": {
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
-      "tasks": [],
+      "notes": "Reabierta desde Not applicable el 2026-10-14 a petición del owner para establecer los mixins. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Valores simples, compuestos (type.*, elevation.*) y mixins Sass, decididos por el owner. Lista de mixins propuesta por Claude Design: tipografía (t-*), color de texto (text-*), fondos (bg-*), radio (r-*), elevación (e-*), focus-ring (solo librería), espaciado (p-, px-, py-, mt-, mb-, gap-) y layout (stack, row, grid). Sin review: se queda en I.",
+      "tasks": [
+        {
+          "text": "Revisar la lista de mixins y sus clases con el owner y confirmar los que entran en la primera versión de la librería.",
+          "when": "pending"
+        }
+      ],
       "review": {
         "by": "",
         "date": "",
         "evidence": ""
       },
       "exclusionReason": ""
-    },
-    "tokens.token-lifecycle": {
-      "status": "N",
-      "page": "",
-      "owner": "",
-      "notes": "",
-      "tasks": [],
-      "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
-      },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
-    },
-    "tokens.simple-and-composite-values": {
-      "status": "N",
-      "page": "",
-      "owner": "",
-      "notes": "",
-      "tasks": [],
-      "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
-      },
-      "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "tokens.light-theme": {
       "status": "N",
@@ -434,8 +485,13 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Formato de tokens W3C DTCG decidido por el owner (movido desde visuals.color). La fila de nomenclatura CSS es una propuesta. Se queda en I.",
-      "tasks": [],
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Formato de tokens W3C DTCG decidido por el owner (movido desde visuals.color). 2026-10-14: estrategia de aplicación decidida por el owner: mixins Sass en el CSS de los componentes de la librería (dentro de la app o en un paquete externo), clases utilitarias derivadas de los mixins para los templates de las apps, sin clases utilitarias sobre componentes de la librería. Corregido el $value del ejemplo DTCG (#00698C). Sin review: se queda en I.",
+      "tasks": [
+        {
+          "text": "Decidir la herramienta de generación desde el JSON DTCG y las plataformas de destino además de web.",
+          "when": "future"
+        }
+      ],
       "review": {
         "by": "",
         "date": "",
@@ -486,7 +542,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. 2026-10-14: añadidos los tokens de componente (component.{componente}.{propiedad}, propuesta), los mixins y las clases utilitarias. Decidido por el owner: clases con nombre corto por familia. Los prefijos concretos (t-, text-, bg-, p-, gap-, r-, e-, stack/row/grid) y el nombre de los mixins son propuestas. Riesgo de colisión sin prefijo ds- documentado. Sin review: se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
@@ -603,7 +659,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. 2026-10-14: añadidos los tokens de componente (component.{componente}.{propiedad}, propuesta), los mixins y las clases utilitarias. Decidido por el owner: clases con nombre corto por familia. Los prefijos concretos (t-, text-, bg-, p-, gap-, r-, e-, stack/row/grid) y el nombre de los mixins son propuestas. Riesgo de colisión sin prefijo ds- documentado. Sin review: se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
@@ -626,15 +682,15 @@
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
     "layout.breakpoints": {
-      "status": "I",
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "owner": "Gines Lopez",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. 2026-10-14: añadidos los tokens de componente (component.{componente}.{propiedad}, propuesta), los mixins y las clases utilitarias. Decidido por el owner: clases con nombre corto por familia. Los prefijos concretos (t-, text-, bg-, p-, gap-, r-, e-, stack/row/grid) y el nombre de los mixins son propuestas. Riesgo de colisión sin prefijo ds- documentado. Sin review: se queda en I. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
       "tasks": [],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
@@ -850,10 +906,18 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Contiene los valores de interacción por elemento aprobados por el owner el 2026-10-10 (hover 650, pressed 700, superficies neutral.25/100, disabled neutral.150/600). Se queda en I: no hay review registrada.",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Contiene los valores de interacción por elemento aprobados por el owner el 2026-10-10 (hover 650, pressed 700, superficies neutral.25/100, disabled neutral.150/600). Se queda en I: no hay review registrada. 2026-10-14 (alturas/radios/hover, decisión del owner): hover/pressed como capa translúcida.",
       "tasks": [
         {
           "text": "Validar en dispositivo la diferencia entre los estados de interacción default y pressed",
+          "when": "pending"
+        },
+        {
+          "text": "Validar en dispositivo la altura de la etiqueta de BottomNav y del contador de Pager tras pasar type.ui a interlineado 1.35 (antes 1).",
+          "when": "pending"
+        },
+        {
+          "text": "Comprobar que los tokens de estado (hover, pressed, focus, disabled, selección) cubren los 21 componentes de components/ antes de construir la librería con mixins (tokens.simple-and-composite-values).",
           "when": "pending"
         }
       ],
@@ -881,7 +945,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Anillo de focus aprobado por el owner el 2026-10-10 (2 px brand.600, desplazamiento de 2 px). Orden y movimiento del foco sin definir todavía. Se queda en I.",
+      "notes": "Reabierta desde Not applicable el 2026-10-10 por el owner para recibir contenido separado de visuals.color. Motivo de exclusión anterior: Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10). Anillo de focus aprobado por el owner el 2026-10-10 (2 px brand.600, desplazamiento de 2 px). Orden y movimiento del foco sin definir todavía. Se queda en I. 2026-10-14 (alturas/radios/hover, decisión del owner): anillo del IconButton a 44.",
       "tasks": [],
       "review": {
         "by": "",
@@ -955,11 +1019,100 @@
       },
       "exclusionReason": "Fuera de alcance por ahora. Las secciones se abren progresivamente según lo requiera el proyecto (triaje del owner, 2026-10-10)."
     },
-    "components.actions": {
+    "components.button": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Acciones (antes 7.1) al pasar a una subsección por componente. Componente en vivo desde components/Button.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. secondary-brand unificado en secondary con el aspecto de secondary-brand; alert solo para pedir cita presencial. Prueba de escala de tamaños sin el mínimo de 44 px, con etiquetas de cobertura (7.22). Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14: la escala de tamaños pasa a tokens (1.4) y al componente: size xs nuevo; etiqueta, padding e icono por tamaño. 2026-10-14: por decisión del owner se retira el tamaño lg (52); la acción principal usa md (44). Pendiente de aplicar con la propuesta de alturas. 2026-10-14 (alturas/radios/hover, decisión del owner): lg retirado; md es la acción principal; radio 10; iconos xs 16, sm y md 20; tabla de IconButton 44 · 36 · 28. Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [
+        {
+          "text": "Revisar el aspecto de Button secondary tras la unificación y el token component.button.label (14 px).",
+          "when": "pending"
+        },
+        {
+          "text": "Decidir si el apilado de botones se define como patrón de layout o como componente.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.icon-button": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Acciones (antes 7.1) al pasar a una subsección por componente. Componente en vivo desde components/IconButton.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Prueba de tamaños de contenedor de 20 a 48 px sin área ampliada, con etiquetas de cobertura. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): tamaños lg 44 (icono 24, por defecto) · md 36 · xs 28; pressed con capa translúcida. Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.text-link": {
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Separada el 2026-10-14 de Acciones (antes 7.1) al pasar a una subsección por componente. Componente en vivo desde components/TextLink.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): icono size.icon.xs (16).",
+      "tasks": [
+        {
+          "text": "Variante de enlace externo con el icono open_in_new en lugar del chevron: pendiente de que Claude Code regenere el subconjunto de Material Symbols con open_in_new.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "components.text-field": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Entrada y selección (antes 7.2) al pasar a una subsección por componente. Componente en vivo desde components/TextField.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): alto 44 exacto (padding vertical 8, min-height 44).",
+      "tasks": [
+        {
+          "text": "Analizar y probar los paddings del text field (hoy demasiado grandes) y ajustarlos antes de la review.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "components.choice-list": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Entrada y selección (antes 7.2) al pasar a una subsección por componente. Componente en vivo desde components/ChoiceList.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Grupo radio con flechas. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): alto 44 exacto (padding vertical 8).",
+      "tasks": [
+        {
+          "text": "Diseñar checkbox y switch cuando se diseñen los ajustes de avisos y el perfil.",
+          "when": "future"
+        }
+      ],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "components.segmented-control": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Entrada y selección (antes 7.2) al pasar a una subsección por componente. Componente en vivo desde components/SegmentedControl.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: por decisión del owner se quitan «Uso sobre la foto» y la fila Propósito de la ficha: el DS muestra los componentes de forma agnóstica, en sus valores iniciales. 2026-10-14 (alturas/radios/hover, decisión del owner): opción a size.control.xs (28).",
       "tasks": [],
       "review": {
         "by": "",
@@ -968,11 +1121,11 @@
       },
       "exclusionReason": ""
     },
-    "components.input-and-selection": {
+    "components.filter-chips": {
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Separada el 2026-10-14 de Entrada y selección (antes 7.2) al pasar a una subsección por componente. Componente en vivo desde components/FilterChips.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. aria-pressed en vez de tablist. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: por decisión del owner se quita la fila Propósito de la ficha (componente base del ecosistema). 2026-10-14 (alturas/radios/hover, decisión del owner): alto size.control.xs (28).",
       "tasks": [],
       "review": {
         "by": "",
@@ -981,11 +1134,65 @@
       },
       "exclusionReason": ""
     },
-    "components.field-structure": {
+    "components.field": {
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Separada el 2026-10-14 de Estructura de campos (antes 7.3) al pasar a una subsección por componente. Componente en vivo desde components/Field.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Etiqueta Roboto 500 14, opcional, error, ayuda y contador. Valores propuestos; pendiente de la revisión del owner.",
+      "tasks": [
+        {
+          "text": "Validar que el error aparece al intentar avanzar.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "components.fieldset": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Estructura de campos (antes 7.3) al pasar a una subsección por componente. Componente en vivo desde components/Fieldset.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Legend, descripción y error. Valores propuestos; pendiente de la revisión del owner.",
+      "tasks": [
+        {
+          "text": "Decidir si en los pasos del bloque 3 la pregunta es el título de la pantalla (legend-style=\"title\") o va debajo.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "components.icon": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/Icon.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): escala 16 · 20 · 24; 18 retirado. Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [
+        {
+          "text": "Regenerar el subconjunto de Material Symbols Rounded con open_in_new, edit y archive (Claude Code; instrucciones dadas el 2026-10-14).",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.status-chip": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/StatusChip.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): 24 exactos con type.ui 12/16; sin align-self, se centra en la fila.",
       "tasks": [],
       "review": {
         "by": "",
@@ -994,11 +1201,11 @@
       },
       "exclusionReason": ""
     },
-    "components.presentation": {
+    "components.description-list": {
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Separada el 2026-10-14 de Datos (antes 7.8) al pasar a una subsección por componente. Componente en vivo desde components/DescriptionList.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1007,11 +1214,11 @@
       },
       "exclusionReason": ""
     },
-    "components.navigation": {
+    "components.list-row": {
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/ListRow.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): hover/pressed con capa translúcida; pendiente: variante de filas agrupadas en card con cabecera opcional. 2026-10-14: el owner descarta la fila agrupada con botón final de texto (la interacción es el chevron). No se añaden reglas. 2026-10-14 (2): añadido ListGroup en ListRow.js (filas agrupadas en una card, cabecera opcional con acción xs, ul/li) y las variantes a 7.13; imágenes sustituidas por el placeholder de miniatura.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1020,12 +1227,79 @@
       },
       "exclusionReason": ""
     },
-    "components.feedback": {
+    "components.back-link": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Navegación (antes 7.5) al pasar a una subsección por componente. Componente en vivo desde components/BackLink.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): icono size.icon.xs (16). Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [
+        {
+          "text": "Revisar tabs cuando se diseñe el detalle con varias vistas (Comparar).",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.bottom-nav": {
+      "status": "R",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Navegación (antes 7.5) al pasar a una subsección por componente. Componente en vivo desde components/BottomNav.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. BottomNav + BottomNavItem: aria-current y pastilla del activo (propuesta). Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [
+        {
+          "text": "Revisar la pastilla de fondo del ítem activo de BottomNav (señal no cromática propuesta por Claude Design).",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.pager": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Navegación (antes 7.5) al pasar a una subsección por componente. Componente en vivo desde components/Pager.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Anuncia «Paso n de N». Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14: por decisión del owner, el Pager de iMoles pasa a 44 (AAA). Pendiente de aplicar con la propuesta de alturas. 2026-10-14 (alturas/radios/hover, decisión del owner): botones a 44 (AAA) con icono 24 en iMoles. Reabierta: cambió el contenido tras la review; necesita review nueva. 2026-10-14 (2): iMoles pasa a AA; el Pager vuelve a 28 con icono 16.",
+      "tasks": [],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.spinner": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Feedback (antes 7.6) al pasar a una subsección por componente. Componente en vivo desde components/Spinner.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Extrapolado para Button loading. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): anillo de 16 (size.icon.xs). Reabierta: cambió el contenido tras la review; necesita review nueva.",
+      "tasks": [],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.inline-alert": {
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
-      "tasks": [],
+      "notes": "Separada el 2026-10-14 de Feedback (antes 7.6) al pasar a una subsección por componente. Componente en vivo desde components/InlineAlert.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Tipos status.warning, error e info. Valores propuestos; pendiente de la revisión del owner.",
+      "tasks": [
+        {
+          "text": "Decidir cómo se confirma una acción que no cambia de pantalla (toast u otro).",
+          "when": "future"
+        }
+      ],
       "review": {
         "by": "",
         "date": "",
@@ -1033,37 +1307,300 @@
       },
       "exclusionReason": ""
     },
-    "components.disclosure-and-overlays": {
-      "status": "I",
+    "components.process-steps": {
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Feedback (antes 7.6) al pasar a una subsección por componente. Componente en vivo desde components/ProcessSteps.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. ProcessSteps + ProgressBar. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [
+        {
+          "text": "Decidir si el paso actual se anuncia al cambiar (aria-live) o solo al terminar.",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
-    "components.data": {
-      "status": "I",
+    "components.disclosure": {
+      "status": "R",
       "page": "",
-      "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
-      "tasks": [],
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Revelado y superposición (antes 7.7) al pasar a una subsección por componente. Componente en vivo desde components/Disclosure.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. details nativo; tonos brand, neutral y risk-high. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [
+        {
+          "text": "Diseñar el diálogo de confirmación de las acciones destructivas.",
+          "when": "pending"
+        }
+      ],
       "review": {
-        "by": "",
-        "date": "",
-        "evidence": ""
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.options-menu": {
+      "status": "R",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Revelado y superposición (antes 7.7) al pasar a una subsección por componente. Componente en vivo desde components/OptionsMenu.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Patrón menu button con teclado y devolución del foco. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [
+        {
+          "text": "Diseñar el diálogo de confirmación para archivar un seguimiento y eliminar una foto.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
       },
       "exclusionReason": ""
     },
     "components.accessibility": {
       "status": "I",
       "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Desde el 2026-10-14 la accesibilidad de cada componente está en su página; aquí quedan la estrategia de cobertura, las reglas comunes y las pruebas. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): nivel sobre tamaño visible; escala 28 · 36 · 44. Reabierta: cambió el contenido tras la review; necesita review nueva. 2026-10-14: añadido el ejemplo «área ampliada para productos AAA» (componentes que la admiten, seis casos en contexto y regla de separación 44 − medida). iMoles exige AA.",
+      "tasks": [
+        {
+          "text": "Probar los componentes interactivos con VoiceOver, TalkBack, solo teclado, zoom 200 % y prefers-reduced-motion; registrar resultados.",
+          "when": "pending"
+        },
+        {
+          "text": "Comprobar el contraste de los pares de color de StatusChip, RiskBadge e InlineAlert.",
+          "when": "pending"
+        },
+        {
+          "text": "Probar todos los componentes con el espaciado de WCAG 1.4.12 impuesto (interlineado 1.5, párrafos 2×, letras 0,12em, palabras 0,16em). Revisar en especial los que tienen alto fijo, overflow:hidden o nowrap: OptionsMenu, chips, badges, Button, BottomNav y Pager.",
+          "when": "pending"
+        },
+        {
+          "text": "Añadir la etiqueta de cobertura a los tamaños de los demás componentes y a sus páginas (Button e IconButton ya la tienen).",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "components.actions": {
+      "status": "N",
+      "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: Button, IconButton, TextLink, ActionCard (lista, bloque, contexto). secondary-brand unificado en secondary con el aspecto de secondary-brand; alert solo para pedir cita presencial.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "components.input-and-selection": {
+      "status": "N",
+      "page": "",
+      "owner": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: TextField, ChoiceList (grupo radio con flechas), SegmentedControl, FilterChips (aria-pressed en vez de tablist). Sin uso en la HF: checkbox, switch, select, combobox, slider y carga de archivos.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "components.field-structure": {
+      "status": "N",
+      "page": "",
+      "owner": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: Field (etiqueta Roboto 500 14, opcional, error, ayuda, contador) y Fieldset (legend, descripción, error).",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "components.presentation": {
+      "status": "N",
+      "page": "",
+      "owner": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: Icon, RiskBadge, StatusChip, SummaryCard, ListRow, FollowUpCard, AnalysisSummary, FollowUpHeader. Miniaturas normalizadas a size.thumb.lg/sm (64/48). Imágenes de muestra en assets/components/presentation/.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "components.navigation": {
+      "status": "N",
+      "page": "",
+      "owner": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: BackLink, BottomNav + BottomNavItem (aria-current y pastilla del activo, propuesta), Pager (anuncia «Paso n de N»).",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "components.feedback": {
+      "status": "N",
+      "page": "",
+      "owner": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: InlineAlert (status.warning, error, info), ProcessSteps + ProgressBar, Spinner (extrapolado para Button loading).",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "components.disclosure-and-overlays": {
+      "status": "N",
+      "page": "",
+      "owner": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: Disclosure (details nativo, tonos brand, neutral y risk-high) y OptionsMenu (patrón menu button con teclado y devolución del foco).",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "components.data": {
+      "status": "N",
+      "page": "",
+      "owner": "",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner. 2026-10-13: página rehecha por Claude Design con componentes en vivo extraídos de la HF de iMoles (diseno-imoles/1 Base y 2 Entidad) e instanciados desde components/ (un archivo JS por componente, con CSS que solo usa var(--ds-*); tokens de componente propuestos en components/tokens.css). Cada componente muestra variantes, matriz de estados, ficha resumida (propósito, anatomía, estados, accesibilidad, tokens, API) y los cambios respecto a la HF. Se aplican las decisiones del DS (tasks de adopción del prototipo). Pendiente de la revisión del owner. Componentes: DescriptionList (dl, columnas o apilado) y CaptureRow. Captura Detalle y Accion detalle se documentarán como patrones.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": "Sustituida el 2026-10-14 por una subsección por componente en 7 Componentes base y 8 Componentes de producto · iMoles. Sus tasks pasan a esas subsecciones."
+    },
+    "imoles-components.risk-badge": {
+      "status": "I",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/RiskBadge.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): md 28 (padding vertical 6) · sm 24 · inline; sin align-self, se centra en la fila. Reabierta: cambió el componente tras la review; necesita review nueva.",
+      "tasks": [],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "imoles-components.summary-card": {
+      "status": "R",
+      "page": "",
+      "owner": "Gines Lopez",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/SummaryCard.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md.",
+      "tasks": [],
+      "review": {
+        "by": "Gines Lopez (owner)",
+        "date": "2026-10-14",
+        "evidence": "El owner revisa la página y la aprueba como Ready en la sesión de Claude Design del 2026-10-14."
+      },
+      "exclusionReason": ""
+    },
+    "imoles-components.capture-row": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Datos (antes 7.8) al pasar a una subsección por componente. Componente en vivo desde components/CaptureRow.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "imoles-components.follow-up-header": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/FollowUpHeader.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "imoles-components.follow-up-card": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/FollowUpCard.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Miniaturas normalizadas a size.thumb.lg/sm (64/48). Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): radio 16 (radius.card); hover/pressed con capa translúcida.",
+      "tasks": [
+        {
+          "text": "Decidir dónde va la explicación de la primera foto (icono info de FollowUpCard, 2.2b): no puede ser un botón dentro de la tarjeta.",
+          "when": "pending"
+        }
+      ],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "imoles-components.action-card": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Acciones (antes 7.1) al pasar a una subsección por componente. Componente en vivo desde components/ActionCard.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Formatos lista, bloque y contexto; action.alert solo para pedir cita presencial. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: la fecha lleva el día de la semana («Viernes 3 jul 2026») en lugar de «Fecha»; las vencidas mantienen «Límite». 2026-10-14 (alturas/radios/hover, decisión del owner): hover/pressed con capa translúcida; radio 16.",
+      "tasks": [
+        {
+          "text": "Documentar Accion en formato detalle (8.3) como patrón.",
+          "when": "future"
+        }
+      ],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "imoles-components.analysis-summary": {
+      "status": "I",
+      "page": "",
+      "owner": "",
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/AnalysisSummary.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner.",
+      "tasks": [],
+      "review": {
+        "by": "",
+        "date": "",
+        "evidence": ""
+      },
+      "exclusionReason": ""
+    },
+    "imoles-components.accessibility": {
+      "status": "P",
+      "page": "",
+      "owner": "",
+      "notes": "",
       "tasks": [],
       "review": {
         "by": "",
@@ -1076,7 +1613,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. 2026-10-14: añadidos los tokens de componente (component.{componente}.{propiedad}, propuesta), los mixins y las clases utilitarias. Decidido por el owner: clases con nombre corto por familia. Los prefijos concretos (t-, text-, bg-, p-, gap-, r-, e-, stack/row/grid) y el nombre de los mixins son propuestas. Riesgo de colisión sin prefijo ds- documentado. Sin review: se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1206,7 +1743,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. 2026-10-14: añadidos los tokens de componente (component.{componente}.{propiedad}, propuesta), los mixins y las clases utilitarias. Decidido por el owner: clases con nombre corto por familia. Los prefijos concretos (t-, text-, bg-, p-, gap-, r-, e-, stack/row/grid) y el nombre de los mixins son propuestas. Riesgo de colisión sin prefijo ds- documentado. Sin review: se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1232,7 +1769,7 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. Los valores son propuestas (observadas, normalizadas o extrapoladas); ninguna validada por el owner.",
+      "notes": "Página de borrador esquemático creada el 2026-10-10 a partir de la HF, el prototipo y los documentos de producto de iMoles. 2026-10-14: añadidos los tokens de componente (component.{componente}.{propiedad}, propuesta), los mixins y las clases utilitarias. Decidido por el owner: clases con nombre corto por familia. Los prefijos concretos (t-, text-, bg-, p-, gap-, r-, e-, stack/row/grid) y el nombre de los mixins son propuestas. Riesgo de colisión sin prefijo ds- documentado. Sin review: se queda en I.",
       "tasks": [],
       "review": {
         "by": "",
@@ -1583,7 +2120,7 @@
           "when": "pending"
         },
         {
-          "text": "Prototipo iMoles · Tipografía: cuerpo 300 15 → 400 16/1.5; sustituir los tamaños de fuente codificados a mano por tokens de texto; nada por debajo de 12 px.",
+          "text": "Prototipo iMoles · Tipografía: cuerpo 300 15 → 400 16/1.2; sustituir los tamaños de fuente codificados a mano por tokens de texto; nada por debajo de 12 px.",
           "when": "pending"
         },
         {

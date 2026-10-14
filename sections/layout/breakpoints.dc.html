@@ -22,20 +22,40 @@ a:hover{color:#5a5a5a}
 
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Breakpoints</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">Cómo se adapta el diseño de una sola columna a los distintos tamaños de teléfono.</p>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Borrador esquemático · decisiones tomadas por Claude Design, pendientes de revisión del owner. Origen: observado en iMoles, normalizado a partir de valores observados o extrapolado.</p>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Una definición general para cualquier aplicación web del ecosistema y, debajo, su aplicación a cada producto. Hoy solo existe la app mobile iMoles; la definición se ajusta y se amplía según evolucione el ecosistema.</p>
 </header>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Vista propuesta</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Definición general · aplicaciones web</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Cinco rangos según el ancho de la ventana en px CSS, alineados con las clases de tamaño de ventana de Material 3. Cada producto declara qué rangos admite y cómo se comporta en los que no diseña.</p>
+<div role="table" aria-label="Breakpoints generales" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,2fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Rango</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Ancho</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Token (min-width)</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Uso habitual</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-weight:600">Compact</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">0–599</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">—</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">Teléfono en vertical. Una columna, navegación inferior.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-weight:600">Medium</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">600–839</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">breakpoint.medium · 600</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">Tableta vertical, plegable abierto. Una columna ancha o dos paneles.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-weight:600">Expanded</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">840–1199</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">breakpoint.expanded · 840</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">Tableta horizontal, portátil pequeño. Dos paneles, navegación lateral.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-weight:600">Large</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">1200–1599</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">breakpoint.large · 1200</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">Escritorio. Contenido con ancho máximo y márgenes laterales.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-weight:600">Extra-large</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">≥ 1600</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">breakpoint.xlarge · 1600</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">Pantalla grande. El contenido no crece más; aumentan los márgenes.</div></div>
+</div>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>Mobile first: los estilos base son Compact y las media queries usan <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">min-width</span>.</li>
+<li>Reflujo sin scroll horizontal a 320 px CSS y con zoom del 400 % (WCAG 1.4.10).</li>
+<li>El texto corrido no supera 75 caracteres por línea en ningún rango.</li>
+<li>Se cambia de layout cuando el contenido lo pide, no por modelo de dispositivo; los valores de la tabla son los puntos de corte permitidos.</li>
+<li>Cada producto documenta abajo los rangos que diseña y el comportamiento en el resto.</li>
+</ul>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">App mobile · iMoles</h2>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles se diseña solo para Compact. De Medium en adelante mantiene la columna única con ancho máximo y la centra.</p>
+<h3 style="margin:0;font-size:17px;font-weight:600">Vista propuesta</h3>
 <div role="table" aria-label="Vista propuesta" style="font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Bloque</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Muestra</div></div>
 <div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Rango</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Del ancho admitido más pequeño al más grande.</div></div>
 </div>
 </section>
 
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Valores propuestos</h2>
+<h3 style="margin:0;font-size:17px;font-weight:600">Valores propuestos</h3>
 <div role="table" aria-label="Valores propuestos" style="font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Elemento</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Valor</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Origen</div></div>
 <div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Ancho mínimo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">320 (reflujo, WCAG 1.4.10); comprobar a 360, 390 y 430</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Extrapolado</div></div>
@@ -43,12 +63,11 @@ a:hover{color:#5a5a5a}
 <div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Ancho máximo del contenido</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">480, centrado en tabletas</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Extrapolado</div></div>
 <div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Orientación</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Vertical; horizontal solo en la cámara</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Extrapolado</div></div>
 </div>
-</section>
-
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Decisiones</h2>
+<h3 style="margin:0;font-size:17px;font-weight:600">Decisiones</h3>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Sin diseño para tableta en la v1: el contenido se limita a 480 px y se centra.</li><li>Diseñar a 390 × 844; comprobar a 360 (Android habitual) y 430 (iPhone grande); reflujo hasta 320.</li></ul>
 </section>
+
+<p style="margin:0;font-size:14px;color:#3d3d3d;max-width:72ch">Cuando entre otro producto (web de consulta, panel profesional…), se añade aquí su apartado con los rangos que diseña. Si necesita un punto de corte que no está en la definición general, se revisa primero la definición.</p>
 
 </main>
 </x-dc>

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ds-section-id" content="visuals.shape">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <script src="../../assets/_runtime/react.production.min.js"></script>
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -23,29 +24,47 @@ a:hover{color:#5a5a5a}
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Forma</h1>
 <p style="margin:0;max-width:72ch;color:#3d3d3d">Radio de las esquinas según el tipo de elemento.</p>
+<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Radios botón = campo (10) y card (16) decididos por el owner el 2026-10-14 (evidencia: pruebas/propuesta-alturas.dc.html). Pendiente de review.</p>
 </header>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Radios observados en iMoles</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Radios por rol</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px">
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:#EAF2F6;border:1px solid #7B9099;border-radius:2px"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">focus.link · 2px</span><span style="font-size:12px;color:#5a5a5a">Anillo de focus del enlace</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:#EAF2F6;border:1px solid #7B9099;border-radius:4px"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">badge · 4px</span><span style="font-size:12px;color:#5a5a5a">Badge de riesgo</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:#EAF2F6;border:1px solid #7B9099;border-radius:14px"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">--imoles-radius-btn · 14px</span><span style="font-size:12px;color:#5a5a5a">Botones, opciones</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:#EAF2F6;border:1px solid #7B9099;border-radius:16px"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">--imoles-radius-card · 16px</span><span style="font-size:12px;color:#5a5a5a">Tarjetas, filas</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:#EAF2F6;border:1px solid #7B9099;border-radius:18px"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">--imoles-radius-note · 18px</span><span style="font-size:12px;color:#5a5a5a">Paneles de documentación</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:#EAF2F6;border:1px solid #7B9099;border-radius:999px"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">--imoles-radius-pill · 999px</span><span style="font-size:12px;color:#5a5a5a">Chips</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-xs)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.xs · 2</span><span style="font-size:12px;color:#5a5a5a">Anillo de focus del enlace</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-sm)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.sm · 4</span><span style="font-size:12px;color:#5a5a5a">Badge de riesgo</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-button)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.button · 10</span><span style="font-size:12px;color:#5a5a5a">Botones md, sm y xs, tab de navegación</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-field)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.field · 10</span><span style="font-size:12px;color:#5a5a5a">Campo de texto, opción de lista</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-card)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.card · 16</span><span style="font-size:12px;color:#5a5a5a">Tarjetas, grupos de filas, paneles, avisos, menús</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-pill)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.pill · 999</span><span style="font-size:12px;color:#5a5a5a">Chips, filtros, segmentado, botón solo-icono, progreso</span></div>
 </div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">--imoles-radius-phone (36 px) es el marco del dispositivo, no la interfaz.</p>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Propuesta</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Escala</h2>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
-<li>Escala: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">radius.xs 2 · sm 4 · md 14 · lg 16 · pill 999</span>.</li>
-<li>Unificar 18 px en 16 px: dos valores a 2 px de distancia no se distinguen.</li>
-<li>Elementos anidados: radio interior = radio exterior − padding, mínimo 4.</li>
+<li>Escala: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">radius.xs 2 · radius.sm 4 · radius.md 6 · radius.lg 10 · radius.xl 16 · radius.pill 999</span>.</li>
+<li>Por rol, los componentes usan el semántico, no la escala: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">radius.button</span> = <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">radius.field</span> (lg, 10) · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">radius.card</span> (xl, 16). radius.md (6) queda sin uso por rol.</li>
 </ul>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · decisión del owner sobre la escala y sobre unificar 18 en 16.</p>
+<h3 style="margin:0;font-size:16px;font-weight:600">Reglas</h3>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<li>Acciones y entrada de datos comparten radio (10): botones, tab de navegación, campo de texto y opción de lista. Button md y campo miden 44 y se leen como la misma familia de controles. El botón xs (28) con radio 10 sigue siendo un rectángulo frente a la pastilla del filtro o del chip.</li>
+<li>Contenedores (tarjetas, grupos de filas, paneles, avisos, menús, hojas): radius.card.</li>
+<li>Listas: las filas se agrupan en una card con una sola sombra y cabecera opcional; las filas no llevan radio ni sombra propios, solo separador. No se anidan cards con sombra dentro de cards.</li>
+<li>Forma de pastilla (chips, filtros, control segmentado, botón solo-icono, barra de progreso, paginador): radius.pill. Badges: radius.sm. Anillo de focus del enlace: radius.xs.</li>
+<li>El radio crece con el tamaño del elemento: control (10) &lt; contenedor (16). Un elemento nunca tiene más radio que el contenedor que lo envuelve.</li>
+<li>Elementos anidados: radio interior = radio exterior − padding, mínimo radius.sm (4). El anillo de focus interior sigue la misma regla.</li>
+</ul>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Valores fuera de escala en el prototipo</h2>
+<div role="table" aria-label="Correspondencia de valores fuera de escala" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Observado</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Pasa a</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">20 px</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">radius.card (16)</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">24 px 24 px 0 0 · hoja inferior</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">radius.card arriba (16 16 0 0)</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">3 px · barra de progreso</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">radius.sm (4) o radius.pill</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">calc(radius − space.3 / 2) · anidados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">regla de anidado: exterior − padding, mínimo radius.sm</div></div>
+</div>
 </section>
 
 </main>

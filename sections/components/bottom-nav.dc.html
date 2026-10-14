@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="components.bottom-nav">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/BackLink.js"></script>
+<script src="../../components/BottomNav.js"></script>
+<script src="../../components/Pager.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>BottomNav · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="7.15 BottomNav" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">BottomNav</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Navegación principal entre Inicio, Seguimientos y Perfil.</p>
+</header>
+<section aria-label="BottomNav" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/BottomNav.js</span> · HF: 1 Base - Navegacion Inferior + 1 Base - Tab Boton</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Uso</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:390px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.BottomNav" default-active="home" hint-size="100%,64px"></x-import></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Estados</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px"><div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">activo</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.BottomNavItem" icon="home" label="Inicio" active="{{ true }}" hint-size="80px,56px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">inactivo · default</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.BottomNavItem" icon="view_list" label="Seguimientos" hint-size="100px,56px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">inactivo · hover</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.BottomNavItem" icon="view_list" label="Seguimientos" demo-state="hover" hint-size="100px,56px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">inactivo · focus</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.BottomNavItem" icon="view_list" label="Seguimientos" demo-state="focus" hint-size="100px,56px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">activo · focus</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.BottomNavItem" icon="home" label="Inicio" active="{{ true }}" demo-state="focus" hint-size="80px,56px"></x-import></div></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
+<div role="table" aria-label="Ficha de BottomNav" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Definición</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Anatomía</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">nav · lista de tres BottomNavItem (pastilla con icono · etiqueta).</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Ítem: inactivo (default, hover, focus) y activo.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Accesibilidad</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">&lt;nav aria-label="Principal"&gt; con &lt;ul&gt;. El activo lleva aria-current="page" y la pastilla de fondo además del color. Inactivo en text.secondary (4.5:1). Cada ítem ≥ 44 × 44.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Tokens</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">brand.primary / .text / .tint</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.secondary</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">surface.pressed</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.ui</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.icon.lg</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.target.min</span>.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">API</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">BottomNav: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">items</span> ("icono::Etiqueta::id | …") · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">active</span> / <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">default-active</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">on-navigate</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">label</span>. BottomNavItem: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">icon</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">label</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">active</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">href</span>.</div></div>
+</div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<div role="table" aria-label="Accesibilidad de BottomNav" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Implementación</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Semántica</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">nav / ul / a</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Nombre accesible</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">aria-label="Principal"</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Teclado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Tab</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Anillo 2 px · 44 × 44</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">aria-current="page" + pastilla</div></div>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.22 Accesibilidad</a>).</p>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

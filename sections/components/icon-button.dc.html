@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="components.icon-button">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Button.js"></script>
+<script src="../../components/IconButton.js"></script>
+<script src="../../components/TextLink.js"></script>
+<script src="../../components/StatusChip.js"></script>
+<script src="../../components/RiskBadge.js"></script>
+<script src="../../components/DescriptionList.js"></script>
+<script src="../../components/Disclosure.js"></script>
+<script src="../../components/ActionCard.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>IconButton · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="7.2 IconButton" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">IconButton</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Acción secundaria representada solo con un icono, con nombre accesible obligatorio.</p>
+</header>
+<section aria-label="IconButton" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/IconButton.js</span> · HF: menú «more_vert» de 2 Entidad - Cabecera Seguimiento</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Variantes</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:24px"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones del seguimiento" hint-size="44px,44px"></x-import>
+<x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones del seguimiento" expanded="{{ true }}" hint-size="44px,44px"></x-import>
+<x-import component-from-global-scope="DSimoles.IconButton" icon="add" label="Añadir" hint-size="44px,44px"></x-import></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Tamaños</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-surface);padding:24px;display:grid;grid-template-columns:minmax(0,140px) repeat(3,minmax(0,1fr));gap:12px;align-items:center"><span></span><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">default</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">hover</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">pressed</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">lg · 44 · icono 24 · AAA</span><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="lg" icon="view_list" label="Vista de lista" hint-size="44px,44px"></x-import></div><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="lg" icon="view_list" label="Vista de lista" demo-state="hover" hint-size="44px,44px"></x-import></div><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="lg" icon="view_list" label="Vista de lista" demo-state="pressed" hint-size="44px,44px"></x-import></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">md · 36 · icono 20 · AA</span><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="md" icon="view_list" label="Vista de lista" hint-size="36px,36px"></x-import></div><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="md" icon="view_list" label="Vista de lista" demo-state="hover" hint-size="36px,36px"></x-import></div><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="md" icon="view_list" label="Vista de lista" demo-state="pressed" hint-size="36px,36px"></x-import></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">xs · 28 · icono 16 · AA</span><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="xs" icon="view_list" label="Vista de lista" hint-size="28px,28px"></x-import></div><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="xs" icon="view_list" label="Vista de lista" demo-state="hover" hint-size="28px,28px"></x-import></div><div style="display:flex;align-items:center;min-height:48px"><x-import component-from-global-scope="DSimoles.IconButton" size="xs" icon="view_list" label="Vista de lista" demo-state="pressed" hint-size="28px,28px"></x-import></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Sobre fondo oscuro</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-component-on-dark-bg);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones de la foto" tone="on-dark" hint-size="44px,44px"></x-import></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Estados</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px"><div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">default</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones" hint-size="44px,44px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">hover</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones" demo-state="hover" hint-size="44px,44px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">pressed</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones" demo-state="pressed" hint-size="44px,44px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">focus</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones" demo-state="focus" hint-size="44px,44px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">expanded</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones" expanded="{{ true }}" hint-size="44px,44px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">disabled</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.IconButton" icon="more_vert" label="Opciones" disabled="{{ true }}" hint-size="44px,44px"></x-import></div></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
+<div role="table" aria-label="Ficha de IconButton" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Definición</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Anatomía</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Tres tamaños: lg 44 (icono 24, por defecto en iMoles) · md 36 (icono 20) · xs 28 (icono 16). Fondo de pastilla en hover y pressed; el área táctil es el tamaño visible.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">default, hover, pressed, focus, expanded (aria-expanded) y disabled.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Accesibilidad</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">&lt;button&gt; con aria-label obligatorio. Con menú: aria-haspopup="menu" y aria-expanded. lg cumple 2.5.5 (AAA); md y xs, 2.5.8 (AA). iMoles exige AA: puede usar los tres; lg por defecto.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Tokens</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.icon-button.lg / md / xs</span> (44 · 36 · 28), <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.icon.lg / md / xs</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">brand.text</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">action.secondary.hover / .pressed</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">component.on-dark.text</span> (nuevo).</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">API</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">icon</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">label</span> (obligatorio) · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size</span> lg (por defecto) | md | xs · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">expanded</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">haspopup</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">tone</span> default | on-dark · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">on-click</span>.</div></div>
+</div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<div role="table" aria-label="Accesibilidad de IconButton" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Implementación</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Semántica</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">button</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Nombre accesible</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">aria-label</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Teclado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Enter, Espacio</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Anillo 2 px · área = tamaño visible</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">aria-expanded</div></div>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.22 Accesibilidad</a>).</p>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

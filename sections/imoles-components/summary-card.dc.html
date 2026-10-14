@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="imoles-components.summary-card">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Button.js"></script>
+<script src="../../components/StatusChip.js"></script>
+<script src="../../components/RiskBadge.js"></script>
+<script src="../../components/SummaryCard.js"></script>
+<script src="../../components/ListRow.js"></script>
+<script src="../../components/FollowUpCard.js"></script>
+<script src="../../components/DescriptionList.js"></script>
+<script src="../../components/Disclosure.js"></script>
+<script src="../../components/AnalysisSummary.js"></script>
+<script src="../../components/IconButton.js"></script>
+<script src="../../components/OptionsMenu.js"></script>
+<script src="../../components/FollowUpHeader.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>SummaryCard · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.2 SummaryCard" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">SummaryCard</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Resume lo elegido hasta ahora en un flujo de varios pasos.</p>
+<p style="margin:0;font-size:14px;max-width:72ch"><strong style="font-weight:600">Construido con</strong> · tokens y estilos base, sin otros componentes.</p>
+</header>
+<section aria-label="SummaryCard" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/SummaryCard.js</span> · HF: 1 Base - Card Resumen (bloque 3)</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Uso</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.SummaryCard" label="Resumen" value="Brazo" detail="Falta subzona, lado y superficie" hint-size="100%,64px"></x-import>
+<x-import component-from-global-scope="DSimoles.SummaryCard" label="Resumen" value="Antebrazo izquierdo" detail="Cara interna" hint-size="100%,64px"></x-import></div></div>
+
+<h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
+<div role="table" aria-label="Ficha de SummaryCard" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Definición</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Propósito</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Pasos 3.2–3.6: lo que ya se ha elegido de la ubicación de la marca.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Anatomía</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Acento lateral de 4 px · etiqueta · valor · detalle.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Accesibilidad</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Texto plano, sin interacción. El acento es decorativo: la etiqueta dice qué es.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Tokens</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">border.width.heavy</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">brand.primary</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.ui</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.label</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.caption</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.secondary</span>.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">API</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">label</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">value</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">detail</span>.</div></div>
+</div>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -97,7 +97,7 @@ La comparación es **a tres bandas**: lo que Claude Design tiene ahora, lo que t
 
 Detalles:
 - **Nonce.** `--request` guarda un nonce y lo incluye en el prompt; `--manifest` rechaza un manifiesto que no lo lleve, para que no se compare con uno antiguo (`--no-nonce` lo omite bajo tu responsabilidad).
-- **`--record`** solo funciona si no queda nada sin resolver: los archivos por confirmar exigen `--confirm todo` o `--confirm ruta1,ruta2`, y lo sin integrar se resuelve integrándolo o con `--discard <ruta> --reason "motivo"`. El descarte queda anotado con su motivo y fecha; si Claude Design vuelve a cambiar ese archivo, reaparece.
+- **`--record`** solo funciona si no queda nada sin resolver: los archivos por confirmar exigen `--confirm todo` o `--confirm ruta1,ruta2`, y lo sin integrar se resuelve integrándolo o con `--discard <ruta> --reason "motivo"` (repite `--discard` para descartar varias rutas a la vez; el motivo es el mismo para todas). El descarte queda anotado con su motivo y fecha; si Claude Design vuelve a cambiar ese archivo, reaparece.
 - **SVG.** Claude Design reserializa los SVG al importarlos (expande las etiquetas autocerradas y quita el salto de línea final); se comparan en forma canónica.
 - Escribe `.dsbook/last-diff.json` (local, no se versiona), que leen el control previo al push y `handoff-note`.
 - Códigos de salida: 0 sin diferencias, 1 diferencias sin riesgo, **2 trabajo de Claude Design sin integrar o sin confirmar**.

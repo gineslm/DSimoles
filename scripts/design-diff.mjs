@@ -1,7 +1,7 @@
 // Compara el proyecto de Claude Design con este repositorio y protege su trabajo de perderse.
 //   npm run design-diff -- --request                       prepara el prompt que pide a Claude Design su manifiesto de hashes (con un nonce)
 //   npm run design-diff -- --manifest <archivo> [--json s] comparación a tres bandas con el manifiesto (el JSON o la respuesta de get_file)
-//   npm run design-diff -- --record [--confirm todo|ruta,…] [--discard ruta --reason "…"]   registra la integración (design-baseline.json)
+//   npm run design-diff -- --record [--confirm todo|ruta,…] [--discard ruta … --reason "…"]   registra la integración (design-baseline.json)
 //   npm run design-diff -- <carpeta> | --listing <lista.json>  comparación simple de una copia o de las rutas
 // Códigos de salida: 0 sin diferencias, 1 diferencias sin riesgo, 2 hay trabajo de Claude Design sin integrar o sin confirmar.
 // Este script no se conecta a Claude Design: lo hace el agente por MCP. Ver docs/scripts.md y docs/handoff.md.
@@ -16,6 +16,7 @@ import {classify, TYPES, diffTrees, changedSectionIds, changedGuideIds, DESIGN_I
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const opt = n => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
+const optAll = n => args.flatMap((a, i) => a === `--${n}` && args[i + 1] !== undefined ? [args[i + 1]] : []);
 const has = n => args.includes(`--${n}`);
 const fail = (m, code = 1) => { console.error(`Error: ${m}`); process.exit(code); };
 const STATE = path.join(root, '.dsbook');
@@ -84,7 +85,7 @@ if (opt('manifest') || has('record')) {
     // Registrar la integración solo es posible si no queda nada sin resolver.
     const confirm = (opt('confirm') ?? '').split(',').map(s => s.trim()).filter(Boolean);
     const all = confirm.includes('todo');
-    const toDiscard = opt('discard') ? [opt('discard')] : [];
+    const toDiscard = [...new Set(optAll('discard'))];
     if (toDiscard.length && !opt('reason')) fail('--discard exige --reason "motivo"');
     const stillPending = [...r.pending, ...r.newInDesign].filter(p => !toDiscard.includes(p));
     if (stillPending.length) fail(`hay trabajo de Claude Design sin integrar: ${list(stillPending)}. Intégralo, o descártalo con --discard <ruta> --reason "motivo".`, 2);

@@ -167,6 +167,30 @@ test('Flujo completo: sin integrar bloquea, registrar exige resolver y descartar
   } finally { rmSync(dir, {recursive: true, force: true}); }
 });
 
+test('design-diff --record descarta varias rutas a la vez con un único motivo', async () => {
+  const dir = mkdtempSync(path.join(tmpdir(), 'dsbook-prot-'));
+  cpSync(root, dir, {recursive: true, filter: p => !EXCLUDE.test(p)});
+  ensurePage(dir);
+  try {
+    const nonce = nonceOf(run(dir, 'design-diff.mjs', '--request').out);
+    const A = 'pruebas/a.dc.html', B = 'pruebas/b con espacio.dc.html';
+    const mf = await manifestFor(dir, nonce);
+    Object.assign(mf.files, {[A]: H('a'), [B]: H('b')});
+    const m = writeM(dir, mf);
+    let r = run(dir, 'design-diff.mjs', '--manifest', m);
+    assert.equal(r.code, 2, r.out);
+    assert.deepEqual(last(dir).newInDesign.sort(), [A, B]);
+    r = run(dir, 'design-diff.mjs', '--record', '--confirm', 'todo', '--discard', A, '--reason', 'prueba');
+    assert.equal(r.code, 2, r.out);
+    r = run(dir, 'design-diff.mjs', '--record', '--confirm', 'todo', '--discard', A, '--discard', B, '--reason', 'evidencia que Design conserva');
+    assert.equal(r.code, 0, r.out);
+    const b = JSON.parse(readFileSync(path.join(dir, 'design-baseline.json'), 'utf8'));
+    assert.deepEqual(b.discarded.map(d => d.path).sort(), [A, B]);
+    run(dir, 'design-diff.mjs', '--manifest', m);
+    assert.deepEqual(last(dir).blocking, []);
+  } finally { rmSync(dir, {recursive: true, force: true}); }
+});
+
 test('El control previo al push bloquea si falta la comparación, si está vencida o si hay trabajo sin integrar', () => {
   inCopy(dir => {
     const hook = env => { const r = spawnSync(process.execPath, ['scripts/pre-push-check.mjs'], {cwd: dir, encoding: 'utf8', env: {...process.env, ...env}}); return {code: r.status, out: r.stdout + r.stderr}; };

@@ -33,7 +33,7 @@ Sigue este procedimiento sin improvisar. El detalle y los motivos están en `doc
 Pide a la persona responsable que valide en local (`npm start`, cada página abierta aparte). No sigas sin su visto bueno.
 
 ## 5 · Registrar y commitear
-1. `npm run design-diff -- --record --confirm todo` (o rutas concretas) registra la integración en `design-baseline.json`. Si algo de Claude Design se descarta a propósito: `--discard <ruta> --reason "motivo"`. Nunca descartes sin que la persona responsable lo decida.
+1. `npm run design-diff -- --record --confirm todo` (o rutas concretas) registra la integración en `design-baseline.json`. Si algo de Claude Design se descarta a propósito: `--discard <ruta> --reason "motivo"` (repite `--discard` para varias rutas). Nunca descartes sin que la persona responsable lo decida.
 2. `npm run handoff-note` escribe `handoff-last.md`.
 3. Reparte en commits por tipo (framework, documentación del proyecto, datos, contenido de Claude Design), cada uno validado con `check` y `test`. Mensajes en castellano.
 4. Si cambiaste el framework: `npm run framework -- --release <versión>` y porta los archivos a DSbook (`npm run framework -- --compare ../DSbook`).

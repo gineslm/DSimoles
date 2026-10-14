@@ -1061,7 +1061,7 @@
       "notes": "Separada el 2026-10-14 de Acciones (antes 7.1) al pasar a una subsección por componente. Componente en vivo desde components/TextLink.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): icono size.icon.xs (16).",
       "tasks": [
         {
-          "text": "Variante de enlace externo con el icono open_in_new en lugar del chevron: pendiente de que Claude Code regenere el subconjunto de Material Symbols con open_in_new.",
+          "text": "Variante de enlace externo con el icono open_in_new en lugar del chevron: el subconjunto de Material Symbols ya lo incluye (regenerado por Claude Code el 2026-10-15); falta que Claude Design la cree en components/TextLink.js.",
           "when": "pending"
         }
       ],
@@ -1174,13 +1174,8 @@
       "status": "I",
       "page": "",
       "owner": "Gines Lopez",
-      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/Icon.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): escala 16 · 20 · 24; 18 retirado. Reabierta: cambió el contenido tras la review; necesita review nueva.",
-      "tasks": [
-        {
-          "text": "Regenerar el subconjunto de Material Symbols Rounded con open_in_new, edit y archive (Claude Code; instrucciones dadas el 2026-10-14).",
-          "when": "pending"
-        }
-      ],
+      "notes": "Separada el 2026-10-14 de Presentación (antes 7.4) al pasar a una subsección por componente. Componente en vivo desde components/Icon.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14: Ready por decisión del owner. Los avisos de Pending pasan a tasks y las diferencias con el prototipo de iMoles se mueven a assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md. 2026-10-14 (alturas/radios/hover, decisión del owner): escala 16 · 20 · 24; 18 retirado. Reabierta: cambió el contenido tras la review; necesita review nueva. 2026-10-15: subconjunto de Material Symbols Rounded regenerado (Claude Code) con 14 iconos (add, arrow_back, check, chevron_left, chevron_right, home, info, more_vert, person, photo_camera, view_list, open_in_new, edit, archive) y los alias camera_alt, home_filled, person_filled y navigate_before; instancia FILL 0, GRAD 0, opsz 24, wght 100-700, a partir de la versión 2.975 de Google. El .woff2 y el base64 de assets/visuals/tokens.css coinciden.",
+      "tasks": [],
       "review": {
         "by": "Gines Lopez (owner)",
         "date": "2026-10-14",

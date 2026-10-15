@@ -120,7 +120,7 @@ a:hover{color:#5a5a5a}
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px">
 <li><a href="./typography.dc.html">Tipografía</a> · 1.4.4: texto al 200% sin pérdida de contenido. Nada por debajo de 12 px; texto corrido desde <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">type.body</span> (16 px). Peso 300 solo desde 21 px.</li>
 <li><a href="./typography.dc.html">Tipografía</a> · 1.4.12: interlineado 1.5 y espaciado de párrafo 2× sin recortes.</li>
-<li><a href="./dimensions.dc.html">Dimensiones</a> · 2.5.8 (AA): todos los pasos de la escala (28 · 36 · 44) miden 24 o más. 2.5.5 (AAA): solo 44 visibles (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.control.md</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.icon-button.lg</span>). El DS base no usa área táctil ampliada: el nivel se mide sobre el tamaño visible. iMoles exige AA (2.5.8): todos los pasos de la escala lo cumplen. Para productos AAA, ejemplo de área ampliada en 7.22 Accesibilidad.</li>
+<li><a href="./dimensions.dc.html">Dimensiones</a> · 2.5.8 (AA): todos los pasos de la escala (28 · 36 · 44) miden 24 o más. 2.5.5 (AAA): solo 44 visibles (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.control.md</span>, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">Act-Button md solo icono</span>). El DS base no usa área táctil ampliada: el nivel se mide sobre el tamaño visible. iMoles exige AA (2.5.8): todos los pasos de la escala lo cumplen. Para productos AAA, ejemplo de área ampliada en 7.23 Accesibilidad.</li>
 <li>Estados hover y pressed: capa translúcida de brand.600 (8 / 16 %; 6 / 12 % en superficies) sobre el fondo propio del control. WCAG no exige contraste para el hover; el cambio se percibe igual sobre bg.page, bg.surface y bg.tint (≥ 1.09:1 hover, ≥ 1.19:1 pressed).</li>
 <li><a href="./spacing.dc.html">Espaciado</a> · 2.5.8: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">space.2</span> (8 px) como mínimo entre objetivos contiguos; los contenedores crecen con el texto.</li>
 <li><a href="./borders.dc.html">Bordes</a> · 1.4.11: contornos informativos a 3:1 o más (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">color.border.control</span>); 1.4.1: la selección lleva borde, check y color.</li>
@@ -130,7 +130,7 @@ a:hover{color:#5a5a5a}
 
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Nivel de accesibilidad por producto</h2>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">El DS define el contexto y el rango del ecosistema: los valores disponibles y el nivel WCAG que cumple cada uno. El nivel exigido lo fija cada producto. En tamaños y áreas interactivas, por ejemplo, el DS ofrece una escala con su cobertura (AAA, AA o sin nivel) y cada producto usa solo los valores que cumplen su nivel. La aplicación concreta está en <a href="./dimensions.dc.html">1.4 Dimensiones</a>, en <a href="../components/accessibility.dc.html#h-estrategia">7.22 Accesibilidad</a> y en cada componente.</p>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">El DS define el contexto y el rango del ecosistema: los valores disponibles y el nivel WCAG que cumple cada uno. El nivel exigido lo fija cada producto. En tamaños y áreas interactivas, por ejemplo, el DS ofrece una escala con su cobertura (AAA, AA o sin nivel) y cada producto usa solo los valores que cumplen su nivel. La aplicación concreta está en <a href="./dimensions.dc.html">1.4 Dimensiones</a>, en <a href="../components/accessibility.dc.html#h-estrategia">7.23 Accesibilidad</a> y en cada componente.</p>
 </section>
 
 </main>
@@ -139,7 +139,10 @@ a:hover{color:#5a5a5a}
 class Component extends DCLogic {
   renderVals() {
     const cs = getComputedStyle(document.documentElement);
-    const hexOf = v => { const x = cs.getPropertyValue(v).trim(); return /^#[0-9a-f]{6}$/i.test(x) ? x.toUpperCase() : x || v; };
+    const probe = s => { const e = document.createElement('i'); e.style.color = s; document.body.appendChild(e); const c = getComputedStyle(e).color; e.remove(); const n = (c.match(/[\d.]+/g) || []).map(Number); if (n.length < 3) return null; const k = /^color\(/.test(c) ? 255 : 1; return [n[0] * k, n[1] * k, n[2] * k, n[3] ?? 1]; };
+    const toHex = a => '#' + a.slice(0, 3).map(x => Math.round(x).toString(16).padStart(2, '0')).join('').toUpperCase();
+    const hexOf = v => { const x = cs.getPropertyValue(v).trim(); if (/^#[0-9a-f]{6}$/i.test(x)) return x.toUpperCase(); const p = x && probe(x); return p && p[3] >= 1 ? toHex(p) : x || v; };
+    const solid = (s, base) => { const p = probe(s); if (!p) return null; if (p[3] >= 1) return toHex(p); const b = probe(base); return b ? toHex([0, 1, 2].map(i => p[i] * p[3] + b[i] * (1 - p[3]))) : null; };
     const roleVar = n => { const v = '--ds-' + n.trim().replace(/\./g, '-'); return cs.getPropertyValue(v).trim() ? v : null; };
     const walk = o => Array.isArray(o) ? o.map(walk) : o && typeof o === 'object' ? Object.fromEntries(Object.entries(o).map(([k, v]) => [k, walk(v)])) : typeof o === 'string' && o.startsWith('--ds-') ? hexOf(o) : o;
     const lin = c => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
@@ -156,7 +159,7 @@ class Component extends DCLogic {
     if (d.roles) d.roles.forEach(r => { const v = roleVar(r.rol.replace('.*', '')); if (v) r.hex = v; });
     if (d.contrastes) d.contrastes.forEach(c => { const [f, b] = c.par.split(' / ').map(roleVar); if (f) c.fg = f; if (b) c.bg = b; });
     const o = walk(d);
-    if (o.contrastes) o.contrastes.forEach(c => { const x = ratio(c.fg, c.bg), m = parseFloat(c.min); c.ratio = x.toFixed(2); if (!isNaN(m)) { const ok = x >= m; c.res = ok ? 'Cumple' : 'No cumple'; c.peso = ok ? 400 : 700; } });
+    if (o.contrastes) o.contrastes.forEach(c => { const base = hexOf(/bg\.page/.test(c.par) ? '--ds-color-bg-page' : '--ds-color-bg-surface'), F = solid(c.fg, base), B = solid(c.bg, base); if (!F || !B) { c.ratio = '—'; c.res = '—'; c.peso = 400; return; } c.fg = F; c.bg = B; const x = ratio(F, B), m = parseFloat(c.min); c.ratio = x.toFixed(2); if (!isNaN(m)) { const ok = x >= m; c.res = ok ? 'Cumple' : 'No cumple'; c.peso = ok ? 400 : 700; } });
     if (o.fichas && o.fichas[0] && o.fichas[0].vecinos) {
       const F = o.fichas, K = ['n', 'de', 'pr', 'tr', 'ac'], NV = ['Normal', 'Deuteranopía', 'Protanopía', 'Tritanopía', 'Acromatopsia'];
       F.forEach(f => { f.blanco = ratio('#FFFFFF', f.base).toFixed(2) + ':1'; f.texto = ratio(f.ink, f.tint).toFixed(2) + ':1'; f.icono = ratio(f.base, '#FFFFFF').toFixed(2) + ':1';

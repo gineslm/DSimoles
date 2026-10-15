@@ -10,6 +10,7 @@
 <script src="../../assets/_runtime/react-dom.production.min.js"></script>
 <script src="../../components/core.js"></script>
 <script src="../../components/Button.js"></script>
+<script src="../../components/Chip.js"></script>
 <script src="../../components/StatusChip.js"></script>
 <script src="../../components/RiskBadge.js"></script>
 <script src="../../components/SummaryCard.js"></script>
@@ -33,11 +34,11 @@ a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
 a:hover{color:#5a5a5a}
 </style>
 </helmet>
-<main data-screen-label="8.5 FollowUpCard" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<main data-screen-label="9.5 FollowUpCard" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">FollowUpCard</h1>
 <p style="margin:0;max-width:72ch;color:#3d3d3d">Un seguimiento en una lista, con su foto y el resultado de su último análisis.</p>
-<p style="margin:0;font-size:14px;max-width:72ch"><strong style="font-weight:600">Construido con</strong> · <a href="../components/icon.dc.html">Icon</a>, <a href="../components/status-chip.dc.html">StatusChip</a>.</p>
+<p style="margin:0;font-size:14px;max-width:72ch"><strong style="font-weight:600">Construido con</strong> · <a href="../components/icon.dc.html">Icon</a>, <a href="../components/chip.dc.html">Vis-Chip</a>.</p>
 </header>
 <section aria-label="FollowUpCard" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/FollowUpCard.js</span> · HF: 2 Entidad - Tarjeta Seguimiento (2.1, 2.2, 3.7)</p>
 <h2 style="margin:0;font-size:22px;font-weight:600">Uso</h2>
@@ -69,7 +70,7 @@ a:hover{color:#5a5a5a}
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Anillo 2 px</div></div>
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Sin interactivos anidados</div></div>
 </div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="../components/accessibility.dc.html#h-pruebas">7.22 Accesibilidad</a>).</p>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="../components/accessibility.dc.html#h-pruebas">7.23 Accesibilidad</a>).</p>
 <h2 style="margin:0;font-size:22px;font-weight:600">Cambios respecto a la HF</h2>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Miniatura de 56 a 64 (size.thumb.lg).</li><li>Fondo sin foto de #E8E2DC a component.thumb.placeholder.</li><li>Chips de 10 a 12 px.</li></ul>
 <p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · en 2.2b el icono info abre una explicación; no puede ser un botón dentro de la tarjeta. Decidir si la explicación va en la propia tarjeta o en el detalle.</p>

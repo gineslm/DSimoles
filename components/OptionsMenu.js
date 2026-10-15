@@ -1,5 +1,6 @@
-/* OptionsMenu · 7.7 Revelado y superposición · HF: 1 Base - Menu Opciones
-   Patrón menu button: IconButton con aria-haspopup + role="menu". Flechas, Inicio/Fin, Esc y Tab cierran; el foco vuelve al botón.
+/* Ovl-OptionsMenu · 7.22 · HF: 1 Base - Menu Opciones. Requiere Button.js.
+   Agrupa acciones contextuales poco frecuentes. triggerLabel obligatorio: nombra el objeto («Opciones del archivo»).
+   Patrón menu button: Act-Button clear solo icono con aria-haspopup + role="menu". Flechas, Inicio/Fin, Esc y Tab cierran; el foco vuelve al botón.
    items: "icono::Texto::Descripción | …" (icono y descripción opcionales). standalone: solo el panel, para documentar. */
 (function () {
   var NS = window.DSimoles, h = NS.h, R = window.React;
@@ -75,8 +76,8 @@
     var pick = function (it, i) { close(true); if (p.onSelect) p.onSelect(it.label, i); };
     if (p.standalone) return h(Panel, { items: p.items, title: p.title, demoIndex: p.demoIndex, demoState: p.demoState, onPick: function () {} });
     return h('span', { className: 'dsm-root dsm-menuwrap', ref: wrap },
-      h(NS.IconButton, {
-        ref: trigger, icon: 'more_vert', label: p.triggerLabel || 'Más opciones', haspopup: 'menu', expanded: open, controls: open ? id : undefined,
+      h(NS.Button, {
+        ref: trigger, variant: 'clear', iconOnly: true, icon: 'more_vert', label: p.triggerLabel || 'Más opciones', haspopup: 'menu', expanded: open, controls: open ? id : undefined,
         onClick: function () { setOpen(!open); },
         onKeyDown: function (e) { if (e.key === 'ArrowDown' && !open) { e.preventDefault(); setOpen(true); } }
       }),

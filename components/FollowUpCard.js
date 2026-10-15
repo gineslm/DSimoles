@@ -1,4 +1,4 @@
-/* FollowUpCard · 7.4 Presentación · HF: 2 Entidad - Tarjeta Seguimiento
+/* FollowUpCard · 9.5 (iMoles) · HF: 2 Entidad - Tarjeta Seguimiento
    Un seguimiento en una lista: foto, nombre de la marca · ubicación, fotos y nivel de riesgo del último análisis. */
 (function () {
   var NS = window.DSimoles, h = NS.h;

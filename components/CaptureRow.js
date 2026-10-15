@@ -1,4 +1,4 @@
-/* CaptureRow · 7.8 Datos · HF: 2 Entidad - Fila Captura
+/* CaptureRow · 9.3 (iMoles) · HF: 2 Entidad - Fila Captura
    Una foto del historial de un seguimiento: fecha y resultado del análisis con su forma de riesgo. */
 (function () {
   var NS = window.DSimoles, h = NS.h;

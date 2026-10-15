@@ -153,7 +153,10 @@ a:hover{color:#5a5a5a}
 class Component extends DCLogic {
   renderVals() {
     const cs = getComputedStyle(document.documentElement);
-    const hexOf = v => { const x = cs.getPropertyValue(v).trim(); return /^#[0-9a-f]{6}$/i.test(x) ? x.toUpperCase() : x || v; };
+    const probe = s => { const e = document.createElement('i'); e.style.color = s; document.body.appendChild(e); const c = getComputedStyle(e).color; e.remove(); const n = (c.match(/[\d.]+/g) || []).map(Number); if (n.length < 3) return null; const k = /^color\(/.test(c) ? 255 : 1; return [n[0] * k, n[1] * k, n[2] * k, n[3] ?? 1]; };
+    const toHex = a => '#' + a.slice(0, 3).map(x => Math.round(x).toString(16).padStart(2, '0')).join('').toUpperCase();
+    const hexOf = v => { const x = cs.getPropertyValue(v).trim(); if (/^#[0-9a-f]{6}$/i.test(x)) return x.toUpperCase(); const p = x && probe(x); return p && p[3] >= 1 ? toHex(p) : x || v; };
+    const solid = (s, base) => { const p = probe(s); if (!p) return null; if (p[3] >= 1) return toHex(p); const b = probe(base); return b ? toHex([0, 1, 2].map(i => p[i] * p[3] + b[i] * (1 - p[3]))) : null; };
     const roleVar = n => { const v = '--ds-' + n.trim().replace(/\./g, '-'); return cs.getPropertyValue(v).trim() ? v : null; };
     const walk = o => Array.isArray(o) ? o.map(walk) : o && typeof o === 'object' ? Object.fromEntries(Object.entries(o).map(([k, v]) => [k, walk(v)])) : typeof o === 'string' && o.startsWith('--ds-') ? hexOf(o) : o;
     const lin = c => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
@@ -170,7 +173,7 @@ class Component extends DCLogic {
     if (d.roles) d.roles.forEach(r => { const v = roleVar(r.rol.replace('.*', '')); if (v) r.hex = v; });
     if (d.contrastes) d.contrastes.forEach(c => { const [f, b] = c.par.split(' / ').map(roleVar); if (f) c.fg = f; if (b) c.bg = b; });
     const o = walk(d);
-    if (o.contrastes) o.contrastes.forEach(c => { const x = ratio(c.fg, c.bg), m = parseFloat(c.min); c.ratio = x.toFixed(2); if (!isNaN(m)) { const ok = x >= m; c.res = ok ? 'Cumple' : 'No cumple'; c.peso = ok ? 400 : 700; } });
+    if (o.contrastes) o.contrastes.forEach(c => { const base = hexOf(/bg\.page/.test(c.par) ? '--ds-color-bg-page' : '--ds-color-bg-surface'), F = solid(c.fg, base), B = solid(c.bg, base); if (!F || !B) { c.ratio = '—'; c.res = '—'; c.peso = 400; return; } c.fg = F; c.bg = B; const x = ratio(F, B), m = parseFloat(c.min); c.ratio = x.toFixed(2); if (!isNaN(m)) { const ok = x >= m; c.res = ok ? 'Cumple' : 'No cumple'; c.peso = ok ? 400 : 700; } });
     if (o.fichas && o.fichas[0] && o.fichas[0].vecinos) {
       const F = o.fichas, K = ['n', 'de', 'pr', 'tr', 'ac'], NV = ['Normal', 'Deuteranopía', 'Protanopía', 'Tritanopía', 'Acromatopsia'];
       F.forEach(f => { f.blanco = ratio('#FFFFFF', f.base).toFixed(2) + ':1'; f.texto = ratio(f.ink, f.tint).toFixed(2) + ':1'; f.icono = ratio(f.base, '#FFFFFF').toFixed(2) + ':1';
@@ -578,9 +581,9 @@ class Component extends DCLogic {
    "uso": "Sin resultado: no evaluable, fallo técnico"
   },
   {
-   "hex": "--ds-color-neutral-100",
+   "hex": "--ds-color-brand-100",
    "rol": "color.status.info.*",
-   "prim": "neutral.100 / 800",
+   "prim": "brand.100 / 700",
    "uso": "Aviso informativo · tint, text"
   },
   {

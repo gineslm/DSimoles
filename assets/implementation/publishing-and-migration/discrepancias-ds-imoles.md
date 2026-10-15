@@ -34,6 +34,21 @@ Las correcciones de color (1.1) están en la página 10.x Publicación y migraci
 - --imoles-control-height-sm (46 px) pasa a size.control.md (44). Escala de controles: lg 52 · md 44 · sm 36 · xs 28.
 - IconButton de 36 a size.icon-button.md (40), con área táctil de 44.
 
+## 1.4 Dimensiones · valores fuera de escala
+| Observado en el prototipo | Pasa a |
+| --- | --- |
+| 46 px · --imoles-control-height-sm | size.control.md (44) |
+| 54 px | size.control.md (44) |
+| Icono 16 px · Paginador | size.icon.lg (24), con el Pager a 44 |
+| Icono 26 px | size.icon.lg (24) |
+
+## 1.5 Bordes · valores fuera de escala
+| Observado en el prototipo | Pasa a |
+| --- | --- |
+| 1.5 px | border.width.thick (2) · botón secundario, Accion |
+| 3 px | border.width.heavy (4) · acento de la Card Resumen |
+| --imoles-line · --imoles-line-soft · --imoles-line-strong | color.border.subtle · color.border.subtle · color.border.emphasis |
+
 ## 1.6 Forma · valores fuera de escala
 | Observado en el prototipo | Pasa a |
 | --- | --- |
@@ -42,6 +57,15 @@ Las correcciones de color (1.1) están en la página 10.x Publicación y migraci
 | 14 px · --imoles-radius-btn (botones) | radius.button (6) |
 | 14 px · campos y opciones | radius.field (10) |
 | 36 px · --imoles-radius-phone | Marco del dispositivo, no la interfaz: sin token |
+
+Trasladados desde la página 1.6 el 2026-10-15:
+
+| Observado en el prototipo | Pasa a |
+| --- | --- |
+| 20 px | radius.card (16) |
+| 24 px 24 px 0 0 · hoja inferior | radius.card arriba (16 16 0 0) |
+| 3 px · barra de progreso | radius.sm (4) o radius.pill |
+| calc(radius − space.3 / 2) · anidados | regla de anidado: exterior − padding, mínimo radius.sm |
 
 ## 1.7 Elevación · valores fuera de escala
 | Observado en el prototipo | Pasa a |
@@ -55,6 +79,29 @@ Las correcciones de color (1.1) están en la página 10.x Publicación y migraci
 | --- | --- |
 | opacity .14 · Captura Detalle | Sin token: segundo valor pendiente |
 | rgba(255,255,255,.92) y rgba(255,255,255,.14) · capas sobre foto | Sin token: segundo valor pendiente |
+
+## 2.2 Nombres y alias · nombres del prototipo
+Los nombres --imoles-* del prototipo se conservan como alias durante la migración y después se eliminan.
+
+| Prototipo | Token del DS |
+| --- | --- |
+| --imoles-text-body | color.text.body |
+| --imoles-space-3 | space.3 |
+
+## 2.3 Ciclo de vida de los tokens · obsoletos y candidatos a retirar
+Recuento automático de var(--ds-*) en components/ y sections/. No cuenta los usos de la app de iMoles, así que nada se retira sin comprobarlos.
+
+| Token | Usos | Estado |
+| --- | --- | --- |
+| type.tag · type.tag-tracking | Unificados en type.ui: misma tipografía, 0,03em de diferencia de espaciado y la mitad de los usos ya con el de type.ui. Migrados los 8 componentes | Obsoletos desde 2026-10-14; alias de type.ui |
+| size.control.lg | Button lg (52) retirado: la diferencia con 44 era demasiado pequeña. La acción principal usa md. | Obsoleto desde 2026-10-14; alias de size.control.md |
+| size.icon-button.2xs · .sm · .xl · .target | IconButton queda en xs 28 · md 36 · lg 44. El área táctil ampliada sale del DS base. | Obsoletos desde 2026-10-14; alias de xs · md · lg · size.target.min |
+| size.icon-button.* · size.pager-dot | IconButton se unifica en Act-Button, que usa size.control.md · sm · xs; Nav-Pager usa Act-Button xs. Ningún componente los usa. | Retirados el 2026-10-15 |
+| size.icon.sm | Icono de 18 retirado: escala 16 · 20 · 24. | Obsoleto desde 2026-10-14; alias de size.icon.xs |
+| component.button.label-lg | Etiqueta del Button lg retirado. | Obsoleto desde 2026-10-14; alias de component.button.label-md |
+| color.brand.expressive | 0 en la librería y en las páginas al 2026-10-14 | Pendiente de comprobar en iMoles |
+| color.brand.expressive-light | 0 en la librería y en las páginas al 2026-10-14 | Pendiente de comprobar en iMoles |
+| color.status.success.body · color.status.unknown.body | 0 en la librería | Se quedan: familia base de feedback |
 
 ## 7.1 Button
 - primario-alerta pasa a alert y se reserva para pedir cita presencial con riesgo alto.

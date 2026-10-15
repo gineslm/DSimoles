@@ -1,4 +1,4 @@
-/* SummaryCard · 7.4 Presentación · HF: 1 Base - Card Resumen
+/* SummaryCard · 9.2 (iMoles) · HF: 1 Base - Card Resumen
    Acento lateral de 4 px (border.width.heavy): correcto porque lleva etiqueta (visuals.borders). */
 (function () {
   var NS = window.DSimoles, h = NS.h;

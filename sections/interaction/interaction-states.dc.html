@@ -28,7 +28,7 @@ a:hover{color:#5a5a5a}
 
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Estados por elemento</h2>
-<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">iMoles no define estados de interacción; estos valores, derivados de las escalas, fueron aprobados por el owner el 2026-10-10. Rellenos: hover un paso intermedio (650), pressed 700. Secundario y superficies (tarjeta, fila, opción): capa translúcida de brand.600 sobre el fondo del control, 8 / 16 % y 6 / 12 %; se ve igual sobre cualquier fondo. En táctil, pressed es el feedback principal; hover solo se aplica con puntero.</p>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Valores derivados de las escalas. Rellenos: hover un paso intermedio (650), pressed 700. Secundario y superficies (tarjeta, fila): capa translúcida de brand.600 sobre el fondo del control, 8 / 16 % y 6 / 12 %; se ve igual sobre cualquier fondo. En táctil, pressed es el feedback principal; hover solo se aplica con puntero.</p>
 <div style="display:flex;flex-direction:column;gap:14px">
 <sc-for list="{{ interaccion }}" as="c" hint-placeholder-count="6">
 <div style="display:flex;flex-direction:column;gap:8px">
@@ -259,59 +259,7 @@ class Component extends DCLogic {
    "tracking": "var(--ds-type-ui-tracking)",
    "caps": "uppercase"
   },
-  {
-   "nombre": "Opción",
-   "texto": "Brazo",
-   "radio": "var(--ds-radius-button)",
-   "estados": [
-    {
-     "estado": "Default",
-     "bg": "var(--ds-color-bg-surface)",
-     "fg": "var(--ds-color-text-primary)",
-     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control)",
-     "outline": "none",
-     "token": "color.border.control"
-    },
-    {
-     "estado": "Hover",
-     "bg": "var(--ds-color-bg-surface)",
-     "fg": "var(--ds-color-text-primary)",
-     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control-hover)",
-     "outline": "none",
-     "token": "color.border.control.hover"
-    },
-    {
-     "estado": "Pressed",
-     "bg": "var(--ds-color-surface-pressed)",
-     "fg": "var(--ds-color-text-primary)",
-     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control-hover)",
-     "outline": "none",
-     "token": "color.surface.pressed"
-    },
-    {
-     "estado": "Selected",
-     "bg": "var(--ds-color-selection-bg)",
-     "fg": "var(--ds-color-selection-text)",
-     "borde": "var(--ds-border-width-thick) solid var(--ds-color-selection-border)",
-     "outline": "none",
-     "token": "color.selection.*"
-    },
-    {
-     "estado": "Focus",
-     "bg": "var(--ds-color-bg-surface)",
-     "fg": "var(--ds-color-text-primary)",
-     "borde": "var(--ds-border-width-thin) solid var(--ds-color-border-control)",
-     "outline": "var(--ds-focus-ring-width) solid var(--ds-color-focus-ring)",
-     "token": "+ color.focus.ring"
-    }
-   ],
-   "alto": "var(--ds-size-control-sm)",
-   "pad": "var(--ds-space-2) var(--ds-space-3)",
-   "alinear": "stretch",
-   "font": "var(--ds-type-ui)",
-   "tracking": "var(--ds-type-ui-tracking)",
-   "caps": "uppercase"
-  },
+  
   {
    "nombre": "Enlace",
    "texto": "Ver el análisis ›",

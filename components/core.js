@@ -47,6 +47,7 @@
     '.dsm-target::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,var(--ds-size-target-min));height:max(100%,var(--ds-size-target-min));transform:translate(-50%,-50%)}',
     '.dsm-reset{appearance:none;-webkit-appearance:none;margin:0;border:0;background:none;font:inherit;color:inherit;text-align:inherit;-webkit-tap-highlight-color:transparent}',
     '.dsm-icon{font-family:var(--ds-type-family-icon);font-weight:400;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;-webkit-font-feature-settings:"liga";font-feature-settings:"liga";-webkit-font-smoothing:antialiased}',
+    '.dsm-icon--filled{font-variation-settings:"FILL" 1}',
     '.dsm-icon--xs{font-size:var(--ds-size-icon-xs);width:var(--ds-size-icon-xs);height:var(--ds-size-icon-xs)}',
     '.dsm-icon--sm{font-size:var(--ds-size-icon-sm);width:var(--ds-size-icon-sm);height:var(--ds-size-icon-sm)}',
     '.dsm-icon--md{font-size:var(--ds-size-icon-md);width:var(--ds-size-icon-md);height:var(--ds-size-icon-md)}',
@@ -61,22 +62,27 @@
     '.dsm-chevron{color:var(--ds-color-icon-inactive);align-self:center}'
   ].join('\n'));
 
-  /* Thumb · miniatura de la foto de una marca; decorativa (el texto de la fila identifica la marca). */
+  /* Thumb · miniatura de una imagen en una fila (Data-ListRow); decorativa: el texto de la fila identifica el elemento. */
   NS.Thumb = function Thumb(p) {
     return h('span', { className: NS.cx('dsm-thumb', 'dsm-thumb--' + (p.size || 'lg')), 'aria-hidden': 'true' },
       p.src ? h('img', { src: p.src, alt: '' }) : null);
   };
 
-  /* Icon · Material Symbols Rounded (subconjunto de tokens.css). Decorativo salvo que lleve label. */
-  NS.ICONS = ['add', 'arrow_back', 'check', 'chevron_left', 'chevron_right', 'home', 'info', 'more_vert', 'person', 'photo_camera', 'view_list', 'open_in_new', 'edit', 'archive'];
+  /* Vis-Icon · 7.1 · Material Symbols Rounded (subconjunto de assets/visuals/tokens.css). Decorativo salvo que lleve label (role=img). filled: variante rellena (FILL 1).
+     Catálogo controlado: un icono nuevo exige regenerar el subconjunto. La interacción la pone el componente contenedor. */
+  NS.ICONS = ['add', 'archive', 'arrow_back', 'check', 'chevron_left', 'chevron_right', 'close', 'edit', 'error', 'expand_more', 'home', 'info', 'more_vert', 'open_in_new', 'person', 'photo_camera', 'view_list'];
   NS.Icon = function Icon(p) {
     var size = p.size || 'md';
     var a = p.label ? { role: 'img', 'aria-label': p.label } : { 'aria-hidden': 'true' };
-    return h('span', Object.assign({ className: NS.cx('dsm-icon', 'dsm-icon--' + size, p.className), style: p.style }, a), p.name);
+    return h('span', Object.assign({ className: NS.cx('dsm-icon', 'dsm-icon--' + size, p.filled && 'dsm-icon--filled', p.className), style: p.style }, a), p.name);
   };
 
+  /* Fb-Spinner · 7.18 · operación en curso sin duración conocida.
+     Con label: role=status y texto oculto (se anuncia). Sin label: decorativo; solo dentro de un componente que ya anuncia el estado (Act-Button loading). */
   NS.Spinner = function Spinner(p) {
-    return h('span', { className: NS.cx('dsm-spinner', p.className), 'aria-hidden': 'true' });
+    var ring = h('span', { className: NS.cx('dsm-spinner', p.className), 'aria-hidden': 'true' });
+    if (!p.label) return ring;
+    return h('span', { role: 'status', style: { display: 'inline-flex', alignItems: 'center' } }, ring, h('span', { className: 'dsm-sr' }, p.label));
   };
 
   /* RiskGlyph · forma propia de cada nivel de riesgo (la forma no depende del color). */

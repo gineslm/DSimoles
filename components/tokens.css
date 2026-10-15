@@ -26,11 +26,11 @@
   /* Thumbnail sin foto: neutro de la marca en vez de #E8E2DC */
   --ds-component-thumb-placeholder:var(--ds-color-neutral-150);
 
-  /* BackLink sobre la cámara (fondo oscuro): HF #B8C7C4 */
+  /* Texto sobre fondo oscuro o imagen (BackLink, Act-Button clear): HF #B8C7C4 */
   --ds-component-on-dark-text:var(--ds-color-neutral-200);
   --ds-component-on-dark-bg:var(--ds-color-neutral-950);
-  /* IconButton sobre fondo oscuro: hover; antes neutral-0 directo en el CSS del componente */
-  --ds-component-icon-button-on-dark-hover:color-mix(in srgb, var(--ds-color-neutral-0) 12%, transparent);
+  /* Act-Button clear sobre fondo oscuro: hover (antes --ds-component-icon-button-on-dark-hover) */
+  --ds-component-button-on-dark-hover:color-mix(in srgb, var(--ds-color-neutral-0) 12%, transparent);
 
   /* Disclosure de riesgo alto: borde del panel; HF --imoles-riesgo-alto-tint-border */
   --ds-component-disclosure-risk-border:var(--ds-color-crimson-200);

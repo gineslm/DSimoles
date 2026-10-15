@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="patterns.bottom-navigation">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/BottomNav.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Navegación inferior · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.6 Navegación inferior" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">8.6 · Patrón</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Navegación inferior</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Moverse entre las secciones principales de una aplicación móvil.</p>
+</header>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Cuándo usarla</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Con 3–5 destinos de primer nivel, en móvil. En escritorio, navegación lateral o superior (fuera de esta iteración). Con más de 5 destinos, otra estructura.</p>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Componente</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:16px"><x-import component-from-global-scope="DSimoles.BottomNav" label="Principal" items="home::Inicio::inicio::#inicio | view_list::Elementos::elementos::#elementos | person::Cuenta::cuenta::#cuenta" default-active="inicio" hint-size="100%,72px"></x-import></div></div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Comportamiento</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Siempre visible en las pantallas de primer nivel.</li><li>Se oculta en flujos de varios pasos, en modales y con el teclado abierto.</li><li>Volver a tocar el destino actual lleva al inicio de esa sección.</li><li>El orden de los destinos no cambia nunca.</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad y plataformas</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>nav con nombre; ubicación actual con aria-current="page" y una señal no cromática.</li><li>Etiquetas siempre visibles, no solo iconos.</li><li>Respeta el área segura inferior. En iOS y Android puede ser la barra nativa (<a href="../components/strategy.dc.html">7.1 Estrategia de componentes</a>).</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Criterios de aceptación</h2>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Se oculta en los flujos.</li><li>La ubicación actual no depende solo del color.</li><li>Las etiquetas son visibles.</li></ol>
+</section>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Patrón aprobado como especificación el 2026-10-15; pendiente de la review del owner. Sin probar con lector de pantalla ni en dispositivo.</p>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

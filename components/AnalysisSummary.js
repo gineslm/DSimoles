@@ -1,4 +1,4 @@
-/* AnalysisSummary · 7.4 Presentación · HF: 2 Entidad - Analisis Resumen
+/* AnalysisSummary · 9.7 (iMoles) · HF: 2 Entidad - Analisis Resumen
    Resultado de un análisis: nivel de riesgo, indicación, explicación y los datos del análisis por capas. */
 (function () {
   var NS = window.DSimoles, h = NS.h;
@@ -15,6 +15,6 @@
       h(NS.RiskBadge, { level: level, label: p.badgeLabel, size: 'md' }),
       h(Tag, { className: 'dsm-analysis__title' }, p.title),
       p.description ? h('p', { className: 'dsm-analysis__desc' }, p.description) : null,
-      p.rows ? h(NS.Disclosure, { tone: level === 'high' ? 'risk-high' : 'neutral', rows: p.rows, open: p.open }) : null);
+      p.rows ? h(NS.Disclosure, { tone: level === 'high' ? 'error' : 'neutral', rows: p.rows, open: p.open }) : null);
   };
 })();

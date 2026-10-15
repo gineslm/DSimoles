@@ -1,9 +1,10 @@
-/* BackLink · 7.5 Navegación · HF: 1 Base - Nav Volver
-   Vuelve a la pantalla anterior y la nombra. Tono on-dark sobre la cámara. */
+/* Nav-BackLink · 7.6 · HF: 1 Base - Nav Volver
+   Vuelve a la pantalla anterior y la nombra: label obligatorio (nombre de la pantalla de destino); nombre accesible «Volver: {label}».
+   Con href es un enlace; sin href, un botón (volver en el historial). tone on-dark: sobre fondo oscuro o imagen. */
 (function () {
   var NS = window.DSimoles, h = NS.h;
   NS.css('back-link', [
-    '.dsm-back{display:inline-flex;align-items:center;gap:var(--ds-space-1);min-height:var(--ds-size-icon-lg);font:var(--ds-type-ui);letter-spacing:var(--ds-type-ui-tracking);text-transform:uppercase;color:var(--ds-color-brand-text);text-decoration:none;cursor:pointer;border-radius:var(--ds-radius-xs);text-align:left}',
+    '.dsm-back{display:inline-flex;align-items:center;gap:var(--ds-space-1);min-height:var(--ds-size-icon-lg);font:var(--ds-type-ui);letter-spacing:var(--ds-type-ui-tracking);text-transform:uppercase;color:var(--ds-color-brand-text);text-decoration:none;cursor:pointer;border-radius:var(--ds-radius-xs);text-align:left;padding-inline:var(--ds-space-1);margin-inline:calc(var(--ds-space-1) * -1)}',
     '.dsm-back:hover,.dsm-back.is-hover{color:var(--ds-color-link-hover)}',
     '.dsm-back:active,.dsm-back.is-pressed{color:var(--ds-color-link-pressed)}',
     '.dsm-back--on-dark{color:var(--ds-component-on-dark-text)}',

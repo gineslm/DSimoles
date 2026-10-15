@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="components.select">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Field.js"></script>
+<script src="../../components/TextField.js"></script>
+<script src="../../components/Select.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Form-Select · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="7.14 Form-Select" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Form-Select</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Elige un único valor de una lista cerrada de opciones. Select nativo: la lista desplegada es la del sistema. Sustituye a ChoiceList (2026-10-15).</p>
+</header>
+<section aria-label="Form-Select" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/Select.js</span> · nuevo (decisión del owner, 2026-10-15)</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Uso</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:16px"><x-import component-from-global-scope="DSimoles.Select" label="Tipo de documento" options="DNI | NIE | Pasaporte" hint-size="100%,76px"></x-import><x-import component-from-global-scope="DSimoles.Select" label="Provincia" help="Donde resides habitualmente." options="Álava | Albacete | Alicante | Almería | Asturias | Ávila | Badajoz | Barcelona" hint-size="100%,104px"></x-import><x-import component-from-global-scope="DSimoles.Select" label="Horario" optional="{{ true }}" options="m1::9:00::Mañana | m2::11:00::Mañana | t1::16:00::Tarde | t2::18:00::Tarde" hint-size="100%,76px"></x-import></div></div>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Sin valor inicial se muestra «Selecciona una opción», que no se puede elegir. Las opciones admiten grupos (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">valor::Texto::Grupo</span>).</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Cuándo pasar a otro control</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Para escribir y filtrar una lista larga: patrón 8.2 Autocompletado (escribir filtra; solo una opción válida confirma el valor). Para varios valores: patrón 8.3 Selección múltiple. Para cambiar de vista: <a href="segmented-control.dc.html">7.7 Nav-SegmentedControl</a>.</p>
+<h2 style="margin:0;font-size:22px;font-weight:600">Estados</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px"><div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">default</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.Select" label="Tipo de documento" options="DNI | NIE | Pasaporte" hint-size="100%,76px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">hover</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.Select" label="Tipo de documento" options="DNI | NIE | Pasaporte" demo-state="hover" hint-size="100%,76px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">focus</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.Select" label="Tipo de documento" options="DNI | NIE | Pasaporte" demo-state="focus" hint-size="100%,76px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">con valor</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.Select" label="Tipo de documento" options="DNI | NIE | Pasaporte" default-value="NIE" hint-size="100%,76px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">error</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.Select" label="Tipo de documento" options="DNI | NIE | Pasaporte" required="{{ true }}" error="Elige un tipo de documento" hint-size="100%,76px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">disabled</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.Select" label="Tipo de documento" options="DNI | NIE | Pasaporte" disabled="{{ true }}" hint-size="100%,76px"></x-import></div></div></div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
+<div role="table" aria-label="Ficha de Form-Select" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Definición</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Anatomía</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Form-Field (etiqueta, error, ayuda) · select nativo con el borde de los campos · icono expand_more decorativo.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">default, hover, focus, error, disabled. readonly no aplica: los select nativos no lo admiten.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Plataforma</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">En iOS y Android se abre la hoja o la rueda nativa; no se personaliza.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Tokens</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Los de Form-TextField (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">.dsm-input</span>) · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">size.icon.md</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">text.secondary</span></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">API</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">label</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">options</span> («Valor | …», «valor::Texto::Grupo | …» o [{value,label,group}]) · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">value</span> / <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">default-value</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">on-change</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">placeholder</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">help</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">error</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">optional</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">required</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">disabled</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">auto-complete</span></div></div>
+</div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<div role="table" aria-label="Accesibilidad de Form-Select" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Implementación</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Semántica</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">select con label for; optgroup</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Nombre accesible</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Etiqueta visible</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Teclado</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Los del control nativo (flechas, letra inicial, Espacio/Enter, Esc)</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Borde doble (selection.border)</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">aria-invalid; aria-describedby: error, ayuda</div></div>
+</div>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.23 Accesibilidad</a>).</p>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* FollowUpHeader · 7.4 Presentación · HF: 2 Entidad - Cabecera Seguimiento
+/* FollowUpHeader · 9.4 (iMoles) · HF: 2 Entidad - Cabecera Seguimiento
    Título de la pantalla de un seguimiento con su ubicación, sus datos y el menú de opciones. */
 (function () {
   var NS = window.DSimoles, h = NS.h;

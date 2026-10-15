@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="components.strategy">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Estrategia de componentes · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="7.1 Estrategia de componentes" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Estrategia de componentes</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Cómo se representan los componentes en el DS y cómo se llevan a web, iOS y Android. El diseño sigue siendo mobile-first; la plataforma web es solo el soporte en el que el DS muestra y prueba los componentes. Desarrolla la decisión DS-DEC-002.</p>
+</header>
+<section aria-labelledby="h-referencias" style="display:flex;flex-direction:column;gap:16px">
+<h2 id="h-referencias" style="margin:0;font-size:22px;font-weight:600">Referencias visuales en plataforma web</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Cada componente se representa en el DS con una versión web: es la que se dibuja, se implementa en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/</span> y se muestra en estas páginas.</p>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>El DS define la <strong style="font-weight:600">experiencia</strong>: aspecto (tokens), comportamiento, estados, contenido y accesibilidad. No define una tecnología ni una biblioteca obligatoria.</li><li>El catálogo es mínimo, genérico y reutilizable. Las composiciones de un producto se quedan en su sección (9 Componentes de producto · iMoles) hasta que un segundo contexto las necesite.</li><li>Componentes y patrones conviven: un componente resuelve una función con su contrato; un patrón explica cómo combinarlos (8 Patrones de diseño).</li></ul>
+</section>
+<section aria-labelledby="h-plataformas" style="display:flex;flex-direction:column;gap:16px">
+<h2 id="h-plataformas" style="margin:0;font-size:22px;font-weight:600">Implementación en web, iOS y Android</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Cada plataforma puede resolver un componente de tres maneras. Se elige la más sencilla que cumpla el contrato del componente.</p>
+<div role="table" aria-label="Formas de implementar un componente" style="font-size:14px">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Cuándo</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Control nativo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Primera opción cuando existe y cumple: el sistema ya resuelve teclado, lector de pantalla y convenciones (p. ej. un select o un selector de fecha). Se ajusta con los tokens del DS donde la plataforma lo permite.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Componente propio</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Cuando el control nativo no cubre el comportamiento o el aspecto que exige el contrato. Debe reproducir variantes, estados, tokens y accesibilidad de la ficha.</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Biblioteca externa</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Cuando ahorra trabajo sin romper el contrato. Se registra en Recursos (librerías y licencias) y se comprueba su accesibilidad antes de adoptarla.</div></div>
+</div>
+</section>
+<section aria-labelledby="h-requisitos" style="display:flex;flex-direction:column;gap:16px">
+<h2 id="h-requisitos" style="margin:0;font-size:22px;font-weight:600">Lo que toda implementación debe cumplir</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Las variantes y los estados de la ficha (default, hover cuando hay puntero, focus, pressed, disabled y los propios de cada componente).</li><li>Los tokens del DS para color, tipografía, espaciado, radios y tamaños; ningún valor suelto.</li><li>La accesibilidad de la ficha: semántica o rol equivalente en la plataforma, nombre accesible, teclado o acceso por interruptor, foco visible y estados anunciados. Las reglas comunes están en <a href="accessibility.dc.html">7.23 Accesibilidad</a>.</li><li>El tamaño de objetivo exigido por el producto (AA: 24 px; AAA: 44 px o área ampliada).</li><li>El mismo contenido y los mismos textos que la versión web, salvo convenciones de la plataforma.</li></ul>
+</section>
+<section aria-labelledby="h-diferencias" style="display:flex;flex-direction:column;gap:16px">
+<h2 id="h-diferencias" style="margin:0;font-size:22px;font-weight:600">Cómo se documenta una diferencia de plataforma</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">No hay galerías paralelas por plataforma ni una tabla general de equivalencias. Cuando un componente se necesita y se desarrolla en iOS o Android, su versión se documenta <strong style="font-weight:600">en la ficha de ese componente</strong>, y solo si cambia algo relevante:</p>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>la interacción (p. ej. la lista del select es la hoja o la rueda del sistema);</li><li>la accesibilidad (rol, gesto o anuncio distinto);</li><li>una convención de la plataforma (p. ej. el botón atrás del sistema en Android, que debe llevar al mismo destino que Nav-BackLink).</li></ul>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Si la versión nativa se comporta igual que la web, no se documenta nada aparte. La diferencia se escribe en la ficha con la plataforma, qué cambia y por qué, y se comprueba como el resto de criterios de aceptación.</p>
+</section>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Decisión de origen: DS-DEC-002 (aprobada). Página creada el 2026-10-15; pendiente de la review del owner.</p>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

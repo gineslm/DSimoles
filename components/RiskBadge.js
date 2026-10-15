@@ -1,4 +1,4 @@
-/* RiskBadge · 7.4 Presentación · HF: 1 Base - Insignia Riesgo
+/* RiskBadge · 9.1 (iMoles) · HF: 1 Base - Insignia Riesgo
    md 28 / sm 24: hexágono relleno con texto blanco. inline: sin fondo, texto del color de riesgo (filas y tarjetas). */
 (function () {
   var NS = window.DSimoles, h = NS.h, R = window.React;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="patterns.sequence-navigation">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Button.js"></script>
+<script src="../../components/Pager.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Navegación entre elementos de una secuencia · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.7 Navegación entre elementos de una secuencia" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">8.7 · Patrón</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Navegación entre elementos de una secuencia</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Recorrer uno a uno un conjunto corto de elementos del mismo tipo. No es paginación de resultados.</p>
+</header>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Cuándo usarla</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Con hasta unos 10 elementos, cuando se ve uno cada vez (tarjetas, pasos de una guía, imágenes). Para resultados de una búsqueda: paginación o carga progresiva (patrón 8.10 «Búsqueda, filtros y resultados»). Si conviene comparar los elementos, una lista.</p>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Componente</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:16px"><x-import component-from-global-scope="DSimoles.Pager" label="Tareas pendientes" unit="Tarea" total="3" default-current="2" hint-size="120px,28px"></x-import></div></div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Comportamiento</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>No es circular.</li><li>Cambiar de elemento no mueve el foco, salvo que el contenido cambie de pantalla.</li><li>Si se puede deslizar, el gesto y los botones dan el mismo resultado.</li><li>Sin reproducción automática.</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Grupo con nombre; «{unidad} n de N» anunciado.</li><li>La alternativa al gesto siempre está presente (WCAG 2.5.1).</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Criterios de aceptación</h2>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>No avanza solo.</li><li>Se puede usar sin gesto.</li><li>Anuncia la posición.</li></ol>
+</section>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Patrón aprobado como especificación el 2026-10-15; pendiente de la review del owner. Sin probar con lector de pantalla ni en dispositivo.</p>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

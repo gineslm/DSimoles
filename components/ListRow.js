@@ -1,5 +1,7 @@
-/* ListRow · 7.4 Presentación · HF: 1 Base - Fila Lista
-   Slot inicial: miniatura o vacío. Slot final: chevron (la fila entera es interactiva), botón (solo el botón lo es) o nada. */
+/* Data-ListRow · 7.16 · HF: 1 Base - Fila Lista. Requiere Button.js.
+   Composiciones (patrón 8.4): informativa (interactive=false, end=none), navegable (end=chevron; toda la fila es el objetivo; href → enlace)
+   y con acción secundaria (end=button; solo el botón es interactivo; endLabel obligatorio). Fila seleccionable: fuera de esta iteración.
+   Slot inicial: miniatura (Thumb, decorativa) o vacío. ListGroup: filas agrupadas en una card; headingLevel configurable. */
 (function () {
   var NS = window.DSimoles, h = NS.h;
   NS.css('list-row', [
@@ -32,7 +34,7 @@
       p.subtitle ? h('span', { className: 'dsm-row__subtitle' }, p.subtitle) : null);
     var endEl = null;
     if (end === 'chevron') endEl = h('span', { className: 'dsm-row__end dsm-chevron' }, h(NS.Icon, { name: 'chevron_right', size: 'md' }));
-    if (end === 'button') endEl = h('span', { className: 'dsm-row__end dsm-row__end--button' }, h(NS.Button, { variant: p.buttonVariant || 'secondary', size: 'md', width: 'auto', label: p.endLabel || 'Elegir', onClick: p.onClick }));
+    if (end === 'button') endEl = h('span', { className: 'dsm-row__end dsm-row__end--button' }, h(NS.Button, { variant: p.buttonVariant || 'secondary', size: 'md', width: 'auto', label: p.endLabel, onClick: p.onClick }));
     var cls = NS.cx('dsm-root dsm-row', interactive && 'dsm-reset dsm-focus dsm-row--interactive', !thumb && 'dsm-row--no-thumb', interactive && NS.state(p.demoState));
     var kids = [thumb, body, endEl];
     if (!interactive) return h('div', { className: cls }, kids);
@@ -45,7 +47,7 @@
     var R = window.React;
     var id = R.useId ? R.useId() : 'lg';
     var head = p.title ? h('div', { className: 'dsm-lgroup__head' },
-      h('h3', { id: id, className: 'dsm-lgroup__title' }, p.title),
+      h('h' + (p.headingLevel || 3), { id: id, className: 'dsm-lgroup__title' }, p.title),
       p.actionLabel ? h(NS.Button, { variant: 'secondary', size: 'xs', width: 'auto', icon: p.actionIcon, label: p.actionLabel, onClick: p.onAction }) : null) : null;
     var items = p.rows ? p.rows.map(function (r, i) { return h(NS.ListRow, Object.assign({ key: i }, r)); }) : R.Children.toArray(p.children);
     return h('div', { className: 'dsm-root dsm-lgroup' }, head,

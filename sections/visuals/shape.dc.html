@@ -24,17 +24,16 @@ a:hover{color:#5a5a5a}
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Forma</h1>
 <p style="margin:0;max-width:72ch;color:#3d3d3d">Radio de las esquinas según el tipo de elemento.</p>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Radios botón = campo (10) y card (16) decididos por el owner el 2026-10-14 (evidencia: pruebas/propuesta-alturas.dc.html). Pendiente de review.</p>
 </header>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Radios por rol</h2>
+<h2 style="margin:0;font-size:22px;font-weight:600">Radios por tamaño</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px">
 <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-xs)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.xs · 2</span><span style="font-size:12px;color:#5a5a5a">Anillo de focus del enlace</span></div>
 <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-sm)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.sm · 4</span><span style="font-size:12px;color:#5a5a5a">Badge de riesgo</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-button)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.button · 10</span><span style="font-size:12px;color:#5a5a5a">Botones md, sm y xs, tab de navegación</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-field)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.field · 10</span><span style="font-size:12px;color:#5a5a5a">Campo de texto, opción de lista</span></div>
-<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-card)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.card · 16</span><span style="font-size:12px;color:#5a5a5a">Tarjetas, grupos de filas, paneles, avisos, menús</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-md)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.md · 6</span><span style="font-size:12px;color:#5a5a5a">Sin uso por rol</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-lg)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.lg · 10</span><span style="font-size:12px;color:#5a5a5a"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.button</span> · <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.field</span><br>Botones md, sm y xs, tab de navegación, campo de texto, opción de lista</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-xl)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.xl · 16</span><span style="font-size:12px;color:#5a5a5a"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.card</span><br>Tarjetas, grupos de filas, paneles, avisos, menús</span></div>
 <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><div style="height:72px;background:var(--ds-color-neutral-100);border:var(--ds-border-width-thin) solid var(--ds-color-neutral-400);border-radius:var(--ds-radius-pill)"></div><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">radius.pill · 999</span><span style="font-size:12px;color:#5a5a5a">Chips, filtros, segmentado, botón solo-icono, progreso</span></div>
 </div>
 </section>
@@ -56,16 +55,6 @@ a:hover{color:#5a5a5a}
 </ul>
 </section>
 
-<section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Valores fuera de escala en el prototipo</h2>
-<div role="table" aria-label="Correspondencia de valores fuera de escala" style="font-size:14px">
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Observado</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Pasa a</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">20 px</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">radius.card (16)</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">24 px 24 px 0 0 · hoja inferior</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">radius.card arriba (16 16 0 0)</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">3 px · barra de progreso</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">radius.sm (4) o radius.pill</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">calc(radius − space.3 / 2) · anidados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">regla de anidado: exterior − padding, mínimo radius.sm</div></div>
-</div>
-</section>
 
 </main>
 </x-dc>

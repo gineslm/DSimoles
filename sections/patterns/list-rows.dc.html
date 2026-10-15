@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="patterns.list-rows">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Button.js"></script>
+<script src="../../components/ListRow.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Filas de lista · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.4 Filas de lista" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">8.4 · Patrón</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Filas de lista</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Cómo componer filas con Data-ListRow según lo que permite cada una: informativa, navegable o con acción secundaria.</p>
+</header>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Composiciones</h2>
+<div role="table" aria-label="Composiciones de fila" style="font-size:14px"><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Fila</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Interacción y uso</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Informativa</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Ninguna. Datos de solo lectura.</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Navegable</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Toda la fila (chevron). Abre el detalle del elemento.</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Con acción secundaria</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Solo el botón. Una acción directa sin abrir el detalle.</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Seleccionable</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Fuera de esta iteración: necesita un checkbox.</div></div></div><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;flex-direction:column;gap:12px;max-width:480px"><x-import component-from-global-scope="DSimoles.ListRow" thumb="none" title="Registro general" subtitle="Solo lectura" end="none" interactive="{{ false }}" hint-size="100%,60px"></x-import><x-import component-from-global-scope="DSimoles.ListRow" thumb="none" title="Solicitud 01" subtitle="3 documentos" href="#solicitud-01" hint-size="100%,60px"></x-import><x-import component-from-global-scope="DSimoles.ListRow" thumb="none" title="Informe anual.pdf" subtitle="1,2 MB" end="button" end-label="Descargar" hint-size="100%,60px"></x-import></div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Reglas</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Nunca hay interactivos anidados: una fila navegable no lleva botones dentro.</li><li>Una sola acción por fila. Si hay más, Ovl-OptionsMenu o el patrón 8.8.</li><li>Las filas relacionadas se agrupan en ListGroup, con un título que nombra la lista.</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Estados</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Lista vacía: texto breve y, si procede, una acción para crear el primer elemento (patrón «Estados de ausencia», hoy en N).</li><li>Cargando: Fb-Spinner con label.</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad y móvil</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>ul / li con nombre; la fila navegable es un enlace (con href) o un botón.</li><li>El título de la fila es lo primero que se lee.</li><li>En las navegables, el área táctil es toda la fila; la acción secundaria no queda pegada al borde (área 44).</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Criterios de aceptación</h2>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Cada fila tiene un solo objetivo.</li><li>No hay interactivos anidados.</li><li>El agrupamiento tiene nombre.</li></ol>
+</section>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Patrón aprobado como especificación el 2026-10-15; pendiente de la review del owner. Sin probar con lector de pantalla ni en dispositivo.</p>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

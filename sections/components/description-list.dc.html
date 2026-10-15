@@ -17,24 +17,25 @@
 <body>
 <x-dc>
 <helmet>
-<title>DescriptionList · DSimoles</title>
+<title>Data-DescriptionList · DSimoles</title>
 <style>
 body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
 a:hover{color:#5a5a5a}
 </style>
 </helmet>
-<main data-screen-label="7.12 DescriptionList" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<main data-screen-label="7.15 Data-DescriptionList" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
 <header style="display:flex;flex-direction:column;gap:12px">
-<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">DescriptionList</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">Pares de etiqueta y valor de un mismo objeto.</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Data-DescriptionList</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Pares de término y valor de un mismo objeto.</p>
 </header>
 <section aria-label="DescriptionList" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/DescriptionList.js</span> · HF: filas etiqueta / valor de Analisis Resumen, Captura Detalle y Accion (detalle)</p>
+<div style="border:1px solid #d4d4d4;background:#f6f6f6;padding:12px 16px;font-size:14px;max-width:80ch;color:#1f1f1f"><strong style="font-weight:600">Contrato revisado (auditoría, 2026-10-15).</strong> El tono <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">risk-high</span> pasa a <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">error</span> (tono semántico genérico; risk-high queda como alias temporal). Con valores largos o pantalla estrecha, <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">layout="stacked"</span>.</div>
 <h2 style="margin:0;font-size:22px;font-weight:600">Uso</h2>
-<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.DescriptionList" rows="Responsable::Tú | Fecha límite::14 mar 2026 | Aviso::Tres días antes | Se completa cuando::Confirmes que has ido a la cita" hint-size="100%,140px"></x-import>
-<div style="background:var(--ds-color-risk-high-tint);padding:12px 16px;border-radius:14px"><x-import component-from-global-scope="DSimoles.DescriptionList" tone="risk-high" rows="Lesión::Omóplato izquierdo · 01\ncara posterior | Cambio registrado::Borde y color" hint-size="100%,80px"></x-import></div></div></div>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.DescriptionList" rows="Responsable::Tú | Fecha límite::14 mar 2026 | Aviso::Tres días antes | Estado::Pendiente de revisión" hint-size="100%,140px"></x-import>
+<div style="background:var(--ds-color-risk-high-tint);padding:12px 16px;border-radius:14px"><x-import component-from-global-scope="DSimoles.DescriptionList" tone="error" rows="Elemento::Solicitud 01\nsegunda línea | Incidencia::Falta un documento" hint-size="100%,80px"></x-import></div></div></div>
 <h2 style="margin:0;font-size:22px;font-weight:600">Caso límite: valores largos (apilado)</h2>
-<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:260px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.DescriptionList" layout="stacked" rows="Se completa cuando::Confirmes que has ido a la cita y registres lo que te dijo el profesional | Aviso::Tres días antes" hint-size="100%,140px"></x-import></div></div>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:260px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.DescriptionList" layout="stacked" rows="Se completa cuando::La persona responsable revise los documentos y confirme que están completos | Aviso::Tres días antes" hint-size="100%,140px"></x-import></div></div>
 
 <h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
 <div role="table" aria-label="Ficha de DescriptionList" style="font-size:14px">
@@ -53,7 +54,7 @@ a:hover{color:#5a5a5a}
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">—</div></div>
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">—</div></div>
 </div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.22 Accesibilidad</a>).</p>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.23 Accesibilidad</a>).</p>
 <h2 style="margin:0;font-size:22px;font-weight:600">Cambios respecto a la HF</h2>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Divs con justify-content pasan a &lt;dl&gt;.</li><li>Tamaños de 14 y 15 px unificados en type.caption.</li></ul>
 </section>

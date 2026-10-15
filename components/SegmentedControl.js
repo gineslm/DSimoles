@@ -1,5 +1,6 @@
-/* SegmentedControl · 7.2 Entrada y selección · HF: «Imagen fija / Comparar» en 2 Entidad - Captura Detalle
-   Grupo radio compacto para cambiar la vista de un mismo contenido. */
+/* Nav-SegmentedControl · 7.7 · HF: «Imagen fija / Comparar» en 2 Entidad - Captura Detalle
+   Cambia entre 2 y 4 vistas del mismo contenido; label obligatorio. radiogroup y no tablist: no hay paneles con su propio foco.
+   Con más de 4 opciones o etiquetas largas, Form-Select. */
 (function () {
   var NS = window.DSimoles, h = NS.h, R = window.React;
   NS.css('segmented', [
@@ -9,7 +10,9 @@
     '.dsm-seg__opt[aria-checked="true"]{background:var(--ds-color-action-primary);color:var(--ds-color-text-inverse)}'
   ].join('\n'));
 
+  var warned = false;
   NS.SegmentedControl = function SegmentedControl(p) {
+    if (!p.label && !warned) { warned = true; console.warn('DSimoles.SegmentedControl: label es obligatorio.'); }
     var opts = NS.list(p.options);
     var v = NS.useControlled(p.value, p.defaultValue || opts[0], p.onChange);
     var refs = R.useRef([]);

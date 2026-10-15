@@ -1,4 +1,4 @@
-/* ActionCard · 7.1 Acciones · HF: 2 Entidad - Accion (formatos lista, bloque y contexto)
+/* ActionCard · 9.6 (iMoles) · HF: 2 Entidad - Accion (formatos lista, bloque y contexto)
    Algo que la persona tiene que hacer. Ejecutable (pendiente o vencida): relleno de acción.
    Color (tasks de adopción): action.primary para todas; action.alert solo para pedir cita presencial (riesgo alto). */
 (function () {
@@ -76,9 +76,11 @@
     };
   }
 
+  /* Chip sobre el relleno de la tarjeta: tono on-fill de la base; el color del texto lo pone este componente de producto. */
+  NS.css('action-card-chip', '.dsm-chip.dsm-action__chip--alert{color:var(--ds-color-risk-high-text)}.dsm-chip.dsm-action__chip--brand{color:var(--ds-color-brand-text)}');
   function chip(m) {
-    if (m.exec) return h(NS.StatusChip, { tone: 'on-fill', label: m.statusText, color: m.fill === 'alert' ? 'var(--ds-color-risk-high-text)' : 'var(--ds-color-brand-text)' });
-    return h(NS.StatusChip, { tone: m.status === 'upcoming' ? 'upcoming' : 'neutral', label: m.statusText });
+    if (m.exec) return h(NS.StatusChip, { tone: 'on-fill', label: m.statusText, className: m.fill === 'alert' ? 'dsm-action__chip--alert' : 'dsm-action__chip--brand' });
+    return h(NS.StatusChip, { tone: m.status === 'upcoming' ? 'info' : 'neutral', label: m.statusText });
   }
 
   function interactive(tag, cls, p, kids) {
@@ -99,7 +101,7 @@
 
   function Block(p, m) {
     var body = h('span', { key: 'b', className: 'dsm-action__body' },
-      m.exec ? null : h(NS.StatusChip, { tone: m.status === 'upcoming' ? 'upcoming' : 'neutral', label: m.status === 'upcoming' && m.date ? 'Próxima · ' + m.date : (m.status === 'in-progress' && p.sentDate ? 'Enviada el ' + p.sentDate : m.statusText) }),
+      m.exec ? null : h(NS.StatusChip, { tone: m.status === 'upcoming' ? 'info' : 'neutral', label: m.status === 'upcoming' && m.date ? 'Próxima · ' + m.date : (m.status === 'in-progress' && p.sentDate ? 'Enviada el ' + p.sentDate : m.statusText) }),
       h('span', { className: 'dsm-action__btitle' }, m.title),
       h('span', { className: 'dsm-action__support' }, m.support));
     if (!m.exec) return h('div', { className: 'dsm-root dsm-action dsm-action--block dsm-action--read' }, body);
@@ -119,7 +121,7 @@
       h(NS.RiskBadge, { level: level, label: badge, size: 'inline' }),
       p.rows ? h(NS.Disclosure, { rows: p.rows }) : null,
       h('div', { className: 'dsm-actx__status' },
-        h(NS.StatusChip, { tone: m.exec ? (m.fill === 'alert' ? 'overdue' : 'upcoming') : 'neutral', label: m.statusText }),
+        h(NS.StatusChip, { tone: m.exec ? (m.fill === 'alert' ? 'error' : 'info') : 'neutral', label: m.statusText }),
         h('span', { className: 'dsm-action__date' }, m.dateText)),
       Block(Object.assign({}, p, { demoState: null }), m));
   }

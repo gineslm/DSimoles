@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="patterns.contextual-actions">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Button.js"></script>
+<script src="../../components/OptionsMenu.js"></script>
+<script src="../../components/TextLink.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Alternativas al menú contextual · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.8 Alternativas al menú contextual" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">8.8 · Patrón</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Alternativas al menú contextual</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Decidir si las acciones de un objeto se muestran a la vista o se agrupan en Ovl-OptionsMenu.</p>
+</header>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Criterio</h2>
+<div role="table" aria-label="Criterio" style="font-size:14px"><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Situación</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Solución</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">1–2 acciones frecuentes</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">A la vista: Act-Button o Nav-TextLink</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">3 o más acciones poco frecuentes</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Ovl-OptionsMenu</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Una acción principal y varias secundarias</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">La principal a la vista y las demás en el menú</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Acción destructiva</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Nunca la única visible sin confirmación (patrón «Creación, edición y eliminación», hoy en N)</div></div></div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Ejemplo</h2>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><x-import component-from-global-scope="DSimoles.Button" variant="secondary" label="Descargar" hint-size="auto,44px"></x-import><x-import component-from-global-scope="DSimoles.OptionsMenu" title="Opciones del archivo" trigger-label="Opciones del archivo" items="edit::Renombrar | archive::Mover | Eliminar" hint-size="44px,44px"></x-import></div><p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Detalle de un archivo: «Descargar» a la vista; «Renombrar», «Mover» y «Eliminar» en el menú.</p>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Reglas</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Lo frecuente no se esconde.</li><li>El menú nombra el objeto («Opciones del archivo»).</li><li>No se anidan menús.</li><li>En una fila estrecha con 2 o más acciones visibles, se pasa a menú antes de reducir el tamaño de los botones.</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Las acciones visibles son botones o enlaces con nombre propio; el menú sigue el patrón menu button de <a href="../components/options-menu.dc.html">7.22 Ovl-OptionsMenu</a>.</p>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Criterios de aceptación</h2>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Las acciones frecuentes están a la vista.</li><li>No hay menús anidados.</li><li>Las destructivas tienen confirmación.</li></ol>
+</section>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Patrón aprobado como especificación el 2026-10-15; pendiente de la review del owner. Sin probar con lector de pantalla ni en dispositivo.</p>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

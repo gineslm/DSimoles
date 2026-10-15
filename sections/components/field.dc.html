@@ -11,27 +11,27 @@
 <script src="../../components/core.js"></script>
 <script src="../../components/Field.js"></script>
 <script src="../../components/TextField.js"></script>
-<script src="../../components/ChoiceList.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<title>Field · DSimoles</title>
+<title>Form-Field · DSimoles</title>
 <style>
 body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
 a:hover{color:#5a5a5a}
 </style>
 </helmet>
-<main data-screen-label="7.8 Field" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<main data-screen-label="7.10 Form-Field" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
 <header style="display:flex;flex-direction:column;gap:12px">
-<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Field</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">Estructura común de un campo: etiqueta, control, error, ayuda y contador.</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Form-Field</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Estructura común de un campo: etiqueta, control, error, ayuda y contador configurable.</p>
 </header>
 <section aria-label="Field" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/Field.js</span> · HF: etiqueta y ayuda de 1 Base - Campo Texto</p>
+<div style="border:1px solid #d4d4d4;background:#f6f6f6;padding:12px 16px;font-size:14px;max-width:80ch;color:#1f1f1f"><strong style="font-weight:600">Contrato revisado (auditoría, 2026-10-15).</strong> Field presenta el contador (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">count</span> + <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">max</span>) para cualquier control: «n/max» visible y oculto al lector, aviso «Quedan N caracteres» solo cerca del límite. Orden de aria-describedby: error, ayuda, contador. El icono de error pasa a <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">error</span>. Separación de 6 px entre etiqueta, control, error y pie (<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">space.2 − space.half</span>); no afecta a la accesibilidad mientras la etiqueta siga asociada y visible. Lo usan <a href="text-field.dc.html">7.12 Form-TextField</a>, <a href="text-area.dc.html">7.13 Form-TextArea</a> y <a href="select.dc.html">7.14 Form-Select</a>.</div>
 <h2 style="margin:0;font-size:22px;font-weight:600">Anatomía</h2>
-<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.TextField" label="Mi referencia" optional="{{ true }}" help="Ejemplos: junto al reloj · cerca de una cicatriz" max-length="40" error="La referencia no puede quedar vacía si la activas" hint-size="100%,140px"></x-import></div></div>
+<div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:24px;display:flex;justify-content:flex-start"><div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px"><x-import component-from-global-scope="DSimoles.TextField" label="Nombre para mostrar" optional="{{ true }}" help="Lo verán las demás personas del equipo." max-length="40" error="El nombre no puede quedar vacío si lo activas" hint-size="100%,140px"></x-import></div></div>
 
 <h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
 <div role="table" aria-label="Ficha de Field" style="font-size:14px">
@@ -51,7 +51,7 @@ a:hover{color:#5a5a5a}
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">—</div></div>
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">error y ayuda con aria-describedby</div></div>
 </div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.22 Accesibilidad</a>).</p>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.23 Accesibilidad</a>).</p>
 <h2 style="margin:0;font-size:22px;font-weight:600">Cambios respecto a la HF</h2>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Etiqueta condensada en mayúsculas → Roboto 500 14.</li><li>Ayuda de 300 13 a type.small (400 13).</li><li>Se añaden el mensaje de error y la marca de opcional.</li></ul>
 </section>

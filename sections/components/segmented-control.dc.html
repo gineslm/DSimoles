@@ -11,31 +11,30 @@
 <script src="../../components/core.js"></script>
 <script src="../../components/Field.js"></script>
 <script src="../../components/TextField.js"></script>
-<script src="../../components/ChoiceList.js"></script>
 <script src="../../components/SegmentedControl.js"></script>
-<script src="../../components/FilterChips.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<title>SegmentedControl · DSimoles</title>
+<title>Nav-SegmentedControl · DSimoles</title>
 <style>
 body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
 a:hover{color:#5a5a5a}
 </style>
 </helmet>
-<main data-screen-label="7.6 SegmentedControl" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<main data-screen-label="7.7 Nav-SegmentedControl" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
 <header style="display:flex;flex-direction:column;gap:12px">
-<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">SegmentedControl</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">Cambia entre dos o tres vistas del mismo contenido.</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Nav-SegmentedControl</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Cambia entre dos y cuatro vistas del mismo contenido.</p>
 </header>
 <section aria-label="SegmentedControl" style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch"><span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">components/SegmentedControl.js</span> · HF: «Imagen fija / Comparar» en 2 Entidad - Captura Detalle</p>
+<div style="border:1px solid #d4d4d4;background:#f6f6f6;padding:12px 16px;font-size:14px;max-width:80ch;color:#1f1f1f"><strong style="font-weight:600">Contrato revisado (auditoría, 2026-10-15).</strong> <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">label</span> obligatorio. Entre 2 y 4 vistas del mismo contenido. Es radiogroup y no tablist porque no hay paneles con su propio foco. Con más de 4 opciones o etiquetas largas, Form-Select.</div>
 <h2 style="margin:0;font-size:22px;font-weight:600">Estados</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px"><div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">default</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.SegmentedControl" label="Vista" options="Imagen fija | Comparar" hint-size="190px,36px"></x-import></div></div>
-<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">hover (Comparar)</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.SegmentedControl" label="Vista" options="Imagen fija | Comparar" demo-index="{{ 1 }}" demo-state="hover" hint-size="190px,36px"></x-import></div></div>
-<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">focus</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.SegmentedControl" label="Vista" options="Imagen fija | Comparar" demo-index="{{ 0 }}" demo-state="focus" hint-size="190px,36px"></x-import></div></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px"><div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">default</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.SegmentedControl" label="Vista" options="Lista | Cuadrícula" hint-size="190px,36px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">hover (Comparar)</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.SegmentedControl" label="Vista" options="Lista | Cuadrícula" demo-index="{{ 1 }}" demo-state="hover" hint-size="190px,36px"></x-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">focus</span><div style="border:1px solid #d4d4d4;background:var(--ds-color-bg-page);padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0"><x-import component-from-global-scope="DSimoles.SegmentedControl" label="Vista" options="Lista | Cuadrícula" demo-index="{{ 0 }}" demo-state="focus" hint-size="190px,36px"></x-import></div></div></div>
 <h2 style="margin:0;font-size:22px;font-weight:600">Ficha</h2>
 <div role="table" aria-label="Ficha de SegmentedControl" style="font-size:14px">
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Campo</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Definición</div></div>
@@ -54,7 +53,7 @@ a:hover{color:#5a5a5a}
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Foco</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Anillo 2 px · área 44</div></div>
 <div role="row" style="display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,3fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Estados anunciados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">aria-checked</div></div>
 </div>
-<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.22 Accesibilidad</a>).</p>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Lo que implementa el código; sin probar con lector de pantalla ni en dispositivo (pruebas en <a href="accessibility.dc.html#h-pruebas">7.23 Accesibilidad</a>).</p>
 <h2 style="margin:0;font-size:22px;font-weight:600">Cambios respecto a la HF</h2>
 <ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Fondo blanco al 92 % y sombra a mano pasan a bg.surface y elevation.interactive.</li><li>Etiquetas de 10 a 12 px.</li><li>En la HF eran spans sin semántica; ahora es un grupo radio.</li></ul>
 <p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Pending · el modo Comparar no está diseñado en la HF.</p>

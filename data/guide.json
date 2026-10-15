@@ -530,11 +530,11 @@
         {
           "id": "resources.icon-construction",
           "number": "3.2",
-          "title": "Construcción de iconos",
-          "objective": "Definir construcción de iconos para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Retícula, tamaños, grosor, remates y correcciones ópticas de iconos.",
+          "title": "Iconos",
+          "objective": "Definir la librería de iconos del DS, su subconjunto y su uso para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Librería, subconjunto, significado de cada icono, tamaños, peso, funcionamiento y criterios para añadir iconos. La API del componente Icon está en 7.10.",
           "accessibility": "Nombres accesibles, texto alternativo, elementos decorativos, contraste, comprensión de símbolos y área interactiva independiente del tamaño visual del icono.",
-          "deliverable": "Página de construcción de iconos con decisiones, reglas, ejemplos aplicados, referencias y comprobaciones.",
+          "deliverable": "Página de iconos con subconjunto, escala, funcionamiento, reglas, ejemplos aplicados y accesibilidad.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1085,13 +1085,58 @@
       "objective": "Componentes del ecosistema, sin dependencia de ningún producto. Una subsección por componente, ordenadas por función y de lo más simple a lo más compuesto.",
       "items": [
         {
-          "id": "components.button",
+          "id": "components.strategy",
           "number": "7.1",
-          "title": "Button",
-          "objective": "Definir Button para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Button: Inicia la acción principal o una alternativa de una pantalla. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "title": "Estrategia de componentes",
+          "objective": "Definir la estrategia de componentes para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Estrategia de componentes: referencias visuales en plataforma web (el diseño sigue siendo mobile-first), implementación en web, iOS y Android (control nativo, componente propio o biblioteca externa) y cómo se documenta una diferencia de plataforma en la ficha de cada componente.",
+          "accessibility": "Requisitos de accesibilidad que toda implementación debe cumplir en cualquier plataforma.",
+          "deliverable": "Página de estrategia de componentes con decisiones, reglas, referencias y comprobaciones.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/strategy.html"
+        },
+        {
+          "id": "components.icon",
+          "number": "7.2",
+          "title": "Vis-Icon",
+          "objective": "Definir Vis-Icon para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Vis-Icon: Glifo de interfaz de un catálogo controlado (Material Symbols Rounded, subconjunto alojado en tokens.css); decorativo o informativo. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de Button con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Vis-Icon con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/icon.html"
+        },
+        {
+          "id": "components.chip",
+          "number": "7.3",
+          "title": "Vis-Chip",
+          "objective": "Definir Vis-Chip para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Vis-Chip: valor breve en forma de pastilla, con dos usos: estático (con tono de estado) y eliminable (con un botón x; p. ej. valores elegidos o filtros activos). Reúne StatusChip y FilterChips. Variantes, estados, anatomía, tokens y API.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de Vis-Chip con variantes, estados, ficha y accesibilidad.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/chip.html"
+        },
+        {
+          "id": "components.button",
+          "number": "7.4",
+          "title": "Act-Button",
+          "objective": "Definir Act-Button para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Act-Button: Ejecuta una acción: solo texto, icono y texto o solo icono; variantes primary, secondary, destructive y clear. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de Act-Button con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1100,28 +1145,13 @@
           "suggestedPath": "sections/components/button.html"
         },
         {
-          "id": "components.icon-button",
-          "number": "7.2",
-          "title": "IconButton",
-          "objective": "Definir IconButton para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "IconButton: Acción secundaria representada solo con un icono, con nombre accesible obligatorio. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de IconButton con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/components/icon-button.html"
-        },
-        {
           "id": "components.text-link",
-          "number": "7.3",
-          "title": "TextLink",
-          "objective": "Definir TextLink para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "TextLink: Lleva a otra pantalla desde un bloque de contenido sin el peso de un botón. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "number": "7.5",
+          "title": "Nav-TextLink",
+          "objective": "Definir Nav-TextLink para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Nav-TextLink: Navega a una página, una sección o un recurso; siempre con destino. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de TextLink con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Nav-TextLink con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1130,43 +1160,28 @@
           "suggestedPath": "sections/components/text-link.html"
         },
         {
-          "id": "components.text-field",
-          "number": "7.4",
-          "title": "TextField",
-          "objective": "Definir TextField para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "TextField: Recoge un texto corto o largo escrito por la persona. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "id": "components.back-link",
+          "number": "7.6",
+          "title": "Nav-BackLink",
+          "objective": "Definir Nav-BackLink para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Nav-BackLink: Vuelve a la pantalla anterior y la nombra. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de TextField con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Nav-BackLink con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
             "La revisión de diseño y las comprobaciones aplicables están registradas."
           ],
-          "suggestedPath": "sections/components/text-field.html"
-        },
-        {
-          "id": "components.choice-list",
-          "number": "7.5",
-          "title": "ChoiceList",
-          "objective": "Definir ChoiceList para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "ChoiceList: Elegir una sola opción de una lista corta visible entera. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de ChoiceList con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/components/choice-list.html"
+          "suggestedPath": "sections/components/back-link.html"
         },
         {
           "id": "components.segmented-control",
-          "number": "7.6",
-          "title": "SegmentedControl",
-          "objective": "Definir SegmentedControl para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "SegmentedControl: Cambia entre dos o tres vistas del mismo contenido. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "number": "7.7",
+          "title": "Nav-SegmentedControl",
+          "objective": "Definir Nav-SegmentedControl para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Nav-SegmentedControl: Cambia entre dos y cuatro vistas del mismo contenido. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de SegmentedControl con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Nav-SegmentedControl con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1175,28 +1190,43 @@
           "suggestedPath": "sections/components/segmented-control.html"
         },
         {
-          "id": "components.filter-chips",
-          "number": "7.7",
-          "title": "FilterChips",
-          "objective": "Definir FilterChips para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "FilterChips: Filtra una lista con una sola opción activa. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "id": "components.pager",
+          "number": "7.8",
+          "title": "Nav-Pager",
+          "objective": "Definir Nav-Pager para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Nav-Pager: Pasa al elemento anterior o siguiente de una secuencia corta; no es paginación de resultados. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de FilterChips con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Nav-Pager con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
             "La revisión de diseño y las comprobaciones aplicables están registradas."
           ],
-          "suggestedPath": "sections/components/filter-chips.html"
+          "suggestedPath": "sections/components/pager.html"
+        },
+        {
+          "id": "components.bottom-nav",
+          "number": "7.9",
+          "title": "Nav-BottomTab",
+          "objective": "Definir Nav-BottomTab para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Nav-BottomTab: Navegación principal entre tres y cinco destinos de primer nivel en móvil. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de Nav-BottomTab con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/bottom-nav.html"
         },
         {
           "id": "components.field",
-          "number": "7.8",
-          "title": "Field",
-          "objective": "Definir Field para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Field: Estructura común de un campo: etiqueta, control, error, ayuda y contador. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "number": "7.10",
+          "title": "Form-Field",
+          "objective": "Definir Form-Field para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Form-Field: Estructura común de un campo: etiqueta, control, error, ayuda y contador configurable. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de Field con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Form-Field con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1206,12 +1236,12 @@
         },
         {
           "id": "components.fieldset",
-          "number": "7.9",
-          "title": "Fieldset",
-          "objective": "Definir Fieldset para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Fieldset: Agrupa controles bajo una misma pregunta. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "number": "7.11",
+          "title": "Form-Fieldset",
+          "objective": "Definir Form-Fieldset para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Form-Fieldset: Agrupa controles relacionados bajo una pregunta o un título. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de Fieldset con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Form-Fieldset con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1220,43 +1250,58 @@
           "suggestedPath": "sections/components/fieldset.html"
         },
         {
-          "id": "components.icon",
-          "number": "7.10",
-          "title": "Icon",
-          "objective": "Definir Icon para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Icon: Glifo de interfaz de Material Symbols Rounded, del subconjunto alojado en tokens.css. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "id": "components.text-field",
+          "number": "7.12",
+          "title": "Form-TextField",
+          "objective": "Definir Form-TextField para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Form-TextField: Entrada de texto de una línea. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de Icon con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Form-TextField con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
             "La revisión de diseño y las comprobaciones aplicables están registradas."
           ],
-          "suggestedPath": "sections/components/icon.html"
+          "suggestedPath": "sections/components/text-field.html"
         },
         {
-          "id": "components.status-chip",
-          "number": "7.11",
-          "title": "StatusChip",
-          "objective": "Definir StatusChip para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "StatusChip: Etiqueta corta del estado de un seguimiento o una acción. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "id": "components.text-area",
+          "number": "7.13",
+          "title": "Form-TextArea",
+          "objective": "Definir Form-TextArea para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Form-TextArea: Entrada de texto multilínea. Variantes, estados, anatomía, tokens y API.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de StatusChip con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Form-TextArea con variantes, estados, ficha y accesibilidad.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
             "La revisión de diseño y las comprobaciones aplicables están registradas."
           ],
-          "suggestedPath": "sections/components/status-chip.html"
+          "suggestedPath": "sections/components/text-area.html"
+        },
+        {
+          "id": "components.select",
+          "number": "7.14",
+          "title": "Form-Select",
+          "objective": "Definir Form-Select para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Form-Select: Elige un único valor de una lista cerrada de opciones. Variantes, estados, anatomía, tokens y API.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de Form-Select con variantes, estados, ficha y accesibilidad.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/select.html"
         },
         {
           "id": "components.description-list",
-          "number": "7.12",
-          "title": "DescriptionList",
-          "objective": "Definir DescriptionList para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "DescriptionList: Pares de etiqueta y valor de un mismo objeto. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "number": "7.15",
+          "title": "Data-DescriptionList",
+          "objective": "Definir Data-DescriptionList para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Data-DescriptionList: Pares de término y valor de un mismo objeto. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de DescriptionList con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Data-DescriptionList con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1266,12 +1311,12 @@
         },
         {
           "id": "components.list-row",
-          "number": "7.13",
-          "title": "ListRow",
-          "objective": "Definir ListRow para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "ListRow: Fila genérica de una lista: miniatura, título, subtítulo y un final. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "number": "7.16",
+          "title": "Data-ListRow",
+          "objective": "Definir Data-ListRow para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Data-ListRow: Fila de una lista (informativa, navegable o con acción secundaria) y su agrupación en ListGroup. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de ListRow con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Data-ListRow con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1280,58 +1325,13 @@
           "suggestedPath": "sections/components/list-row.html"
         },
         {
-          "id": "components.back-link",
-          "number": "7.14",
-          "title": "BackLink",
-          "objective": "Definir BackLink para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "BackLink: Vuelve a la pantalla anterior y dice a cuál. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de BackLink con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/components/back-link.html"
-        },
-        {
-          "id": "components.bottom-nav",
-          "number": "7.15",
-          "title": "BottomNav",
-          "objective": "Definir BottomNav para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "BottomNav: Navegación principal entre Inicio, Seguimientos y Perfil. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de BottomNav con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/components/bottom-nav.html"
-        },
-        {
-          "id": "components.pager",
-          "number": "7.16",
-          "title": "Pager",
-          "objective": "Definir Pager para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Pager: Pasa de un elemento a otro en un carrusel corto. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de Pager con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/components/pager.html"
-        },
-        {
           "id": "components.spinner",
           "number": "7.17",
-          "title": "Spinner",
-          "objective": "Definir Spinner para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Spinner: Indica una espera corta sin pasos. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "title": "Fb-Spinner",
+          "objective": "Definir Fb-Spinner para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Fb-Spinner: Indica una operación en curso sin duración conocida. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de Spinner con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Fb-Spinner con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1340,28 +1340,28 @@
           "suggestedPath": "sections/components/spinner.html"
         },
         {
-          "id": "components.inline-alert",
+          "id": "components.progress-bar",
           "number": "7.18",
-          "title": "InlineAlert",
-          "objective": "Definir InlineAlert para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "InlineAlert: Mensaje dentro del contenido que avisa de algo antes de avanzar. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "title": "Fb-ProgressBar",
+          "objective": "Definir Fb-ProgressBar para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Fb-ProgressBar: Muestra el avance cuantificable de una operación, de 0 a 100. Variantes, estados, anatomía, tokens y API.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de InlineAlert con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Fb-ProgressBar con variantes, estados, ficha y accesibilidad.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
             "La revisión de diseño y las comprobaciones aplicables están registradas."
           ],
-          "suggestedPath": "sections/components/inline-alert.html"
+          "suggestedPath": "sections/components/progress-bar.html"
         },
         {
           "id": "components.process-steps",
           "number": "7.19",
-          "title": "ProcessSteps",
-          "objective": "Definir ProcessSteps para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "ProcessSteps: Muestra en qué paso va un proceso que tarda unos segundos. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "title": "Fb-ProcessSteps",
+          "objective": "Definir Fb-ProcessSteps para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Fb-ProcessSteps: Muestra el avance de un proceso por pasos con nombre. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de ProcessSteps con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Fb-ProcessSteps con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1370,13 +1370,28 @@
           "suggestedPath": "sections/components/process-steps.html"
         },
         {
-          "id": "components.disclosure",
+          "id": "components.inline-alert",
           "number": "7.20",
-          "title": "Disclosure",
-          "objective": "Definir Disclosure para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Disclosure: Guarda los datos de segunda capa detrás de una etiqueta. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "title": "Fb-InlineAlert",
+          "objective": "Definir Fb-InlineAlert para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Fb-InlineAlert: Mensaje contextual de error, advertencia, información o éxito. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de Disclosure con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Fb-InlineAlert con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/inline-alert.html"
+        },
+        {
+          "id": "components.disclosure",
+          "number": "7.21",
+          "title": "Ovl-Accordion",
+          "objective": "Definir Ovl-Accordion para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Ovl-Accordion: Muestra u oculta contenido secundario detrás de una etiqueta. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de Ovl-Accordion con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1386,12 +1401,12 @@
         },
         {
           "id": "components.options-menu",
-          "number": "7.21",
-          "title": "OptionsMenu",
-          "objective": "Definir OptionsMenu para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "OptionsMenu: Agrupa acciones poco frecuentes sobre un seguimiento o una foto. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "number": "7.22",
+          "title": "Ovl-OptionsMenu",
+          "objective": "Definir Ovl-OptionsMenu para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Ovl-OptionsMenu: Agrupa acciones contextuales poco frecuentes detrás de un botón. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
           "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de OptionsMenu con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "deliverable": "Página de Ovl-OptionsMenu con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
           "acceptance": [
             "Las decisiones y sus motivos están documentados.",
             "Los ejemplos cubren el uso habitual y al menos un caso límite.",
@@ -1401,7 +1416,7 @@
         },
         {
           "id": "components.accessibility",
-          "number": "7.22",
+          "number": "7.23",
           "title": "Accesibilidad",
           "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Ficha por componente con semántica, nombre accesible, teclado, foco, estados y pruebas.",
@@ -1415,8 +1430,68 @@
           "suggestedPath": "sections/components/accessibility.html"
         },
         {
+          "id": "components.filter-chips",
+          "number": "7.24",
+          "title": "Data-FilterChips",
+          "objective": "Definir Data-FilterChips para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Data-FilterChips: Filtra una colección con un solo filtro activo. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de Data-FilterChips con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/filter-chips.html"
+        },
+        {
+          "id": "components.status-chip",
+          "number": "7.25",
+          "title": "Data-StatusChip",
+          "objective": "Definir Data-StatusChip para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Data-StatusChip: Etiqueta breve del estado de un objeto, con tonos semánticos genéricos. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de Data-StatusChip con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/status-chip.html"
+        },
+        {
+          "id": "components.icon-button",
+          "number": "7.26",
+          "title": "IconButton",
+          "objective": "Definir IconButton para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "IconButton: Acción secundaria representada solo con un icono, con nombre accesible obligatorio. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de IconButton con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/icon-button.html"
+        },
+        {
+          "id": "components.choice-list",
+          "number": "7.27",
+          "title": "ChoiceList",
+          "objective": "Definir ChoiceList para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "ChoiceList: Elegir una sola opción de una lista corta visible entera. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de ChoiceList con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/components/choice-list.html"
+        },
+        {
           "id": "components.actions",
-          "number": "7.23",
+          "number": "7.28",
           "title": "Acciones",
           "objective": "Definir acciones para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Acciones: botón, botón con icono, enlace, grupo de botones y botón con acción secundaria.",
@@ -1431,7 +1506,7 @@
         },
         {
           "id": "components.input-and-selection",
-          "number": "7.24",
+          "number": "7.29",
           "title": "Entrada y selección",
           "objective": "Definir entrada y selección para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Entrada y selección: campo de texto, textarea, checkbox, radio, switch, select, combobox, slider y carga de archivos.",
@@ -1446,7 +1521,7 @@
         },
         {
           "id": "components.field-structure",
-          "number": "7.25",
+          "number": "7.30",
           "title": "Estructura de campos",
           "objective": "Definir estructura de campos para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Estructura de campos: etiqueta, ayuda, error, grupo de campos y fieldset.",
@@ -1461,7 +1536,7 @@
         },
         {
           "id": "components.presentation",
-          "number": "7.26",
+          "number": "7.31",
           "title": "Presentación",
           "objective": "Definir presentación para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Presentación: texto, icono, avatar, badge, etiqueta, tarjeta, separador y lista.",
@@ -1476,7 +1551,7 @@
         },
         {
           "id": "components.navigation",
-          "number": "7.27",
+          "number": "7.32",
           "title": "Navegación",
           "objective": "Definir navegación para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Navegación: breadcrumbs, tabs, paginación, navegación lateral y barra de navegación.",
@@ -1491,7 +1566,7 @@
         },
         {
           "id": "components.feedback",
-          "number": "7.28",
+          "number": "7.33",
           "title": "Feedback",
           "objective": "Definir feedback para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Feedback: alerta, mensaje de estado, toast, progreso, spinner y skeleton.",
@@ -1506,7 +1581,7 @@
         },
         {
           "id": "components.disclosure-and-overlays",
-          "number": "7.29",
+          "number": "7.34",
           "title": "Revelado y superposición",
           "objective": "Definir revelado y superposición para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Revelado y superposición: accordion, disclosure, tooltip, popover, diálogo y panel lateral.",
@@ -1521,7 +1596,7 @@
         },
         {
           "id": "components.data",
-          "number": "7.30",
+          "number": "7.35",
           "title": "Datos",
           "objective": "Definir datos para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Datos: tabla, lista de descripción, árbol y visualizaciones según las necesidades.",
@@ -1537,142 +1612,14 @@
       ]
     },
     {
-      "id": "imoles-components",
-      "number": "8",
-      "title": "Componentes de producto · iMoles",
-      "objective": "Componentes diseñados para la app iMoles, construidos solo con componentes base. Si un segundo producto necesita uno, se promueve a base.",
-      "items": [
-        {
-          "id": "imoles-components.risk-badge",
-          "number": "8.1",
-          "title": "RiskBadge",
-          "objective": "Definir RiskBadge para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "RiskBadge: Nombra el nivel de riesgo estimado de un análisis con color, forma y texto. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de RiskBadge con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/risk-badge.html"
-        },
-        {
-          "id": "imoles-components.summary-card",
-          "number": "8.2",
-          "title": "SummaryCard",
-          "objective": "Definir SummaryCard para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "SummaryCard: Resume lo elegido hasta ahora en un flujo de varios pasos. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de SummaryCard con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/summary-card.html"
-        },
-        {
-          "id": "imoles-components.capture-row",
-          "number": "8.3",
-          "title": "CaptureRow",
-          "objective": "Definir CaptureRow para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "CaptureRow: Una foto del historial de un seguimiento con el resultado de su análisis. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de CaptureRow con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/capture-row.html"
-        },
-        {
-          "id": "imoles-components.follow-up-header",
-          "number": "8.4",
-          "title": "FollowUpHeader",
-          "objective": "Definir FollowUpHeader para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "FollowUpHeader: Cabecera de la pantalla de un seguimiento, con sus datos y su menú de opciones. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de FollowUpHeader con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/follow-up-header.html"
-        },
-        {
-          "id": "imoles-components.follow-up-card",
-          "number": "8.5",
-          "title": "FollowUpCard",
-          "objective": "Definir FollowUpCard para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "FollowUpCard: Un seguimiento en una lista, con su foto y el resultado de su último análisis. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de FollowUpCard con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/follow-up-card.html"
-        },
-        {
-          "id": "imoles-components.action-card",
-          "number": "8.6",
-          "title": "ActionCard",
-          "objective": "Definir ActionCard para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "ActionCard: Algo que la persona tiene que hacer: pedir una cita, hacer una foto, leer un informe. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de ActionCard con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/action-card.html"
-        },
-        {
-          "id": "imoles-components.analysis-summary",
-          "number": "8.7",
-          "title": "AnalysisSummary",
-          "objective": "Definir AnalysisSummary para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "AnalysisSummary: Resultado de un análisis: nivel, qué hacer, por qué y los datos en una segunda capa. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
-          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
-          "deliverable": "Página de AnalysisSummary con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/analysis-summary.html"
-        },
-        {
-          "id": "imoles-components.accessibility",
-          "number": "8.8",
-          "title": "Accesibilidad",
-          "objective": "Definir la accesibilidad de los componentes de iMoles para que el equipo disponga de criterios compartidos y verificables.",
-          "define": "Cobertura de accesibilidad de los componentes de producto respecto al nivel que exige iMoles, y lo que heredan de los componentes base.",
-          "accessibility": "Nivel exigido por el producto, componentes y variantes permitidos y pruebas en dispositivo.",
-          "deliverable": "Página de accesibilidad de los componentes de iMoles con cobertura, restricciones y pruebas.",
-          "acceptance": [
-            "Las decisiones y sus motivos están documentados.",
-            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
-            "La revisión de diseño y las comprobaciones aplicables están registradas."
-          ],
-          "suggestedPath": "sections/imoles-components/accessibility.html"
-        }
-      ]
-    },
-    {
       "id": "patterns",
-      "number": "9",
-      "title": "Patrones de uso y flujos recurrentes",
-      "objective": "Un patrón resuelve una tarea combinando componentes y reglas.",
+      "number": "8",
+      "title": "Patrones de diseño",
+      "objective": "Un patrón resuelve una tarea combinando componentes y reglas. No sustituye al componente que usa: explica cuándo y cómo combinarlos.",
       "items": [
         {
           "id": "patterns.forms-and-validation",
-          "number": "9.1",
+          "number": "8.1",
           "title": "Formularios y validación",
           "objective": "Definir formularios y validación para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Formularios simples y de varios pasos; validación, errores de campo y resumen de errores.",
@@ -1686,8 +1633,113 @@
           "suggestedPath": "sections/patterns/forms-and-validation.html"
         },
         {
+          "id": "patterns.autocomplete",
+          "number": "8.2",
+          "title": "Autocompletado y selección única",
+          "objective": "Definir Autocompletado y selección única para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Entrada de texto que filtra una lista de resultados; solo la elección de una opción válida confirma el valor; no admite texto libre por defecto.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, foco, anuncios y adaptación móvil.",
+          "deliverable": "Página de autocompletado y selección única con problema, uso, componentes, comportamiento, estados, accesibilidad, criterios y ejemplo genérico.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patterns/autocomplete.html"
+        },
+        {
+          "id": "patterns.multi-select-by-search",
+          "number": "8.3",
+          "title": "Selección múltiple por búsquedas sucesivas",
+          "objective": "Definir Selección múltiple por búsquedas sucesivas para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Búsquedas sucesivas que añaden cada selección como Vis-Chip eliminable y un botón final que confirma el conjunto.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, foco, anuncios y adaptación móvil.",
+          "deliverable": "Página de selección múltiple por búsquedas sucesivas con problema, uso, componentes, comportamiento, estados, accesibilidad, criterios y ejemplo genérico.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patterns/multi-select-by-search.html"
+        },
+        {
+          "id": "patterns.list-rows",
+          "number": "8.4",
+          "title": "Filas de lista",
+          "objective": "Definir Filas de lista para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Composiciones de fila con Data-ListRow: informativa, navegable y con acción secundaria; la fila seleccionable queda fuera de esta iteración.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, foco, anuncios y adaptación móvil.",
+          "deliverable": "Página de filas de lista con problema, uso, componentes, comportamiento, estados, accesibilidad, criterios y ejemplo genérico.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patterns/list-rows.html"
+        },
+        {
+          "id": "patterns.back-link",
+          "number": "8.5",
+          "title": "Enlace de retorno",
+          "objective": "Definir Enlace de retorno para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Volver al nivel anterior con Nav-BackLink, coherente con el botón atrás del sistema.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, foco, anuncios y adaptación móvil.",
+          "deliverable": "Página de enlace de retorno con problema, uso, componentes, comportamiento, estados, accesibilidad, criterios y ejemplo genérico.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patterns/back-link.html"
+        },
+        {
+          "id": "patterns.bottom-navigation",
+          "number": "8.6",
+          "title": "Navegación inferior",
+          "objective": "Definir Navegación inferior para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Navegación principal inferior con Nav-BottomNav: destinos, ubicación actual y cuándo se oculta.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, foco, anuncios y adaptación móvil.",
+          "deliverable": "Página de navegación inferior con problema, uso, componentes, comportamiento, estados, accesibilidad, criterios y ejemplo genérico.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patterns/bottom-navigation.html"
+        },
+        {
+          "id": "patterns.sequence-navigation",
+          "number": "8.7",
+          "title": "Navegación entre elementos de una secuencia",
+          "objective": "Definir Navegación entre elementos de una secuencia para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Anterior y siguiente dentro de una secuencia corta con Nav-Pager; distinta de la paginación de resultados.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, foco, anuncios y adaptación móvil.",
+          "deliverable": "Página de navegación entre elementos de una secuencia con problema, uso, componentes, comportamiento, estados, accesibilidad, criterios y ejemplo genérico.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patterns/sequence-navigation.html"
+        },
+        {
+          "id": "patterns.contextual-actions",
+          "number": "8.8",
+          "title": "Alternativas al menú contextual",
+          "objective": "Definir Alternativas al menú contextual para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Cuándo usar Ovl-OptionsMenu y cuándo mostrar las acciones a la vista con botones o enlaces.",
+          "accessibility": "Finalización de la tarea, recuperación de errores, foco, anuncios y adaptación móvil.",
+          "deliverable": "Página de alternativas al menú contextual con problema, uso, componentes, comportamiento, estados, accesibilidad, criterios y ejemplo genérico.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/patterns/contextual-actions.html"
+        },
+        {
           "id": "patterns.saving-and-canceling",
-          "number": "9.2",
+          "number": "8.9",
           "title": "Guardado y cancelación",
           "objective": "Definir guardado y cancelación para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Guardado, autoguardado, cancelación y cambios sin guardar.",
@@ -1702,7 +1754,7 @@
         },
         {
           "id": "patterns.search-filters-and-results",
-          "number": "9.3",
+          "number": "8.10",
           "title": "Búsqueda, filtros y resultados",
           "objective": "Definir búsqueda filtros y resultados para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Búsqueda, filtros, ordenación y resultados.",
@@ -1717,7 +1769,7 @@
         },
         {
           "id": "patterns.batch-actions",
-          "number": "9.4",
+          "number": "8.11",
           "title": "Acciones por lote",
           "objective": "Definir acciones por lote para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Selección múltiple y acciones por lote.",
@@ -1732,7 +1784,7 @@
         },
         {
           "id": "patterns.create-edit-and-delete",
-          "number": "9.5",
+          "number": "8.12",
           "title": "Creación, edición y eliminación",
           "objective": "Definir creación edición y eliminación para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Creación, edición, eliminación, recuperación, confirmaciones y acciones sensibles.",
@@ -1747,7 +1799,7 @@
         },
         {
           "id": "patterns.file-management",
-          "number": "9.6",
+          "number": "8.13",
           "title": "Gestión de archivos",
           "objective": "Definir gestión de archivos para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Carga y gestión de archivos.",
@@ -1762,7 +1814,7 @@
         },
         {
           "id": "patterns.absence-states",
-          "number": "9.7",
+          "number": "8.14",
           "title": "Estados de ausencia",
           "objective": "Definir estados de ausencia para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Estados vacíos, sin resultados, sin permisos y sin conexión.",
@@ -1777,7 +1829,7 @@
         },
         {
           "id": "patterns.errors-and-retries",
-          "number": "9.8",
+          "number": "8.15",
           "title": "Errores y reintentos",
           "objective": "Definir errores y reintentos para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Errores recuperables, reintentos y fallos parciales.",
@@ -1792,7 +1844,7 @@
         },
         {
           "id": "patterns.access-onboarding-and-permissions",
-          "number": "9.9",
+          "number": "8.16",
           "title": "Acceso, onboarding y permisos",
           "objective": "Definir acceso onboarding y permisos para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Autenticación, onboarding y permisos si entran en el alcance.",
@@ -1807,7 +1859,7 @@
         },
         {
           "id": "patterns.accessibility",
-          "number": "9.10",
+          "number": "8.17",
           "title": "Accesibilidad",
           "objective": "Definir accesibilidad para que el equipo disponga de criterios compartidos y verificables.",
           "define": "Finalización de la tarea, recuperación de errores, conservación de datos y comunicación del progreso.",
@@ -1819,6 +1871,134 @@
             "La revisión de diseño y las comprobaciones aplicables están registradas."
           ],
           "suggestedPath": "sections/patterns/accessibility.html"
+        }
+      ]
+    },
+    {
+      "id": "imoles-components",
+      "number": "9",
+      "title": "Componentes de producto · iMoles",
+      "objective": "Componentes diseñados para la app iMoles, construidos solo con componentes base. Si un segundo producto necesita uno, se promueve a base.",
+      "items": [
+        {
+          "id": "imoles-components.risk-badge",
+          "number": "9.1",
+          "title": "RiskBadge",
+          "objective": "Definir RiskBadge para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "RiskBadge: Nombra el nivel de riesgo estimado de un análisis con color, forma y texto. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de RiskBadge con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/risk-badge.html"
+        },
+        {
+          "id": "imoles-components.summary-card",
+          "number": "9.2",
+          "title": "SummaryCard",
+          "objective": "Definir SummaryCard para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "SummaryCard: Resume lo elegido hasta ahora en un flujo de varios pasos. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de SummaryCard con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/summary-card.html"
+        },
+        {
+          "id": "imoles-components.capture-row",
+          "number": "9.3",
+          "title": "CaptureRow",
+          "objective": "Definir CaptureRow para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "CaptureRow: Una foto del historial de un seguimiento con el resultado de su análisis. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de CaptureRow con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/capture-row.html"
+        },
+        {
+          "id": "imoles-components.follow-up-header",
+          "number": "9.4",
+          "title": "FollowUpHeader",
+          "objective": "Definir FollowUpHeader para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "FollowUpHeader: Cabecera de la pantalla de un seguimiento, con sus datos y su menú de opciones. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de FollowUpHeader con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/follow-up-header.html"
+        },
+        {
+          "id": "imoles-components.follow-up-card",
+          "number": "9.5",
+          "title": "FollowUpCard",
+          "objective": "Definir FollowUpCard para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "FollowUpCard: Un seguimiento en una lista, con su foto y el resultado de su último análisis. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de FollowUpCard con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/follow-up-card.html"
+        },
+        {
+          "id": "imoles-components.action-card",
+          "number": "9.6",
+          "title": "ActionCard",
+          "objective": "Definir ActionCard para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "ActionCard: Algo que la persona tiene que hacer: pedir una cita, hacer una foto, leer un informe. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de ActionCard con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/action-card.html"
+        },
+        {
+          "id": "imoles-components.analysis-summary",
+          "number": "9.7",
+          "title": "AnalysisSummary",
+          "objective": "Definir AnalysisSummary para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "AnalysisSummary: Resultado de un análisis: nivel, qué hacer, por qué y los datos en una segunda capa. Variantes, estados, anatomía, tokens, API y cambios respecto a la HF.",
+          "accessibility": "Semántica, nombre accesible, teclado, foco, estados anunciados y pruebas.",
+          "deliverable": "Página de AnalysisSummary con variantes, estados, ficha, accesibilidad y cambios respecto a la HF.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/analysis-summary.html"
+        },
+        {
+          "id": "imoles-components.accessibility",
+          "number": "9.8",
+          "title": "Accesibilidad",
+          "objective": "Definir la accesibilidad de los componentes de iMoles para que el equipo disponga de criterios compartidos y verificables.",
+          "define": "Cobertura de accesibilidad de los componentes de producto respecto al nivel que exige iMoles, y lo que heredan de los componentes base.",
+          "accessibility": "Nivel exigido por el producto, componentes y variantes permitidos y pruebas en dispositivo.",
+          "deliverable": "Página de accesibilidad de los componentes de iMoles con cobertura, restricciones y pruebas.",
+          "acceptance": [
+            "Las decisiones y sus motivos están documentados.",
+            "Los ejemplos cubren el uso habitual y al menos un caso límite.",
+            "La revisión de diseño y las comprobaciones aplicables están registradas."
+          ],
+          "suggestedPath": "sections/imoles-components/accessibility.html"
         }
       ]
     },

@@ -12,6 +12,7 @@
 <x-dc>
 <helmet>
 <title>Librerías y licencias · DSimoles</title>
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
 <style>
 body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
@@ -19,36 +20,60 @@ a:hover{color:#5a5a5a}
 </style>
 </helmet>
 <main data-screen-label="resources.libraries-and-licenses" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
-
 <header style="display:flex;flex-direction:column;gap:12px">
 <h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Librerías y licencias</h1>
-<p style="margin:0;max-width:72ch;color:#3d3d3d">Recursos de terceros y sus licencias.</p>
-<p style="margin:0;font-size:13px;padding:8px 12px;border:1px dashed #8a8a8a;max-width:72ch">Borrador esquemático · decisiones tomadas por Claude Design, pendientes de revisión del owner. Origen: observado en iMoles, normalizado a partir de valores observados o extrapolado.</p>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Resumen de los recursos de terceros que usa el DS: qué son, su licencia y dónde se documentan.</p>
 </header>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Vista propuesta</h2>
-<div role="table" aria-label="Vista propuesta" style="font-size:14px">
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Bloque</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Muestra</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Inventario</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Recurso, uso, licencia y dónde está alojado.</div></div>
-</div>
+<h2 style="margin:0;font-size:22px;font-weight:600">Recursos</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px"><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="background:#f6f6f6;padding:20px 16px;min-height:88px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"><span style="font-family:'Roboto';font-weight:300;font-size:40px;line-height:1">Aa</span><span style="font-family:'Roboto';font-weight:500;font-size:40px;line-height:1">Aa</span></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Tipografía</span>
+<span style="font-weight:600;font-size:16px">Roboto</span>
+<span>SIL Open Font License 1.1</span><a href="../visuals/typography.dc.html" style="font-size:13px">1.2 Tipografía</a>
+</div></div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="background:#f6f6f6;padding:20px 16px;min-height:88px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"><span style="font-family:'Roboto Condensed';font-weight:700;font-size:40px;line-height:1">AA</span></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Tipografía</span>
+<span style="font-weight:600;font-size:16px">Roboto Condensed</span>
+<span>SIL Open Font License 1.1</span><a href="../visuals/typography.dc.html" style="font-size:13px">1.2 Tipografía</a>
+</div></div><div style="border:1px solid #d4d4d4;display:flex;flex-direction:column">
+<div style="background:#f6f6f6;padding:20px 16px;min-height:88px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"><span aria-hidden="true" style="font-family:'Material Symbols Rounded';line-height:1;font-weight:400;font-size:40px">home</span><span aria-hidden="true" style="font-family:'Material Symbols Rounded';line-height:1;font-weight:400;font-size:40px">photo_camera</span></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:4px;font-size:14px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Iconos</span>
+<span style="font-weight:600;font-size:16px">Material Symbols Rounded</span>
+<span>SIL Open Font License 1.1, según el archivo incluido</span><a href="./icon-construction.dc.html" style="font-size:13px">3.2 Iconos</a>
+</div></div><div style="border:1px dashed #8a8a8a;padding:16px;display:flex;flex-direction:column;gap:4px;font-size:14px;justify-content:center"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Fotografía e ilustración</span><span style="color:#3d3d3d">Sin recursos propios del DS.</span></div></div>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
 <h2 style="margin:0;font-size:22px;font-weight:600">Valores propuestos</h2>
 <div role="table" aria-label="Valores propuestos" style="font-size:14px">
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Recurso</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Licencia</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Origen</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Roboto, Roboto Condensed</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">SIL Open Font License 1.1 (verificar la versión)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Material Symbols Rounded</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Apache 2.0</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Imágenes ISIC del prototipo</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">Licencia Creative Commons por imagen; verificar cada una</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
-<div role="row" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) minmax(0,0.8fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">React (runtime vendorizado)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;">MIT</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#5a5a5a">Observado</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.4fr) minmax(0,1.6fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Recurso</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Licencia</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Archivos y licencia</div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.4fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Roboto</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">SIL OFL 1.1</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere"><a href="../../assets/visuals/typography/fonts/LICENSE-Roboto.txt">LICENSE-Roboto.txt</a></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.4fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Roboto Condensed</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">SIL OFL 1.1</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere"><a href="../../assets/visuals/typography/fonts/LICENSE-Roboto-Condensed.txt">LICENSE-Roboto-Condensed.txt</a></div></div>
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.4fr) minmax(0,1.6fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere;font-family:ui-monospace,Menlo,monospace;font-size:13px">Material Symbols Rounded</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere">SIL OFL 1.1 (archivo incluido)</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4;min-width:0;overflow-wrap:anywhere"><a href="../../assets/visuals/typography/fonts/LICENSE-Material-Symbols.txt">LICENSE-Material-Symbols.txt</a></div></div>
 </div>
+<p style="margin:0;max-width:72ch;font-size:14px;color:#3d3d3d">Todos los archivos están en <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px">assets/visuals/typography/fonts/</span>.</p>
 </section>
 
 <section style="display:flex;flex-direction:column;gap:16px">
-<h2 style="margin:0;font-size:22px;font-weight:600">Decisiones</h2>
-<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Fuentes alojadas en assets/.</li><li>Las muestras ISIC se sustituyen o se verifican antes de cualquier uso público.</li></ul>
+<h2 style="margin:0;font-size:22px;font-weight:600">Reglas</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>Solo se inventarían los recursos que el DS distribuye. Los del prototipo o del framework quedan fuera.</li><li>Cada archivo viaja con su archivo de licencia.</li><li>Los recursos se alojan en el repositorio, sin servicios externos.</li><li>Una librería nueva entra solo con licencia que permita uso comercial, modificación y subconjuntos.</li><li>Una librería por función: una familia de texto y una de iconos.</li><li>El uso de cada recurso se documenta en su sección, no aquí.</li></ul>
 </section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Ejemplos</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px"><div style="border:1px solid #d4d4d4;padding:16px;display:flex;flex-direction:column;gap:4px;font-size:14px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Habitual</span><span style="font-weight:600">Añadir un peso de Roboto</span><span style="color:#3d3d3d">Mismo archivo de licencia; se añade el archivo de fuente y su fila en 1.2 Tipografía.</span></div><div style="border:1px solid #d4d4d4;padding:16px;display:flex;flex-direction:column;gap:4px;font-size:14px"><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">Caso límite</span><span style="font-weight:600">Recurso con atribución obligatoria</span><span style="color:#3d3d3d">Se indica dónde aparece la atribución antes de incorporarlo. Si no hay sitio para ella, no entra.</span></div></div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:4px;font-size:14px"><li>La accesibilidad de cada recurso se documenta en su sección: tipografía en <a href="../visuals/typography.dc.html">1.2</a> e iconos en <a href="./icon-construction.dc.html">3.2</a>.</li><li>Una librería nueva no entra si impide cumplir los criterios de esas secciones.</li></ul>
+</section>
+
 
 </main>
 </x-dc>

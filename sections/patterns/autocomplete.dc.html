@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ds-section-id" content="patterns.autocomplete">
+<link rel="stylesheet" href="../../assets/visuals/tokens.css">
+<link rel="stylesheet" href="../../components/tokens.css">
+<script src="../../assets/_runtime/react.production.min.js"></script>
+<script src="../../assets/_runtime/react-dom.production.min.js"></script>
+<script src="../../components/core.js"></script>
+<script src="../../components/Field.js"></script>
+<script src="../../components/TextField.js"></script>
+<script src="../../components/Select.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Autocompletado y selección única · DSimoles</title>
+<style>
+body{margin:0;background:#ffffff;color:#1f1f1f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#5a5a5a}
+</style>
+</helmet>
+<main data-screen-label="8.2 Autocompletado y selección única" style="box-sizing:border-box;width:100%;max-width:1040px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:48px">
+<header style="display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a">8.2 · Patrón</p>
+<h1 style="margin:0;font-size:clamp(32px,5vw,44px);line-height:1.1;font-weight:600;letter-spacing:-0.01em">Autocompletado y selección única</h1>
+<p style="margin:0;max-width:72ch;color:#3d3d3d">Elegir un valor de una lista larga escribiendo para filtrar. Solo la elección de una opción válida confirma el valor.</p>
+</header>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Problema y cuándo usarlo</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">Para listas largas (más de unas 15–20 opciones) o cuando el usuario conoce el nombre. Con menos opciones, <a href="../components/select.dc.html">7.14 Form-Select</a> nativo. Para texto libre, <a href="../components/text-field.dc.html">7.12 Form-TextField</a>.</p>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Componentes que combina</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li><a href="../components/field.dc.html">7.10 Form-Field</a> (etiqueta, ayuda, error)</li><li>Entrada de texto con el aspecto de Form-TextField</li><li>Lista de resultados (listbox): se crea dentro de este patrón y solo pasa al catálogo si se reutiliza</li><li><a href="../components/button.dc.html">7.4 Act-Button</a> clear, solo icono, para limpiar el valor</li><li><a href="../components/spinner.dc.html">7.17 Fb-Spinner</a> y <a href="../components/inline-alert.dc.html">7.20 Fb-InlineAlert</a> para la carga y los errores</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Comportamiento</h2>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Escribir filtra: desde 1 carácter si la lista es local; desde 2–3 si se consulta un servicio.</li><li>Flechas arriba y abajo recorren los resultados; Enter elige; Esc cierra la lista.</li><li>Solo una opción válida confirma el valor. Si el usuario sale del campo sin elegir, el texto se descarta y vuelve el valor anterior. No se admite texto libre por defecto.</li><li>El valor elegido se muestra en el campo con un botón para limpiarlo.</li></ol>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Estados y errores</h2>
+<div role="table" aria-label="Estados" style="font-size:14px"><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Estado</div><div role="columnheader" style="padding:8px;border-bottom:1px solid #1f1f1f;font-weight:600;font-size:13px">Qué se muestra</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Cargando</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Fb-Spinner con label en la lista</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Sin resultados</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">«Sin resultados para "texto"»</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Error del servicio</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Fb-InlineAlert con «Reintentar»</div></div><div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px"><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Obligatorio vacío</div><div role="cell" style="padding:8px;border-bottom:1px solid #d4d4d4">Error en Form-Field</div></div></div>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Accesibilidad y móvil</h2>
+<ul style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>Patrón combobox de ARIA: role="combobox", aria-expanded, aria-controls y aria-activedescendant; lista con role="listbox" y opciones con role="option".</li><li>El número de resultados se anuncia con un status («12 resultados»).</li><li>En móvil, la lista ocupa el ancho del campo y el teclado no la tapa; en pantallas muy pequeñas puede abrirse a pantalla completa con un campo de búsqueda.</li></ul>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Criterios de aceptación</h2>
+<ol style="margin:0;padding-left:20px;max-width:72ch;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><li>No confirma texto libre.</li><li>Se usa entero con teclado.</li><li>Anuncia los resultados y el estado vacío.</li><li>Al salir sin elegir, recupera el valor anterior.</li></ol>
+</section>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:600">Ejemplo genérico</h2>
+<p style="margin:0;max-width:72ch;color:#3d3d3d;font-size:14px">«Municipio» entre unas 8.000 opciones: escribir «Sego» muestra Segovia y Segorbe; elegir Segovia la confirma.</p>
+</section>
+<p style="margin:0;font-size:13px;color:#5a5a5a;max-width:72ch">Patrón aprobado como especificación el 2026-10-15; pendiente de la review del owner. Sin probar con lector de pantalla ni en dispositivo.</p>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

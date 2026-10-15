@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.28.0 · 2026-10-15 · b41e93a 16a770b
+Sections: components.text-link.
+Integración de Claude Design con el manifiesto de hashes (nonce c71077c60214, 166 archivos): 3 archivos sin integrar, idénticos byte a byte a su manifiesto. Claude Design adoptó 8626048 sin pérdidas, borró el zip de binarios que había creado y añadió la variante de enlace externo de TextLink (`external`, requiere `href`): icono `open_in_new`, `target="_blank" rel="noopener noreferrer"` y el texto oculto «(se abre en otra ventana)»; `core.js` admite ya los 14 iconos del subconjunto. Se cierra la task de la sección. La variante no se ha probado con lector de pantalla. `design-baseline.json` actualizada.
+
 ## 0.27.0 · 2026-10-15 · 3385252 c36b828
 Sections: components.icon, components.text-link.
 Subconjunto de Material Symbols Rounded regenerado con `open_in_new`, `edit` y `archive` (14 iconos y los alias que ya había; FILL 0, GRAD 0, opsz 24, wght 100-700, fuente de Google v2.975). Se sustituyen `material-symbols-rounded-subset.woff2` y el base64 de `assets/visuals/tokens.css`, y se comprobó que los iconos se pintan. Se cierra la task de 7.10 y la de `components.text-link` queda a la espera de que Claude Design cree la variante de enlace externo. Estos tres archivos van por delante de Claude Design: debe adoptarlos. Framework 2.6.1: las pruebas de handoff no dependen del baseline real del proyecto.

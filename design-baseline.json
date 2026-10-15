@@ -10,8 +10,8 @@
       "repo": "62a0ca4cac014d35af0c1af50549026ce7074eb522c885501fe64591b48b2b05"
     },
     "CHANGELOG.md": {
-      "design": "a6629cf16c5b92430ca9c5ef9a3ddb475579e8697964eba35ade47c4e7361068",
-      "repo": "a6629cf16c5b92430ca9c5ef9a3ddb475579e8697964eba35ade47c4e7361068"
+      "design": "cfef71a25fe750514e93b1d74bb0f8b74f0ef7dca30504401c14d0bf3291ecfb",
+      "repo": "cfef71a25fe750514e93b1d74bb0f8b74f0ef7dca30504401c14d0bf3291ecfb"
     },
     "CLAUDE.md": {
       "design": "b11ee9cb639069a6bd1d6e6ac378887a33830bd79bd3aa4f68c0d13cceccfc4e",
@@ -46,12 +46,12 @@
       "repo": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd"
     },
     "data/guide.json": {
-      "design": "ccd23b266c0b19a4f20fa0cd5ae8bd9b80754ba9028a77caf279686f0845d8ed",
-      "repo": "ccd23b266c0b19a4f20fa0cd5ae8bd9b80754ba9028a77caf279686f0845d8ed"
+      "design": "f527271022c08d3390f1013d2e9b6e5f2d206dbb95059de34606674a963d0963",
+      "repo": "f527271022c08d3390f1013d2e9b6e5f2d206dbb95059de34606674a963d0963"
     },
     "data/project.json": {
-      "design": "78706df496f9773e615e9c7b2259a63ad0f0cdf6ad4250c78785561a5fea1a91",
-      "repo": "e36ec32fa4de9b9f5b8db302192f234fe55be0086958f3f7c32b35ffd2eb800f"
+      "design": "f64ad1289861f428375bb14c4f9e03fe16afda13a6d43e1a1fc4228b00cd7429",
+      "repo": "f64ad1289861f428375bb14c4f9e03fe16afda13a6d43e1a1fc4228b00cd7429"
     },
     "docs/claude-code.md": {
       "design": "56b9176dc1e7b98f1fb8164f83ef153ca3f3fd3039ea2c6bf012964c2a9e8315",
@@ -138,8 +138,8 @@
       "repo": "a2f3f168423983c03aaa11f2d383bd7096a3c93f75b1aade0b735e3bc78c234d"
     },
     "sections/components/accessibility.dc.html": {
-      "design": "e2e10d405fba63c13f4f727fbeaeb626b0d622265789efe5ed5a29e52e12e0d3",
-      "repo": "e2e10d405fba63c13f4f727fbeaeb626b0d622265789efe5ed5a29e52e12e0d3"
+      "design": "c6faf96977505975e19146ec584d50e1c65d28174193ef0af902c0294f8d2144",
+      "repo": "c6faf96977505975e19146ec584d50e1c65d28174193ef0af902c0294f8d2144"
     },
     "sections/components/support.js": {
       "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
@@ -150,8 +150,8 @@
       "repo": "ec6fab61eb61bd4deb42b8619a750ba8f9d3dd2e1138af65aa2e1b78bb325df6"
     },
     "sections/foundations/goals-and-usage-guide.dc.html": {
-      "design": "6609ac6d6163fdf78af5895db85ce03d7379a5ac8ccd91750d354f45fcc42d2e",
-      "repo": "6609ac6d6163fdf78af5895db85ce03d7379a5ac8ccd91750d354f45fcc42d2e"
+      "design": "e25dfdf550a2b9d8afa2e3b0765071df7a2e1ba6bdd58fc387a48769dd959e85",
+      "repo": "e25dfdf550a2b9d8afa2e3b0765071df7a2e1ba6bdd58fc387a48769dd959e85"
     },
     "sections/foundations/products-and-requirements.dc.html": {
       "design": "b0044ffc7e4ee736a83f222456d819e558c01f6e3c4593d7941b6f4a48815f1b",
@@ -174,12 +174,12 @@
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/interaction/focus-management.dc.html": {
-      "design": "b3c718f3ae616423f07c771a114103089df02f15dbb2ce354c40862389556633",
-      "repo": "b3c718f3ae616423f07c771a114103089df02f15dbb2ce354c40862389556633"
+      "design": "28f0e98a298660271b760a044a29e387d79988a0e654ee8d23dbaed9cf03375d",
+      "repo": "28f0e98a298660271b760a044a29e387d79988a0e654ee8d23dbaed9cf03375d"
     },
     "sections/interaction/interaction-states.dc.html": {
-      "design": "e80c179320eadf240b4a5161250c9e304bf21b1bbfd570e1298d0f87edd37f1e",
-      "repo": "e80c179320eadf240b4a5161250c9e304bf21b1bbfd570e1298d0f87edd37f1e"
+      "design": "36ee94b33eb891860ebe34393269fa0b92d55500c80597886c80b355c3fd26b9",
+      "repo": "36ee94b33eb891860ebe34393269fa0b92d55500c80597886c80b355c3fd26b9"
     },
     "sections/interaction/support.js": {
       "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
@@ -218,44 +218,44 @@
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/resources/libraries-and-licenses.dc.html": {
-      "design": "b6067dfd1753932db1a54d9f996c1c2b7bc093c6db0641da3730531c9f24048f",
-      "repo": "b6067dfd1753932db1a54d9f996c1c2b7bc093c6db0641da3730531c9f24048f"
+      "design": "cfa4b90a98d4462439c91f4c9d7dc37a1e9a27f791a97ffa2b2fbc9e84329a4f",
+      "repo": "cfa4b90a98d4462439c91f4c9d7dc37a1e9a27f791a97ffa2b2fbc9e84329a4f"
     },
     "sections/resources/support.js": {
       "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/tokens/design-code-mapping.dc.html": {
-      "design": "deca5780438257f71697c267746833deb4a4a953a42be97fd37cbdbcdaa0d405",
-      "repo": "deca5780438257f71697c267746833deb4a4a953a42be97fd37cbdbcdaa0d405"
+      "design": "35a97a8bffe80a5fe39ed3b93c7f3d9af6e7d169a8c19d87684abda767557d84",
+      "repo": "35a97a8bffe80a5fe39ed3b93c7f3d9af6e7d169a8c19d87684abda767557d84"
     },
     "sections/tokens/naming-and-aliases.dc.html": {
-      "design": "bbc5917d23dcf5479e91425eeaf95194134f27d535c4d5cb8b31d830a3b053b1",
-      "repo": "bbc5917d23dcf5479e91425eeaf95194134f27d535c4d5cb8b31d830a3b053b1"
+      "design": "d055ae5fd61cd61643eb823f43efb472c83d6dc4a163d26802df81969449f982",
+      "repo": "d055ae5fd61cd61643eb823f43efb472c83d6dc4a163d26802df81969449f982"
     },
     "sections/tokens/support.js": {
       "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/tokens/token-layers.dc.html": {
-      "design": "b3f9cc3d702b22c76ab477ba89f4c5a198583ccffde8d22c63001713f9b1dc2d",
-      "repo": "b3f9cc3d702b22c76ab477ba89f4c5a198583ccffde8d22c63001713f9b1dc2d"
+      "design": "f3ce2501d703cd7727c64ce75e218108c0e30cd8151be0ebf77eb427a5a38c65",
+      "repo": "f3ce2501d703cd7727c64ce75e218108c0e30cd8151be0ebf77eb427a5a38c65"
     },
     "sections/visuals/accessibility.dc.html": {
-      "design": "dd1bc8bd6d7b775b1598a61c5c0b9f4c4c4cf037bf32c4bfd1c07ab947b78d81",
-      "repo": "dd1bc8bd6d7b775b1598a61c5c0b9f4c4c4cf037bf32c4bfd1c07ab947b78d81"
+      "design": "a653a1c0d5a590e960246311efbedd9f0f80877796625d7d3d9b6035d13bb0ff",
+      "repo": "a653a1c0d5a590e960246311efbedd9f0f80877796625d7d3d9b6035d13bb0ff"
     },
     "sections/visuals/borders.dc.html": {
-      "design": "17ea0af18846be08923d7fae0427557a7e6e720fba5c9328bbf70f86fd5567fa",
-      "repo": "17ea0af18846be08923d7fae0427557a7e6e720fba5c9328bbf70f86fd5567fa"
+      "design": "39f5c76854d3ec514f71a1c05fa96796366ffedc95fb392d4c5352ca3afa4ec3",
+      "repo": "39f5c76854d3ec514f71a1c05fa96796366ffedc95fb392d4c5352ca3afa4ec3"
     },
     "sections/visuals/color.dc.html": {
-      "design": "d91893b58a8c158627665951fed842dd689a6569830add470f3c4369c118fa3b",
-      "repo": "d91893b58a8c158627665951fed842dd689a6569830add470f3c4369c118fa3b"
+      "design": "7d47ece7def5047a1d2c9a35e483c125c93576a999181575f056c285f013dbde",
+      "repo": "7d47ece7def5047a1d2c9a35e483c125c93576a999181575f056c285f013dbde"
     },
     "sections/visuals/dimensions.dc.html": {
-      "design": "15893b13fcdce4148bc6c81f9d703b6bb8f0404ded348caa38859f00758a73c3",
-      "repo": "15893b13fcdce4148bc6c81f9d703b6bb8f0404ded348caa38859f00758a73c3"
+      "design": "0c99e163ae29579c32c480458a6065a2c3d258008b943682c7166690c93b979f",
+      "repo": "0c99e163ae29579c32c480458a6065a2c3d258008b943682c7166690c93b979f"
     },
     "sections/visuals/elevation.dc.html": {
       "design": "b2414f77e676631f077204f02e28462eb950ef8afdf67f799dac836b8b1e7ff0",
@@ -266,8 +266,8 @@
       "repo": "61fae3e6e3f87b3bbaa109aa0843468e7c41d7488155e3afdc13254df4d28d72"
     },
     "sections/visuals/shape.dc.html": {
-      "design": "c660f737375db58f8177d9127e314aa02b2c6fee3c64365e3d11d7976272367b",
-      "repo": "c660f737375db58f8177d9127e314aa02b2c6fee3c64365e3d11d7976272367b"
+      "design": "df9863bf3036569ae635f9c0399a5ef1a34d1322bae6f94457475c148d6baacf",
+      "repo": "df9863bf3036569ae635f9c0399a5ef1a34d1322bae6f94457475c148d6baacf"
     },
     "sections/visuals/spacing.dc.html": {
       "design": "7858d113e2b88b54704d2cfddc6d3b4557b5a1f9c0d90f6244d5169915deff9b",
@@ -278,8 +278,8 @@
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/visuals/typography.dc.html": {
-      "design": "5c7bff8a297dae540ac091d7401bccb8a8ca46424b852011ae6eed00ac2437a1",
-      "repo": "5c7bff8a297dae540ac091d7401bccb8a8ca46424b852011ae6eed00ac2437a1"
+      "design": "a67e42c6dfd04400b2adc8af392d9c37b0010b6448bcc88dcc4f9abf4b2ccd34",
+      "repo": "a67e42c6dfd04400b2adc8af392d9c37b0010b6448bcc88dcc4f9abf4b2ccd34"
     },
     "seed/guide.json": {
       "design": "e849123b1f9ee05e8eb6398fbb677b0e2237f3cd7307c1f229c13d6a7ffdaa3a",
@@ -358,12 +358,12 @@
       "repo": "14ebec489633d4a6966eb65e516a795ba892ab673a7feb34f5771fae049f8027"
     },
     "assets/implementation/publishing-and-migration/discrepancias-ds-imoles.md": {
-      "design": "e9d1065d48e849dcb8ee34bd99cef53a14d0e4f5c0b4aeebde35ac3d82700fac",
-      "repo": "e9d1065d48e849dcb8ee34bd99cef53a14d0e4f5c0b4aeebde35ac3d82700fac"
+      "design": "765828626587834a144807b710657041cc27d9dfa6f521cf32fbde0a1880d62f",
+      "repo": "765828626587834a144807b710657041cc27d9dfa6f521cf32fbde0a1880d62f"
     },
     "assets/visuals/tokens.css": {
-      "design": "04c47107a6a2e6a204a8877bcdf58209455b76ad67ce059ce42799d8f5c65326",
-      "repo": "04c47107a6a2e6a204a8877bcdf58209455b76ad67ce059ce42799d8f5c65326"
+      "design": "458783ca0ab78ff5094da5ef80d833bb9ef30275a7b2382018ec8f497d879b96",
+      "repo": "458783ca0ab78ff5094da5ef80d833bb9ef30275a7b2382018ec8f497d879b96"
     },
     "assets/visuals/typography/fonts/LICENSE-Material-Symbols.txt": {
       "design": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
@@ -378,8 +378,8 @@
       "repo": "84044c09058803d87a241bd28abb4ce30a433d7db9c27a04da3efad6a0ca539c"
     },
     "assets/visuals/typography/fonts/material-symbols-rounded-subset.woff2": {
-      "design": "f39fe4fa8f4940a591048649f7044a84283fc80402a65bd7286586ad93fe496f",
-      "repo": "f39fe4fa8f4940a591048649f7044a84283fc80402a65bd7286586ad93fe496f"
+      "design": "2bfbe3f3dabfa35efd97c9e78bc56db16b795c790a46d4d33c88608aac0f68f1",
+      "repo": "2bfbe3f3dabfa35efd97c9e78bc56db16b795c790a46d4d33c88608aac0f68f1"
     },
     "assets/visuals/typography/fonts/roboto-300.woff2": {
       "design": "299f10a52fe1423dd5579ff7e83db8dbea312f1e924f3e06e55839286b4d1c1d",
@@ -398,240 +398,288 @@
       "repo": "ab74f0c2d7ec37e44e017b9586675dd00c519591207dc3bbc8e003c5628dc9b7"
     },
     "components/ActionCard.js": {
-      "design": "9400c5bcc1ab8ca090be1156b8cd3d543c762af743d41859efbf23c518c9b649",
-      "repo": "9400c5bcc1ab8ca090be1156b8cd3d543c762af743d41859efbf23c518c9b649"
+      "design": "d14752c364f9c0302ea13136407451b52a10a05aee47b14866f8c159bcf47b27",
+      "repo": "d14752c364f9c0302ea13136407451b52a10a05aee47b14866f8c159bcf47b27"
     },
     "components/AnalysisSummary.js": {
-      "design": "488db887460f7f10a3b19c87a3d39260f4726bd46b1bd8390a26f20fe0181c17",
-      "repo": "488db887460f7f10a3b19c87a3d39260f4726bd46b1bd8390a26f20fe0181c17"
+      "design": "b2f2545e6ae5fd101913be6ed68b0624ba356e61c59f37b8ca92e8019ce5898a",
+      "repo": "b2f2545e6ae5fd101913be6ed68b0624ba356e61c59f37b8ca92e8019ce5898a"
     },
     "components/BackLink.js": {
-      "design": "3cc1caf952d2267d71b104406b7b5f7c71dfce52d2b6e4ab1705cb12b7b071dd",
-      "repo": "3cc1caf952d2267d71b104406b7b5f7c71dfce52d2b6e4ab1705cb12b7b071dd"
+      "design": "f55163156f5b678216391d4a8f456e425bb48040559b831b3f24af25f2616e25",
+      "repo": "f55163156f5b678216391d4a8f456e425bb48040559b831b3f24af25f2616e25"
     },
     "components/BottomNav.js": {
-      "design": "6233f41bd9400a0ba1c67b3e4e462b3bc6d672e1522567c8b4a98e1821d5ba71",
-      "repo": "6233f41bd9400a0ba1c67b3e4e462b3bc6d672e1522567c8b4a98e1821d5ba71"
+      "design": "a694bfed5e517117483c67bd175b9111d6f17ab23cad7559024f7a4413851603",
+      "repo": "a694bfed5e517117483c67bd175b9111d6f17ab23cad7559024f7a4413851603"
     },
     "components/Button.js": {
-      "design": "3e943b558602efbea11f056b217492e2e093b9a75d58e36e00fe365efc19b874",
-      "repo": "3e943b558602efbea11f056b217492e2e093b9a75d58e36e00fe365efc19b874"
+      "design": "e76c4c6b1f30de249800b9e4796489e71d12145a1a7951178717c8c859241fcf",
+      "repo": "e76c4c6b1f30de249800b9e4796489e71d12145a1a7951178717c8c859241fcf"
     },
     "components/CaptureRow.js": {
-      "design": "79701a71da9c7c38c0ced296bee938e61c5ca16b93a42b11dfe42b2a75e22bc6",
-      "repo": "79701a71da9c7c38c0ced296bee938e61c5ca16b93a42b11dfe42b2a75e22bc6"
-    },
-    "components/ChoiceList.js": {
-      "design": "627426880bbc6179e899fadf1a330922e760b9685d21b328eb19a72567a48fbd",
-      "repo": "627426880bbc6179e899fadf1a330922e760b9685d21b328eb19a72567a48fbd"
+      "design": "e6e51559663304529ba82ab98c3450477343019abb5c6aa5724d71cab5917b81",
+      "repo": "e6e51559663304529ba82ab98c3450477343019abb5c6aa5724d71cab5917b81"
     },
     "components/DescriptionList.js": {
-      "design": "3252d5d8ba56b74f318295fa473a45cf82e49752fe334330b342ecc184ad8474",
-      "repo": "3252d5d8ba56b74f318295fa473a45cf82e49752fe334330b342ecc184ad8474"
+      "design": "eefbc8dd9e61b5a3a38a5123dd65c727abd5573f5d6dfd330bc9cd6e008f9431",
+      "repo": "eefbc8dd9e61b5a3a38a5123dd65c727abd5573f5d6dfd330bc9cd6e008f9431"
     },
     "components/Disclosure.js": {
-      "design": "e652f8fa13e98aa6e454b26eaa6ba348e9f8dc87f358c6bdb5f2c7835e0b5d21",
-      "repo": "e652f8fa13e98aa6e454b26eaa6ba348e9f8dc87f358c6bdb5f2c7835e0b5d21"
+      "design": "b23fc9f409f3a04e5911fe08efe02960fe7cead4bc4c682ab7e296edb5c45819",
+      "repo": "b23fc9f409f3a04e5911fe08efe02960fe7cead4bc4c682ab7e296edb5c45819"
     },
     "components/Field.js": {
-      "design": "b3243cdafdb0aca61c19161b7fc79d1fe8440898a8792d091cbbe1c00e8d9ae2",
-      "repo": "b3243cdafdb0aca61c19161b7fc79d1fe8440898a8792d091cbbe1c00e8d9ae2"
-    },
-    "components/FilterChips.js": {
-      "design": "bd310e80defc5c4c1f4501f06dd0e36d50cb20cce47b9dc16e9e0dc0e421982e",
-      "repo": "bd310e80defc5c4c1f4501f06dd0e36d50cb20cce47b9dc16e9e0dc0e421982e"
+      "design": "ef5fc6dec8945dec015825f5104fc174d9371f310dc2c94692685b58de347e2d",
+      "repo": "ef5fc6dec8945dec015825f5104fc174d9371f310dc2c94692685b58de347e2d"
     },
     "components/FollowUpCard.js": {
-      "design": "05f438c84eeca71b7580cdcaf6bd2582050e551e64b0ce5366bfe67a9f0556e4",
-      "repo": "05f438c84eeca71b7580cdcaf6bd2582050e551e64b0ce5366bfe67a9f0556e4"
+      "design": "2bccebdc313c2ed04b9d9c25b9ba7b2e8d7834665ba2e18b8c68ff3708fdf4ba",
+      "repo": "2bccebdc313c2ed04b9d9c25b9ba7b2e8d7834665ba2e18b8c68ff3708fdf4ba"
     },
     "components/FollowUpHeader.js": {
-      "design": "ebd841704a82bfefa97f38a7818577f2e2857e128f54137474c8a99d0f74bdb9",
-      "repo": "ebd841704a82bfefa97f38a7818577f2e2857e128f54137474c8a99d0f74bdb9"
+      "design": "2f4fda2f0760d9c2bcb3a03e9aec16b7017cafce7dc759e223191ed78eb96656",
+      "repo": "2f4fda2f0760d9c2bcb3a03e9aec16b7017cafce7dc759e223191ed78eb96656"
     },
     "components/IconButton.js": {
-      "design": "c8b29f428a2bfec1dacffbab977ede61cb44228be91f8c767f0a6a32271aa203",
-      "repo": "c8b29f428a2bfec1dacffbab977ede61cb44228be91f8c767f0a6a32271aa203"
+      "design": "4ef5391a89739cbe009a053e42a0598618cdb1c8788539e1b14d1643f717c47f",
+      "repo": "4ef5391a89739cbe009a053e42a0598618cdb1c8788539e1b14d1643f717c47f"
     },
     "components/InlineAlert.js": {
-      "design": "703474ec333a964ada7670a0ea7945bff7039c4c331c5ae58ef01b7132720003",
-      "repo": "703474ec333a964ada7670a0ea7945bff7039c4c331c5ae58ef01b7132720003"
+      "design": "b21cf417d1dd318c6eb265a66f9a4ba7b7444f15a09be7ec4bc8b80970a34b9d",
+      "repo": "b21cf417d1dd318c6eb265a66f9a4ba7b7444f15a09be7ec4bc8b80970a34b9d"
     },
     "components/ListRow.js": {
-      "design": "508a3eaa14a21685c8978f223b8cc67ea196a955c5613f5b404965268fbaf340",
-      "repo": "508a3eaa14a21685c8978f223b8cc67ea196a955c5613f5b404965268fbaf340"
+      "design": "181e981b66c3cfcbc121b6e1ded7bd2f199abaa3f0fb95e11e16c24866f8c0fe",
+      "repo": "181e981b66c3cfcbc121b6e1ded7bd2f199abaa3f0fb95e11e16c24866f8c0fe"
     },
     "components/OptionsMenu.js": {
-      "design": "48b9156a5b372abb6e73a4fce1da3541f5a68f17948a7aa5acd8e3a8f61a8903",
-      "repo": "48b9156a5b372abb6e73a4fce1da3541f5a68f17948a7aa5acd8e3a8f61a8903"
+      "design": "87126dcd192e77b94446697bde0c5979a05c854009d4b203b513a93445291e13",
+      "repo": "87126dcd192e77b94446697bde0c5979a05c854009d4b203b513a93445291e13"
     },
     "components/Pager.js": {
-      "design": "e746adc6e60639c82dde4fefa15c2ffd4fd5bb7f151e631cb0e8d24059a17ed5",
-      "repo": "e746adc6e60639c82dde4fefa15c2ffd4fd5bb7f151e631cb0e8d24059a17ed5"
+      "design": "abeecd1dcb47f626a3afcf1d96ae33c3ff1a61afef537bdd571fbeb19bfa1162",
+      "repo": "abeecd1dcb47f626a3afcf1d96ae33c3ff1a61afef537bdd571fbeb19bfa1162"
     },
     "components/ProcessSteps.js": {
-      "design": "ade4b0f5831a71ffca5535cfd91df8f71b5aa2b90ca87b90d01bbbcc0ab266e3",
-      "repo": "ade4b0f5831a71ffca5535cfd91df8f71b5aa2b90ca87b90d01bbbcc0ab266e3"
+      "design": "5cde37f50ce61d6b8421b09393687b7f42e06de94d1e7b3e6e74d28a50b8e75e",
+      "repo": "5cde37f50ce61d6b8421b09393687b7f42e06de94d1e7b3e6e74d28a50b8e75e"
     },
     "components/README.md": {
-      "design": "f04370358613662128904bcc7fa0b8ca72bad3c10db05f6a4d9805a731b0ae3d",
-      "repo": "f04370358613662128904bcc7fa0b8ca72bad3c10db05f6a4d9805a731b0ae3d"
+      "design": "10ec3ca1862765cd0dee097196eaea44eb5223c5589fa011f5d7bf35a6e70d5d",
+      "repo": "10ec3ca1862765cd0dee097196eaea44eb5223c5589fa011f5d7bf35a6e70d5d"
     },
     "components/RiskBadge.js": {
-      "design": "940c846ebad2fa7a34e7d3d3345031b6dde08d8fc6e33c1ecdcfdf42399c7582",
-      "repo": "940c846ebad2fa7a34e7d3d3345031b6dde08d8fc6e33c1ecdcfdf42399c7582"
+      "design": "943b340e40f449b65efe15b0b1f8283081840b98e27886c652a58870211af5fd",
+      "repo": "943b340e40f449b65efe15b0b1f8283081840b98e27886c652a58870211af5fd"
     },
     "components/SegmentedControl.js": {
-      "design": "16d9e10130d9807c7a545a26b787918447e34952e706e31aa7d91d2bbc170109",
-      "repo": "16d9e10130d9807c7a545a26b787918447e34952e706e31aa7d91d2bbc170109"
+      "design": "bb3c2c0bfb8bf406c196c1876c3fe34ad436f40ea0d37472965b50f4e4fdaad3",
+      "repo": "bb3c2c0bfb8bf406c196c1876c3fe34ad436f40ea0d37472965b50f4e4fdaad3"
     },
     "components/StatusChip.js": {
-      "design": "c24b79b66ca656a33e34571f11a02de62b89b9f93cda3b57c11fc5250d3fb552",
-      "repo": "c24b79b66ca656a33e34571f11a02de62b89b9f93cda3b57c11fc5250d3fb552"
+      "design": "586b8a0f824360dc75097aeab328d927c51dc4e4a7407bc2518032948736f932",
+      "repo": "586b8a0f824360dc75097aeab328d927c51dc4e4a7407bc2518032948736f932"
     },
     "components/SummaryCard.js": {
-      "design": "29594fa79d9af1455399d835469f8155eeef194feeaa2e085e466287a56d4e1b",
-      "repo": "29594fa79d9af1455399d835469f8155eeef194feeaa2e085e466287a56d4e1b"
+      "design": "37cb9577b097d9e7c0c3c8c4fcc568b9a8b86e8c56e0447b17d53289a5bcfc76",
+      "repo": "37cb9577b097d9e7c0c3c8c4fcc568b9a8b86e8c56e0447b17d53289a5bcfc76"
     },
     "components/TextField.js": {
-      "design": "5d6bb8f9e61faa62a86bc8ff8ebbfc15041d3da77f52b9da610a4898ae8e3bac",
-      "repo": "5d6bb8f9e61faa62a86bc8ff8ebbfc15041d3da77f52b9da610a4898ae8e3bac"
+      "design": "6549a46f9159c43a8c14d920df7bb4d3b7a21a4ca42817ce99853bfe3046b34b",
+      "repo": "6549a46f9159c43a8c14d920df7bb4d3b7a21a4ca42817ce99853bfe3046b34b"
     },
     "components/TextLink.js": {
-      "design": "ba9b2e743766c44425a234eaf7d2af8ea0cb3f7648d7412795e52d73e57deeeb",
-      "repo": "ba9b2e743766c44425a234eaf7d2af8ea0cb3f7648d7412795e52d73e57deeeb"
+      "design": "70e6b6c5529f257a2046bfa4cc0013adfe800cb87abe032f329b3bcff9b93115",
+      "repo": "70e6b6c5529f257a2046bfa4cc0013adfe800cb87abe032f329b3bcff9b93115"
     },
     "components/core.js": {
-      "design": "058feb61dbbc9d4cc57f93543b6fe367d692d1a7b3e80ad2231246140b3912f7",
-      "repo": "058feb61dbbc9d4cc57f93543b6fe367d692d1a7b3e80ad2231246140b3912f7"
+      "design": "53cb9f9b26216a474f8f9463742b059918bec48482ae2f7c05309baae5fb2f7c",
+      "repo": "53cb9f9b26216a474f8f9463742b059918bec48482ae2f7c05309baae5fb2f7c"
     },
     "components/tokens.css": {
-      "design": "1da4cadf9e2e6ef0416d795605ac1d9564f0d471d005f1d7e97cf17051567541",
-      "repo": "1da4cadf9e2e6ef0416d795605ac1d9564f0d471d005f1d7e97cf17051567541"
+      "design": "99fafb35c6efb633030f7c7fa8bccbf9f8512d4091f03e2562051c362315d1ba",
+      "repo": "99fafb35c6efb633030f7c7fa8bccbf9f8512d4091f03e2562051c362315d1ba"
     },
     "sections/components/back-link.dc.html": {
-      "design": "fcd86287699ab2fa11f834a814d78964dcd81e790025296266d3a52490b7abad",
-      "repo": "fcd86287699ab2fa11f834a814d78964dcd81e790025296266d3a52490b7abad"
+      "design": "7cd663ad5824a444ff6eeb8c5159898c026c6a484c41e9f078c596fb39fa8159",
+      "repo": "7cd663ad5824a444ff6eeb8c5159898c026c6a484c41e9f078c596fb39fa8159"
     },
     "sections/components/bottom-nav.dc.html": {
-      "design": "7672d347cbcc579efceed6343fec11884368db5921e9bd89c40f4af4a01d852e",
-      "repo": "7672d347cbcc579efceed6343fec11884368db5921e9bd89c40f4af4a01d852e"
+      "design": "35e9c372c2fbe2f94263e948887e7a247b5aa94ad05556b95f917da6029534b5",
+      "repo": "35e9c372c2fbe2f94263e948887e7a247b5aa94ad05556b95f917da6029534b5"
     },
     "sections/components/button.dc.html": {
-      "design": "3f2918fe37e320e5d101d995040ccfcb38b5551b4fc5c594ca7de5d9e6bb8e43",
-      "repo": "3f2918fe37e320e5d101d995040ccfcb38b5551b4fc5c594ca7de5d9e6bb8e43"
-    },
-    "sections/components/choice-list.dc.html": {
-      "design": "7dcb2e092e7545939ca981ce16ba51940d8c4a107eecf0d72d50e250798550f9",
-      "repo": "7dcb2e092e7545939ca981ce16ba51940d8c4a107eecf0d72d50e250798550f9"
+      "design": "19e9ba9515ec1d4bcc8526e8d52459b11721c6a3bb09a99d9b6366050a5ae92f",
+      "repo": "19e9ba9515ec1d4bcc8526e8d52459b11721c6a3bb09a99d9b6366050a5ae92f"
     },
     "sections/components/description-list.dc.html": {
-      "design": "0c9151486cd0ef803cbf9fdb20238897f0a12851770ad1a04807909f1545e201",
-      "repo": "0c9151486cd0ef803cbf9fdb20238897f0a12851770ad1a04807909f1545e201"
+      "design": "078b7bfd732b9aa86e8a7a0888a500f99f6cf6cc5c660b04d501167dc172fce7",
+      "repo": "078b7bfd732b9aa86e8a7a0888a500f99f6cf6cc5c660b04d501167dc172fce7"
     },
     "sections/components/disclosure.dc.html": {
-      "design": "396581ae0758951aa5046576beadb5d7763c112f744a29a41fc9629d95fe9b91",
-      "repo": "396581ae0758951aa5046576beadb5d7763c112f744a29a41fc9629d95fe9b91"
+      "design": "6c5daef536d18ec17cc4d2832828c19b0c65d098b2a26f98136cb443cff69739",
+      "repo": "6c5daef536d18ec17cc4d2832828c19b0c65d098b2a26f98136cb443cff69739"
     },
     "sections/components/field.dc.html": {
-      "design": "4517f1a2effbfbce2680217956a595e8e4bf411f1c11758f5a27caec1a214811",
-      "repo": "4517f1a2effbfbce2680217956a595e8e4bf411f1c11758f5a27caec1a214811"
+      "design": "7a5e02691b4adb279518ee539562a062e162eccf93cfd759d48faeddda6d94cb",
+      "repo": "7a5e02691b4adb279518ee539562a062e162eccf93cfd759d48faeddda6d94cb"
     },
     "sections/components/fieldset.dc.html": {
-      "design": "6249f1f78f27be8165fe03123e60677416fd9b0f248d92a4a7f1a7cd8711d8f3",
-      "repo": "6249f1f78f27be8165fe03123e60677416fd9b0f248d92a4a7f1a7cd8711d8f3"
-    },
-    "sections/components/filter-chips.dc.html": {
-      "design": "9cc5e065f0166d64b718d14ffa766934ced9df67d563ac78083589862d2b55c6",
-      "repo": "9cc5e065f0166d64b718d14ffa766934ced9df67d563ac78083589862d2b55c6"
-    },
-    "sections/components/icon-button.dc.html": {
-      "design": "4f746487d1015bf311c04e150e932bcf7fc55ea191c7cba5716ebd165c83ce65",
-      "repo": "4f746487d1015bf311c04e150e932bcf7fc55ea191c7cba5716ebd165c83ce65"
+      "design": "e81e097da39018b24939566cf69ecfce400a8147d76580fce96f6275789a44d4",
+      "repo": "e81e097da39018b24939566cf69ecfce400a8147d76580fce96f6275789a44d4"
     },
     "sections/components/icon.dc.html": {
-      "design": "dfb56b4106dc95b4ced0b33954bf44606de704a689f828a3a420fd60f39b5f03",
-      "repo": "dfb56b4106dc95b4ced0b33954bf44606de704a689f828a3a420fd60f39b5f03"
+      "design": "c2cd59079cb676b442045b7af508de705d9a73f959deb57021b9d0368d25d606",
+      "repo": "c2cd59079cb676b442045b7af508de705d9a73f959deb57021b9d0368d25d606"
     },
     "sections/components/inline-alert.dc.html": {
-      "design": "518a08257cbbb586dce34f95f941ff69aa06f61281ec4a68caf00a648e8a81cf",
-      "repo": "518a08257cbbb586dce34f95f941ff69aa06f61281ec4a68caf00a648e8a81cf"
+      "design": "40cb7777197e38c2e7786ef3798becf75428125d427577c58fc27f95b54fe1c0",
+      "repo": "40cb7777197e38c2e7786ef3798becf75428125d427577c58fc27f95b54fe1c0"
     },
     "sections/components/list-row.dc.html": {
-      "design": "30a77877a1734d0019256f0f3f8c4a14a9d7bf12a42116fee94fed18f040dde3",
-      "repo": "30a77877a1734d0019256f0f3f8c4a14a9d7bf12a42116fee94fed18f040dde3"
+      "design": "73d5eb7c5161c8106712012f98622f4f0bc469bb41d9eab25ca26bb21156a84b",
+      "repo": "73d5eb7c5161c8106712012f98622f4f0bc469bb41d9eab25ca26bb21156a84b"
     },
     "sections/components/options-menu.dc.html": {
-      "design": "8428b72237b26c0b24a470d3593e55616781ff637bddfc9c0573247be17b60ed",
-      "repo": "8428b72237b26c0b24a470d3593e55616781ff637bddfc9c0573247be17b60ed"
+      "design": "e75a811fe03f0d0a87b55519c204942bb95f8360c3b8fac8a79bd08cbbe7cf47",
+      "repo": "e75a811fe03f0d0a87b55519c204942bb95f8360c3b8fac8a79bd08cbbe7cf47"
     },
     "sections/components/pager.dc.html": {
-      "design": "09b7d0068f7bc3f13e7708fe610009852145730e673f801239ff0881178e0e34",
-      "repo": "09b7d0068f7bc3f13e7708fe610009852145730e673f801239ff0881178e0e34"
+      "design": "208ef1eab8f209d5b4996dff16ee38cc37b715ec9d0d88458e6ca2984f601cad",
+      "repo": "208ef1eab8f209d5b4996dff16ee38cc37b715ec9d0d88458e6ca2984f601cad"
     },
     "sections/components/process-steps.dc.html": {
-      "design": "9b6063104c7e45b7ca7b35e66e6ae0d17647eb2cfa035e216c7a625b4097774a",
-      "repo": "9b6063104c7e45b7ca7b35e66e6ae0d17647eb2cfa035e216c7a625b4097774a"
+      "design": "d8c3e838993f68c5c91d4bd1a69ab449685e645829f9638c912e668cec977950",
+      "repo": "d8c3e838993f68c5c91d4bd1a69ab449685e645829f9638c912e668cec977950"
     },
     "sections/components/segmented-control.dc.html": {
-      "design": "989d03ca269aa3ba0068defa476f23425a23049a1514998906e6905b63f1c158",
-      "repo": "989d03ca269aa3ba0068defa476f23425a23049a1514998906e6905b63f1c158"
+      "design": "d9833db9d43d3e97e6d698f8896820b7cdef6dc1b0cd80c44d1ded12dbf4f0a2",
+      "repo": "d9833db9d43d3e97e6d698f8896820b7cdef6dc1b0cd80c44d1ded12dbf4f0a2"
     },
     "sections/components/spinner.dc.html": {
-      "design": "d3b5a7c45beb263fbfb0b8b8332c423e8df8cb048c393a025b1474a48eeacb43",
-      "repo": "d3b5a7c45beb263fbfb0b8b8332c423e8df8cb048c393a025b1474a48eeacb43"
-    },
-    "sections/components/status-chip.dc.html": {
-      "design": "2dd6bfbb5cea505b1f24320a9abbad7fad10cb82f794d76601bde9c4de17e6ba",
-      "repo": "2dd6bfbb5cea505b1f24320a9abbad7fad10cb82f794d76601bde9c4de17e6ba"
+      "design": "30bcc38bdd3053d99a0b81a9cec1bbc557d7821376765d5efcd0c37497df6da2",
+      "repo": "30bcc38bdd3053d99a0b81a9cec1bbc557d7821376765d5efcd0c37497df6da2"
     },
     "sections/components/text-field.dc.html": {
-      "design": "0d2122f7d9a97af45bdbca9310e8b2d13055ccad697e023d04b9f1d54faef16c",
-      "repo": "0d2122f7d9a97af45bdbca9310e8b2d13055ccad697e023d04b9f1d54faef16c"
+      "design": "5d8ce107b21ac89270c363831c5353b428479d7c3748f9c1465edf3aafeeb33c",
+      "repo": "5d8ce107b21ac89270c363831c5353b428479d7c3748f9c1465edf3aafeeb33c"
     },
     "sections/components/text-link.dc.html": {
-      "design": "c9bd0345a950c81fd3709aa9bca9a941184f0b713ef319c54b9201c1a796710b",
-      "repo": "c9bd0345a950c81fd3709aa9bca9a941184f0b713ef319c54b9201c1a796710b"
+      "design": "f5765a81a9496d2cd2dd57f7d554edc7b4766a89ead8c8adac7018929254db1a",
+      "repo": "f5765a81a9496d2cd2dd57f7d554edc7b4766a89ead8c8adac7018929254db1a"
     },
     "sections/imoles-components/action-card.dc.html": {
-      "design": "2bb5c727a126408893eb1a822c3f4486ae4354dcb19ad8c9287738b9dd6a5863",
-      "repo": "2bb5c727a126408893eb1a822c3f4486ae4354dcb19ad8c9287738b9dd6a5863"
+      "design": "f7a2e951192290787f045eaf2342c80235cb8bbdf03a785275baf2b4cc3d7644",
+      "repo": "f7a2e951192290787f045eaf2342c80235cb8bbdf03a785275baf2b4cc3d7644"
     },
     "sections/imoles-components/analysis-summary.dc.html": {
-      "design": "9a039f25b6b965ed688574d356403a570a354623a2c1cd6cce6b47fc17aad0cd",
-      "repo": "9a039f25b6b965ed688574d356403a570a354623a2c1cd6cce6b47fc17aad0cd"
+      "design": "832dfe35cbab9bb6f1c0175829461434f63df2c3ab6a076fc40b2d2887b9821d",
+      "repo": "832dfe35cbab9bb6f1c0175829461434f63df2c3ab6a076fc40b2d2887b9821d"
     },
     "sections/imoles-components/capture-row.dc.html": {
-      "design": "a2315c8d4479593889a1c9d768dccab7edbe7cf52ec5d74f878d410178c33524",
-      "repo": "a2315c8d4479593889a1c9d768dccab7edbe7cf52ec5d74f878d410178c33524"
+      "design": "4f868511cfe65179d4a54269b9901bb306ada0042f3a3d3314b30295ab1eff4c",
+      "repo": "4f868511cfe65179d4a54269b9901bb306ada0042f3a3d3314b30295ab1eff4c"
     },
     "sections/imoles-components/follow-up-card.dc.html": {
-      "design": "5cd9ab39c6f74deb094b25c33ba756187d342c2ede20020991e851eb74e509d5",
-      "repo": "5cd9ab39c6f74deb094b25c33ba756187d342c2ede20020991e851eb74e509d5"
+      "design": "c896586e436ce5657145a779eac0dc7d0983359fc7537627b3736ba06df5acbe",
+      "repo": "c896586e436ce5657145a779eac0dc7d0983359fc7537627b3736ba06df5acbe"
     },
     "sections/imoles-components/follow-up-header.dc.html": {
-      "design": "4853a1d5a9acb8e888b864100117844c05b82cbfcfa406b32ec7af4f4b1e1cf4",
-      "repo": "4853a1d5a9acb8e888b864100117844c05b82cbfcfa406b32ec7af4f4b1e1cf4"
+      "design": "1f3c2b016f586ceb602fdbda187906f4130fa2423773ca81e9cbe2b45c47072e",
+      "repo": "1f3c2b016f586ceb602fdbda187906f4130fa2423773ca81e9cbe2b45c47072e"
     },
     "sections/imoles-components/risk-badge.dc.html": {
-      "design": "9b1f8c2b8d7beedcc41a2324a00fbfb08949f48f60f59de76222d918563b8996",
-      "repo": "9b1f8c2b8d7beedcc41a2324a00fbfb08949f48f60f59de76222d918563b8996"
+      "design": "52148a4d97972f5640f78f212dbbb6daee8ee5c2d139c39a23151494f844f797",
+      "repo": "52148a4d97972f5640f78f212dbbb6daee8ee5c2d139c39a23151494f844f797"
     },
     "sections/imoles-components/summary-card.dc.html": {
-      "design": "f54aa86ddfeffb114ef84a55c8acf9d97cf47d2c5962993eba3bdabba0d35ace",
-      "repo": "f54aa86ddfeffb114ef84a55c8acf9d97cf47d2c5962993eba3bdabba0d35ace"
+      "design": "25e75f4448b0d5475a8aa678faedb8861df7b3a92260b28dcdaf42a813908898",
+      "repo": "25e75f4448b0d5475a8aa678faedb8861df7b3a92260b28dcdaf42a813908898"
     },
     "sections/imoles-components/support.js": {
       "design": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
       "repo": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
     },
     "sections/tokens/simple-and-composite-values.dc.html": {
-      "design": "2a45c31c8b7c17bf1318e371e3754d690872871ce317fe667b870d91a3cca21f",
-      "repo": "2a45c31c8b7c17bf1318e371e3754d690872871ce317fe667b870d91a3cca21f"
+      "design": "3b546e1979625391fa5b6794a1d5378b967ff0323008e1b80508131bac499550",
+      "repo": "3b546e1979625391fa5b6794a1d5378b967ff0323008e1b80508131bac499550"
     },
     "sections/tokens/token-lifecycle.dc.html": {
-      "design": "aab58050e004f7bba7a9083d9ae52616a45388c94d8f60e60074cf69b7dd51e8",
-      "repo": "aab58050e004f7bba7a9083d9ae52616a45388c94d8f60e60074cf69b7dd51e8"
+      "design": "5601e065ccff8f9cacccbceb2bd1c8f53f0b0538a042b202dac390a6800298e3",
+      "repo": "5601e065ccff8f9cacccbceb2bd1c8f53f0b0538a042b202dac390a6800298e3"
+    },
+    "components/Chip.js": {
+      "design": "881602ae79de0670634b73f0b5957fb1cb9f7a4759a899659bc41f264486075f",
+      "repo": "881602ae79de0670634b73f0b5957fb1cb9f7a4759a899659bc41f264486075f"
+    },
+    "components/ProgressBar.js": {
+      "design": "b0115a5a2ce19c7823d908810ecca75b01dcdb57b20003ffcfa3b258a18675b8",
+      "repo": "b0115a5a2ce19c7823d908810ecca75b01dcdb57b20003ffcfa3b258a18675b8"
+    },
+    "components/Select.js": {
+      "design": "f584d21c1e1e5bb20a2cf11b8764eae842a4a5e064bc64e40c676f2049e22345",
+      "repo": "f584d21c1e1e5bb20a2cf11b8764eae842a4a5e064bc64e40c676f2049e22345"
+    },
+    "components/TextArea.js": {
+      "design": "6634c944dbe507e7076463d1654b8884bdea196c5f9a7dfbab40dd8d53327c74",
+      "repo": "6634c944dbe507e7076463d1654b8884bdea196c5f9a7dfbab40dd8d53327c74"
+    },
+    "sections/components/chip.dc.html": {
+      "design": "5c8b66db99741f786b429379016be1cd8b1990bc239bec1bf0976bf7d9c4394b",
+      "repo": "5c8b66db99741f786b429379016be1cd8b1990bc239bec1bf0976bf7d9c4394b"
+    },
+    "sections/components/progress-bar.dc.html": {
+      "design": "fa6b2a177eec202bb1eb0007539c805a88d9eba9084cc0069c42992338ddf91d",
+      "repo": "fa6b2a177eec202bb1eb0007539c805a88d9eba9084cc0069c42992338ddf91d"
+    },
+    "sections/components/select.dc.html": {
+      "design": "e846f1b568f1340013a9e013303b4a80b3855a6ffc0916e5e7244f28131d670e",
+      "repo": "e846f1b568f1340013a9e013303b4a80b3855a6ffc0916e5e7244f28131d670e"
+    },
+    "sections/components/strategy.dc.html": {
+      "design": "73abb445cbfd38f2ebc0d9b83b23e12ebfc7a41aeaaf5307ec9b8204cedd1e76",
+      "repo": "73abb445cbfd38f2ebc0d9b83b23e12ebfc7a41aeaaf5307ec9b8204cedd1e76"
+    },
+    "sections/components/text-area.dc.html": {
+      "design": "bb1ec2abfd521c8e7f987dad55c5ebf18ba60276f8a89dc5e61b581b407d829b",
+      "repo": "bb1ec2abfd521c8e7f987dad55c5ebf18ba60276f8a89dc5e61b581b407d829b"
+    },
+    "sections/patterns/autocomplete.dc.html": {
+      "design": "5f56982d2627ca26c2080754e14e6eb5d1c2753061a228c821b2312871c18dda",
+      "repo": "5f56982d2627ca26c2080754e14e6eb5d1c2753061a228c821b2312871c18dda"
+    },
+    "sections/patterns/back-link.dc.html": {
+      "design": "d155c8c5b0d733f166de304e6d650a4bfc9c3421a3aa0eaaf167dc9f52402a91",
+      "repo": "d155c8c5b0d733f166de304e6d650a4bfc9c3421a3aa0eaaf167dc9f52402a91"
+    },
+    "sections/patterns/bottom-navigation.dc.html": {
+      "design": "8b8a982fd4e9358c0a08928329bd61b2716a2b520522474d3a42ab0bfdde4cc2",
+      "repo": "8b8a982fd4e9358c0a08928329bd61b2716a2b520522474d3a42ab0bfdde4cc2"
+    },
+    "sections/patterns/contextual-actions.dc.html": {
+      "design": "0d6591ab0bde98a74d984b99b83a4a2f38a313bb53930fedd76184d42cb3683f",
+      "repo": "0d6591ab0bde98a74d984b99b83a4a2f38a313bb53930fedd76184d42cb3683f"
+    },
+    "sections/patterns/list-rows.dc.html": {
+      "design": "d3b1b003e6f24118dd34db8895d2c627aebc3027f18e2eed8f7b5ba126d9729a",
+      "repo": "d3b1b003e6f24118dd34db8895d2c627aebc3027f18e2eed8f7b5ba126d9729a"
+    },
+    "sections/patterns/multi-select-by-search.dc.html": {
+      "design": "d3ad710b3f2849ed30f54f8251b0af80bc768198bcf68de93a2cf912f2c71a74",
+      "repo": "d3ad710b3f2849ed30f54f8251b0af80bc768198bcf68de93a2cf912f2c71a74"
+    },
+    "sections/patterns/search-filters-and-results.dc.html": {
+      "design": "11d5c09ca1c126eeab0159ed4183a343ae4043af45bad6e03960850ba71b94ad",
+      "repo": "11d5c09ca1c126eeab0159ed4183a343ae4043af45bad6e03960850ba71b94ad"
+    },
+    "sections/patterns/sequence-navigation.dc.html": {
+      "design": "fa5e91434ceb967b651625c38d55f2d07def54d7b7b9942535c102005a2dc54d",
+      "repo": "fa5e91434ceb967b651625c38d55f2d07def54d7b7b9942535c102005a2dc54d"
+    },
+    "sections/resources/icon-construction.dc.html": {
+      "design": "1f8c7b04dcbf1dafbb4a831a38f98906479225ec06a0afd5348d81ad96697707",
+      "repo": "a054706ef16fdf7771cfd4058e5d3a9d2454d20c36cfec6871b206bbd86595a7"
     }
   },
   "discarded": [
@@ -682,8 +730,68 @@
       "designHash": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
       "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
       "date": "2026-10-14"
+    },
+    {
+      "path": "scratch/fichas/01-act-button.md",
+      "designHash": "4555c08e7732f28f6da338bbf326a8fa8c6672af4112abee96d94a1ef4281840",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/fichas/02-form-field-fieldset-textfield-textarea.md",
+      "designHash": "50361c4d0a457f84c32e87d549dac6d67e8474c1c0b174d7e09e4808776fa7cb",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/fichas/03-form-select-vis-chip-choicelist.md",
+      "designHash": "2fafb543f0ce276c0d2bbf0f674ea6604df6cf3cd3b1e92725d100e48594d0fc",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/fichas/04-familia-nav.md",
+      "designHash": "6e12bdc366b4d8ef99b66b1450240d1f51aef4c75f91c61abefc79da632e4743",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/fichas/05-familia-fb.md",
+      "designHash": "af48e9963f72f40bfb01fa4b9ba4c918c338fc77221706c4fb964a2bcf76f3f5",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/fichas/06-familias-data-ovl-vis.md",
+      "designHash": "6fd9f139916b4a2514dbf751295e1d7f501b9a5e5485008868034ebce517bea7",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/fichas/07-estructura-guide-project.md",
+      "designHash": "7312eb4f854356315a8618a60c964a6a0f04a8c61ceba0eecfea9bfe5418ecaa",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/fichas/08-patrones.md",
+      "designHash": "263ed2a97d428e42772ca6ede54801f14bed39e248bf72f904d8c2410f6eab30",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/informe-auditoria-componentes-base.md",
+      "designHash": "f466c441b62b1a63e3069fa8a27094554850541e209b90746af114604eed7ace",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
+    },
+    {
+      "path": "scratch/pagelib.js",
+      "designHash": "22cb4880e0ed9a47faaa4ca71617dd0006b459eef1e3568f9402adb21d3e2967",
+      "reason": "Design los conserva como evidencia y borradores; decisión del owner 2026-10-14",
+      "date": "2026-10-15"
     }
   ],
-  "recorded": "2026-10-15T05:25:05.903Z",
-  "manifestGenerated": "2026-10-15T05:19:39.973Z"
+  "recorded": "2026-10-15T15:44:26.786Z",
+  "manifestGenerated": "2026-10-15T15:23:04.259Z"
 }

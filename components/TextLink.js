@@ -1,4 +1,5 @@
-/* TextLink · 7.1 Acciones · HF: «Ver el análisis ›» en 2 Entidad - Accion (detalle) */
+/* TextLink · 7.1 Acciones · HF: «Ver el análisis ›» en 2 Entidad - Accion (detalle)
+   external: abre href en otra ventana; icono open_in_new y aviso oculto para lector de pantalla. */
 (function () {
   var NS = window.DSimoles, h = NS.h;
   NS.css('text-link', [
@@ -8,10 +9,13 @@
   ].join('\n'));
 
   NS.TextLink = function TextLink(p) {
+    var external = !!p.href && (p.external === true || p.external === 'true');
     var cls = NS.cx('dsm-root dsm-reset dsm-focus dsm-target dsm-link', NS.state(p.demoState));
     var kids = [h('span', { key: 't' }, p.label != null ? p.label : p.children)];
-    if (p.icon !== 'none') kids.push(h(NS.Icon, { key: 'i', name: p.icon || 'chevron_right', size: 'xs' }));
-    if (p.href) return h('a', { className: cls, href: p.href, onClick: p.onClick }, kids);
+    if (external) kids.push(h('span', { key: 's', className: 'dsm-sr' }, ' (se abre en otra ventana)'));
+    var icon = external ? 'open_in_new' : (p.icon || 'chevron_right');
+    if (external || p.icon !== 'none') kids.push(h(NS.Icon, { key: 'i', name: icon, size: 'xs' }));
+    if (p.href) return h('a', Object.assign({ className: cls, href: p.href, onClick: p.onClick }, external ? { target: '_blank', rel: 'noopener noreferrer' } : {}), kids);
     return h('button', { type: 'button', className: cls, onClick: p.onClick }, kids);
   };
 })();

@@ -68,7 +68,7 @@
   };
 
   /* Icon · Material Symbols Rounded (subconjunto de tokens.css). Decorativo salvo que lleve label. */
-  NS.ICONS = ['add', 'arrow_back', 'check', 'chevron_left', 'chevron_right', 'home', 'info', 'more_vert', 'person', 'photo_camera', 'view_list'];
+  NS.ICONS = ['add', 'arrow_back', 'check', 'chevron_left', 'chevron_right', 'home', 'info', 'more_vert', 'person', 'photo_camera', 'view_list', 'open_in_new', 'edit', 'archive'];
   NS.Icon = function Icon(p) {
     var size = p.size || 'md';
     var a = p.label ? { role: 'img', 'aria-label': p.label } : { 'aria-hidden': 'true' };

@@ -1058,13 +1058,8 @@
       "status": "I",
       "page": "",
       "owner": "",
-      "notes": "Separada el 2026-10-14 de Acciones (antes 7.1) al pasar a una subsección por componente. Componente en vivo desde components/TextLink.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): icono size.icon.xs (16).",
-      "tasks": [
-        {
-          "text": "Variante de enlace externo con el icono open_in_new en lugar del chevron: el subconjunto de Material Symbols ya lo incluye (regenerado por Claude Code el 2026-10-15); falta que Claude Design la cree en components/TextLink.js.",
-          "when": "pending"
-        }
-      ],
+      "notes": "Separada el 2026-10-14 de Acciones (antes 7.1) al pasar a una subsección por componente. Componente en vivo desde components/TextLink.js, extraído de la HF de iMoles: variantes, estados, ficha, accesibilidad y cambios respecto a la HF. Valores propuestos; pendiente de la revisión del owner. 2026-10-14 (alturas/radios/hover, decisión del owner): icono size.icon.xs (16). 2026-10-15: variante de enlace externo (external, requiere href) con open_in_new, target=\"_blank\" rel=\"noopener noreferrer\" y el texto oculto «(se abre en otra ventana)»; creada por Claude Design. Sin probar con lector de pantalla.",
+      "tasks": [],
       "review": {
         "by": "",
         "date": "",

@@ -10,8 +10,8 @@
       "repo": "62a0ca4cac014d35af0c1af50549026ce7074eb522c885501fe64591b48b2b05"
     },
     "CHANGELOG.md": {
-      "design": "6973aef1d4fe946c7456c8f6d7c9fc72a9ee577b6ffcd43067a04af9993ab0e8",
-      "repo": "6973aef1d4fe946c7456c8f6d7c9fc72a9ee577b6ffcd43067a04af9993ab0e8"
+      "design": "a6629cf16c5b92430ca9c5ef9a3ddb475579e8697964eba35ade47c4e7361068",
+      "repo": "a6629cf16c5b92430ca9c5ef9a3ddb475579e8697964eba35ade47c4e7361068"
     },
     "CLAUDE.md": {
       "design": "b11ee9cb639069a6bd1d6e6ac378887a33830bd79bd3aa4f68c0d13cceccfc4e",
@@ -50,8 +50,8 @@
       "repo": "ccd23b266c0b19a4f20fa0cd5ae8bd9b80754ba9028a77caf279686f0845d8ed"
     },
     "data/project.json": {
-      "design": "3b376f428cf36b819a026c2817b064de7cbec8345ab3bc666c63283d0439fa89",
-      "repo": "3b376f428cf36b819a026c2817b064de7cbec8345ab3bc666c63283d0439fa89"
+      "design": "78706df496f9773e615e9c7b2259a63ad0f0cdf6ad4250c78785561a5fea1a91",
+      "repo": "e36ec32fa4de9b9f5b8db302192f234fe55be0086958f3f7c32b35ffd2eb800f"
     },
     "docs/claude-code.md": {
       "design": "56b9176dc1e7b98f1fb8164f83ef153ca3f3fd3039ea2c6bf012964c2a9e8315",
@@ -110,7 +110,7 @@
       "repo": "5394bf1176ebf09276fc2926a0d2b88ecc8f756c285064e50382e8b418179da4"
     },
     "docs/scripts.md": {
-      "design": "ad5f0b941e071c575c2cbc0f83695cfd2cfa5ff9a02b707dcbb900cb449ef3a6",
+      "design": "0fcf4dec3288980360fd8f5556cdfc8e7ba8a36f846cf34c997c551fe4ceca59",
       "repo": "0fcf4dec3288980360fd8f5556cdfc8e7ba8a36f846cf34c997c551fe4ceca59"
     },
     "docs/template.md": {
@@ -118,8 +118,8 @@
       "repo": "4e1ff5be2511884d1456f88a89b784f4a3367ec814fb7acfa436119308e53925"
     },
     "dsbook.json": {
-      "design": "a24f7766f7af15ca4298e792ea1b5b13b9a54c42243589b466b6175fae7aadd0",
-      "repo": "5e9f4afb4c4c004e919917151350a9645d2298cf751d108f07f5291464ba3aee"
+      "design": "1253aadfb3e9360c40c5ccaae23fee0f81a3f956f357e3f05035f3e6b8f2ed0a",
+      "repo": "1253aadfb3e9360c40c5ccaae23fee0f81a3f956f357e3f05035f3e6b8f2ed0a"
     },
     "index.html": {
       "design": "dec6b481d2bda9b198b7ddb4cc33797bbfff7fcdcaf9cfd656bacd46601bd8c7",
@@ -362,8 +362,8 @@
       "repo": "e9d1065d48e849dcb8ee34bd99cef53a14d0e4f5c0b4aeebde35ac3d82700fac"
     },
     "assets/visuals/tokens.css": {
-      "design": "6651e1f553d9a6ae09f7237ecd549d9b3619f877ad74edac764446b5e3d726a2",
-      "repo": "6651e1f553d9a6ae09f7237ecd549d9b3619f877ad74edac764446b5e3d726a2"
+      "design": "04c47107a6a2e6a204a8877bcdf58209455b76ad67ce059ce42799d8f5c65326",
+      "repo": "04c47107a6a2e6a204a8877bcdf58209455b76ad67ce059ce42799d8f5c65326"
     },
     "assets/visuals/typography/fonts/LICENSE-Material-Symbols.txt": {
       "design": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
@@ -378,8 +378,8 @@
       "repo": "84044c09058803d87a241bd28abb4ce30a433d7db9c27a04da3efad6a0ca539c"
     },
     "assets/visuals/typography/fonts/material-symbols-rounded-subset.woff2": {
-      "design": "ab45e3a80eae350bf78360bf9a111ff8e2ae37c91dece22795d482f70e731860",
-      "repo": "ab45e3a80eae350bf78360bf9a111ff8e2ae37c91dece22795d482f70e731860"
+      "design": "f39fe4fa8f4940a591048649f7044a84283fc80402a65bd7286586ad93fe496f",
+      "repo": "f39fe4fa8f4940a591048649f7044a84283fc80402a65bd7286586ad93fe496f"
     },
     "assets/visuals/typography/fonts/roboto-300.woff2": {
       "design": "299f10a52fe1423dd5579ff7e83db8dbea312f1e924f3e06e55839286b4d1c1d",
@@ -498,12 +498,12 @@
       "repo": "5d6bb8f9e61faa62a86bc8ff8ebbfc15041d3da77f52b9da610a4898ae8e3bac"
     },
     "components/TextLink.js": {
-      "design": "453fd8c616c250a7e36c45ab10e32d9d55a42b352f0213585a4398fba2b3f058",
-      "repo": "453fd8c616c250a7e36c45ab10e32d9d55a42b352f0213585a4398fba2b3f058"
+      "design": "ba9b2e743766c44425a234eaf7d2af8ea0cb3f7648d7412795e52d73e57deeeb",
+      "repo": "ba9b2e743766c44425a234eaf7d2af8ea0cb3f7648d7412795e52d73e57deeeb"
     },
     "components/core.js": {
-      "design": "4bf5d39c91cc81a6dc794fe2a7e348ffd0c97b4d9c05b3b7f6ac7fd83527d94b",
-      "repo": "4bf5d39c91cc81a6dc794fe2a7e348ffd0c97b4d9c05b3b7f6ac7fd83527d94b"
+      "design": "058feb61dbbc9d4cc57f93543b6fe367d692d1a7b3e80ad2231246140b3912f7",
+      "repo": "058feb61dbbc9d4cc57f93543b6fe367d692d1a7b3e80ad2231246140b3912f7"
     },
     "components/tokens.css": {
       "design": "1da4cadf9e2e6ef0416d795605ac1d9564f0d471d005f1d7e97cf17051567541",
@@ -590,8 +590,8 @@
       "repo": "0d2122f7d9a97af45bdbca9310e8b2d13055ccad697e023d04b9f1d54faef16c"
     },
     "sections/components/text-link.dc.html": {
-      "design": "6ee5527e60eb2344af19547a858c7adb2d73432eb4ce1270a2ac5f2fdc7881d6",
-      "repo": "6ee5527e60eb2344af19547a858c7adb2d73432eb4ce1270a2ac5f2fdc7881d6"
+      "design": "c9bd0345a950c81fd3709aa9bca9a941184f0b713ef319c54b9201c1a796710b",
+      "repo": "c9bd0345a950c81fd3709aa9bca9a941184f0b713ef319c54b9201c1a796710b"
     },
     "sections/imoles-components/action-card.dc.html": {
       "design": "2bb5c727a126408893eb1a822c3f4486ae4354dcb19ad8c9287738b9dd6a5863",
@@ -684,6 +684,6 @@
       "date": "2026-10-14"
     }
   ],
-  "recorded": "2026-10-14T21:47:46.555Z",
-  "manifestGenerated": "2026-10-14T16:32:05.893Z"
+  "recorded": "2026-10-15T05:25:05.903Z",
+  "manifestGenerated": "2026-10-15T05:19:39.973Z"
 }

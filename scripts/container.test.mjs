@@ -52,7 +52,8 @@ async function session(fn) {
     await send('Emulation.setDeviceMetricsOverride', {width: 1280, height: 800, deviceScaleFactor: 1, mobile: false});
     const b = {
       errors,
-      async goto(hash) { await send('Page.navigate', {url: base + hash}); await sleep(1200); },
+      // La copia arranca con Ready e In process filtrados; salvo que se pida, las pruebas parten sin filtros.
+      async goto(hash, {defaults = false} = {}) { await send('Page.navigate', {url: base + hash}); await sleep(1200); if (!defaults) { await this.eval(`document.querySelector('[data-filter="all"]').click()`); await sleep(200); } },
       async eval(expr) { const r = await send('Runtime.evaluate', {expression: expr, awaitPromise: true, returnByValue: true}); if (r.exceptionDetails) throw Error(r.exceptionDetails.exception?.description || r.exceptionDetails.text); return r.result.value; },
       async mouse(x, y, wait = 30) { await send('Input.dispatchMouseEvent', {type: 'mouseMoved', x, y}); await sleep(wait); },
       async touch(on) { await send('Emulation.setTouchEmulationEnabled', {enabled: on, maxTouchPoints: 5}); },
@@ -64,7 +65,9 @@ async function session(fn) {
 
 test('Contenedor: la home, las secciones, las vistas, los filtros y los enlaces antiguos funcionan sin errores de consola', {skip, timeout: 60000}, async () => {
   await session(async b => {
-    await b.goto('');
+    await b.goto('', {defaults: true});
+    assert.deepEqual(await b.eval(`[...document.querySelectorAll('[data-filter]:checked')].map(c => c.dataset.filter).sort().join()`), 'I,R', 'por defecto, filtradas Ready e In process');
+    await b.eval(`document.querySelector('[data-filter="all"]').click()`); await sleep(200);
     assert.equal(await b.eval(`document.querySelectorAll('.meters progress').length`), 2, 'la home muestra Progress y Complexity');
     // selector de vista de la home: lista con todas las subsecciones (por defecto) o tarjetas
     assert.equal(await b.eval(`document.querySelector('.seg-btn[aria-pressed=true]').textContent.trim()`), 'Lista', 'por defecto, la lista');

@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.29.1 · 2026-10-16 · sin commit
+Sections: none.
+Framework 2.6.2, solo en esta copia (no portada a DSBook): el panel de estado arranca con Ready e In process filtrados (`filters` en `app.js`); «All» los quita. Las pruebas del contenedor parten sin filtros y comprueban el valor por defecto.
+
 ## 0.29.0 · 2026-10-15 · cff986b 41a9b23
 Sections: components (Chip, ProgressBar, Select, TextArea y strategy nuevos; ChoiceList, FilterChips, IconButton y StatusChip pasan a N y sus páginas se eliminan; el resto actualizado), patterns (8 páginas nuevas: autocomplete, back-link, bottom-navigation, contextual-actions, list-rows, multi-select-by-search, search-filters-and-results, sequence-navigation), resources.icon-construction (nueva), resources.libraries-and-licenses, tokens (5), visuals (accessibility, borders, color, dimensions, shape, typography), interaction (focus-management, interaction-states), imoles-components (7), foundations.goals-and-usage-guide.
 Integración de Claude Design con el manifiesto de hashes (nonce fa2f902935ec, 206 archivos): 89 archivos sin integrar o nuevos, todos idénticos byte a byte a su manifiesto, traídos en un zip y verificados uno a uno; 6 eliminados en Design. Fruto de la auditoría de componentes base del owner (2026-10-15): nuevos componentes Chip, ProgressBar, Select y TextArea, estrategia de componentes y 8 patrones. 175 subsecciones (12 más). El subconjunto de Material Symbols pasa a la versión de Design: mantiene los 14 iconos de 0.27.0 y añade close, error, expand_more, navigate_next y el eje FILL. Se descartan a propósito los 10 archivos nuevos de `scratch/` (fichas, informe de auditoría y `pagelib.js`, que Claude Design conserva). Corrección del repo: se quita de `icon-construction` el enlace a `icon-button.dc.html`, página que Design eliminó (rompía `check`); Design debe adoptarlo. `design-baseline.json` actualizada. Los valores siguen siendo propuestas pendientes de review del owner.

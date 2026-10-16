@@ -1,6 +1,6 @@
 import {validateGuide, validateProject, progressOf, pageCandidates, parseRoute, routeHash, breadcrumb, neighbors, defaultView, openTasks, homeView, projectRecord, collectTasks, parseRepo, frameworkStatus, shaFromGit, commitState, isSeedProject} from './model.js';
 const $=s=>document.querySelector(s), labels={R:'Ready',I:'In process',P:'Pending',N:'Not applicable'};
-let guide,project,manifest=null,seed=null,route={name:'home'},routeToken=0,filters=new Set(),query='',found=new Map(),resolved=new Map(),navigated=false;
+let guide,project,manifest=null,seed=null,route={name:'home'},routeToken=0,filters=new Set(["R","I"]),query='',found=new Map(),resolved=new Map(),navigated=false;
 const el=(tag,props={},text)=>{const node=document.createElement(tag);Object.assign(node,props);if(text!==undefined)node.textContent=text;return node;};
 const link=(href,text,props={})=>el('a',{href,...props},text);
 function report(message){$('#error').textContent=message;$('#error').hidden=false;}

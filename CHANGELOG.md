@@ -6,6 +6,10 @@ Each entry cites the commit that contains the changes; the entry itself is added
 
 Format: version · date (YYYY-MM-DD) · commit · affected section IDs · summary.
 
+## 0.29.2 · 2026-11-09 · c1cdac5
+Sections: none.
+GitHub Pages pasaba el sitio por Jekyll, que excluye lo que empieza por `_`: `assets/_runtime/` (React) y `assets/_framework/` (logo) daban 404 en la web publicada y ningún componente se renderizaba. Se añade `.nojekyll` en la raíz. Sin cambios en el framework registrado ni en las páginas.
+
 ## 0.29.1 · 2026-10-16 · 71e021d
 Sections: none.
 Framework 2.6.2, solo en esta copia (no portada a DSBook): el panel de estado arranca con Ready e In process filtrados (`filters` en `app.js`); «All» los quita. Las pruebas del contenedor parten sin filtros y comprueban el valor por defecto.

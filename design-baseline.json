@@ -10,8 +10,8 @@
       "repo": "62a0ca4cac014d35af0c1af50549026ce7074eb522c885501fe64591b48b2b05"
     },
     "CHANGELOG.md": {
-      "design": "cfef71a25fe750514e93b1d74bb0f8b74f0ef7dca30504401c14d0bf3291ecfb",
-      "repo": "cfef71a25fe750514e93b1d74bb0f8b74f0ef7dca30504401c14d0bf3291ecfb"
+      "design": "c906a04c6c58c1e9872b6f000172e17ff04101ad12ac33bf7573dc813ecbc66b",
+      "repo": "597ac423b0c75becdb3ccfa1c0f560dd2e2bcf2c9ef6ce23c9ea53b6de0b91af"
     },
     "CLAUDE.md": {
       "design": "b11ee9cb639069a6bd1d6e6ac378887a33830bd79bd3aa4f68c0d13cceccfc4e",
@@ -23,7 +23,7 @@
     },
     "app.js": {
       "design": "ba86ca16c968d84d019dce6d72fe624670100f74f0b24736dc9c656a60d397e7",
-      "repo": "ba86ca16c968d84d019dce6d72fe624670100f74f0b24736dc9c656a60d397e7"
+      "repo": "4d6497863bf4843e98918b012a508a02f558d61952d213615ecc0b9bee4ab1a4"
     },
     "assets/README.md": {
       "design": "7af4d3c267d5b07e75923eb82b9162f40fae231eb15eb2e0de2ec44d837655da",
@@ -119,7 +119,7 @@
     },
     "dsbook.json": {
       "design": "1253aadfb3e9360c40c5ccaae23fee0f81a3f956f357e3f05035f3e6b8f2ed0a",
-      "repo": "1253aadfb3e9360c40c5ccaae23fee0f81a3f956f357e3f05035f3e6b8f2ed0a"
+      "repo": "b83dcca841fe0c271eb7698dff60237d73898efe036b804aff1c65247ec0ef5d"
     },
     "index.html": {
       "design": "dec6b481d2bda9b198b7ddb4cc33797bbfff7fcdcaf9cfd656bacd46601bd8c7",
@@ -678,7 +678,7 @@
       "repo": "fa5e91434ceb967b651625c38d55f2d07def54d7b7b9942535c102005a2dc54d"
     },
     "sections/resources/icon-construction.dc.html": {
-      "design": "1f8c7b04dcbf1dafbb4a831a38f98906479225ec06a0afd5348d81ad96697707",
+      "design": "a054706ef16fdf7771cfd4058e5d3a9d2454d20c36cfec6871b206bbd86595a7",
       "repo": "a054706ef16fdf7771cfd4058e5d3a9d2454d20c36cfec6871b206bbd86595a7"
     }
   },
@@ -792,6 +792,6 @@
       "date": "2026-10-15"
     }
   ],
-  "recorded": "2026-10-15T15:44:26.786Z",
-  "manifestGenerated": "2026-10-15T15:23:04.259Z"
+  "recorded": "2026-11-09T07:56:28.224Z",
+  "manifestGenerated": "2026-11-09T07:50:16.861Z"
 }
